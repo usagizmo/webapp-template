@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
-    "format": "prettier --write \"**/*.{js,ts,tsx}\"",
+    "format:ts": "prettier --write \"**/*.{js,ts,tsx}\"",
+    "format:scss": "prettier --write \"**/*.scss\"",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test"
@@ -22,13 +23,19 @@
   "lint-staged": {
     "*.@(ts|tsx)": [
       "yarn lint",
-      "yarn format"
+      "yarn format:ts"
+    ],
+    "*.scss": [
+      "yarn format:scss"
     ]
   },
   "dependencies": {
     "next": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-mitt": "^1.0.1",
+    "recoil": "^0.0.10",
+    "sass": "^1.26.10"
   },
   "devDependencies": {
     "@testing-library/react": "^10.0.1",
