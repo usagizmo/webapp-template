@@ -34,3 +34,9 @@ yarn-error.log*
 .vercel
 
 .idea
+
+# pinegrow
+pinegrow/.cache
+pinegrow/_pgbackup
+pinegrow/pinegrow.json
+pinegrow/pages/styles.css
