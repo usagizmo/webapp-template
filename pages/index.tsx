@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Node from '../src/components/node/node'
 
-export const Home = (): JSX.Element => (
+const Home = (): JSX.Element => (
   <div className="container">
     <Head>
       <title>Nextjs Template</title>
