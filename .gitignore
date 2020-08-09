@@ -38,5 +38,6 @@ yarn-error.log*
 # pinegrow
 pinegrow/.cache
 pinegrow/_pgbackup
+pinegrow/_pginfo
 pinegrow/pinegrow.json
 pinegrow/pages/styles.css

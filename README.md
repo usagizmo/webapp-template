@@ -31,18 +31,26 @@ yarn dev
 
 ## Pinegrow
 
-### Set up Tailwind CSS
-
-1. [Open project] > Select `pinegrow` directory
-2. [File] > [Manage libraries & plugins...] > Activate `Tailwind`
-
 ### Output pinegrow/pages/styles.css
 ```bash
 yarn build:tailwindcss
 yarn build:tailwindcss:prod #=> cssnano + purge
 ```
 
-## When husky does not work 
+### Set up Tailwind CSS
+
+#### Activate Tailwind
+
+1. [Open project] > Select `pinegrow` directory
+2. [File] > [Manage libraries & plugins...] > Activate `Tailwind`
+
+#### Apply customized themes
+
+1. Open [Settings & Tools.] > [Customize visual controls...] > Select customized CSS file
+
+For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
+
+## What if husky doesn't work?
 
 ```bash
 rm -rf .git/hooks
