@@ -50,7 +50,7 @@ yarn build:tailwindcss:prod #=> cssnano + purge
 
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
 
-## When husky does not work
+## What if husky doesn't work?
 
 ```bash
 rm -rf .git/hooks
