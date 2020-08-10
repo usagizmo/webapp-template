@@ -1,12 +1,12 @@
 import React from 'react'
-import Node from '../src/components/node/node'
+import Sample from '../src/components/sample/sample'
 
 import { storiesOf } from '@storybook/react'
 
-storiesOf('Node', module).add('withText', () => {
-  return <Node text="Hello Node" />
+storiesOf('Sample', module).add('withText', () => {
+  return <Sample text="Hello Sample" />
 })
 
-storiesOf('Node', module).add('withEmoji', () => {
-  return <Node text="😀 😎 👍 💯" />
+storiesOf('Sample', module).add('withEmoji', () => {
+  return <Sample text="😀 😎 👍 💯" />
 })

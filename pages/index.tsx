@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Node from '../src/components/node/node'
+import Sample from '../src/components/sample/sample'
 
 const Home = (): JSX.Element => (
   <div className="container">
@@ -9,7 +9,7 @@ const Home = (): JSX.Element => (
     </Head>
 
     <main>
-      <Node text="Nextjs Template" />
+      <Sample text="Nextjs Template" />
     </main>
   </div>
 )
