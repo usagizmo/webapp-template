@@ -14,8 +14,8 @@
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test",
     "storybook": "start-storybook",
-    "build:tailwind": "postcss styles.css -o pinegrow/pages/styles.css",
-    "build:tailwind:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o pinegrow/pages/styles.css"
+    "build:tailwind": "postcss styles.css -o pinegrow/pages/css/styles.css",
+    "build:tailwind:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o pinegrow/pages/css/styles.css"
   },
   "husky": {
     "hooks": {
