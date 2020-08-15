@@ -1,16 +1,5 @@
 <project>
     <documents></documents>
     <classstyles>
-        <classstyle name="Button" key="button" class="leading-4 py-2 px-4 inline-flex items-center justify-center rounded" count="2">
-            <classstyle name="Primary 1_6" key="button.primary_1_6" class=" text-white font-medium bg-blue-600 w-1/6" count="1" expanded></classstyle>
-            <classstyle name="Width 1_6" key="button.width_1_6" class=" w-1/6" expanded count="1"></classstyle>
-        </classstyle>
-        <classstyle name="Body" key="body" class="text-gray-900 text-base max-h-screen bg-gray-100 h-screen items-center justify-center flex" count="3"></classstyle>
-        <classstyle name="Menu Item" key="menu_item" class="text-gray-600" count="6">
-            <classstyle name="Active" key="menu_item.active" class=" font-bold text-gray-900" count="2"></classstyle>
-        </classstyle>
-        <classstyle name="Field Title" key="field_title" class="mb-2 text-2xl font-bold" count="2" expanded></classstyle>
-        <classstyle name="Content Title" key="content_title" class="font-bold mb-8 text-5xl text-center" expanded count="2"></classstyle>
-        <classstyle name="Content Menu" key="content_menu" class="flex justify-center space-x-3 mb-4" expanded count="2"></classstyle>
-    </classstyles>
+</classstyles>
 </project>
