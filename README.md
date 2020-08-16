@@ -46,9 +46,15 @@ yarn build:tailwindcss:prod #=> cssnano + purge
 
 #### Apply customized themes
 
-1. Open [Settings & Tools.] > [Customize visual controls...] > Select customized CSS file
+1. Open [Settings & Tools.] > [Customize visual controls...] > Select `pages/css/styles.css`
 
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
+
+#### Update components
+
+1. Open [Class Styles.] Panel > [Update whole project & save changes]
+
+For details, check [here](https://pinegrow.com/docs/tailwind/class-styles/).
 
 ## What if husky doesn't work?
 
