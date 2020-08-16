@@ -31,6 +31,9 @@ module.exports = {
     //   '64px': '4rem',
     // },
     extend: {
+      // fontFamily: {
+      //   'yu-gothic': '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif',
+      // },
       // spacing: {
       //   '6px': '0.375rem',
       // },
