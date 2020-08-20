@@ -27,6 +27,9 @@ Install it and run:
 ```bash
 yarn
 yarn dev
+
+# To develop tailwind
+yarn dev:tailwind
 ```
 
 ## Pinegrow
