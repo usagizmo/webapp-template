@@ -3,4 +3,4 @@ node_modules
 yarn.lock
 package-lock.json
 public
-pinegrow
+pinegrow/pages/css/styles.css
