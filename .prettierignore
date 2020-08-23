@@ -4,3 +4,4 @@ yarn.lock
 package-lock.json
 public
 pinegrow/pages/css/styles.css
+pinegrow/_pgbackup

@@ -10,6 +10,7 @@
     "type-check": "tsc --pretty --noEmit",
     "format:js": "prettier --write \"**/*.{js,ts,tsx}\"",
     "format:css": "prettier --write \"**/*.css\"",
+    "format:html": "prettier --write \"**/*.html\"",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test",
@@ -31,6 +32,9 @@
     ],
     "*.css": [
       "yarn format:css"
+    ],
+    "*.html": [
+      "yarn format:html"
     ]
   },
   "dependencies": {
