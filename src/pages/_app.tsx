@@ -1,9 +1,9 @@
 import React from 'react'
 import { AppProps } from 'next/app'
 
-import '../styles.css'
-import Layout from '../src/layout'
-import Providers from '../src/providers'
+import '../../styles.css'
+import Layout from '../layout'
+import Providers from '../providers'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (

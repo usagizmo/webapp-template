@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Sample from '../src/components/sample/sample'
+import Sample from '../components/sample/sample'
 
 const Home = (): JSX.Element => (
   <div className="container">
