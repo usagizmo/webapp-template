@@ -15,9 +15,9 @@
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test",
     "storybook": "start-storybook",
-    "dev:tailwind": "browser-sync 'pinegrow/pages' -w",
-    "build:tailwind": "postcss styles.css -o pinegrow/pages/css/styles.css",
-    "build:tailwind:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o pinegrow/pages/css/styles.css"
+    "mock:dev": "browser-sync 'pinegrow/pages' -w",
+    "mock:build": "postcss styles.css -o pinegrow/pages/css/styles.css",
+    "mock:build:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o pinegrow/pages/css/styles.css"
   },
   "husky": {
     "hooks": {
