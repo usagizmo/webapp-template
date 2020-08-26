@@ -34,17 +34,17 @@ yarn dev:tailwind
 
 ## Pinegrow
 
-### Output pinegrow/pages/styles.css
+### Output mockup/pages/styles.css
 ```bash
-yarn build:tailwindcss
-yarn build:tailwindcss:prod #=> cssnano + purge
+yarn mockup:build
+yarn mockup:build:prod #=> cssnano + purge
 ```
 
 ### Set up Tailwind CSS
 
 #### Activate Tailwind
 
-1. [Open project] > Select `pinegrow` directory
+1. [Open project] > Select `mockup` directory
 2. [File] > [Manage libraries & plugins...] > Activate `Tailwind`
 
 #### Apply customized themes

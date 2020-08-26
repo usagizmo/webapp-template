@@ -14,9 +14,9 @@
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test",
-    "mock:dev": "browser-sync 'pinegrow/pages' -w",
-    "mock:build": "postcss styles.css -o pinegrow/pages/css/styles.css",
-    "mock:build:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o pinegrow/pages/css/styles.css",
+    "mockup:dev": "browser-sync 'mockup/pages' -w",
+    "mockup:build": "postcss styles.css -o mockup/pages/css/styles.css",
+    "mockup:build:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o mockup/pages/css/styles.css",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

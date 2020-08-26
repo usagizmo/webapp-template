@@ -35,9 +35,9 @@ yarn-error.log*
 
 .idea
 
-# pinegrow
-pinegrow/.cache
-pinegrow/_pgbackup
-pinegrow/_pginfo
-pinegrow/pinegrow.json
-pinegrow/pages/css/styles.css
+# mockup
+mockup/.cache
+mockup/_pgbackup
+mockup/_pginfo
+mockup/pinegrow.json
+mockup/pages/css/styles.css
