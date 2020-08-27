@@ -27,28 +27,29 @@ Install it and run:
 ```bash
 yarn
 yarn dev
-
-# To develop tailwind
-yarn tailwind:dev #=> Run `browser-sync`, then watch `tailwind/pages` files
 ```
 
-## Pinegrow
+## Tailwind CSS
 
-### Output tailwind/pages/styles.css
+To develop tailwind.
+
 ```bash
+yarn tailwind:dev #=> Run `browser-sync`, then watch `tailwind/pages` files
+
+# Output tailwind/pages/styles.css
 yarn tailwind:build
 yarn tailwind:build:watch #=> Build and watch tailwind css files
 yarn tailwind:build:prod  #=> cssnano + purge
 ```
 
-### Set up Tailwind CSS
+## Pinegrow
 
-#### Activate Tailwind
+### Activate Tailwind
 
 1. [Open project] > Select `tailwind` directory
 2. [File] > [Manage libraries & plugins...] > Activate `Tailwind`
 
-#### Apply customized themes
+### Apply customized themes
 
 1. Open [Settings & Tools.] > [Customize visual controls...] > Select `pages/styles.css`
 
