@@ -14,6 +14,7 @@ module.exports = {
     //   'tablet': '640px',
     //   'laptop': '1024px',
     //   'desktop': '1280px',
+    //   'md': {'max': '767px'},
     // },
     // fontSize: {
     //   '10px': '0.625rem',
@@ -31,6 +32,11 @@ module.exports = {
     //   '64px': '4rem',
     // },
     extend: {
+      // colors: {
+      //   black: {
+      //     '900': '#222222',
+      //   },
+      // },
       // fontFamily: {
       //   'yu-gothic': '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif',
       // },
