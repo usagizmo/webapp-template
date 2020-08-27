@@ -6,6 +6,11 @@ const purgeList =
 module.exports = {
   purge: process.env.NODE_ENV === 'production' ? purgeList : false,
   theme: {
+    // colors: {
+    //   gray: '#a0aec0',
+    //   black2: '#222222',
+    //   crimson: '#dc143c'
+    // },
     // screens: {
     //   'sm': '640px',
     //   'md': '768px',
@@ -32,11 +37,6 @@ module.exports = {
     //   '64px': '4rem',
     // },
     extend: {
-      // colors: {
-      //   black: {
-      //     '900': '#222222',
-      //   },
-      // },
       // fontFamily: {
       //   'yu-gothic': '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif',
       // },
