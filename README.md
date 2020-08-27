@@ -27,37 +27,33 @@ Install it and run:
 ```bash
 yarn
 yarn dev
+```
 
-# To develop tailwind
-yarn dev:tailwind
+## Tailwind CSS
+
+To develop tailwind.
+
+```bash
+yarn tailwind:dev #=> Run `browser-sync`, then watch `tailwind/pages` files
+
+# Output tailwind/pages/styles.css
+yarn tailwind:build
+yarn tailwind:build:watch #=> Build and watch tailwind css files
+yarn tailwind:build:prod  #=> cssnano + purge
 ```
 
 ## Pinegrow
 
-### Output mockup/pages/styles.css
-```bash
-yarn mockup:build
-yarn mockup:build:prod #=> cssnano + purge
-```
+### Activate Tailwind
 
-### Set up Tailwind CSS
-
-#### Activate Tailwind
-
-1. [Open project] > Select `mockup` directory
+1. [Open project] > Select `tailwind` directory
 2. [File] > [Manage libraries & plugins...] > Activate `Tailwind`
 
-#### Apply customized themes
+### Apply customized themes
 
-1. Open [Settings & Tools.] > [Customize visual controls...] > Select `pages/css/styles.css`
+1. Open [Settings & Tools.] > [Customize visual controls...] > Select `pages/styles.css`
 
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
-
-#### Update components
-
-1. Open [Class Styles.] Panel > [Update whole project & save changes]
-
-For details, check [here](https://pinegrow.com/docs/tailwind/class-styles/).
 
 ## What if husky doesn't work?
 

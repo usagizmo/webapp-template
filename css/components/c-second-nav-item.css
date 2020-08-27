@@ -1,0 +1,6 @@
+.c-second-nav-item {
+  @apply text-gray-600;
+}
+.c-second-nav-item.is-active {
+  @apply text-gray-900 font-bold;
+}
