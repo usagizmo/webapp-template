@@ -5,6 +5,7 @@ const Home = (): JSX.Element => (
   <div className="container">
     <Head>
       <title>Nextjs Template</title>
+      <meta name="description" content="Nextjs Template" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Nextjs Template" />
       <meta property="og:description" content="Nextjs Template" />
