@@ -1,0 +1,11 @@
+.c-second-section {
+  @apply bg-white mx-auto px-10 py-8 rounded-lg shadow-lg w-full;
+}
+.c-second-section > * + * {
+  @apply ml-4;
+}
+@screen md {
+  .c-second-section {
+    @apply w-1/2;
+  }
+}

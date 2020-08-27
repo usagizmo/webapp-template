@@ -35,9 +35,10 @@ yarn-error.log*
 
 .idea
 
-# mockup
-mockup/.cache
-mockup/_pgbackup
-mockup/_pginfo
-mockup/pinegrow.json
-mockup/pages/css/styles.css
+# tailwind
+tailwind/.cache
+tailwind/_pgbackup
+tailwind/_pginfo
+tailwind/pinegrow.json
+tailwind/projectdb.pgml
+tailwind/pages/styles.css
