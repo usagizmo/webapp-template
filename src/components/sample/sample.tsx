@@ -14,7 +14,7 @@ const Node: FC<Props> = ({ text }: Props) => {
   }, [height, width])
 
   return (
-    <div className="absolute inset-0 flex justify-center flex-col items-center text-3xl">
+    <div className="absolute inset-x-0 top-0 h-screen flex justify-center flex-col items-center text-3xl">
       <p>{text}</p>
       <aside className="mt-4 py-2 px-4 rounded-lg border text-sm border-gray-500">
         <p>{windowSize}</p>

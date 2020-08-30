@@ -8,18 +8,19 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "lint:fix": "eslint . --ext ts --ext tsx --ext js --fix",
+    "test": "jest",
+    "test-all": "yarn lint && yarn type-check && yarn test",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "format:js": "prettier --write \"**/*.{js,ts,tsx}\"",
     "format:css": "prettier --write \"**/*.css\"",
     "format:html": "prettier --write \"**/*.html\"",
-    "lint": "eslint . --ext ts --ext tsx --ext js",
-    "test": "jest",
-    "test-all": "yarn lint && yarn type-check && yarn test",
     "tailwind:dev": "browser-sync 'tailwind/pages' -w",
     "tailwind:build": "postcss styles.css -o tailwind/pages/styles.css",
     "tailwind:build:watch": "postcss styles.css -o tailwind/pages/styles.css -w",
-    "tailwind:build:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o tailwind/pages/styles.css",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "tailwind:build:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o tailwind/pages/styles.css"
   },
   "husky": {
     "hooks": {
