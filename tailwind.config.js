@@ -1,7 +1,7 @@
 const purgeList =
   process.env.BUILD_TYPE === 'tailwind'
     ? ['./tailwind/pages/**/*.html']
-    : ['./src/components/**/*.tsx', './pages/**/*.tsx']
+    : ['./src/components/**/*.tsx', './src/pages/**/*.tsx']
 
 module.exports = {
   purge: process.env.NODE_ENV === 'production' ? purgeList : false,
