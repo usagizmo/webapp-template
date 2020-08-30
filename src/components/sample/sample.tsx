@@ -5,7 +5,7 @@ interface Props {
   text: string
 }
 
-const Node: FC<Props> = ({ text }) => {
+const Sample: FC<Props> = ({ text }) => {
   const { width, height } = useWindowSize()
   const [windowSize, setWindowSize] = useState('')
 
@@ -23,4 +23,4 @@ const Node: FC<Props> = ({ text }) => {
   )
 }
 
-export default Node
+export default Sample
