@@ -7,6 +7,10 @@ module.exports = {
   purge: process.env.NODE_ENV === 'production' ? purgeList : false,
   theme: {
     // colors: {
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   white: '#ffffff',
+    //   black: '#000000',
     //   gray: '#a0aec0',
     //   black2: '#222222',
     //   crimson: '#dc143c'
