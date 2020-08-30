@@ -5,7 +5,7 @@ interface Props {
   text: string
 }
 
-const Node: FC<Props> = ({ text }: Props) => {
+const Node: FC<Props> = ({ text }) => {
   const { width, height } = useWindowSize()
   const [windowSize, setWindowSize] = useState('')
 
