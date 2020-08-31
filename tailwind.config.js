@@ -11,7 +11,7 @@ module.exports = {
     //   current: 'currentColor',
     //   white: '#ffffff',
     //   black: '#000000',
-    //   gray: '#a0aec0',
+    //   gray: '#a0aec0', // If you don't write it, it won't load on pinegrow for some reason.
     //   black2: '#222222',
     //   crimson: '#dc143c'
     // },
