@@ -18,10 +18,10 @@
     "format:js": "prettier --write \"**/*.{js,ts,tsx}\"",
     "format:css": "prettier --write \"**/*.css\"",
     "format:html": "prettier --write \"**/*.html\"",
-    "tailwind:dev": "concurrently \"browser-sync 'tailwind/pages' -w\" \"yarn tailwind:build:watch\"",
-    "tailwind:build": "postcss styles.css -o tailwind/pages/styles.css",
-    "tailwind:build:watch": "postcss styles.css -o tailwind/pages/styles.css -w",
-    "tailwind:build:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o tailwind/pages/styles.css"
+    "tailwind:dev": "cross-env BUILD_TYPE=tailwind concurrently \"browser-sync 'mock' -w\" \"yarn tailwind:build:watch\"",
+    "tailwind:build": "cross-env BUILD_TYPE=tailwind postcss styles.css -o mock/styles.css",
+    "tailwind:build:watch": "cross-env BUILD_TYPE=tailwind postcss styles.css -o mock/styles.css -w",
+    "tailwind:build:prod": "cross-env BUILD_TYPE=tailwind NODE_ENV=production postcss styles.css -o mock/styles.css"
   },
   "husky": {
     "hooks": {
@@ -30,7 +30,7 @@
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx)": [
+    "*.@(ts|tsx|js)": [
       "yarn lint",
       "yarn format:js"
     ],

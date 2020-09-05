@@ -5,7 +5,7 @@ interface Props {
   text: string
 }
 
-const Sample: FC<Props> = ({ text }) => {
+const CSample: FC<Props> = ({ text }) => {
   const { width, height } = useWindowSize()
   const [windowSize, setWindowSize] = useState('')
 
@@ -23,4 +23,4 @@ const Sample: FC<Props> = ({ text }) => {
   )
 }
 
-export default Sample
+export default CSample

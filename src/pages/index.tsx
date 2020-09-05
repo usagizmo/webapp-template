@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Sample from '../components/sample/sample'
+import CSample from '../components/c-sample'
 
 const Home = (): JSX.Element => {
   return (
@@ -17,7 +17,7 @@ const Home = (): JSX.Element => {
         <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
       </Head>
       <main>
-        <Sample text="Nextjs Template" />
+        <CSample text="Nextjs Template" />
       </main>
     </>
   )

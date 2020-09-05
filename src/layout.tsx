@@ -1,13 +1,18 @@
 import React, { FC } from 'react'
 import Head from 'next/head'
-
 import { Router } from 'next/router'
+import useScrollYEmitter from '../plugins/use-scroll-y-emitter'
+import useWindowSizeProvider from '../plugins/window-size/use-window-size-provider'
 
 interface Props {
   router: Router
 }
 
 const Layout: FC<Props> = ({ children }) => {
+  // useTypekit('abcdefg')
+  useScrollYEmitter()
+  useWindowSizeProvider()
+
   return (
     <>
       <Head>

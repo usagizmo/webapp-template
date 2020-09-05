@@ -3,5 +3,5 @@ node_modules
 yarn.lock
 package-lock.json
 public
-tailwind/pages/styles.css
-tailwind/_pgbackup
+mock/styles.css
+mock/_pgbackup
