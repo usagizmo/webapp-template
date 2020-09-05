@@ -29,17 +29,15 @@ yarn
 yarn dev
 ```
 
-## Tailwind CSS
-
-To develop tailwind.
+## Develop mock
 
 ```bash
-yarn tailwind:dev #=> Run `browser-sync`, then watch `mock/pages` files
+yarn mock:dev #=> Run `browser-sync`, then watch `mock/pages` files
 
 # Output mock/pages/styles.css
-yarn tailwind:build
-yarn tailwind:build:watch #=> Build and watch tailwind css files
-yarn tailwind:build:prod  #=> cssnano + purge
+yarn mock:build
+yarn mock:build:watch #=> Build and watch mock css files
+yarn mock:build:prod  #=> cssnano + purge
 ```
 
 ## Pinegrow
