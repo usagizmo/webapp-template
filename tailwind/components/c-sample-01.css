@@ -1,0 +1,20 @@
+.c-sample-01 {
+  @apply relative py-5;
+}
+.c-sample-01:not(:first-of-type)::before {
+  @apply absolute bg-black h-px w-4 top-0;
+  content: '';
+}
+@screen md {
+  .c-sample-01 {
+    @apply w-1/2 py-6;
+  }
+  .c-sample-01:first-of-type::before,
+  .c-sample-01:nth-of-type(2)::before {
+    @apply hidden;
+  }
+}
+@screen lg {
+  .c-sample-01 {
+  }
+}

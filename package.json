@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next build && next export",
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "lint:fix": "eslint . --ext ts --ext tsx --ext js --fix",
@@ -17,10 +18,10 @@
     "format:js": "prettier --write \"**/*.{js,ts,tsx}\"",
     "format:css": "prettier --write \"**/*.css\"",
     "format:html": "prettier --write \"**/*.html\"",
-    "tailwind:dev": "browser-sync 'tailwind/pages' -w",
-    "tailwind:build": "postcss styles.css -o tailwind/pages/styles.css",
-    "tailwind:build:watch": "postcss styles.css -o tailwind/pages/styles.css -w",
-    "tailwind:build:prod": "cross-env NODE_ENV=production BUILD_TYPE=tailwind postcss styles.css -o tailwind/pages/styles.css"
+    "tailwind:dev": "cross-env BUILD_TYPE=tailwind concurrently \"browser-sync 'mock' -w\" \"yarn tailwind:build:watch\"",
+    "tailwind:build": "cross-env BUILD_TYPE=tailwind postcss styles.css -o mock/styles.css",
+    "tailwind:build:watch": "cross-env BUILD_TYPE=tailwind postcss styles.css -o mock/styles.css -w",
+    "tailwind:build:prod": "cross-env BUILD_TYPE=tailwind NODE_ENV=production postcss styles.css -o mock/styles.css"
   },
   "husky": {
     "hooks": {
@@ -29,7 +30,7 @@
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx)": [
+    "*.@(ts|tsx|js)": [
       "yarn lint",
       "yarn format:js"
     ],
@@ -41,9 +42,11 @@
     ]
   },
   "dependencies": {
+    "gsap": "^3.5.1",
     "next": "latest",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-gsap": "^2.2.1",
     "react-mitt": "^1.0.1",
     "react-use": "^15.3.3",
     "recoil": "^0.0.10"
@@ -62,6 +65,7 @@
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "browser-sync": "^2.26.12",
+    "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",

@@ -1,6 +1,0 @@
-.c-button {
-  @apply leading-4 py-2 px-4 inline-flex items-center justify-center rounded w-1/6;
-}
-.c-button--primary {
-  @apply text-white font-medium bg-blue-600;
-}

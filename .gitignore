@@ -35,10 +35,10 @@ yarn-error.log*
 
 .idea
 
-# tailwind
-tailwind/.cache
-tailwind/_pgbackup
-tailwind/_pginfo
-tailwind/pinegrow.json
-tailwind/projectdb.pgml
-tailwind/pages/styles.css
+# mock
+mock/.cache
+mock/_pgbackup
+mock/_pginfo
+mock/pinegrow.json
+mock/projectdb.pgml
+mock/styles.css
