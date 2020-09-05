@@ -3,5 +3,5 @@ node_modules
 yarn.lock
 package-lock.json
 public
-mock/styles.css
+mock/pages/styles.css
 mock/_pgbackup

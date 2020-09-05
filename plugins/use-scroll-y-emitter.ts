@@ -1,5 +1,5 @@
-import { useWindowScroll } from 'react-use'
 import { useCallback, useEffect, useRef } from 'react'
+import { useWindowScroll } from 'react-use'
 import { useMitt } from 'react-mitt'
 import { EMITTER } from '../src/constants/emitter'
 import useIsMobileDevice from './use-is-mobile-device'
