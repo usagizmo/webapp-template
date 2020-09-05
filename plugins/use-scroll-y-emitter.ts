@@ -4,13 +4,13 @@ import { useMitt } from 'react-mitt'
 import { EMITTER } from '../src/constants/emitter'
 import useIsMobileDevice from './use-is-mobile-device'
 
-const useScrollYEmitter = (): void => {
+const useScrollYEmitter = ({ ease } = { ease: 0.05 }): void => {
   const { emitter } = useMitt()
   const { y } = useWindowScroll()
   const isMobileDevice = useIsMobileDevice()
 
   const scrollerRef = useRef({
-    ease: 0.05,
+    ease,
     endY: 0,
     y: 0,
     scrollRequest: 0,
