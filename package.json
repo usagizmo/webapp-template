@@ -18,10 +18,10 @@
     "format:js": "prettier --write \"**/*.{js,ts,tsx}\"",
     "format:css": "prettier --write \"**/*.css\"",
     "format:html": "prettier --write \"**/*.html\"",
-    "tailwind:dev": "concurrently \"browser-sync 'mock/pages' -w\" \"yarn tailwind:build:watch\"",
-    "tailwind:build": "postcss styles.css -o mock/pages/styles.css",
-    "tailwind:build:watch": "postcss styles.css -o mock/pages/styles.css -w",
-    "tailwind:build:prod": "cross-env BUILD_TYPE=tailwind NODE_ENV=production postcss styles.css -o mock/pages/styles.css"
+    "mock:dev": "concurrently \"browser-sync 'mock/pages' -w\" \"yarn mock:build:watch\"",
+    "mock:build": "postcss styles.css -o mock/pages/styles.css",
+    "mock:build:watch": "postcss styles.css -o mock/pages/styles.css -w",
+    "mock:build:prod": "cross-env BUILD_TYPE=mock NODE_ENV=production postcss styles.css -o mock/pages/styles.css"
   },
   "husky": {
     "hooks": {

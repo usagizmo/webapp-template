@@ -1,5 +1,5 @@
 const purgeList =
-  process.env.BUILD_TYPE === 'tailwind' ? ['./mock/pages/**/*.html'] : ['./src/components/**/*.tsx']
+  process.env.BUILD_TYPE === 'mock' ? ['./mock/pages/**/*.html'] : ['./src/components/**/*.tsx']
 
 module.exports = {
   purge: process.env.NODE_ENV === 'production' ? purgeList : false,
