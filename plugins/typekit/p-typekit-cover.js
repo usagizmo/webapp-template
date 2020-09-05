@@ -1,17 +1,23 @@
-module.exports = () => ({ addComponents }) => {
+module.exports = (
+  { zIndex, backgroundColor, transitionDuration } = {
+    zIndex: 50,
+    backgroundColor: '#ffffff',
+    transitionDuration: '500ms',
+  }
+) => ({ addComponents }) => {
   const components = {
     '.p-typekit-cover': {
       position: 'fixed',
-      zIndex: '50',
+      zIndex,
       top: '0',
       left: '0',
       bottom: '0',
       right: '0',
-      backgroundColor: '#ffffff',
+      backgroundColor,
       pointerEvents: 'none',
       '.wf-active &': {
         opacity: '0',
-        transitionDuration: '500ms',
+        transitionDuration,
       },
     },
   }

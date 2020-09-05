@@ -29,29 +29,27 @@ yarn
 yarn dev
 ```
 
-## Tailwind CSS
-
-To develop tailwind.
+## Develop mock
 
 ```bash
-yarn tailwind:dev #=> Run `browser-sync`, then watch `mock` files
+yarn mock:dev #=> Run `browser-sync`, then watch `mock/pages` files
 
-# Output mock/styles.css
-yarn tailwind:build
-yarn tailwind:build:watch #=> Build and watch tailwind css files
-yarn tailwind:build:prod  #=> cssnano + purge
+# Output mock/pages/styles.css
+yarn mock:build
+yarn mock:build:watch #=> Build and watch mock css files
+yarn mock:build:prod  #=> cssnano + purge
 ```
 
 ## Pinegrow
 
 ### Activate Tailwind
 
-1. [Open project] > Select `tailwind` directory
+1. [Open project] > Select `mock` directory
 2. [File] > [Manage libraries & plugins...] > Activate `Tailwind`
 
 ### Apply customized themes
 
-1. Open [Settings & Tools.] > [Customize visual controls...] > Select `mock/styles.css`
+1. Open [Settings & Tools.] > [Customize visual controls...] > Select `pages/styles.css`
 
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
 

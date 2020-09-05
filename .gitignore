@@ -41,4 +41,4 @@ mock/_pgbackup
 mock/_pginfo
 mock/pinegrow.json
 mock/projectdb.pgml
-mock/styles.css
+mock/pages/styles.css
