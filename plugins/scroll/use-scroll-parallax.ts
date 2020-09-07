@@ -1,7 +1,7 @@
 import { RefObject, useEffect } from 'react'
 import { useMitt } from 'react-mitt'
 import gsap from 'gsap'
-import { EMITTER } from '../src/constants/emitter'
+import { EMITTER } from '../../src/constants/emitter'
 
 const useScrollParallax = (ref: RefObject<HTMLElement>, deep = 0, offsetY = 0): void => {
   const { emitter } = useMitt()

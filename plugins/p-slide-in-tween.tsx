@@ -13,6 +13,7 @@ const PSlideInTween: FC<Props> = ({ children, delay }) => {
       duration={1.2}
       stagger={0.08}
       delay={delay}
+      force3D={true}
       ease="power3"
     >
       {children}
