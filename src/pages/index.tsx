@@ -5,19 +5,19 @@ const Home = (): JSX.Element => {
   return (
     <>
       <Head>
-        <title>Nextjs Template</title>
-        <meta name="description" content="Nextjs Template Description" />
+        <title>Next.js Tailwind</title>
+        <meta name="description" content="Next.js Tailwind Description" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Nextjs Template" />
-        <meta property="og:description" content="Nextjs Template Description" />
-        <meta property="og:url" content="https://nextjs-template.io" />
-        <meta property="og:image" content="https://nextjs-template.io/images/ogp-fb.png" />
-        <meta name="twitter:title" content="Nextjs Template" />
-        <meta name="twitter:description" content="Nextjs Template Description" />
-        <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
+        <meta property="og:title" content="Next.js Tailwind" />
+        <meta property="og:description" content="Next.js Tailwind Description" />
+        <meta property="og:url" content="https://nextjs-tailwind.io" />
+        <meta property="og:image" content="https://nextjs-tailwind.io/images/ogp-fb.png" />
+        <meta name="twitter:title" content="Next.js Tailwind" />
+        <meta name="twitter:description" content="Next.js Tailwind Description" />
+        <meta name="twitter:image" content="https://nextjs-tailwind.io/images/ogp-tw.png" />
       </Head>
       <main>
-        <CSample text="Nextjs Template" />
+        <CSample text="Next.js Tailwind" />
       </main>
     </>
   )
