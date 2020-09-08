@@ -10,7 +10,7 @@ exports[`Home page matches snapshot 1`] = `
         class="absolute inset-0 flex justify-center flex-col items-center text-3xl"
       >
         <p>
-          Next.js Tailwind
+          Next.js Template
         </p>
         <aside
           class="mt-4 py-2 px-4 rounded-lg border text-sm border-gray-500"

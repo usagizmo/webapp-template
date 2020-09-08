@@ -1,4 +1,4 @@
-# Next.js Tailwind
+# Next.js Template
 
 From: NextJS Typescript Boilerplate  
 https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest

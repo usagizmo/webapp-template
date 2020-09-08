@@ -21,9 +21,9 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <Head>
-        <meta property="og:site_name" content="Next.js Tailwind" />
+        <meta property="og:site_name" content="Next.js Template" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@nextjs-tailwind" />
+        <meta name="twitter:site" content="@nextjs-template" />
         <link rel="icon" href="/favicon.ico" />
         {/*<PGtag uid="UA-12345678-9" />*/}
       </Head>
