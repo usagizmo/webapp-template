@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import CSample from '../components/c-sample'
 
-const Home = (): JSX.Element => {
+const IndexPage = (): JSX.Element => {
   return (
     <>
       <Head>
@@ -23,4 +23,4 @@ const Home = (): JSX.Element => {
   )
 }
 
-export default Home
+export default IndexPage
