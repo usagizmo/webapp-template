@@ -19,6 +19,15 @@ module.exports = {
     //   lg: '1024px', // laptop
     //   xl: '1280px', // desktop
     // },
+    // container: {
+    //   center: true,
+    //   padding: {
+    //     default: '1rem',
+    //     sm: '2rem',
+    //     lg: '4rem',
+    //     xl: '5rem',
+    //   },
+    // },
     extend: {
       // fontFamily: {
       //   base:
@@ -45,6 +54,9 @@ module.exports = {
       // },
       // inset: {
       //   '1/2': '50%',
+      // },
+      // opacity: {
+      //   '80': '0.8',
       // },
     },
   },
