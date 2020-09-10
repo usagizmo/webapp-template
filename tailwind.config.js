@@ -61,11 +61,6 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [
-    // require('./plugins/p-cap-item')(),
-    // require('./plugins/p-link-text')(),
-    // require('./plugins/p-list-text')(),
-    // require('./plugins/typekit/p-typekit-cover')(),
-  ],
+  plugins: [],
   corePlugins: {},
 }

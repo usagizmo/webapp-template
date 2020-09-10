@@ -1,0 +1,19 @@
+.p-link-text.is-underline {
+  @apply underline;
+}
+.p-link-text.is-underline:hover {
+  @apply opacity-75;
+}
+.p-link-text.is-stroke-underline {
+  @apply inline-flex overflow-hidden relative;
+}
+.p-link-text.is-stroke-underline::after {
+  @apply absolute inset-x-0 bottom-0 bg-current;
+  height: 1.1px; /* It may not be displayed when you rotate it. */
+  content: '';
+  transition: transform 0.28s;
+  transform: translateX(-100%);
+}
+.p-link-text.is-stroke-underline:hover::after {
+  transform: translateX(0%);
+}
