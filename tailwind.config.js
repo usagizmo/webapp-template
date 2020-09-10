@@ -19,15 +19,15 @@ module.exports = {
     //   lg: '1024px', // laptop
     //   xl: '1280px', // desktop
     // },
-    // container: {
-    //   center: true,
-    //   padding: {
-    //     default: '1rem',
-    //     sm: '2rem',
-    //     lg: '4rem',
-    //     xl: '5rem',
-    //   },
-    // },
+    container: {
+      center: true,
+      padding: {
+        default: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+      },
+    },
     extend: {
       // fontFamily: {
       //   base:
