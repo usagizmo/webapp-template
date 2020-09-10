@@ -1,6 +1,6 @@
 {
-  "name": "with-typescript-eslint-jest",
-  "author": "@erikdstock",
+  "name": "nextjs-template",
+  "author": "@usagizmo",
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
