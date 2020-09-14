@@ -10,8 +10,8 @@ module.exports = {
     //   white: '#ffffff',
     //   black: '#000000',
     //   gray: '#a0aec0', // If you don't write it, it won't load on pinegrow for some reason.
-    //   black2: '#222222',
-    //   crimson: '#dc143c',
+    //   'black-22': '#222222',
+    //   'crimson-dc': '#dc143c',
     // },
     // screens: {
     //   sm: '640px', // tablet
@@ -21,12 +21,12 @@ module.exports = {
     // },
     container: {
       center: true,
-      padding: {
-        default: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-      },
+      // padding: {
+      //   default: '1rem',
+      //   sm: '2rem',
+      //   lg: '4rem',
+      //   xl: '5rem',
+      // },
     },
     extend: {
       fontFamily: {
@@ -36,34 +36,35 @@ module.exports = {
         //   '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
       },
       fontSize: {
-        '10px': '0.625rem',
-        '11px': '0.6875rem',
-        // '12px': '0.75rem', // xs
-        '13px': '0.8125rem',
-        // '14px': '0.875rem', // sm
-        '15px': '0.9375rem',
-        // '16px': '1rem', // base
-        // '18px': '1.125rem', // lg
-        // '20px': '1.25rem', // xl
-        '22px': '1.375rem',
-        // '24px': '1.5rem', // 2xl
-        '26px': '1.625rem',
-        '28px': '1.75rem',
-        // '30px': '1.875rem', // 3xl
-        '32px': '2rem',
-        '34px': '2.125rem',
-        // '36px': '2.25rem', // 4xl
-        // '48px': '3rem', // 5xl
-        // '64px': '4rem', // 6xl
+        // xs3: '0.625rem', // 10px: added
+        // xs2: '0.6875rem', // 11px: added
+        // xs: '0.75rem', // 12px
+        // sm2: '0.8125rem', // 13px: added
+        // sm: '0.875rem', // 14px
+        // base2: '0.9375rem', // 15px: added
+        // base: '1rem', // 16px
+        // lg: '1.125rem', // 18px
+        // xl: '1.25rem', // 20px
+        // xl2: '1.375rem', // 22px: added
+        // '2xl': '1.5rem', // 24px
+        // '2xl2': '1.625rem', // 26px: added
+        // '2xl3': '1.75rem', // 28px: added
+        // '3xl': '1.875rem', // 30px
+        // '3xl2': '2rem', // 32px: added
+        // '3xl3': '2.125rem', // 34px: added
+        // '4xl': '2.25rem', // 36px
+        // '5xl': '3rem', // 48px
+        // '6xl': '4rem', // 64px
       },
       spacing: {
         em: '1em',
         // '6px': '0.375rem',
         // '100': '25rem',
       },
-      // inset: {
-      //   '1/2': '50%',
-      // },
+      inset: {
+        '1/2': '50%',
+        full: '100%',
+      },
     },
   },
   variants: {},
