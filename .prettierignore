@@ -1,4 +1,5 @@
 node_modules
+out
 .next
 yarn.lock
 package-lock.json
