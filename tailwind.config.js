@@ -58,7 +58,7 @@ module.exports = {
       },
       spacing: {
         em: '1em',
-        // '6px': '0.375rem',
+        // '1-5': '0.375rem',
         // '100': '25rem',
       },
       inset: {
