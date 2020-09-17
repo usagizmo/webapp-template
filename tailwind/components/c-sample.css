@@ -1,29 +1,27 @@
-.c-sample-03 {
+.c-sample {
   @apply relative inline-flex font-bold text-base uppercase mb-4 items-center;
 }
-.c-sample-03::after {
+.c-sample::after {
   @apply bg-current h-px ml-2 w-8;
   content: '';
 }
-.c-sample-03 {
-}
 @screen md {
-  .c-sample-03-wrap {
+  .c-sample-wrap {
     @apply absolute top-0;
   }
-  .c-sample-03-wrap.is-left {
+  .c-sample-wrap.is-left {
     @apply -ml-8 left-0;
   }
-  .c-sample-03-wrap.is-right {
+  .c-sample-wrap.is-right {
     @apply -mr-8 right-0;
   }
-  .c-sample-03-wrap .c-sample-03 {
+  .c-sample-wrap .c-sample {
     @apply absolute mb-0 transform -rotate-90 -translate-y-1/2;
   }
-  .c-sample-03-wrap.is-left .c-sample-03 {
+  .c-sample-wrap.is-left .c-sample {
     @apply origin-right right-0;
   }
-  .c-sample-03-wrap.is-right .c-sample-03 {
+  .c-sample-wrap.is-right .c-sample {
     @apply origin-right right-0;
   }
 }
