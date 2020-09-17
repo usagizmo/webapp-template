@@ -1,4 +1,7 @@
 @import 'tailwind/base/base.css';
 @import 'tailwind/base/components.css';
-@import 'tailwind/components/index.css';
+
+/* Custom Components */
+@import 'tailwind/components/c-sample.css';
+
 @import 'tailwind/base/utilities.css';
