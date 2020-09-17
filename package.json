@@ -15,7 +15,7 @@
     "test:all": "yarn lint && yarn type-check && yarn test",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
-    "format:js": "prettier --write \"**/*.{js,ts,tsx}\"",
+    "format:js": "prettier --write \"**/*.{js,ts,tsx,mdx}\"",
     "format:css": "prettier --write \"**/*.css\"",
     "format:html": "prettier --write \"**/*.html\"",
     "mock:dev": "concurrently \"browser-sync 'mock/pages' -w\" \"yarn mock:build:watch\"",
@@ -30,7 +30,7 @@
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx|js)": [
+    "*.@(js|ts|tsx|mdx)": [
       "yarn lint",
       "yarn format:js"
     ],
