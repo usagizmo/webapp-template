@@ -22,80 +22,38 @@
     <div class="text-gray-900">
       <header>
         <div class="container">
-          <div class="flex h-10 items-center justify-between">
+          <div class="flex items-center justify-between mb-4 p-4 text-center">
             <h1 class="font-semibold leading-tight text-2xl tracking-tight">Next.js Templage</h1>
+          </div>
+        </div>
+        <div class="container">
+          <div class="flex items-center justify-center mb-4 p-4 text-center">
+            <form class="flex" x-data="{ count: 1 }">
+              <input
+                aria-label="Counter"
+                type="number"
+                class="appearance-none bg-white border border-gray-300 duration-150 ease-in-out focus:border-blue-300 focus:outline-none leading-6 placeholder-gray-500 px-4 py-2 rounded-md text-gray-900 transition w-full lg:max-w-xs"
+                value="1"
+                x-model.number="count"
+              />
+              <span class="ml-3 flex-shrink-0 inline-flex rounded-md shadow-sm">
+                <button
+                  type="button"
+                  class="bg-blue-600 border border-transparent duration-150 ease-in-out focus:border-blue-700 focus:outline-none font-medium hover:bg-blue-500 inline-flex items-center leading-6 px-4 py-2 rounded-md text-white transition"
+                  @click="alert('count is: ' + count)"
+                >
+                  Alert
+                </button>
+              </span>
+            </form>
           </div>
         </div>
         <main>
           <section>
-            <div class="container">
-              <div class="my-4">
-                <div>
-                  <h3 class="font-medium text-xl">.p-list-text</h3>
-                  <ul class="p-list-text">
-                    <li>List item 01</li>
-                    <li>List item 02</li>
-                    <li>List item 03</li>
-                    <li>List item 04</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-medium text-xl">.p-list-text.is-slash</h3>
-                  <ul class="is-slash p-list-text">
-                    <li>List item 01</li>
-                    <li>List item 02</li>
-                    <li>List item 03</li>
-                    <li>List item 04</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-medium text-xl">.p-list-text.is-arrow</h3>
-                  <ul class="is-arrow p-list-text">
-                    <li>List item 01</li>
-                    <li>List item 02</li>
-                    <li>List item 03</li>
-                    <li>List item 04</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="my-4">
-                <div>
-                  <h3 class="font-medium text-xl">.p-cap-item</h3>
-                  <ul>
-                    <li class="p-cap-item">List item 01</li>
-                    <li class="p-cap-item">List item 02</li>
-                    <li class="p-cap-item">List item 03</li>
-                    <li class="p-cap-item">List item 04</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-medium text-xl">.p-list-text.is-slash</h3>
-                  <ul>
-                    <li class="is-ast p-cap-item">List item 01</li>
-                    <li class="is-ast p-cap-item">List item 02</li>
-                    <li class="is-ast p-cap-item">List item 03</li>
-                    <li class="is-ast p-cap-item">List item 04</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="my-4">
-                <div>
-                  <h3 class="font-medium text-xl">.p-link-text</h3>
-                  <p><a href="#" class="p-link-text is-underline">.p-link-text.is-underline</a></p>
-                  <p>
-                    <a href="#" class="is-stroke-underline p-link-text"
-                      >.p-link-text.is-stroke-underline</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div class="container">
-              <div class="-m-4 flex-wrap md:flex">
+            <div class="container xl:px-4">
+              <div class="flex-wrap md:-m-4 md:flex">
                 <div class="p-4 md:w-1/2 lg:w-1/3 xl:w-1/4">
-                  <img src="https://dummyimage.com/600x200/eee/aaa" class="w-full" />
+                  <img src="https://dummyimage.com/600x200/eee/333" class="rounded w-full" />
                   <div class="py-2">
                     <h3 class="font-medium text-lg">Panel Title</h3>
                     <p>
@@ -106,7 +64,7 @@
                   </div>
                 </div>
                 <div class="p-4 md:w-1/2 lg:w-1/3 xl:w-1/4">
-                  <img src="https://dummyimage.com/600x200/eee/aaa" class="w-full" />
+                  <img src="https://dummyimage.com/600x200/eee/333" class="rounded w-full" />
                   <div class="py-2">
                     <h3 class="font-medium text-lg">Panel Title</h3>
                     <p>
@@ -117,7 +75,7 @@
                   </div>
                 </div>
                 <div class="p-4 md:w-1/2 lg:w-1/3 xl:w-1/4">
-                  <img src="https://dummyimage.com/600x200/eee/aaa" class="w-full" />
+                  <img src="https://dummyimage.com/600x200/eee/333" class="rounded w-full" />
                   <div class="py-2">
                     <h3 class="font-medium text-lg">Panel Title</h3>
                     <p>
@@ -128,7 +86,7 @@
                   </div>
                 </div>
                 <div class="p-4 md:w-1/2 lg:w-1/3 xl:w-1/4">
-                  <img src="https://dummyimage.com/600x200/eee/aaa" class="w-full" />
+                  <img src="https://dummyimage.com/600x200/eee/333" class="rounded w-full" />
                   <div class="py-2">
                     <h3 class="font-medium text-lg">Panel Title</h3>
                     <p>
@@ -151,6 +109,15 @@
         </main>
       </header>
     </div>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js"
+      defer
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>

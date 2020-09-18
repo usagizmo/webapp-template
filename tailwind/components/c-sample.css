@@ -1,0 +1,24 @@
+/*
+Reference: https://tailwindcss.com/docs/functions-and-directives
+
+In addition,
+- Base: `.c-Block_Element.is-Modifier.is-State`
+- Use kebab-case
+*/
+
+.c-sample {
+  @apply relative;
+  width: 80vw;
+}
+.c-sample::after {
+  @apply absolute top-0 left-0;
+  content: '';
+}
+.c-sample.is-right::after {
+  @apply left-auto right-0;
+}
+@screen md {
+  .c-sample {
+    width: 100%;
+  }
+}
