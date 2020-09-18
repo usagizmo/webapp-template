@@ -1,27 +1,24 @@
+/*
+Reference: https://tailwindcss.com/docs/functions-and-directives
+
+In addition,
+- Base: `.c-Block_Element.is-Modifier.is-State`
+- Use kebab-case
+*/
+
 .c-sample {
-  @apply relative inline-flex font-bold text-base uppercase mb-4 items-center;
+  @apply relative;
+  width: 80vw;
 }
 .c-sample::after {
-  @apply bg-current h-px ml-2 w-8;
+  @apply absolute top-0 left-0;
   content: '';
 }
+.c-sample.is-right::after {
+  @apply left-auto right-0;
+}
 @screen md {
-  .c-sample-wrap {
-    @apply absolute top-0;
-  }
-  .c-sample-wrap.is-left {
-    @apply -ml-8 left-0;
-  }
-  .c-sample-wrap.is-right {
-    @apply -mr-8 right-0;
-  }
-  .c-sample-wrap .c-sample {
-    @apply absolute mb-0 transform -rotate-90 -translate-y-1/2;
-  }
-  .c-sample-wrap.is-left .c-sample {
-    @apply origin-right right-0;
-  }
-  .c-sample-wrap.is-right .c-sample {
-    @apply origin-right right-0;
+  .c-sample {
+    width: 100%;
   }
 }

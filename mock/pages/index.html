@@ -26,6 +26,28 @@
             <h1 class="font-semibold leading-tight text-2xl tracking-tight">Next.js Templage</h1>
           </div>
         </div>
+        <div class="container">
+          <div class="flex items-center justify-center mb-4 p-4 text-center">
+            <form class="flex" x-data="{ count: 1 }">
+              <input
+                aria-label="Counter"
+                type="number"
+                class="appearance-none bg-white border border-gray-300 duration-150 ease-in-out focus:border-blue-300 focus:outline-none leading-6 placeholder-gray-500 px-4 py-2 rounded-md text-gray-900 transition w-full lg:max-w-xs"
+                value="1"
+                x-model.number="count"
+              />
+              <span class="ml-3 flex-shrink-0 inline-flex rounded-md shadow-sm">
+                <button
+                  type="button"
+                  class="bg-blue-600 border border-transparent duration-150 ease-in-out focus:border-blue-700 focus:outline-none font-medium hover:bg-blue-500 inline-flex items-center leading-6 px-4 py-2 rounded-md text-white transition"
+                  @click="alert('count is: ' + count)"
+                >
+                  Alert
+                </button>
+              </span>
+            </form>
+          </div>
+        </div>
         <main>
           <section>
             <div class="container xl:px-4">
@@ -87,6 +109,15 @@
         </main>
       </header>
     </div>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js"
+      defer
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
