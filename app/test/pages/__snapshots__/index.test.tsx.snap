@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page matches snapshot 1`] = `
+<DocumentFragment>
+  <main>
+    <div
+      class="absolute inset-x-0 top-0 h-screen flex justify-center flex-col items-center text-3xl"
+    >
+      <p>
+        Next.js Template
+      </p>
+      <aside
+        class="mt-4 py-2 px-4 rounded-lg border text-sm border-gray-500"
+      >
+        <p>
+          { width: 1024, height: 768 }
+        </p>
+      </aside>
+    </div>
+  </main>
+</DocumentFragment>
+`;

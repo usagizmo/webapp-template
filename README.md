@@ -25,6 +25,7 @@ In addition,
 Install it and run:
 
 ```bash
+cd app
 yarn
 yarn dev
 ```
