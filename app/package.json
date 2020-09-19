@@ -1,8 +1,4 @@
 {
-  "name": "nextjs-template",
-  "author": "@usagizmo",
-  "license": "MIT",
-  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -22,24 +18,6 @@
     "mock:build": "postcss styles.css -o mock/pages/styles.css",
     "mock:build:watch": "postcss styles.css -o mock/pages/styles.css -w",
     "mock:build:prod": "cross-env BUILD_TYPE=mock NODE_ENV=production postcss styles.css -o mock/pages/styles.css"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn run type-check"
-    }
-  },
-  "lint-staged": {
-    "*.@(js|ts|tsx|mdx)": [
-      "yarn lint",
-      "yarn format:js"
-    ],
-    "*.css": [
-      "yarn format:css"
-    ],
-    "*.html": [
-      "yarn format:html"
-    ]
   },
   "dependencies": {
     "gsap": "^3.5.1",
@@ -72,10 +50,8 @@
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "husky": "^4.2.5",
     "jest": "^25.2.3",
     "jest-watch-typeahead": "^0.5.0",
-    "lint-staged": "^10.0.10",
     "postcss-cli": "^7.1.1",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",

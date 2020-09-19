@@ -25,6 +25,7 @@ In addition,
 Install it and run:
 
 ```bash
+yarn # setup husky and lint-staged 
 cd app
 yarn
 yarn dev
@@ -33,6 +34,7 @@ yarn dev
 ## Develop mock
 
 ```bash
+cd app
 yarn mock:dev #=> Run `browser-sync`, then watch `mock/pages` files
 
 # Output mock/pages/styles.css

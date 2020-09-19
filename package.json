@@ -1,0 +1,29 @@
+{
+  "name": "nextjs-template",
+  "version": "1.0.0",
+  "repository": "git@github.com:usagizmo/nextjs-template.git",
+  "author": "usagizmo <usagizmo@gmail.com>",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn --cwd app type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(js|ts|tsx|mdx)": [
+      "yarn --cwd app lint",
+      "yarn --cwd app format:js"
+    ],
+    "*.css": [
+      "yarn --cwd app format:css"
+    ],
+    "*.html": [
+      "yarn --cwd app format:html"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0"
+  }
+}
