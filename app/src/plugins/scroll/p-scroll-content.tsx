@@ -2,7 +2,7 @@ import React, { FC, useEffect, useRef } from 'react'
 import { useEffectOnce, useMeasure } from 'react-use'
 import gsap from 'gsap'
 import { useMitt } from 'react-mitt'
-import { EMITTER } from '../../src/constants/emitter'
+import { EMITTER } from '../../constants/emitter'
 
 interface Props {
   isCurrent: boolean
