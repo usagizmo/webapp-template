@@ -27,25 +27,11 @@
           </div>
         </div>
         <div class="container">
-          <div class="flex items-center justify-center mb-4 p-4 text-center">
-            <form class="flex" x-data="{ count: 1 }">
-              <input
-                aria-label="Counter"
-                type="number"
-                class="appearance-none bg-white border border-gray-300 duration-150 ease-in-out focus:border-blue-300 focus:outline-none leading-6 placeholder-gray-500 px-4 py-2 rounded-md text-gray-900 transition w-full lg:max-w-xs"
-                value="1"
-                x-model.number="count"
-              />
-              <span class="ml-3 flex-shrink-0 inline-flex rounded-md shadow-sm">
-                <button
-                  type="button"
-                  class="bg-blue-600 border border-transparent duration-150 ease-in-out focus:border-blue-700 focus:outline-none font-medium hover:bg-blue-500 inline-flex items-center leading-6 px-4 py-2 rounded-md text-white transition"
-                  @click="alert('count is: ' + count)"
-                >
-                  Alert
-                </button>
-              </span>
-            </form>
+          <div class="flex flex-col border m-5 rounded">
+            <div class="p-4">
+              <button type="button" class="c-btn c-btn-primary mr-1">Button</button>
+              <button type="button" class="c-btn c-btn-outline">Button Outline</button>
+            </div>
           </div>
         </div>
         <main>

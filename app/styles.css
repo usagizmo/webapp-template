@@ -1,7 +1,40 @@
-@import 'tailwind/base/base.css';
-@import 'tailwind/base/components.css';
+/*
+Extracting Components
+https://tailwindcss.com/docs/extracting-components
+*/
 
-/* Custom Components */
-@import 'tailwind/components/c-sample.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import 'tailwind/base/utilities.css';
+@layer components {
+  .c-btn {
+    @apply transition duration-300 ease-in-out text-white font-normal py-2 px-4 rounded;
+  }
+  .c-btn:focus {
+    @apply outline-none shadow-outline;
+  }
+  .c-btn-primary {
+    @apply bg-purple-700;
+  }
+  .c-btn-primary:hover {
+    @apply bg-purple-900;
+  }
+  .c-btn-outline {
+    @apply border border-purple-700 border-purple-700 text-purple-700;
+  }
+  .c-btn-outline:hover {
+    @apply bg-purple-700 text-white;
+  }
+}
+
+@layer utilities {
+  @responsive {
+    .u-transform-center {
+      @apply absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { useWindowScroll } from 'react-use'
 import { useMitt } from 'react-mitt'
-import { EMITTER } from '../../src/constants/emitter'
+import { EMITTER } from '../../constants/emitter'
 import useIsMobileDevice from '../use-is-mobile-device'
 
 const useScrollYEmitter = ({ ease } = { ease: 0.1 }): void => {

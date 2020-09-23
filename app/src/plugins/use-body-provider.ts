@@ -1,7 +1,7 @@
 import { useIsomorphicLayoutEffect } from 'react-use'
 import { useMitt } from 'react-mitt'
 import gsap from 'gsap'
-import { EMITTER } from '../src/constants/emitter'
+import { EMITTER } from '../constants/emitter'
 
 const useBodyProvider = () => {
   const { emitter } = useMitt()

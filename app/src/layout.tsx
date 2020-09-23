@@ -3,10 +3,10 @@ import Head from 'next/head'
 import { Router } from 'next/router'
 
 // import useTypekit from '../plugins/typekit/use-typekit'
-import useScrollYEmitter from '../plugins/scroll/use-scroll-y-emitter'
-import useWindowSizeProvider from '../plugins/window-size/use-window-size-provider'
+import useScrollYEmitter from './plugins/scroll/use-scroll-y-emitter'
+import useWindowSizeProvider from './plugins/window-size/use-window-size-provider'
 // import PGtag from '../plugins/p-gtag'
-import useBodyProvider from '../plugins/use-body-provider'
+import useBodyProvider from './plugins/use-body-provider'
 
 interface Props {
   router: Router
