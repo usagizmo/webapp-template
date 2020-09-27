@@ -3,6 +3,10 @@ const purgeList =
 
 module.exports = {
   purge: process.env.NODE_ENV === 'production' ? purgeList : false,
+  feature: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
   theme: {
     // colors: {
     //   transparent: 'transparent',
@@ -30,10 +34,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        // base:
-        //   '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif',
-        // hiragino:
-        //   '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
+        sans:
+          'Inter var, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, YuGothic, "Yu Gothic Medium", "Yu Gothic", Meiryo, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+        // sans: 'Inter var, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
       },
       fontSize: {
         // xs3: '0.625rem', // 10px: added

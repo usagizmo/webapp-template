@@ -25,6 +25,7 @@ const Layout: FC<Props> = ({ children }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@nextjs-template" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         {/*<PGtag uid="UA-12345678-9" />*/}
       </Head>
       {children}
