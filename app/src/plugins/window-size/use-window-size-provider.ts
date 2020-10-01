@@ -1,12 +1,12 @@
-import { useDebounce, useWindowSize } from 'react-use'
+import { useThrottleFn, useWindowSize } from 'react-use'
 import { useSetRecoilState } from 'recoil'
 import { windowSizeState } from './window-size-state'
 
 const useWindowSizeProvider = (): void => {
   const setWindowSize = useSetRecoilState(windowSizeState)
-  const { width } = useWindowSize()
+  const { width, height } = useWindowSize()
 
-  useDebounce(
+  useThrottleFn(
     () => {
       setWindowSize({
         width: window.innerWidth, // document.body.clientWidth
@@ -14,7 +14,7 @@ const useWindowSizeProvider = (): void => {
       })
     },
     200,
-    [width]
+    [width, height]
   )
 }
 
