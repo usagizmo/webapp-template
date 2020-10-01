@@ -1,7 +1,12 @@
+import { NextPage } from 'next'
 import Head from 'next/head'
 import CSample from '../components/c-sample'
 
-const IndexPage = (): JSX.Element => {
+interface Props {
+  userAgent?: string
+}
+
+const IndexPage: NextPage<Props> = ({ userAgent }) => {
   return (
     <>
       <Head>
@@ -18,9 +23,15 @@ const IndexPage = (): JSX.Element => {
       </Head>
       <main>
         <CSample text="Next.js Template" />
+        <p className="px-4 py-2 text-xs">Your user agent: {userAgent}</p>
       </main>
     </>
   )
+}
+
+IndexPage.getInitialProps = async ({ req }) => {
+  const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
+  return { userAgent }
 }
 
 export default IndexPage
