@@ -4,6 +4,7 @@ import { Router } from 'next/router'
 
 // import useTypekit from '../plugins/typekit/use-typekit'
 import useScrollYEmitter from './plugins/scroll/use-scroll-y-emitter'
+// import useScrollRestorationManual from './plugins/use-scroll-restoration-manual'
 import useWindowSizeProvider from './plugins/window-size/use-window-size-provider'
 // import PGtag from '../plugins/p-gtag'
 import useBodyProvider from './plugins/use-body-provider'
@@ -14,6 +15,7 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }) => {
   // useTypekit('abcdefg')
+  // useScrollRestorationManual()
   useScrollYEmitter()
   useWindowSizeProvider()
   useBodyProvider()
