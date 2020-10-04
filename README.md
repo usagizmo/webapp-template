@@ -15,10 +15,11 @@ In addition,
 
 - [Pinegrow](https://pinegrow.com/)
 - [PostCSS](https://postcss.org/) x [Tailwind CSS](https://tailwindcss.com/)
-- [Recoil](https://recoiljs.org/)
+- [Zustand](https://github.com/pmndrs/zustand)
 - [Storybook](https://storybook.js.org/)
 - [react-mitt](https://www.npmjs.com/package/react-mitt)
 - [react-use](https://github.com/streamich/react-use)
+- [react-spring](https://www.react-spring.io/)
 
 ## How to use
 

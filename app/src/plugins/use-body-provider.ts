@@ -1,13 +1,12 @@
 import { useIsomorphicLayoutEffect } from 'react-use'
 import { useMitt } from 'react-mitt'
-import gsap from 'gsap'
 import { EMITTER } from '../constants/emitter'
 
 const useBodyProvider = () => {
   const { emitter } = useMitt()
   useIsomorphicLayoutEffect(() => {
     const onBodyHeight = (height: number) => {
-      gsap.set(document.body, { height })
+      document.body.style.height = `${height}px`
     }
 
     emitter.on(EMITTER.bodyHeight, onBodyHeight)
