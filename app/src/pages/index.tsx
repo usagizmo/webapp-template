@@ -1,5 +1,6 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
+import CCursor from '../components/c-cursor'
 import CSample from '../components/c-sample'
 
 interface Props {
@@ -25,6 +26,7 @@ const IndexPage: NextPage<Props> = ({ userAgent }) => {
         <CSample text="Next.js Template" />
         <p className="px-4 py-2 text-xs">Your user agent: {userAgent}</p>
       </main>
+      <CCursor />
     </>
   )
 }

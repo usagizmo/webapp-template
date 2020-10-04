@@ -1,10 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useRecoilValue } from 'recoil'
-import { windowSizeState } from './window-size/window-size-state'
+import { useWindowSize } from 'react-use'
 
 const useResponsiveValue = <T>(defaultValue: T, props: { [width: number]: T }): T => {
-  const windowSize = useRecoilValue(windowSizeState)
-
+  const { width } = useWindowSize()
   const [value, setValue] = useState(defaultValue)
   const valueList = useMemo(() => {
     const valueList = Object.entries(props).map<[number, T]>((v) => [+v[0], v[1]])
@@ -16,14 +14,14 @@ const useResponsiveValue = <T>(defaultValue: T, props: { [width: number]: T }): 
     let newValue = defaultValue
 
     for (const [w, v] of valueList) {
-      if (w > windowSize.width) {
+      if (w > width) {
         break
       }
       newValue = v
     }
 
     setValue(newValue)
-  }, [defaultValue, valueList, windowSize])
+  }, [defaultValue, valueList, width])
 
   return value
 }

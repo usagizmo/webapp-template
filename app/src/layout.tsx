@@ -3,11 +3,10 @@ import Head from 'next/head'
 import { Router } from 'next/router'
 
 // import useTypekit from '../plugins/typekit/use-typekit'
-import useScrollYEmitter from './plugins/scroll/use-scroll-y-emitter'
 // import useScrollRestorationManual from './plugins/use-scroll-restoration-manual'
-import useWindowSizeProvider from './plugins/window-size/use-window-size-provider'
 // import PGtag from '../plugins/p-gtag'
 import useBodyProvider from './plugins/use-body-provider'
+import useMouseMoveEmitter from './plugins/mouse-move/use-mouse-move-emitter'
 
 interface Props {
   router: Router
@@ -16,9 +15,8 @@ interface Props {
 const Layout: FC<Props> = ({ children }) => {
   // useTypekit('abcdefg')
   // useScrollRestorationManual()
-  useScrollYEmitter()
-  useWindowSizeProvider()
   useBodyProvider()
+  useMouseMoveEmitter()
 
   return (
     <>

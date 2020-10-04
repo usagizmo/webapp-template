@@ -1,6 +1,6 @@
 import { useMount } from 'react-use'
 
-const useScrollRestorationManual = () => {
+const useScrollRestorationManual = (): void => {
   useMount(() => {
     history.scrollRestoration = 'manual'
   })
