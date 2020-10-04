@@ -7,12 +7,12 @@ const useScrollParallax = (ref: RefObject<HTMLElement>, deep = 0, offsetY = 0): 
   const { emitter } = useMitt()
 
   useEffect(() => {
-    const onAnimatedScrollY = (scrollY: number) => {
+    const onAnimatedScrollTop = (scrollY: number) => {
       gsap.set(ref.current, { y: scrollY * deep + offsetY, force3D: true })
     }
 
-    emitter.on(EMITTER.animatedScrollY, onAnimatedScrollY)
-    return () => emitter.off(EMITTER.animatedScrollY, onAnimatedScrollY)
+    emitter.on(EMITTER.animatedScrollTop, onAnimatedScrollTop)
+    return () => emitter.off(EMITTER.animatedScrollTop, onAnimatedScrollTop)
   }, [deep, emitter, offsetY, ref])
 }
 

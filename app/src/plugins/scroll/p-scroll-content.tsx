@@ -20,11 +20,11 @@ const PScrollContent: FC<Props> = ({ children, isCurrent }) => {
   }, [isCurrent, height, emitter])
 
   useEffectOnce(() => {
-    const onAnimatedScrollY = (animatedScrollY: number) => {
-      gsap.set(ref.current, { y: -animatedScrollY, force3D: true })
+    const onAnimatedScrollTop = (animatedScrollTop: number) => {
+      gsap.set(ref.current, { y: -animatedScrollTop, force3D: true })
     }
-    emitter.on(EMITTER.animatedScrollY, onAnimatedScrollY)
-    return () => emitter.off(EMITTER.animatedScrollY, onAnimatedScrollY)
+    emitter.on(EMITTER.animatedScrollTop, onAnimatedScrollTop)
+    return () => emitter.off(EMITTER.animatedScrollTop, onAnimatedScrollTop)
   })
 
   return (

@@ -4,7 +4,7 @@ import { useMitt } from 'react-mitt'
 import { EMITTER } from '../../constants/emitter'
 import useIsMobileDevice from '../use-is-mobile-device'
 
-const useScrollYEmitter = ({ ease } = { ease: 0.1 }): void => {
+const useScrollTopEmitter = ({ ease } = { ease: 0.1 }): void => {
   const { emitter } = useMitt()
   const { y } = useWindowScroll()
   const isMobileDevice = useIsMobileDevice()
@@ -19,23 +19,23 @@ const useScrollYEmitter = ({ ease } = { ease: 0.1 }): void => {
 
   const updateScroller = useCallback(() => {
     const scroller = scrollerRef.current
-    const scrollY = window.pageYOffset
+    const scrollTop = window.pageYOffset
 
-    scroller.endY = scrollY
-    scroller.y += (scrollY - scroller.y) * (isMobileDevice ? 1 : scroller.ease)
+    scroller.endY = scrollTop
+    scroller.y += (scrollTop - scroller.y) * (isMobileDevice ? 1 : scroller.ease)
 
-    if (Math.abs(scrollY - scroller.y) < 0.05) {
-      scroller.y = scrollY
+    if (Math.abs(scrollTop - scroller.y) < 0.05) {
+      scroller.y = scrollTop
       scroller.scrollRequest = 0
     }
 
-    emitter.emit(EMITTER.animatedScrollY, scroller.y)
+    emitter.emit(EMITTER.animatedScrollTop, scroller.y)
 
     requestRef.current = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null
   }, [emitter, isMobileDevice])
 
   useEffect(() => {
-    emitter.emit(EMITTER.scrollY, y)
+    emitter.emit(EMITTER.scrollTop, y)
     scrollerRef.current.scrollRequest = 1
     if (!requestRef.current) {
       requestRef.current = requestAnimationFrame(updateScroller)
@@ -43,4 +43,4 @@ const useScrollYEmitter = ({ ease } = { ease: 0.1 }): void => {
   }, [y, emitter, updateScroller])
 }
 
-export default useScrollYEmitter
+export default useScrollTopEmitter
