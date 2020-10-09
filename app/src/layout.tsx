@@ -2,21 +2,23 @@ import React, { FC } from 'react'
 import Head from 'next/head'
 import { Router } from 'next/router'
 
-// import useTypekit from '../plugins/typekit/use-typekit'
-// import useScrollRestorationManual from './plugins/use-scroll-restoration-manual'
 // import PGtag from '../plugins/p-gtag'
+// import useAnimationFrameEmitter from './plugins/animation-frame/use-animation-frame-emitter'
 import useBodyProvider from './plugins/use-body-provider'
-import useMouseMoveEmitter from './plugins/mouse-move/use-mouse-move-emitter'
+import useMouseOnWindowEmitter from './plugins/mouse-on-window/use-mouse-on-window-emitter'
+// import useScrollRestorationManual from './plugins/use-scroll-restoration-manual'
+// import useTypekit from '../plugins/typekit/use-typekit'
 
 interface Props {
   router: Router
 }
 
 const Layout: FC<Props> = ({ children }) => {
-  // useTypekit('abcdefg')
-  // useScrollRestorationManual()
+  // useAnimationFrameEmitter()
   useBodyProvider()
-  useMouseMoveEmitter()
+  useMouseOnWindowEmitter()
+  // useScrollRestorationManual()
+  // useTypekit('abcdefg')
 
   return (
     <>

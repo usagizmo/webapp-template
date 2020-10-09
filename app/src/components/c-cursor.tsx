@@ -1,16 +1,31 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { useSpring, animated } from 'react-spring'
-import useMouseMove from '../plugins/mouse-move/use-mouse-move'
+import {
+  useMouseDown,
+  useMouseMove,
+  useMouseUp,
+} from '../plugins/mouse-on-window/use-mouse-on-window'
 
 const trans = (x: number, y: number) => `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`
+
+const initialStyle = 'bg-teal-300 scale-50'
 
 interface Props {}
 
 const CCursor: FC<Props> = () => {
   const [props, set] = useSpring(() => ({ xy: [0, 0], opacity: 1 }))
+  const [style, setStyle] = useState(initialStyle)
+
+  useMouseDown(() => {
+    setStyle('bg-pink-300 scale-150')
+  })
 
   useMouseMove(({ x, y }) => {
     set({ xy: [x, y] })
+  })
+
+  useMouseUp(() => {
+    setStyle(initialStyle)
   })
 
   return (
@@ -18,7 +33,7 @@ const CCursor: FC<Props> = () => {
       style={{ transform: props.xy.interpolate(trans as any), opacity: props.opacity }}
       className="absolute top-0 left-0 pointer-events-none"
     >
-      <div className="w-8 h-8 bg-teal-300 rounded-full opacity-50" />
+      <div className={`w-8 h-8 rounded-full opacity-50 duration-100 transform ${style}`} />
     </animated.div>
   )
 }
