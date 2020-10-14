@@ -2,7 +2,11 @@ const purgeList =
   process.env.BUILD_TYPE === 'mock' ? ['./mock/pages/**/*.html'] : ['./src/**/*.tsx']
 
 module.exports = {
-  purge: process.env.NODE_ENV === 'production' ? purgeList : false,
+  purge: {
+    mode: 'layers',
+    layers: ['base', 'components', 'utilities'],
+    content: process.env.NODE_ENV === 'production' ? purgeList : false,
+  },
   feature: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
