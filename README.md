@@ -56,6 +56,48 @@ yarn mock:build:prod  #=> cssnano + purge
 
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
 
+## (Optional) Basic Authentication
+
+```
+cd app
+yarn add nextjs-basic-auth-middleware
+
+# The environment variable BASIC_AUTH_CREDENTIALS can be set to perform basic authentication.
+# In the local environment
+echo "BASIC_AUTH_CREDENTIALS={USERNAME}:{PASSWORD}" > .env.local
+```
+
+Add `app/src/pages/_document.tsx`
+
+```tsx
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import basicAuthMiddleware from 'nextjs-basic-auth-middleware'
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
+    if (ctx.req && ctx.res) {
+      await basicAuthMiddleware(ctx.req, ctx.res, {})
+    }
+    const initialProps = await Document.getInitialProps(ctx)
+    return initialProps
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+```
+
 ## (Optional) How to use husky
 
 ```bash
