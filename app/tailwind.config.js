@@ -33,19 +33,20 @@ module.exports = {
     fontFamily: {
       sans:
         'Inter var, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, YuGothic, "Yu Gothic Medium", "Yu Gothic", Meiryo, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-      // sans: 'Inter var, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
+      // sans:
+      //   'Inter var, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
     },
     fontSize: {
-      // xs: '0.75rem', // 12px
-      // sm: '0.875rem', // 14px
-      // base: '1rem', // 16px
-      // lg: '1.125rem', // 18px
-      // xl: '1.25rem', // 20px
-      // '2xl': '1.5rem', // 24px
-      // '3xl': '1.875rem', // 30px
-      // '4xl': '2.25rem', // 36px
-      // '5xl': '3rem', // 48px
-      // '6xl': '4rem', // 64px
+      xs: '0.75rem', // 12px
+      sm: '0.875rem', // 14px
+      base: '1rem', // 16px
+      lg: '1.125rem', // 18px
+      xl: '1.25rem', // 20px
+      '2xl': '1.5rem', // 24px
+      '3xl': '1.875rem', // 30px
+      '4xl': '2.25rem', // 36px
+      '5xl': '3rem', // 48px
+      '6xl': '4rem', // 64px
       // [Custom]
       // '10': '0.625rem',
       // '11': '0.6875rem',
@@ -53,15 +54,15 @@ module.exports = {
       // '13': '0.8125rem',
       // '14': '0.875rem',
       // '15': '0.9375rem',
-      '16': '1rem',
+      // '16': '1rem',
       // '17': '1.0625rem',
-      '18': '1.125rem',
+      // '18': '1.125rem',
       // '19': '1.1875rem',
       // '20': '1.25rem',
       // '21': '1.3125rem',
       // '22': '1.375rem',
       // '23': '1.4375rem',
-      '24': '1.5rem',
+      // '24': '1.5rem',
       // '25': '1.5625rem',
       // '26': '1.625rem',
       // '27': '1.6875rem',
@@ -88,42 +89,42 @@ module.exports = {
     },
     spacing: {
       '0': '0',
-      // px: '1px',
-      // '1': '0.25rem',
-      // '2': '0.5rem',
-      // '3': '0.75rem',
-      // '4': '1rem',
-      // '5': '1.25rem',
-      // '6': '1.5rem',
-      // '8': '2rem',
-      // '10': '2.5rem',
-      // '12': '3rem',
-      // '16': '4rem',
-      // '20': '5rem',
-      // '24': '6rem',
-      // '32': '8rem',
-      // '40': '10rem',
-      // '48': '12rem',
-      // '56': '14rem',
-      // '64': '16rem',
+      px: '1px',
+      '1': '0.25rem',
+      '2': '0.5rem',
+      '3': '0.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '8': '2rem',
+      '10': '2.5rem',
+      '12': '3rem',
+      '16': '4rem',
+      '20': '5rem',
+      '24': '6rem',
+      '32': '8rem',
+      '40': '10rem',
+      '48': '12rem',
+      '56': '14rem',
+      '64': '16rem',
       // [Custom]
       em: '1em',
       // '2': '0.125rem',
-      '4': '0.25rem',
+      // '4': '0.25rem',
       // '6': '0.375rem',
-      '8': '0.5rem',
+      // '8': '0.5rem',
       // '10': '0.625rem',
       // '12': '0.75rem',
       // '14': '0.875rem',
-      '16': '1rem',
+      // '16': '1rem',
       // '18': '1.125rem',
-      '20': '1.25rem',
+      // '20': '1.25rem',
       // '22': '1.375rem',
       // '24': '1.5rem',
       // '26': '1.625rem',
       // '28': '1.75rem',
       // '30': '1.875rem',
-      '32': '2rem',
+      // '32': '2rem',
       // '34': '2.125rem',
       // '36': '2.25rem',
       // '38': '2.375rem',
@@ -139,7 +140,7 @@ module.exports = {
       // '58': '3.625rem',
       // '60': '3.75rem',
       // '62': '3.875rem',
-      '64': '4rem',
+      // '64': '4rem',
       // '66': '4.125rem',
       // '68': '4.25rem',
       // '70': '4.375rem',

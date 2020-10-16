@@ -9,7 +9,7 @@ https://tailwindcss.com/docs/extracting-components
 
 @layer components {
   .c-btn {
-    @apply transition duration-300 ease-in-out text-white font-normal py-8 px-16 rounded;
+    @apply transition duration-300 ease-in-out text-white font-normal py-2 px-4 rounded;
 
     &:focus {
       @apply outline-none shadow-outline;
