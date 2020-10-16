@@ -9,22 +9,25 @@ https://tailwindcss.com/docs/extracting-components
 
 @layer components {
   .c-btn {
-    @apply transition duration-300 ease-in-out text-white font-normal py-2 px-4 rounded;
-  }
-  .c-btn:focus {
-    @apply outline-none shadow-outline;
-  }
-  .c-btn-primary {
-    @apply bg-purple-700;
-  }
-  .c-btn-primary:hover {
-    @apply bg-purple-900;
-  }
-  .c-btn-outline {
-    @apply border border-purple-700 border-purple-700 text-purple-700;
-  }
-  .c-btn-outline:hover {
-    @apply bg-purple-700 text-white;
+    @apply transition duration-300 ease-in-out text-white font-normal py-8 px-16 rounded;
+
+    &:focus {
+      @apply outline-none shadow-outline;
+    }
+
+    &.is-primary {
+      @apply bg-purple-700;
+      &:hover {
+        @apply bg-purple-900;
+      }
+    }
+
+    &.is-outline {
+      @apply border border-purple-700 border-purple-700 text-purple-700;
+      &:hover {
+        @apply bg-purple-700 text-white;
+      }
+    }
   }
 }
 
