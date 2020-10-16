@@ -1,4 +1,6 @@
 {
+  "author": "usagizmo <usagizmo@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
