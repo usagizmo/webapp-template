@@ -3,20 +3,9 @@ import create from 'zustand'
 export type Mouse = {
   x: number
   y: number
-  down: {
-    is: boolean
-    x: number
-    y: number
-  }
-  drag: {
-    is: boolean
-    x: number
-    y: number
-  }
-  delta: {
-    x: number
-    y: number
-  }
+  down: { is: boolean; x: number; y: number }
+  drag: { is: boolean; x: number; y: number }
+  delta: { x: number; y: number }
 }
 
 type State = {
