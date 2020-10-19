@@ -1,20 +1,14 @@
 import { useMitt } from 'react-mitt'
 import { useEffectOnce } from 'react-use'
 import { EMITTER } from '../../constants/emitter'
-import useStore from '../../store'
+import useStore, { getInitialMouse } from '../../store'
 
 const useMouseOnWindowEmitter = (): void => {
   const { emitter } = useMitt()
   const updateMouse = useStore((state) => state.actions.updateMouse)
 
   useEffectOnce(() => {
-    const mouse = {
-      x: 0,
-      y: 0,
-      down: { is: false, x: 0, y: 0 },
-      drag: { is: false, x: 0, y: 0 },
-      delta: { x: 0, y: 0 },
-    }
+    const mouse = getInitialMouse()
 
     const onMouseDown = ({ clientX: x, clientY: y }: MouseEvent) => {
       mouse.down.is = true

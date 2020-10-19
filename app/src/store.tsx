@@ -8,6 +8,14 @@ export type Mouse = {
   delta: { x: number; y: number }
 }
 
+export const getInitialMouse = (): Mouse => ({
+  x: 0,
+  y: 0,
+  down: { is: false, x: 0, y: 0 },
+  drag: { is: false, x: 0, y: 0 },
+  delta: { x: 0, y: 0 },
+})
+
 type State = {
   mutation: {
     mouse: Mouse
@@ -20,13 +28,7 @@ type State = {
 const useStore = create<State>((_set, get) => {
   return {
     mutation: {
-      mouse: {
-        x: 0,
-        y: 0,
-        down: { is: false, x: 0, y: 0 },
-        drag: { is: false, x: 0, y: 0 },
-        delta: { x: 0, y: 0 },
-      },
+      mouse: getInitialMouse(),
     },
     actions: {
       updateMouse(mouse) {
