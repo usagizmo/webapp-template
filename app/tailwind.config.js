@@ -564,6 +564,8 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    // require('./src/plugins/typekit/p-typekit-cover')(),
+  ],
   corePlugins: {},
 }
