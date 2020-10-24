@@ -4,7 +4,7 @@ From: NextJS Typescript Boilerplate
 https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest
 
 > Bootstrap a developer-friendly NextJS app configured with:
-> 
+>
 > - [Typescript](https://www.typescriptlang.org/)
 > - Linting with [ESLint](https://eslint.org/)
 > - Formatting with [Prettier](https://prettier.io/)
@@ -20,6 +20,8 @@ In addition,
 - [react-mitt](https://www.npmjs.com/package/react-mitt)
 - [react-use](https://github.com/streamich/react-use)
 - [react-spring](https://www.react-spring.io/)
+
+I've created the `app` directory with the intention of combining it with another mechanism (such as Firebase).
 
 ## How to use
 
@@ -56,7 +58,60 @@ yarn mock:build:prod  #=> cssnano + purge
 
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
 
-## (Optional) Basic Authentication
+## (Optional) Basic Authentication (SSG x Vercel)
+
+Set the environment variables to Vercel SaaS by GUI.
+
+- `BASIC_USER`
+- `BASIC_PASS`
+
+```bash
+# Add packages
+yarn add -D static-auth safe-compare
+```
+
+```bash
+# vercel.json
+printf "{
+  \"builds\": [
+    {
+      \"src\": \"index.js\",
+      \"use\": \"@vercel/node\"
+    }
+  ],
+  \"routes\": [{ \"src\": \"/.*\", \"dest\": \"index.js\" }]
+}
+" > vercel.json
+
+# index.js
+printf "const protect = require('static-auth')
+const safeCompare = require('safe-compare')
+
+const app = protect(
+  '/',
+  (username, password) =>
+    safeCompare(username, process.env.BASIC_USER) && safeCompare(password, process.env.BASIC_PASS),
+  {
+    directory: __dirname + '/app/out',
+    onAuthFailed: (res) => {
+      res.end('Authentication failed')
+    },
+  }
+)
+
+module.exports = app
+" > index.js
+```
+
+```bash
+# Develop
+vercel dev
+
+# Deploy
+vercel
+```
+
+## (Optional) Basic Authentication (SSR - Draft)
 
 ```
 cd app
@@ -70,28 +125,16 @@ echo "BASIC_AUTH_CREDENTIALS={USERNAME}:{PASSWORD}" > .env.local
 Add `app/src/pages/_document.tsx`
 
 ```tsx
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
-import basicAuthMiddleware from 'nextjs-basic-auth-middleware'
+import Document, { DocumentContext } from 'next/document'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
+    // TODO: fix it
     if (ctx.req && ctx.res) {
       await basicAuthMiddleware(ctx.req, ctx.res, {})
     }
     const initialProps = await Document.getInitialProps(ctx)
     return initialProps
-  }
-
-  render() {
-    return (
-      <Html>
-        <Head />
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    )
   }
 }
 
