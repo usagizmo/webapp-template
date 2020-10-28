@@ -38,4 +38,5 @@ mock/.cache
 mock/_pgbackup
 mock/_pginfo
 mock/pinegrow.json
+mock/projectdb.pgml
 mock/pages/styles.css
