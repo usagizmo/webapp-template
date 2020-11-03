@@ -3,21 +3,18 @@ import create from 'zustand'
 export type Mouse = {
   x: number
   y: number
-  down: {
-    is: boolean
-    x: number
-    y: number
-  }
-  drag: {
-    is: boolean
-    x: number
-    y: number
-  }
-  delta: {
-    x: number
-    y: number
-  }
+  down: { is: boolean; x: number; y: number }
+  drag: { is: boolean; x: number; y: number }
+  delta: { x: number; y: number }
 }
+
+export const getInitialMouse = (): Mouse => ({
+  x: 0,
+  y: 0,
+  down: { is: false, x: 0, y: 0 },
+  drag: { is: false, x: 0, y: 0 },
+  delta: { x: 0, y: 0 },
+})
 
 type State = {
   mutation: {
@@ -31,13 +28,7 @@ type State = {
 const useStore = create<State>((_set, get) => {
   return {
     mutation: {
-      mouse: {
-        x: 0,
-        y: 0,
-        down: { is: false, x: 0, y: 0 },
-        drag: { is: false, x: 0, y: 0 },
-        delta: { x: 0, y: 0 },
-      },
+      mouse: getInitialMouse(),
     },
     actions: {
       updateMouse(mouse) {

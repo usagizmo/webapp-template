@@ -3,28 +3,27 @@ import { useEffectOnce } from 'react-use'
 import { EMITTER } from '../../constants/emitter'
 import { Mouse } from '../../store'
 
-const useMouseDown = (callback: (mouse: Mouse) => void): void => {
+type Callback = (mouse: Mouse) => void
+
+const useMouseEvent = (emitterType: 'mouseDown' | 'mouseMove' | 'mouseUp', callback?: Callback) => {
   const { emitter } = useMitt()
   useEffectOnce(() => {
-    emitter.on(EMITTER.mouseDown, callback)
-    return () => void emitter.off(EMITTER.mouseDown, callback)
+    const handle = (mouse: Mouse) => void callback?.(mouse)
+    emitter.on(EMITTER[emitterType], handle)
+    return () => void emitter.off(EMITTER[emitterType], handle)
   })
 }
 
-const useMouseMove = (callback: (mouse: Mouse) => void): void => {
-  const { emitter } = useMitt()
-  useEffectOnce(() => {
-    emitter.on(EMITTER.mouseMove, callback)
-    return () => void emitter.off(EMITTER.mouseMove, callback)
-  })
+const useMouseDown = (callback?: Callback): void => {
+  useMouseEvent('mouseDown', callback)
 }
 
-const useMouseUp = (callback: (mouse: Mouse) => void): void => {
-  const { emitter } = useMitt()
-  useEffectOnce(() => {
-    emitter.on(EMITTER.mouseUp, callback)
-    return () => void emitter.off(EMITTER.mouseUp, callback)
-  })
+const useMouseMove = (callback?: Callback): void => {
+  useMouseEvent('mouseMove', callback)
+}
+
+const useMouseUp = (callback?: (mouse: Mouse) => void): void => {
+  useMouseEvent('mouseUp', callback)
 }
 
 export { useMouseDown, useMouseMove, useMouseUp }

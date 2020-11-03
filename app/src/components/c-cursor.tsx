@@ -5,6 +5,7 @@ import {
   useMouseMove,
   useMouseUp,
 } from '../plugins/mouse-on-window/use-mouse-on-window'
+import useStore from '../store'
 
 const trans = (x: number, y: number) => `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`
 
@@ -13,7 +14,8 @@ const initialStyle = 'bg-teal-300 scale-50'
 interface Props {}
 
 const CCursor: FC<Props> = () => {
-  const [props, set] = useSpring(() => ({ xy: [0, 0], opacity: 1 }))
+  const initialMouse = useStore((state) => state.mutation.mouse)
+  const [props, set] = useSpring(() => ({ xy: [initialMouse.x, initialMouse.y], opacity: 1 }))
   const [style, setStyle] = useState(initialStyle)
 
   useMouseDown(() => {
