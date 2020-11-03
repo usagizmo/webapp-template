@@ -1,6 +1,6 @@
 # Next.js Template
 
-From: NextJS Typescript Boilerplate  
+From: NextJS TypeScript Boilerplate  
 https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest
 
 > Bootstrap a developer-friendly NextJS app configured with:
