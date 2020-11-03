@@ -2,7 +2,7 @@ import { useIsomorphicLayoutEffect } from 'react-use'
 import { useMitt } from 'react-mitt'
 import { EMITTER } from '../constants/emitter'
 
-const useBodyProvider = () => {
+const useBodyProvider = (): void => {
   const { emitter } = useMitt()
   useIsomorphicLayoutEffect(() => {
     const onBodyHeight = (height: number) => {

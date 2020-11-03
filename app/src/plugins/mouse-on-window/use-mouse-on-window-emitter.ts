@@ -3,7 +3,7 @@ import { useEffectOnce } from 'react-use'
 import { EMITTER } from '../../constants/emitter'
 import useStore from '../../store'
 
-const useMouseOnWindowEmitter = () => {
+const useMouseOnWindowEmitter = (): void => {
   const { emitter } = useMitt()
   const updateMouse = useStore((state) => state.actions.updateMouse)
 

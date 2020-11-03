@@ -10,13 +10,26 @@ exports[`Home page matches snapshot 1`] = `
         Next.js Template
       </p>
       <aside
-        class="mt-4 py-2 px-4 rounded-lg border text-sm border-gray-500"
+        class="mt-4 py-2 px-4 rounded-lg border text-xs border-gray-500 whitespace-pre-wrap"
       >
         <p>
-          { width: 1024, height: 768 }
+          Window Size: { width: 1024, height: 768 }
         </p>
       </aside>
     </div>
+    <p
+      class="px-4 py-2 text-xs"
+    >
+      Your user agent: 
+    </p>
   </main>
+  <div
+    class="absolute top-0 left-0 pointer-events-none"
+    style="transform: translate3d(0px, 0px, 0) translate3d(-50%, -50%, 0); opacity: 1;"
+  >
+    <div
+      class="w-8 h-8 rounded-full opacity-50 duration-100 transform bg-teal-300 scale-50"
+    />
+  </div>
 </DocumentFragment>
 `;
