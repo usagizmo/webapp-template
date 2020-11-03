@@ -11,6 +11,8 @@ yarn dev
 
 ## Develop mock
 
+When coding a mock in Pinegrow x Tailwind CSS.
+
 ```bash
 yarn mock:dev #=> Run `browser-sync`, then watch `mock/pages` files
 
@@ -20,20 +22,20 @@ yarn mock:build:watch #=> Build and watch mock css files
 yarn mock:build:prod  #=> cssnano + purge
 ```
 
-## Pinegrow
+### Pinegrow
 
-### Activate Tailwind
+#### Activate Tailwind
 
 1. [Open project] > Select `mock` directory
 2. [File] > [Manage libraries & plugins...] > Activate `Tailwind`
 
-### Apply customized themes
+#### Apply customized themes
 
 1. Open [Settings & Tools.] > [Customize visual controls...] > Select `pages/styles.css`
 
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
 
-## Basic Authentication (`mock/pages/` on Vercel)
+### Basic Authentication (`mock/pages/` on Vercel)
 
 ```bash
 # Add packages
@@ -92,7 +94,7 @@ vercel env add BASIC_PASS
 # ? Add BASIC_PASS to which Environments (select multiple)? Production, Preview, Development
 ```
 
-## (Optional) Basic Authentication (SSR - Draft)
+## Basic Authentication (SSR - Draft)
 
 ```
 yarn add nextjs-basic-auth-middleware
