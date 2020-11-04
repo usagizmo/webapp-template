@@ -37,12 +37,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: lint & type-check & format
-        run: |
-          cd app
-          yarn
-          yarn test:all
-          yarn format:all
+      - name: Install packages
+        run: yarn --cwd app
+
+      - name: Run test:all
+        run:  yarn --cwd app test:all
+
+      - name: Run format:all
+        run: yarn --cwd app format:all
 
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
         with:
