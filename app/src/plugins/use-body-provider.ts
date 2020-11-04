@@ -12,15 +12,6 @@ const useBodyProvider = (): void => {
     emitter.on(EMITTER.bodyHeight, onBodyHeight)
     return () => void emitter.off(EMITTER.bodyHeight, onBodyHeight)
   }, [])
-
-  useIsomorphicLayoutEffect(() => {
-    const onBodyOverflowY = (enable: boolean) => {
-      document.body.style.overflowY = enable ? 'visible' : 'hidden'
-    }
-
-    emitter.on(EMITTER.bodyOverflowY, onBodyOverflowY)
-    return () => void emitter.off(EMITTER.bodyOverflowY, onBodyOverflowY)
-  }, [])
 }
 
 export default useBodyProvider
