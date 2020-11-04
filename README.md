@@ -19,5 +19,6 @@ In addition,
 - [react-mitt](https://www.npmjs.com/package/react-mitt)
 - [react-use](https://github.com/streamich/react-use)
 - [react-spring](https://www.react-spring.io/)
+- GitHub Actions (test + commit to format)
 
 I've created the `app` directory with the intention of combining it with another mechanism (such as Firebase).
