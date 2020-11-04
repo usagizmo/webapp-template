@@ -2,6 +2,7 @@ module.exports = {
   plugins: {
     'postcss-import': {},
     tailwindcss: {},
+    'postcss-flexbugs-fixes': {},
     'postcss-preset-env': {
       browsers: 'last 2 versions',
       stage: 3,
