@@ -1,11 +1,11 @@
-# `app` (Next.js) or static mock html
+# `app` (Next.js or mock html)
 
 ## How to use
 
 Install it and run:
 
 ```bash
-yarn
+yarn # install packages
 yarn dev
 ```
 
@@ -35,7 +35,7 @@ yarn mock:build:prod  #=> cssnano + purge
 
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
 
-### Basic Authentication (`mock/pages/` on Vercel)
+## Basic Authentication (`mock/pages/` or `out/`) on Vercel
 
 ```bash
 # Add packages
@@ -75,50 +75,38 @@ module.exports = app
 " > index.js
 ```
 
+### When you want to publish `out/`.
+
+Add `vercel-build` property in `package.json`.
+
+```diff
+"export": "next build && next export",
++ "vercel-build": "yarn export",
+```
+
+Then, fix the publishing directory in `index.js`.
+
+```diff
+- directory: __dirname + '/mock/pages',
++ directory: __dirname + '/out',
+```
+
+### Deploy on Vercel
+
 ```bash
+# Link
+vercel link
+# ? What’s your project’s name? <kebab-case-project-name>
+
+# Set the `Environment Variables` in the Vercel.
+vercel env add BASIC_USER
+vercel env add BASIC_PASS
+# ? What’s the value of BASIC_PASS? [hidden]
+# ? Add BASIC_PASS to which Environments (select multiple)? Production, Preview, Development
+
 # Develop
 vercel dev
-# ? What’s your project’s name? <kebab-case-project-name>
 
 # Deploy
 vercel
-```
-
-Set the `Environment Variables` in the Vercel.
-
-```bash
-vercel env add BASIC_USER
-vercel env add BASIC_PASS
-
-# ? What’s the value of BASIC_PASS? [hidden]
-# ? Add BASIC_PASS to which Environments (select multiple)? Production, Preview, Development
-```
-
-## Basic Authentication (SSR - Draft)
-
-```
-yarn add nextjs-basic-auth-middleware
-
-# The environment variable BASIC_AUTH_CREDENTIALS can be set to perform basic authentication.
-# In the local environment
-echo "BASIC_AUTH_CREDENTIALS={USERNAME}:{PASSWORD}" > .env.local
-```
-
-Add `app/src/pages/_document.tsx`
-
-```tsx
-import Document, { DocumentContext } from 'next/document'
-
-class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    // TODO: fix it
-    if (ctx.req && ctx.res) {
-      await basicAuthMiddleware(ctx.req, ctx.res, {})
-    }
-    const initialProps = await Document.getInitialProps(ctx)
-    return initialProps
-  }
-}
-
-export default MyDocument
 ```
