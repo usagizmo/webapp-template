@@ -4,6 +4,7 @@ const purgeList =
 module.exports = {
   purge: {
     mode: 'layers',
+    layers: ['utilities'], // I don't want to purge the pseudo-classes in the component layer
     content: process.env.NODE_ENV === 'production' ? purgeList : false,
   },
   feature: {
