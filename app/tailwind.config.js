@@ -1,9 +1,12 @@
 const purgeList =
-  process.env.BUILD_TYPE === 'mock' ? ['./mock/pages/**/*.html'] : ['./src/**/*.tsx']
+  process.env.BUILD_TYPE === 'mock'
+    ? ['./mock/pages/**/*.html', './mock/pages/**/*.js']
+    : ['./src/**/*.tsx']
 
 module.exports = {
   purge: {
     mode: 'layers',
+    layers: ['utilities'], // I don't want to purge the pseudo-classes in the component layer
     content: process.env.NODE_ENV === 'production' ? purgeList : false,
   },
   feature: {
