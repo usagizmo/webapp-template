@@ -109,4 +109,6 @@ vercel dev
 
 # Deploy
 vercel
+# Or integrate with Vercel and GitHub
+# In that case, don't forget to set the `app` option to "Settings > General > Root Directory" on Vercel
 ```
