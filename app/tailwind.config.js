@@ -1,5 +1,7 @@
 const purgeList =
-  process.env.BUILD_TYPE === 'mock' ? ['./mock/pages/**/*.html'] : ['./src/**/*.tsx']
+  process.env.BUILD_TYPE === 'mock'
+    ? ['./mock/pages/**/*.html', './mock/pages/**/*.js']
+    : ['./src/**/*.tsx']
 
 module.exports = {
   purge: {
