@@ -7,6 +7,17 @@ https://tailwindcss.com/docs/extracting-components
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media screen and (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
 @layer components {
   .c-btn {
     @apply transition duration-300 ease-in-out text-white font-normal py-2 px-4 rounded;
