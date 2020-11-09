@@ -16,24 +16,37 @@ module.exports = {
     standardFontWeights: true,
   },
   theme: {
-    // colors: {
-    //   transparent: 'transparent',
-    //   current: 'currentColor',
-    //   white: '#ffffff',
-    //   black: '#000000',
-    //   gray: '#a0aec0', // If you don't write it, it won't load on pinegrow for some reason.
-    //   'black-22': '#222222',
-    //   'crimson-dc': '#dc143c',
-    // },
+    container: {
+      center: true,
+    },
     // screens: {
     //   sm: '640px', // tablet
     //   md: '768px',
     //   lg: '1024px', // laptop
     //   xl: '1280px', // desktop
     // },
-    container: {
-      center: true,
-    },
+    // colors: {
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   white: '#ffffff',
+    //   black: '#000000',
+    //   gray: '#a0aec0', // If you don't write it, it won't load on pinegrow for some reason
+    //   'black-22': '#222222',
+    // },
+    // backgroundColor: (theme) => ({
+    //   ...theme('colors'),
+    //   'black-22': '#222222',
+    // }),
+    // borderColor: (theme) => ({
+    //   ...theme('colors'),
+    //   'black-22': '#222222',
+    // }),
+    // textColor: {
+    //   'black-22': '#222222',
+    // },
+    // backgroundImage: {
+    //   'image-name': "url('/images/image-name.png')",
+    // },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }], // 12px
       sm: ['0.875rem', { lineHeight: '1.25rem' }], // 14px
@@ -46,6 +59,7 @@ module.exports = {
       '5xl': ['3rem', { lineHeight: '1' }], // 48px
       '6xl': ['4rem', { lineHeight: '1' }], // 64px
       // [Custom]
+      // Pixel-based sizes
       // 10: '0.625rem',
       // 11: '0.6875rem',
       // 12: '0.75rem',
@@ -107,6 +121,7 @@ module.exports = {
       64: '16rem',
       // [Custom]
       em: '1em',
+      // Pixel-based sizes
       // 2: '0.125rem',
       // 4: '0.25rem',
       // 6: '0.375rem',
@@ -504,7 +519,7 @@ module.exports = {
       // '4xl': '56rem',
       // '5xl': '64rem',
       // '6xl': '72rem',
-      full: '100%',
+      // full: '100%',
       // [Custom]
       // '#': '#rem',
     },
@@ -532,6 +547,7 @@ module.exports = {
     //   2: '2',
     // },
     // letterSpacing: {
+    //   0: '0',
     //   1: '0.0625rem',
     //   2: '0.125rem',
     //   3: '0.1875rem',
@@ -557,7 +573,16 @@ module.exports = {
         '1/2': '50%',
         full: '100%',
       },
+      width: {
+        // '#': '#rem',
+      },
       minWidth: {
+        // '#': '#rem',
+      },
+      maxWidth: {
+        // '#': '#rem',
+      },
+      height: {
         // '#': '#rem',
       },
       minHeight: {
