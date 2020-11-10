@@ -77,18 +77,20 @@ module.exports = app
 
 ### When you want to publish `mock/pages/`.
 
+Update `build` command in `package.json`.
+
 ```diff
-"export": "next build && next export",
-+ "vercel-build": "yarn mock:build:prod",
+- "build": "next build",
++ "build": "yarn mock:build:prod",
 ```
 
 ### When you want to publish `out/`.
 
-Add `vercel-build` property in `package.json`.
+Update `build` command in `package.json`.
 
 ```diff
-"export": "next build && next export",
-+ "vercel-build": "yarn export",
+- "build": "next build",
++ "build": "next build && next export",
 ```
 
 Then, fix the publishing directory in `index.js`.
