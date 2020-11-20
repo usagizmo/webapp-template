@@ -34,7 +34,7 @@ https://tailwindcss.com/docs/extracting-components
     }
 
     &.is-outline {
-      @apply border border-purple-700 border-purple-700 text-purple-700;
+      @apply border border-purple-700 text-purple-700;
       &:hover {
         @apply bg-purple-700 text-white;
       }
