@@ -16,6 +16,23 @@ https://tailwindcss.com/docs/extracting-components
       scroll-behavior: auto;
     }
   }
+
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    /* Edge */
+    color: #a0aec0;
+  }
+
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #a0aec0;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #a0aec0;
+  }
 }
 
 @layer components {
