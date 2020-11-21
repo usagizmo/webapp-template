@@ -40,7 +40,7 @@ https://tailwindcss.com/docs/extracting-components
     @apply transition duration-300 ease-in-out text-white font-normal py-2 px-4 rounded;
 
     &:focus {
-      @apply outline-none shadow-outline;
+      @apply outline-none ring;
     }
 
     &.is-primary {

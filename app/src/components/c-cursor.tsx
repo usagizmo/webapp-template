@@ -9,7 +9,7 @@ import useStore from '../store'
 
 const trans = (x: number, y: number) => `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`
 
-const initialStyle = 'bg-teal-300 scale-50'
+const initialStyle = 'bg-green-300 scale-50'
 
 interface Props {}
 

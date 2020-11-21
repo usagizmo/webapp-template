@@ -1,18 +1,9 @@
 module.exports = {
-  purge: {
-    mode: 'layers',
-    layers: ['utilities'], // I don't want to purge the pseudo-classes in the component layer
-    content:
-      process.env.BUILD_TYPE === 'mock'
-        ? ['./mock/pages/**/*.html', './mock/pages/**/*.js']
-        : ['./src/**/*.tsx'],
-  },
-  feature: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-    defaultLineHeights: true,
-    standardFontWeights: true,
-  },
+  purge:
+    process.env.BUILD_TYPE === 'mock'
+      ? ['./mock/pages/**/*.html', './mock/pages/**/*.js']
+      : ['./src/**/*.tsx'],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     container: {
       center: true,
@@ -591,9 +582,10 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [
     // require('./src/plugins/typekit/p-typekit-cover')(),
   ],
-  corePlugins: {},
 }
