@@ -16,6 +16,23 @@ https://tailwindcss.com/docs/extracting-components
       scroll-behavior: auto;
     }
   }
+
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    /* Edge */
+    color: #a0aec0;
+  }
+
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #a0aec0;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #a0aec0;
+  }
 }
 
 @layer components {
@@ -23,7 +40,7 @@ https://tailwindcss.com/docs/extracting-components
     @apply transition duration-300 ease-in-out text-white font-normal py-2 px-4 rounded;
 
     &:focus {
-      @apply outline-none shadow-outline;
+      @apply outline-none ring;
     }
 
     &.is-primary {
@@ -34,7 +51,7 @@ https://tailwindcss.com/docs/extracting-components
     }
 
     &.is-outline {
-      @apply border border-purple-700 border-purple-700 text-purple-700;
+      @apply border border-purple-700 text-purple-700;
       &:hover {
         @apply bg-purple-700 text-white;
       }
