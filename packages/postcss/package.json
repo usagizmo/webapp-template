@@ -1,0 +1,22 @@
+{
+  "name": "@nextjs-template/postcss",
+  "version": "0.0.0",
+  "author": "usagizmo <usagizmo@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"**/*.{css,js}\"",
+    "dev": "onchange '**/*.{css,js}' -- prettier --write {{changed}}"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^8.3.0",
+    "postcss-flexbugs-fixes": "4.2.1",
+    "postcss-import": "12.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+  }
+}

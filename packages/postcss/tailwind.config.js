@@ -1,8 +1,5 @@
 module.exports = {
-  purge:
-    process.env.BUILD_TYPE === 'mock'
-      ? ['./mock/pages/**/*.html', './mock/pages/**/*.js']
-      : ['./src/**/*.tsx'],
+  purge: [], // In each package are specified
   darkMode: false, // or 'media' or 'class'
   theme: {
     container: {

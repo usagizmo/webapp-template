@@ -1,0 +1,20 @@
+{
+  "name": "@nextjs-template/mock",
+  "version": "0.0.0",
+  "author": "usagizmo <usagizmo@gmail.com>",
+  "license": "MIT",
+	"scripts": {
+    "format": "prettier --write \"**/*.{js,html}\"",
+    "build": "postcss ../postcss/styles.css -o pages/styles.css",
+    "build:prod": "cross-env NODE_ENV=production postcss ../postcss/styles.css -o pages/styles.css",
+    "watch:format": "onchange '**/*.{js,html}' -- prettier --write {{changed}}",
+    "watch:build": "postcss ../postcss/styles.css -o pages/styles.css -w",
+    "dev": "concurrently \"browser-sync 'pages' -w\" \"yarn watch:format\" \"yarn watch:build\""
+	},
+	"browserslist": [
+	  "defaults"
+	],
+	"devDependencies": {
+	  "browser-sync": "^2.26.13"
+  }
+}
