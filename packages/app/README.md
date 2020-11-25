@@ -1,11 +1,5 @@
 # `@nextjs-template/app` (Next.js)
 
-## Development
-
-```bash
-yarn dev
-```
-
 ## Basic Authentication (`out/`) on Vercel - Draft
 
 ```bash

@@ -2,14 +2,6 @@
 
 ## Development
 
-```bash
-yarn dev #=> Run `browser-sync`, then watch `mock/pages` files and @nextjs-template/postcss/styles.css
-
-# Output /pages/styles.css
-yarn build:dev
-yarn build  #=> cssnano + purge
-```
-
 ### Pinegrow
 
 #### Activate Tailwind

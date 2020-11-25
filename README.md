@@ -28,6 +28,19 @@ In addition,
 # Initialize
 yarn
 yarn build
+
+# app
+cd packages/app
+yarn dev
+
+# mock
+cd packages/mock
+yarn dev
+yarn build  #=> Output /pages/styles.css (cssnano + purge)
+
+# postcss
+cd packages/postcss
+yarn dev  #=> watch for formatting
 ```
 
 # Lerna x Yarn Workspaces
