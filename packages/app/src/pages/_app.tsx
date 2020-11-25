@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppProps } from 'next/app'
 
-import '../../styles.css'
+import '../../../postcss/styles.css'
 import Layout from '../layout'
 import Providers from '../providers'
 

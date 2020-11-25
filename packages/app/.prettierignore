@@ -4,6 +4,3 @@ out
 yarn.lock
 package-lock.json
 public
-mock/pages/styles.css
-mock/pages/libs
-mock/_pgbackup

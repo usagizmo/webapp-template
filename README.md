@@ -13,6 +13,7 @@ https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-je
 
 In addition,
 
+- [Lerna](https://github.com/lerna/lerna) (with Yarn)
 - [Pinegrow](https://pinegrow.com/)
 - [PostCSS](https://postcss.org/) x [Tailwind CSS](https://tailwindcss.com/)
 - [Zustand](https://github.com/pmndrs/zustand)
@@ -21,4 +22,20 @@ In addition,
 - [react-spring](https://www.react-spring.io/)
 - GitHub Actions (test + commit to format)
 
-I've created the `app` directory with the intention of combining it with another mechanism (such as Firebase).
+# Development
+
+```
+# Initialize
+yarn
+yarn build
+```
+
+# Lerna x Yarn Workspaces
+
+```
+# Install common npm package
+yarn add -W --D <package-name>
+
+# Install @nextjs-template/postcss to @nextjs-template/app in devDependencies
+npx lerna add -D @nextjs-template/postcss --scope=@nextjs-template/app
+```

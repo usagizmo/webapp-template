@@ -1,25 +1,13 @@
-# `app` (Next.js or mock html)
+# `@nextjs-template/mock` (Mock HTML)
 
-## How to use
-
-Install it and run:
+## Development
 
 ```bash
-yarn # install packages
-yarn dev
-```
+yarn dev #=> Run `browser-sync`, then watch `mock/pages` files and @nextjs-template/postcss/styles.css
 
-## Develop mock
-
-When coding a mock in Pinegrow x Tailwind CSS.
-
-```bash
-yarn mock:dev #=> Run `browser-sync`, then watch `mock/pages` files
-
-# Output mock/pages/styles.css
-yarn mock:build
-yarn mock:build:watch #=> Build and watch mock css files
-yarn mock:build:prod  #=> cssnano + purge
+# Output /pages/styles.css
+yarn build:dev
+yarn build  #=> cssnano + purge
 ```
 
 ### Pinegrow
@@ -35,7 +23,7 @@ yarn mock:build:prod  #=> cssnano + purge
 
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
 
-## Basic Authentication (`mock/pages/` or `out/`) on Vercel
+## Basic Authentication on Vercel
 
 ```bash
 # Add packages
@@ -64,7 +52,7 @@ const app = protect(
   (username, password) =>
     safeCompare(username, process.env.BASIC_USER) && safeCompare(password, process.env.BASIC_PASS),
   {
-    directory: __dirname + '/mock/pages',
+    directory: __dirname + '/pages',
     onAuthFailed: (res) => {
       res.end('Authentication failed')
     },
@@ -75,31 +63,11 @@ module.exports = app
 " > index.js
 ```
 
-### When you want to publish `mock/pages/`.
-
-Update the `build` command and add the `vercel-build` command to `package.json`.
+Add the `vercel-build` command to `package.json`.
 
 ```diff
-- "build": "next build",
-+ "build": "yarn mock:build:prod",
+"build": "cross-env NODE_ENV=production postcss ../postcss/styles.css -o pages/styles.css",
 + "vercel-build": "yarn build",
-```
-
-### When you want to publish `out/`.
-
-Update the `build` command and add the `vercel-build` command to `package.json`.
-
-```diff
-- "build": "next build",
-+ "build": "next build && next export",
-+ "vercel-build": "yarn build",
-```
-
-Then, fix the publishing directory in `index.js`.
-
-```diff
-- directory: __dirname + '/mock/pages',
-+ directory: __dirname + '/out',
 ```
 
 ### Deploy on Vercel
@@ -121,5 +89,5 @@ vercel dev
 # Deploy
 vercel
 # Or integrate with Vercel and GitHub
-# In that case, don't forget to set the `app` option to "Settings > General > Root Directory" on Vercel
+# In that case, don't forget to set the `packages/mock` option to "Settings > General > Root Directory" on Vercel
 ```
