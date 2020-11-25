@@ -29,14 +29,13 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: Cache node_modules
+      - name: Restore lerna
         uses: actions/cache@v2
         with:
           path: |
-            **/node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install packages
         run: yarn
@@ -49,4 +48,4 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
         with:
-          commit_message: Apply Prettier Change
+          commit_message: Apply formatting changes
