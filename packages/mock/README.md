@@ -6,8 +6,8 @@
 yarn dev #=> Run `browser-sync`, then watch `mock/pages` files and @nextjs-template/postcss/styles.css
 
 # Output /pages/styles.css
-yarn build
-yarn build:prod  #=> cssnano + purge
+yarn build:dev
+yarn build  #=> cssnano + purge
 ```
 
 ### Pinegrow
@@ -66,8 +66,8 @@ module.exports = app
 Add the `vercel-build` command to `package.json`.
 
 ```diff
-"build:prod": "yarn build:prod",
-+ "vercel-build": "yarn build:prod",
+"build": "cross-env NODE_ENV=production postcss ../postcss/styles.css -o pages/styles.css",
++ "vercel-build": "yarn build",
 ```
 
 ### Deploy on Vercel

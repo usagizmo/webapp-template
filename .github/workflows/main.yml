@@ -39,13 +39,13 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install packages
-        run: yarn --cwd packages/app
+        run: yarn
 
-      - name: Run test:all
-        run:  yarn --cwd packages/app test:all
+      - name: Run test
+        run: yarn test
 
-      - name: Run format:all
-        run: yarn --cwd packages/app format:all
+      - name: Run format
+        run: yarn format
 
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
         with:

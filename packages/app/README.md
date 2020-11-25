@@ -3,12 +3,7 @@
 ## Development
 
 ```bash
-yarn dev #=> Run `browser-sync`, then watch `mock/pages` files
-
-# Output mock/pages/styles.css
-yarn mock:build
-yarn mock:build:watch #=> Build and watch mock css files
-yarn mock:build:prod  #=> cssnano + purge
+yarn dev
 ```
 
 ## Basic Authentication (`out/`) on Vercel - Draft
