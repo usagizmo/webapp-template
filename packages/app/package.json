@@ -27,6 +27,7 @@
     "zustand": "^3.2.0"
   },
   "devDependencies": {
+    "@nextjs-template/graphql": "^0.0.0",
     "@nextjs-template/postcss": "^0.0.0",
     "@testing-library/react": "^11.1.0",
     "@types/jest": "^26.0.15",
