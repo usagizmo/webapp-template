@@ -1,5 +1,11 @@
 # `@nextjs-template/app` (Next.js)
 
+## src/plugins/graphql
+
+```
+yarn build:graphql #=> Copy type files from `@nextjs-template/graphql/generated` to `/src/plugins/graphql/generated`
+```
+
 ## Basic Authentication (`out/`) on Vercel - Draft
 
 ```bash
