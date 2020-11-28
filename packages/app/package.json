@@ -4,6 +4,7 @@
   "author": "usagizmo <usagizmo@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "postinstall": "cp -n .env.local.example .env.local",
     "clean": "rimraf .next",
     "dev": "concurrently \"next dev\" \"onchange '**/*.{js,ts,tsx,mdx}' -- prettier --write {{changed}}\"",
     "build:graphql": "cp -r ../graphql/generated src/plugins/graphql/",

@@ -4,6 +4,7 @@
   "author": "usagizmo <usagizmo@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "postinstall": "cp -n .env.example .env",
     "build": "graphql-codegen --config codegen.js",
     "format": "prettier --write \"**/*.{graphql,js}\""
   },
