@@ -1,0 +1,384 @@
+schema {
+  query: query_root
+  mutation: mutation_root
+  subscription: subscription_root
+}
+
+# columns and relationships of "articles"
+type articles {
+  content: String!
+  createdAt: timestamptz!
+  id: uuid!
+  title: String!
+  updatedAt: timestamptz!
+}
+
+# aggregated selection of "articles"
+type articles_aggregate {
+  aggregate: articles_aggregate_fields
+  nodes: [articles!]!
+}
+
+# aggregate fields of "articles"
+type articles_aggregate_fields {
+  count(columns: [articles_select_column!], distinct: Boolean): Int
+  max: articles_max_fields
+  min: articles_min_fields
+}
+
+# order by aggregate values of table "articles"
+input articles_aggregate_order_by {
+  count: order_by
+  max: articles_max_order_by
+  min: articles_min_order_by
+}
+
+# input type for inserting array relation for remote table "articles"
+input articles_arr_rel_insert_input {
+  data: [articles_insert_input!]!
+  on_conflict: articles_on_conflict
+}
+
+# Boolean expression to filter rows from the table "articles". All fields are combined with a logical 'AND'.
+input articles_bool_exp {
+  _and: [articles_bool_exp]
+  _not: articles_bool_exp
+  _or: [articles_bool_exp]
+  content: String_comparison_exp
+  createdAt: timestamptz_comparison_exp
+  id: uuid_comparison_exp
+  title: String_comparison_exp
+  updatedAt: timestamptz_comparison_exp
+}
+
+# unique or primary key constraints on table "articles"
+enum articles_constraint {
+  # unique or primary key constraint
+  articles_pkey
+}
+
+# input type for inserting data into table "articles"
+input articles_insert_input {
+  content: String
+  createdAt: timestamptz
+  id: uuid
+  title: String
+  updatedAt: timestamptz
+}
+
+# aggregate max on columns
+type articles_max_fields {
+  content: String
+  createdAt: timestamptz
+  id: uuid
+  title: String
+  updatedAt: timestamptz
+}
+
+# order by max() on columns of table "articles"
+input articles_max_order_by {
+  content: order_by
+  createdAt: order_by
+  id: order_by
+  title: order_by
+  updatedAt: order_by
+}
+
+# aggregate min on columns
+type articles_min_fields {
+  content: String
+  createdAt: timestamptz
+  id: uuid
+  title: String
+  updatedAt: timestamptz
+}
+
+# order by min() on columns of table "articles"
+input articles_min_order_by {
+  content: order_by
+  createdAt: order_by
+  id: order_by
+  title: order_by
+  updatedAt: order_by
+}
+
+# response of any mutation on the table "articles"
+type articles_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [articles!]!
+}
+
+# input type for inserting object relation for remote table "articles"
+input articles_obj_rel_insert_input {
+  data: articles_insert_input!
+  on_conflict: articles_on_conflict
+}
+
+# on conflict condition type for table "articles"
+input articles_on_conflict {
+  constraint: articles_constraint!
+  update_columns: [articles_update_column!]!
+  where: articles_bool_exp
+}
+
+# ordering options when selecting data from "articles"
+input articles_order_by {
+  content: order_by
+  createdAt: order_by
+  id: order_by
+  title: order_by
+  updatedAt: order_by
+}
+
+# primary key columns input for table: "articles"
+input articles_pk_columns_input {
+  id: uuid!
+}
+
+# select columns of table "articles"
+enum articles_select_column {
+  # column name
+  content
+
+  # column name
+  createdAt
+
+  # column name
+  id
+
+  # column name
+  title
+
+  # column name
+  updatedAt
+}
+
+# input type for updating data in table "articles"
+input articles_set_input {
+  content: String
+  createdAt: timestamptz
+  id: uuid
+  title: String
+  updatedAt: timestamptz
+}
+
+# update columns of table "articles"
+enum articles_update_column {
+  # column name
+  content
+
+  # column name
+  createdAt
+
+  # column name
+  id
+
+  # column name
+  title
+
+  # column name
+  updatedAt
+}
+
+# mutation root
+type mutation_root {
+  # delete data from the table: "articles"
+  delete_articles(
+    # filter the rows which have to be deleted
+    where: articles_bool_exp!
+  ): articles_mutation_response
+
+  # delete single row from the table: "articles"
+  delete_articles_by_pk(id: uuid!): articles
+
+  # insert data into the table: "articles"
+  insert_articles(
+    # the rows to be inserted
+    objects: [articles_insert_input!]!
+
+    # on conflict condition
+    on_conflict: articles_on_conflict
+  ): articles_mutation_response
+
+  # insert a single row into the table: "articles"
+  insert_articles_one(
+    # the row to be inserted
+    object: articles_insert_input!
+
+    # on conflict condition
+    on_conflict: articles_on_conflict
+  ): articles
+
+  # update data of the table: "articles"
+  update_articles(
+    # sets the columns of the filtered rows to the given values
+    _set: articles_set_input
+
+    # filter the rows which have to be updated
+    where: articles_bool_exp!
+  ): articles_mutation_response
+
+  # update single row of the table: "articles"
+  update_articles_by_pk(
+    # sets the columns of the filtered rows to the given values
+    _set: articles_set_input
+    pk_columns: articles_pk_columns_input!
+  ): articles
+}
+
+# column ordering options
+enum order_by {
+  # in the ascending order, nulls last
+  asc
+
+  # in the ascending order, nulls first
+  asc_nulls_first
+
+  # in the ascending order, nulls last
+  asc_nulls_last
+
+  # in the descending order, nulls first
+  desc
+
+  # in the descending order, nulls first
+  desc_nulls_first
+
+  # in the descending order, nulls last
+  desc_nulls_last
+}
+
+# query root
+type query_root {
+  # fetch data from the table: "articles"
+  articles(
+    # distinct select on columns
+    distinct_on: [articles_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [articles_order_by!]
+
+    # filter the rows returned
+    where: articles_bool_exp
+  ): [articles!]!
+
+  # fetch aggregated fields from the table: "articles"
+  articles_aggregate(
+    # distinct select on columns
+    distinct_on: [articles_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [articles_order_by!]
+
+    # filter the rows returned
+    where: articles_bool_exp
+  ): articles_aggregate!
+
+  # fetch data from the table: "articles" using primary key columns
+  articles_by_pk(id: uuid!): articles
+}
+
+# expression to compare columns of type String. All fields are combined with logical 'AND'.
+input String_comparison_exp {
+  _eq: String
+  _gt: String
+  _gte: String
+  _ilike: String
+  _in: [String!]
+  _is_null: Boolean
+  _like: String
+  _lt: String
+  _lte: String
+  _neq: String
+  _nilike: String
+  _nin: [String!]
+  _nlike: String
+  _nsimilar: String
+  _similar: String
+}
+
+# subscription root
+type subscription_root {
+  # fetch data from the table: "articles"
+  articles(
+    # distinct select on columns
+    distinct_on: [articles_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [articles_order_by!]
+
+    # filter the rows returned
+    where: articles_bool_exp
+  ): [articles!]!
+
+  # fetch aggregated fields from the table: "articles"
+  articles_aggregate(
+    # distinct select on columns
+    distinct_on: [articles_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [articles_order_by!]
+
+    # filter the rows returned
+    where: articles_bool_exp
+  ): articles_aggregate!
+
+  # fetch data from the table: "articles" using primary key columns
+  articles_by_pk(id: uuid!): articles
+}
+
+scalar timestamptz
+
+# expression to compare columns of type timestamptz. All fields are combined with logical 'AND'.
+input timestamptz_comparison_exp {
+  _eq: timestamptz
+  _gt: timestamptz
+  _gte: timestamptz
+  _in: [timestamptz!]
+  _is_null: Boolean
+  _lt: timestamptz
+  _lte: timestamptz
+  _neq: timestamptz
+  _nin: [timestamptz!]
+}
+
+scalar uuid
+
+# expression to compare columns of type uuid. All fields are combined with logical 'AND'.
+input uuid_comparison_exp {
+  _eq: uuid
+  _gt: uuid
+  _gte: uuid
+  _in: [uuid!]
+  _is_null: Boolean
+  _lt: uuid
+  _lte: uuid
+  _neq: uuid
+  _nin: [uuid!]
+}

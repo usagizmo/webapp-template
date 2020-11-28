@@ -3,5 +3,7 @@ query articles {
     id
     title
     content
+    createdAt
+    updatedAt
   }
 }
