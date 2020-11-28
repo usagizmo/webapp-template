@@ -3,8 +3,8 @@ import { MittProvider } from 'react-mitt'
 
 interface Props {}
 
-const Providers: FC<Props> = ({ children }) => {
+const FProviders: FC<Props> = ({ children }) => {
   return <MittProvider>{children}</MittProvider>
 }
 
-export default Providers
+export default FProviders
