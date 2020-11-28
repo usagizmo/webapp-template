@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
 import { concatPagination } from '@apollo/client/utilities'
 import merge from 'deepmerge'
+import fetch from 'cross-fetch';
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 
@@ -15,6 +16,7 @@ function createApolloClient() {
     link: new HttpLink({
       uri: process.env.NEXT_PUBLIC_GRAPHQL_URL,
       credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
+      fetch
     }),
     cache: new InMemoryCache({
       typePolicies: {
@@ -28,7 +30,7 @@ function createApolloClient() {
   })
 }
 
-export function initializeApollo(initialState = null) {
+export function initializeApollo(initialState = null): InstanceType<typeof ApolloClient> {
   const _apolloClient = apolloClient ?? createApolloClient()
 
   // If your page has Next.js data fetching methods that use Apollo Client, the initial state
@@ -51,7 +53,8 @@ export function initializeApollo(initialState = null) {
   return _apolloClient
 }
 
-export function addApolloState(client, pageProps) {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function addApolloState(client: InstanceType<typeof ApolloClient>, pageProps: any): any {
   if (pageProps?.props) {
     pageProps.props[APOLLO_STATE_PROP_NAME] = client.cache.extract()
   }
@@ -59,8 +62,9 @@ export function addApolloState(client, pageProps) {
   return pageProps
 }
 
-export function useApollo(pageProps) {
-  const state = pageProps[APOLLO_STATE_PROP_NAME]
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function useApollo(pageProps: any): InstanceType<typeof ApolloClient> {
+  const state = pageProps?.[APOLLO_STATE_PROP_NAME]
   const store = useMemo(() => initializeApollo(state), [state])
   return store
 }

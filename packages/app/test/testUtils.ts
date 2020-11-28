@@ -1,5 +1,5 @@
 import { render, RenderResult } from '@testing-library/react'
-import Providers from '../src/providers'
+import Providers from '../src/foundations/f-providers'
 
 const customRender = (ui: JSX.Element, options = {}): RenderResult =>
   render(ui, { wrapper: Providers, ...options })

@@ -2,3 +2,5 @@
 **/out/*
 **/.next/*
 **/*.mdx
+
+/src/plugins/graphql/generated
