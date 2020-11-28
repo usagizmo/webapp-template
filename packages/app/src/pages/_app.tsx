@@ -7,7 +7,7 @@ import FProviders from '../foundations/f-providers'
 
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   return (
-    <FProviders>
+    <FProviders pageProps={pageProps}>
       <FLayout router={router}>
         <Component {...pageProps} />
       </FLayout>

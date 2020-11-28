@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import { useWindowSize } from 'react-use'
+// import { useArticlesQuery } from '../plugins/graphql/generated/client'
 
 interface Props {
   text: string
@@ -9,9 +10,15 @@ const CSample: FC<Props> = ({ text }) => {
   const { width, height } = useWindowSize()
   const [windowSize, setWindowSize] = useState('')
 
+  // const articlesQuery = useArticlesQuery()
+
   useEffect(() => {
     setWindowSize(`{ width: ${width}, height: ${height} }`)
   }, [height, width])
+
+  // if (articlesQuery.loading || !articlesQuery.data) {
+  //   return <p>Loading...</p>
+  // }
 
   return (
     <div className="absolute inset-x-0 top-0 h-screen flex justify-center flex-col items-center text-3xl">

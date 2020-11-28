@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf .next",
     "dev": "concurrently \"next dev\" \"onchange '**/*.{js,ts,tsx,mdx}' -- prettier --write {{changed}}\"",
-    "build": "next build",
+    "build:graphql": "cp -r ../graphql/generated src/plugins/graphql/",
+    "build": "yarn clean && yarn build:graphql && next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext ts --ext tsx --ext js",
@@ -18,6 +19,7 @@
     "defaults"
   ],
   "dependencies": {
+    "@apollo/client": "^3.2.9",
     "next": "^10.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

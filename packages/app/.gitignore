@@ -23,3 +23,5 @@
 
 # vercel
 .vercel
+
+/src/plugins/graphql/generated

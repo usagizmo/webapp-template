@@ -1,11 +1,8 @@
 # `@nextjs-template/graphql`
 
-> TODO: description
-
 ## Usage
 
 ```
-const graphql = require('graphql');
-
-// TODO: DEMONSTRATE API
+cp .env.example .env
+yarn build #=> Output type files to /packages/app/src/plugins/graphql/generated/*
 ```

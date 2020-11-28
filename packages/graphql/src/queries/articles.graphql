@@ -1,0 +1,7 @@
+query articles {
+  articles {
+    id
+    title
+    content
+  }
+}
