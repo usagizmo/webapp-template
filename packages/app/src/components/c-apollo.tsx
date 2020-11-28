@@ -1,10 +1,14 @@
 import React, { FC } from 'react'
-import { useArticlesQuery } from '../plugins/graphql/generated/client'
+import {
+  useArticlesQuery,
+  useUpdateArticlesTitleMutation,
+} from '../plugins/graphql/generated/client'
 
 interface Props {}
 
 const CApollo: FC<Props> = () => {
   const articlesQuery = useArticlesQuery()
+  const [updateArticlesTitle] = useUpdateArticlesTitleMutation()
 
   if (articlesQuery.loading || !articlesQuery.data) {
     return <p className="px-4 py-2 text-xs whitespace-pre-wrap">Loading...</p>
@@ -13,9 +17,24 @@ const CApollo: FC<Props> = () => {
   const articles = articlesQuery.data.articles
 
   return (
-    <div className="px-4 py-2 text-xs whitespace-pre-wrap">
+    <div className="px-4 py-2 text-xs whitespace-pre-wrap relative">
       {articles.map((article) => (
-        <p key={article.id}>{JSON.stringify(article, null, 2)}</p>
+        <div key={article.id}>
+          <p>{JSON.stringify(article, null, 2)}</p>
+          <button
+            className="c-btn is-outline"
+            onClick={() =>
+              void updateArticlesTitle({
+                variables: {
+                  articleId: article.id,
+                  title: article.title + '!',
+                },
+              })
+            }
+          >
+            !
+          </button>
+        </div>
       ))}
     </div>
   )

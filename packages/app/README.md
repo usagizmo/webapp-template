@@ -3,6 +3,7 @@
 ## src/plugins/graphql
 
 ```
+# vi .env.local # Update
 yarn build:graphql #=> Copy type files from `@nextjs-template/graphql/generated` to `/src/plugins/graphql/generated`
 ```
 
