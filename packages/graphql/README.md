@@ -4,7 +4,7 @@
 
 ```
 # vi .env # Update
-yarn build #=> Output type files to `/generated/*`
+yarn build #=> Output files to `/generated/*` and `/dist/*`
 ```
 
 ## Schema

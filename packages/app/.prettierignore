@@ -1,8 +1,4 @@
-node_modules
-out
-.next
-yarn.lock
-package-lock.json
-public
-
-/src/plugins/graphql/generated
+/node_modules
+/out
+/.next
+/public

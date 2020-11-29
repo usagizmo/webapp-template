@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
 import { concatPagination } from '@apollo/client/utilities'
 import merge from 'deepmerge'
-import fetch from 'cross-fetch';
+import fetch from 'cross-fetch'
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 
@@ -16,7 +16,7 @@ function createApolloClient() {
     link: new HttpLink({
       uri: process.env.NEXT_PUBLIC_GRAPHQL_URL,
       credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
-      fetch
+      fetch,
     }),
     cache: new InMemoryCache({
       typePolicies: {

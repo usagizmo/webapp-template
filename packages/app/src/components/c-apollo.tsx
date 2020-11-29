@@ -1,8 +1,5 @@
 import React, { FC } from 'react'
-import {
-  useArticlesQuery,
-  useUpdateArticlesTitleMutation,
-} from '../plugins/graphql/generated/client'
+import { useArticlesQuery, useUpdateArticlesTitleMutation } from '@nextjs-template/graphql'
 
 interface Props {}
 

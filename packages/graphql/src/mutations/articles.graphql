@@ -1,5 +1,5 @@
 mutation updateArticlesTitle($articleId: uuid, $title: String) {
-  update_articles(where: {id: {_eq: $articleId}}, _set: {title: $title}) {
+  update_articles(where: { id: { _eq: $articleId } }, _set: { title: $title }) {
     returning {
       id
       title

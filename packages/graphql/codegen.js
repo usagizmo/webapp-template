@@ -7,7 +7,7 @@ module.exports = {
   schema: process.env.SCHEMA_PATH,
   documents: ['src/mutations/*.graphql', 'src/queries/*.graphql'],
   generates: {
-    'generated/client.tsx': {
+    'generated/client.ts': {
       plugins: ['typescript', 'typescript-operations', 'typescript-react-apollo'],
     },
     // NOTE: At this stage, it is only to be requested by the client to Hasura

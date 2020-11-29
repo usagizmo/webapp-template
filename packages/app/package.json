@@ -4,11 +4,9 @@
   "author": "usagizmo <usagizmo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "postinstall": "cp -n .env.local.example .env.local",
     "clean": "rimraf .next",
     "dev": "concurrently \"next dev\" \"onchange '**/*.{js,ts,tsx,mdx}' -- prettier --write {{changed}}\"",
-    "build:graphql": "cp -r ../graphql/generated src/plugins/graphql/",
-    "build": "yarn clean && yarn build:graphql && next build",
+    "build": "yarn clean && next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext ts --ext tsx --ext js",
