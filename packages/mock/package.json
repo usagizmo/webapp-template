@@ -1,21 +1,21 @@
 {
-   "name": "@nextjs-template/mock",
-   "version": "0.0.0",
-   "author": "usagizmo <usagizmo@gmail.com>",
-   "license": "MIT",
-   "scripts": {
-      "format": "prettier --write \"**/*.{js,html}\"",
-      "build": "cross-env NODE_ENV=production postcss ../postcss/styles.css -o pages/styles.css",
-      "build:dev": "postcss ../postcss/styles.css -o pages/styles.css",
-      "watch:format": "onchange '**/*.{js,html}' -- prettier --write {{changed}}",
-      "watch:build": "postcss ../postcss/styles.css -o pages/styles.css -w",
-      "dev": "concurrently \"browser-sync 'pages' -w\" \"yarn watch:format\" \"yarn watch:build:dev\""
-   },
-   "browserslist": [
-      "defaults"
-   ],
-   "devDependencies": {
-      "@nextjs-template/postcss": "^0.0.0",
-      "browser-sync": "^2.26.13"
-   }
+  "name": "@nextjs-template/mock",
+  "version": "0.0.0",
+  "author": "usagizmo <usagizmo@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,html}\"",
+    "build": "cross-env NODE_ENV=production postcss ../postcss/styles.css -o pages/styles.css",
+    "build:dev": "postcss ../postcss/styles.css -o pages/styles.css",
+    "watch:format": "onchange '**/*.{js,html}' -- prettier --write {{changed}}",
+    "watch:build": "postcss ../postcss/styles.css -o pages/styles.css -w",
+    "dev": "concurrently \"browser-sync 'pages' -w\" \"yarn watch:format\" \"yarn watch:build:dev\""
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@nextjs-template/postcss": "^0.0.0",
+    "browser-sync": "^2.26.13"
+  }
 }
