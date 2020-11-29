@@ -4,7 +4,7 @@ require('dotenv').config()
 
 module.exports = {
   overwrite: true,
-  schema: process.env.SCHEMA_PATH,
+  schema: process.env.SCHEMA_PATH || 'src/schema.graphql',
   documents: ['src/mutations/*.graphql', 'src/queries/*.graphql'],
   generates: {
     'generated/client.ts': {
