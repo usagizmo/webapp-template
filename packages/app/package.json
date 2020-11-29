@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf .next",
     "dev": "concurrently \"next dev\" \"onchange '**/*.{js,ts,tsx,mdx}' -- prettier --write {{changed}}\"",
-    "build": "yarn clean && next build",
+    "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext ts --ext tsx --ext js",
