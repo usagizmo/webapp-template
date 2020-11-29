@@ -1,26 +1,35 @@
 # Next.js Template
 
-From: NextJS TypeScript Boilerplate  
-https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest
-
-> Bootstrap a developer-friendly NextJS app configured with:
->
-> - [Typescript](https://www.typescriptlang.org/)
-> - Linting with [ESLint](https://eslint.org/)
-> - Formatting with [Prettier](https://prettier.io/)
-> - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
-> - Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
-
-In addition,
-
 - [Lerna](https://github.com/lerna/lerna) (with Yarn)
-- [Pinegrow](https://pinegrow.com/)
-- [PostCSS](https://postcss.org/) x [Tailwind CSS](https://tailwindcss.com/)
+- GitHub Actions (test + commit to format)
+
+## `@nextjs-template/app`
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
 - [Zustand](https://github.com/pmndrs/zustand)
 - [react-mitt](https://www.npmjs.com/package/react-mitt)
 - [react-use](https://github.com/streamich/react-use)
 - [react-spring](https://www.react-spring.io/)
-- GitHub Actions (test + commit to format)
+- `@nextjs-template/postcss`
+- `@nextjs-template/graphql`
+
+## `@nextjs-template/mock`
+
+- [Pinegrow](https://pinegrow.com/)
+- [Alpine.js](https://github.com/alpinejs/alpine)
+- `@nextjs-template/postcss`
+
+## `@nextjs-template/postcss`
+
+- [PostCSS](https://postcss.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## `@nextjs-template/graphql`
+
+- [GraphQL Code Generator](https://graphql-code-generator.com/)
 
 # Development
 
@@ -45,6 +54,10 @@ yarn build  #=> Output /pages/styles.css (cssnano + purge)
 # postcss
 cd packages/postcss
 yarn dev  #=> watch for formatting
+
+# graphql
+cd packages/graphql
+yarn build  #=> Output files to `/generated/*` and `/dist/*`
 ```
 
 # Lerna x Yarn Workspaces
@@ -56,3 +69,7 @@ yarn add -W --D <package-name>
 # Install @nextjs-template/postcss to @nextjs-template/app in devDependencies
 npx lerna add -D @nextjs-template/postcss --scope=@nextjs-template/app
 ```
+
+# References
+
+- [NextJS TypeScript Boilerplate](https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest)
