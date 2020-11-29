@@ -2,16 +2,16 @@ import React from 'react'
 import { AppProps } from 'next/app'
 
 import '../../../postcss/styles.css'
-import Layout from '../layout'
-import Providers from '../providers'
+import FLayout from '../foundations/f-layout'
+import FProviders from '../foundations/f-providers'
 
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   return (
-    <Providers>
-      <Layout router={router}>
+    <FProviders pageProps={pageProps}>
+      <FLayout router={router}>
         <Component {...pageProps} />
-      </Layout>
-    </Providers>
+      </FLayout>
+    </FProviders>
   )
 }
 

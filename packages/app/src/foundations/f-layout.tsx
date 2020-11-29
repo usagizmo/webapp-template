@@ -4,8 +4,8 @@ import { Router } from 'next/router'
 
 // import PGtag from '../plugins/p-gtag'
 // import useAnimationFrameEmitter from './plugins/animation-frame/use-animation-frame-emitter'
-import useBodyProvider from './plugins/use-body-provider'
-import useMouseOnWindowEmitter from './plugins/mouse-on-window/use-mouse-on-window-emitter'
+import useBodyProvider from '../plugins/use-body-provider'
+import useMouseOnWindowEmitter from '../plugins/mouse-on-window/use-mouse-on-window-emitter'
 // import useScrollRestorationManual from './plugins/use-scroll-restoration-manual'
 // import useTypekit from '../plugins/typekit/use-typekit'
 
@@ -13,7 +13,7 @@ interface Props {
   router: Router
 }
 
-const Layout: FC<Props> = ({ children }) => {
+const FLayout: FC<Props> = ({ children }) => {
   // useAnimationFrameEmitter()
   useBodyProvider()
   useMouseOnWindowEmitter()
@@ -35,4 +35,4 @@ const Layout: FC<Props> = ({ children }) => {
   )
 }
 
-export default Layout
+export default FLayout

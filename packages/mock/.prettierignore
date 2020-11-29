@@ -1,4 +1,4 @@
-node_modules
-pages/styles.css
-pages/libs
-_pgbackup
+/node_modules
+/pages/styles.css
+/pages/libs
+/_pgbackup

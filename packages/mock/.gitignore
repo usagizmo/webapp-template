@@ -5,9 +5,9 @@
 .vercel
 
 # mock
-.cache
-_pgbackup
-_pginfo
-pinegrow.json
-projectdb.pgml
-pages/styles.css
+/.cache
+/_pgbackup
+/_pginfo
+/pinegrow.json
+/projectdb.pgml
+/pages/styles.css

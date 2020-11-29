@@ -25,6 +25,10 @@ In addition,
 # Development
 
 ```
+# setup .env
+cp packages/app/.env.local.example packages/app/.env.local
+cp packages/graphql/.env.example packages/graphql/.env
+
 # Initialize
 yarn
 yarn build

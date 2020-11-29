@@ -8,9 +8,10 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "build": "lerna run build --scope \"@nextjs-template/{app,mock}\"",
-    "test": "lerna run test --scope \"@nextjs-template/app\"",
-    "format": "lerna run format --scope \"@nextjs-template/{app,mock,postcss}\""
+    "clean": "lerna run clean && lerna clean --yes",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "format": "lerna run format"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

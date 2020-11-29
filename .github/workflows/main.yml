@@ -40,6 +40,9 @@ jobs:
       - name: Install packages
         run: yarn
 
+      - name: Run build
+        run: yarn build
+
       - name: Run test
         run: yarn test
 
