@@ -8,7 +8,7 @@
     "build": "cross-env NODE_ENV=production postcss ../postcss/styles.css -o pages/styles.css",
     "build:dev": "postcss ../postcss/styles.css -o pages/styles.css",
     "watch:format": "onchange '**/*.{js,html}' -- prettier --write {{changed}}",
-    "watch:build": "postcss ../postcss/styles.css -o pages/styles.css -w",
+    "watch:build:dev": "onchange '../postcss/styles.css' '../postcss/tailwind.config.js' -- yarn build:dev",
     "dev": "concurrently \"browser-sync 'pages' -w\" \"yarn watch:format\" \"yarn watch:build:dev\""
   },
   "browserslist": [
