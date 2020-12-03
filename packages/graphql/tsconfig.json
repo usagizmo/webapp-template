@@ -8,7 +8,5 @@
     "skipLibCheck": true,
     "declaration": true
   },
-  "include": [
-    "generated/**/*.ts"
-  ]
+  "include": ["generated/**/*.ts"]
 }

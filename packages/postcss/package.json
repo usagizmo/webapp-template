@@ -4,10 +4,6 @@
   "author": "usagizmo <usagizmo@gmail.com>",
   "license": "MIT",
   "main": "index.js",
-  "scripts": {
-    "format": "prettier --write \"**/*.{css,js}\"",
-    "dev": "onchange '**/*.{css,js}' -- prettier --write {{changed}}"
-  },
   "browserslist": [
     "defaults"
   ],
