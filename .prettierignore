@@ -1,21 +1,15 @@
-/.prettierignore
-
 # `@nextjs-template/app`
-/packages/app/node_modules
 /packages/app/out
 /packages/app/.next
 /packages/app/public
 
 # `@nextjs-template/graphql`
-/packages/graphql/node_modules
 /packages/graphql/dist
 /packages/graphql/generated
 
 # `@nextjs-template/mock`
-/packages/mock/node_modules
 /packages/mock/pages/styles.css
 /packages/mock/pages/libs
 /packages/mock/_pgbackup
 
 # `@nextjs-template/postcss`
-/packages/postcss/node_modules

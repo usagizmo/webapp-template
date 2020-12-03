@@ -18,16 +18,13 @@
     "cross-env": "^7.0.2",
     "husky": ">=4",
     "lerna": "^3.22.1",
-    "lint-staged": ">=10",
     "onchange": "^7.1.0",
-    "prettier": "^2.2.0"
+    "prettier": "^2.2.0",
+    "pretty-quick": "^3.1.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged"
     }
-  },
-  "lint-staged": {
-    "*": "prettier --write"
   }
 }
