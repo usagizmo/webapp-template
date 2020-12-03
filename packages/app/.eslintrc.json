@@ -1,9 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "react-hooks"
-  ],
+  "plugins": ["@typescript-eslint", "react-hooks"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -42,15 +39,13 @@
     "no-console": [
       2,
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": [
-      "warn", {
+      "warn",
+      {
         "additionalHooks": "useRecoilCallback"
       }
     ],

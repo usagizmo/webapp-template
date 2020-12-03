@@ -5,14 +5,12 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf .next",
-    "dev": "concurrently \"next dev\" \"onchange '**/*.{js,ts,tsx,mdx}' -- prettier --write {{changed}}\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext ts --ext tsx --ext js",
-    "lint:fix": "eslint . --ext ts --ext tsx --ext js --fix",
-    "test": "yarn lint && yarn type-check && jest",
-    "format": "prettier --write \"**/*.{js,ts,tsx,mdx}\""
+    "test": "yarn lint && yarn type-check && jest"
   },
   "browserslist": [
     "defaults"
