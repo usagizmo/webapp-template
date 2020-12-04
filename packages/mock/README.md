@@ -13,6 +13,8 @@
 
 1. Open [Settings & Tools.] > [Customize visual controls...] > Select `pages/styles.css`
 
+※Every time you change the style in `@nextjs-template/postcss`, you need to customize visual controls on Pinegrow.
+
 For details, check [here](https://pinegrow.com/docs/tailwind/customized-themes/).
 
 ## Basic Authentication on Vercel

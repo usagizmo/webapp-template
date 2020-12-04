@@ -54,7 +54,7 @@ yarn build  #=> Output /pages/styles.css (cssnano + purge)
 
 # postcss
 cd packages/postcss
-yarn dev  #=> watch for formatting
+yarn dev
 
 # graphql
 cd packages/graphql
