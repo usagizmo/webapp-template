@@ -1,5 +1,7 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
+import LHeader from '../layouts/l-header'
+import LFooter from '../layouts/l-footer'
 import CCursor from '../components/c-cursor'
 import CSample from '../components/c-sample'
 // import CApollo from '../components/c-apollo'
@@ -24,9 +26,18 @@ const IndexPage: NextPage<Props> = ({ userAgent }) => {
         <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
       </Head>
       <main>
-        <CSample text="Next.js Template" />
-        <p className="px-4 py-2 text-xs">Your user agent: {userAgent}</p>
-        {/* <CApollo /> */}
+        <div className="flex flex-col h-screen">
+          <div>
+            <LHeader text="Next.js Template" />
+          </div>
+          <div className="flex-1">
+            <CSample />
+            {/* <CApollo /> */}
+          </div>
+          <div>
+            <LFooter text={`Your user agent: ${userAgent}`} />
+          </div>
+        </div>
       </main>
       <CCursor />
     </>
