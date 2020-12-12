@@ -17,6 +17,10 @@ https://tailwindcss.com/docs/extracting-components
     }
   }
 
+  body {
+    overflow-x: hidden;
+  }
+
   input::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
     /* Edge */

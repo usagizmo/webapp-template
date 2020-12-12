@@ -1,13 +1,15 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { ROUTE } from '../constants/route'
-// import CApollo from '../components/c-apollo'
-// import CCustomSWR from '../components/c-custom-swr'
+import LHeader from '../../layouts/l-header'
+import LFooter from '../../layouts/l-footer'
+import CCursor from '../../components/c-cursor'
+import { ROUTE } from '../../constants/route'
+// import CApollo from '../../components/c-apollo'
 
 interface Props {}
 
-const IndexPage: NextPage<Props> = () => {
+const DetailPage: NextPage<Props> = () => {
   return (
     <>
       <Head>
@@ -23,16 +25,20 @@ const IndexPage: NextPage<Props> = () => {
         <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
       </Head>
       <main>
-        <div className="h-full flex justify-center flex-col items-center">
-          <aside className="py-2 px-4 rounded-lg border text-xs border-gray-500 whitespace-pre-wrap">
-            <Link href={{ pathname: ROUTE.DETAIL_ID, query: { id: 1 } }}>Detail</Link>
-          </aside>
+        <div className="flex flex-col h-screen">
+          <div>
+            <LHeader text="Next.js Template" />
+            <Link href={ROUTE.HOME}>HOME</Link>
+          </div>
+          <div className="flex-1">{/* <CApollo /> */}</div>
+          <div>
+            <LFooter />
+          </div>
         </div>
-        {/* <CApollo /> */}
-        {/* <CCustomSWR /> */}
       </main>
+      <CCursor />
     </>
   )
 }
 
-export default IndexPage
+export default DetailPage
