@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react'
 import { useSpring, animated } from 'react-spring'
+import classnames from 'classnames'
 import {
   useMouseDown,
   useMouseMove,
@@ -7,35 +8,36 @@ import {
 } from '../plugins/mouse-on-window/use-mouse-on-window'
 import useStore from '../store'
 
-const trans = (x: number, y: number) => `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`
-
-const initialStyle = 'bg-green-300 scale-50'
-
 interface Props {}
 
 const CCursor: FC<Props> = () => {
   const initialMouse = useStore((state) => state.mutation.mouse)
-  const [props, set] = useSpring(() => ({ xy: [initialMouse.x, initialMouse.y], opacity: 1 }))
-  const [style, setStyle] = useState(initialStyle)
+  const [{ x, y }, set] = useSpring(() => ({ x: initialMouse.x, y: initialMouse.y }))
+  const [isDown, setIsDown] = useState(false)
 
   useMouseDown(() => {
-    setStyle('bg-pink-300 scale-150')
+    setIsDown(true)
   })
 
   useMouseMove(({ x, y }) => {
-    set({ xy: [x, y] })
+    set({ x, y })
   })
 
   useMouseUp(() => {
-    setStyle(initialStyle)
+    setIsDown(false)
   })
 
   return (
-    <animated.div
-      style={{ transform: props.xy.interpolate(trans as any), opacity: props.opacity }}
-      className="absolute top-0 left-0 pointer-events-none"
-    >
-      <div className={`w-8 h-8 rounded-full opacity-50 duration-100 transform ${style}`} />
+    <animated.div style={{ x, y }} className="absolute top-0 left-0 pointer-events-none">
+      <div
+        className={classnames(
+          '-ml-4 -mt-4 w-8 h-8 rounded-full opacity-50 duration-100 transform',
+          {
+            'bg-pink-300 scale-150': isDown,
+            'bg-green-300 scale-50': !isDown,
+          }
+        )}
+      />
     </animated.div>
   )
 }
