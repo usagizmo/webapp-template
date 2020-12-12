@@ -8,6 +8,7 @@ import useBodyProvider from '../plugins/use-body-provider'
 import useMouseOnWindowEmitter from '../plugins/mouse-on-window/use-mouse-on-window-emitter'
 // import useScrollRestorationManual from './plugins/use-scroll-restoration-manual'
 // import useTypekit from '../plugins/typekit/use-typekit'
+import useHScreenFixed from '../plugins/use-h-screen-fixed'
 
 interface Props {
   router: Router
@@ -19,6 +20,7 @@ const FLayout: FC<Props> = ({ children }) => {
   useMouseOnWindowEmitter()
   // useScrollRestorationManual()
   // useTypekit('abcdefg')
+  useHScreenFixed()
 
   return (
     <>

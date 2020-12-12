@@ -380,6 +380,7 @@ module.exports = {
       },
       height: {
         // '#': '#rem',
+        'screen-fixed': 'calc(var(--vh, 1vh) * 100)',
       },
       minHeight: {
         // '#': '#rem',
