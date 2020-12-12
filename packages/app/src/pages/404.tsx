@@ -10,7 +10,7 @@ const _404Page: NextPage<Props> = () => {
         <title>404 Not Found - Next.js Template</title>
         <meta name="robots" content="noindex" />
       </Head>
-      <main className="flex items-center justify-center h-screen">
+      <main className="flex items-center justify-center h-full">
         <h1 className="flex items-center h-16 pr-6 mr-6 border-r border-gray-500 text-2xl font-medium">
           404
         </h1>

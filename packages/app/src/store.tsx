@@ -1,4 +1,5 @@
 import create from 'zustand'
+// import { Post } from './types'
 
 export type Mouse = {
   x: number
@@ -17,16 +18,30 @@ export const getInitialMouse = (): Mouse => ({
 })
 
 type State = {
+  isMenuOpen: boolean
+  wpData: {
+    postsPerPage: number
+    // posts: Post[]
+    // postById: { [id: string]: Post }
+  }
   mutation: {
     mouse: Mouse
   }
   actions: {
     updateMouse: (mouse: Mouse) => void
+    updatePostsPerPage: (count: number) => void
+    toggleIsMenuOpen: (open?: boolean) => void
   }
 }
 
-const useStore = create<State>((_set, get) => {
+const useStore = create<State>((set, get) => {
   return {
+    isMenuOpen: false,
+    wpData: {
+      postsPerPage: 0,
+      // posts: [],
+      // postById: {},
+    },
     mutation: {
       mouse: getInitialMouse(),
     },
@@ -43,6 +58,29 @@ const useStore = create<State>((_set, get) => {
         ref.drag.y = mouse.drag.y
         ref.delta.x = mouse.delta.x
         ref.delta.y = mouse.delta.y
+      },
+      updatePostsPerPage(count: number) {
+        set({
+          wpData: { ...get().wpData, postsPerPage: count },
+        })
+      },
+      // updateWpData(wpData: any) {
+      //   const posts: Post[] = wpData.posts.nodes
+      //   const postById = posts.reduce((acc, post) => {
+      //     acc[post.id] = post
+      //     return acc
+      //   }, {})
+
+      //   set({
+      //     wpData: {
+      //       ...get().wpData,
+      //       posts,
+      //       postById,
+      //     },
+      //   })
+      // },
+      toggleIsMenuOpen(open) {
+        set({ isMenuOpen: open === undefined ? !get().isMenuOpen : open })
       },
     },
   }

@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { MittProvider } from 'react-mitt'
 import { ApolloProvider } from '@apollo/client'
-import { useApollo } from '../plugins/graphql/p-apollo-client'
+import { useApollo } from '../plugins/p-apollo-client'
 
 interface Props {
   pageProps: any

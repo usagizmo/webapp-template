@@ -2,13 +2,18 @@ import React, { FC } from 'react'
 import Head from 'next/head'
 import { Router } from 'next/router'
 
-// import PGtag from '../plugins/p-gtag'
-// import useAnimationFrameEmitter from './plugins/animation-frame/use-animation-frame-emitter'
+import useHScreenFixed from '../plugins/use-h-screen-fixed'
 import useBodyProvider from '../plugins/use-body-provider'
 import useMouseOnWindowEmitter from '../plugins/mouse-on-window/use-mouse-on-window-emitter'
+import LHeader from '../layouts/l-header'
+import LFooter from '../layouts/l-footer'
+import CCursor from '../components/c-cursor'
+// import PGtag from '../plugins/p-gtag'
+// import useAnimationFrameEmitter from './plugins/animation-frame/use-animation-frame-emitter'
 // import useScrollRestorationManual from './plugins/use-scroll-restoration-manual'
 // import useTypekit from '../plugins/typekit/use-typekit'
-import useHScreenFixed from '../plugins/use-h-screen-fixed'
+// import { useSWRSettings } from '../hooks/use-custom-swr'
+// import useStore from '../store'
 
 interface Props {
   router: Router
@@ -16,11 +21,21 @@ interface Props {
 
 const FLayout: FC<Props> = ({ children }) => {
   // useAnimationFrameEmitter()
-  useBodyProvider()
-  useMouseOnWindowEmitter()
   // useScrollRestorationManual()
   // useTypekit('abcdefg')
+  useBodyProvider()
+  useMouseOnWindowEmitter()
   useHScreenFixed()
+
+  // const updatePostsPerPage = useStore((state) => state.actions.updatePostsPerPage)
+  // const { data: settings } = useSWRSettings()
+
+  // useEffect(() => {
+  //   if (!settings) {
+  //     return
+  //   }
+  //   updatePostsPerPage(settings.readingSettings.postsPerPage)
+  // }, [settings, updatePostsPerPage])
 
   return (
     <>
@@ -32,7 +47,16 @@ const FLayout: FC<Props> = ({ children }) => {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         {/*<PGtag uid="UA-12345678-9" />*/}
       </Head>
-      {children}
+      <div className="flex flex-col">
+        <div>
+          <LHeader text="Next.js Template" />
+        </div>
+        <div className="flex-1">{children}</div>
+        <div>
+          <LFooter />
+        </div>
+      </div>
+      <CCursor />
     </>
   )
 }
