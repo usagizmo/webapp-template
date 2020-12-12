@@ -47,7 +47,7 @@ const FLayout: FC<Props> = ({ children }) => {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         {/*<PGtag uid="UA-12345678-9" />*/}
       </Head>
-      <div className="flex flex-col">
+      <div className="flex flex-col h-screen-fixed">
         <div>
           <LHeader text="Next.js Template" />
         </div>

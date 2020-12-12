@@ -1,15 +1,14 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
-import LHeader from '../../layouts/l-header'
-import LFooter from '../../layouts/l-footer'
-import CCursor from '../../components/c-cursor'
-import { ROUTE } from '../../constants/route'
-// import CApollo from '../../components/c-apollo'
+import { useRouter } from 'next/router'
+import CNavigation from '../../components/c-navigation'
 
 interface Props {}
 
 const DetailPage: NextPage<Props> = () => {
+  const router = useRouter()
+  const { id } = router.query
+
   return (
     <>
       <Head>
@@ -24,19 +23,12 @@ const DetailPage: NextPage<Props> = () => {
         <meta name="twitter:description" content="Next.js Template Description" />
         <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
       </Head>
-      <main>
-        <div className="flex flex-col h-screen">
-          <div>
-            <LHeader text="Next.js Template" />
-            <Link href={ROUTE.HOME}>HOME</Link>
-          </div>
-          <div className="flex-1">{/* <CApollo /> */}</div>
-          <div>
-            <LFooter />
-          </div>
-        </div>
+      <main className="h-full flex flex-col items-center">
+        <CNavigation />
+        <p className="mt-20 text-xl">
+          <code>{`detail/[id].tsx - query: { id: ${id} }`}</code>
+        </p>
       </main>
-      <CCursor />
     </>
   )
 }
