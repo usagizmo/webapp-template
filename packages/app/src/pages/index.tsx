@@ -5,8 +5,7 @@ import { ROUTE } from '../constants/route'
 // import CApollo from '../components/c-apollo'
 // import CCustomSWR from '../components/c-custom-swr'
 
-interface Props {
-}
+interface Props {}
 
 const IndexPage: NextPage<Props> = () => {
   return (

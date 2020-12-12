@@ -7,8 +7,7 @@ import CCursor from '../../components/c-cursor'
 import { ROUTE } from '../../constants/route'
 // import CApollo from '../../components/c-apollo'
 
-interface Props {
-}
+interface Props {}
 
 const DetailPage: NextPage<Props> = () => {
   return (
