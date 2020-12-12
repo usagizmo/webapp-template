@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home page matches snapshot 1`] = `
+exports[`DetailId page matches snapshot 1`] = `
 <DocumentFragment>
   <main
     class="h-full flex flex-col items-center"
@@ -9,7 +9,7 @@ exports[`Home page matches snapshot 1`] = `
       class="flex"
     >
       <li
-        class="px-4 text-gray-900"
+        class="px-4 text-gray-500 hover:text-gray-900"
       >
         <a
           href="/"
@@ -18,7 +18,7 @@ exports[`Home page matches snapshot 1`] = `
         </a>
       </li>
       <li
-        class="px-4 text-gray-500 hover:text-gray-900"
+        class="px-4 text-gray-900"
       >
         <a
           href="/detail/1"
@@ -39,7 +39,9 @@ exports[`Home page matches snapshot 1`] = `
     <p
       class="mt-20 text-xl"
     >
-      HOME
+      <code>
+        detail/[id].tsx - query: { id: 1 }
+      </code>
     </p>
   </main>
 </DocumentFragment>

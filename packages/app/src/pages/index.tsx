@@ -1,7 +1,6 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
-import { ROUTE } from '../constants/route'
+import CNavigation from '../components/c-navigation'
 // import CApollo from '../components/c-apollo'
 // import CCustomSWR from '../components/c-custom-swr'
 
@@ -22,12 +21,9 @@ const IndexPage: NextPage<Props> = () => {
         <meta name="twitter:description" content="Next.js Template Description" />
         <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
       </Head>
-      <main>
-        <div className="h-full flex justify-center flex-col items-center">
-          <aside className="py-2 px-4 rounded-lg border text-xs border-gray-500 whitespace-pre-wrap">
-            <Link href={{ pathname: ROUTE.DETAIL_ID, query: { id: 1 } }}>Detail</Link>
-          </aside>
-        </div>
+      <main className="h-full flex flex-col items-center">
+        <CNavigation />
+        <p className="mt-20 text-xl">HOME</p>
         {/* <CApollo /> */}
         {/* <CCustomSWR /> */}
       </main>

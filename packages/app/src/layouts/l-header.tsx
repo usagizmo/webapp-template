@@ -8,7 +8,7 @@ interface Props {
 
 const LHeader: FC<Props> = ({ text }) => {
   return (
-    <div className="px-4 py-2 text-3xl">
+    <div className="px-4 py-2 text-3xl text-center">
       <Link href={ROUTE.HOME}>{text}</Link>
     </div>
   )

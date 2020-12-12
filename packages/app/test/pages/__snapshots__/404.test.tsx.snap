@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page404 page matches snapshot 1`] = `
+<DocumentFragment>
+  <main
+    class="flex items-center justify-center h-full"
+  >
+    <h1
+      class="flex items-center h-16 pr-6 mr-6 border-r border-gray-500 text-2xl font-medium"
+    >
+      404
+    </h1>
+    <p
+      class="text-sm"
+    >
+      This page could not be found.
+    </p>
+  </main>
+</DocumentFragment>
+`;
