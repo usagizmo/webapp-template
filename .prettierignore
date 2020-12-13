@@ -10,6 +10,12 @@
 # `@nextjs-template/mock`
 /packages/mock/pages/styles.css
 /packages/mock/pages/libs
+/packages/mock/.vercel
+/packages/mock/.cache
 /packages/mock/_pgbackup
+/packages/mock/_pginfo
+/packages/mock/pinegrow.json
+/packages/mock/projectdb.pgml
+/packages/mock/pages/styles.css
 
 # `@nextjs-template/postcss`
