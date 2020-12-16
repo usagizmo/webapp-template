@@ -10,6 +10,7 @@ https://tailwindcss.com/docs/extracting-components
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
   @media screen and (prefers-reduced-motion: reduce) {
     html {

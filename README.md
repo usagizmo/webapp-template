@@ -52,10 +52,6 @@ cd packages/mock
 yarn dev
 yarn build  #=> Output /pages/styles.css (cssnano + purge)
 
-# postcss
-cd packages/postcss
-yarn dev
-
 # graphql
 cd packages/graphql
 yarn build  #=> Output files to `/generated/*` and `/dist/*`
