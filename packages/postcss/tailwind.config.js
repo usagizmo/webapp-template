@@ -47,6 +47,14 @@ module.exports = {
     //   // https://tailwindcss.com/docs/background-image
     //   'image-name': "url('/images/image-name.png')",
     // },
+    // divideColor: {
+    //   // https://tailwindcss.com/docs/divide-color
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   primary: '#3490dc',
+    //   secondary: '#ffed4a',
+    //   danger: '#e3342f',
+    // },
     // colors: {
     //   // https://tailwindcss.com/docs/customizing-colors
     //   // Either give each property a meaningful name or specify a generic color
@@ -90,6 +98,12 @@ module.exports = {
           'Inter var, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, YuGothic, "Yu Gothic Medium", "Yu Gothic", Meiryo, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
         // sans:
         //   'Inter var, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      },
+      lineHeight: {
+        // https://tailwindcss.com/docs/line-height
+      },
+      letterSpacing: {
+        // https://tailwindcss.com/docs/letter-spacing
       },
       inset: {
         // Do not add more, use margins (or negative margins) instead
