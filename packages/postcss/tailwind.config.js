@@ -99,10 +99,11 @@ module.exports = {
       spacing: {
         // https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
         em: '1em',
-        '1.5em': '1.5em',
-        // Spacing should basically be specified with `Default spacing scale`
-        // Then specify it as a fraction (percentage)
-        // If it is absolutely necessary, use the following specification
+        // '1.5em': '1.5em',
+        // Spacing should basically be specified with `Default spacing scale`.
+        // Or you can specify it as a fraction (percentage).
+        // If it is absolutely necessary, use the following specification.
+        // Because we have to do more designed coding than designed data.
         // '18': '4.5rem', // 72px
         // '22': '5.5rem', // 88px
         // '26': '6.5rem', // 104px

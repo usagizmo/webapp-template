@@ -42,35 +42,27 @@ https://tailwindcss.com/docs/extracting-components
 
 @layer components {
   .c-btn {
-    @apply transition duration-300 ease-in-out text-white font-normal py-2 px-4 rounded;
+    @apply transition duration-300 ease-in-out text-white font-normal py-2 px-4 rounded bg-purple-700;
+    &:hover {
+      @apply bg-purple-900;
+    }
 
     &:focus {
       @apply outline-none ring;
     }
-
-    &.is-primary {
-      @apply bg-purple-700;
-      &:hover {
-        @apply bg-purple-900;
-      }
-    }
-
-    &.is-outline {
-      @apply border border-purple-700 text-purple-700;
-      &:hover {
-        @apply bg-purple-700 text-white;
-      }
+  }
+  .c-btn-outline {
+    @apply transition duration-300 ease-in-out font-normal py-2 px-4 rounded border border-purple-700 text-purple-700;
+    &:hover {
+      @apply bg-purple-700 text-white;
     }
   }
 }
 
 @layer utilities {
   @responsive {
-    .u-transform-center {
-      @apply absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .u-flex-center {
+      @apply flex justify-items-center items-center;
     }
   }
 }
