@@ -7,6 +7,9 @@
   "browserslist": [
     "defaults"
   ],
+  "scripts": {
+    "viewer": "npx tailwind-config-viewer -o"
+  },
   "devDependencies": {
     "cssnano": "^4.1.10",
     "postcss-cli": "^8.3.0",

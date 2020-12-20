@@ -1,6 +1,9 @@
 const { tailwindConfig } = require('@nextjs-template/postcss')
 
 module.exports = {
-  ...tailwindConfig,
-  purge: ['./pages/**/*.html', './pages/**/*.js'],
+  presets: [tailwindConfig],
+  purge: {
+    layers: ['utilities'],
+    content: ['./pages/**/*.html', './pages/**/*.js'],
+  },
 }

@@ -1,4 +1,11 @@
+// The success of the coding depends on this file
+// Run `yarn viewer` to check
+// Referrences:
+// - https://tailwindcss.com/docs/presets
+// - https://unpkg.com/browse/tailwindcss@2.0.2/stubs/defaultConfig.stub.js
+
 module.exports = {
+  presets: [require('./plugins/screen-fixed')],
   purge: [], // In each package are specified
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -6,364 +13,76 @@ module.exports = {
       center: true,
     },
     // screens: {
+    //   // https://tailwindcss.com/docs/breakpoints
     //   sm: '640px', // tablet
     //   md: '768px',
     //   lg: '1024px', // laptop
     //   xl: '1280px', // desktop
+    //   '2xl': '1536px',
     // },
-    // colors: {
+    // textColor: {
+    //   // https://tailwindcss.com/docs/text-color
     //   transparent: 'transparent',
     //   current: 'currentColor',
-    //   white: '#ffffff',
-    //   black: '#000000',
-    //   gray: '#a0aec0', // If you don't write it, it won't load on pinegrow for some reason
-    //   'black-22': '#222222',
+    //   primary: '#3490dc',
+    //   secondary: '#ffed4a',
+    //   danger: '#e3342f',
     // },
-    // backgroundColor: (theme) => ({
-    //   ...theme('colors'),
-    //   'black-22': '#222222',
-    // }),
-    // borderColor: (theme) => ({
-    //   ...theme('colors'),
-    //   'black-22': '#222222',
-    // }),
-    // textColor: {
-    //   'black-22': '#222222',
+    // borderColor: {
+    //   // https://tailwindcss.com/docs/border-color
+    //   DEFAULT: '#3490dc',
+    //   primary: '#3490dc',
+    //   secondary: '#ffed4a',
+    //   danger: '#e3342f',
+    // },
+    // backgroundColor: {
+    //   // https://tailwindcss.com/docs/background-color
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   primary: '#3490dc',
+    //   secondary: '#ffed4a',
+    //   danger: '#e3342f',
     // },
     // backgroundImage: {
+    //   // https://tailwindcss.com/docs/background-image
     //   'image-name': "url('/images/image-name.png')",
     // },
-    fontSize: {
-      xs: ['0.75rem', { lineHeight: '1rem' }], // 12px
-      sm: ['0.875rem', { lineHeight: '1.25rem' }], // 14px
-      base: ['1rem', { lineHeight: '1.5rem' }], // 16px
-      lg: ['1.125rem', { lineHeight: '1.75rem' }], // 18px
-      xl: ['1.25rem', { lineHeight: '1.75rem' }], // 20px
-      '2xl': ['1.5rem', { lineHeight: '2rem' }], // 24px
-      '3xl': ['1.875rem', { lineHeight: '2.25rem' }], // 30px
-      '4xl': ['2.25rem', { lineHeight: '2.5rem' }], // 36px
-      '5xl': ['3rem', { lineHeight: '1' }], // 48px
-      '6xl': ['4rem', { lineHeight: '1' }], // 64px
-      // [Custom]
-      // Pixel-based sizes
-      // 10: '0.625rem',
-      // 11: '0.6875rem',
-      // 12: '0.75rem',
-      // 13: '0.8125rem',
-      // 14: '0.875rem',
-      // 15: '0.9375rem',
-      // 16: '1rem',
-      // 17: '1.0625rem',
-      // 18: '1.125rem',
-      // 19: '1.1875rem',
-      // 20: '1.25rem',
-      // 21: '1.3125rem',
-      // 22: '1.375rem',
-      // 23: '1.4375rem',
-      // 24: '1.5rem',
-      // 25: '1.5625rem',
-      // 26: '1.625rem',
-      // 28: '1.75rem',
-      // 30: '1.875rem',
-      // 32: '2rem',
-      // 34: '2.125rem',
-      // 36: '2.25rem',
-      // 38: '2.375rem',
-      // 40: '2.5rem',
-      // 42: '2.625rem',
-      // 44: '2.75rem',
-      // 46: '2.875rem',
-      // 48: '3rem',
-      // 50: '3.125rem',
-      // 52: '3.25rem',
-      // 54: '3.375rem',
-      // 56: '3.5rem',
-      // 58: '3.625rem',
-      // 60: '3.75rem',
-      // 62: '3.875rem',
-      // 64: '4rem',
-    },
-    spacing: {
-      px: '1px',
-      0: '0',
-      0.5: '0.125rem',
-      1: '0.25rem',
-      1.5: '0.375rem',
-      2: '0.5rem',
-      2.5: '0.625rem',
-      3: '0.75rem',
-      3.5: '0.875rem',
-      4: '1rem',
-      5: '1.25rem',
-      6: '1.5rem',
-      7: '1.75rem',
-      8: '2rem',
-      9: '2.25rem',
-      10: '2.5rem',
-      11: '2.75rem',
-      12: '3rem',
-      14: '3.5rem',
-      16: '4rem',
-      20: '5rem',
-      24: '6rem',
-      28: '7rem',
-      32: '8rem',
-      36: '9rem',
-      40: '10rem',
-      44: '11rem',
-      48: '12rem',
-      52: '13rem',
-      56: '14rem',
-      60: '15rem',
-      64: '16rem',
-      72: '18rem',
-      80: '20rem',
-      96: '24rem',
-      // [Custom]
-      em: '1em',
-      // Pixel-based sizes
-      // 2: '0.125rem',
-      // 4: '0.25rem',
-      // 6: '0.375rem',
-      // 8: '0.5rem',
-      // 10: '0.625rem',
-      // 12: '0.75rem',
-      // 14: '0.875rem',
-      // 16: '1rem',
-      // 20: '1.25rem',
-      // 24: '1.5rem',
-      // 28: '1.75rem',
-      // 32: '2rem',
-      // 36: '2.25rem',
-      // 40: '2.5rem',
-      // 44: '2.75rem',
-      // 48: '3rem',
-      // 52: '3.25rem',
-      // 56: '3.5rem',
-      // 60: '3.75rem',
-      // 64: '4rem',
-      // 68: '4.25rem',
-      // 72: '4.5rem',
-      // 76: '4.75rem',
-      // 80: '5rem',
-      // 84: '5.25rem',
-      // 88: '5.5rem',
-      // 92: '5.75rem',
-      // 96: '6rem',
-      // 100: '6.25rem',
-      // 104: '6.5rem',
-      // 108: '6.75rem',
-      // 112: '7rem',
-      // 116: '7.25rem',
-      // 120: '7.5rem',
-      // 124: '7.75rem',
-      // 128: '8rem',
-      // 132: '8.25rem',
-      // 136: '8.5rem',
-      // 140: '8.75rem',
-      // 144: '9rem',
-      // 148: '9.25rem',
-      // 152: '9.5rem',
-      // 156: '9.75rem',
-      // 160: '10rem',
-      // 164: '10.25rem',
-      // 168: '10.5rem',
-      // 172: '10.75rem',
-      // 176: '11rem',
-      // 180: '11.25rem',
-      // 184: '11.5rem',
-      // 188: '11.75rem',
-      // 192: '12rem',
-      // 196: '12.25rem',
-      // 200: '12.5rem',
-      // 204: '12.75rem',
-      // 208: '13rem',
-      // 212: '13.25rem',
-      // 216: '13.5rem',
-      // 220: '13.75rem',
-      // 224: '14rem',
-      // 228: '14.25rem',
-      // 232: '14.5rem',
-      // 236: '14.75rem',
-      // 240: '15rem',
-      // 244: '15.25rem',
-      // 248: '15.5rem',
-      // 252: '15.75rem',
-      // 256: '16rem',
-      // 260: '16.25rem',
-      // 264: '16.5rem',
-      // 268: '16.75rem',
-      // 272: '17rem',
-      // 276: '17.25rem',
-      // 280: '17.5rem',
-      // 284: '17.75rem',
-      // 288: '18rem',
-      // 292: '18.25rem',
-      // 296: '18.5rem',
-      // 300: '18.75rem',
-      // 304: '19rem',
-      // 308: '19.25rem',
-      // 312: '19.5rem',
-      // 316: '19.75rem',
-      // 320: '20rem',
-      // 324: '20.25rem',
-      // 328: '20.5rem',
-      // 332: '20.75rem',
-      // 336: '21rem',
-      // 340: '21.25rem',
-      // 344: '21.5rem',
-      // 348: '21.75rem',
-      // 352: '22rem',
-      // 356: '22.25rem',
-      // 360: '22.5rem',
-      // 364: '22.75rem',
-      // 368: '23rem',
-      // 372: '23.25rem',
-      // 376: '23.5rem',
-      // 380: '23.75rem',
-      // 384: '24rem',
-      // 388: '24.25rem',
-      // 392: '24.5rem',
-      // 396: '24.75rem',
-      // 400: '25rem',
-      // 404: '25.25rem',
-      // 408: '25.5rem',
-      // 412: '25.75rem',
-      // 416: '26rem',
-      // 420: '26.25rem',
-      // 424: '26.5rem',
-      // 428: '26.75rem',
-      // 432: '27rem',
-      // 436: '27.25rem',
-      // 440: '27.5rem',
-      // 444: '27.75rem',
-      // 448: '28rem',
-      // 452: '28.25rem',
-      // 456: '28.5rem',
-      // 460: '28.75rem',
-      // 464: '29rem',
-      // 468: '29.25rem',
-      // 472: '29.5rem',
-      // 476: '29.75rem',
-      // 480: '30rem',
-      // 484: '30.25rem',
-      // 488: '30.5rem',
-      // 492: '30.75rem',
-      // 496: '31rem',
-      // 500: '31.25rem',
-      // 504: '31.5rem',
-      // 508: '31.75rem',
-      // 512: '32rem',
-      // 516: '32.25rem',
-      // 520: '32.5rem',
-      // 524: '32.75rem',
-      // 528: '33rem',
-      // 532: '33.25rem',
-      // 536: '33.5rem',
-      // 540: '33.75rem',
-      // 544: '34rem',
-      // 548: '34.25rem',
-      // 552: '34.5rem',
-      // 556: '34.75rem',
-      // 560: '35rem',
-      // 564: '35.25rem',
-      // 568: '35.5rem',
-      // 572: '35.75rem',
-      // 576: '36rem',
-      // 580: '36.25rem',
-      // 584: '36.5rem',
-      // 588: '36.75rem',
-      // 592: '37rem',
-      // 596: '37.25rem',
-      // 600: '37.5rem',
-      // 604: '37.75rem',
-      // 608: '38rem',
-      // 612: '38.25rem',
-      // 616: '38.5rem',
-      // 620: '38.75rem',
-      // 624: '39rem',
-      // 628: '39.25rem',
-      // 632: '39.5rem',
-      // 636: '39.75rem',
-      // 640: '40rem',
-      // 644: '40.25rem',
-      // 648: '40.5rem',
-      // 652: '40.75rem',
-      // 656: '41rem',
-      // 660: '41.25rem',
-      // 664: '41.5rem',
-      // 668: '41.75rem',
-      // 672: '42rem',
-      // 676: '42.25rem',
-      // 680: '42.5rem',
-      // 684: '42.75rem',
-      // 688: '43rem',
-      // 692: '43.25rem',
-      // 696: '43.5rem',
-      // 700: '43.75rem',
-      // 704: '44rem',
-      // 708: '44.25rem',
-      // 712: '44.5rem',
-      // 716: '44.75rem',
-      // 720: '45rem',
-      // 724: '45.25rem',
-      // 728: '45.5rem',
-      // 732: '45.75rem',
-      // 736: '46rem',
-      // 740: '46.25rem',
-      // 744: '46.5rem',
-      // 748: '46.75rem',
-      // 752: '47rem',
-      // 756: '47.25rem',
-      // 760: '47.5rem',
-      // 764: '47.75rem',
-      // 768: '48rem',
-    },
-    maxWidth: {
-      none: 'none',
-      // xs: '20rem',
-      // sm: '24rem',
-      // md: '28rem',
-      // lg: '32rem',
-      // xl: '36rem',
-      // '2xl': '42rem',
-      // '3xl': '48rem',
-      // '4xl': '56rem',
-      // '5xl': '64rem',
-      // '6xl': '72rem',
-      // full: '100%',
-      // [Custom]
-      // '#': '#rem',
-    },
-    // lineHeight: {
-    //   1: '1',
-    //   '1-05': '1.05',
-    //   '1-1': '1.1',
-    //   '1-15': '1.15',
-    //   '1-2': '1.2',
-    //   '1-25': '1.25',
-    //   '1-3': '1.3',
-    //   '1-35': '1.35',
-    //   '1-4': '1.4',
-    //   '1-45': '1.45',
-    //   '1-5': '1.5',
-    //   '1-55': '1.55',
-    //   '1-6': '1.6',
-    //   '1-65': '1.65',
-    //   '1-7': '1.7',
-    //   '1-75': '1.75',
-    //   '1-8': '1.8',
-    //   '1-85': '1.85',
-    //   '1-9': '1.9',
-    //   '1-95': '1.95',
-    //   2: '2',
+    // colors: {
+    //   // https://tailwindcss.com/docs/customizing-colors
+    //   // Either give each property a meaningful name or specify a generic color
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   'black-22': '#222222',
     // },
-    // letterSpacing: {
-    //   0: '0',
-    //   1: '0.0625rem',
-    //   2: '0.125rem',
-    //   3: '0.1875rem',
-    //   4: '0.25rem',
+    fontSize: {
+      // https://tailwindcss.com/docs/font-size
+      // Instead of adding a property, consider whether it can be handled by changing the value
+      xs: ['0.75rem', '1rem'], // 12px
+      sm: ['0.875rem', '1.25rem'], // 14px
+      base: ['1rem', '1.5rem'], // 16px
+      lg: ['1.125rem', '1.75rem'], // 18px
+      xl: ['1.25rem', '1.75rem'], // 20px
+      '2xl': ['1.5rem', '2rem'], // 24px
+      '3xl': ['1.875rem', '2.25rem'], // 30px
+      '4xl': ['2.25rem', '2.5rem'], // 36px
+      '5xl': ['3rem', '1'], // 48px
+      '6xl': ['3.75rem', '1'], // 60px
+      '7xl': ['4.5rem', '1'], // 72px
+      '8xl': ['6rem', '1'], // 96px
+      '9xl': ['8rem', '1'], // 128px
+      // [Custom]
+      // Pixel-based sizes
+      // '9px': '0.562rem',
+      // '10px': '0.625rem',
+      // '11px': '0.6875rem',
+      // '13px': '0.8125rem',
+      // '15px': '0.9375rem',
+    },
+    // transitionDuration: {
+    //   // https://tailwindcss.com/docs/transition-duration
+    //   0: '0ms',
+    //   300: '300ms',
+    //   400: '400ms',
     // },
     extend: {
       fontFamily: {
@@ -377,31 +96,73 @@ module.exports = {
         '1/2': '50%',
         full: '100%',
       },
+      spacing: {
+        // https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+        em: '1em',
+        // '1.5em': '1.5em',
+        // Spacing should basically be specified with `Default spacing scale`.
+        // Or you can specify it as a fraction (percentage).
+        // If it is absolutely necessary, use the following specification.
+        // Because we have to do more designed coding than designed data.
+        // '18': '4.5rem', // 72px
+        // '22': '5.5rem', // 88px
+        // '26': '6.5rem', // 104px
+        // '30': '7.5rem', // 120px
+        // '34': '8.5rem', // 136px
+        // '38': '9.5rem', // 152px
+        // '42': '10.5rem', // 168px
+        // '46': '11.5rem', // 184px
+        // '50': '12.5rem', // 200px
+        // '54': '13.5rem', // 216px
+        // '58': '14.5rem', // 232px
+        // '62': '15.5rem', // 248px
+        // '66': '16.5rem', // 264px
+        // '68': '17rem', // 272px
+        // '70': '17.5rem', // 280px
+        // '74': '18.5rem', // 296px
+        // '76': '19rem', // 304px
+        // '78': '19.5rem', // 312px
+        // '82': '20.5rem', // 328px
+        // '84': '21rem', // 336px
+        // '86': '21.5rem', // 344px
+        // '88': '22rem', // 352px
+        // '90': '22.5rem', // 360px
+        // '92': '23rem', // 368px
+        // '94': '23.5rem', // 376px
+        // '98': '24.5rem', // 392px
+        // '100': '25rem', // 400px
+      },
       width: {
-        // '#': '#rem',
+        // https://tailwindcss.com/docs/width
+        '1/7': '14.2857143%',
+        '2/7': '28.5714286%',
+        '3/7': '42.8571429%',
+        '4/7': '57.1428571%',
+        '5/7': '71.4285714%',
+        '6/7': '85.7142857%',
+        '1/9': '11.1111111%',
+        '2/9': '22.2222222%',
+        '3/9': '33.3333333%',
+        '4/9': '44.4444444%',
+        '5/9': '55.5555555%',
+        '6/9': '66.6666666%',
+        '7/9': '77.7777777%',
+        '8/9': '88.8888888%',
       },
       minWidth: {
-        // '#': '#rem',
+        // https://tailwindcss.com/docs/min-width
       },
       maxWidth: {
-        // '#': '#rem',
+        // https://tailwindcss.com/docs/max-width
       },
-      height: {
-        // '#': '#rem',
-        'screen-fixed': 'calc(var(--vh, 1vh) * 100)',
+      animation: {
+        // https://tailwindcss.com/docs/animation
       },
-      minHeight: {
-        // '#': '#rem',
-      },
-      maxHeight: {
-        // '#': '#rem',
-      },
+      // keyframes: {},
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [
-    // require('./src/plugins/typekit/p-typekit-cover')(),
-  ],
+  plugins: [],
 }
