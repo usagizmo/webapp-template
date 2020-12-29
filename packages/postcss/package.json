@@ -8,6 +8,7 @@
     "defaults"
   ],
   "scripts": {
+    "format": "prettier --write .",
     "viewer": "npx tailwind-config-viewer -o"
   },
   "devDependencies": {

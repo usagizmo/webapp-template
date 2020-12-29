@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf .next",
+    "format": "prettier --write .",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

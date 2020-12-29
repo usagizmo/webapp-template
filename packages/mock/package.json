@@ -4,6 +4,7 @@
   "author": "usagizmo <usagizmo@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "format": "prettier --write .",
     "build": "cross-env NODE_ENV=production postcss ../postcss/styles.css -o pages/styles.css",
     "build:dev": "postcss ../postcss/styles.css -o pages/styles.css",
     "watch:build:dev": "onchange ../postcss/styles.css ../postcss/tailwind.config.js -- yarn build:dev",

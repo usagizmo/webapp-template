@@ -9,22 +9,15 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "clean": "lerna run clean && lerna clean --yes",
+    "format": "lerna run format",
     "build": "lerna run build",
-    "test": "lerna run test",
-    "format": "prettier --write ."
+    "test": "lerna run test"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
-    "husky": "^4.3.5",
     "lerna": "^3.22.1",
     "onchange": "^7.1.0",
-    "prettier": "^2.2.0",
-    "pretty-quick": "^3.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+    "prettier": "^2.2.0"
   }
 }

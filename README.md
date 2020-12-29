@@ -61,18 +61,10 @@ yarn build  #=> Output files to `/generated/*` and `/dist/*`
 
 ```
 # Install common npm package
-yarn add -W -D <package-name>
+yarn add -D <package-name> -W
 
 # Install @nextjs-template/postcss to @nextjs-template/app in devDependencies
 npx lerna add -D @nextjs-template/postcss --scope=@nextjs-template/app
-```
-
-# Format for committing
-
-If the codes are not formatted on commit, re-add `husky`.
-
-```
-yarn add -W -D husky
 ```
 
 # References
