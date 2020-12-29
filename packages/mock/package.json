@@ -7,8 +7,10 @@
     "format": "prettier --write .",
     "build": "cross-env NODE_ENV=production postcss ../postcss/styles.css -o pages/styles.css",
     "build:dev": "postcss ../postcss/styles.css -o pages/styles.css",
-    "watch:build:dev": "onchange ../postcss/styles.css ../postcss/tailwind.config.js -- yarn build:dev",
-    "dev": "concurrently \"browser-sync pages -w\" \"yarn watch:build:dev\""
+    "dev:serve": "browser-sync pages -w --start-path /",
+    "dev:build": "onchange ../postcss/styles.css ../postcss/tailwind.config.js -- yarn build:dev",
+    "dev:format": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
+    "dev": "concurrently \"yarn dev:serve\" \"yarn dev:build\" \"yarn dev:format\""
   },
   "browserslist": [
     "defaults"
