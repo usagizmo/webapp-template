@@ -6,6 +6,7 @@
   "main": "dist/client.js",
   "scripts": {
     "clean": "rimraf dist generated",
+    "format": "prettier --write .",
     "build": "graphql-codegen --config codegen.js && tsc"
   },
   "dependencies": {

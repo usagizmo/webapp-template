@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf .next",
-    "dev": "next dev",
+    "format": "prettier --write .",
+    "dev:next": "next dev",
+    "dev:format": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
+    "dev": "concurrently \"yarn dev:next\" \"yarn dev:format\"",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
