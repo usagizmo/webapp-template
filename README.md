@@ -1,7 +1,6 @@
 # Next.js Template
 
 - [Lerna](https://github.com/lerna/lerna) (with Yarn)
-- [husky](https://github.com/typicode/husky) x [pretty-quick](https://www.npmjs.com/package/pretty-quick)
 - GitHub Actions (test + commit to format)
 
 ## `@nextjs-template/app`
