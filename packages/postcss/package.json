@@ -4,13 +4,13 @@
   "author": "usagizmo <usagizmo@gmail.com>",
   "license": "MIT",
   "main": "index.js",
-  "browserslist": [
-    "defaults"
-  ],
   "scripts": {
     "format": "prettier --write .",
     "viewer": "npx tailwind-config-viewer -o"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
     "cssnano": "^4.1.10",
     "postcss-cli": "^8.3.0",
