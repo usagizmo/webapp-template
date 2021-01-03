@@ -62,7 +62,7 @@ https://tailwindcss.com/docs/extracting-components
 @layer utilities {
   @responsive {
     .u-flex-center {
-      @apply flex justify-items-center items-center;
+      @apply flex justify-center items-center;
     }
   }
 }
