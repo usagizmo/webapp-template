@@ -4,7 +4,15 @@ require('dotenv').config()
 
 module.exports = {
   overwrite: true,
-  schema: process.env.SCHEMA_PATH || 'src/schema.graphql',
+  schema: process.env.ADMIN_SECRET ? (process.env.SCHEMA_PATH || 'src/schema.graphql') : [
+    {
+      [process.env.SCHEMA_PATH]: {
+        headers: {
+          'x-hasura-admin-secret': process.env.ADMIN_SECRET,
+        },
+      },
+    },
+  ],
   documents: ['src/mutations/*.graphql', 'src/queries/*.graphql'],
   generates: {
     'generated/client.ts': {

@@ -4,3 +4,4 @@
 /generated
 /dist
 /.env
+/hasura/config.yaml
