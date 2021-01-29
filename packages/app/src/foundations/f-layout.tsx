@@ -43,6 +43,7 @@ const FLayout: FC<Props> = ({ children }) => {
         <meta property="og:site_name" content="Next.js Template" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@nextjs-template" />
+        <meta name="twitter:creator" content="@usagizmo" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         {/*<PGtag uid="UA-12345678-9" />*/}
