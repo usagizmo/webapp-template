@@ -12,7 +12,7 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
-    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "lint": "eslint --cache . --ext ts --ext tsx --ext js",
     "test": "yarn lint && yarn type-check && jest"
   },
   "browserslist": [
