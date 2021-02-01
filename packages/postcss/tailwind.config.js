@@ -4,6 +4,8 @@
 // - https://tailwindcss.com/docs/presets
 // - https://unpkg.com/browse/tailwindcss@2.0.2/stubs/defaultConfig.stub.js
 
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   presets: [require('./plugins/screen-fixed')],
   purge: [], // In each package are specified
@@ -55,13 +57,37 @@ module.exports = {
     //   secondary: '#ffed4a',
     //   danger: '#e3342f',
     // },
-    // colors: {
-    //   // https://tailwindcss.com/docs/customizing-colors
-    //   // Either give each property a meaningful name or specify a generic color
-    //   transparent: 'transparent',
-    //   current: 'currentColor',
-    //   'black-22': '#222222',
-    // },
+    colors: {
+      // https://tailwindcss.com/docs/customizing-colors
+      // Either give each property a meaningful name or specify a generic color
+      transparent: 'transparent',
+      current: 'currentColor',
+      white: '#fff',
+      black: '#000',
+      // gray: colors.blueGray,
+      gray: colors.coolGray,
+      // gray: colors.gray,
+      // gray: colors.trueGray,
+      // gray: colors.warmGray,
+      red: colors.red,
+      // orange: colors.orange,
+      // amber: colors.amber,
+      yellow: colors.yellow,
+      // lime: colors.lime,
+      green: colors.green,
+      // emerald: colors.emerald,
+      // teal: colors.teal,
+      // cyan: colors.cyan,
+      // 'light-blue': colors.lightBlue,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      // violet: colors.violet,
+      purple: colors.purple,
+      // fuchsia: colors.fuchsia,
+      pink: colors.pink,
+      // rose: colors.rose,
+      // 'black-22': '#222',
+    },
     fontSize: {
       // https://tailwindcss.com/docs/font-size
       // Instead of adding a property, consider whether it can be handled by changing the value
