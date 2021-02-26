@@ -35,8 +35,8 @@
 
 ```
 # setup .env
-cp packages/app/.env.local.example packages/app/.env.local
-cp packages/graphql/.env.example packages/graphql/.env
+cp -i packages/app/.env.local.example packages/app/.env.local
+cp -i packages/graphql/.env.example packages/graphql/.env
 
 # Initialize
 yarn
