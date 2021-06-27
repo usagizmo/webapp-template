@@ -14,7 +14,7 @@ const Providers = ({ children }) => {
   // )
 }
 
-const customRender = (ui, options = {}) =>
+const customRender = (ui: React.ReactElement, options = {}): any =>
   render(ui, { wrapper: Providers, ...options })
 
 // re-export everything

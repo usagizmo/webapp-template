@@ -1,17 +1,23 @@
 import React from 'react'
-import { render, fireEvent } from '../testUtils'
-import { Home } from '../../pages/index'
+import { render } from '../testUtils'
+import IndexPage from '../../src/pages/index'
+import { ROUTE } from '../../src/constants/route'
+
+const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 
 describe('Home page', () => {
   it('matches snapshot', () => {
-    const { asFragment } = render(<Home />, {})
+    useRouter.mockImplementationOnce(() => ({
+      pathname: ROUTE.HOME,
+    }))
+    const { asFragment } = render(<IndexPage />, {})
     expect(asFragment()).toMatchSnapshot()
   })
 
-  it('clicking button triggers alert', () => {
-    const { getByText } = render(<Home />, {})
-    window.alert = jest.fn()
-    fireEvent.click(getByText('Test Button'))
-    expect(window.alert).toHaveBeenCalledWith('With typescript and Jest')
-  })
+  // it('clicking button triggers alert', () => {
+  //   const { getByText } = render(<IndexPage />, {})
+  //   window.alert = jest.fn()
+  //   fireEvent.click(getByText('Test Button'))
+  //   expect(window.alert).toHaveBeenCalledWith('With typescript and Jest')
+  // })
 })

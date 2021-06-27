@@ -9,7 +9,7 @@ exports[`Home page matches snapshot 1`] = `
       class="flex"
     >
       <li
-        class="px-4 text-gray-900"
+        class="px-4 text-gray-500 hover:text-gray-900"
       >
         <a
           href="/"
@@ -39,7 +39,9 @@ exports[`Home page matches snapshot 1`] = `
     <p
       class="mt-20 text-xl"
     >
-      HOME
+      <code>
+        detail/[id].tsx - query: { id: 1 }
+      </code>
     </p>
   </main>
 </DocumentFragment>

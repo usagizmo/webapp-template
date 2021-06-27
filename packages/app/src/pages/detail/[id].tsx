@@ -7,7 +7,8 @@ interface Props {}
 
 const DetailPage: NextPage<Props> = () => {
   const router = useRouter()
-  const { id } = router.query
+  const pathname = router.pathname
+  const { id: queryId } = router.query
 
   return (
     <>
@@ -24,9 +25,9 @@ const DetailPage: NextPage<Props> = () => {
         <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
       </Head>
       <main className="h-full flex flex-col items-center">
-        <CNavigation />
+        <CNavigation pathname={pathname} queryId={queryId as string} />
         <p className="mt-20 text-xl">
-          <code>{`detail/[id].tsx - query: { id: ${id} }`}</code>
+          <code>{`detail/[id].tsx - query: { id: ${queryId} }`}</code>
         </p>
       </main>
     </>

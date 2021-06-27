@@ -1,5 +1,6 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import CNavigation from '../components/c-navigation'
 // import CApollo from '../components/c-apollo'
 // import CCustomSWR from '../components/c-custom-swr'
@@ -7,6 +8,9 @@ import CNavigation from '../components/c-navigation'
 interface Props {}
 
 const IndexPage: NextPage<Props> = () => {
+  const router = useRouter()
+  const pathname = router.pathname
+
   return (
     <>
       <Head>
@@ -22,7 +26,7 @@ const IndexPage: NextPage<Props> = () => {
         <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
       </Head>
       <main className="h-full flex flex-col items-center">
-        <CNavigation />
+        <CNavigation pathname={pathname} />
         <p className="mt-20 text-xl">HOME</p>
         {/* <CApollo /> */}
         {/* <CCustomSWR /> */}
