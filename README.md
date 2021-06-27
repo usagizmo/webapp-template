@@ -13,13 +13,7 @@
 - [react-mitt](https://www.npmjs.com/package/react-mitt)
 - [react-use](https://github.com/streamich/react-use)
 - [react-spring](https://www.react-spring.io/)
-- `@nextjs-template/postcss`
 - `@nextjs-template/graphql`
-
-## `@nextjs-template/postcss`
-
-- [PostCSS](https://postcss.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
 
 ## `@nextjs-template/graphql`
 
@@ -50,9 +44,6 @@ yarn build  #=> Output files to `/generated/*` and `/dist/*`
 ```
 # Install common npm package
 yarn add -D <package-name> -W
-
-# Install @nextjs-template/postcss to @nextjs-template/app in devDependencies
-npx lerna add -D @nextjs-template/postcss --scope=@nextjs-template/app
 ```
 
 # References
