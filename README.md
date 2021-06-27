@@ -16,12 +16,6 @@
 - `@nextjs-template/postcss`
 - `@nextjs-template/graphql`
 
-## `@nextjs-template/mock`
-
-- [Pinegrow](https://pinegrow.com/)
-- [Alpine.js](https://github.com/alpinejs/alpine)
-- `@nextjs-template/postcss`
-
 ## `@nextjs-template/postcss`
 
 - [PostCSS](https://postcss.org/)
@@ -45,11 +39,6 @@ yarn build
 # app
 cd packages/app
 yarn dev
-
-# mock
-cd packages/mock
-yarn dev
-yarn build  #=> Output /pages/styles.css (cssnano + purge)
 
 # graphql
 cd packages/graphql
