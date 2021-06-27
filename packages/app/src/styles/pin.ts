@@ -25,4 +25,11 @@ export const pin = {
     right: 0,
     height: '100%',
   }),
+  full: css({
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: '100%',
+  }),
 }

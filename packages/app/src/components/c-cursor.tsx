@@ -1,6 +1,5 @@
 import React, { FC, useState } from 'react'
 import { useSpring, animated } from 'react-spring'
-import classnames from 'classnames'
 import {
   useMouseDown,
   useMouseMove,
@@ -28,15 +27,20 @@ const CCursor: FC<Props> = () => {
   })
 
   return (
-    <animated.div style={{ x, y }} className="absolute top-0 left-0 pointer-events-none">
+    <animated.div style={{ x, y }} css={{ position: 'absolute', top: 0, left: 0 }}>
       <div
-        className={classnames(
-          '-ml-4 -mt-4 w-8 h-8 rounded-full opacity-50 duration-100 transform',
-          {
-            'bg-pink-300 scale-150': isDown,
-            'bg-green-300 scale-50': !isDown,
-          }
-        )}
+        css={{
+          width: 32,
+          height: 32,
+          marginTop: -16,
+          marginLeft: -16,
+          opacity: 0.5,
+          transitionDuration: '0.1s',
+          borderRadius: '50%',
+          ...(isDown
+            ? { backgroundColor: 'lightpink', transform: 'scale(1.5)' }
+            : { backgroundColor: 'aquamarine', transform: 'scale(0.5)' }),
+        }}
       />
     </animated.div>
   )

@@ -10,8 +10,14 @@ export const size = {
     css({
       width: w,
     }),
+  wFull: css({
+    width: '100%',
+  }),
   h: (h: string | number): SerializedStyles =>
     css({
       height: h,
     }),
+  hFull: css({
+    height: '100%',
+  }),
 }

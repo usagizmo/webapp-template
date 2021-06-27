@@ -9,6 +9,7 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
+- [@emotion/react](https://emotion.sh/docs/object-styles)
 - [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
 - [Zustand](https://github.com/pmndrs/zustand)
 - [react-mitt](https://www.npmjs.com/package/react-mitt)

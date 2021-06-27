@@ -8,7 +8,7 @@ interface Props {
 
 const LHeader: FC<Props> = ({ text }) => {
   return (
-    <div className="px-4 py-2 text-3xl text-center">
+    <div css={{ padding: '8px 16px', textAlign: 'center', fontSize: 24 }}>
       <Link href={ROUTE.HOME}>{text}</Link>
     </div>
   )
