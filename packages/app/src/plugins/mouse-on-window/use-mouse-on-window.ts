@@ -1,7 +1,7 @@
 import { useMitt } from 'react-mitt'
 import { useEffectOnce } from 'react-use'
 import { EMITTER } from '../../constants/emitter'
-import { Mouse } from '../../store'
+import { Mouse } from '../../store/use-store'
 
 type Callback = (mouse: Mouse) => void
 

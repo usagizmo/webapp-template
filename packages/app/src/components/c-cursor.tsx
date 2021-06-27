@@ -6,7 +6,7 @@ import {
   useMouseMove,
   useMouseUp,
 } from '../plugins/mouse-on-window/use-mouse-on-window'
-import useStore from '../store'
+import { useStore } from '../store/use-store'
 
 interface Props {}
 

@@ -32,3 +32,20 @@ export type Post = {
     node: ImageType
   }
 }
+
+export interface State {
+  isMenuOpen: boolean
+  wpData: {
+    postsPerPage: number
+    // posts: Post[]
+    // postById: { [id: string]: Post }
+  }
+  mutation: {
+    mouse: Mouse
+  }
+  actions: {
+    updateMouse: (mouse: Mouse) => void
+    updatePostsPerPage: (count: number) => void
+    toggleIsMenuOpen: (open?: boolean) => void
+  }
+}

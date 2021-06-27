@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import Link from 'next/link'
 import { useSWRAllPostsForHome } from '../hooks/use-custom-swr'
 import usePage from '../plugins/wp/use-page'
-import { PostForHome, PageInfo } from '../types'
+import { PostForHome, PageInfo } from '../interfaces'
 import { ROUTE } from '../constants/route'
 
 interface Props {}

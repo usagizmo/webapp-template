@@ -13,7 +13,7 @@ import CCursor from '../components/c-cursor'
 // import useScrollRestorationManual from './plugins/use-scroll-restoration-manual'
 // import useTypekit from '../plugins/typekit/use-typekit'
 // import { useSWRSettings } from '../hooks/use-custom-swr'
-// import useStore from '../store'
+// import { useStore } from '../use-store'
 
 interface Props {
   router: Router
