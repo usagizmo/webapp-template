@@ -1,7 +1,8 @@
 # Next.js Template
 
 - [Lerna](https://github.com/lerna/lerna) (with Yarn)
-- GitHub Actions (test + commit to format)
+- [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
+- GitHub Actions (Formatting + Testing)
 
 ## `@nextjs-template/app`
 
@@ -27,6 +28,7 @@ cp -i packages/app/.env.local.example packages/app/.env.local
 cp -i packages/graphql/.env.example packages/graphql/.env
 
 # Initialize
+# yarn clean  # To redo the setup
 yarn
 yarn build
 

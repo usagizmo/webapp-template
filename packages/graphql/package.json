@@ -19,7 +19,6 @@
     "@graphql-codegen/typescript-operations": "^1.18.2",
     "@graphql-codegen/typescript-react-apollo": "^2.2.7",
     "@graphql-codegen/typescript-resolvers": "^1.19.4",
-    "dotenv": "^10.0.0",
-    "typescript": "^4.3.4"
+    "dotenv": "^10.0.0"
   }
 }
