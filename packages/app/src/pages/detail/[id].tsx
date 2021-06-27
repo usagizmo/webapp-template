@@ -1,7 +1,6 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import CNavigation from '../../components/c-navigation'
 import { flex } from '../../styles/flex'
 import { size } from '../../styles/size'
 
@@ -9,7 +8,6 @@ interface Props {}
 
 const DetailPage: NextPage<Props> = () => {
   const router = useRouter()
-  const pathname = router.pathname
   const { id: queryId } = router.query
 
   return (
@@ -27,8 +25,7 @@ const DetailPage: NextPage<Props> = () => {
         <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
       </Head>
       <main css={[size.hFull, flex.column, flex.center]}>
-        <CNavigation pathname={pathname} queryId={queryId as string} />
-        <p css={{ marginTop: 80, fontSize: 18 }}>
+        <p css={{ fontSize: 18 }}>
           <code>{`detail/[id].tsx - query: { id: ${queryId} }`}</code>
         </p>
       </main>

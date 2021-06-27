@@ -1,13 +1,15 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 import { ROUTE } from '../constants/route'
+import { useRouter } from 'next/router'
 
-interface Props {
-  pathname: string
-  queryId?: string
-}
+interface Props {}
 
-const CNavigation: FC<Props> = ({ pathname, queryId }) => {
+const CNavigation: FC<Props> = () => {
+  const router = useRouter()
+  const pathname = router.pathname
+  const { id: queryId } = router.query
+
   return (
     <ul css={{ display: 'flex' }}>
       <li
