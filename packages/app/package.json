@@ -6,9 +6,7 @@
   "scripts": {
     "clean": "rimraf .next",
     "format": "prettier --write .",
-    "dev:next": "next dev",
-    "dev:format": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
-    "dev": "concurrently \"yarn dev:next\" \"yarn dev:format\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
