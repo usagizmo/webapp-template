@@ -1,6 +1,6 @@
 {
   "name": "@nextjs-template/graphql",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "usagizmo <usagizmo@gmail.com>",
   "license": "MIT",
   "main": "dist/client.js",
