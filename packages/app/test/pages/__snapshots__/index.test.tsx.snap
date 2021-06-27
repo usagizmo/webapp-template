@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page matches snapshot 1`] = `
+<DocumentFragment>
+  <main
+    class="css-3x0lj0-size-center-column-IndexPage"
+  >
+    <p
+      class="css-1i7eqxm-IndexPage"
+    >
+      HOME
+    </p>
+  </main>
+</DocumentFragment>
+`;

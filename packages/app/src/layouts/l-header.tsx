@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 import { ROUTE } from '../constants/route'
+import { flex } from '../styles/flex'
+import CNavigation from '../components/c-navigation'
 
 interface Props {
   text: string
@@ -8,8 +10,13 @@ interface Props {
 
 const LHeader: FC<Props> = ({ text }) => {
   return (
-    <div className="px-4 py-2 text-3xl text-center">
-      <Link href={ROUTE.HOME}>{text}</Link>
+    <div css={[flex.column, flex.center, { padding: '8px 16px' }]}>
+      <div css={{ fontSize: 24 }}>
+        <Link href={ROUTE.HOME}>{text}</Link>
+      </div>
+      <div css={{ marginTop: 16 }}>
+        <CNavigation />
+      </div>
     </div>
   )
 }

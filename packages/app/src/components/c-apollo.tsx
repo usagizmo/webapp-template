@@ -8,18 +8,17 @@ const CApollo: FC<Props> = () => {
   const [updateArticlesTitle] = useUpdateArticlesTitleMutation()
 
   if (articlesQuery.loading || !articlesQuery.data) {
-    return <p className="px-4 py-2 text-xs whitespace-pre-wrap">Loading...</p>
+    return <p css={{ padding: '8px 16px', fontSize: 12 }}>Loading...</p>
   }
 
   const articles = articlesQuery.data.articles
 
   return (
-    <div className="px-4 py-2 text-xs whitespace-pre-wrap relative">
+    <div css={{ position: 'relative', padding: '8px 16px', fontSize: 12 }}>
       {articles.map((article) => (
         <div key={article.id}>
           <p>{JSON.stringify(article, null, 2)}</p>
           <button
-            className="c-btn is-outline"
             onClick={() =>
               void updateArticlesTitle({
                 variables: {

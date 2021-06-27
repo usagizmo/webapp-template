@@ -1,7 +1,7 @@
 import { useMitt } from 'react-mitt'
 import { useEffectOnce } from 'react-use'
 import { EMITTER } from '../../constants/emitter'
-import useStore, { getInitialMouse } from '../../store'
+import { useStore, getInitialMouse } from '../../store/use-store'
 
 const useMouseOnWindowEmitter = (): void => {
   const { emitter } = useMitt()

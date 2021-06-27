@@ -1,6 +1,7 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import CNavigation from '../components/c-navigation'
+import { flex } from '../styles/flex'
+import { size } from '../styles/size'
 // import CApollo from '../components/c-apollo'
 // import CCustomSWR from '../components/c-custom-swr'
 
@@ -21,9 +22,8 @@ const IndexPage: NextPage<Props> = () => {
         <meta name="twitter:description" content="Next.js Template Description" />
         <meta name="twitter:image" content="https://nextjs-template.io/images/ogp-tw.png" />
       </Head>
-      <main className="h-full flex flex-col items-center">
-        <CNavigation />
-        <p className="mt-20 text-xl">HOME</p>
+      <main css={[size.h('100%'), flex.center, flex.column]}>
+        <p css={{ fontSize: 18 }}>HOME</p>
         {/* <CApollo /> */}
         {/* <CCustomSWR /> */}
       </main>

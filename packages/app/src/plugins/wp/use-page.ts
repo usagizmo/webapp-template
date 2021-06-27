@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import useStore from '../../store'
+import { useStore } from '../../store/use-store'
 
 const usePage = (): { page: number; postsPerPage: number; offset: number } => {
   const router = useRouter()

@@ -8,12 +8,15 @@ import useMouseOnWindowEmitter from '../plugins/mouse-on-window/use-mouse-on-win
 import LHeader from '../layouts/l-header'
 import LFooter from '../layouts/l-footer'
 import CCursor from '../components/c-cursor'
+import { flex, flexItem } from '../styles/flex'
+import { size } from '../styles/size'
+import { pin } from '../styles/pin'
 // import PGtag from '../plugins/p-gtag'
 // import useAnimationFrameEmitter from './plugins/animation-frame/use-animation-frame-emitter'
 // import useScrollRestorationManual from './plugins/use-scroll-restoration-manual'
 // import useTypekit from '../plugins/typekit/use-typekit'
 // import { useSWRSettings } from '../hooks/use-custom-swr'
-// import useStore from '../store'
+// import { useStore } from '../use-store'
 
 interface Props {
   router: Router
@@ -48,16 +51,26 @@ const FLayout: FC<Props> = ({ children }) => {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         {/*<PGtag uid="UA-12345678-9" />*/}
       </Head>
-      <div className="flex flex-col h-screen-fixed">
+      <div css={[flex.column, size.h('100%')]}>
         <div>
           <LHeader text="Next.js Template" />
         </div>
-        <div className="flex-1">{children}</div>
+        <div css={[flexItem[1]]}>{children}</div>
         <div>
           <LFooter />
         </div>
       </div>
-      <CCursor />
+      <div
+        css={[
+          pin.full,
+          {
+            pointerEvents: 'none',
+            overflow: 'hidden',
+          },
+        ]}
+      >
+        <CCursor />
+      </div>
     </>
   )
 }

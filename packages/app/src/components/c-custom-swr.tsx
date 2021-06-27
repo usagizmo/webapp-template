@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import Link from 'next/link'
 import { useSWRAllPostsForHome } from '../hooks/use-custom-swr'
 import usePage from '../plugins/wp/use-page'
-import { PostForHome, PageInfo } from '../types'
+import { PostForHome, PageInfo } from '../interfaces'
 import { ROUTE } from '../constants/route'
 
 interface Props {}
@@ -20,9 +20,7 @@ const CCustomSWR: FC<Props> = () => {
     <>
       {posts.map(({ node }) => (
         <Link key={node.id} href={{ pathname: ROUTE.DETAIL_ID, query: { id: node.id } }} passHref>
-          <a className="block font-medium mt-5 text-13 tracking-1-61 md:text-17 md:tracking-2-47 lg:text-20 hover:opacity-75">
-            {node.title}
-          </a>
+          <a css={{ display: 'block', marginTop: 4, '&:hover': { opacity: 0.75 } }}>{node.title}</a>
         </Link>
       ))}
       <p>{pageInfo.offsetPagination.total}</p>

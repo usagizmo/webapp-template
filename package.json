@@ -8,16 +8,29 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
+    "prepare": "husky install",
     "clean": "lerna run clean && lerna clean --yes",
     "format": "lerna run format",
     "build": "lerna run build",
     "test": "lerna run test"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{css,md,json,graphql}": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "devDependencies": {
-    "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
+    "eslint": "^7.29.0",
+    "husky": "^6.0.0",
     "lerna": "^3.22.1",
-    "onchange": "^7.1.0",
-    "prettier": "^2.2.0"
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.2.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.4"
   }
 }

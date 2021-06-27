@@ -1,4 +1,6 @@
 import create from 'zustand'
+import createVanilla from 'zustand/vanilla'
+import { State } from '../interfaces'
 // import { Post } from './types'
 
 export type Mouse = {
@@ -17,24 +19,7 @@ export const getInitialMouse = (): Mouse => ({
   delta: { x: 0, y: 0 },
 })
 
-type State = {
-  isMenuOpen: boolean
-  wpData: {
-    postsPerPage: number
-    // posts: Post[]
-    // postById: { [id: string]: Post }
-  }
-  mutation: {
-    mouse: Mouse
-  }
-  actions: {
-    updateMouse: (mouse: Mouse) => void
-    updatePostsPerPage: (count: number) => void
-    toggleIsMenuOpen: (open?: boolean) => void
-  }
-}
-
-const useStore = create<State>((set, get) => {
+const vanillaStore = createVanilla<State>((set, get) => {
   return {
     isMenuOpen: false,
     wpData: {
@@ -86,4 +71,4 @@ const useStore = create<State>((set, get) => {
   }
 })
 
-export default useStore
+export const useStore = create(vanillaStore)

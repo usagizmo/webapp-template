@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page matches snapshot 1`] = `
+<DocumentFragment>
+  <main
+    class="css-15c4xfu-hFull-column-center-DetailPage"
+  >
+    <p
+      class="css-18sqpj4-DetailPage"
+    >
+      <code>
+        detail/[id].tsx - query: { id: 1 }
+      </code>
+    </p>
+  </main>
+</DocumentFragment>
+`;
