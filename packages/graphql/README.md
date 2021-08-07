@@ -7,14 +7,15 @@
 yarn build #=> Output files to `/generated/*` and `/dist/*`
 ```
 
-## Schema
+## Schemas
 
 The current `src/schema.graphql` was exported by Hasura.
 
 <img width="1006" alt="Hasura Schema" src="https://user-images.githubusercontent.com/1271863/100516504-bf241d00-31c7-11eb-8f85-eb02a3112096.png">
 
 ```bash
-npx graphqurl https://<project-name>.hasura.app/v1/graphql --introspect > src/schema.graphql
+npx graphqurl https://<project-name>.hasura.app/v1/graphql -H "X-Hasura-Admin-Secret: <admin-secret-key>" --introspect > src/schema.graphql
+# ref: https://hasura.io/docs/latest/graphql/core/guides/export-graphql-schema.html
 ```
 
 Remove `src/schema.graphql` if you want to specify a URL in your .env `SCHEMA_PATH`.
@@ -29,30 +30,23 @@ After completing the settings in Hasura Cloud, execute the following command.
 cp .env.example .env # Then, set it up
 
 # Add `hasura` directory
-hasura init
-# ✔ Name of project directory : hasura
+npx hasura init hasura --endpoint https://<project-name>.hasusura.app --admin-secret <admin-secret-key>
 
 cd hasura
+npx hasura migrate create "init" --from-server
+# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_migrate_create.html
 
-vi config.yaml
-#-endpoint: http://localhost:8080
-#+endpoint: https://<project-name>.hasura.app
-#+admin_secret: <HASURA_GRAPHQL_ADMIN_SECRET> # optional
+npx hasura metadata export
+# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_metadata_export.html
 
-hasura migrate create "init" --from-server
-# ref: https://hasura.io/docs/1.0/graphql/core/hasura-cli/hasura_migrate_create.html
-
-hasura metadata export
-# ref: https://hasura.io/docs/1.0/graphql/core/hasura-cli/hasura_metadata_export.html
-
-hasura seeds create tables_seed <--from-table table1 --from-table table2>
-# ref: https://hasura.io/docs/1.0/graphql/core/hasura-cli/hasura_seeds_create.html
+npx hasura seed create tables_seed <--from-table table1 --from-table table2>
+# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_seed_create.html
 ```
 
 ### Apply the code to Hasura Cloud
 
 ```bash
-hasura migrate apply
-hasura metadata apply
-hasura seeds apply
+npx hasura migrate apply
+npx hasura metadata apply
+npx hasura seed apply
 ```
