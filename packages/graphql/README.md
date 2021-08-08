@@ -46,6 +46,7 @@ npx hasura seed create tables_seed <--from-table table1 --from-table table2>
 ### Apply the code to Hasura Cloud
 
 ```bash
+cd hasura
 npx hasura migrate apply
 npx hasura metadata apply
 npx hasura seed apply
