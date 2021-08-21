@@ -1,36 +1,20 @@
 {
   "name": "nextjs-template",
-  "author": "usagizmo <usagizmo@gmail.com>",
-  "license": "MIT",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "postinstall": "lerna bootstrap",
-    "prepare": "husky install",
-    "clean": "lerna run clean && lerna clean --yes",
-    "format": "lerna run format",
-    "build": "lerna run build",
-    "test": "lerna run test"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "*.{css,md,json,graphql}": "prettier --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "dependencies": {
+    "next": "11.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2",
-    "eslint": "^7.29.0",
-    "husky": "^6.0.0",
-    "lerna": "^3.22.1",
-    "lint-staged": "^11.0.0",
-    "prettier": "^2.2.0",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.3.4"
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0"
   }
 }
