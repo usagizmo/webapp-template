@@ -32,3 +32,41 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Handling Hasura Cloud's database in code
+
+The [Hasura CLI](https://hasura.io/docs/1.0/graphql/core/hasura-cli/index.html) allows you to easily manage Hasura Cloud's database.  
+After completing the settings in Hasura Cloud, execute the following command.
+
+### Prepare to use hasura-cli
+
+```bash
+# Already done it
+# npx hasura init hasura --endpoint https://<project-name>.hasusura.app --admin-secret <admin-secret-key>
+
+cd hasura
+cp .env.example .env
+# Then, set it up
+```
+
+### Apply the code to Hasura Cloud
+
+```bash
+cd hasura
+npx hasura migrate apply
+npx hasura metadata apply
+npx hasura seed apply
+```
+
+### Retrieve Hasura Cloud settings
+
+```bash
+npx hasura migrate create init --from-server
+# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_migrate_create.html
+
+npx hasura metadata export
+# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_metadata_export.html
+
+npx hasura seed create tables_seed <--from-table table1 --from-table table2>
+# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_seed_create.html
+```
