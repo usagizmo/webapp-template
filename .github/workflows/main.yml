@@ -57,3 +57,9 @@ jobs:
         run: yarn format
 
       - uses: stefanzweifel/git-auto-commit-action@v4
+
+      - name: Run build
+        run: yarn build
+
+      # - name: Run test
+      #   run: yarn test
