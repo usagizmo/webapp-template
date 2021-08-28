@@ -5,8 +5,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
@@ -27,12 +25,6 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
 ## Handling Hasura Cloud's database in code
 
 The [Hasura CLI](https://hasura.io/docs/1.0/graphql/core/hasura-cli/index.html) allows you to easily manage Hasura Cloud's database.  
@@ -42,12 +34,17 @@ After completing the settings in Hasura Cloud, execute the following command.
 
 ```bash
 # Already done it
-# npx hasura init hasura --endpoint https://<project-name>.hasusura.app --admin-secret <admin-secret-key>
+# npx hasura init hasura --endpoint https://<project-name>.hasura.app --admin-secret <admin-secret-key>
 
 cd hasura
 cp .env.example .env
 # Then, set it up
 ```
+
+Set Hasura's environment variable `HASURA_GRAPHQL_JWT_SECRET` to work with `Firebase Authentication`.  
+[https://hasura.io/jwt-config/](https://hasura.io/jwt-config/)
+
+Set `HASURA_GRAPHQL_UNAUTHORIZED_ROLE` to `anonymous` as well.
 
 ### Apply the code to Hasura Cloud
 
@@ -70,3 +67,40 @@ npx hasura metadata export
 npx hasura seed create tables_seed <--from-table table1 --from-table table2>
 # ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_seed_create.html
 ```
+
+## Set up Firebase
+
+### Use
+
+- Authentication (Email/password)
+- Firestore
+- Functions (Need to upgrade to **Blaze** plan)
+- Storege
+
+### Requirement
+
+- `nodenv` to use node `v14.5.0` / [anyenv](https://github.com/anyenv/anyenv)
+- [Firebase CLI](https://firebase.google.com/docs/cli)
+
+### Commands
+
+```
+cd firebase
+
+# Already done it
+# firebase init
+
+cd functions
+yarn
+
+# Add Environment Variable
+firebase functions:config:set hasura.endpoint=https://<project-name>.hasura.app/v1/graphql --project <project-name>
+firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <project-name>
+
+# Deploy functions
+yarn deploy
+```
+
+## Set up GitHub / Vercel (or Netlify)
+
+If you need to prepare the GitHub / Vercel (or Netlify) environment, you will need to set the necessary environment variables (the contents of `.env.local`) at build time.
