@@ -1,36 +1,48 @@
 {
   "name": "nextjs-template",
-  "author": "usagizmo <usagizmo@gmail.com>",
-  "license": "MIT",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "postinstall": "lerna bootstrap",
     "prepare": "husky install",
-    "clean": "lerna run clean && lerna clean --yes",
-    "format": "lerna run format",
-    "build": "lerna run build",
-    "test": "lerna run test"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "*.{css,md,json,graphql}": "prettier --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "dependencies": {
+    "@heroicons/react": "^1.0.4",
+    "firebase": "^8.10.0",
+    "graphql": "^15.5.1",
+    "graphql-request": "^3.5.0",
+    "next": "11.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-query": "^3.21.0",
+    "react-query-devtools": "^2.6.3",
+    "zustand": "^3.5.9"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2",
-    "eslint": "^7.29.0",
-    "husky": "^6.0.0",
-    "lerna": "^3.22.1",
-    "lint-staged": "^11.0.0",
-    "prettier": "^2.2.0",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.3.4"
+    "@types/node": "^16.7.1",
+    "@types/react": "^17.0.19",
+    "autoprefixer": "^10.3.1",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "hasura-cli": "^2.0.7",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
+    "tailwindcss": "^2.2.7",
+    "typescript": "^4.3.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache",
+      "prettier --write"
+    ],
+    "*": "prettier --write --ignore-unknown"
   }
 }

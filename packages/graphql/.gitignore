@@ -1,7 +1,0 @@
-# dependencies
-/node_modules
-
-/generated
-/dist
-/.env
-/hasura/config.yaml
