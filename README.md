@@ -1,15 +1,16 @@
 # Next.js Template
 
-- [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
-- GitHub Actions (Formatting + Testing)
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Zustand](https://github.com/pmndrs/zustand)
 - [Firebase (Authentication)](https://firebase.google.com/)
+- [Hasura Cloud](https://cloud.hasura.io/)
 - [React Query](https://react-query.tanstack.com/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
+- GitHub Actions (Formatting + Testing)
 
 ## Handling Hasura Cloud's database in code
 
