@@ -15,7 +15,7 @@
     "firebase": "^8.10.0",
     "graphql": "^15.5.1",
     "graphql-request": "^3.5.0",
-    "next": "11.1.0",
+    "next": "11.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-query": "^3.21.0",
