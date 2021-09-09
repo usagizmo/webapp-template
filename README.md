@@ -45,6 +45,8 @@ npx hasura seed apply
 ### Retrieve Hasura Cloud settings
 
 ```bash
+cd hasura
+
 npx hasura migrate create init --from-server
 # ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_migrate_create.html
 
