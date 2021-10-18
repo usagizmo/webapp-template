@@ -6,8 +6,11 @@ import LoginFields from '../components/LoginFields'
 import useAuthStore from '../store/useAuthStore'
 import ROUTE from '../constants/route'
 import PageTitle from '../components/PageTitle'
+import { NextPage } from 'next'
 
-export default function Home() {
+interface Props {}
+
+const HomePage: NextPage<Props> = () => {
   const user = useAuthStore((state) => state.user)
 
   return (
@@ -36,3 +39,5 @@ export default function Home() {
     </Layout>
   )
 }
+
+export default HomePage

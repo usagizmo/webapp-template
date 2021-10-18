@@ -38,8 +38,8 @@ Set `HASURA_GRAPHQL_UNAUTHORIZED_ROLE` to `anonymous` as well.
 ```bash
 cd hasura
 npx hasura migrate apply
-npx hasura metadata apply
 npx hasura seed apply
+npx hasura metadata apply
 ```
 
 ### Retrieve Hasura Cloud settings
@@ -50,11 +50,11 @@ cd hasura
 npx hasura migrate create init --from-server
 # ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_migrate_create.html
 
-npx hasura metadata export
-# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_metadata_export.html
-
 npx hasura seed create tables_seed <--from-table table1 --from-table table2>
 # ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_seed_create.html
+
+npx hasura metadata export
+# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_metadata_export.html
 ```
 
 ## Set up Firebase
