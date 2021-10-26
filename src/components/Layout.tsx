@@ -34,7 +34,7 @@ const Layout: VFC<Props> = ({
         {/* <link rel="canonical" href="https://nextjs-template.io/" /> */}
       </Head>
       <div className="flex-shrink-0">
-        <header className="flex-center h-16">
+        <header className="u-flex-center h-16">
           <h1 className="text-2xl font-medium">Next.js Template</h1>
         </header>
       </div>
@@ -42,7 +42,7 @@ const Layout: VFC<Props> = ({
         <main>{children}</main>
       </div>
       <div className="flex-shrink-0">
-        <footer className="flex-center h-10">
+        <footer className="u-flex-center h-10">
           <a
             className="text-xs"
             href="https://usagizmo.com"

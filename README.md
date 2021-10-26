@@ -17,6 +17,8 @@
 The [Hasura CLI](https://hasura.io/docs/1.0/graphql/core/hasura-cli/index.html) allows you to easily manage Hasura Cloud's database.  
 After completing the settings in Hasura Cloud, execute the following command.
 
+※Before using the CLI, please make sure you have set up Hasura Cloud (create a project/database connection)
+
 ### Prepare to use hasura-cli
 
 ```bash
@@ -38,8 +40,8 @@ Set `HASURA_GRAPHQL_UNAUTHORIZED_ROLE` to `anonymous` as well.
 ```bash
 cd hasura
 npx hasura migrate apply
-npx hasura metadata apply
 npx hasura seed apply
+npx hasura metadata apply
 ```
 
 ### Retrieve Hasura Cloud settings
@@ -50,11 +52,11 @@ cd hasura
 npx hasura migrate create init --from-server
 # ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_migrate_create.html
 
-npx hasura metadata export
-# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_metadata_export.html
-
 npx hasura seed create tables_seed <--from-table table1 --from-table table2>
 # ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_seed_create.html
+
+npx hasura metadata export
+# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_metadata_export.html
 ```
 
 ## Set up Firebase
@@ -65,6 +67,8 @@ npx hasura seed create tables_seed <--from-table table1 --from-table table2>
 - Firestore
 - Functions (Need to upgrade to **Blaze** plan)
 - Storege
+
+※Before using the CLI, please make sure you have set up Firebase
 
 ### Requirement
 
@@ -79,15 +83,26 @@ cd firebase
 # Already done it
 # firebase init
 
+# Set project
+firebase use --add <project-id>
+
 cd functions
 yarn
 
+
 # Add Environment Variable
-firebase functions:config:set hasura.endpoint=https://<project-name>.hasura.app/v1/graphql --project <project-name>
-firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <project-name>
+firebase functions:config:set hasura.endpoint=https://<project-name>.hasura.app/v1/graphql --project <project-id>
+firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <project-id>
 
 # Deploy functions
 yarn deploy
+```
+
+## Prepare .env.local
+
+```bash
+cp .env.local.example .env.local
+# Then, set it up
 ```
 
 ## Set up GitHub / Vercel (or Netlify)

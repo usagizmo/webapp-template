@@ -1,7 +1,7 @@
 import { VFC } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { LogoutIcon, ChevronDoubleLeftIcon } from '@heroicons/react/outline'
+import { CaretDoubleLeft, SignOut } from 'phosphor-react'
 import { useLogout } from '../hooks/useLogout'
 import ROUTE from '../constants/route'
 import Layout from '../components/Layout'
@@ -20,9 +20,9 @@ const Dashboard: VFC = () => {
       {user && (
         <>
           <div className="container">
-            <p className="py-6 flex-center flex-col">
-              <span className="font-semibold font-mono px-1 py-0.5">{user.email}</span>
-              <span className="font-mono px-1 py-0.5">{user.id}</span>
+            <p className="py-[24px] u-flex-center flex-col">
+              <span className="font-semibold font-mono px-[4px] py-[2px]">{user.email}</span>
+              <span className="font-mono px-[4px] py-[2px]">{user.id}</span>
             </p>
           </div>
           <div className="container">
@@ -32,10 +32,10 @@ const Dashboard: VFC = () => {
           </div>
         </>
       )}
-      <div className="flex-center space-x-2 mt-8">
+      <div className="u-flex-center space-x-[16px] mt-[24px]">
         <Link href={ROUTE.HOME}>
           <a>
-            <ChevronDoubleLeftIcon className="h-5 w-5 text-blue-500" />
+            <CaretDoubleLeft size={24} className="text-blue-500" />
           </a>
         </Link>
         <button
@@ -44,7 +44,7 @@ const Dashboard: VFC = () => {
             router.push(ROUTE.HOME)
           }}
         >
-          <LogoutIcon className="h-5 w-5 text-blue-500" />
+          <SignOut size={24} className="text-blue-500" />
         </button>
       </div>
     </Layout>

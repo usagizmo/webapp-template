@@ -13,7 +13,7 @@ export default function Second() {
     <Layout title={`Second/${id}`}>
       <PageTitle title={`Second/${id}`} />
       <div className="container">
-        <div className="flex-center">
+        <div className="u-flex-center">
           <Link href={ROUTE.HOME} passHref>
             <a className="underline">HOME</a>
           </Link>

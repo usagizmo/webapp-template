@@ -7,7 +7,7 @@ interface Props {
 const PageTitle: VFC<Props> = ({ title }) => {
   return (
     <div className="container">
-      <div className="flex-center">
+      <div className="u-flex-center">
         <h1 className="text-2xl font-medium">{title}</h1>
       </div>
     </div>
