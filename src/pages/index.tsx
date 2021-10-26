@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import { ChevronDoubleRightIcon } from '@heroicons/react/outline'
+import { NextPage } from 'next'
+import { CaretDoubleRight } from 'phosphor-react'
 import Layout from '../components/Layout'
 import LoginFields from '../components/LoginFields'
 import useAuthStore from '../store/useAuthStore'
 import ROUTE from '../constants/route'
 import PageTitle from '../components/PageTitle'
-import { NextPage } from 'next'
 
 interface Props {}
 
@@ -17,19 +17,19 @@ const HomePage: NextPage<Props> = () => {
     <Layout title="Home">
       <PageTitle title="Home" />
       <div className="container">
-        <div className="flex-center">
+        <div className="u-flex-center">
           <Link href={{ pathname: ROUTE['SECOND[ID]'], query: { id: 1 } }} passHref>
             <a className="underline">Second</a>
           </Link>
         </div>
-        <div className="mt-8">
+        <div className="mt-[24px]">
           <LoginFields />
         </div>
         {user && (
-          <div className="py-8">
+          <div className="py-[24px]">
             <Link href={ROUTE.DASHBOARD} passHref>
-              <a className="flex-center space-x-2">
-                <ChevronDoubleRightIcon className="h-5 w-5 text-blue-500" />
+              <a className="u-flex-center space-x-[8px]">
+                <CaretDoubleRight size={24} className="text-blue-500" />
                 <span>Dashboard</span>
               </a>
             </Link>

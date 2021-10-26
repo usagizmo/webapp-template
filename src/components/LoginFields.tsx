@@ -1,5 +1,5 @@
 import React, { VFC } from 'react'
-import { SwitchVerticalIcon } from '@heroicons/react/outline'
+import { ToggleLeft, ToggleRight } from 'phosphor-react'
 import { useFirebaseAuth } from '../hooks/useFirebaseAuth'
 
 interface Props {}
@@ -34,10 +34,19 @@ const LoginFields: VFC<Props> = () => {
           />
         </div>
         <div className="flex items-center space-x-2">
-          <SwitchVerticalIcon
-            className="h-5 w-5 text-blue-500 cursor-pointer"
-            onClick={toggleIsLogin}
-          />
+          {isLogin ? (
+            <ToggleRight
+              size={24}
+              className="text-blue-500 cursor-pointer"
+              onClick={toggleIsLogin}
+            />
+          ) : (
+            <ToggleLeft
+              size={24}
+              className="text-blue-500 cursor-pointer"
+              onClick={toggleIsLogin}
+            />
+          )}
           <button
             disabled={!email || !password}
             type="submit"
