@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useCallback, useState } from 'react'
-import firebase from '../libs/firebase'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../libs/firebase'
 
 export const useFirebaseAuth = () => {
   const [email, setEmail] = useState('')
@@ -27,13 +28,13 @@ export const useFirebaseAuth = () => {
       e.preventDefault()
       if (isLogin) {
         try {
-          await firebase.auth().signInWithEmailAndPassword(email, password)
+          await signInWithEmailAndPassword(auth, email, password)
         } catch (e) {
           console.error(e)
         }
       } else {
         try {
-          await firebase.auth().createUserWithEmailAndPassword(email, password)
+          await createUserWithEmailAndPassword(auth, email, password)
         } catch (e) {
           console.error(e)
         }
