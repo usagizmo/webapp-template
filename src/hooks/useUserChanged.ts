@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react'
-import firebase from '../libs/firebase'
+import { auth } from '../libs/firebase'
 import useAuthStore from '../store/useAuthStore'
 import { useFetchCurrentUser } from './useFetchCurrentUser'
 
@@ -25,7 +25,7 @@ export const useUserChanged = () => {
   )
 
   useEffect(() => {
-    const firebaseUid = firebase.auth().currentUser?.uid
+    const firebaseUid = auth.currentUser?.uid
     if (!token || !firebaseUid) {
       resetUser()
       return
