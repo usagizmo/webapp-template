@@ -1,8 +1,10 @@
 import { useMutation, useQueryClient } from 'react-query'
 import QUERY_KEY from '../../constants/query-key'
+import createCreateArticleProps from '../../factries/createCreateArticleProps'
+import createUpdateArticleProps from '../../factries/createUpdateArticleProps'
 import { CREATE_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE } from '../../queries/queries'
 import useStore from '../../store/useStore'
-import { Article, EditableArticleProps } from '../../types/dataTypes'
+import { Article, CreateArticleProps, UpdateArticleProps } from '../../types/dataTypes'
 
 interface CreateArticleRes {
   insert_articles_one: Article
@@ -16,27 +18,29 @@ interface DeleteArticleRes {
   delete_articles_by_pk: Article
 }
 
-export const useArticlesQuery = () => {
+export const useArticleMutate = () => {
   const queryClient = useQueryClient()
   const graphQLClient = useStore((state) => state.graphQLClient)
 
   const createArticleMutation = useMutation(
-    (props: EditableArticleProps) => graphQLClient.request(CREATE_ARTICLE, props),
+    (props: CreateArticleProps) =>
+      graphQLClient.request(CREATE_ARTICLE, createCreateArticleProps(props)),
     {
       onSuccess: (data: CreateArticleRes) => {
         const previousArticles = queryClient.getQueryData<Article[]>(QUERY_KEY.ARTICLES)
         if (!previousArticles) return
 
         queryClient.setQueryData(QUERY_KEY.ARTICLES, [
-          ...previousArticles,
           data.insert_articles_one,
+          ...previousArticles,
         ])
       },
     }
   )
 
   const updateArticleMutation = useMutation(
-    (props: EditableArticleProps) => graphQLClient.request(UPDATE_ARTICLE, props),
+    (props: UpdateArticleProps) =>
+      graphQLClient.request(UPDATE_ARTICLE, createUpdateArticleProps(props)),
     {
       onSuccess: (data: UpdateArticleRes) => {
         const previousArticles = queryClient.getQueryData<Article[]>(QUERY_KEY.ARTICLES)

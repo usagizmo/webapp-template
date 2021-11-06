@@ -17,7 +17,7 @@ export default function AdminPage() {
       <header className="u-flex-center h-[80px]">
         <h1 className="text-[24px] font-bold">{CONST.SITE_NAME}</h1>
       </header>
-      <div className="container max-w-[320px]">
+      <div className="container max-w-[480px]">
         <Navigation />
 
         <div className="mt-[24px]">
@@ -29,7 +29,6 @@ export default function AdminPage() {
               </p>
               <div className="mt-[40px]">
                 <Button
-                  type="button"
                   onClick={() => {
                     logout()
                   }}

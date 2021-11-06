@@ -1,11 +1,11 @@
-import { VFC } from 'react'
+import React, { VFC } from 'react'
 import { useArticlesQuery } from '../../hooks/queries/useArticlesQuery'
 import useQueryHandle from '../../hooks/useQueryHandle'
-import ArticleItem from './ArticleItem'
+import EditArticleItem from './EditArticleItem'
 
 interface Props {}
 
-const ArticleList: VFC<Props> = () => {
+const EditArticleList: VFC<Props> = () => {
   const articlesQuery = useArticlesQuery()
   const queryHandle = useQueryHandle(articlesQuery)
 
@@ -14,10 +14,10 @@ const ArticleList: VFC<Props> = () => {
   return (
     <div className="space-y-[24px]">
       {articlesQuery.data?.map((article) => (
-        <ArticleItem key={article.id} article={article} />
+        <EditArticleItem key={article.id} article={article} />
       ))}
     </div>
   )
 }
 
-export default ArticleList
+export default EditArticleList

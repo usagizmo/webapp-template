@@ -20,4 +20,5 @@ export interface Article {
 
 //
 
-export type EditableArticleProps = Partial<Omit<Article, 'id' | 'created_at' | 'updated_at'>>
+export type CreateArticleProps = Pick<Article, 'title' | 'content'>
+export type UpdateArticleProps = Pick<Article, 'id' | 'title' | 'content'>

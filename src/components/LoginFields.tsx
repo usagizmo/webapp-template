@@ -50,9 +50,7 @@ export default function App() {
         <Button type="submit" primary>
           Log in
         </Button>
-        <Button type="button" onClick={handleSubmit(createUserWithEmailAndPassword)}>
-          Sign in
-        </Button>
+        <Button onClick={handleSubmit(createUserWithEmailAndPassword)}>Sign in</Button>
       </div>
     </form>
   )

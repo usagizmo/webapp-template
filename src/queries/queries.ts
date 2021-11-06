@@ -43,7 +43,7 @@ export const CREATE_ARTICLE = gql`
 `
 
 export const UPDATE_ARTICLE = gql`
-  mutation UpdateArticle($title: String!, $content: String!) {
+  mutation UpdateArticle($id: String!, $title: String!, $content: String!) {
     update_articles_by_pk(pk_columns: { id: $id }, _set: { title: $title, content: $content }) {
       id
       updated_at
