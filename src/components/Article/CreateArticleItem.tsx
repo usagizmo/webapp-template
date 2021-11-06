@@ -24,12 +24,9 @@ const CreateArticleItem: VFC<Props> = () => {
   } = useForm<Inputs>()
 
   const onSubmit = useCallback(
-    async ({ title, content }: Inputs) => {
+    async (inputs: Inputs) => {
       try {
-        await createArticleMutation.mutateAsync({
-          title,
-          content,
-        })
+        await createArticleMutation.mutateAsync(inputs)
       } catch (err: any) {
         alert(err.message)
       }
