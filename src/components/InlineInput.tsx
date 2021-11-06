@@ -1,12 +1,19 @@
 import { VFC } from 'react'
+import classnames from 'classnames'
 
 interface Props {
   value: string
+  line?: boolean
 }
 
-const InlineInput: VFC<Props> = ({ value, ...bindings }) => {
+const InlineInput: VFC<Props> = ({ value, line, ...bindings }) => {
   return (
-    <label className="relative overflow-hidden inline-flex">
+    <label
+      className={classnames('relative overflow-hidden inline-flex rounded', {
+        'hover:ring-1 hover:shadow-sm focus-within:shadow-sm focus-within:!ring-2 ring-gray-300':
+          line,
+      })}
+    >
       <div className="min-h-[1em] min-w-[1em] overflow-hidden invisible whitespace-pre">
         {value}
       </div>

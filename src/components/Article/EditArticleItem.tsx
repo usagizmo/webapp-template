@@ -21,7 +21,7 @@ const EditArticleItem: VFC<Props> = ({ article }) => {
   return (
     <div>
       <h2 className="font-medium text-[20px] flex">
-        <InlineInput value={title} {...titleBindings} />
+        <InlineInput value={title} line {...titleBindings} />
         <div className="ml-[8px]">
           <Button
             className="w-[24px] h-[24px] !p-0"
@@ -36,9 +36,7 @@ const EditArticleItem: VFC<Props> = ({ article }) => {
         </div>
       </h2>
       <div>
-        <p>
-          <InlineInput value={content} {...contentBindings} />
-        </p>
+        <InlineInput value={content} line {...contentBindings} />
       </div>
     </div>
   )
