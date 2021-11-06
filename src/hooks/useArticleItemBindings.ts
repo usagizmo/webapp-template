@@ -17,6 +17,7 @@ export const useArticleItemBindings = (article: Article) => {
       setTitle(e.target.value)
     },
     onBlur: () => {
+      if (article.title === title) return
       updateArticleMutation.mutate({
         ...article,
         title,
@@ -32,6 +33,7 @@ export const useArticleItemBindings = (article: Article) => {
       setContent(e.target.value)
     },
     onBlur: () => {
+      if (article.content === content) return
       updateArticleMutation.mutate({
         ...article,
         content,
