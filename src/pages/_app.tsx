@@ -10,7 +10,17 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }: AppProps) {
   useAuthStateChanged()
   useUserChanged()
-  const [queryClient] = useState(() => new QueryClient())
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            retry: false,
+            refetchOnWindowFocus: false,
+          },
+        },
+      })
+  )
   return (
     <QueryClientProvider client={queryClient}>
       <Component {...pageProps} />

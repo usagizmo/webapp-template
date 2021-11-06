@@ -11,7 +11,7 @@ admin.initializeApp()
 
 const registerUserToHasura = (user: admin.auth.UserRecord) => {
   const CREATE_USER = `
-    mutation CreateUser($id: String = "", $email: String = "") {
+    mutation CreateUser($id: String!, $email: String!) {
       insert_users_one(object: {id: $id, email: $email}, on_conflict: {constraint: users_pkey, update_columns: []}) {
         id
         email
