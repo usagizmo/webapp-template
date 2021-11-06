@@ -31,7 +31,7 @@ const EditArticleItem: VFC<Props> = ({ article }) => {
               }
             }}
           >
-            <Trash width={12} height={12} />
+            <Trash width={16} height={16} />
           </Button>
         </div>
       </h2>
