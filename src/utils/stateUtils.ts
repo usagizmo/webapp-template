@@ -1,4 +1,3 @@
-import { ByIdProp, State } from '../store/useStore'
 import { IdMap } from '../types/types'
 
 export const deleteFromList = <T>(list: T[] | undefined, target: T): void => {
@@ -36,22 +35,3 @@ export const toggleIdMap = (idMap: IdMap, id: string) => {
     idMap[id] = true
   }
 }
-
-export const getDataObject = <K extends ByIdProp, U extends keyof State[K]>(
-  state: State,
-  byIdProp: K,
-  id: U
-): NonNullable<State[K][U]> => {
-  const byId = state[byIdProp]
-  const data = byId[id]
-  if (!data) throw new Error(`state.${byIdProp}[${id}] does not exist`)
-  return data as NonNullable<State[K][U]>
-}
-
-export const getDataObjectFunc =
-  <K extends ByIdProp, U extends keyof State[K]>(
-    state: State,
-    byIdProp: K
-  ): ((id: U) => NonNullable<State[K][U]>) =>
-  (id) =>
-    getDataObject(state, byIdProp, id)
