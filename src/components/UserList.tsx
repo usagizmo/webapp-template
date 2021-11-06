@@ -1,10 +1,10 @@
 import { VFC } from 'react'
-import { useQueryUsers } from '../hooks/useQueryUsers'
+import { useUsersQuery } from '../hooks/queries/useUsersQuery'
 
 interface Props {}
 
 const UserList: VFC<Props> = () => {
-  const { status, data } = useQueryUsers()
+  const { status, data } = useUsersQuery()
 
   if (status === 'loading') return <div>Loading...</div>
   if (status === 'error') return <div>Error</div>
@@ -12,9 +12,9 @@ const UserList: VFC<Props> = () => {
   return (
     <div>
       {data?.map((user) => (
-        <div className="py-2" key={user.id}>
-          <div className="font-semibold font-mono text-sm px-1 py-0.5">{user.email}</div>
-          <div className="font-mono text-xs px-1 py-0.5">{user.id}</div>
+        <div className="py-[8px]" key={user.id}>
+          <div className="font-semibold font-mono text-sm px-[4px] py-[2px]">{user.email}</div>
+          <div className="font-mono text-xs px-[4px] py-[2px]">{user.id}</div>
         </div>
       ))}
     </div>

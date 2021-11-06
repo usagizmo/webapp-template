@@ -39,8 +39,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Restore lerna
-        uses: actions/cache@v2
+      - uses: actions/cache@v2
         with:
           path: |
             node_modules
@@ -52,6 +51,9 @@ jobs:
 
       - name: Run lint
         run: yarn lint
+
+      # - name: Run test
+      #   run: yarn test
 
       - name: Run format
         run: yarn format
@@ -68,6 +70,3 @@ jobs:
           NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ secrets.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET }}
           NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
           NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}
-
-      # - name: Run test
-      #   run: yarn test

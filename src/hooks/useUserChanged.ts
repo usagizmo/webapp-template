@@ -1,14 +1,14 @@
 import { useCallback, useEffect } from 'react'
 import { auth } from '../libs/firebase'
-import useAuthStore from '../store/useAuthStore'
+import useStore from '../store/useStore'
 import { useFetchCurrentUser } from './useFetchCurrentUser'
 
 export let unsubscribeUser = () => {}
 
 export const useUserChanged = () => {
-  const token = useAuthStore((state) => state.token)
-  const setUser = useAuthStore((state) => state.setUser)
-  const resetUser = useAuthStore((state) => state.resetUser)
+  const token = useStore((state) => state.token)
+  const setUser = useStore((state) => state.setUser)
+  const resetUser = useStore((state) => state.resetUser)
   const fetchCurrentUser = useFetchCurrentUser()
 
   const setCurrentUser = useCallback(

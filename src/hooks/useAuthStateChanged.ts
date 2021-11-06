@@ -3,8 +3,7 @@ import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth'
 import { doc, onSnapshot } from 'firebase/firestore'
 import CONST from '../constants/const'
 import { auth, db } from '../libs/firebase'
-import useAuthStore from '../store/useAuthStore'
-import useGraphQLClientStore from '../store/useGraphQLClientStore'
+import useStore from '../store/useStore'
 
 export let unsubscribeUser = () => {}
 
@@ -16,24 +15,20 @@ const getToken = async (user: FirebaseUser) => {
 }
 
 export const useAuthStateChanged = () => {
-  const setToken = useAuthStore((state) => state.setToken)
-  const resetToken = useAuthStore((state) => state.resetToken)
-  const setGraphQLClient = useGraphQLClientStore((state) => state.setGraphQLClient)
-  const resetGraphQLClient = useGraphQLClientStore((state) => state.resetGraphQLClient)
+  const setToken = useStore((state) => state.setToken)
+  const resetToken = useStore((state) => state.resetToken)
 
   useEffect(() => {
     const unsubscribeAuthStateChanged = onAuthStateChanged(auth, async (user) => {
       if (!user) {
         unsubscribeUser()
         resetToken()
-        resetGraphQLClient()
         return
       }
 
       const token = await getToken(user)
       if (token) {
         setToken(token)
-        setGraphQLClient(token)
         return
       }
 
@@ -41,12 +36,11 @@ export const useAuthStateChanged = () => {
       unsubscribeUser = onSnapshot(userRef, async () => {
         const token = await getToken(user)
         setToken(token)
-        setGraphQLClient(token)
       })
     })
     return () => {
       unsubscribeUser()
       unsubscribeAuthStateChanged()
     }
-  }, [setToken, resetToken, setGraphQLClient, resetGraphQLClient])
+  }, [setToken, resetToken])
 }

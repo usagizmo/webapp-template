@@ -1,63 +1,59 @@
-import React, { VFC } from 'react'
-import { ToggleLeft, ToggleRight } from 'phosphor-react'
+import React from 'react'
+import { useForm } from 'react-hook-form'
 import { useFirebaseAuth } from '../hooks/useFirebaseAuth'
+import Input from './Input'
+import ERROR from '../constants/error'
+import Button from './Button'
+import CONST from '../constants/const'
 
-interface Props {}
+type Inputs = {
+  email: string
+  password: string
+}
 
-const LoginFields: VFC<Props> = () => {
-  const { email, password, isLogin, onChangeEmail, onChangePassword, toggleIsLogin, login } =
-    useFirebaseAuth()
+export default function App() {
+  const { signInWithEmailAndPassword, createUserWithEmailAndPassword } = useFirebaseAuth()
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<Inputs>()
 
   return (
-    <form onSubmit={login}>
-      <div className="space-y-4">
-        <div className="flex flex-col">
-          <label>E-mail:</label>
-          <input
-            className="mt-2 px-3 py-1 border rounded border-gray-300"
-            placeholder="email@add.com"
-            type="text"
-            value={email}
-            onChange={onChangeEmail}
-            autoComplete="on"
-          />
-        </div>
-        <div className="flex flex-col">
-          <label>Password:</label>
-          <input
-            className="mt-2 px-3 py-1 border rounded border-gray-300"
-            placeholder="****"
-            type="password"
-            value={password}
-            onChange={onChangePassword}
-            autoComplete="off"
-          />
-        </div>
-        <div className="flex items-center space-x-2">
-          {isLogin ? (
-            <ToggleRight
-              size={24}
-              className="text-blue-500 cursor-pointer"
-              onClick={toggleIsLogin}
-            />
-          ) : (
-            <ToggleLeft
-              size={24}
-              className="text-blue-500 cursor-pointer"
-              onClick={toggleIsLogin}
-            />
-          )}
-          <button
-            disabled={!email || !password}
-            type="submit"
-            className="disabled:opacity-40 py-1 px-2 text-white bg-blue-600 hover:bg-blue-700 rounded"
-          >
-            {isLogin ? 'Login' : 'Register'}
-          </button>
-        </div>
+    <form onSubmit={handleSubmit(signInWithEmailAndPassword)} className="space-y-[24px]">
+      <div className="flex flex-col">
+        <Input
+          registerReturn={register('email', {
+            required: ERROR.REQUIRED('E-mail'),
+            pattern: { value: CONST.REGEX_EMAIL, message: ERROR.PATTERN('E-mail') },
+          })}
+          fieldError={errors.email}
+          type="email"
+          label="E-mail"
+        />
+      </div>
+      <div className="flex flex-col">
+        <Input
+          registerReturn={register('password', {
+            required: ERROR.REQUIRED('Password'),
+            minLength: {
+              value: 6,
+              message: ERROR.MIN_LENGTH('Password', 6),
+            },
+          })}
+          fieldError={errors.password}
+          type="password"
+          label="Password"
+        />
+      </div>
+      <div className="flex space-x-[16px]">
+        <Button type="submit" primary>
+          Log in
+        </Button>
+        <Button type="button" onClick={handleSubmit(createUserWithEmailAndPassword)}>
+          Sign in
+        </Button>
       </div>
     </form>
   )
 }
-
-export default LoginFields

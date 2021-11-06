@@ -89,7 +89,6 @@ firebase use --add <project-id>
 cd functions
 yarn
 
-
 # Add Environment Variable
 firebase functions:config:set hasura.endpoint=https://<project-name>.hasura.app/v1/graphql --project <project-id>
 firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <project-id>

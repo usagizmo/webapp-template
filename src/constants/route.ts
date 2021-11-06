@@ -1,7 +1,7 @@
 const ROUTE = {
   HOME: '/',
-  DASHBOARD: '/dashboard',
-  'SECOND[ID]': '/second/[id]',
+  EDIT: '/edit',
+  ADMIN: '/admin',
 }
 
 export default ROUTE
