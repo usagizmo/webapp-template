@@ -14,6 +14,7 @@ insert_permissions:
       columns:
         - content
         - id
+        - imageUrl
         - title
       set:
         userId: x-hasura-User-Id
@@ -24,6 +25,7 @@ select_permissions:
         - content
         - created_at
         - id
+        - imageUrl
         - title
         - updated_at
         - userId
@@ -32,11 +34,12 @@ select_permissions:
   - permission:
       columns:
         - content
-        - id
-        - title
-        - userId
         - created_at
+        - id
+        - imageUrl
+        - title
         - updated_at
+        - userId
       filter: {}
     role: user
 update_permissions:
@@ -44,6 +47,7 @@ update_permissions:
       check: null
       columns:
         - content
+        - imageUrl
         - title
       filter:
         userId:
