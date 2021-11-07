@@ -1,9 +1,9 @@
 import { useMutation, useQueryClient } from 'react-query'
 import { gql } from 'graphql-request'
-import QUERY_KEY from '../../constants/query-key'
-import createUpdateArticleProps from '../../factries/createUpdateArticleProps'
-import useStore from '../../store/useStore'
-import { Article, UpdateArticleProps } from '../../types/dataTypes'
+import QUERY_KEY from '../../../constants/query-key'
+import createUpdateArticleProps from '../../../factries/createUpdateArticleProps'
+import useStore from '../../../store/useStore'
+import { Article, UpdateArticleProps } from '../../../types/dataTypes'
 
 const UPDATE_ARTICLE = gql`
   mutation UpdateArticle($id: String!, $title: String!, $content: String!) {

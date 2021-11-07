@@ -1,7 +1,7 @@
 import React, { useCallback, VFC } from 'react'
 import { useForm } from 'react-hook-form'
 import ERROR from '../../constants/error'
-import { useCreateArticleMutation } from '../../hooks/mutations/useCreateArticleMutation'
+import { useCreateArticleMutation } from '../../hooks/queries/articles/useCreateArticleMutation'
 import useQueryHandle from '../../hooks/useQueryHandle'
 import Button from '../Button'
 import Input from '../Input'

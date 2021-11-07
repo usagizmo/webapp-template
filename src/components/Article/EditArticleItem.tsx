@@ -1,6 +1,6 @@
 import { Trash } from 'phosphor-react'
 import React, { VFC } from 'react'
-import { useDeleteArticleMutation } from '../../hooks/mutations/useDeleteArticleMutation'
+import { useDeleteArticleMutation } from '../../hooks/queries/articles/useDeleteArticleMutation'
 import { useArticleItemBindings } from '../../hooks/useArticleItemBindings'
 import useQueryHandle from '../../hooks/useQueryHandle'
 import { Article } from '../../types/dataTypes'
