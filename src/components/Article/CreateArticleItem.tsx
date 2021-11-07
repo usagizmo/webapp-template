@@ -1,7 +1,7 @@
 import React, { useCallback, VFC } from 'react'
 import { useForm } from 'react-hook-form'
 import ERROR from '../../constants/error'
-import { useArticleMutate } from '../../hooks/mutations/useArticleMutate'
+import { useCreateArticleMutation } from '../../hooks/mutations/useCreateArticleMutation'
 import useQueryHandle from '../../hooks/useQueryHandle'
 import Button from '../Button'
 import Input from '../Input'
@@ -14,7 +14,7 @@ type Inputs = {
 interface Props {}
 
 const CreateArticleItem: VFC<Props> = () => {
-  const { createArticleMutation } = useArticleMutate()
+  const createArticleMutation = useCreateArticleMutation()
   const queryHandle = useQueryHandle(createArticleMutation)
 
   const {

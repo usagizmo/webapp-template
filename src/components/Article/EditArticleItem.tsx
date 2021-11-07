@@ -1,6 +1,6 @@
 import { Trash } from 'phosphor-react'
 import React, { VFC } from 'react'
-import { useArticleMutate } from '../../hooks/mutations/useArticleMutate'
+import { useDeleteArticleMutation } from '../../hooks/mutations/useDeleteArticleMutation'
 import { useArticleItemBindings } from '../../hooks/useArticleItemBindings'
 import useQueryHandle from '../../hooks/useQueryHandle'
 import { Article } from '../../types/dataTypes'
@@ -13,7 +13,7 @@ interface Props {
 
 const EditArticleItem: VFC<Props> = ({ article }) => {
   const { title, titleBindings, content, contentBindings } = useArticleItemBindings(article)
-  const { deleteArticleMutation } = useArticleMutate()
+  const deleteArticleMutation = useDeleteArticleMutation()
   const queryHandle = useQueryHandle(deleteArticleMutation, 'Deleting...')
 
   if (queryHandle) return queryHandle
