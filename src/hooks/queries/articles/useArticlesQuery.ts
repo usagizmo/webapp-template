@@ -1,18 +1,14 @@
 import { useCallback } from 'react'
 import { useQuery } from 'react-query'
 import { gql } from 'graphql-request'
-import { Article } from '../../../types/dataTypes'
+import { Article, returnArticleProps } from '../../../types/dataTypes'
 import QUERY_KEY from '../../../constants/query-key'
 import useStore from '../../../store/useStore'
 
 const GET_ARTICLES = gql`
   query GetArticles {
     articles(order_by: { updated_at: desc }) {
-      id
-      created_at
-      updated_at
-      title
-      content
+      ${returnArticleProps}
     }
   }
 `

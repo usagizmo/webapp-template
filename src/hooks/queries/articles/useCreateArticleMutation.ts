@@ -3,16 +3,12 @@ import { gql } from 'graphql-request'
 import QUERY_KEY from '../../../constants/query-key'
 import createCreateArticleProps from '../../../factries/createCreateArticleProps'
 import useStore from '../../../store/useStore'
-import { Article, CreateArticleProps } from '../../../types/dataTypes'
+import { Article, CreateArticleProps, returnArticleProps } from '../../../types/dataTypes'
 
 const CREATE_ARTICLE = gql`
   mutation CreateArticle($title: String!, $content: String!) {
     insert_articles_one(object: { title: $title, content: $content }) {
-      id
-      updated_at
-      created_at
-      title
-      content
+      ${returnArticleProps}
     }
   }
 `

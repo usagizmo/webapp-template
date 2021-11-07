@@ -18,6 +18,14 @@ export interface Article {
   updated_at: string // ISO 8601
 }
 
+export const returnArticleProps = `
+  id
+  title
+  content
+  created_at
+  updated_at
+`
+
 //
 
 export type CreateArticleProps = Pick<Article, 'title' | 'content'>

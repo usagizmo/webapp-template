@@ -3,16 +3,12 @@ import { gql } from 'graphql-request'
 import QUERY_KEY from '../../../constants/query-key'
 import createUpdateArticleProps from '../../../factries/createUpdateArticleProps'
 import useStore from '../../../store/useStore'
-import { Article, UpdateArticleProps } from '../../../types/dataTypes'
+import { Article, returnArticleProps, UpdateArticleProps } from '../../../types/dataTypes'
 
 const UPDATE_ARTICLE = gql`
   mutation UpdateArticle($id: String!, $title: String!, $content: String!) {
     update_articles_by_pk(pk_columns: { id: $id }, _set: { title: $title, content: $content }) {
-      id
-      updated_at
-      created_at
-      title
-      content
+      ${returnArticleProps}
     }
   }
 `
