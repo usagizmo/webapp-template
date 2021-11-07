@@ -49,7 +49,7 @@ const CreateArticleItem: VFC<Props> = () => {
       <div>
         <Input
           registerReturn={register('content', {
-            required: ERROR.REQUIRED('Password'),
+            required: ERROR.REQUIRED('Content'),
           })}
           fieldError={errors.content}
           type="text"
