@@ -4,13 +4,13 @@ import Navigation from '../components/Navigation'
 import LoginFields from '../components/LoginFields'
 import CONST from '../constants/const'
 import useStore from '../store/useStore'
-import { useLogout } from '../hooks/useLogout'
+import { useSignOut } from '../hooks/useSignOut'
 import { SignOut } from 'phosphor-react'
 import Button from '../components/Button'
 
 export default function AdminPage() {
   const user = useStore((state) => state.user)
-  const { logout } = useLogout()
+  const { signOut } = useSignOut()
 
   return (
     <Layout>
@@ -30,7 +30,7 @@ export default function AdminPage() {
               <div className="mt-[40px]">
                 <Button
                   onClick={() => {
-                    logout()
+                    signOut()
                   }}
                 >
                   <SignOut width={20} height={20} className="mr-[4px]" />
