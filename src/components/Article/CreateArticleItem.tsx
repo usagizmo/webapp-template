@@ -35,7 +35,7 @@ const CreateArticleItem: VFC<Props> = () => {
   )
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-[24px]">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-[16px]">
       <div className="flex flex-col">
         <Input
           registerReturn={register('title', {
@@ -43,7 +43,7 @@ const CreateArticleItem: VFC<Props> = () => {
           })}
           fieldError={errors.title}
           type="text"
-          label="Title"
+          placeholder="Title"
         />
       </div>
       <div>
@@ -53,7 +53,7 @@ const CreateArticleItem: VFC<Props> = () => {
           })}
           fieldError={errors.content}
           type="text"
-          label="Content"
+          placeholder="Content"
         />
       </div>
       <div className="flex space-x-[16px]">
