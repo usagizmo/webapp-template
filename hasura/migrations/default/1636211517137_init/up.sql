@@ -17,7 +17,7 @@ CREATE TABLE public.articles (
     title text NOT NULL,
     content text NOT NULL,
     "userId" text NOT NULL,
-    "imageURL" text NOT NULL
+    "imageFile" jsonb
 );
 CREATE TABLE public.users (
     id text NOT NULL,

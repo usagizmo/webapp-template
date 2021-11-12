@@ -6,8 +6,8 @@ import useStore from '../../../store/useStore'
 import { Article, CreateArticleProps, returnArticleProps } from '../../../types/dataTypes'
 
 const CREATE_ARTICLE = gql`
-  mutation CreateArticle($title: String!, $content: String!, $imageURL: String!) {
-    insert_articles_one(object: { title: $title, content: $content, imageURL: $imageURL }) {
+  mutation CreateArticle($title: String!, $content: String!, $imageFile: jsonb) {
+    insert_articles_one(object: { title: $title, content: $content, imageFile: $imageFile }) {
       ${returnArticleProps}
     }
   }

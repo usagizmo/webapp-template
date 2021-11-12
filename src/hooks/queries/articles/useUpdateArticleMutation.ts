@@ -6,8 +6,8 @@ import useStore from '../../../store/useStore'
 import { Article, returnArticleProps, UpdateArticleProps } from '../../../types/dataTypes'
 
 const UPDATE_ARTICLE = gql`
-  mutation UpdateArticle($id: String!, $title: String!, $content: String!, $imageURL: String!) {
-    update_articles_by_pk(pk_columns: { id: $id }, _set: { title: $title, content: $content, imageURL: $imageURL }) {
+  mutation UpdateArticle($id: String!, $title: String!, $content: String!, $imageFile: jsonb) {
+    update_articles_by_pk(pk_columns: { id: $id }, _set: { title: $title, content: $content, imageFile: $imageFile }) {
       ${returnArticleProps}
     }
   }
