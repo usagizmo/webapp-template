@@ -16,7 +16,8 @@ CREATE TABLE public.articles (
     updated_at timestamp with time zone DEFAULT now() NOT NULL,
     title text NOT NULL,
     content text NOT NULL,
-    "userId" text NOT NULL
+    "userId" text NOT NULL,
+    "imageURL" text NOT NULL
 );
 CREATE TABLE public.users (
     id text NOT NULL,

@@ -33,7 +33,7 @@ export default function AdminPage() {
                     signOut()
                   }}
                 >
-                  <SignOut width={20} height={20} className="mr-[4px]" />
+                  <SignOut width={20} height={20} className="mr-[6px]" />
                   <span>Sign out</span>
                 </Button>
               </div>

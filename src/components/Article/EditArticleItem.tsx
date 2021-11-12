@@ -38,6 +38,11 @@ const EditArticleItem: VFC<Props> = ({ article }) => {
       <div>
         <InlineInput value={content} line {...contentBindings} />
       </div>
+      {article.imageURL && (
+        <div className="w-[120px] h-[120px] border u-flex-center bg-gray-50">
+          <img src={article.imageURL} alt="" className="max-w-full max-h-full" />
+        </div>
+      )}
     </div>
   )
 }

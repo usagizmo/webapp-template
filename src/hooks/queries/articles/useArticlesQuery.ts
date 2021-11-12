@@ -7,7 +7,7 @@ import useStore from '../../../store/useStore'
 
 const GET_ARTICLES = gql`
   query GetArticles {
-    articles(order_by: { updated_at: desc }) {
+    articles(order_by: { created_at: desc }) {
       ${returnArticleProps}
     }
   }
