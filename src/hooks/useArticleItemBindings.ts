@@ -1,10 +1,10 @@
 import { ChangeEventHandler } from 'react'
 import { Article } from '../types/dataTypes'
-import { useArticleMutate } from './mutations/useArticleMutate'
+import { useUpdateArticleMutation } from './queries/articles/useUpdateArticleMutation'
 import useEffectedState from './useEffectedState'
 
 export const useArticleItemBindings = (article: Article) => {
-  const { updateArticleMutation } = useArticleMutate()
+  const updateArticleMutation = useUpdateArticleMutation()
 
   const [title, setTitle] = useEffectedState(article.title)
   const [content, setContent] = useEffectedState(article.content)

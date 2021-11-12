@@ -1,5 +1,5 @@
 import { ref } from 'firebase/storage'
+import { ulid } from 'ulid'
 import { storage } from '../libs/firebase'
 
-export const getNodeFileRef = (nodeId: string, fileName: string) =>
-  ref(storage, `nodes/${nodeId}/${fileName}`)
+export const getArticlesStorageRef = () => ref(storage, `articles/${ulid()}`)

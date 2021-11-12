@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword as firebaseCreateUserWithEmailAndPassword,
+  signInWithEmailAndPassword as firebaseSignInWithEmailAndPassword,
   signInWithRedirect,
   GoogleAuthProvider,
 } from 'firebase/auth'
@@ -13,17 +13,17 @@ type Inputs = {
 }
 
 export const useFirebaseAuth = () => {
-  const _signInWithEmailAndPassword = useCallback(async ({ email, password }: Inputs) => {
+  const signInWithEmailAndPassword = useCallback(async ({ email, password }: Inputs) => {
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      await firebaseSignInWithEmailAndPassword(auth, email, password)
     } catch (err: any) {
       alert(err.message)
     }
   }, [])
 
-  const _createUserWithEmailAndPassword = useCallback(async ({ email, password }: Inputs) => {
+  const createUserWithEmailAndPassword = useCallback(async ({ email, password }: Inputs) => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
+      await firebaseCreateUserWithEmailAndPassword(auth, email, password)
     } catch (err: any) {
       alert(err.message)
       console.error(err)
@@ -41,8 +41,8 @@ export const useFirebaseAuth = () => {
   }, [])
 
   return {
-    signInWithEmailAndPassword: _signInWithEmailAndPassword,
-    createUserWithEmailAndPassword: _createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
     signInWithGoogle,
   }
 }

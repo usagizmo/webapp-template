@@ -5,7 +5,7 @@ import CONST from '../constants/const'
 import { auth, db } from '../libs/firebase'
 import useStore from '../store/useStore'
 
-export let unsubscribeUser = () => {}
+let unsubscribeUser = () => {}
 
 const getToken = async (user: FirebaseUser) => {
   const token = await user.getIdToken(true)

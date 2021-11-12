@@ -1,5 +1,5 @@
 import React, { VFC } from 'react'
-import { useArticlesQuery } from '../../hooks/queries/useArticlesQuery'
+import { useArticlesQuery } from '../../hooks/queries/articles/useArticlesQuery'
 import useQueryHandle from '../../hooks/useQueryHandle'
 import EditArticleItem from './EditArticleItem'
 

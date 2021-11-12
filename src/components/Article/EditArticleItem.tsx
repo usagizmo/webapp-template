@@ -1,11 +1,12 @@
 import { Trash } from 'phosphor-react'
 import React, { VFC } from 'react'
-import { useArticleMutate } from '../../hooks/mutations/useArticleMutate'
+import { useDeleteArticleMutation } from '../../hooks/queries/articles/useDeleteArticleMutation'
 import { useArticleItemBindings } from '../../hooks/useArticleItemBindings'
 import useQueryHandle from '../../hooks/useQueryHandle'
 import { Article } from '../../types/dataTypes'
 import Button from '../Button'
 import InlineInput from '../InlineInput'
+import ArticleImage from './ArticleImage'
 
 interface Props {
   article: Article
@@ -13,7 +14,7 @@ interface Props {
 
 const EditArticleItem: VFC<Props> = ({ article }) => {
   const { title, titleBindings, content, contentBindings } = useArticleItemBindings(article)
-  const { deleteArticleMutation } = useArticleMutate()
+  const deleteArticleMutation = useDeleteArticleMutation()
   const queryHandle = useQueryHandle(deleteArticleMutation, 'Deleting...')
 
   if (queryHandle) return queryHandle
@@ -38,6 +39,7 @@ const EditArticleItem: VFC<Props> = ({ article }) => {
       <div>
         <InlineInput value={content} line {...contentBindings} />
       </div>
+      {article.imageFile && <ArticleImage imageFile={article.imageFile} />}
     </div>
   )
 }

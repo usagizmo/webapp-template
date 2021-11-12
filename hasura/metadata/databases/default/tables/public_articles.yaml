@@ -13,7 +13,7 @@ insert_permissions:
           _eq: X-Hasura-User-Id
       columns:
         - content
-        - id
+        - imageFile
         - title
       set:
         userId: x-hasura-User-Id
@@ -21,16 +21,18 @@ insert_permissions:
 select_permissions:
   - permission:
       columns:
-        - content
-        - created_at
         - id
-        - title
+        - created_at
         - updated_at
+        - title
+        - content
         - userId
+        - imageFile
       filter: {}
     role: anonymous
   - permission:
       columns:
+        - imageFile
         - content
         - id
         - title
@@ -44,6 +46,7 @@ update_permissions:
       check: null
       columns:
         - content
+        - imageFile
         - title
       filter:
         userId:

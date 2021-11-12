@@ -3,8 +3,6 @@ import { auth } from '../libs/firebase'
 import useStore from '../store/useStore'
 import { useFetchCurrentUser } from './useFetchCurrentUser'
 
-export let unsubscribeUser = () => {}
-
 export const useUserChanged = () => {
   const token = useStore((state) => state.token)
   const setUser = useStore((state) => state.setUser)

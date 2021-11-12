@@ -1,5 +1,6 @@
 import React, { VFC } from 'react'
 import { Article } from '../../types/dataTypes'
+import ArticleImage from './ArticleImage'
 
 interface Props {
   article: Article
@@ -12,6 +13,7 @@ const ArticleItem: VFC<Props> = ({ article }) => {
       <div>
         <p>{article.content}</p>
       </div>
+      {article.imageFile && <ArticleImage imageFile={article.imageFile} />}
     </div>
   )
 }

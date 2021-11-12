@@ -1,5 +1,4 @@
 const QUERY_KEY = {
-  USERS: 'users',
   ARTICLES: 'articles',
 }
 
