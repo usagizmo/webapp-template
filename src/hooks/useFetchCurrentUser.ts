@@ -1,13 +1,12 @@
 import { useCallback } from 'react'
 import { gql } from 'graphql-request'
-import { User } from '../types/dataTypes'
+import { returnCurrentUserProps, User } from '../types/dataTypes'
 import useStore from '../store/useStore'
 
 const GET_CURRENT_USER = gql`
   query GetCurrentUser($id: String!) {
     users_by_pk(id: $id) {
-      id
-      email
+      ${returnCurrentUserProps}
     }
   }
 `

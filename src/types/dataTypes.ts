@@ -9,6 +9,11 @@ export interface User {
   updated_at: string // ISO 8601
 }
 
+export const returnCurrentUserProps = `
+  id
+  email
+`
+
 export interface Article {
   id: string
   title: string
