@@ -34,5 +34,6 @@ yarn-error.log*
 .vercel
 
 # customize
-/hasura/.env
 /.eslintcache
+/graphql/graphql.schema.json
+/src/generated/*

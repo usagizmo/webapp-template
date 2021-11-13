@@ -1,0 +1,23 @@
+overwrite: true
+schema:
+  ${HASURA_GRAPHQL_ENDPOINT}/${HASURA_GRAPHQL_API_PATHS_GRAPHQL}:
+    headers:
+      x-hasura-admin-secret: '${HASURA_GRAPHQL_ADMIN_SECRET}'
+      x-hasura-role: 'admin'
+documents: './graphql/**/*.graphql'
+generates:
+  ./src/generated/graphql.ts:
+    plugins:
+      - add:
+          content: "import { getFetchParams } from '../libs/cookie';"
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      fetcher:
+        endpoint: 'process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT'
+        fetchParams: 'getFetchParams()'
+      exposeFetcher: true
+  ./graphql/graphql.schema.json:
+    plugins:
+      - introspection

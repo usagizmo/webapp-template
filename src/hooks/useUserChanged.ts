@@ -1,25 +1,25 @@
 import { useCallback, useEffect } from 'react'
+import { useGetCurrentUserQuery } from '../generated/graphql'
 import { auth } from '../libs/firebase'
 import useStore from '../store/useStore'
-import { useFetchCurrentUser } from './useFetchCurrentUser'
+import { User } from '../types/dataTypes'
 
 export const useUserChanged = () => {
   const token = useStore((state) => state.token)
   const setUser = useStore((state) => state.setUser)
   const resetUser = useStore((state) => state.resetUser)
-  const fetchCurrentUser = useFetchCurrentUser()
 
   const setCurrentUser = useCallback(
     async (firebaseUid) => {
       try {
-        const user = await fetchCurrentUser(firebaseUid)
-        setUser(user)
+        const { users_by_pk: user } = await useGetCurrentUserQuery.fetcher({ id: firebaseUid })()
+        setUser(user as User)
       } catch (error) {
         console.error(error)
         resetUser()
       }
     },
-    [fetchCurrentUser, setUser, resetUser]
+    [resetUser, setUser]
   )
 
   useEffect(() => {

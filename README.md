@@ -12,6 +12,13 @@
 - [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
 - GitHub Actions (Formatting + Testing)
 
+## Prepare .env.local
+
+```bash
+cp .env.local.example .env.local
+# Then, set it up
+```
+
 ## Handling Hasura Cloud's database in code
 
 The [Hasura CLI](https://hasura.io/docs/1.0/graphql/core/hasura-cli/index.html) allows you to easily manage Hasura Cloud's database.  
@@ -21,15 +28,6 @@ After completing the settings in Hasura Cloud, execute the following command.
 
 ### Prepare to use hasura-cli
 
-```bash
-# Already done it
-# npx hasura init hasura --endpoint https://<project-name>.hasura.app --admin-secret <admin-secret-key>
-
-cd hasura
-cp .env.example .env
-# Then, set it up
-```
-
 Set Hasura's environment variable `HASURA_GRAPHQL_JWT_SECRET` to work with `Firebase Authentication`.  
 [https://hasura.io/jwt-config/](https://hasura.io/jwt-config/)
 
@@ -38,25 +36,17 @@ Set `HASURA_GRAPHQL_UNAUTHORIZED_ROLE` to `anonymous` as well.
 ### Apply the code to Hasura Cloud
 
 ```bash
-cd hasura
-npx hasura migrate apply
-npx hasura seed apply
-npx hasura metadata apply
+yarn hasura:migrate:apply
+yarn hasura:seed:apply
+yarn hasura:metadata:apply
 ```
 
 ### Retrieve Hasura Cloud settings
 
 ```bash
-cd hasura
-
-npx hasura migrate create init --from-server
-# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_migrate_create.html
-
-npx hasura seed create tables_seed <--from-table table1 --from-table table2>
-# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_seed_create.html
-
-npx hasura metadata export
-# ref: https://hasura.io/docs/2.0/graphql/core/hasura-cli/hasura_metadata_export.html
+yarn hasura:migrate:export
+yarn hasura:seed:export <--from-table table1 --from-table table2>
+yarn hasura:metadata:export
 ```
 
 ## Set up Firebase
@@ -95,13 +85,6 @@ firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> 
 
 # Deploy functions
 yarn deploy
-```
-
-## Prepare .env.local
-
-```bash
-cp .env.local.example .env.local
-# Then, set it up
 ```
 
 ## Set up GitHub / Vercel (or Netlify)
