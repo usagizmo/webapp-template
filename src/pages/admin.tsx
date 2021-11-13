@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { VFC } from 'react'
 import Layout from '../components/Layout'
 import Navigation from '../components/Navigation'
 import LoginFields from '../components/LoginFields'
@@ -8,7 +8,9 @@ import { useSignOut } from '../hooks/useSignOut'
 import { SignOut } from 'phosphor-react'
 import Button from '../components/Button'
 
-export default function AdminPage() {
+interface Props {}
+
+const AdminPage: VFC<Props> = () => {
   const user = useStore((state) => state.user)
   const { signOut } = useSignOut()
 
@@ -46,3 +48,5 @@ export default function AdminPage() {
     </Layout>
   )
 }
+
+export default AdminPage

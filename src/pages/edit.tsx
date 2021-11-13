@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
+import React, { useEffect, VFC } from 'react'
 import CreateArticleItem from '../components/Article/CreateArticleItem'
 import EditArticleList from '../components/Article/EditArticleList'
 import Layout from '../components/Layout'
@@ -8,7 +8,9 @@ import CONST from '../constants/const'
 import ROUTE from '../constants/route'
 import useStore from '../store/useStore'
 
-export default function EditPage() {
+interface Props {}
+
+const EditPage: VFC<Props> = () => {
   const router = useRouter()
   const user = useStore((state) => state.user)
 
@@ -36,3 +38,5 @@ export default function EditPage() {
     </Layout>
   )
 }
+
+export default EditPage

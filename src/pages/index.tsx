@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { VFC } from 'react'
 import ArticleList from '../components/Article/ArticleList'
 import Layout from '../components/Layout'
 import Navigation from '../components/Navigation'
 import CONST from '../constants/const'
 
-export default function HomePage() {
+interface Props {}
+
+const HomePage: VFC<Props> = () => {
   return (
     <Layout>
       <header className="u-flex-center h-[80px]">
@@ -20,3 +22,5 @@ export default function HomePage() {
     </Layout>
   )
 }
+
+export default HomePage
