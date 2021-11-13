@@ -26,13 +26,18 @@ yarn build   # yarn generate && next build
 yarn start   # next start
 yarn lint    # Linting
 yarn format  # Formatting
-yarn hasura:migrate:apply    # Apply table structure to Hasura
+
+yarn hasura:migrate:apply # Apply table structure to Hasura
+# The first time you run this, you may need to [Track] all tables on Hasura
+
 yarn hasura:migrate:export   # Get table structure from Hasura
 yarn hasura:seed:apply       # Apply Seed to Hasura
 yarn hasura:seed:export --from-table <table1>  # Get Seed per table from Hasura
 yarn hasura:metadata:apply   # Apply DB meta information to Hasura
 yarn hasura:metadata:export  # Get DB meta information from Hasura
-yarn generate                # Output GraphQL code (`src/generated/graphql.ts`) from Hasura schema and contents of `graphql/`.
+
+yarn generate  # Output GraphQL code
+# Output (`src/generated/graphql.ts`) from Hasura schema and contents of `graphql/`.
 ```
 
 ## Handling Hasura Cloud's database in code
