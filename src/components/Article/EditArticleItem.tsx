@@ -1,6 +1,7 @@
 import { Trash } from 'phosphor-react'
 import React, { VFC } from 'react'
-import { useDeleteArticleMutation } from '../../hooks/queries/articles/useDeleteArticleMutation'
+import { useQueryClient } from 'react-query'
+import { GetArticlesQuery, useDeleteArticleMutation } from '../../generated/graphql'
 import { useArticleItemBindings } from '../../hooks/useArticleItemBindings'
 import useQueryHandle from '../../hooks/useQueryHandle'
 import { Article } from '../../types/dataTypes'
@@ -14,7 +15,20 @@ interface Props {
 
 const EditArticleItem: VFC<Props> = ({ article }) => {
   const { title, titleBindings, content, contentBindings } = useArticleItemBindings(article)
-  const deleteArticleMutation = useDeleteArticleMutation()
+  const queryClient = useQueryClient()
+  const deleteArticleMutation = useDeleteArticleMutation({
+    onSuccess: (data) => {
+      const previousArticles = queryClient.getQueryData<GetArticlesQuery>(['GetArticles'])
+      if (!previousArticles) return
+
+      queryClient.setQueryData(['GetArticles'], {
+        ...previousArticles,
+        articles: previousArticles.articles.filter(
+          (article) => article.id !== data.delete_articles_by_pk?.id
+        ),
+      })
+    },
+  })
   const queryHandle = useQueryHandle(deleteArticleMutation, 'Deleting...')
 
   if (queryHandle) return queryHandle
@@ -28,7 +42,7 @@ const EditArticleItem: VFC<Props> = ({ article }) => {
             className="w-[24px] h-[24px] !p-0"
             onClick={() => {
               if (confirm('Are you sure you want to delete this article?')) {
-                deleteArticleMutation.mutate(article.id)
+                deleteArticleMutation.mutate({ id: article.id })
               }
             }}
           >

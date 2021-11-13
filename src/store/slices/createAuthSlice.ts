@@ -1,7 +1,7 @@
 import { SetState } from 'zustand'
 import { State } from '../useStore'
 import { User } from '../../types/dataTypes'
-import { getGraphQlClient } from './createGraphQLClientSlice'
+import { cookie } from '../../libs/cookie'
 
 export interface AuthSlice {
   token: string | null
@@ -16,10 +16,12 @@ const createAuthSlice = (set: SetState<State>): AuthSlice => ({
   token: null, // Updated by useAuthSliceChanged
   user: null, // Updated by useUserChanged
   setToken: (token: string) => {
-    set({ token, graphQLClient: getGraphQlClient(token) })
+    set({ token })
+    cookie.setToken(token)
   },
   resetToken: () => {
-    set({ token: null, graphQLClient: getGraphQlClient() })
+    set({ token: null })
+    cookie.resetToken()
   },
   setUser: (user: User) => {
     set({ user })

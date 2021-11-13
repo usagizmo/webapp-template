@@ -1,0 +1,6 @@
+query GetCurrentUser($id: String!) {
+  users_by_pk(id: $id) {
+    id
+    email
+  }
+}

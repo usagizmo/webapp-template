@@ -1,0 +1,10 @@
+mutation DeleteArticle($id: String!) {
+  delete_articles_by_pk(id: $id) {
+    id
+    title
+    content
+    imageFile
+    created_at
+    updated_at
+  }
+}

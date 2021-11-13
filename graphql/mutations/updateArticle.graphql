@@ -1,0 +1,13 @@
+mutation UpdateArticle($id: String!, $title: String!, $content: String!, $imageFile: jsonb) {
+  update_articles_by_pk(
+    pk_columns: { id: $id }
+    _set: { title: $title, content: $content, imageFile: $imageFile }
+  ) {
+    id
+    title
+    content
+    imageFile
+    created_at
+    updated_at
+  }
+}

@@ -1,10 +1,25 @@
 import { ChangeEventHandler } from 'react'
+import { useQueryClient } from 'react-query'
+import createUpdateArticleMutationVariables from '../factries/createUpdateArticleMutationVariables'
+import { GetArticlesQuery, useUpdateArticleMutation } from '../generated/graphql'
 import { Article } from '../types/dataTypes'
-import { useUpdateArticleMutation } from './queries/articles/useUpdateArticleMutation'
 import useEffectedState from './useEffectedState'
 
 export const useArticleItemBindings = (article: Article) => {
-  const updateArticleMutation = useUpdateArticleMutation()
+  const queryClient = useQueryClient()
+  const updateArticleMutation = useUpdateArticleMutation({
+    onSuccess: (data) => {
+      const previousArticles = queryClient.getQueryData<GetArticlesQuery>(['GetArticles'])
+      if (!previousArticles) return
+
+      queryClient.setQueryData(['GetArticles'], {
+        ...previousArticles,
+        articles: previousArticles.articles.map((article) =>
+          article.id === data.update_articles_by_pk?.id ? data.update_articles_by_pk : article
+        ),
+      })
+    },
+  })
 
   const [title, setTitle] = useEffectedState(article.title)
   const [content, setContent] = useEffectedState(article.content)
@@ -18,10 +33,12 @@ export const useArticleItemBindings = (article: Article) => {
     },
     onBlur: () => {
       if (article.title === title) return
-      updateArticleMutation.mutate({
-        ...article,
-        title,
-      })
+      updateArticleMutation.mutate(
+        createUpdateArticleMutationVariables({
+          ...article,
+          title,
+        })
+      )
     },
   }
 
@@ -34,10 +51,12 @@ export const useArticleItemBindings = (article: Article) => {
     },
     onBlur: () => {
       if (article.content === content) return
-      updateArticleMutation.mutate({
-        ...article,
-        content,
-      })
+      updateArticleMutation.mutate(
+        createUpdateArticleMutationVariables({
+          ...article,
+          content,
+        })
+      )
     },
   }
 
