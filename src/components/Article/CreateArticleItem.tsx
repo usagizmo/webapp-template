@@ -2,7 +2,6 @@ import React, { ChangeEventHandler, useCallback, VFC } from 'react'
 import { useForm } from 'react-hook-form'
 import { FileArrowUp } from 'phosphor-react'
 import ERROR from '../../constants/error'
-import { useCreateArticleMutation } from '../../hooks/queries/articles/useCreateArticleMutation'
 import useQueryHandle from '../../hooks/useQueryHandle'
 import Button from '../Button'
 import Input from '../Input'
@@ -10,6 +9,8 @@ import { getArticlesStorageRef } from '../../utils/storageUtils'
 import { getDownloadURL, uploadBytes } from 'firebase/storage'
 import { ArticleImageFIle } from '../../types/dataTypes'
 import ArticleImage from './ArticleImage'
+import { GetArticlesQuery, useCreateArticleMutation } from '../../generated/graphql'
+import { useQueryClient } from 'react-query'
 
 interface Inputs {
   title: string
@@ -20,7 +21,18 @@ interface Inputs {
 interface Props {}
 
 const CreateArticleItem: VFC<Props> = () => {
-  const createArticleMutation = useCreateArticleMutation()
+  const queryClient = useQueryClient()
+  const createArticleMutation = useCreateArticleMutation({
+    onSuccess: (data) => {
+      const previousArticles = queryClient.getQueryData<GetArticlesQuery>(['GetArticles'])
+      if (!previousArticles) return
+
+      queryClient.setQueryData(['GetArticles'], {
+        ...previousArticles,
+        articles: [data.insert_articles_one, ...previousArticles.articles],
+      })
+    },
+  })
   const queryHandle = useQueryHandle(createArticleMutation)
 
   const {

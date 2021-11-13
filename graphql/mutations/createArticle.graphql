@@ -1,0 +1,10 @@
+mutation CreateArticle($title: String!, $content: String!, $imageFile: jsonb) {
+  insert_articles_one(object: { title: $title, content: $content, imageFile: $imageFile }) {
+    id
+    title
+    content
+    imageFile
+    created_at
+    updated_at
+  }
+}
