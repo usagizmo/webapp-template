@@ -7,7 +7,7 @@
 - [Hasura Cloud](https://cloud.hasura.io/)
 - [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
 - [ESLint](https://eslint.org/)
-  [Prettier](https://prettier.io/)
+- [Prettier](https://prettier.io/)
 - [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
 - GitHub Actions (Formatting + Testing)
 
