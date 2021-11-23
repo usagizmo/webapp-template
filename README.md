@@ -101,3 +101,13 @@ pnpm deploy
 ## Registering environment variables for GitHub / Vercel (or Netlify)
 
 If you need to prepare the GitHub / Vercel (or Netlify) environment, you will need to set the environment variables (the contents of `.env.local`) at build time.
+
+## Deploy to Vercel
+
+To use `pnpm`, configure the following settings in Vercel `Project Settings`.
+
+`General` > `Build` & `Development Settings` > `INSTALL COMMAND`:
+
+```bash
+npm i pnpm -g && pnpm i
+```
