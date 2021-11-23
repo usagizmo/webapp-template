@@ -1,7 +1,7 @@
 # Next.js Template
 
 - [Next.js](https://nextjs.org/) (w/ [TypeScript](https://www.typescriptlang.org/))
-- [Tailwind CSS (jit)](https://tailwindcss.com/)
+- [Tailwind CSS](https://tailwindcss.com/) ([JIT](https://tailwindcss.com/docs/just-in-time-mode))
 - [Zustand](https://github.com/pmndrs/zustand)
 - [Firebase (Authentication/Storage)](https://firebase.google.com/)
 - [Hasura Cloud](https://cloud.hasura.io/)
