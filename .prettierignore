@@ -2,3 +2,4 @@
 /out
 /public
 /firebase/functions/lib
+pnpm-lock.yaml

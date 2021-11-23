@@ -22,13 +22,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [16]
 
     name: Build (Node ${{ matrix.node }} on ${{ matrix.os }})
 
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10
+    timeout-minutes: 8
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -39,29 +39,28 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - uses: actions/cache@v2
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
         with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.pnpm-store
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ matrix.os }}-node-v${{ matrix.node }}-deps-
 
-      - name: Install packages
-        run: yarn
-
-      - name: Run lint
-        run: yarn lint
-
-      # - name: Run test
-      #   run: yarn test
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --prefer-offline]
 
       - name: Run format
-        run: yarn format
+        run: pnpm format
 
       - uses: stefanzweifel/git-auto-commit-action@v4
 
       - name: Run build
-        run: yarn build
+        run: pnpm build
         env:
           NEXT_PUBLIC_GRAPHQL_ENDPOINT: ${{ secrets.NEXT_PUBLIC_GRAPHQL_URL }}
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
