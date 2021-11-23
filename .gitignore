@@ -34,6 +34,7 @@ yarn-error.log*
 .vercel
 
 # customize
-/.eslintcache
+.eslintcache
+.pnpm-debug.log
 /graphql/graphql.schema.json
 /src/generated/*

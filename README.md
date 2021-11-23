@@ -10,6 +10,7 @@
 - [Prettier](https://prettier.io/)
 - [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
 - GitHub Actions (Formatting + Testing)
+- Node (`v16+`) / [pnpm](https://pnpm.io/)
 
 ## Prepare .env.local
 
@@ -21,22 +22,23 @@ cp .env.local.example .env.local
 ## Command List
 
 ```bash
-yarn dev     # next dev
-yarn build   # yarn generate && next build
-yarn start   # next start
-yarn lint    # Linting
-yarn format  # Formatting
+pnpm i
+pnpm dev     # next dev
+pnpm build   # pnpm generate && next build
+pnpm start   # next start
+pnpm lint    # Linting
+pnpm format  # Formatting
 
-yarn hasura:migrate:apply # Apply table structure to Hasura
+pnpm hasura:migrate:apply # Apply table structure to Hasura
 # The first time you run this, you may need to [Track] all tables on Hasura
 
-yarn hasura:migrate:export   # Get table structure from Hasura
-yarn hasura:seed:apply       # Apply Seed to Hasura
-yarn hasura:seed:export --from-table <table1>  # Get Seed per table from Hasura
-yarn hasura:metadata:apply   # Apply DB meta information to Hasura
-yarn hasura:metadata:export  # Get DB meta information from Hasura
+pnpm hasura:migrate:export   # Get table structure from Hasura
+pnpm hasura:seed:apply       # Apply Seed to Hasura
+pnpm hasura:seed:export --from-table <table1>  # Get Seed per table from Hasura
+pnpm hasura:metadata:apply   # Apply DB meta information to Hasura
+pnpm hasura:metadata:export  # Get DB meta information from Hasura
 
-yarn generate  # Output GraphQL code
+pnpm generate  # Output GraphQL code
 # Output (`src/generated/graphql.ts`) from Hasura schema and contents of `graphql/`.
 ```
 
@@ -70,8 +72,7 @@ Set the following 2 environment variables.
 
 ### Requirement
 
-- `nodenv` to use node `v14.5.0` / [anyenv](https://github.com/anyenv/anyenv)
-- [Firebase CLI](https://firebase.google.com/docs/cli)
+- [Firebase CLI](https://firebase.google.com/docs/cli) (v9.23.0+)
 
 ### Commands
 
@@ -87,16 +88,26 @@ firebase use --add <project-id>
 
 # In the `firebase/functions/`
 cd functions
-yarn
+pnpm i
 
 # Add 2 environment variables
 firebase functions:config:set hasura.endpoint=https://<project-name>.hasura.app/v1/graphql --project <project-id>
 firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <project-id>
 
 # Deploy functions
-yarn deploy
+pnpm deploy
 ```
 
 ## Registering environment variables for GitHub / Vercel (or Netlify)
 
 If you need to prepare the GitHub / Vercel (or Netlify) environment, you will need to set the environment variables (the contents of `.env.local`) at build time.
+
+## Deploy to Vercel
+
+To use `pnpm`, configure the following settings in Vercel `Project Settings`.
+
+`General` > `Build` & `Development Settings` > `INSTALL COMMAND`:
+
+```bash
+npm i pnpm -g && pnpm i
+```
