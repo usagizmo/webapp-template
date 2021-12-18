@@ -56,18 +56,6 @@
     @apply flex justify-center items-center;
   }
 
-  .u-aspect {
-    @apply relative h-0;
-  }
-  .u-aspect.is-16\:9 {
-    @apply pt-[56.25%];
-  }
-  .u-aspect img,
-  .u-aspect video,
-  .u-aspect iframe {
-    @apply absolute top-0 left-0 w-full h-full;
-  }
-
   .u-link {
     @apply relative overflow-hidden inline-flex text-gray-600 hover:text-black after:h-[1px] after:w-full after:bg-black after:absolute after:left-0 after:bottom-0 after:translate-x-[calc(-100%-1px)] after:duration-150 hover:after:translate-x-0;
   }
