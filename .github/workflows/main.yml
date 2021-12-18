@@ -33,13 +33,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v2
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Cache pnpm modules
+      - name: Cache pnpm modules 📦
         uses: actions/cache@v2
         with:
           path: ~/.pnpm-store
@@ -47,17 +49,18 @@ jobs:
           restore-keys: |
             ${{ matrix.os }}-node-v${{ matrix.node }}-deps-
 
-      - uses: pnpm/action-setup@v2.0.1
+      - name: Install dependencies 👨🏻‍💻
+        uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.0.2
           run_install: true
 
-      - name: Run format
+      - name: Run format 🎀
         run: pnpm format
 
       - uses: stefanzweifel/git-auto-commit-action@v4
 
-      - name: Run build
+      - name: Run build 🐣
         run: pnpm build
         env:
           NEXT_PUBLIC_GRAPHQL_ENDPOINT: ${{ secrets.NEXT_PUBLIC_GRAPHQL_URL }}
