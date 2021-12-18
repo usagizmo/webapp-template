@@ -48,7 +48,7 @@
     }
   }
 
-  .u-prevent-initial-animation * {
+  .u-prevent-animation * {
     @apply !animate-none !transition-none;
   }
 
