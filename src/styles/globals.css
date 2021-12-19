@@ -15,26 +15,6 @@
   }
 }
 
-@layer components {
-  .container {
-    @apply lg:max-w-[960px];
-  }
-
-  .c-accordion-title {
-    @apply flex items-center;
-  }
-  .c-accordion-title::after {
-    @apply ml-[16px] content-[''] h-[10px] w-[10px] border-r border-b border-black rotate-[-135deg] translate-y-[25%];
-  }
-  .is-open .c-accordion-title::after {
-    @apply rotate-45 translate-y-[-25%];
-  }
-
-  .c-section-title {
-    @apply font-semibold leading-[1.25] mb-[16px] text-[18px] md:text-[20px];
-  }
-}
-
 @layer utilities {
   @media screen and (min-width: 768px) {
     .u-sp {
