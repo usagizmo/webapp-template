@@ -47,8 +47,3 @@
     @apply before:content-['/'] before:px-[4px] first-of-type:before:hidden;
   }
 }
-
-.u-sr-only {
-  @apply absolute w-[1px] h-[1px] m-[-1px] overflow-hidden whitespace-nowrap border-0;
-  clip: rect(0, 0, 0, 0);
-}
