@@ -18,6 +18,7 @@ generates:
         endpoint: 'process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT'
         fetchParams: 'getFetchParams()'
       exposeFetcher: true
+      exposeQueryKeys: true
   ./graphql/graphql.schema.json:
     plugins:
       - introspection

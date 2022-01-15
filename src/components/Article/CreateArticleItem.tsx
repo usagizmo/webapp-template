@@ -117,7 +117,7 @@ const CreateArticleItem: VFC<Props> = () => {
         <label className="inline-flex justify-center items-center py-[9px] px-[20px] border border-transparent shadow-sm rounded-[20px] text-sm leading-[22px] font-medium disabled:opacity-50 disabled:pointer-events-none focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 bg-gray-100 hover:bg-gray-200 focus-within:ring-gray-300 cursor-pointer">
           <FileArrowUp size={20} className="mr-[6px]" />
           <span className="font-medium">Select a file</span>
-          <input type="file" className="u-sr-only" onChange={onChangeFile} />
+          <input type="file" className="sr-only" onChange={onChangeFile} />
         </label>
       </div>
       <div className="flex space-x-[16px]">
