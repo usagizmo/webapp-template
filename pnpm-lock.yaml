@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@babel/core': ^7.16.12
   '@graphql-codegen/add': ^3.1.1
   '@graphql-codegen/cli': 2.4.0
   '@graphql-codegen/introspection': 2.1.1
@@ -10,6 +11,7 @@ specifiers:
   '@types/node': ^17.0.11
   '@types/react': ^17.0.38
   '@typescript-eslint/eslint-plugin': ^5.10.1
+  '@typescript-eslint/parser': ^5.10.1
   autoprefixer: ^10.4.2
   classnames: ^2.3.1
   cross-env: ^7.0.3
@@ -46,7 +48,7 @@ dependencies:
   firebase: 9.6.4
   graphql: 16.2.0
   graphql-request: 3.7.0_graphql@16.2.0
-  next: 12.0.8_react-dom@17.0.2+react@17.0.2
+  next: 12.0.8_11ff11544d2bce3b43fc9d53812dafa4
   phosphor-react: 1.4.0_react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -57,6 +59,7 @@ dependencies:
   zustand: 3.6.9_react@17.0.2
 
 devDependencies:
+  '@babel/core': 7.16.12
   '@graphql-codegen/add': 3.1.1_graphql@16.2.0
   '@graphql-codegen/cli': 2.4.0_e6547596b69933c747c1cdf65f7f78c0
   '@graphql-codegen/introspection': 2.1.1_graphql@16.2.0
@@ -65,7 +68,8 @@ devDependencies:
   '@graphql-codegen/typescript-react-query': 3.3.1_graphql@16.2.0
   '@types/node': 17.0.11
   '@types/react': 17.0.38
-  '@typescript-eslint/eslint-plugin': 5.10.1_eslint@8.7.0+typescript@4.5.5
+  '@typescript-eslint/eslint-plugin': 5.10.1_0f442f6b60390429061d5d9b6bcaaba6
+  '@typescript-eslint/parser': 5.10.1_eslint@8.7.0+typescript@4.5.5
   autoprefixer: 10.4.2_postcss@8.4.5
   cross-env: 7.0.3
   dotenv: 14.3.0
@@ -352,12 +356,13 @@ packages:
       '@babel/helper-plugin-utils': 7.16.7
     dev: true
 
-  /@babel/plugin-syntax-jsx/7.14.5:
+  /@babel/plugin-syntax-jsx/7.14.5_@babel+core@7.16.12:
     resolution: {integrity: sha512-ohuFIsOMXJnbOMRfX7/w7LocdR6R7whhuRD4ax8IipLcLPlZGJKkBxgHp++U4N/vKyU16/YDQr2f5seajD3jIw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
+      '@babel/core': 7.16.12
       '@babel/helper-plugin-utils': 7.16.7
     dev: false
 
@@ -1932,7 +1937,7 @@ packages:
       '@types/node': 17.0.11
     dev: true
 
-  /@typescript-eslint/eslint-plugin/5.10.1_eslint@8.7.0+typescript@4.5.5:
+  /@typescript-eslint/eslint-plugin/5.10.1_0f442f6b60390429061d5d9b6bcaaba6:
     resolution: {integrity: sha512-xN3CYqFlyE/qOcy978/L0xLR2HlcAGIyIK5sMOasxaaAPfQRj/MmMV6OC3I7NZO84oEUdWCOju34Z9W8E0pFDQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1943,6 +1948,7 @@ packages:
       typescript:
         optional: true
     dependencies:
+      '@typescript-eslint/parser': 5.10.1_eslint@8.7.0+typescript@4.5.5
       '@typescript-eslint/scope-manager': 5.10.1
       '@typescript-eslint/type-utils': 5.10.1_eslint@8.7.0+typescript@4.5.5
       '@typescript-eslint/utils': 5.10.1_eslint@8.7.0+typescript@4.5.5
@@ -3112,7 +3118,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.7.0
       eslint-plugin-react: 7.28.0_eslint@8.7.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.7.0
-      next: 12.0.8_react-dom@17.0.2+react@17.0.2
+      next: 12.0.8_11ff11544d2bce3b43fc9d53812dafa4
       typescript: 4.5.5
     transitivePeerDependencies:
       - supports-color
@@ -4748,7 +4754,7 @@ packages:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
 
-  /next/12.0.8_react-dom@17.0.2+react@17.0.2:
+  /next/12.0.8_11ff11544d2bce3b43fc9d53812dafa4:
     resolution: {integrity: sha512-g5c1Kuh1F8tSXJn2rVvzYBzqe9EXaR6+rY3/KrQ7y0D9FueRLfHI35wM0DRadDcPSc3+vncspfhYH3jnYE/KjA==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -4777,7 +4783,7 @@ packages:
       react-is: 17.0.2
       react-refresh: 0.8.3
       stream-browserify: 3.0.0
-      styled-jsx: 5.0.0-beta.6_react@17.0.2
+      styled-jsx: 5.0.0-beta.6_@babel+core@7.16.12+react@17.0.2
       use-subscription: 1.5.1_react@17.0.2
     optionalDependencies:
       '@next/swc-android-arm64': 12.0.8
@@ -5934,7 +5940,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /styled-jsx/5.0.0-beta.6_react@17.0.2:
+  /styled-jsx/5.0.0-beta.6_@babel+core@7.16.12+react@17.0.2:
     resolution: {integrity: sha512-b1cM7Xyp2r1lsNpvoZ6wmTI8qxD0557vH2feHakNU8LMkzfJDgTQMul6O7sSYY0GxQ73pKEN69hCDp71w6Q0nA==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -5944,7 +5950,8 @@ packages:
       '@babel/core':
         optional: true
     dependencies:
-      '@babel/plugin-syntax-jsx': 7.14.5
+      '@babel/core': 7.16.12
+      '@babel/plugin-syntax-jsx': 7.14.5_@babel+core@7.16.12
       '@babel/types': 7.15.0
       convert-source-map: 1.7.0
       loader-utils: 1.2.3
