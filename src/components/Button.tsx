@@ -22,9 +22,9 @@ const Button: FC<Props> = ({
       type={type}
       className={classnames(
         className,
-        'inline-flex justify-center items-center py-[8px] px-[20px] border border-transparent shadow-sm rounded-[20px] text-sm leading-[22px] font-medium disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-2 focus:ring-offset-2',
+        'inline-flex items-center justify-center rounded-[20px] border border-transparent py-[8px] px-[20px] text-sm font-medium leading-[22px] shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
         {
-          'text-white bg-red-600 hover:bg-red-700 focus:ring-red-500': primary,
+          'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500': primary,
           'bg-gray-100 hover:bg-gray-200 focus:ring-gray-300': !primary,
         }
       )}

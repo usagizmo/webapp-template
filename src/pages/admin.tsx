@@ -27,7 +27,7 @@ const AdminPage: VFC<Props> = () => {
             <div className="text-center">
               <p>
                 Logged in as{' '}
-                <span className="block mt-[4px] font-medium text-[20px]">{user.email}</span>
+                <span className="mt-[4px] block text-[20px] font-medium">{user.email}</span>
               </p>
               <div className="mt-[40px]">
                 <Button
