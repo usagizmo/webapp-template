@@ -9,7 +9,7 @@ interface Props {
 const ArticleItem: VFC<Props> = ({ article }) => {
   return (
     <div>
-      <h2 className="font-medium text-[20px] flex">{article.title}</h2>
+      <h2 className="flex text-[20px] font-medium">{article.title}</h2>
       <div>
         <p>{article.content}</p>
       </div>

@@ -35,11 +35,11 @@ const EditArticleItem: VFC<Props> = ({ article }) => {
 
   return (
     <div>
-      <h2 className="font-medium text-[20px] flex">
+      <h2 className="flex text-[20px] font-medium">
         <InlineInput value={title} line {...titleBindings} />
         <div className="ml-[8px]">
           <Button
-            className="w-[24px] h-[24px] !p-0"
+            className="h-[24px] w-[24px] !p-0"
             onClick={() => {
               if (confirm('Are you sure you want to delete this article?')) {
                 deleteArticleMutation.mutate({ id: article.id })

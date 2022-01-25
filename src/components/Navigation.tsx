@@ -33,7 +33,7 @@ const Input: VFC<Props> = () => {
       {filteredLinks.map(({ href, title }) => (
         <li
           key={title}
-          className="relative before:content-['/'] before:px-[8px] first:before:hidden"
+          className="relative before:px-[8px] before:content-['/'] first:before:hidden"
         >
           {router.pathname === href ? (
             <span className="font-semibold">{title}</span>

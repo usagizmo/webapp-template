@@ -114,7 +114,7 @@ const CreateArticleItem: VFC<Props> = () => {
             <ArticleImage imageFile={watchImageFile} />
           </div>
         )}
-        <label className="inline-flex justify-center items-center py-[9px] px-[20px] border border-transparent shadow-sm rounded-[20px] text-sm leading-[22px] font-medium disabled:opacity-50 disabled:pointer-events-none focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 bg-gray-100 hover:bg-gray-200 focus-within:ring-gray-300 cursor-pointer">
+        <label className="inline-flex cursor-pointer items-center justify-center rounded-[20px] border border-transparent bg-gray-100 py-[9px] px-[20px] text-sm font-medium leading-[22px] shadow-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-gray-300 focus-within:ring-offset-2 hover:bg-gray-200 disabled:pointer-events-none disabled:opacity-50">
           <FileArrowUp size={20} className="mr-[6px]" />
           <span className="font-medium">Select a file</span>
           <input type="file" className="sr-only" onChange={onChangeFile} />
