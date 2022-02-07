@@ -6,7 +6,7 @@ interface Props {
   line?: boolean
 }
 
-const InlineInput: VFC<Props> = ({ value, line, ...bindings }) => {
+export const InlineInput: VFC<Props> = ({ value, line, ...bindings }) => {
   return (
     <label
       className={classnames('relative inline-flex overflow-hidden rounded', {
@@ -26,5 +26,3 @@ const InlineInput: VFC<Props> = ({ value, line, ...bindings }) => {
     </label>
   )
 }
-
-export default InlineInput

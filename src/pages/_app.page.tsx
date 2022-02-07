@@ -7,7 +7,7 @@ import { useUserChanged } from '../hooks/use-user-changed'
 
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   useAuthStateChanged()
   useUserChanged()
   const [queryClient] = useState(
@@ -28,5 +28,3 @@ function MyApp({ Component, pageProps }: AppProps) {
     </QueryClientProvider>
   )
 }
-
-export default MyApp

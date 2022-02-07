@@ -1,4 +1,4 @@
-const ENV = {
+export const ENV = {
   // Hasura Cloud
   GRAPHQL_ENDPOINT: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || '',
 
@@ -10,5 +10,3 @@ const ENV = {
   FIREBASE_MESSAGING_SENDER_ID: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
   FIREBASE_APP_ID: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 }
-
-export default ENV

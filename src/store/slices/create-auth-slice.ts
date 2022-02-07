@@ -12,7 +12,7 @@ export interface AuthSlice {
   resetUser: () => void
 }
 
-const createAuthSlice = (set: SetState<State>): AuthSlice => ({
+export const createAuthSlice = (set: SetState<State>): AuthSlice => ({
   token: null, // Updated by useAuthSliceChanged
   user: null, // Updated by useUserChanged
   setToken: (token: string) => {
@@ -30,5 +30,3 @@ const createAuthSlice = (set: SetState<State>): AuthSlice => ({
     set({ user: null })
   },
 })
-
-export default createAuthSlice

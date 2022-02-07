@@ -1,7 +1,7 @@
 import { VFC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import useStore from '../store/use-store'
+import { useStore } from '../store/use-store'
 import { pagesPath } from '../generated/$path'
 
 interface Props {}
@@ -22,7 +22,7 @@ const links = [
   },
 ]
 
-const Input: VFC<Props> = () => {
+export const Navigation: VFC<Props> = () => {
   const router = useRouter()
   const user = useStore((state) => state.user)
 
@@ -47,5 +47,3 @@ const Input: VFC<Props> = () => {
     </ul>
   )
 }
-
-export default Input
