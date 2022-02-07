@@ -1,9 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { useFirebaseAuth } from '../hooks/useFirebaseAuth'
-import Input from './Input'
+import { useFirebaseAuth } from '../hooks/use-firebase-auth'
+import Input from './input'
 import ERROR from '../constants/error'
-import Button from './Button'
+import Button from './button'
 import CONST from '../constants/const'
 
 type Inputs = {

@@ -3,7 +3,7 @@ import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth'
 import { doc, onSnapshot } from 'firebase/firestore'
 import CONST from '../constants/const'
 import { auth, db } from '../libs/firebase'
-import useStore from '../store/useStore'
+import useStore from '../store/use-store'
 
 let unsubscribeUser = () => {}
 

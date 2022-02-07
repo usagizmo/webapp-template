@@ -1,6 +1,6 @@
 import create, { StateCreator } from 'zustand'
 import { devtools } from 'zustand/middleware'
-import createAuthSlice, { AuthSlice } from './slices/createAuthSlice'
+import createAuthSlice, { AuthSlice } from './slices/create-auth-slice'
 
 export type State = AuthSlice
 

@@ -2,12 +2,12 @@ import { Trash } from 'phosphor-react'
 import React, { VFC } from 'react'
 import { useQueryClient } from 'react-query'
 import { GetArticlesQuery, useDeleteArticleMutation } from '../../generated/graphql'
-import { useArticleItemBindings } from '../../hooks/useArticleItemBindings'
-import useQueryHandle from '../../hooks/useQueryHandle'
-import { Article } from '../../types/dataTypes'
-import Button from '../Button'
-import InlineInput from '../InlineInput'
-import ArticleImage from './ArticleImage'
+import { useArticleItemBindings } from '../../hooks/use-article-item-bindings'
+import useQueryHandle from '../../hooks/use-query-handle'
+import { Article } from '../../types/data-types'
+import Button from '../button'
+import InlineInput from '../inline-input'
+import ArticleImage from './article-image'
 
 interface Props {
   article: Article

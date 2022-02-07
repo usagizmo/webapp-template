@@ -2,7 +2,7 @@ import { VFC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import ROUTE from '../constants/route'
-import useStore from '../store/useStore'
+import useStore from '../store/use-store'
 
 interface Props {}
 

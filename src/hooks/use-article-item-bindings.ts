@@ -1,9 +1,9 @@
 import { ChangeEventHandler } from 'react'
 import { useQueryClient } from 'react-query'
-import createUpdateArticleMutationVariables from '../factries/createUpdateArticleMutationVariables'
+import createUpdateArticleMutationVariables from '../factries/create-update-article-mutation-variables'
 import { GetArticlesQuery, useUpdateArticleMutation } from '../generated/graphql'
-import { Article } from '../types/dataTypes'
-import useEffectedState from './useEffectedState'
+import { Article } from '../types/data-types'
+import useEffectedState from './use-effected-state'
 
 export const useArticleItemBindings = (article: Article) => {
   const queryClient = useQueryClient()

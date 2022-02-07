@@ -1,8 +1,8 @@
 import { VFC } from 'react'
 import { useGetArticlesQuery } from '../../generated/graphql'
-import useQueryHandle from '../../hooks/useQueryHandle'
-import { Article } from '../../types/dataTypes'
-import ArticleItem from './ArticleItem'
+import useQueryHandle from '../../hooks/use-query-handle'
+import { Article } from '../../types/data-types'
+import ArticleItem from './article-item'
 
 interface Props {}
 

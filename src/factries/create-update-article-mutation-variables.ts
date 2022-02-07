@@ -1,5 +1,5 @@
 import { UpdateArticleMutationVariables } from '../generated/graphql'
-import { Article } from '../types/dataTypes'
+import { Article } from '../types/data-types'
 
 const createUpdateArticleMutationVariables = (
   article: Article

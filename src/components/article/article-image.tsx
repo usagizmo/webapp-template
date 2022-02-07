@@ -1,5 +1,5 @@
 import React, { VFC } from 'react'
-import { ArticleImageFIle } from '../../types/dataTypes'
+import { ArticleImageFIle } from '../../types/data-types'
 
 interface Props {
   imageFile: ArticleImageFIle

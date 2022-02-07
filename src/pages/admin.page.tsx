@@ -1,12 +1,12 @@
 import React, { VFC } from 'react'
-import Layout from '../components/Layout'
-import Navigation from '../components/Navigation'
-import LoginFields from '../components/LoginFields'
+import Layout from '../components/layout'
+import Navigation from '../components/navigation'
+import LoginFields from '../components/login-fields'
 import CONST from '../constants/const'
-import useStore from '../store/useStore'
-import { useSignOut } from '../hooks/useSignOut'
+import useStore from '../store/use-store'
+import { useSignOut } from '../hooks/use-sign-out'
 import { SignOut } from 'phosphor-react'
-import Button from '../components/Button'
+import Button from '../components/button'
 
 interface Props {}
 

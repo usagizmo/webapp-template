@@ -1,6 +1,6 @@
 import React, { VFC } from 'react'
-import { Article } from '../../types/dataTypes'
-import ArticleImage from './ArticleImage'
+import { Article } from '../../types/data-types'
+import ArticleImage from './article-image'
 
 interface Props {
   article: Article

@@ -1,7 +1,7 @@
 import React, { VFC } from 'react'
-import ArticleList from '../components/Article/ArticleList'
-import Layout from '../components/Layout'
-import Navigation from '../components/Navigation'
+import ArticleList from '../components/article/article-list'
+import Layout from '../components/layout'
+import Navigation from '../components/navigation'
 import CONST from '../constants/const'
 
 interface Props {}
