@@ -1,12 +1,12 @@
 import React, { VFC } from 'react'
-import { Article } from '../../types/dataTypes'
-import ArticleImage from './ArticleImage'
+import { Article } from '../../types/data-types'
+import { ArticleImage } from './article-image'
 
 interface Props {
   article: Article
 }
 
-const ArticleItem: VFC<Props> = ({ article }) => {
+export const ArticleItem: VFC<Props> = ({ article }) => {
   return (
     <div>
       <h2 className="flex text-[20px] font-medium">{article.title}</h2>
@@ -17,5 +17,3 @@ const ArticleItem: VFC<Props> = ({ article }) => {
     </div>
   )
 }
-
-export default ArticleItem

@@ -1,4 +1,4 @@
-const CONST = {
+export const CONST = {
   SITE_NAME: 'Next.js Template',
   HASURA_TOKEN_KEY: 'https://hasura.io/jwt/claims',
 
@@ -6,5 +6,3 @@ const CONST = {
   REGEX_EMAIL:
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 }
-
-export default CONST

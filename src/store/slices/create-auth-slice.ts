@@ -1,6 +1,6 @@
 import { SetState } from 'zustand'
-import { State } from '../useStore'
-import { User } from '../../types/dataTypes'
+import { State } from '../use-store'
+import { User } from '../../types/data-types'
 import { cookie } from '../../libs/cookie'
 
 export interface AuthSlice {
@@ -12,7 +12,7 @@ export interface AuthSlice {
   resetUser: () => void
 }
 
-const createAuthSlice = (set: SetState<State>): AuthSlice => ({
+export const createAuthSlice = (set: SetState<State>): AuthSlice => ({
   token: null, // Updated by useAuthSliceChanged
   user: null, // Updated by useUserChanged
   setToken: (token: string) => {
@@ -30,5 +30,3 @@ const createAuthSlice = (set: SetState<State>): AuthSlice => ({
     set({ user: null })
   },
 })
-
-export default createAuthSlice

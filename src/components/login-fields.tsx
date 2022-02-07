@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { VFC } from 'react'
 import { useForm } from 'react-hook-form'
-import { useFirebaseAuth } from '../hooks/useFirebaseAuth'
-import Input from './Input'
-import ERROR from '../constants/error'
-import Button from './Button'
-import CONST from '../constants/const'
+import { useFirebaseAuth } from '../hooks/use-firebase-auth'
+import { Input } from './input'
+import { ERROR } from '../constants/error'
+import { Button } from './button'
+import { CONST } from '../constants/const'
 
 type Inputs = {
   email: string
   password: string
 }
 
-export default function App() {
+export const LoginFields: VFC = () => {
   const { signInWithEmailAndPassword, createUserWithEmailAndPassword } = useFirebaseAuth()
   const {
     register,

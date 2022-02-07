@@ -1,4 +1,4 @@
-const useQueryHandle = (
+export const useQueryHandle = (
   { status }: { status: string },
   loadingMessage?: string
 ): JSX.Element | null => {
@@ -11,5 +11,3 @@ const useQueryHandle = (
 
   return null
 }
-
-export default useQueryHandle

@@ -10,7 +10,14 @@ interface Props {
   disabled?: boolean
 }
 
-const Input: VFC<Props> = ({ registerReturn, fieldError, type, label, placeholder, disabled }) => {
+export const Input: VFC<Props> = ({
+  registerReturn,
+  fieldError,
+  type,
+  label,
+  placeholder,
+  disabled,
+}) => {
   return (
     <div>
       <label>
@@ -29,5 +36,3 @@ const Input: VFC<Props> = ({ registerReturn, fieldError, type, label, placeholde
     </div>
   )
 }
-
-export default Input

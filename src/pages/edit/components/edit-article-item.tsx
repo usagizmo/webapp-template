@@ -1,19 +1,19 @@
 import { Trash } from 'phosphor-react'
 import React, { VFC } from 'react'
 import { useQueryClient } from 'react-query'
-import { GetArticlesQuery, useDeleteArticleMutation } from '../../generated/graphql'
-import { useArticleItemBindings } from '../../hooks/useArticleItemBindings'
-import useQueryHandle from '../../hooks/useQueryHandle'
-import { Article } from '../../types/dataTypes'
-import Button from '../Button'
-import InlineInput from '../InlineInput'
-import ArticleImage from './ArticleImage'
+import { GetArticlesQuery, useDeleteArticleMutation } from '../../../generated/graphql'
+import { useArticleItemBindings } from '../hooks/use-article-item-bindings'
+import { useQueryHandle } from '../../../hooks/use-query-handle'
+import { Article } from '../../../types/data-types'
+import { Button } from '../../../components/button'
+import { InlineInput } from '../../../components/inline-input'
+import { ArticleImage } from '../../../components/article/article-image'
 
 interface Props {
   article: Article
 }
 
-const EditArticleItem: VFC<Props> = ({ article }) => {
+export const EditArticleItem: VFC<Props> = ({ article }) => {
   const { title, titleBindings, content, contentBindings } = useArticleItemBindings(article)
   const queryClient = useQueryClient()
   const deleteArticleMutation = useDeleteArticleMutation({
@@ -57,5 +57,3 @@ const EditArticleItem: VFC<Props> = ({ article }) => {
     </div>
   )
 }
-
-export default EditArticleItem

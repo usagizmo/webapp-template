@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const useToRef = <T>(value: T) => {
+export const useToRef = <T>(value: T) => {
   const ref = useRef(value)
 
   useEffect(() => {
@@ -9,5 +9,3 @@ const useToRef = <T>(value: T) => {
 
   return ref
 }
-
-export default useToRef

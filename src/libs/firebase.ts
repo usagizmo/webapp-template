@@ -2,7 +2,7 @@ import { initializeApp, getApps, getApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
-import ENV from '../constants/env'
+import { ENV } from '../constants/env'
 
 const app = getApps().length
   ? getApp()

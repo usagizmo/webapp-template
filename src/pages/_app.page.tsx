@@ -2,12 +2,12 @@ import { AppProps } from 'next/app'
 import { useState } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { useAuthStateChanged } from '../hooks/useAuthStateChanged'
-import { useUserChanged } from '../hooks/useUserChanged'
+import { useAuthStateChanged } from '../hooks/use-auth-state-changed'
+import { useUserChanged } from '../hooks/use-user-changed'
 
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   useAuthStateChanged()
   useUserChanged()
   const [queryClient] = useState(
@@ -28,5 +28,3 @@ function MyApp({ Component, pageProps }: AppProps) {
     </QueryClientProvider>
   )
 }
-
-export default MyApp

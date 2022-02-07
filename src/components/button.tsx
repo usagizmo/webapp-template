@@ -9,7 +9,7 @@ interface Props {
   className?: string
 }
 
-const Button: FC<Props> = ({
+export const Button: FC<Props> = ({
   type = 'button',
   primary,
   disabled,
@@ -35,5 +35,3 @@ const Button: FC<Props> = ({
     </button>
   )
 }
-
-export default Button

@@ -1,15 +1,15 @@
 import React, { ChangeEventHandler, useCallback, VFC } from 'react'
 import { useForm } from 'react-hook-form'
 import { FileArrowUp } from 'phosphor-react'
-import ERROR from '../../constants/error'
-import useQueryHandle from '../../hooks/useQueryHandle'
-import Button from '../Button'
-import Input from '../Input'
-import { getArticlesStorageRef } from '../../utils/storageUtils'
+import { ERROR } from '../../../constants/error'
+import { useQueryHandle } from '../../../hooks/use-query-handle'
+import { Button } from '../../../components/button'
+import { Input } from '../../../components/input'
+import { getArticlesStorageRef } from '../../../utils/storage-utils'
 import { getDownloadURL, uploadBytes } from 'firebase/storage'
-import { ArticleImageFIle } from '../../types/dataTypes'
-import ArticleImage from './ArticleImage'
-import { GetArticlesQuery, useCreateArticleMutation } from '../../generated/graphql'
+import { ArticleImageFIle } from '../../../types/data-types'
+import { ArticleImage } from '../../../components/article/article-image'
+import { GetArticlesQuery, useCreateArticleMutation } from '../../../generated/graphql'
 import { useQueryClient } from 'react-query'
 
 interface Inputs {
@@ -20,7 +20,7 @@ interface Inputs {
 
 interface Props {}
 
-const CreateArticleItem: VFC<Props> = () => {
+export const CreateArticleItem: VFC<Props> = () => {
   const queryClient = useQueryClient()
   const createArticleMutation = useCreateArticleMutation({
     onSuccess: (data) => {
@@ -128,5 +128,3 @@ const CreateArticleItem: VFC<Props> = () => {
     </form>
   )
 }
-
-export default CreateArticleItem

@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, VFC } from 'react'
-import CreateArticleItem from '../components/Article/CreateArticleItem'
-import EditArticleList from '../components/Article/EditArticleList'
-import Layout from '../components/Layout'
-import Navigation from '../components/Navigation'
-import CONST from '../constants/const'
-import ROUTE from '../constants/route'
-import useStore from '../store/useStore'
+import { CreateArticleItem } from './components/create-article-item'
+import { EditArticleList } from './components/edit-article-list'
+import { Layout } from '../../components/layout'
+import { Navigation } from '../../components/navigation'
+import { CONST } from '../../constants/const'
+import { useStore } from '../../store/use-store'
+import { pagesPath } from '../../generated/$path'
 
 interface Props {}
 
@@ -16,7 +16,7 @@ const EditPage: VFC<Props> = () => {
 
   useEffect(() => {
     if (!user) {
-      router.push(ROUTE.HOME)
+      router.push(pagesPath.$url())
     }
   }, [router, user])
 

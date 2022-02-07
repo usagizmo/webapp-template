@@ -1,6 +1,6 @@
 # Next.js Template
 
-- [Next.js](https://nextjs.org/) (w/ [TypeScript](https://www.typescriptlang.org/))
+- [Next.js](https://nextjs.org/) (w/ [TypeScript](https://www.typescriptlang.org/)) - [pathpida](https://github.com/aspida/pathpida)
 - [Tailwind CSS](https://tailwindcss.com/) ([JIT](https://tailwindcss.com/docs/just-in-time-mode))
 - [Zustand](https://github.com/pmndrs/zustand)
 - [Firebase (Authentication/Storage)](https://firebase.google.com/)
@@ -23,8 +23,8 @@ cp .env.local.example .env.local
 
 ```bash
 pnpm i
-pnpm dev     # next dev
-pnpm build   # pnpm generate && next build
+pnpm dev     # pathpida --watch + next dev
+pnpm build   # pathpida && pnpm generate && next build
 pnpm start   # next start
 pnpm lint    # Linting
 pnpm format  # Formatting
