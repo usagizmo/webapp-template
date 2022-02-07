@@ -1,23 +1,23 @@
 import { VFC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import ROUTE from '../constants/route'
 import useStore from '../store/use-store'
+import { pagesPath } from '../generated/$path'
 
 interface Props {}
 
 const links = [
   {
-    href: ROUTE.HOME,
+    href: pagesPath.$url(),
     title: 'HOME',
   },
   {
-    href: ROUTE.EDIT,
+    href: pagesPath.edit.$url(),
     title: 'EDIT',
     auth: true,
   },
   {
-    href: ROUTE.ADMIN,
+    href: pagesPath.admin.$url(),
     title: 'ADMIN',
   },
 ]
@@ -35,7 +35,7 @@ const Input: VFC<Props> = () => {
           key={title}
           className="relative before:px-[8px] before:content-['/'] first:before:hidden"
         >
-          {router.pathname === href ? (
+          {router.pathname === href.pathname ? (
             <span className="font-semibold">{title}</span>
           ) : (
             <Link href={href}>
