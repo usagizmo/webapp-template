@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, VFC } from 'react'
-import CreateArticleItem from '../components/article/create-article-item'
-import EditArticleList from '../components/article/edit-article-list'
-import Layout from '../components/layout'
-import Navigation from '../components/navigation'
-import CONST from '../constants/const'
-import ROUTE from '../constants/route'
-import useStore from '../store/use-store'
+import CreateArticleItem from './components/create-article-item'
+import EditArticleList from './components/edit-article-list'
+import Layout from '../../components/layout'
+import Navigation from '../../components/navigation'
+import CONST from '../../constants/const'
+import ROUTE from '../../constants/route'
+import useStore from '../../store/use-store'
 
 interface Props {}
 
