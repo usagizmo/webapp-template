@@ -1,18 +1,18 @@
 import React, { VFC } from 'react'
-import { Layout } from '../components/layout'
-import { Navigation } from '../components/navigation'
-import { LoginFields } from '../components/login-fields'
-import { CONST } from '../constants/const'
-import { useStore } from '../store/use-store'
-import { useSignOut } from '../hooks/use-sign-out'
 import { SignOut } from 'phosphor-react'
-import { Button } from '../components/button'
+import { useSession } from 'next-auth/react'
+import { Layout } from '@/components/layout'
+import { Navigation } from '@/components/navigation'
+import { CONST } from '@/constants/const'
+import { Button } from '@/components/button'
+import { useAuth } from '@/hooks/use-auth'
+import { LoginFields } from './components/login-fields'
 
 interface Props {}
 
 const AdminPage: VFC<Props> = () => {
-  const user = useStore((state) => state.user)
-  const { signOut } = useSignOut()
+  const { signOut } = useAuth()
+  const { data: session } = useSession()
 
   return (
     <Layout>
@@ -23,11 +23,13 @@ const AdminPage: VFC<Props> = () => {
         <Navigation />
 
         <div className="mt-[24px]">
-          {user ? (
+          {session ? (
             <div className="text-center">
               <p>
                 Logged in as{' '}
-                <span className="mt-[4px] block text-[20px] font-medium">{user.email}</span>
+                <span className="mt-[4px] block text-[20px] font-medium">
+                  {session.user.id}
+                </span>
               </p>
               <div className="mt-[40px]">
                 <Button

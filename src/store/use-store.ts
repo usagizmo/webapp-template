@@ -1,13 +1,12 @@
 import create, { StateCreator } from 'zustand'
-import { devtools } from 'zustand/middleware'
-import { AuthSlice, createAuthSlice } from './slices/create-auth-slice'
+import { LocalSlice, createLocalSlice } from './slices/create-local-slice'
 
-export type State = AuthSlice
+export type State = LocalSlice
 
 export const store: StateCreator<State> = (set) => {
   return {
-    ...createAuthSlice(set),
+    ...createLocalSlice(set),
   }
 }
 
-export const useStore = create(devtools(store))
+export const useStore = create(store)

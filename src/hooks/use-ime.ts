@@ -2,7 +2,10 @@ import { KeyboardEventHandler, useState } from 'react'
 
 export const useIME = (): [
   boolean,
-  { onCompositionStart: KeyboardEventHandler; onCompositionEnd: KeyboardEventHandler }
+  {
+    onCompositionStart: KeyboardEventHandler
+    onCompositionEnd: KeyboardEventHandler
+  }
 ] => {
   const [isIME, setIsIME] = useState(false)
   const bindings = {

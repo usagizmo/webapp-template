@@ -1,24 +1,24 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, VFC } from 'react'
+import { useSession } from 'next-auth/react'
+import { Layout } from '@/components/layout'
+import { Navigation } from '@/components/navigation'
+import { CONST } from '@/constants/const'
+import { pagesPath } from '@/generated/$path'
 import { CreateArticleItem } from './components/create-article-item'
 import { EditArticleList } from './components/edit-article-list'
-import { Layout } from '../../components/layout'
-import { Navigation } from '../../components/navigation'
-import { CONST } from '../../constants/const'
-import { useStore } from '../../store/use-store'
-import { pagesPath } from '../../generated/$path'
 
 interface Props {}
 
 const EditPage: VFC<Props> = () => {
   const router = useRouter()
-  const user = useStore((state) => state.user)
+  const { status } = useSession()
 
   useEffect(() => {
-    if (!user) {
+    if (status === 'unauthenticated') {
       router.push(pagesPath.$url())
     }
-  }, [router, user])
+  }, [router, status])
 
   return (
     <Layout>

@@ -3,7 +3,11 @@ export const useQueryHandle = (
   loadingMessage?: string
 ): JSX.Element | null => {
   if (status === 'loading') {
-    return <div className="u-flex-center h-full">{loadingMessage ?? 'Loading...'}</div>
+    return (
+      <div className="u-flex-center h-full">
+        {loadingMessage ?? 'Loading...'}
+      </div>
+    )
   }
   if (status === 'error') {
     return <div className="u-flex-center h-full">Error</div>

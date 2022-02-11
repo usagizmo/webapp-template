@@ -1,21 +1,25 @@
 import { ChangeEventHandler } from 'react'
 import { useQueryClient } from 'react-query'
-import { createUpdateArticleMutationVariables } from '../../../factries/create-update-article-mutation-variables'
-import { GetArticlesQuery, useUpdateArticleMutation } from '../../../generated/graphql'
-import { Article } from '../../../types/data-types'
-import { useEffectedState } from '../../../hooks/use-effected-state'
+import { createUpdateArticleMutationVariables } from '@/factories/create-update-article-mutation-variables'
+import { ArticlesQuery, useUpdateArticleMutation } from '@/generated/graphql'
+import { Article } from '@/types/data-types'
+import { useEffectedState } from '@/hooks/use-effected-state'
 
 export const useArticleItemBindings = (article: Article) => {
   const queryClient = useQueryClient()
   const updateArticleMutation = useUpdateArticleMutation({
     onSuccess: (data) => {
-      const previousArticles = queryClient.getQueryData<GetArticlesQuery>(['GetArticles'])
+      const previousArticles = queryClient.getQueryData<ArticlesQuery>([
+        'GetArticles',
+      ])
       if (!previousArticles) return
 
       queryClient.setQueryData(['GetArticles'], {
         ...previousArticles,
         articles: previousArticles.articles.map((article) =>
-          article.id === data.update_articles_by_pk?.id ? data.update_articles_by_pk : article
+          article.id === data.update_articles_by_pk?.id
+            ? data.update_articles_by_pk
+            : article
         ),
       })
     },

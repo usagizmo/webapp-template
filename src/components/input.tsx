@@ -21,7 +21,11 @@ export const Input: VFC<Props> = ({
   return (
     <div>
       <label>
-        {label && <span className="mb-[4px] block text-sm font-medium text-gray-700">{label}</span>}
+        {label && (
+          <span className="mb-[4px] block text-sm font-medium text-gray-700">
+            {label}
+          </span>
+        )}
         <input
           type={type}
           className="block w-full rounded-md border border-gray-300 py-[8px] px-[12px] shadow-sm hover:border-gray-400 focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 disabled:pointer-events-none disabled:opacity-50 sm:text-sm"
@@ -31,7 +35,9 @@ export const Input: VFC<Props> = ({
         />
       </label>
       {fieldError && (
-        <p className="mt-[4px] text-[12px] leading-[16px] text-red-500">{fieldError.message}</p>
+        <p className="mt-[4px] text-[12px] leading-[16px] text-red-500">
+          {fieldError.message}
+        </p>
       )}
     </div>
   )

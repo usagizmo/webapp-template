@@ -1,15 +1,15 @@
 import { AppProps } from 'next/app'
 import { useState } from 'react'
+import { SessionProvider } from 'next-auth/react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { useAuthStateChanged } from '../hooks/use-auth-state-changed'
-import { useUserChanged } from '../hooks/use-user-changed'
 
 import '../styles/globals.css'
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  useAuthStateChanged()
-  useUserChanged()
+export default function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -22,9 +22,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       })
   )
   return (
-    <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <SessionProvider session={session}>
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+        <ReactQueryDevtools />
+      </QueryClientProvider>
+    </SessionProvider>
   )
 }
