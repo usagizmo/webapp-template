@@ -1,8 +1,9 @@
 import { VFC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useStore } from '@/store/use-store'
+import { useSession } from 'next-auth/react'
 import { pagesPath } from '@/generated/$path'
+import { useQueryHandle } from '@/hooks/use-query-handle'
 
 interface Props {}
 
@@ -24,9 +25,14 @@ const links = [
 
 export const Navigation: VFC<Props> = () => {
   const router = useRouter()
-  const user = useStore((state) => state.user)
 
-  const filteredLinks = links.filter((link) => !link.auth || user)
+  const { data: session, status } = useSession()
+
+  const queryHandle = useQueryHandle({ status })
+
+  if (queryHandle) return queryHandle
+
+  const filteredLinks = links.filter((link) => !link.auth || session)
 
   return (
     <ul className="u-flex-center h-[40px]">

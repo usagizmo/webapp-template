@@ -1,10 +1,10 @@
 import React, { VFC } from 'react'
 import { useForm } from 'react-hook-form'
-import { useFirebaseAuth } from '@/hooks/use-firebase-auth'
 import { Input } from '@/components/input'
 import { ERROR } from '@/constants/error'
 import { Button } from '@/components/button'
 import { CONST } from '@/constants/const'
+import { useAuth } from '@/hooks/use-auth'
 
 type Inputs = {
   email: string
@@ -12,7 +12,7 @@ type Inputs = {
 }
 
 export const LoginFields: VFC = () => {
-  const { signInWithEmailAndPassword, createUserWithEmailAndPassword } = useFirebaseAuth()
+  const { signInWithEmailAndPassword, createUserWithEmailAndPassword } = useAuth()
   const {
     register,
     formState: { errors },
