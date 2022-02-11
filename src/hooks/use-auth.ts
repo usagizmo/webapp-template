@@ -9,7 +9,10 @@ import {
   signOut as firebaseSignOut,
   getRedirectResult,
 } from 'firebase/auth'
-import { signIn as nextAuthSignIn, signOut as nextAuthSignOut } from 'next-auth/react'
+import {
+  signIn as nextAuthSignIn,
+  signOut as nextAuthSignOut,
+} from 'next-auth/react'
 import { CONST } from '@/constants/const'
 import { auth, firestore } from '@/libs/firebase'
 
@@ -41,11 +44,8 @@ export const useAuth = () => {
     async ({ email, password }: Inputs) => {
       let user
       try {
-        const { user: credentialUser } = await firebaseCreateUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        )
+        const { user: credentialUser } =
+          await firebaseCreateUserWithEmailAndPassword(auth, email, password)
         user = credentialUser
       } catch (err: any) {
         alert(err.message)
@@ -60,11 +60,8 @@ export const useAuth = () => {
     async ({ email, password }: Inputs) => {
       let user
       try {
-        const { user: credentialUser } = await firebaseSignInWithEmailAndPassword(
-          auth,
-          email,
-          password
-        )
+        const { user: credentialUser } =
+          await firebaseSignInWithEmailAndPassword(auth, email, password)
         user = credentialUser
       } catch (err: any) {
         alert(err.message)

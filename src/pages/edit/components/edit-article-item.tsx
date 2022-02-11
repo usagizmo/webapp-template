@@ -14,11 +14,14 @@ interface Props {
 }
 
 export const EditArticleItem: VFC<Props> = ({ article }) => {
-  const { title, titleBindings, content, contentBindings } = useArticleItemBindings(article)
+  const { title, titleBindings, content, contentBindings } =
+    useArticleItemBindings(article)
   const queryClient = useQueryClient()
   const deleteArticleMutation = useDeleteArticleMutation({
     onSuccess: (data) => {
-      const previousArticles = queryClient.getQueryData<GetArticlesQuery>(['GetArticles'])
+      const previousArticles = queryClient.getQueryData<GetArticlesQuery>([
+        'GetArticles',
+      ])
       if (!previousArticles) return
 
       queryClient.setQueryData(['GetArticles'], {

@@ -47,7 +47,9 @@ export default NextAuth({
         { id: token.uid as string }
       )()
       const { __typename, ...hasuraUser } = users_by_pk ?? {}
-      const extraProps = (Object.keys(hasuraUser) as Array<keyof typeof hasuraUser>).map((key) => ({
+      const extraProps = (
+        Object.keys(hasuraUser) as Array<keyof typeof hasuraUser>
+      ).map((key) => ({
         key,
         value: hasuraUser[key],
       }))

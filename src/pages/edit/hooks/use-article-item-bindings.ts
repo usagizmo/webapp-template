@@ -9,13 +9,17 @@ export const useArticleItemBindings = (article: Article) => {
   const queryClient = useQueryClient()
   const updateArticleMutation = useUpdateArticleMutation({
     onSuccess: (data) => {
-      const previousArticles = queryClient.getQueryData<GetArticlesQuery>(['GetArticles'])
+      const previousArticles = queryClient.getQueryData<GetArticlesQuery>([
+        'GetArticles',
+      ])
       if (!previousArticles) return
 
       queryClient.setQueryData(['GetArticles'], {
         ...previousArticles,
         articles: previousArticles.articles.map((article) =>
-          article.id === data.update_articles_by_pk?.id ? data.update_articles_by_pk : article
+          article.id === data.update_articles_by_pk?.id
+            ? data.update_articles_by_pk
+            : article
         ),
       })
     },

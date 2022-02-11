@@ -12,7 +12,8 @@ type Inputs = {
 }
 
 export const LoginFields: VFC = () => {
-  const { signInWithEmailAndPassword, createUserWithEmailAndPassword } = useAuth()
+  const { signInWithEmailAndPassword, createUserWithEmailAndPassword } =
+    useAuth()
   const {
     register,
     formState: { errors },
@@ -20,12 +21,18 @@ export const LoginFields: VFC = () => {
   } = useForm<Inputs>()
 
   return (
-    <form onSubmit={handleSubmit(signInWithEmailAndPassword)} className="space-y-[24px]">
+    <form
+      onSubmit={handleSubmit(signInWithEmailAndPassword)}
+      className="space-y-[24px]"
+    >
       <div className="flex flex-col">
         <Input
           registerReturn={register('email', {
             required: ERROR.REQUIRED('E-mail'),
-            pattern: { value: CONST.REGEX_EMAIL, message: ERROR.PATTERN('E-mail') },
+            pattern: {
+              value: CONST.REGEX_EMAIL,
+              message: ERROR.PATTERN('E-mail'),
+            },
           })}
           fieldError={errors.email}
           type="email"
@@ -50,7 +57,9 @@ export const LoginFields: VFC = () => {
         <Button type="submit" primary>
           Log in
         </Button>
-        <Button onClick={handleSubmit(createUserWithEmailAndPassword)}>Sign in</Button>
+        <Button onClick={handleSubmit(createUserWithEmailAndPassword)}>
+          Sign in
+        </Button>
       </div>
     </form>
   )

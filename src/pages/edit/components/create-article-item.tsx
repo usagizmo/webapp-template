@@ -24,7 +24,9 @@ export const CreateArticleItem: VFC<Props> = () => {
   const queryClient = useQueryClient()
   const createArticleMutation = useCreateArticleMutation({
     onSuccess: (data) => {
-      const previousArticles = queryClient.getQueryData<GetArticlesQuery>(['GetArticles'])
+      const previousArticles = queryClient.getQueryData<GetArticlesQuery>([
+        'GetArticles',
+      ])
       if (!previousArticles) return
 
       queryClient.setQueryData(['GetArticles'], {
