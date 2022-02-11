@@ -44,7 +44,9 @@ jobs:
       - name: Cache pnpm modules 📦
         uses: actions/cache@v2
         with:
-          path: ~/.pnpm-store
+          path: |
+            ~/.pnpm-store
+            ${{ github.workspace }}/.next/cache
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ matrix.os }}-node-v${{ matrix.node }}-deps-
