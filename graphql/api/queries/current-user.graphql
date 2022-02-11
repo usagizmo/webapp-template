@@ -1,4 +1,4 @@
-query GetCurrentUser($id: String!) {
+query CurrentUser($id: String!) {
   users_by_pk(id: $id) {
     id
     email

@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { firebaseAdmin } from '@/libs/firebase-admin'
-import { useGetCurrentUserQuery } from '@/generated/graphql-api'
+import { useCurrentUserQuery } from '@/generated/graphql-api'
 
 export default NextAuth({
   providers: [
@@ -35,7 +35,7 @@ export default NextAuth({
     async session({ session, token }) {
       const idToken = token.idToken as string
 
-      const { users_by_pk } = await useGetCurrentUserQuery.fetcher(
+      const { users_by_pk } = await useCurrentUserQuery.fetcher(
         {
           endpoint: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT as string,
           fetchParams: {

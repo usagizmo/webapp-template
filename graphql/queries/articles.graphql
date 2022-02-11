@@ -1,4 +1,4 @@
-query GetArticles {
+query Articles {
   articles(order_by: { created_at: desc }) {
     id
     title
