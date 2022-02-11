@@ -3,10 +3,10 @@ import { SignOut } from 'phosphor-react'
 import { useSession } from 'next-auth/react'
 import { Layout } from '@/components/layout'
 import { Navigation } from '@/components/navigation'
-import { LoginFields } from '@/components/login-fields'
 import { CONST } from '@/constants/const'
 import { Button } from '@/components/button'
 import { useAuth } from '@/hooks/use-auth'
+import { LoginFields } from './components/login-fields'
 
 interface Props {}
 

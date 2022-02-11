@@ -25,9 +25,7 @@ const links = [
 
 export const Navigation: VFC<Props> = () => {
   const router = useRouter()
-
   const { data: session, status } = useSession()
-
   const queryHandle = useQueryHandle({ status })
 
   if (queryHandle) return queryHandle
