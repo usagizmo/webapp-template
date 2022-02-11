@@ -1,10 +1,10 @@
 import React, { VFC } from 'react'
 import { useForm } from 'react-hook-form'
-import { useFirebaseAuth } from '../hooks/use-firebase-auth'
-import { Input } from './input'
-import { ERROR } from '../constants/error'
-import { Button } from './button'
-import { CONST } from '../constants/const'
+import { useFirebaseAuth } from '@/hooks/use-firebase-auth'
+import { Input } from '@/components/input'
+import { ERROR } from '@/constants/error'
+import { Button } from '@/components/button'
+import { CONST } from '@/constants/const'
 
 type Inputs = {
   email: string

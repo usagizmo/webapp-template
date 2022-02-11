@@ -1,7 +1,7 @@
 import { SetState } from 'zustand'
-import { State } from '../use-store'
-import { User } from '../../types/data-types'
-import { cookie } from '../../libs/cookie'
+import { User } from '@/types/data-types'
+import { cookie } from '@/libs/cookie'
+import { State } from '@/store/use-store'
 
 export interface AuthSlice {
   token: string | null

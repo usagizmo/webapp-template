@@ -15,7 +15,11 @@
     "jsx": "preserve",
     "incremental": true,
     "importHelpers": true,
-    "removeComments": true
+    "removeComments": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "firebase", "hasura"]

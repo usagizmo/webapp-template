@@ -1,8 +1,8 @@
 import { useCallback, useEffect } from 'react'
-import { useGetCurrentUserQuery } from '../generated/graphql'
-import { auth } from '../libs/firebase'
-import { useStore } from '../store/use-store'
-import { User } from '../types/data-types'
+import { useGetCurrentUserQuery } from '@/generated/graphql'
+import { auth } from '@/libs/firebase'
+import { useStore } from '@/store/use-store'
+import { User } from '@/types/data-types'
 
 export const useUserChanged = () => {
   const token = useStore((state) => state.token)

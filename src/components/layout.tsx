@@ -1,6 +1,6 @@
 import { ReactNode, VFC } from 'react'
 import Head from 'next/head'
-import { CONST } from '../constants/const'
+import { CONST } from '@/constants/const'
 
 interface Props {
   children: ReactNode

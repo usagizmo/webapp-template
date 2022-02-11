@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { signOut as firebaseSignOut } from 'firebase/auth'
-import { auth } from '../libs/firebase'
+import { auth } from '@/libs/firebase'
 
 export const useSignOut = () => {
   const signOut = useCallback(async () => {

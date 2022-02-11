@@ -5,7 +5,7 @@ import {
   signInWithRedirect,
   GoogleAuthProvider,
 } from 'firebase/auth'
-import { auth } from '../libs/firebase'
+import { auth } from '@/libs/firebase'
 
 type Inputs = {
   email: string

@@ -1,8 +1,8 @@
 import { VFC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useStore } from '../store/use-store'
-import { pagesPath } from '../generated/$path'
+import { useStore } from '@/store/use-store'
+import { pagesPath } from '@/generated/$path'
 
 interface Props {}
 

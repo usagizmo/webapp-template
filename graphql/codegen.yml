@@ -9,7 +9,7 @@ generates:
   ./src/generated/graphql.ts:
     plugins:
       - add:
-          content: "import { getFetchParams } from '../libs/cookie';"
+          content: "import { getFetchParams } from '@/libs/cookie';"
       - typescript
       - typescript-operations
       - typescript-react-query
