@@ -1,7 +1,7 @@
 import { Trash } from 'phosphor-react'
 import React, { VFC } from 'react'
 import { useQueryClient } from 'react-query'
-import { GetArticlesQuery, useDeleteArticleMutation } from '@/generated/graphql'
+import { ArticlesQuery, useDeleteArticleMutation } from '@/generated/graphql'
 import { useQueryHandle } from '@/hooks/use-query-handle'
 import { Article } from '@/types/data-types'
 import { Button } from '@/components/button'
@@ -19,7 +19,7 @@ export const EditArticleItem: VFC<Props> = ({ article }) => {
   const queryClient = useQueryClient()
   const deleteArticleMutation = useDeleteArticleMutation({
     onSuccess: (data) => {
-      const previousArticles = queryClient.getQueryData<GetArticlesQuery>([
+      const previousArticles = queryClient.getQueryData<ArticlesQuery>([
         'GetArticles',
       ])
       if (!previousArticles) return
