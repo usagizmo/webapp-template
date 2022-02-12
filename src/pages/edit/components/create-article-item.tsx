@@ -10,7 +10,11 @@ import { getArticlesStorageRef } from '@/utils/storage-utils'
 import { getDownloadURL, uploadBytes } from 'firebase/storage'
 import { ArticleImageFIle } from '@/types/data-types'
 import { ArticleImage } from '@/components/article/article-image'
-import { ArticlesQuery, useCreateArticleMutation } from '@/generated/graphql'
+import {
+  ArticlesQuery,
+  useArticlesQuery,
+  useCreateArticleMutation,
+} from '@/generated/graphql'
 
 interface Inputs {
   title: string
@@ -24,14 +28,12 @@ export const CreateArticleItem: VFC<Props> = () => {
   const queryClient = useQueryClient()
   const createArticleMutation = useCreateArticleMutation({
     onSuccess: (data) => {
-      const previousArticles = queryClient.getQueryData<ArticlesQuery>([
-        'GetArticles',
-      ])
-      if (!previousArticles) return
-
-      queryClient.setQueryData(['GetArticles'], {
-        ...previousArticles,
-        articles: [data.insert_articles_one, ...previousArticles.articles],
+      const useArticlesQueryKey = useArticlesQuery.getKey()
+      const prev = queryClient.getQueryData<ArticlesQuery>(useArticlesQueryKey)
+      if (!prev) return
+      queryClient.setQueryData(useArticlesQueryKey, {
+        ...prev,
+        articles: [data.insert_articles_one, ...prev.articles],
       })
     },
   })

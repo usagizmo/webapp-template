@@ -1,13 +1,12 @@
 # Next.js Template
 
 - [Next.js](https://nextjs.org/) (w/ [TypeScript](https://www.typescriptlang.org/)) - [pathpida](https://github.com/aspida/pathpida)
-- [Tailwind CSS](https://tailwindcss.com/) ([JIT](https://tailwindcss.com/docs/just-in-time-mode))
+- [Tailwind CSS](https://tailwindcss.com/)
 - [Firebase (Authentication/Storage)](https://firebase.google.com/) x [NextAuth](https://next-auth.js.org/)
 - [Hasura Cloud](https://cloud.hasura.io/)
 - [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
 - [Zustand](https://github.com/pmndrs/zustand)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/) / [Prettier](https://prettier.io/)
 - [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
 - GitHub Actions (Formatting + Testing)
 - Node (`v16+`) / [pnpm](https://pnpm.io/)
@@ -84,18 +83,24 @@ cd firebase
 # firebase init
 
 # Set project
-firebase use --add <project-id>
+firebase use --add <firebase-project-id>
 
 # In the `firebase/functions/`
 cd functions
 pnpm i
 
 # Add 2 environment variables
-firebase functions:config:set hasura.endpoint=https://<project-name>.hasura.app/v1/graphql --project <project-id>
-firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <project-id>
+firebase functions:config:set hasura.endpoint=https://<hasura-project-name>.hasura.app/v1/graphql --project <firebase-project-id>
+firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <firebase-project-id>
 
-# Deploy functions
-pnpm deploy
+# How to check the environment variables that have been set
+# firebase functions:config:get
+
+# Deploy firebase
+firebase deploiy
+
+# Deploy only functions
+# pnpm deploy
 ```
 
 ## Registering environment variables for GitHub / Vercel (or Netlify)

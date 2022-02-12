@@ -1,16 +1,19 @@
 import { Trash } from 'phosphor-react'
 import React, { VFC } from 'react'
 import { useQueryClient } from 'react-query'
-import { ArticlesQuery, useDeleteArticleMutation } from '@/generated/graphql'
+import {
+  ArticlesQuery,
+  useArticlesQuery,
+  useDeleteArticleMutation,
+} from '@/generated/graphql'
 import { useQueryHandle } from '@/hooks/use-query-handle'
-import { Article } from '@/types/data-types'
 import { Button } from '@/components/button'
 import { InlineInput } from '@/components/inline-input'
 import { ArticleImage } from '@/components/article/article-image'
 import { useArticleItemBindings } from '../hooks/use-article-item-bindings'
 
 interface Props {
-  article: Article
+  article: ArticlesQuery['articles'][0]
 }
 
 export const EditArticleItem: VFC<Props> = ({ article }) => {
@@ -19,14 +22,12 @@ export const EditArticleItem: VFC<Props> = ({ article }) => {
   const queryClient = useQueryClient()
   const deleteArticleMutation = useDeleteArticleMutation({
     onSuccess: (data) => {
-      const previousArticles = queryClient.getQueryData<ArticlesQuery>([
-        'GetArticles',
-      ])
-      if (!previousArticles) return
-
-      queryClient.setQueryData(['GetArticles'], {
-        ...previousArticles,
-        articles: previousArticles.articles.filter(
+      const useArticlesQueryKey = useArticlesQuery.getKey()
+      const prev = queryClient.getQueryData<ArticlesQuery>(useArticlesQueryKey)
+      if (!prev) return
+      queryClient.setQueryData(useArticlesQueryKey, {
+        ...prev,
+        articles: prev.articles.filter(
           (article) => article.id !== data.delete_articles_by_pk?.id
         ),
       })
