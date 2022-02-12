@@ -1,7 +1,7 @@
 import { VFC } from 'react'
 import classnames from 'classnames'
 
-interface Props {
+type Props = {
   value: string
   line?: boolean
 }

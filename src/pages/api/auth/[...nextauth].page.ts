@@ -8,7 +8,7 @@ export default NextAuth({
     CredentialsProvider({
       type: 'credentials',
       credentials: {
-        idToken: { value: '' },
+        idToken: { label: 'ID Token', type: 'password' },
       },
       async authorize(credentials) {
         const { idToken } = credentials ?? { idToken: null }

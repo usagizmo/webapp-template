@@ -50,7 +50,7 @@ exports.processSignUp = functions.auth.user().onCreate(async (user) => {
     await registerUserToHasura(user)
 
     // Update firestore to notify client to force refresh.
-    const metadataRef = admin.firestore().collection('user_meta').doc(user.uid)
+    const metadataRef = admin.firestore().collection('userMetas').doc(user.uid)
 
     // Set the refresh time to the current UTC timestamp.
     // This will be captured on the client to force a token refresh.

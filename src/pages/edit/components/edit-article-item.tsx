@@ -12,7 +12,7 @@ import { InlineInput } from '@/components/inline-input'
 import { ArticleImage } from '@/components/article/article-image'
 import { useArticleItemBindings } from '../hooks/use-article-item-bindings'
 
-interface Props {
+type Props = {
   article: ArticlesQuery['articles'][0]
 }
 

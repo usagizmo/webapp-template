@@ -1,7 +1,7 @@
 import React, { VFC } from 'react'
 import { ArticleImageFIle } from '@/types/data-types'
 
-interface Props {
+type Props = {
   imageFile: ArticleImageFIle
 }
 
