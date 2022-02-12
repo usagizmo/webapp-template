@@ -1,6 +1,8 @@
 import { ReactNode, VFC } from 'react'
 import Head from 'next/head'
 import { CONST } from '@/constants/const'
+import { useStore } from '@/store/use-store'
+import { PageLoading } from '@/components/page-loading'
 
 interface Props {
   children: ReactNode
@@ -14,6 +16,8 @@ export const Layout: VFC<Props> = ({
   description = 'Next.js Template Description',
 }) => {
   const title = `${pageTitle ? pageTitle + ' | ' : ''}` + CONST.SITE_NAME
+  const isPageLoading = useStore((state) => state.isPageLoading)
+
   return (
     <>
       <Head>
@@ -46,6 +50,7 @@ export const Layout: VFC<Props> = ({
         {/* <link rel="canonical" href="https://nextjs-template.io/" /> */}
       </Head>
       {children}
+      {isPageLoading && <PageLoading />}
     </>
   )
 }

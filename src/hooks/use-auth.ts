@@ -15,6 +15,7 @@ import {
 } from 'next-auth/react'
 import { CONST } from '@/constants/const'
 import { auth, db } from '@/libs/firebase'
+import { useStore } from '@/store/use-store'
 
 let unsubscribeUser = () => {
   // This is intentional
@@ -26,6 +27,9 @@ type Inputs = {
 }
 
 export const useAuth = () => {
+  const startPageLoading = useStore((state) => state.startPageLoading)
+  const endPageLoading = useStore((state) => state.endPageLoading)
+
   const setIdToken = useCallback(async (user: FirebaseUser) => {
     const idToken = await getIdTokenByFirebaseUser(user)
     if (idToken) {
@@ -43,6 +47,8 @@ export const useAuth = () => {
 
   const createUserWithEmailAndPassword = useCallback(
     async ({ email, password }: Inputs) => {
+      startPageLoading()
+
       let user
       try {
         const { user: credentialUser } =
@@ -50,15 +56,18 @@ export const useAuth = () => {
         user = credentialUser
       } catch (err: any) {
         alert(err.message)
+        endPageLoading()
         return
       }
       setIdToken(user)
     },
-    [setIdToken]
+    [endPageLoading, setIdToken, startPageLoading]
   )
 
   const signInWithEmailAndPassword = useCallback(
     async ({ email, password }: Inputs) => {
+      startPageLoading()
+
       let user
       try {
         const { user: credentialUser } =
@@ -66,15 +75,18 @@ export const useAuth = () => {
         user = credentialUser
       } catch (err: any) {
         alert(err.message)
+        endPageLoading()
         return
       }
       setIdToken(user)
     },
-    [setIdToken]
+    [endPageLoading, setIdToken, startPageLoading]
   )
 
   const signInWithGoogle = useCallback(async () => {
     const googleProvider = new GoogleAuthProvider()
+
+    startPageLoading()
 
     let user
     try {
@@ -87,10 +99,11 @@ export const useAuth = () => {
       user = credentialUser
     } catch (err: any) {
       alert(err.message)
+      endPageLoading()
       return
     }
     setIdToken(user)
-  }, [setIdToken])
+  }, [endPageLoading, setIdToken, startPageLoading])
 
   const signOut = useCallback(async () => {
     await firebaseSignOut(auth)

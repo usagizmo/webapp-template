@@ -2,17 +2,17 @@ import { SetState } from 'zustand'
 import { State } from '@/store/use-store'
 
 export type LocalSlice = {
-  isMenuOpen: boolean
-  openMenu: () => void
-  closeMenu: () => void
+  isPageLoading: boolean
+  startPageLoading: () => void
+  endPageLoading: () => void
 }
 
 export const createLocalSlice = (set: SetState<State>): LocalSlice => ({
-  isMenuOpen: false,
-  openMenu: () => {
-    set({ isMenuOpen: true })
+  isPageLoading: false,
+  startPageLoading: () => {
+    set({ isPageLoading: true })
   },
-  closeMenu: () => {
-    set({ isMenuOpen: false })
+  endPageLoading: () => {
+    set({ isPageLoading: false })
   },
 })
