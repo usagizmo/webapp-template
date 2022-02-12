@@ -18,7 +18,7 @@ const AdminPage: VFC<Props> = () => {
 
   return (
     <Layout>
-      <header className="u-flex-center h-[80px]">
+      <header className="flex h-[80px] items-center justify-center">
         <h1 className="text-[24px] font-bold">{CONST.SITE_NAME}</h1>
       </header>
       <div className="container max-w-[480px]">
