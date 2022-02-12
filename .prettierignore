@@ -1,5 +1,7 @@
 /.next
+/firebase/functions/lib
+/graphql/graphql.schema.json
 /out
 /public
-/firebase/functions/lib
+/src/generated
 pnpm-lock.yaml
