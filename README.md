@@ -1,13 +1,12 @@
 # Next.js Template
 
 - [Next.js](https://nextjs.org/) (w/ [TypeScript](https://www.typescriptlang.org/)) - [pathpida](https://github.com/aspida/pathpida)
-- [Tailwind CSS](https://tailwindcss.com/) ([JIT](https://tailwindcss.com/docs/just-in-time-mode))
+- [Tailwind CSS](https://tailwindcss.com/)
 - [Firebase (Authentication/Storage)](https://firebase.google.com/) x [NextAuth](https://next-auth.js.org/)
 - [Hasura Cloud](https://cloud.hasura.io/)
 - [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
 - [Zustand](https://github.com/pmndrs/zustand)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/) / [Prettier](https://prettier.io/)
 - [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
 - GitHub Actions (Formatting + Testing)
 - Node (`v16+`) / [pnpm](https://pnpm.io/)
