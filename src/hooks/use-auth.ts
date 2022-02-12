@@ -14,7 +14,7 @@ import {
   signOut as nextAuthSignOut,
 } from 'next-auth/react'
 import { CONST } from '@/constants/const'
-import { auth, firestore } from '@/libs/firebase'
+import { auth, db } from '@/libs/firebase'
 
 let unsubscribeUser = () => {
   // This is intentional
@@ -33,8 +33,9 @@ export const useAuth = () => {
       return
     }
 
-    const userRef = doc(firestore, 'user_meta', user.uid)
-    unsubscribeUser = onSnapshot(userRef, async () => {
+    const userMetasRef = doc(db, 'userMetas', user.uid)
+    unsubscribeUser = onSnapshot(userMetasRef, async (doc) => {
+      if (!doc.data()) return
       const lazyIdToken = await getIdTokenByFirebaseUser(user)
       nextAuthSignIn('credentials', { idToken: lazyIdToken })
     })
@@ -111,5 +112,5 @@ const getIdTokenByFirebaseUser = async (user: FirebaseUser) => {
   const idToken = await user.getIdToken(true)
   const idTokenResult = await user.getIdTokenResult()
   const hasuraClaims = idTokenResult.claims[CONST.HASURA_TOKEN_KEY]
-  return hasuraClaims ? idToken : ''
+  return hasuraClaims ? idToken : null
 }
