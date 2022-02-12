@@ -30,9 +30,10 @@ const AdminPage: VFC<Props> = () => {
               <div className="text-center">
                 <p>
                   Logged in as{' '}
-                  <span className="mt-[4px] block text-[20px] font-medium">
-                    {session.user.id}
+                  <span className="mt-1 block text-2xl font-medium">
+                    {session.user.email}
                   </span>
+                  <span className="mt-1block text-sm">{session.user.id}</span>
                 </p>
                 <div className="mt-[40px]">
                   <Button
