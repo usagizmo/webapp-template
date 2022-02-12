@@ -1,8 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@firebase/app-compat': 0.x
-  '@firebase/app-types': 0.x
+  '@firebase/app-compat': ~0.1.17
+  '@firebase/app-types': ~0.7.0
   axios: ^0.25.0
   firebase-admin: ^10.0.2
   firebase-functions: ^3.18.0
