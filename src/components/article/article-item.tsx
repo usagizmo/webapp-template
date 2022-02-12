@@ -1,9 +1,9 @@
 import React, { VFC } from 'react'
-import { Article } from '@/types/data-types'
+import { ArticlesQuery } from '@/generated/graphql'
 import { ArticleImage } from './article-image'
 
 interface Props {
-  article: Article
+  article: ArticlesQuery['articles'][0]
 }
 
 export const ArticleItem: VFC<Props> = ({ article }) => {

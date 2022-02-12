@@ -2,10 +2,11 @@ import { ChangeEventHandler } from 'react'
 import { useQueryClient } from 'react-query'
 import { createUpdateArticleMutationVariables } from '@/factories/create-update-article-mutation-variables'
 import { ArticlesQuery, useUpdateArticleMutation } from '@/generated/graphql'
-import { Article } from '@/types/data-types'
 import { useEffectedState } from '@/hooks/use-effected-state'
 
-export const useArticleItemBindings = (article: Article) => {
+export const useArticleItemBindings = (
+  article: ArticlesQuery['articles'][0]
+) => {
   const queryClient = useQueryClient()
   const updateArticleMutation = useUpdateArticleMutation({
     onSuccess: (data) => {

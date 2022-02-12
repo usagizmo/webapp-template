@@ -1,8 +1,10 @@
-import { UpdateArticleMutationVariables } from '@/generated/graphql'
-import { Article } from '@/types/data-types'
+import {
+  ArticlesQuery,
+  UpdateArticleMutationVariables,
+} from '@/generated/graphql'
 
 export const createUpdateArticleMutationVariables = (
-  article: Article
+  article: ArticlesQuery['articles'][0]
 ): UpdateArticleMutationVariables => ({
   id: article.id,
   title: article.title,
