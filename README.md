@@ -94,6 +94,9 @@ pnpm i
 firebase functions:config:set hasura.endpoint=https://<project-name>.hasura.app/v1/graphql --project <project-id>
 firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <project-id>
 
+# How to check the environment variables that have been set
+# firebase functions:config:get
+
 # Deploy functions
 pnpm deploy
 ```
