@@ -8,7 +8,7 @@ type Props = {
 
 export const ArticleList: VFC<Props> = ({ articles }) => {
   return (
-    <div className="space-y-[24px]">
+    <div className="space-y-6">
       {articles.map((article) => (
         <ArticleItem key={article.id} article={article} />
       ))}

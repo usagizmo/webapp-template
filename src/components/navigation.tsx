@@ -33,11 +33,11 @@ export const Navigation: VFC<Props> = () => {
   const filteredLinks = links.filter((link) => !link.auth || session)
 
   return (
-    <ul className="flex h-[40px] items-center justify-center">
+    <ul className="flex h-10 items-center justify-center">
       {filteredLinks.map(({ href, title }) => (
         <li
           key={title}
-          className="relative before:px-[8px] before:content-['/'] first:before:hidden"
+          className="relative before:px-2 before:content-['/'] first:before:hidden"
         >
           {router.pathname === href.pathname ? (
             <span className="font-semibold">{title}</span>

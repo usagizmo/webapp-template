@@ -18,13 +18,13 @@ const AdminPage: VFC<Props> = () => {
 
   return (
     <Layout>
-      <header className="flex h-[80px] items-center justify-center">
+      <header className="flex h-20 items-center justify-center">
         <h1 className="text-[24px] font-bold">{CONST.SITE_NAME}</h1>
       </header>
       <div className="container max-w-[480px]">
         <Navigation />
 
-        <div className="mt-[24px]">
+        <div className="mt-6">
           {queryHandle ??
             (session ? (
               <div className="text-center">
@@ -35,13 +35,13 @@ const AdminPage: VFC<Props> = () => {
                   </span>
                   <span className="mt-1block text-sm">{session.user.id}</span>
                 </p>
-                <div className="mt-[40px]">
+                <div className="mt-10">
                   <Button
                     onClick={() => {
                       signOut()
                     }}
                   >
-                    <SignOut width={20} height={20} className="mr-[6px]" />
+                    <SignOut width={20} height={20} className="mr-1.5" />
                     <span>Sign out</span>
                   </Button>
                 </div>

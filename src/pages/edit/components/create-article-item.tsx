@@ -91,7 +91,7 @@ export const CreateArticleItem: VFC<Props> = () => {
   )
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-[16px]">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div className="flex flex-col">
         <Input
           registerReturn={register('title', {
@@ -114,17 +114,17 @@ export const CreateArticleItem: VFC<Props> = () => {
       </div>
       <div>
         {watchImageFile && (
-          <div className="mb-[8px]">
+          <div className="mb-2">
             <ArticleImage imageFile={watchImageFile} />
           </div>
         )}
-        <label className="inline-flex cursor-pointer items-center justify-center rounded-[20px] border border-transparent bg-gray-100 py-[9px] px-[20px] text-sm font-medium leading-[22px] shadow-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-gray-300 focus-within:ring-offset-2 hover:bg-gray-200 disabled:pointer-events-none disabled:opacity-50">
-          <FileArrowUp size={20} className="mr-[6px]" />
+        <label className="inline-flex cursor-pointer items-center justify-center rounded-[20px] border border-transparent bg-gray-100 py-[9px] px-5 text-sm font-medium leading-[22px] shadow-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-gray-300 focus-within:ring-offset-2 hover:bg-gray-200 disabled:pointer-events-none disabled:opacity-50">
+          <FileArrowUp size={20} className="mr-1.5" />
           <span className="font-medium">Select a file</span>
           <input type="file" className="sr-only" onChange={onChangeFile} />
         </label>
       </div>
-      <div className="flex space-x-[16px]">
+      <div className="flex space-x-4">
         <Button type="submit" primary disabled={!!queryHandle}>
           Create
         </Button>

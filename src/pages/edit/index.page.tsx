@@ -44,16 +44,16 @@ const EditPage: VFC<Props> = () => {
 
   return (
     <Layout>
-      <header className="flex h-[80px] items-center justify-center">
+      <header className="flex h-20 items-center justify-center">
         <h1 className="text-[24px] font-bold">{CONST.SITE_NAME}</h1>
       </header>
       <div className="container max-w-[480px]">
         <Navigation />
 
-        <div className="mt-[24px]">
+        <div className="mt-6">
           <CreateArticleItem />
         </div>
-        <div className="mt-[24px]">
+        <div className="mt-6">
           {articlesQueryHandle ?? (
             <EditArticleList articles={articlesQuery.data?.articles ?? []} />
           )}
