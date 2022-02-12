@@ -1,8 +1,9 @@
 import { FC } from 'react'
 import Link from 'next/link'
+import { UrlObject } from 'url'
 
 type Props = {
-  href: string
+  href: string | UrlObject
 }
 
 export const TextLink: FC<Props> = ({ href, children }) => {
