@@ -97,8 +97,11 @@ firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> 
 # How to check the environment variables that have been set
 # firebase functions:config:get
 
-# Deploy functions
-pnpm deploy
+# Deploy firebase
+firebase deploiy
+
+# Deploy only functions
+# pnpm deploy
 ```
 
 ## Registering environment variables for GitHub / Vercel (or Netlify)
