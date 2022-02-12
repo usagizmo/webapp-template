@@ -9,7 +9,7 @@ import { useAuth } from '@/hooks/use-auth'
 import { useQueryHandle } from '@/hooks/use-query-handle'
 import { LoginFields } from './components/login-fields'
 
-interface Props {}
+type Props = {}
 
 const AdminPage: VFC<Props> = () => {
   const { signOut } = useAuth()

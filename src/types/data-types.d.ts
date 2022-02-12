@@ -2,7 +2,7 @@
  * Data items that exist in Hasura's DB
  */
 
-export interface ArticleImageFIle {
+export type ArticleImageFIle = {
   name: string
   url: string
 }

@@ -4,7 +4,7 @@ import { CONST } from '@/constants/const'
 import { useStore } from '@/store/use-store'
 import { PageLoading } from '@/components/page-loading'
 
-interface Props {
+type Props = {
   children: ReactNode
   pageTitle?: string
   description?: string

@@ -1,7 +1,7 @@
 import { MouseEventHandler, FC } from 'react'
 import classnames from 'classnames'
 
-interface Props {
+type Props = {
   type?: 'submit' | 'button' | 'reset'
   primary?: boolean
   disabled?: boolean

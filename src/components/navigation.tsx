@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react'
 import { pagesPath } from '@/generated/$path'
 import { useQueryHandle } from '@/hooks/use-query-handle'
 
-interface Props {}
+type Props = {}
 
 const links = [
   {

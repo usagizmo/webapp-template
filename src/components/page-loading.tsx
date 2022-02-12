@@ -1,6 +1,6 @@
 import { VFC } from 'react'
 
-interface Props {}
+type Props = {}
 
 export const PageLoading: VFC<Props> = () => {
   return (

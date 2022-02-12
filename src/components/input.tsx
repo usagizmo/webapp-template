@@ -1,7 +1,7 @@
 import { VFC } from 'react'
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form'
 
-interface Props {
+type Props = {
   registerReturn: UseFormRegisterReturn
   fieldError: FieldError | undefined
   type: string

@@ -16,13 +16,13 @@ import {
   useCreateArticleMutation,
 } from '@/generated/graphql'
 
-interface Inputs {
+type Inputs = {
   title: string
   content: string
   imageFile: ArticleImageFIle | null
 }
 
-interface Props {}
+type Props = {}
 
 export const CreateArticleItem: VFC<Props> = () => {
   const queryClient = useQueryClient()
