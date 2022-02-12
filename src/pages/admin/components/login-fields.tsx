@@ -23,7 +23,7 @@ export const LoginFields: VFC = () => {
   return (
     <form
       onSubmit={handleSubmit(signInWithEmailAndPassword)}
-      className="space-y-[24px]"
+      className="space-y-6"
     >
       <div className="flex flex-col">
         <Input
@@ -53,7 +53,7 @@ export const LoginFields: VFC = () => {
           label="Password"
         />
       </div>
-      <div className="flex space-x-[16px]">
+      <div className="flex space-x-4">
         <Button type="submit" primary>
           Log in
         </Button>

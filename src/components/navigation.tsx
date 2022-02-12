@@ -1,9 +1,9 @@
 import { VFC } from 'react'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
 import { pagesPath } from '@/generated/$path'
 import { useQueryHandle } from '@/hooks/use-query-handle'
+import { TextLink } from '@/components/text-link'
 
 type Props = {}
 
@@ -33,18 +33,16 @@ export const Navigation: VFC<Props> = () => {
   const filteredLinks = links.filter((link) => !link.auth || session)
 
   return (
-    <ul className="u-flex-center h-[40px]">
+    <ul className="flex h-10 items-center justify-center">
       {filteredLinks.map(({ href, title }) => (
         <li
           key={title}
-          className="relative before:px-[8px] before:content-['/'] first:before:hidden"
+          className="relative before:px-2 before:content-['/'] first:before:hidden"
         >
           {router.pathname === href.pathname ? (
             <span className="font-semibold">{title}</span>
           ) : (
-            <Link href={href}>
-              <a className="u-link">{title}</a>
-            </Link>
+            <TextLink href={href}>{title}</TextLink>
           )}
         </li>
       ))}

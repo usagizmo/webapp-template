@@ -32,13 +32,13 @@ const HomePage: VFC<Props> = () => {
 
   return (
     <Layout>
-      <header className="u-flex-center h-[80px]">
+      <header className="flex h-20 items-center justify-center">
         <h1 className="text-[24px] font-bold">{CONST.SITE_NAME}</h1>
       </header>
       <div className="container max-w-[480px]">
         <Navigation />
 
-        <div className="mt-[24px]">
+        <div className="mt-6">
           {articlesQueryHandle ?? (
             <ArticleList articles={articlesQuery.data?.articles ?? []} />
           )}

@@ -8,7 +8,7 @@ type Props = {
 export const ArticleImage: VFC<Props> = ({ imageFile }) => {
   return (
     <div>
-      <div className="u-flex-center h-[120px] w-[120px] border bg-gray-50">
+      <div className="flex h-[120px] w-[120px] items-center justify-center border bg-gray-50">
         <img
           src={imageFile.url}
           alt={imageFile.name}

@@ -1,6 +1,6 @@
 {
   "name": "nextjs-template",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "private": true,
   "scripts": {
     "prepare": "husky install",
@@ -41,8 +41,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
-    "@firebase/app-compat": "0.x",
-    "@firebase/app-types": "0.x",
+    "@firebase/app-compat": "~0.1.17",
+    "@firebase/app-types": "~0.7.0",
     "@graphql-codegen/add": "^3.1.1",
     "@graphql-codegen/cli": "2.6.1",
     "@graphql-codegen/introspection": "2.1.1",

@@ -31,19 +31,4 @@
   .u-prevent-animation * {
     @apply !animate-none !transition-none;
   }
-
-  .u-flex-center {
-    @apply flex items-center justify-center;
-  }
-
-  .u-link {
-    @apply relative inline-flex overflow-hidden text-gray-600 after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-full after:translate-x-[calc(-100%-1px)] after:bg-black after:duration-150 hover:text-black hover:after:translate-x-0;
-  }
-  .u-link.is-white {
-    @apply text-gray-200 after:bg-white hover:text-white;
-  }
-
-  .u-list-item {
-    @apply before:px-[4px] before:content-['/'] first-of-type:before:hidden;
-  }
 }
