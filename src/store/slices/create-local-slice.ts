@@ -1,5 +1,5 @@
 import { SetState } from 'zustand'
-import { State } from '@/store/use-store'
+import { State } from '../use-store'
 
 export type LocalSlice = {
   isPageLoading: boolean

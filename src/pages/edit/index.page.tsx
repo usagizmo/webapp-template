@@ -9,8 +9,8 @@ import { CONST } from '@/constants/const'
 import { pagesPath } from '@/generated/$path'
 import { useArticlesQuery } from '@/generated/graphql'
 import { useQueryHandle } from '@/hooks/use-query-handle'
-import { CreateArticleItem } from '@/pages/edit/components/create-article-item'
-import { EditArticleList } from '@/pages/edit/components/edit-article-list'
+import { CreateArticleItem } from './components/create-article-item'
+import { EditArticleList } from './components/edit-article-list'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 

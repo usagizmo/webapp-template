@@ -1,6 +1,6 @@
 import { VFC } from 'react'
 import { ArticlesQuery } from '@/generated/graphql'
-import { ArticleImage } from '@/components/article/article-image'
+import { ArticleImage } from './article-image'
 
 type Props = {
   article: ArticlesQuery['articles'][0]

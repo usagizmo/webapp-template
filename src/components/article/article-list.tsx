@@ -1,6 +1,6 @@
 import { VFC } from 'react'
 import { ArticlesQuery } from '@/generated/graphql'
-import { ArticleItem } from '@/components/article/article-item'
+import { ArticleItem } from './article-item'
 
 type Props = {
   articles: ArticlesQuery['articles']

@@ -1,5 +1,5 @@
 import create, { StateCreator } from 'zustand'
-import { LocalSlice, createLocalSlice } from '@/store/slices/create-local-slice'
+import { createLocalSlice, LocalSlice } from './slices/create-local-slice'
 
 export type State = LocalSlice
 

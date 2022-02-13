@@ -1,5 +1,5 @@
-import { CurrentUserQuery } from '@/generated/graphql-api'
 import { DefaultSession } from 'next-auth'
+import { CurrentUserQuery } from '@/generated/graphql-api'
 
 declare module 'next-auth' {
   interface Session {

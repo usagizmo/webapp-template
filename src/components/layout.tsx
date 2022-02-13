@@ -2,7 +2,7 @@ import { ReactNode, VFC } from 'react'
 import Head from 'next/head'
 import { CONST } from '@/constants/const'
 import { useStore } from '@/store/use-store'
-import { PageLoading } from '@/components/page-loading'
+import { PageLoading } from './page-loading'
 
 type Props = {
   children: ReactNode
