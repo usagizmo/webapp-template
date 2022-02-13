@@ -1,5 +1,4 @@
 import { VFC } from 'react'
-import classnames from 'classnames'
 
 type Props = {
   value: string
@@ -8,12 +7,7 @@ type Props = {
 
 export const InlineInput: VFC<Props> = ({ value, line, ...bindings }) => {
   return (
-    <label
-      className={classnames('relative inline-flex overflow-hidden rounded', {
-        'ring-gray-300 focus-within:shadow-sm focus-within:!ring-2 hover:shadow-sm hover:ring-1':
-          line,
-      })}
-    >
+    <label className="relative inline-flex overflow-hidden rounded ring-gray-300 focus-within:shadow-sm focus-within:!ring-2 hover:shadow-sm hover:ring-1">
       <div className="invisible min-h-[1em] min-w-[1em] overflow-hidden whitespace-pre">
         {value}
       </div>

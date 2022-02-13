@@ -15,7 +15,6 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.11.0
   '@typescript-eslint/parser': ^5.11.0
   autoprefixer: ^10.4.2
-  classnames: ^2.3.1
   concurrently: ^7.0.0
   cross-env: ^7.0.3
   data-fns: ^0.1.8
@@ -48,7 +47,6 @@ specifiers:
   zustand: ^3.7.0
 
 dependencies:
-  classnames: 2.3.1
   data-fns: 0.1.8
   firebase: 9.6.6
   firebase-admin: 10.0.2_cd0089bfd3b701893725b6bd3f9645ad
@@ -2747,10 +2745,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
-
-  /classnames/2.3.1:
-    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
-    dev: false
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
