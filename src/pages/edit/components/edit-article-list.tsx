@@ -1,6 +1,6 @@
-import React, { VFC } from 'react'
+import { VFC } from 'react'
 import { ArticlesQuery } from '@/generated/graphql'
-import { EditArticleItem } from './edit-article-item'
+import { EditArticleItem } from '@/pages/edit/components/edit-article-item'
 
 type Props = {
   articles: ArticlesQuery['articles']

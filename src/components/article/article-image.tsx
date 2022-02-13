@@ -1,4 +1,4 @@
-import React, { VFC } from 'react'
+import { VFC } from 'react'
 import { ArticleImageFIle } from '@/types/data-types'
 
 type Props = {

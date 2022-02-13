@@ -1,5 +1,5 @@
 import { Trash } from 'phosphor-react'
-import React, { VFC } from 'react'
+import { VFC } from 'react'
 import { useQueryClient } from 'react-query'
 import {
   ArticlesQuery,
@@ -10,7 +10,7 @@ import { useQueryHandle } from '@/hooks/use-query-handle'
 import { Button } from '@/components/button'
 import { InlineInput } from '@/components/inline-input'
 import { ArticleImage } from '@/components/article/article-image'
-import { useArticleItemBindings } from '../hooks/use-article-item-bindings'
+import { useArticleItemBindings } from '@/pages/edit/hooks/use-article-item-bindings'
 
 type Props = {
   article: ArticlesQuery['articles'][0]
