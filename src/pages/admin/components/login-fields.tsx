@@ -1,4 +1,4 @@
-import React, { VFC } from 'react'
+import { VFC } from 'react'
 import { useForm } from 'react-hook-form'
 import { Input } from '@/components/input'
 import { ERROR } from '@/constants/error'

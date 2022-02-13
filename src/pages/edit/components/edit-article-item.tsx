@@ -1,5 +1,5 @@
 import { Trash } from 'phosphor-react'
-import React, { VFC } from 'react'
+import { VFC } from 'react'
 import { useQueryClient } from 'react-query'
 import {
   ArticlesQuery,

@@ -1,4 +1,4 @@
-import React, { VFC } from 'react'
+import { VFC } from 'react'
 import { SignOut } from 'phosphor-react'
 import { useSession } from 'next-auth/react'
 import { Layout } from '@/components/layout'

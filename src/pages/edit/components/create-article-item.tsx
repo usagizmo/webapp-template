@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useCallback, VFC } from 'react'
+import { ChangeEventHandler, useCallback, VFC } from 'react'
 import { useForm } from 'react-hook-form'
 import { FileArrowUp } from 'phosphor-react'
 import { useQueryClient } from 'react-query'

@@ -1,4 +1,4 @@
-import React, { VFC } from 'react'
+import { VFC } from 'react'
 import { InferGetStaticPropsType } from 'next'
 import { QueryClient, dehydrate } from 'react-query'
 import { ArticleList } from '@/components/article/article-list'
