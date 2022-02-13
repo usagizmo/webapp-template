@@ -40,7 +40,7 @@ export const EditArticleItem: VFC<Props> = ({ article }) => {
   return (
     <div>
       <h2 className="flex text-[20px] font-medium">
-        <InlineInput value={title} line {...titleBindings} />
+        <InlineInput value={title} {...titleBindings} />
         <div className="ml-2">
           <Button
             className="h-6 w-6 !p-0"
@@ -55,7 +55,7 @@ export const EditArticleItem: VFC<Props> = ({ article }) => {
         </div>
       </h2>
       <div>
-        <InlineInput value={content} line {...contentBindings} />
+        <InlineInput value={content} {...contentBindings} />
       </div>
       {article.imageFile && <ArticleImage imageFile={article.imageFile} />}
     </div>
