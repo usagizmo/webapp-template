@@ -7,7 +7,7 @@ import { CONST } from '@/constants/const'
 import { Button } from '@/components/button'
 import { useAuth } from '@/hooks/use-auth'
 import { useQueryHandle } from '@/hooks/use-query-handle'
-import { LoginFields } from './components/login-fields'
+import { LoginFields } from '@/pages/admin/components/login-fields'
 
 type Props = {}
 
