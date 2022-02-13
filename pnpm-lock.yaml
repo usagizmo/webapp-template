@@ -17,7 +17,6 @@ specifiers:
   autoprefixer: ^10.4.2
   concurrently: ^7.0.0
   cross-env: ^7.0.3
-  data-fns: ^0.1.8
   dotenv: ^16.0.0
   eslint: ^8.9.0
   eslint-config-next: ^12.0.10
@@ -47,7 +46,6 @@ specifiers:
   zustand: ^3.7.0
 
 dependencies:
-  data-fns: 0.1.8
   firebase: 9.6.6
   firebase-admin: 10.0.2_cd0089bfd3b701893725b6bd3f9645ad
   graphql: 16.3.0
@@ -3018,13 +3016,6 @@ packages:
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
-
-  /data-fns/0.1.8:
-    resolution: {integrity: sha512-3aC+mM92aUWsTx3lYD9el6RUZqaQceQeUw16de/cb9gyjp/CJ3yekYtsxQOYQoPAM2+kgfp1Km6zkzh5Q4+EYA==}
-    engines: {node: '>=10'}
-    dependencies:
-      unit-fns: 0.1.7
-    dev: false
 
   /dataloader/2.0.0:
     resolution: {integrity: sha512-YzhyDAwA4TaQIhM5go+vCLmU0UikghC/t9DTQYZR2M/UvZ1MdOhPezSDZcjj9uqQJOMqjLcpWtyW2iNINdlatQ==}
@@ -6786,11 +6777,6 @@ packages:
       crypto-random-string: 2.0.0
     dev: false
     optional: true
-
-  /unit-fns/0.1.7:
-    resolution: {integrity: sha512-A6fT2bPCKjryr//T8X+euo2g9e5VRGIwOmLHb9bSasMBdKWQ+By3OwXkwTJbK8C6kUmJnbSCcJCNxJkkmKS15A==}
-    engines: {node: '>=10'}
-    dev: false
 
   /unixify/1.0.0:
     resolution: {integrity: sha1-OmQcjC/7zk2mg6XHDwOkYpQMIJA=}

@@ -23,7 +23,6 @@
     "generate": "cross-env DOTENV_CONFIG_PATH=\".env.local\" graphql-codegen --require dotenv/config --config graphql/codegen.yml"
   },
   "dependencies": {
-    "data-fns": "^0.1.8",
     "firebase": "^9.6.6",
     "firebase-admin": "^10.0.2",
     "graphql": "^16.3.0",
