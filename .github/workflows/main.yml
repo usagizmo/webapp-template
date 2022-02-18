@@ -62,6 +62,9 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4
 
+      - name: Run lint 👀
+        run: pnpm lint
+
       - name: Run build 🐣
         run: pnpm build
         env:
