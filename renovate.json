@@ -1,3 +1,17 @@
 {
-  "extends": ["config:base"]
+  "extends": ["config:base"],
+  "assignees": ["usagizmo"],
+  "timezone": "Asia/Tokyo",
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "automerge": true,
+      "major": {
+        "automerge": false
+      },
+      "depTypeList": ["dependencies", "devDependencies"]
+    }
+  ]
 }
