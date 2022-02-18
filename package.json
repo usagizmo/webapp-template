@@ -78,7 +78,7 @@
   },
   "peerDependencies": {
     "@babel/core": "7.16.12",
-    "@firebase/app-compat": "0.1.17",
+    "@firebase/app-compat": "0.1.18",
     "@firebase/app-types": "0.7.0",
     "@typescript-eslint/parser": "5.10.1",
     "autoprefixer": "10.4.2",
