@@ -5,19 +5,19 @@ specifiers:
   '@firebase/app-types': 0.7.0
   axios: 0.26.0
   firebase-admin: 10.0.2
-  firebase-functions: 3.18.0
+  firebase-functions: 3.18.1
   firebase-functions-test: 0.3.3
   typescript: 4.5.5
 
 dependencies:
   axios: 0.26.0
   firebase-admin: 10.0.2_8ab5e3191f29b1d6daa5e585d3195178
-  firebase-functions: 3.18.0_firebase-admin@10.0.2
+  firebase-functions: 3.18.1_firebase-admin@10.0.2
 
 devDependencies:
   '@firebase/app-compat': 0.1.18
   '@firebase/app-types': 0.7.0
-  firebase-functions-test: 0.3.3_4874973dbc7eda5e012fd9c545f9781c
+  firebase-functions-test: 0.3.3_8b355d67acfe625e3802a684562baa83
   typescript: 4.5.5
 
 packages:
@@ -747,7 +747,7 @@ packages:
       - supports-color
     dev: false
 
-  /firebase-functions-test/0.3.3_4874973dbc7eda5e012fd9c545f9781c:
+  /firebase-functions-test/0.3.3_8b355d67acfe625e3802a684562baa83:
     resolution: {integrity: sha512-dCppF/2Ztv87IyyBaUQlT1Z05ial5v/3LB0huS2ktXz05yNiID5FVIKtO0/+w9Q7/SThJ8qIDG0hoGDPt4Xcug==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -756,12 +756,12 @@ packages:
     dependencies:
       '@types/lodash': 4.14.178
       firebase-admin: 10.0.2_8ab5e3191f29b1d6daa5e585d3195178
-      firebase-functions: 3.18.0_firebase-admin@10.0.2
+      firebase-functions: 3.18.1_firebase-admin@10.0.2
       lodash: 4.17.21
     dev: true
 
-  /firebase-functions/3.18.0_firebase-admin@10.0.2:
-    resolution: {integrity: sha512-KkwxrAUqYYIwWMTuM2h4k3xGQhon+FTenC/Z8HWuED+D4RuJxDWh3s8MSYR8ZEMywZOg//R1iy6VjQKymnInYg==}
+  /firebase-functions/3.18.1_firebase-admin@10.0.2:
+    resolution: {integrity: sha512-sPYZc9U/o0MjrpL3yz0pmoviJ1SkDoMV54X1rT/O2g0JTbV9eoQZsZuRoIUeaY3gmWFcMnN5TbJsPQUVh+omtw==}
     engines: {node: ^8.13.0 || >=10.10.0}
     hasBin: true
     peerDependencies:
