@@ -82,6 +82,6 @@
     "@firebase/app-types": "0.7.0",
     "@typescript-eslint/parser": "5.12.0",
     "autoprefixer": "10.4.2",
-    "postcss": "8.4.5"
+    "postcss": "8.4.6"
   }
 }
