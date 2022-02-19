@@ -1,7 +1,9 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
   "assignees": ["usagizmo"],
   "timezone": "Asia/Tokyo",
+  "schedule": ["before 3am"],
   "lockFileMaintenance": {
     "enabled": true
   },
