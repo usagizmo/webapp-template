@@ -77,7 +77,7 @@
     "*": "prettier --write --ignore-unknown"
   },
   "peerDependencies": {
-    "@babel/core": "7.16.12",
+    "@babel/core": "7.17.5",
     "@firebase/app-compat": "0.1.18",
     "@firebase/app-types": "0.7.0",
     "@typescript-eslint/parser": "5.12.0",
