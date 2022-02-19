@@ -161,7 +161,7 @@ packages:
       '@babel/compat-data': 7.17.0
       '@babel/core': 7.17.5
       '@babel/helper-validator-option': 7.16.7
-      browserslist: 4.19.2
+      browserslist: 4.19.3
       semver: 6.3.0
     dev: true
 
@@ -1649,7 +1649,7 @@ packages:
       '@graphql-tools/wrap': 8.4.0_graphql@16.3.0
       '@n1ru4l/graphql-live-query': 0.9.0_graphql@16.3.0
       '@types/websocket': 1.0.5
-      '@types/ws': 8.2.2
+      '@types/ws': 8.2.3
       cross-undici-fetch: 0.1.24
       dset: 3.1.1
       extract-files: 11.0.0
@@ -2091,8 +2091,8 @@ packages:
       '@types/node': 17.0.18
     dev: true
 
-  /@types/ws/8.2.2:
-    resolution: {integrity: sha512-NOn5eIcgWLOo6qW8AcuLZ7G8PycXu0xTxxkS6Q18VWFxgPUSOwV0pBj2a/4viNZVu25i7RIB7GttdkAIUUXOOg==}
+  /@types/ws/8.2.3:
+    resolution: {integrity: sha512-ahRJZquUYCdOZf/rCsWg88S0/+cb9wazUBHv6HZEe3XdYaBe2zr/slM8J28X07Hn88Pnm4ezo7N8/ofnOgrPVQ==}
     dependencies:
       '@types/node': 17.0.18
     dev: true
@@ -2449,7 +2449,7 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      browserslist: 4.19.2
+      browserslist: 4.19.3
       caniuse-lite: 1.0.30001312
       fraction.js: 4.1.3
       normalize-range: 0.1.2
@@ -2581,8 +2581,8 @@ packages:
       unload: 2.2.0
     dev: false
 
-  /browserslist/4.19.2:
-    resolution: {integrity: sha512-97XU1CTZ5TwU9Qy/Taj+RtiI6SQM1WIhZ9osT7EY0oO2aWXGABZT2OZeRL+6PfaQsiiMIjjwIoYFPq4APgspgQ==}
+  /browserslist/4.19.3:
+    resolution: {integrity: sha512-XK3X4xtKJ+Txj8G5c30B4gsm71s69lqXlkYui4s6EkKxuv49qjYlY6oVd+IFJ73d4YymtM3+djvvt/R/iJwwDg==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
