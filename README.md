@@ -18,7 +18,7 @@ cp .env.local.example .env.local
 # Then, set it up
 ```
 
-## Command List
+## Command-List
 
 ```bash
 pnpm i
@@ -85,7 +85,7 @@ If you are using a hosting service other than Hasura Cloud, you will also need t
 
 ### Commands
 
-```
+```bash
 # Execute command operations in the `firebase/`
 cd firebase
 
