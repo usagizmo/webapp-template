@@ -20,6 +20,7 @@ specifiers:
   eslint: 8.9.0
   eslint-config-next: 12.1.0
   eslint-config-prettier: 8.4.0
+  eslint-plugin-import: 2.25.4
   firebase: 9.6.7
   firebase-admin: 10.0.2
   graphql: 16.3.0
@@ -80,6 +81,7 @@ devDependencies:
   eslint: 8.9.0
   eslint-config-next: 12.1.0_05da38aa0d7c6b76490c613c98841282
   eslint-config-prettier: 8.4.0_eslint@8.9.0
+  eslint-plugin-import: 2.25.4_eslint@8.9.0
   hasura-cli: 2.2.0
   husky: 7.0.4
   lint-staged: 12.3.4

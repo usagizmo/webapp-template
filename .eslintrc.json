@@ -1,7 +1,12 @@
 {
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
-  "extends": ["next", "prettier"],
+  "extends": [
+    "next",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
   "rules": {
     "react-hooks/exhaustive-deps": "error",
     "@next/next/no-img-element": "off"
