@@ -9,6 +9,7 @@
 - [ESLint](https://eslint.org/) / [Prettier](https://prettier.io/)
 - [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
 - GitHub Actions (Formatting + Testing)
+- [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
 - Node (`v16+`) / [pnpm](https://pnpm.io/)
 
 ## Prepare .env.local
@@ -18,7 +19,7 @@ cp .env.local.example .env.local
 # Then, set it up
 ```
 
-## Command List
+## Command-List
 
 ```bash
 pnpm i
@@ -58,6 +59,16 @@ Set the following 2 environment variables.
 - `HASURA_GRAPHQL_UNAUTHORIZED_ROLE`:  
   Set the role for unlogged users to `anonymous`.
 
+If you are using a hosting service other than Hasura Cloud, you will also need to check and change the values of the other environment variables.
+
+- `HASURA_GRAPHQL_ADMIN_SECRET`:  
+  Use `openssl rand -hex 32` or similar to generate and set the value.  
+  In addition to that, set the same value for `x-hasura-admin-secret` in Console's `API` > `GraphiQL` > `Request Headers`.
+- `PG_DATABASE_URL`:  
+  This points to the URL of the DB that Hasura is using.  
+  We set this environment variable key name to `configuration.connection_info.database_url.from_env` in `hasura/metadata/databases/databases.yaml`.  
+  For example, if you want to use [Render](https://render.com/), you need to change this key name in the above file to `HASURA_GRAPHQL_DATABASE_URL`.
+
 ## Set up Firebase
 
 ### Use
@@ -75,7 +86,7 @@ Set the following 2 environment variables.
 
 ### Commands
 
-```
+```bash
 # Execute command operations in the `firebase/`
 cd firebase
 
@@ -90,14 +101,14 @@ cd functions
 pnpm i
 
 # Add 2 environment variables
-firebase functions:config:set hasura.endpoint=https://<hasura-project-name>.hasura.app/v1/graphql --project <firebase-project-id>
-firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <firebase-project-id>
+firebase functions:config:set hasura.endpoint=https://<hasura-project-name>.hasura.app/v1/graphql
+firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET>
 
 # How to check the environment variables that have been set
 # firebase functions:config:get
 
 # Deploy firebase
-firebase deploiy
+firebase deploy
 
 # Deploy only functions
 # pnpm deploy
