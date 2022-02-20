@@ -38,7 +38,7 @@ specifiers:
   react: 17.0.2
   react-dom: 17.0.2
   react-hook-form: 7.27.1
-  react-query: 3.34.15
+  react-query: 3.34.16
   tailwindcss: 3.0.23
   tslib: 2.3.1
   typescript: 4.5.5
@@ -56,7 +56,7 @@ dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-hook-form: 7.27.1_react@17.0.2
-  react-query: 3.34.15_react-dom@17.0.2+react@17.0.2
+  react-query: 3.34.16_react-dom@17.0.2+react@17.0.2
   ulid: 2.3.0
   zustand: 3.7.0_react@17.0.2
 
@@ -5969,8 +5969,8 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
-  /react-query/3.34.15_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-dOhGLB5RT3p+wWj0rVdAompSg+R9t6oMRk+JhU8DP0tpJM2UyIv3r4Kk0zUkHSxT+QG34hFdrgdqxVWxgeNq4g==}
+  /react-query/3.34.16_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-7FvBvjgEM4YQ8nPfmAr+lJfbW95uyW/TVjFoi2GwCkF33/S8ajx45tuPHPFGWs4qYwPy1mzwxD4IQfpUDrefNQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0
       react-dom: '*'
