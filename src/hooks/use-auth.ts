@@ -1,5 +1,4 @@
 import { useCallback, useEffect } from 'react'
-import { doc, onSnapshot } from 'firebase/firestore'
 import {
   createUserWithEmailAndPassword as firebaseCreateUserWithEmailAndPassword,
   signInWithEmailAndPassword as firebaseSignInWithEmailAndPassword,
@@ -9,6 +8,7 @@ import {
   signOut as firebaseSignOut,
   getRedirectResult,
 } from 'firebase/auth'
+import { doc, onSnapshot } from 'firebase/firestore'
 import {
   signIn as nextAuthSignIn,
   signOut as nextAuthSignOut,

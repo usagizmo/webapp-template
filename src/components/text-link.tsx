@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import Link from 'next/link'
 import { UrlObject } from 'url'
+import Link from 'next/link'
 
 type Props = {
   href: string | UrlObject

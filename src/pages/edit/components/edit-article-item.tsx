@@ -1,15 +1,15 @@
-import { Trash } from 'phosphor-react'
 import { VFC } from 'react'
+import { Trash } from 'phosphor-react'
 import { useQueryClient } from 'react-query'
+import { ArticleImage } from '@/components/article/article-image'
+import { Button } from '@/components/button'
+import { InlineInput } from '@/components/inline-input'
 import {
   ArticlesQuery,
   useArticlesQuery,
   useDeleteArticleMutation,
 } from '@/generated/graphql'
 import { useQueryHandle } from '@/hooks/use-query-handle'
-import { Button } from '@/components/button'
-import { InlineInput } from '@/components/inline-input'
-import { ArticleImage } from '@/components/article/article-image'
 import { useArticleItemBindings } from '../hooks/use-article-item-bindings'
 
 type Props = {

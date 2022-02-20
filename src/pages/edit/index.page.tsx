@@ -1,7 +1,7 @@
 import { useEffect, VFC } from 'react'
 import { InferGetStaticPropsType } from 'next'
-import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 import { dehydrate, QueryClient } from 'react-query'
 import { Layout } from '@/components/layout'
 import { Navigation } from '@/components/navigation'
