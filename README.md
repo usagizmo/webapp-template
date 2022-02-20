@@ -107,7 +107,7 @@ firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET>
 # firebase functions:config:get
 
 # Deploy firebase
-firebase deploiy
+firebase deploy
 
 # Deploy only functions
 # pnpm deploy
