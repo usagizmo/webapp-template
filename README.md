@@ -9,6 +9,7 @@
 - [ESLint](https://eslint.org/) / [Prettier](https://prettier.io/)
 - [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
 - GitHub Actions (Formatting + Testing)
+- [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
 - Node (`v16+`) / [pnpm](https://pnpm.io/)
 
 ## Prepare .env.local
