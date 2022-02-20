@@ -100,8 +100,8 @@ cd functions
 pnpm i
 
 # Add 2 environment variables
-firebase functions:config:set hasura.endpoint=https://<hasura-project-name>.hasura.app/v1/graphql --project <firebase-project-id>
-firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET> --project <firebase-project-id>
+firebase functions:config:set hasura.endpoint=https://<hasura-project-name>.hasura.app/v1/graphql
+firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET>
 
 # How to check the environment variables that have been set
 # firebase functions:config:get
