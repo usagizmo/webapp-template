@@ -58,6 +58,16 @@ Set the following 2 environment variables.
 - `HASURA_GRAPHQL_UNAUTHORIZED_ROLE`:  
   Set the role for unlogged users to `anonymous`.
 
+If you are using a hosting service other than Hasura Cloud, you will also need to check and change the values of the other environment variables.
+
+- `HASURA_GRAPHQL_ADMIN_SECRET`:  
+  Use `openssl rand -hex 32` or similar to generate and set the value.  
+  In addition to that, set the same value for `x-hasura-admin-secret` in Console's `API` > `GraphiQL` > `Request Headers`.
+- `PG_DATABASE_URL`:  
+  This points to the URL of the DB that Hasura is using.  
+  We set this environment variable key name to `configuration.connection_info.database_url.from_env` in `hasura/metadata/databases/databases.yaml`.  
+  For example, if you want to use [Render](https://render.com/), you need to change this key name in the above file to `HASURA_GRAPHQL_DATABASE_URL`.
+
 ## Set up Firebase
 
 ### Use
