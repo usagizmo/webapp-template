@@ -4,5 +4,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.quickSuggestions": {
     "strings": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
   }
 }
