@@ -34,7 +34,7 @@ pnpm hasura:migrate:apply # Apply table structure to Hasura
 
 pnpm hasura:migrate:export   # Get table structure from Hasura
 pnpm hasura:seed:apply       # Apply Seed to Hasura
-pnpm hasura:seed:export --from-table <table1>  # Get Seed per table from Hasura
+pnpm hasura:seed:export -- --from-table <table1> [--from-table <table2>] # Export seed data from tables
 pnpm hasura:metadata:apply   # Apply DB meta information to Hasura
 pnpm hasura:metadata:export  # Get DB meta information from Hasura
 
