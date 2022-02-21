@@ -1,6 +1,6 @@
 import { VFC } from 'react'
-import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 import { pagesPath } from '@/generated/$path'
 import { useQueryHandle } from '@/hooks/use-query-handle'
 import { TextLink } from './text-link'
