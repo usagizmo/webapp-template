@@ -125,3 +125,20 @@ To use `pnpm`, configure the following settings in Vercel `Project Settings`.
 ```bash
 npm i pnpm -g && pnpm i
 ```
+
+## Use renovate on GitHub
+
+Give [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) and [renovate-approve](https://github.com/apps/renovate-approve) permission to operate the repository.
+
+Then change your GitHub settings as follows.
+
+`Settings` > `Branches` > `Branch protection rule`
+
+- Branch name pattern: `main`
+- Protect matching branches:
+  - [x] Require a pull request before merging
+    - [x] Require approvals: `[1]`
+  - [x] Require status checks to pass before merging
+    - Status checks that are required:
+      - `Build (Node 16 on ubuntu-latest)`
+      - `Vercel`
