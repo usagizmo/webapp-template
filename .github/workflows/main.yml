@@ -57,6 +57,12 @@ jobs:
           version: 6.0.2
           run_install: true
 
+      - name: Run generate 🍡
+        run: pnpm generate
+
+      - name: Run lint 👀
+        run: pnpm lint
+
       - name: Run build 🐣
         run: pnpm build
         env:
@@ -73,11 +79,3 @@ jobs:
           HASURA_GRAPHQL_API_PATHS_GRAPHQL: ${{ secrets.HASURA_GRAPHQL_API_PATHS_GRAPHQL }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-
-      - name: Run lint 👀
-        run: pnpm lint
-
-      - name: Run format 🎀
-        run: pnpm format
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
