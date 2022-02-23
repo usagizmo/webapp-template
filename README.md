@@ -23,11 +23,12 @@ cp .env.local.example .env.local
 
 ```bash
 pnpm i
-pnpm dev     # pathpida --watch + next dev
-pnpm build   # pathpida && pnpm generate && next build
-pnpm start   # next start
-pnpm lint    # Linting
-pnpm format  # Formatting
+pnpm generate  # Export the pathpida and graphql files under `src/generated/`
+pnpm build     # pnpm generate && next build
+pnpm dev       # pathpida --watch + graphql-codegen --watch + next dev
+pnpm start     # next start
+pnpm lint      # eslint + prettier --check
+pnpm format    # eslint --fix + prettier --write
 
 pnpm hasura:migrate:apply # Apply table structure to Hasura
 # The first time you run this, you may need to [Track] all tables on Hasura
@@ -37,9 +38,6 @@ pnpm hasura:seed:apply       # Apply Seed to Hasura
 pnpm hasura:seed:export -- --from-table <table1> [--from-table <table2>] # Export seed data from tables
 pnpm hasura:metadata:apply   # Apply DB meta information to Hasura
 pnpm hasura:metadata:export  # Get DB meta information from Hasura
-
-pnpm generate  # Output GraphQL code
-# Output (`src/generated/graphql.ts`) from Hasura schema and contents of `graphql/`.
 ```
 
 ## Handling Hasura Cloud's database in code
