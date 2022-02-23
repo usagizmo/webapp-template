@@ -11,6 +11,7 @@
     "generate-ci:graphql": "graphql-codegen --config graphql/codegen.yml",
     "generate-ci": "run-p generate-ci:*",
     "dev:path": "pathpida --ignorePath .gitignore --output ./src/generated --watch",
+    "dev:graphql": "cross-env graphql-codegen --require dotenv/config --config graphql/codegen.yml --watch",
     "dev:next": "next dev",
     "dev": "run-p dev:*",
     "build": "next build",
