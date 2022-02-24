@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "generate:path": "pathpida --ignorePath .gitignore --output ./src/generated",
+    "generate:path": "pathpida --ignorePath .gitignore --enableStatic --output ./src/generated",
     "generate:graphql": "cross-env DOTENV_CONFIG_PATH=\".env.local\" graphql-codegen --require dotenv/config --config graphql/codegen.yml",
     "generate": "run-p generate:*",
-    "dev:path": "pathpida --ignorePath .gitignore --output ./src/generated --watch",
+    "dev:path": "pathpida --ignorePath .gitignore --enableStatic --output ./src/generated --watch",
     "dev:graphql": "cross-env DOTENV_CONFIG_PATH=\".env.local\" graphql-codegen --require dotenv/config --config graphql/codegen.yml --watch",
     "dev:next": "next dev",
     "dev": "run-p dev:*",
