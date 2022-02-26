@@ -4,36 +4,34 @@ Monorepo template for creating a web service with Next.js.
 
 ## Uses
 
-- [Turborepo](https://turborepo.org/)
+- [Turborepo](https://turborepo.org/) x [pnpm](https://pnpm.io/)
 - [TypeScript](https://www.typescriptlang.org/) / [Prettier](https://prettier.io/)
-- Node (`v16+`) / [pnpm](https://pnpm.io/)
-- GitHub Actions (Formatting + Testing)
 - [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
+- GitHub Actions (Formatting + Testing)
+- Execute `eslint --fix` and `prettier` when saving with VSCode
 
 ### Apps and Packages
 
-- [`firebase`](./apps/firebase/README.md):  
-  [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/)
-- [`hasura`](./apps/hasura/README.md):  
-  [Hasura Cloud](https://hasura.io/)
-- [`web`](./apps/web/README.md):  
-  [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/)  
-  [pathpida](https://github.com/aspida/pathpida)  
-  [NextAuth](https://next-auth.js.org/)  
-  [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))  
-  [Zustand](https://github.com/pmndrs/zustand)
-- `config`:  
-  [ESLint](https://eslint.org/)  
-  eslint-config-next / eslint-config-prettier / eslint-plugin-import
-- `lintstagedrc`:  
-  [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- **Apps**
+  - [`firebase`](./apps/firebase/README.md):  
+    [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/) settings.
+  - [`hasura`](./apps/hasura/README.md):  
+    [Hasura Cloud](https://hasura.io/) settings.
+  - [`web`](./apps/web/README.md):  
+    [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/)  
+    [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Zustand](https://github.com/pmndrs/zustand)  
+    [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
+- **Packages**
+  - `config`: for [ESLint](https://eslint.org/)  
+    eslint-config-next / eslint-config-prettier / eslint-plugin-import
+  - `lintstagedrc`: [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
+  - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 ## Setup
 
 ```bash
 pnpm i # Resolve dependency packages and prepare .env files
-# Then, set it up
+# Then set up /.env
 
 pnpm build   # Build all apps and packages
 pnpm dev     # Set up file monitoring builds and local servers for development
@@ -47,12 +45,22 @@ If you need to prepare the GitHub / Vercel environment, you will need to set the
 
 ## Deploy to Vercel
 
-To use `pnpm`, configure the following settings in Vercel `Project Settings`.
+Make the following settings in Vercel's `Project Settings`.
 
-`General` > `Build` & `Development Settings` > `INSTALL COMMAND`:
+- `General` > `Build` & `Development Settings` > `INSTALL COMMAND`:  
+  `npm i pnpm -g && pnpm i`
+- `General` > `Root Directory`: `apps/web/`
+  - [x] Include source files outside of the Root Directory in the Build Step.
+
+## How to check for dependent packages
 
 ```bash
-npm i pnpm -g && pnpm i
+# If ABC is not installed
+# ref: https://graphviz.org/download/
+brew install graphviz
+
+# Output a graph to check dependencies
+pnpm build -- --graph
 ```
 
 ## Use renovate on GitHub
