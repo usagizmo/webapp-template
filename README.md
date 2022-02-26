@@ -1,129 +1,66 @@
 # Next.js Template
 
-- [Next.js](https://nextjs.org/) (w/ [TypeScript](https://www.typescriptlang.org/)) - [pathpida](https://github.com/aspida/pathpida)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Firebase (Authentication/Storage)](https://firebase.google.com/) x [NextAuth](https://next-auth.js.org/)
-- [Hasura Cloud](https://cloud.hasura.io/)
-- [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
-- [Zustand](https://github.com/pmndrs/zustand)
-- [ESLint](https://eslint.org/) / [Prettier](https://prettier.io/)
-- [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
-- GitHub Actions (Formatting + Testing)
+Monorepo template for creating a web service with Next.js.
+
+## Uses
+
+- [Turborepo](https://turborepo.org/) x [pnpm](https://pnpm.io/)
+- [TypeScript](https://www.typescriptlang.org/) / [Prettier](https://prettier.io/)
 - [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
-- Node (`v16+`) / [pnpm](https://pnpm.io/)
+- GitHub Actions (Formatting + Testing)
+- Execute `eslint --fix` and `prettier` when saving with VSCode
 
-## Prepare .env.local
+### Apps and Packages
 
-```bash
-cp .env.local.example .env.local
-# Then, set it up
-```
+- **Apps**
+  - [`firebase`](./apps/firebase/README.md):  
+    [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/) settings.
+  - [`hasura`](./apps/hasura/README.md):  
+    [Hasura Cloud](https://hasura.io/) settings.
+  - [`web`](./apps/web/README.md):  
+    [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/)  
+    [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Zustand](https://github.com/pmndrs/zustand)  
+    [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
+- **Packages**
+  - `config`: for [ESLint](https://eslint.org/)  
+    eslint-config-next / eslint-config-prettier / eslint-plugin-import
+  - `lintstagedrc`: [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
+  - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
-## Command-List
-
-```bash
-pnpm i
-pnpm generate  # Export the pathpida and graphql files under `src/generated/`
-pnpm build     # pnpm generate && next build
-pnpm dev       # pathpida --watch + graphql-codegen --watch + next dev
-pnpm start     # next start
-pnpm lint      # eslint + prettier --check
-pnpm format    # eslint --fix + prettier --write
-
-pnpm hasura:migrate:apply # Apply table structure to Hasura
-# The first time you run this, you may need to [Track] all tables on Hasura
-
-pnpm hasura:migrate:export   # Get table structure from Hasura
-pnpm hasura:seed:apply       # Apply Seed to Hasura
-pnpm hasura:seed:export -- --from-table <table1> [--from-table <table2>] # Export seed data from tables
-pnpm hasura:metadata:apply   # Apply DB meta information to Hasura
-pnpm hasura:metadata:export  # Get DB meta information from Hasura
-```
-
-## Handling Hasura Cloud's database in code
-
-The [Hasura CLI](https://hasura.io/docs/1.0/graphql/core/hasura-cli/index.html) allows you to easily manage Hasura Cloud's database.  
-After completing the settings in Hasura Cloud, execute the following command.
-
-※Before using the CLI, please make sure you have set up Hasura Cloud (create a project/database connection)
-
-### Prepare to use hasura-cli
-
-Set the following 2 environment variables.
-
-- `HASURA_GRAPHQL_JWT_SECRET`:  
-  Set **JWT Config** to work with `Firebase Authentication`.  
-  [https://hasura.io/jwt-config/](https://hasura.io/jwt-config/)
-- `HASURA_GRAPHQL_UNAUTHORIZED_ROLE`:  
-  Set the role for unlogged users to `anonymous`.
-
-If you are using a hosting service other than Hasura Cloud, you will also need to check and change the values of the other environment variables.
-
-- `HASURA_GRAPHQL_ADMIN_SECRET`:  
-  Use `openssl rand -hex 32` or similar to generate and set the value.  
-  In addition to that, set the same value for `x-hasura-admin-secret` in Console's `API` > `GraphiQL` > `Request Headers`.
-- `PG_DATABASE_URL`:  
-  This points to the URL of the DB that Hasura is using.  
-  We set this environment variable key name to `configuration.connection_info.database_url.from_env` in `hasura/metadata/databases/databases.yaml`.  
-  For example, if you want to use [Render](https://render.com/), you need to change this key name in the above file to `HASURA_GRAPHQL_DATABASE_URL`.
-
-## Set up Firebase
-
-### Use
-
-- Authentication (Email/password)
-- Firestore
-- Functions (Need to upgrade to **Blaze** plan)
-- Storege
-
-※Before using the CLI, please make sure you have set up Firebase
-
-### Requirement
-
-- [Firebase CLI](https://firebase.google.com/docs/cli) (v9.23.0+)
-
-### Commands
+## Setup
 
 ```bash
-# Execute command operations in the `firebase/`
-cd firebase
+pnpm i # Resolve dependency packages and prepare .env files
+# Then set up /.env
 
-# Already done it
-# firebase init
-
-# Set project
-firebase use --add <firebase-project-id>
-
-# In the `firebase/functions/`
-cd functions
-pnpm i
-
-# Add 2 environment variables
-firebase functions:config:set hasura.endpoint=https://<hasura-project-name>.hasura.app/v1/graphql
-firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET>
-
-# How to check the environment variables that have been set
-# firebase functions:config:get
-
-# Deploy firebase
-firebase deploy
-
-# Deploy only functions
-# pnpm deploy
+pnpm build   # Build all apps and packages
+pnpm dev     # Set up file monitoring builds and local servers for development
+pnpm lint    # eslint + prettier --check
+pnpm format  # eslint --fix + prettier --write
 ```
 
-## Registering environment variables for GitHub / Vercel (or Netlify)
+## Registering environment variables for GitHub / Vercel
 
-If you need to prepare the GitHub / Vercel (or Netlify) environment, you will need to set the environment variables (the contents of `.env.local`) at build time.
+If you need to prepare the GitHub / Vercel environment, you will need to set the environment variables (the contents of `.env`) at build time.
 
 ## Deploy to Vercel
 
-To use `pnpm`, configure the following settings in Vercel `Project Settings`.
+Make the following settings in Vercel's `Project Settings`.
 
-`General` > `Build` & `Development Settings` > `INSTALL COMMAND`:
+- `General` > `Build` & `Development Settings` > `INSTALL COMMAND`:  
+  `npm i pnpm -g && pnpm i`
+- `General` > `Root Directory`: `apps/web/`
+  - [x] Include source files outside of the Root Directory in the Build Step.
+
+## How to check for dependent packages
 
 ```bash
-npm i pnpm -g && pnpm i
+# If ABC is not installed
+# ref: https://graphviz.org/download/
+brew install graphviz
+
+# Output a graph to check dependencies
+pnpm build -- --graph
 ```
 
 ## Use renovate on GitHub

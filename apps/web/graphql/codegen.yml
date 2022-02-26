@@ -29,7 +29,7 @@ generates:
       - typescript-react-query
     config:
       exposeFetcher: true
-  ./graphql/graphql.schema.json:
+  ./src/generated/graphql.schema.json:
     documents:
       - './graphql/**/*.graphql'
     plugins:

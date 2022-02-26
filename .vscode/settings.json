@@ -6,6 +6,7 @@
     "strings": true
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  }
+    "source.fixAll.eslint": true
+  },
+  "eslint.workingDirectories": [{ "mode": "auto" }]
 }
