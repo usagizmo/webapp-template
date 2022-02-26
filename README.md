@@ -55,7 +55,7 @@ Make the following settings in Vercel's `Project Settings`.
 ## How to check for dependent packages
 
 ```bash
-# If ABC is not installed
+# If graphviz is not installed
 # ref: https://graphviz.org/download/
 brew install graphviz
 
