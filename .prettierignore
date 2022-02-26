@@ -1,7 +1,7 @@
-/.next
-/firebase/functions/lib
-/graphql/graphql.schema.json
-/out
-/public
-/src/generated
-pnpm-lock.yaml
+.next
+out
+public
+generated
+
+*-lock.yaml
+*.log
