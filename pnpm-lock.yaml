@@ -61,7 +61,7 @@ importers:
       typescript: 4.5.5
       ui: workspace:*
       ulid: 2.3.0
-      zustand: 3.7.0
+      zustand: 3.7.1
     dependencies:
       firebase: 9.6.7
       firebase-admin: 10.0.2_8ab5e3191f29b1d6daa5e585d3195178
@@ -74,7 +74,7 @@ importers:
       react-query: 3.34.16_react-dom@17.0.2+react@17.0.2
       ui: link:../../packages/ui
       ulid: 2.3.0
-      zustand: 3.7.0_react@17.0.2
+      zustand: 3.7.1_react@17.0.2
     devDependencies:
       '@babel/core': 7.17.5
       '@firebase/app-compat': 0.1.18
@@ -7409,8 +7409,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  /zustand/3.7.0_react@17.0.2:
-    resolution: {integrity: sha512-USzVzLGrvZ8VK1/sEsOAmeqa8N7D3OBdZskVaL7DL89Q4QLTYD053iIlZ5KDidyZ+Od80Dttin/f8ZulOLFFDQ==}
+  /zustand/3.7.1_react@17.0.2:
+    resolution: {integrity: sha512-wHBCZlKj+bg03/hP+Tzv24YhnqqP8MCeN9ECPDXoF01062SIbnfl3j9O0znkDw1lNTY0a8WN3F///a0UhhaEqg==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       react: '>=16.8'

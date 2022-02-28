@@ -28,7 +28,7 @@
     "react-query": "3.34.16",
     "ui": "workspace:*",
     "ulid": "2.3.0",
-    "zustand": "3.7.0"
+    "zustand": "3.7.1"
   },
   "devDependencies": {
     "@babel/core": "7.17.5",
