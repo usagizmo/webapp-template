@@ -21,14 +21,14 @@
     "firebase-admin": "10.0.2",
     "next": "12.1.0",
     "next-auth": "4.2.1",
-    "phosphor-react": "1.4.0",
+    "phosphor-react": "1.4.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "7.27.1",
     "react-query": "3.34.16",
     "ui": "workspace:*",
     "ulid": "2.3.0",
-    "zustand": "3.7.0"
+    "zustand": "3.7.1"
   },
   "devDependencies": {
     "@babel/core": "7.17.5",
