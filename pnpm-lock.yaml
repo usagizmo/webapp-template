@@ -1261,7 +1261,7 @@ packages:
       async-retry: 1.3.3
       compressible: 2.0.18
       configstore: 5.0.1
-      date-and-time: 2.2.0
+      date-and-time: 2.2.1
       duplexify: 4.1.2
       extend: 3.0.2
       gaxios: 4.3.2
@@ -1712,7 +1712,7 @@ packages:
       graphql-sse: 1.0.6_graphql@16.3.0
       graphql-ws: 5.6.2_graphql@16.3.0
       isomorphic-ws: 4.0.1_ws@8.5.0
-      meros: 1.1.4_@types+node@17.0.21
+      meros: 1.2.0_@types+node@17.0.21
       subscriptions-transport-ws: 0.11.0_graphql@16.3.0
       sync-fetch: 0.3.1
       tslib: 2.3.1
@@ -2840,7 +2840,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       slice-ansi: 5.0.0
-      string-width: 5.1.0
+      string-width: 5.1.1
     dev: true
 
   /cli-width/3.0.0:
@@ -3070,8 +3070,8 @@ packages:
     resolution: {integrity: sha512-YzhyDAwA4TaQIhM5go+vCLmU0UikghC/t9DTQYZR2M/UvZ1MdOhPezSDZcjj9uqQJOMqjLcpWtyW2iNINdlatQ==}
     dev: true
 
-  /date-and-time/2.2.0:
-    resolution: {integrity: sha512-LRljAtx+9iz1Uztw5jUuVjLyv8IBQEUNGGc+QteEfZYj/UndICRPVK3/3++BQQq8dsc5reJDZ3bRBAZObbcAHQ==}
+  /date-and-time/2.2.1:
+    resolution: {integrity: sha512-i5lrLPmRbdtb9/Tcu+NWWvff29ejNZtnL/6TI5VbhuPtqgea7bovY0F2AtFSX9QDQEQLUtqJ3R8ypM2c6alGoA==}
     dev: false
     optional: true
 
@@ -5157,8 +5157,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /meros/1.1.4_@types+node@17.0.21:
-    resolution: {integrity: sha512-E9ZXfK9iQfG9s73ars9qvvvbSIkJZF5yOo9j4tcwM5tN8mUKfj/EKN5PzOr3ZH0y5wL7dLAHw3RVEfpQV9Q7VQ==}
+  /meros/1.2.0_@types+node@17.0.21:
+    resolution: {integrity: sha512-3QRZIS707pZQnijHdhbttXRWwrHhZJ/gzolneoxKVz9N/xmsvY/7Ls8lpnI9gxbgxjcHsAVEW3mgwiZCo6kkJQ==}
     engines: {node: '>=12'}
     peerDependencies:
       '@types/node': '>=12'
@@ -6567,8 +6567,8 @@ packages:
       is-fullwidth-code-point: 3.0.0
       strip-ansi: 6.0.1
 
-  /string-width/5.1.0:
-    resolution: {integrity: sha512-7x54QnN21P+XL/v8SuNKvfgsUre6PXpN7mc77N3HlZv+f1SBRGmjxtOud2Z6FZ8DmdkD/IdjCaf9XXbnqmTZGQ==}
+  /string-width/5.1.1:
+    resolution: {integrity: sha512-V4jFFhDoJzUOpG491nUrDginBuZi+wKtG+omlT5hgdBLYGPNNVT/o75JWwsSqClbrYMEV9Dvm3fXjZzxyOjk2w==}
     engines: {node: '>=12'}
     dependencies:
       eastasianwidth: 0.2.0
@@ -7352,8 +7352,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /yargs-parser/21.0.0:
-    resolution: {integrity: sha512-z9kApYUOCwoeZ78rfRYYWdiU/iNL6mwwYlkkZfJoyMR1xps+NEBX5X7XmRpxkZHhXJ6+Ey00IwKxBBSW9FIjyA==}
+  /yargs-parser/21.0.1:
+    resolution: {integrity: sha512-9BK1jFpLzJROCI5TzwZL/TU4gqjK5xiHV/RfWLOahrjAko/e4DJkRDZQXfvqAsiZzzYhgAzbgz6lg48jcm4GLg==}
     engines: {node: '>=12'}
     dev: true
 
@@ -7397,7 +7397,7 @@ packages:
       require-directory: 2.1.1
       string-width: 4.2.3
       y18n: 5.0.8
-      yargs-parser: 21.0.0
+      yargs-parser: 21.0.1
     dev: true
 
   /yn/3.1.1:
