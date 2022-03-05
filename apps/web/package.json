@@ -17,7 +17,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "firebase": "9.6.7",
+    "firebase": "9.6.8",
     "firebase-admin": "10.0.2",
     "next": "12.1.0",
     "next-auth": "4.2.1",
