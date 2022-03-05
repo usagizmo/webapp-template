@@ -3,16 +3,16 @@ import { getDownloadURL, uploadBytes } from 'firebase/storage'
 import { FileArrowUp } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { useQueryClient } from 'react-query'
-import { ArticleImage } from '@/components/article/article-image'
-import { Button } from '@/components/button'
-import { Input } from '@/components/input'
+import { ArticleImage } from '@/components/Article/ArticleImage'
+import { Button } from '@/components/Button'
+import { Input } from '@/components/Input'
 import { ERROR } from '@/constants/error'
 import {
   ArticlesQuery,
   useArticlesQuery,
   useCreateArticleMutation,
 } from '@/generated/graphql'
-import { useQueryHandle } from '@/hooks/use-query-handle'
+import { useQueryHandle } from '@/hooks/useQueryHandle'
 import { ArticleImageFIle } from '@/types/data-types'
 import { getArticlesStorageRef } from '@/utils/storage-utils'
 

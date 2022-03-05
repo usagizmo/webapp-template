@@ -1,13 +1,13 @@
 import { VFC } from 'react'
 import { useSession } from 'next-auth/react'
 import { SignOut } from 'phosphor-react'
-import { Button } from '@/components/button'
-import { Layout } from '@/components/layout'
-import { Navigation } from '@/components/navigation'
+import { Button } from '@/components/Button'
+import { Layout } from '@/components/Layout'
+import { Navigation } from '@/components/Navigation'
 import { CONST } from '@/constants/const'
-import { useAuth } from '@/hooks/use-auth'
-import { useQueryHandle } from '@/hooks/use-query-handle'
-import { LoginFields } from './components/login-fields'
+import { useAuth } from '@/hooks/useAuth'
+import { useQueryHandle } from '@/hooks/useQueryHandle'
+import { LoginFields } from './components/LoginFields'
 
 type Props = {}
 
