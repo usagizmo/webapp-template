@@ -13,10 +13,6 @@ Monorepo template for creating a web service with Next.js.
 ### Apps and Packages
 
 - **Apps**
-  - [`firebase`](./apps/firebase/README.md):  
-    [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/) settings.
-  - [`hasura`](./apps/hasura/README.md):  
-    [Hasura Cloud](https://hasura.io/) settings.
   - [`web`](./apps/web/README.md):  
     [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/)  
     [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Zustand](https://github.com/pmndrs/zustand)  
@@ -26,6 +22,11 @@ Monorepo template for creating a web service with Next.js.
     eslint-config-next / eslint-config-prettier / eslint-plugin-import
   - `lintstagedrc`: [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
   - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- **Services**
+  - [`firebase`](./services/firebase/README.md):  
+    [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/) settings.
+  - [`hasura`](./services/hasura/README.md):  
+    [Hasura Cloud](https://hasura.io/) settings.
 
 ## Setup
 
