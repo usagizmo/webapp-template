@@ -3,7 +3,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**"]
+      "outputs": [".next/**", "src/generated/**", "dist/**"]
     },
     "lint": {},
     "lint:fix": {},
