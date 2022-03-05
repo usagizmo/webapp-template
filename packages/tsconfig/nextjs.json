@@ -14,6 +14,5 @@
     "importHelpers": true,
     "removeComments": true
   },
-  "include": ["src", "next-env.d.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src", "next-env.d.ts"]
 }

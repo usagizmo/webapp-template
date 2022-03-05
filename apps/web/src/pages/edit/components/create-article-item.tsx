@@ -3,8 +3,8 @@ import { getDownloadURL, uploadBytes } from 'firebase/storage'
 import { FileArrowUp } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { useQueryClient } from 'react-query'
+import { Button } from 'ui'
 import { ArticleImage } from '@/components/article/article-image'
-import { Button } from '@/components/button'
 import { Input } from '@/components/input'
 import { ERROR } from '@/constants/error'
 import {
@@ -13,8 +13,8 @@ import {
   useCreateArticleMutation,
 } from '@/generated/graphql'
 import { useQueryHandle } from '@/hooks/use-query-handle'
+import { getArticlesStorageRef } from '@/libs/firebase-storage'
 import { ArticleImageFIle } from '@/types/data-types'
-import { getArticlesStorageRef } from '@/utils/storage-utils'
 
 type Inputs = {
   title: string

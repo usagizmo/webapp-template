@@ -1,7 +1,7 @@
 import { VFC } from 'react'
 import { useSession } from 'next-auth/react'
 import { SignOut } from 'phosphor-react'
-import { Button } from '@/components/button'
+import { Button } from 'ui'
 import { Layout } from '@/components/layout'
 import { Navigation } from '@/components/navigation'
 import { CONST } from '@/constants/const'

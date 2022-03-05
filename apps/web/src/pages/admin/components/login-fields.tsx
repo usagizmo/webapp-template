@@ -1,6 +1,6 @@
 import { VFC } from 'react'
 import { useForm } from 'react-hook-form'
-import { Button } from '@/components/button'
+import { Button } from 'ui'
 import { Input } from '@/components/input'
 import { CONST } from '@/constants/const'
 import { ERROR } from '@/constants/error'

@@ -1,12 +1,11 @@
 import { MouseEventHandler, FC } from 'react'
-import { classNames } from '@/utils/utils'
+import { classNames } from 'utils'
 
-type Props = {
+export type Props = {
   type?: 'submit' | 'button' | 'reset'
   primary?: boolean
   disabled?: boolean
   onClick?: MouseEventHandler<HTMLButtonElement>
-  className?: string
 }
 
 export const Button: FC<Props> = ({

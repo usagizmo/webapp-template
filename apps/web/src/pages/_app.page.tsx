@@ -4,7 +4,7 @@ import { AppProps } from 'next/app'
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
-import '@/styles/globals.css'
+import 'styles/globals.css'
 
 export default function MyApp({
   Component,

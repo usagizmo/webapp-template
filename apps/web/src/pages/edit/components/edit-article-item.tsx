@@ -1,8 +1,8 @@
 import { VFC } from 'react'
 import { Trash } from 'phosphor-react'
 import { useQueryClient } from 'react-query'
+import { Button } from 'ui'
 import { ArticleImage } from '@/components/article/article-image'
-import { Button } from '@/components/button'
 import { InlineInput } from '@/components/inline-input'
 import {
   ArticlesQuery,
@@ -43,7 +43,6 @@ export const EditArticleItem: VFC<Props> = ({ article }) => {
         <InlineInput value={title} {...titleBindings} />
         <div className="ml-2">
           <Button
-            className="h-6 w-6 !p-0"
             onClick={() => {
               if (confirm('Are you sure you want to delete this article?')) {
                 deleteArticleMutation.mutate({ id: article.id })

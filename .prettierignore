@@ -5,3 +5,6 @@ generated
 
 *-lock.yaml
 *.log
+
+/apps/ui/storybook-static
+/packages/utils/dist
