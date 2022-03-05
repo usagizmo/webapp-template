@@ -20,12 +20,6 @@ importers:
       prettier-plugin-tailwindcss: 0.1.8_prettier@2.5.1
       turbo: 1.1.5
 
-  apps/hasura:
-    specifiers:
-      hasura-cli: 2.2.0
-    devDependencies:
-      hasura-cli: 2.2.0
-
   apps/web:
     specifiers:
       '@babel/core': 7.17.5
@@ -146,6 +140,12 @@ importers:
       lintstagedrc: link:../lintstagedrc
       tsconfig: link:../tsconfig
       typescript: 4.5.5
+
+  services/hasura:
+    specifiers:
+      hasura-cli: 2.2.0
+    devDependencies:
+      hasura-cli: 2.2.0
 
 packages:
 

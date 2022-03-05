@@ -1,6 +1,3 @@
-| [README.md](../../README.md) | [firebase](../../apps/firebase/README.md) | [hasura](../../apps/hasura/README.md) | [web](../../apps/web/README.md) |
-| ---------------------------- | ----------------------------------------- | ------------------------------------- | ------------------------------- |
-
 # Set up Hasura Cloud
 
 ```bash
