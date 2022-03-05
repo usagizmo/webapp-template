@@ -17,5 +17,6 @@ yarn-error.log*
 .turbo
 
 # customize
+.vercel
 .env
 /graph-*.jpg
