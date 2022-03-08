@@ -48,7 +48,7 @@
     "lintstagedrc": "workspace:*",
     "next-transpile-modules": "9.0.0",
     "pathpida": "0.18.0",
-    "postcss": "8.4.7",
+    "postcss": "8.4.8",
     "tailwindcss": "3.0.23",
     "tsconfig": "workspace:*",
     "tslib": "2.3.1",
