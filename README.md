@@ -18,6 +18,7 @@ Monorepo template for creating a web service with Next.js.
     [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))
     [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Zustand](https://github.com/pmndrs/zustand)  
     [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
+    [Storybook](https://storybook.js.org/)
 - **Packages**
   - `config`: for [ESLint](https://eslint.org/)  
     eslint-config-next / eslint-config-prettier / eslint-plugin-import
