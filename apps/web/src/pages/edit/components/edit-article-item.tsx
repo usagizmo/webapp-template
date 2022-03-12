@@ -43,7 +43,7 @@ export const EditArticleItem: VFC<Props> = ({ article }) => {
         <InlineInput value={title} {...titleBindings} />
         <div className="ml-2">
           <Button
-            className="h-6 w-6 !p-0"
+            icon
             onClick={() => {
               if (confirm('Are you sure you want to delete this article?')) {
                 deleteArticleMutation.mutate({ id: article.id })

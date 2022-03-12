@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Trash } from 'phosphor-react'
 import { Button } from './button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -13,6 +14,11 @@ export default meta
 const Template: ComponentStory<typeof Button> = (args) => (
   <Button {...args}>Button</Button>
 )
+const TemplateIcon: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}>
+    <Trash width={16} height={16} />
+  </Button>
+)
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = Template.bind({})
@@ -21,6 +27,11 @@ Default.args = {}
 export const Primary = Template.bind({})
 Primary.args = {
   primary: true,
+}
+
+export const Icon = TemplateIcon.bind({})
+Icon.args = {
+  icon: true,
 }
 
 export const Disabled = Template.bind({})
