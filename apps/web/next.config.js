@@ -1,9 +1,7 @@
-const withTM = require('next-transpile-modules')(['ui'])
-
 /** @type {import('next').NextConfig} */
-const nextConfig = withTM({
+const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['page.tsx', 'page.ts'],
-})
+}
 
 module.exports = nextConfig
