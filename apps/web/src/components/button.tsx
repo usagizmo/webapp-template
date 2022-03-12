@@ -6,7 +6,6 @@ type Props = {
   primary?: boolean
   disabled?: boolean
   onClick?: MouseEventHandler<HTMLButtonElement>
-  className?: string
 }
 
 export const Button: FC<Props> = ({
