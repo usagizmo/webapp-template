@@ -41,7 +41,6 @@ importers:
       lintstagedrc: workspace:*
       next: 12.1.0
       next-auth: 4.2.1
-      next-transpile-modules: 9.0.0
       pathpida: 0.18.0
       phosphor-react: 1.4.1
       postcss: 8.4.8
@@ -54,7 +53,6 @@ importers:
       tsconfig: workspace:*
       tslib: 2.3.1
       typescript: 4.6.2
-      ui: workspace:*
       ulid: 2.3.0
       zustand: 3.7.1
     dependencies:
@@ -67,7 +65,6 @@ importers:
       react-dom: 17.0.2_react@17.0.2
       react-hook-form: 7.27.1_react@17.0.2
       react-query: 3.34.16_react-dom@17.0.2+react@17.0.2
-      ui: link:../../packages/ui
       ulid: 2.3.0
       zustand: 3.7.1_react@17.0.2
     devDependencies:
@@ -86,7 +83,6 @@ importers:
       eslint-preset: link:../../packages/eslint-preset
       graphql: 16.3.0
       lintstagedrc: link:../../packages/lintstagedrc
-      next-transpile-modules: 9.0.0
       pathpida: 0.18.0
       postcss: 8.4.8
       tailwind-config-base: link:../../packages/tailwind-config-base
@@ -136,22 +132,6 @@ importers:
 
   packages/tsconfig:
     specifiers: {}
-
-  packages/ui:
-    specifiers:
-      '@types/react': 17.0.40
-      '@types/react-dom': 17.0.13
-      eslint-preset: workspace:*
-      lintstagedrc: workspace:*
-      tsconfig: workspace:*
-      typescript: 4.6.2
-    devDependencies:
-      '@types/react': 17.0.40
-      '@types/react-dom': 17.0.13
-      eslint-preset: link:../eslint-preset
-      lintstagedrc: link:../lintstagedrc
-      tsconfig: link:../tsconfig
-      typescript: 4.6.2
 
   services/hasura:
     specifiers:
@@ -2121,12 +2101,6 @@ packages:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
     dev: false
 
-  /@types/react-dom/17.0.13:
-    resolution: {integrity: sha512-wEP+B8hzvy6ORDv1QBhcQia4j6ea4SFIBttHYpXKPFZRviBvknq0FRh3VrIxeXUmsPkwuXVZrVGG7KUVONmXCQ==}
-    dependencies:
-      '@types/react': 17.0.40
-    dev: true
-
   /@types/react/17.0.40:
     resolution: {integrity: sha512-UrXhD/JyLH+W70nNSufXqMZNuUD2cXHu6UjCllC6pmOQgBX4SGXOH8fjRka0O0Ee0HrFxapDD8Bwn81Kmiz6jQ==}
     dependencies:
@@ -3311,14 +3285,6 @@ packages:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
     dependencies:
       once: 1.4.0
-
-  /enhanced-resolve/5.9.2:
-    resolution: {integrity: sha512-GIm3fQfwLJ8YZx2smuHpBKkXC1yOk+OBEmKckVyL0i/ea8mqDEykK3ld5dgH1QYPNyT/lIllxV2LULnxCHaHkA==}
-    engines: {node: '>=10.13.0'}
-    dependencies:
-      graceful-fs: 4.2.9
-      tapable: 2.2.1
-    dev: true
 
   /ent/2.2.0:
     resolution: {integrity: sha1-6WQhkyWiHQX0RGai9obtbOX13R0=}
@@ -5306,13 +5272,6 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /next-transpile-modules/9.0.0:
-    resolution: {integrity: sha512-VCNFOazIAnXn1hvgYYSTYMnoWgKgwlYh4lm1pKbSfiB3kj5ZYLcKVhfh3jkPOg1cnd9DP+pte9yCUocdPEUBTQ==}
-    dependencies:
-      enhanced-resolve: 5.9.2
-      escalade: 3.1.1
-    dev: true
-
   /next/12.1.0_33bdac975a6e334c49640fab91e2abb4:
     resolution: {integrity: sha512-s885kWvnIlxsUFHq9UGyIyLiuD0G3BUC/xrH0CEnH5lHEWkwQcHOORgbDF0hbrW9vr/7am4ETfX4A7M6DjrE7Q==}
     engines: {node: '>=12.22.0'}
@@ -6795,11 +6754,6 @@ packages:
       resolve: 1.22.0
     transitivePeerDependencies:
       - ts-node
-    dev: true
-
-  /tapable/2.2.1:
-    resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
-    engines: {node: '>=6'}
     dev: true
 
   /teeny-request/7.1.3:
