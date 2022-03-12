@@ -2,6 +2,7 @@
   "name": "hasura",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "migrate:apply": "hasura migrate apply",
     "migrate:export": "hasura migrate create init --from-server",
