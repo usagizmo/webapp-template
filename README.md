@@ -5,16 +5,17 @@ Monorepo template for creating a web service with Next.js.
 ## Uses
 
 - [Turborepo](https://turborepo.org/) x [pnpm](https://pnpm.io/)
-- [TypeScript](https://www.typescriptlang.org/) / [Prettier](https://prettier.io/)
+- [Prettier](https://prettier.io/) / [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import))
+- [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
 - [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
-- GitHub Actions (Formatting + Testing)
-- Execute `eslint --fix` and `prettier` when saving with VSCode
+- GitHub Actions (Formatting + Linting)
+- Execute `eslint --fix` and `prettier` when saving with VS Code
 
 ### Apps and Packages
 
 - **Apps**
   - [`web`](./apps/web/README.md):  
-    [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/)  
+    [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))
     [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Zustand](https://github.com/pmndrs/zustand)  
     [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
 - **Packages**
@@ -28,7 +29,7 @@ Monorepo template for creating a web service with Next.js.
   - [`hasura`](./services/hasura/README.md):  
     [Hasura Cloud](https://hasura.io/) settings.
 
-## Setup
+## Commands
 
 ```bash
 pnpm i # Resolve dependency packages and prepare .env files

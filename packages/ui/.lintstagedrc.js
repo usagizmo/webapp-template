@@ -1,1 +1,1 @@
-module.exports = require('lintstagedrc/base')
+export { default } from 'lintstagedrc'
