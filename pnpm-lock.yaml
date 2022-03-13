@@ -54,7 +54,7 @@ importers:
       postcss: 8.4.8
       react: 17.0.2
       react-dom: 17.0.2
-      react-hook-form: 7.27.1
+      react-hook-form: 7.28.0
       react-query: 3.34.16
       tailwind-config-base: workspace:*
       tailwindcss: 3.0.23
@@ -73,7 +73,7 @@ importers:
       phosphor-react: 1.4.1_react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-hook-form: 7.27.1_react@17.0.2
+      react-hook-form: 7.28.0_react@17.0.2
       react-query: 3.34.16_react-dom@17.0.2+react@17.0.2
       ulid: 2.3.0
       zustand: 3.7.1_react@17.0.2
@@ -6080,6 +6080,7 @@ packages:
 
   /bindings/1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+    requiresBuild: true
     dependencies:
       file-uri-to-path: 1.0.0
     dev: true
@@ -8416,6 +8417,7 @@ packages:
 
   /file-uri-to-path/1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -11344,6 +11346,7 @@ packages:
 
   /nan/2.15.0:
     resolution: {integrity: sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -12843,8 +12846,8 @@ packages:
       shallowequal: 1.1.0
     dev: true
 
-  /react-hook-form/7.27.1_react@17.0.2:
-    resolution: {integrity: sha512-N3a7A6zIQ8DJeThisVZGtOUabTbJw+7DHJidmB9w8m3chckv2ZWKb5MHps9d2pPJqmCDoWe53Bos56bYmJms5w==}
+  /react-hook-form/7.28.0_react@17.0.2:
+    resolution: {integrity: sha512-mmLpT86BkMGPr0r6ca8zxV0WH4Y1FW5MKs7Rq1+uHLVeeg5pSWbF5Z/qLCnM5vPVblHNM6lRBRRotnfEAf0ALA==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17
