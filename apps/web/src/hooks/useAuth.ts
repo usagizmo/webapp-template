@@ -15,7 +15,7 @@ import {
 } from 'next-auth/react'
 import { CONST } from '@/constants/const'
 import { auth, db } from '@/libs/firebase'
-import { useStore } from '@/store/use-store'
+import { useStore } from '@/store/useStore'
 
 let unsubscribeUser = () => {
   // This is intentional

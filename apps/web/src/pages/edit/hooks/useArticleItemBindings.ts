@@ -1,8 +1,8 @@
 import { ChangeEventHandler } from 'react'
 import { useQueryClient } from 'react-query'
-import { createUpdateArticleMutationVariables } from '@/factories/create-update-article-mutation-variables'
+import { createUpdateArticleMutationVariables } from '@/factories/createUpdateArticleMutationVariables'
 import { ArticlesQuery, useUpdateArticleMutation } from '@/generated/graphql'
-import { useEffectedState } from '@/hooks/use-effected-state'
+import { useEffectedState } from '@/hooks/useEffectedState'
 
 export const useArticleItemBindings = (
   article: ArticlesQuery['articles'][0]

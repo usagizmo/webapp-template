@@ -1,16 +1,16 @@
 import { VFC } from 'react'
 import { Trash } from 'phosphor-react'
 import { useQueryClient } from 'react-query'
-import { ArticleImage } from '@/components/article/article-image'
-import { Button } from '@/components/button'
-import { InlineInput } from '@/components/inline-input'
+import { ArticleImage } from '@/components/Article/ArticleImage'
+import { Button } from '@/components/Button'
+import { InlineInput } from '@/components/InlineInput'
 import {
   ArticlesQuery,
   useArticlesQuery,
   useDeleteArticleMutation,
 } from '@/generated/graphql'
-import { useQueryHandle } from '@/hooks/use-query-handle'
-import { useArticleItemBindings } from '../hooks/use-article-item-bindings'
+import { useQueryHandle } from '@/hooks/useQueryHandle'
+import { useArticleItemBindings } from '../hooks/useArticleItemBindings'
 
 type Props = {
   article: ArticlesQuery['articles'][0]
