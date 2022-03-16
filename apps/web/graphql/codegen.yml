@@ -11,7 +11,7 @@ generates:
       - './graphql/queries/**/*.graphql'
     plugins:
       - add:
-          content: "import { getFetchParams } from '@/libs/get-fetch-params';\n// eslint-disable-next-line"
+          content: "import { getFetchParams } from '@/libs/getFetchParams';\n// eslint-disable-next-line"
       - typescript
       - typescript-operations
       - typescript-react-query

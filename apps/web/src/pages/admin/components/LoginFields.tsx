@@ -1,10 +1,10 @@
 import { VFC } from 'react'
 import { useForm } from 'react-hook-form'
-import { Button } from '@/components/button'
-import { Input } from '@/components/input'
+import { Button } from '@/components/Button'
+import { Input } from '@/components/Input'
 import { CONST } from '@/constants/const'
 import { ERROR } from '@/constants/error'
-import { useAuth } from '@/hooks/use-auth'
+import { useAuth } from '@/hooks/useAuth'
 
 type Inputs = {
   email: string

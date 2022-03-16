@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { useCurrentUserQuery } from '@/generated/graphql-api'
-import { firebaseAdmin } from '@/libs/firebase-admin'
+import { firebaseAdmin } from '@/libs/firebaseAdmin'
 
 export default NextAuth({
   providers: [

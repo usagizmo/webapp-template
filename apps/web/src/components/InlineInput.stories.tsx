@@ -1,21 +1,24 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { TextLink } from './text-link'
+import { InlineInput } from './InlineInput'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Components/TextLink',
-  component: TextLink,
+  title: 'Components/InlineInput',
+  component: InlineInput,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof TextLink>
+} as ComponentMeta<typeof InlineInput>
 export default meta
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof TextLink> = (args) => (
-  <TextLink {...args}>This is TextLink</TextLink>
+const Template: ComponentStory<typeof InlineInput> = (args) => (
+  <InlineInput {...args} />
 )
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = Template.bind({})
-Default.args = {
-  href: 'https://static-site-template.usagizmo.com/',
+Default.args = {}
+
+export const HasValue = Template.bind({})
+HasValue.args = {
+  value: 'This is value',
 }

@@ -1,12 +1,12 @@
 import { VFC } from 'react'
 import { InferGetStaticPropsType } from 'next'
 import { QueryClient, dehydrate } from 'react-query'
-import { ArticleList } from '@/components/article/article-list'
-import { Layout } from '@/components/layout'
-import { Navigation } from '@/components/navigation'
+import { ArticleList } from '@/components/Article/ArticleList'
+import { Layout } from '@/components/Layout'
+import { Navigation } from '@/components/Navigation'
 import { CONST } from '@/constants/const'
 import { useArticlesQuery } from '@/generated/graphql'
-import { useQueryHandle } from '@/hooks/use-query-handle'
+import { useQueryHandle } from '@/hooks/useQueryHandle'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
