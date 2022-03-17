@@ -48,7 +48,7 @@ importers:
       graphql: 16.3.0
       lintstagedrc: workspace:*
       next: 12.1.0
-      next-auth: 4.2.1
+      next-auth: 4.3.1
       pathpida: 0.18.0
       phosphor-react: 1.4.1
       postcss: 8.4.12
@@ -69,7 +69,7 @@ importers:
       firebase: 9.6.8
       firebase-admin: 10.0.2_c2bd62812a1e883fd3651fcace953b90
       next: 12.1.0_fbf64ceed39fcaf258f74679fe7c79ca
-      next-auth: 4.2.1_react-dom@17.0.2+react@17.0.2
+      next-auth: 4.3.1_react-dom@17.0.2+react@17.0.2
       phosphor-react: 1.4.1_react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -11499,8 +11499,8 @@ packages:
     resolution: {integrity: sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==}
     dev: true
 
-  /next-auth/4.2.1_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-XDtt7nqevkNf4EJ2zKAKkI+MFsURf11kx11vPwxrBYA1MHeqWwaWbGOUOI2ekNTvfAg4nTEJJUH3LV2cLrH3Tg==}
+  /next-auth/4.3.1_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-DBYEPBLq5naIqh/1i2zEHljcA1OXXecKW3NRU1W4s6R3UX3RdLZ2lWlqgBHUiZQ1zdNikFM/bYQxVGyG7bx8oA==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
     peerDependencies:
       nodemailer: ^6.6.5
