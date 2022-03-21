@@ -30,7 +30,7 @@ importers:
       '@graphql-codegen/introspection': 2.1.1
       '@graphql-codegen/typescript': 2.4.8
       '@graphql-codegen/typescript-operations': 2.3.5
-      '@graphql-codegen/typescript-react-query': 3.5.8
+      '@graphql-codegen/typescript-react-query': 3.5.9
       '@storybook/addon-actions': 6.4.19
       '@storybook/addon-essentials': 6.4.19
       '@storybook/addon-links': 6.4.19
@@ -86,7 +86,7 @@ importers:
       '@graphql-codegen/introspection': 2.1.1_graphql@16.3.0
       '@graphql-codegen/typescript': 2.4.8_graphql@16.3.0
       '@graphql-codegen/typescript-operations': 2.3.5_graphql@16.3.0
-      '@graphql-codegen/typescript-react-query': 3.5.8_graphql@16.3.0
+      '@graphql-codegen/typescript-react-query': 3.5.9_graphql@16.3.0
       '@storybook/addon-actions': 6.4.19_4211ed8b26069fec1bc8ff4659f40efc
       '@storybook/addon-essentials': 6.4.19_0550ec7c541f8e2179f44dedfd64dca7
       '@storybook/addon-links': 6.4.19_react-dom@17.0.2+react@17.0.2
@@ -177,11 +177,6 @@ packages:
       '@babel/highlight': 7.16.10
     dev: true
 
-  /@babel/compat-data/7.17.0:
-    resolution: {integrity: sha512-392byTlpGWXMv4FbyWw3sAZ/FrW/DrwqLGXpy0mbyNe9Taqv1mg9yON5/o0cnr8XYCkFTZbC1eV+c+LAROgrng==}
-    engines: {node: '>=6.9.0'}
-    dev: true
-
   /@babel/compat-data/7.17.7:
     resolution: {integrity: sha512-p8pdE6j0a29TNGebNm7NzYZWB3xVZJBZ7XGs42uAKzQo8VQ3F0By/cQCtUEABwIqw5zo6WA4NbmxsfzADzMKnQ==}
     engines: {node: '>=6.9.0'}
@@ -234,15 +229,6 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/generator/7.17.3:
-    resolution: {integrity: sha512-+R6Dctil/MgUsZsZAkYgK+ADNSZzJRRy0TvY65T71z/CR854xHQ1EweBYXdfT+HNeN7w0cSJJEzgxZMv40pxsg==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/types': 7.17.0
-      jsesc: 2.5.2
-      source-map: 0.5.7
-    dev: true
-
   /@babel/generator/7.17.7:
     resolution: {integrity: sha512-oLcVCTeIFadUoArDTwpluncplrYBmTCCZZgXCbgNGvOBBiSDDK3eWO4b/+eOTli5tKv1lg+a5/NAXg+nTcei1w==}
     engines: {node: '>=6.9.0'}
@@ -276,7 +262,7 @@ packages:
       '@babel/compat-data': 7.17.7
       '@babel/core': 7.17.7
       '@babel/helper-validator-option': 7.16.7
-      browserslist: 4.20.0
+      browserslist: 4.20.2
       semver: 6.3.0
     dev: true
 
@@ -526,12 +512,6 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@babel/parser/7.17.3:
-    resolution: {integrity: sha512-7yJPvPV+ESz2IUTPbOL+YkIGyCqOyNIzdguKQuJGnH7bg1WTIifuM21YqokFt/THWh1AkCRn9IgoykTRCBVpzA==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-    dev: true
-
   /@babel/parser/7.17.7:
     resolution: {integrity: sha512-bm3AQf45vR4gKggRfvJdYJ0gFLoCbsPxiFLSH6hTVYABptNHY6l9NrhnucVjQ/X+SPtLANT9lc0fFhikj+VBRA==}
     engines: {node: '>=6.0.0'}
@@ -711,7 +691,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/compat-data': 7.17.0
+      '@babel/compat-data': 7.17.7
       '@babel/core': 7.17.7
       '@babel/helper-compilation-targets': 7.17.7_@babel+core@7.17.7
       '@babel/helper-plugin-utils': 7.16.7
@@ -1424,7 +1404,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/compat-data': 7.17.0
+      '@babel/compat-data': 7.17.7
       '@babel/core': 7.17.7
       '@babel/helper-compilation-targets': 7.17.7_@babel+core@7.17.7
       '@babel/helper-plugin-utils': 7.16.7
@@ -2518,8 +2498,8 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-codegen/typescript-react-query/3.5.8_graphql@16.3.0:
-    resolution: {integrity: sha512-hV1/gIpImZO4DcK/iCtg8dpfRQEvcOcyW4GQTz86TtRb6z17/nxeo4j5TuB3VYWjr/ITxD/lkmgNYIevjQjB2g==}
+  /@graphql-codegen/typescript-react-query/3.5.9_graphql@16.3.0:
+    resolution: {integrity: sha512-Pdz9ZxPD4tldyZhX826HrXZAZe6pYP3kWAzXnQYfvihbnPKxGe9AsL8Rp7uj67no4Yi5aHYSuPA52Dt7cUYFOg==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
@@ -3430,8 +3410,8 @@ packages:
         optional: true
     dependencies:
       '@babel/core': 7.17.7
-      '@babel/generator': 7.17.3
-      '@babel/parser': 7.17.3
+      '@babel/generator': 7.17.7
+      '@babel/parser': 7.17.7
       '@babel/plugin-transform-react-jsx': 7.17.3_@babel+core@7.17.7
       '@babel/preset-env': 7.16.11_@babel+core@7.17.7
       '@jest/transform': 26.6.2
@@ -6086,7 +6066,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/compat-data': 7.17.0
+      '@babel/compat-data': 7.17.7
       '@babel/core': 7.17.7
       '@babel/helper-define-polyfill-provider': 0.3.1_@babel+core@7.17.7
       semver: 6.3.0
