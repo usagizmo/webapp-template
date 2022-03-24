@@ -39,7 +39,7 @@ Monorepo template for creating a web service with Next.js.
 ## Commands
 
 ```bash
-pnpm i # Resolve dependency packages and prepare .env files
+pnpm i  # Resolve dependency packages and prepare .env files
 # Then set up /.env
 
 pnpm build   # Build all apps and packages
@@ -55,10 +55,13 @@ If you need to prepare the GitHub / Vercel environment, you will need to set the
 
 ## Deploy to Vercel
 
+ref: https://vercel.com/docs/concepts/git/monorepos#setup-turborepo
+
 Make the following settings in Vercel's `Project Settings`.
 
-- `General` > `Build` & `Development Settings` > `INSTALL COMMAND`:  
-  `npm i pnpm -g && pnpm i`
+- `General` > `Build` & `Development Settings`
+  - `BUILD COMMAND`: `cd ../.. && pnpm exec turbo run build --scope=web --include-dependencies --no-deps`
+  - `INSTALL COMMAND`: `npm i pnpm -g && pnpm i`
 - `General` > `Root Directory`: `apps/web/`
   - [x] Include source files outside of the Root Directory in the Build Step.
 
