@@ -1,11 +1,11 @@
 import { VFC } from 'react'
+import { CONST } from 'constants/const'
+import { useArticlesQuery } from 'generated/dist/graphql'
 import { InferGetStaticPropsType } from 'next'
 import { QueryClient, dehydrate } from 'react-query'
-import { ArticleList } from '@/components/Article/ArticleList'
-import { Layout } from '@/components/Layout'
-import { Navigation } from '@/components/Navigation'
-import { CONST } from '@/constants/const'
-import { useArticlesQuery } from '@/generated/graphql'
+import { ArticleList } from 'ui'
+import { Layout } from '@/components/Layout/Layout'
+import { Navigation } from '@/components/Navigation/Navigation'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
@@ -26,10 +26,18 @@ export const getStaticProps = async () => {
   }
 }
 
-const HomePage: VFC<Props> = () => {
+const useHomePage = () => {
   const articlesQuery = useArticlesQuery()
   const articlesQueryHandle = useQueryHandle(articlesQuery)
 
+  return {
+    articlesQuery,
+    articlesQueryHandle,
+  }
+}
+
+const HomePage: VFC<Props> = () => {
+  const { articlesQuery, articlesQueryHandle } = useHomePage()
   return (
     <Layout>
       <header className="flex h-20 items-center justify-center">

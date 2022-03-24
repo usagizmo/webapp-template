@@ -1,9 +1,8 @@
 import { VFC } from 'react'
+import { CONST } from 'constants/const'
+import { ERROR } from 'constants/error'
 import { useForm } from 'react-hook-form'
-import { Button } from '@/components/Button'
-import { Input } from '@/components/Input'
-import { CONST } from '@/constants/const'
-import { ERROR } from '@/constants/error'
+import { Button, Input } from 'ui'
 import { useAuth } from '@/hooks/useAuth'
 
 type Inputs = {
@@ -11,7 +10,7 @@ type Inputs = {
   password: string
 }
 
-export const LoginFields: VFC = () => {
+const useLoginFields = () => {
   const { signInWithEmailAndPassword, createUserWithEmailAndPassword } =
     useAuth()
   const {
@@ -19,6 +18,24 @@ export const LoginFields: VFC = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<Inputs>()
+
+  return {
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    register,
+    errors,
+    handleSubmit,
+  }
+}
+
+export const LoginFields: VFC = () => {
+  const {
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    register,
+    errors,
+    handleSubmit,
+  } = useLoginFields()
 
   return (
     <form

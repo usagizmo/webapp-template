@@ -6,10 +6,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 
 import '@/styles/globals.css'
 
-export default function MyApp({
-  Component,
-  pageProps: { session, dehydratedState, ...pageProps },
-}: AppProps) {
+const useMyApp = () => {
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -21,6 +18,16 @@ export default function MyApp({
         },
       })
   )
+
+  return { queryClient }
+}
+
+export default function MyApp({
+  Component,
+  pageProps: { session, dehydratedState, ...pageProps },
+}: AppProps) {
+  const { queryClient } = useMyApp()
+
   return (
     <SessionProvider session={session}>
       <QueryClientProvider client={queryClient}>

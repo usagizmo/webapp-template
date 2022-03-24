@@ -1,5 +1,5 @@
 import { MouseEventHandler, FC } from 'react'
-import { classNames } from '@/utils/utils'
+import { classNames } from 'utils'
 
 type Props = {
   type?: 'submit' | 'button' | 'reset'

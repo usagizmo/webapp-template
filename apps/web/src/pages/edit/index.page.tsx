@@ -1,14 +1,14 @@
 import { useEffect, VFC } from 'react'
+import { CONST } from 'constants/const'
+import { useArticlesQuery } from 'generated/dist/graphql'
 import { InferGetStaticPropsType } from 'next'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { dehydrate, QueryClient } from 'react-query'
-import { Layout } from '@/components/Layout'
-import { Navigation } from '@/components/Navigation'
-import { CONST } from '@/constants/const'
-import { pagesPath } from '@/generated/$path'
-import { useArticlesQuery } from '@/generated/graphql'
+import { Layout } from '@/components/Layout/Layout'
+import { Navigation } from '@/components/Navigation/Navigation'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
+import { pagesPath } from '@/lib/$path'
 import { CreateArticleItem } from './components/CreateArticleItem'
 import { EditArticleList } from './components/EditArticleList'
 
@@ -30,7 +30,7 @@ export const getStaticProps = async () => {
   }
 }
 
-const EditPage: VFC<Props> = () => {
+const useEditPage = () => {
   const router = useRouter()
   const { status } = useSession()
   const articlesQuery = useArticlesQuery()
@@ -41,6 +41,15 @@ const EditPage: VFC<Props> = () => {
       router.push(pagesPath.$url())
     }
   }, [router, status])
+
+  return {
+    articlesQuery,
+    articlesQueryHandle,
+  }
+}
+
+const EditPage: VFC<Props> = () => {
+  const { articlesQuery, articlesQueryHandle } = useEditPage()
 
   return (
     <Layout>

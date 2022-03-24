@@ -5,13 +5,13 @@ schema:
       x-hasura-admin-secret: '${HASURA_GRAPHQL_ADMIN_SECRET}'
       x-hasura-role: 'admin'
 generates:
-  ./src/generated/graphql.ts:
+  ./dist/graphql.ts:
     documents:
       - './graphql/mutations/**/*.graphql'
       - './graphql/queries/**/*.graphql'
     plugins:
       - add:
-          content: "import { getFetchParams } from '@/libs/getFetchParams';\n// eslint-disable-next-line"
+          content: "import { getFetchParams } from '../lib/getFetchParams';\n// eslint-disable-next-line"
       - typescript
       - typescript-operations
       - typescript-react-query
@@ -21,7 +21,7 @@ generates:
         fetchParams: 'await getFetchParams()'
       exposeFetcher: true
       exposeQueryKeys: true
-  ./src/generated/graphql-api.ts:
+  ./dist/graphql-api.ts:
     documents: './graphql/api/**/*.graphql'
     plugins:
       - typescript
@@ -29,7 +29,7 @@ generates:
       - typescript-react-query
     config:
       exposeFetcher: true
-  ./src/generated/graphql.schema.json:
+  ./dist/graphql.schema.json:
     documents:
       - './graphql/**/*.graphql'
     plugins:

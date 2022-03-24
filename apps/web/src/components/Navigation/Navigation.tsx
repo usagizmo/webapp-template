@@ -1,9 +1,9 @@
 import { VFC } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
-import { pagesPath } from '@/generated/$path'
+import { TextLink } from 'ui'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
-import { TextLink } from './TextLink'
+import { pagesPath } from '@/lib/$path'
 
 type Props = {}
 

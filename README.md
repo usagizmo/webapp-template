@@ -20,10 +20,16 @@ Monorepo template for creating a web service with Next.js.
     [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))  
     [Storybook](https://storybook.js.org/)
 - **Packages**
-  - `config`: for [ESLint](https://eslint.org/)  
-    eslint-config-next / eslint-config-prettier / eslint-plugin-import
-  - `lintstagedrc`: [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
-  - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+  - `constatns`: As the name implies
+  - `eslint-preset`: The base preset for [ESLint](https://eslint.org/)  
+    Include eslint-config-next / eslint-config-prettier / eslint-plugin-import
+  - `generated`: The files output from graphql-codegen
+  - `lintstagedrc`: The settings for applying [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged) in each JS/TS file
+  - `tailwind-config-base`: The base config for Tailwind CSS
+  - `tsconfig`: The base `tsconfig.json`
+  - `types`: Various types
+  - `ui`: Common components
+  - `utils`: Simple utilities
 - **Services**
   - [`firebase`](./services/firebase/README.md):  
     [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/) settings.
@@ -33,13 +39,14 @@ Monorepo template for creating a web service with Next.js.
 ## Commands
 
 ```bash
-pnpm i # Resolve dependency packages and prepare .env files
+pnpm i  # Resolve dependency packages and prepare .env files
 # Then set up /.env
 
 pnpm build   # Build all apps and packages
 pnpm dev     # Set up file monitoring builds and local servers for development
 pnpm lint    # eslint + prettier --check
 pnpm format  # eslint --fix + prettier --write
+pnpm clean   # rm .turbo, node_module and generated files
 ```
 
 ## Registering environment variables for GitHub / Vercel
@@ -48,10 +55,13 @@ If you need to prepare the GitHub / Vercel environment, you will need to set the
 
 ## Deploy to Vercel
 
+ref: https://vercel.com/docs/concepts/git/monorepos#setup-turborepo
+
 Make the following settings in Vercel's `Project Settings`.
 
-- `General` > `Build` & `Development Settings` > `INSTALL COMMAND`:  
-  `npm i pnpm -g && pnpm i`
+- `General` > `Build` & `Development Settings`
+  - `BUILD COMMAND`: `cd ../.. && pnpm exec turbo run build --scope=web --include-dependencies --no-deps`
+  - `INSTALL COMMAND`: `npm i pnpm -g && pnpm i`
 - `General` > `Root Directory`: `apps/web/`
   - [x] Include source files outside of the Root Directory in the Build Step.
 

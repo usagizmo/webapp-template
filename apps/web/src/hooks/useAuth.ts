@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from 'react'
+import { CONST } from 'constants/const'
 import {
   createUserWithEmailAndPassword as firebaseCreateUserWithEmailAndPassword,
   signInWithEmailAndPassword as firebaseSignInWithEmailAndPassword,
@@ -13,8 +14,7 @@ import {
   signIn as nextAuthSignIn,
   signOut as nextAuthSignOut,
 } from 'next-auth/react'
-import { CONST } from '@/constants/const'
-import { auth, db } from '@/libs/firebase'
+import { auth, db } from '@/lib/firebase'
 import { useStore } from '@/store/useStore'
 
 let unsubscribeUser = () => {

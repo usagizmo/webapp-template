@@ -1,6 +1,6 @@
 import { VFC } from 'react'
 import Image from 'next/image'
-import { ArticleImageFIle } from '@/types/data-types'
+import { ArticleImageFIle } from 'types/data-types'
 
 type Props = {
   imageFile: ArticleImageFIle

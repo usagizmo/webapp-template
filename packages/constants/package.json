@@ -1,9 +1,12 @@
 {
-  "name": "tailwind-config-base",
+  "name": "constants",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "main": "./index.cjs",
+  "files": [
+    "const.ts",
+    "error.ts"
+  ],
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",
     "lint:fix": "eslint . --ext .js,.cjs --fix",

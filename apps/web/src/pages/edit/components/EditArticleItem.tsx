@@ -1,14 +1,12 @@
 import { VFC } from 'react'
-import { Trash } from 'phosphor-react'
-import { useQueryClient } from 'react-query'
-import { ArticleImage } from '@/components/Article/ArticleImage'
-import { Button } from '@/components/Button'
-import { InlineInput } from '@/components/InlineInput'
 import {
   ArticlesQuery,
   useArticlesQuery,
   useDeleteArticleMutation,
-} from '@/generated/graphql'
+} from 'generated/dist/graphql'
+import { Trash } from 'phosphor-react'
+import { useQueryClient } from 'react-query'
+import { ArticleImage, Button, InlineInput } from 'ui'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
 import { useArticleItemBindings } from '../hooks/useArticleItemBindings'
 
@@ -16,7 +14,7 @@ type Props = {
   article: ArticlesQuery['articles'][0]
 }
 
-export const EditArticleItem: VFC<Props> = ({ article }) => {
+const useEditArticleItem = (article: ArticlesQuery['articles'][0]) => {
   const { title, titleBindings, content, contentBindings } =
     useArticleItemBindings(article)
   const queryClient = useQueryClient()
@@ -34,6 +32,26 @@ export const EditArticleItem: VFC<Props> = ({ article }) => {
     },
   })
   const queryHandle = useQueryHandle(deleteArticleMutation, 'Deleting...')
+
+  return {
+    title,
+    titleBindings,
+    content,
+    contentBindings,
+    deleteArticleMutation,
+    queryHandle,
+  }
+}
+
+export const EditArticleItem: VFC<Props> = ({ article }) => {
+  const {
+    title,
+    titleBindings,
+    content,
+    contentBindings,
+    deleteArticleMutation,
+    queryHandle,
+  } = useEditArticleItem(article)
 
   if (queryHandle) return queryHandle
 

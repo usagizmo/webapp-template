@@ -1,20 +1,18 @@
 import { ChangeEventHandler, useCallback, VFC } from 'react'
+import { ERROR } from 'constants/error'
 import { getDownloadURL, uploadBytes } from 'firebase/storage'
-import { FileArrowUp } from 'phosphor-react'
-import { useForm } from 'react-hook-form'
-import { useQueryClient } from 'react-query'
-import { ArticleImage } from '@/components/Article/ArticleImage'
-import { Button } from '@/components/Button'
-import { Input } from '@/components/Input'
-import { ERROR } from '@/constants/error'
 import {
   ArticlesQuery,
   useArticlesQuery,
   useCreateArticleMutation,
-} from '@/generated/graphql'
+} from 'generated/dist/graphql'
+import { FileArrowUp } from 'phosphor-react'
+import { useForm } from 'react-hook-form'
+import { useQueryClient } from 'react-query'
+import { ArticleImageFIle } from 'types/data-types'
+import { ArticleImage, Button, Input } from 'ui'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
-import { ArticleImageFIle } from '@/types/data-types'
-import { getArticlesStorageRef } from '@/utils/storageUtils'
+import { getArticlesStorageRef } from '@/lib/storageRefs'
 
 type Inputs = {
   title: string
@@ -24,7 +22,7 @@ type Inputs = {
 
 type Props = {}
 
-export const CreateArticleItem: VFC<Props> = () => {
+const useCreateArticleItem = () => {
   const queryClient = useQueryClient()
   const createArticleMutation = useCreateArticleMutation({
     onSuccess: (data) => {
@@ -89,6 +87,28 @@ export const CreateArticleItem: VFC<Props> = () => {
     },
     [setValue]
   )
+
+  return {
+    queryHandle,
+    register,
+    errors,
+    handleSubmit,
+    watchImageFile,
+    onSubmit,
+    onChangeFile,
+  }
+}
+
+export const CreateArticleItem: VFC<Props> = () => {
+  const {
+    queryHandle,
+    register,
+    errors,
+    handleSubmit,
+    watchImageFile,
+    onSubmit,
+    onChangeFile,
+  } = useCreateArticleItem()
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

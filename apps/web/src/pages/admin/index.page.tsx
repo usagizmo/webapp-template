@@ -1,20 +1,30 @@
 import { VFC } from 'react'
+import { CONST } from 'constants/const'
 import { useSession } from 'next-auth/react'
 import { SignOut } from 'phosphor-react'
-import { Button } from '@/components/Button'
-import { Layout } from '@/components/Layout'
-import { Navigation } from '@/components/Navigation'
-import { CONST } from '@/constants/const'
+import { Button } from 'ui'
+import { Layout } from '@/components/Layout/Layout'
+import { Navigation } from '@/components/Navigation/Navigation'
 import { useAuth } from '@/hooks/useAuth'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
 import { LoginFields } from './components/LoginFields'
 
 type Props = {}
 
-const AdminPage: VFC<Props> = () => {
+const useAdminPage = () => {
   const { signOut } = useAuth()
   const { data: session, status } = useSession()
   const queryHandle = useQueryHandle({ status })
+
+  return {
+    signOut,
+    session,
+    queryHandle,
+  }
+}
+
+const AdminPage: VFC<Props> = () => {
+  const { signOut, session, queryHandle } = useAdminPage()
 
   return (
     <Layout>
