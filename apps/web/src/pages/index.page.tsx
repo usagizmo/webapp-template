@@ -26,10 +26,18 @@ export const getStaticProps = async () => {
   }
 }
 
-const HomePage: VFC<Props> = () => {
+const useHomePage = () => {
   const articlesQuery = useArticlesQuery()
   const articlesQueryHandle = useQueryHandle(articlesQuery)
 
+  return {
+    articlesQuery,
+    articlesQueryHandle,
+  }
+}
+
+const HomePage: VFC<Props> = () => {
+  const { articlesQuery, articlesQueryHandle } = useHomePage()
   return (
     <Layout>
       <header className="flex h-20 items-center justify-center">

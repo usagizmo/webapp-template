@@ -11,7 +11,7 @@ type Inputs = {
   password: string
 }
 
-export const LoginFields: VFC = () => {
+const useLoginFields = () => {
   const { signInWithEmailAndPassword, createUserWithEmailAndPassword } =
     useAuth()
   const {
@@ -19,6 +19,24 @@ export const LoginFields: VFC = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<Inputs>()
+
+  return {
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    register,
+    errors,
+    handleSubmit,
+  }
+}
+
+export const LoginFields: VFC = () => {
+  const {
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    register,
+    errors,
+    handleSubmit,
+  } = useLoginFields()
 
   return (
     <form

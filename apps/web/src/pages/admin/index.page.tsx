@@ -11,10 +11,20 @@ import { LoginFields } from './components/LoginFields'
 
 type Props = {}
 
-const AdminPage: VFC<Props> = () => {
+const useAdminPage = () => {
   const { signOut } = useAuth()
   const { data: session, status } = useSession()
   const queryHandle = useQueryHandle({ status })
+
+  return {
+    signOut,
+    session,
+    queryHandle,
+  }
+}
+
+const AdminPage: VFC<Props> = () => {
+  const { signOut, session, queryHandle } = useAdminPage()
 
   return (
     <Layout>

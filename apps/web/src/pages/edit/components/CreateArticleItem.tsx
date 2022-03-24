@@ -24,7 +24,7 @@ type Inputs = {
 
 type Props = {}
 
-export const CreateArticleItem: VFC<Props> = () => {
+const useCreateArticleItem = () => {
   const queryClient = useQueryClient()
   const createArticleMutation = useCreateArticleMutation({
     onSuccess: (data) => {
@@ -89,6 +89,28 @@ export const CreateArticleItem: VFC<Props> = () => {
     },
     [setValue]
   )
+
+  return {
+    queryHandle,
+    register,
+    errors,
+    handleSubmit,
+    watchImageFile,
+    onSubmit,
+    onChangeFile,
+  }
+}
+
+export const CreateArticleItem: VFC<Props> = () => {
+  const {
+    queryHandle,
+    register,
+    errors,
+    handleSubmit,
+    watchImageFile,
+    onSubmit,
+    onChangeFile,
+  } = useCreateArticleItem()
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

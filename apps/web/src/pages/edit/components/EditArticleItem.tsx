@@ -16,7 +16,7 @@ type Props = {
   article: ArticlesQuery['articles'][0]
 }
 
-export const EditArticleItem: VFC<Props> = ({ article }) => {
+const useEditArticleItem = (article: ArticlesQuery['articles'][0]) => {
   const { title, titleBindings, content, contentBindings } =
     useArticleItemBindings(article)
   const queryClient = useQueryClient()
@@ -34,6 +34,26 @@ export const EditArticleItem: VFC<Props> = ({ article }) => {
     },
   })
   const queryHandle = useQueryHandle(deleteArticleMutation, 'Deleting...')
+
+  return {
+    title,
+    titleBindings,
+    content,
+    contentBindings,
+    deleteArticleMutation,
+    queryHandle,
+  }
+}
+
+export const EditArticleItem: VFC<Props> = ({ article }) => {
+  const {
+    title,
+    titleBindings,
+    content,
+    contentBindings,
+    deleteArticleMutation,
+    queryHandle,
+  } = useEditArticleItem(article)
 
   if (queryHandle) return queryHandle
 

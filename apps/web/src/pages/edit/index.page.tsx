@@ -30,7 +30,7 @@ export const getStaticProps = async () => {
   }
 }
 
-const EditPage: VFC<Props> = () => {
+const useEditPage = () => {
   const router = useRouter()
   const { status } = useSession()
   const articlesQuery = useArticlesQuery()
@@ -41,6 +41,15 @@ const EditPage: VFC<Props> = () => {
       router.push(pagesPath.$url())
     }
   }, [router, status])
+
+  return {
+    articlesQuery,
+    articlesQueryHandle,
+  }
+}
+
+const EditPage: VFC<Props> = () => {
+  const { articlesQuery, articlesQueryHandle } = useEditPage()
 
   return (
     <Layout>
