@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { pagesPath } from '@/generated/$path'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
-import { TextLink } from './TextLink'
+import { TextLink } from '../TextLink'
 
 type Props = {}
 
