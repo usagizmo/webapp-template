@@ -1,7 +1,5 @@
-const base = require('tailwind-config-base')
-
 module.exports = {
-  ...base,
+  presets: [require('tailwind-preset')],
   content: [
     '../web/src/pages/**/*.{js,ts,jsx,tsx}',
     '../web/src/components/**/*.{js,ts,jsx,tsx}',

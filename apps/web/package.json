@@ -44,7 +44,7 @@
     "next-transpile-modules": "9.0.0",
     "pathpida": "0.18.0",
     "postcss": "8.4.12",
-    "tailwind-config-base": "workspace:*",
+    "tailwind-preset": "workspace:*",
     "tailwindcss": "3.0.23",
     "tsconfig": "workspace:*",
     "tsconfig-paths-webpack-plugin": "3.5.2",

@@ -25,7 +25,7 @@ Monorepo template for creating a web service with Next.js.
     Include eslint-config-next / eslint-config-prettier / eslint-plugin-import
   - `generated`: The files output from graphql-codegen
   - `lintstagedrc`: The settings for applying [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged) in each JS/TS file
-  - `tailwind-config-base`: The base config for Tailwind CSS
+  - `tailwind-preset`: The base preset for Tailwind CSS (inc. postcss.config.cjs)
   - `tsconfig`: The base `tsconfig.json`
   - `types`: Various types
   - `ui`: Common components

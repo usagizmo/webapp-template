@@ -3,7 +3,12 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "dist/**", "src/lib/$path.ts"]
+      "outputs": [
+        ".next/**",
+        "dist/**",
+        "src/lib/$path.ts",
+        "storybook-static/**"
+      ]
     },
     "lint": {
       "dependsOn": ["^build"],

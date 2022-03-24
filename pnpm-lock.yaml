@@ -33,7 +33,7 @@ importers:
       babel-loader: 8.2.4
       react: 17.0.2
       react-dom: 17.0.2
-      tailwind-config-base: workspace:*
+      tailwind-preset: workspace:*
       typescript: 4.6.2
       webpack: 5.70.0
     devDependencies:
@@ -48,7 +48,7 @@ importers:
       babel-loader: 8.2.4_fa907c5a4f16ccc493e21649ccc59574
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      tailwind-config-base: link:../../packages/tailwind-config-base
+      tailwind-preset: link:../../packages/tailwind-preset
       typescript: 4.6.2
       webpack: 5.70.0
 
@@ -76,7 +76,7 @@ importers:
       react-dom: 17.0.2
       react-hook-form: 7.28.1
       react-query: 3.34.16
-      tailwind-config-base: workspace:*
+      tailwind-preset: workspace:*
       tailwindcss: 3.0.23
       tsconfig: workspace:*
       tsconfig-paths-webpack-plugin: 3.5.2
@@ -113,7 +113,7 @@ importers:
       next-transpile-modules: 9.0.0
       pathpida: 0.18.0
       postcss: 8.4.12
-      tailwind-config-base: link:../../packages/tailwind-config-base
+      tailwind-preset: link:../../packages/tailwind-preset
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       tsconfig: link:../../packages/tsconfig
       tsconfig-paths-webpack-plugin: 3.5.2
@@ -196,7 +196,7 @@ importers:
   packages/lintstagedrc:
     specifiers: {}
 
-  packages/tailwind-config-base:
+  packages/tailwind-preset:
     specifiers:
       eslint-preset: workspace:*
       lintstagedrc: workspace:*

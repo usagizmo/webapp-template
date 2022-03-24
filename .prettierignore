@@ -9,5 +9,6 @@ generated
 # Custom
 .turbo
 .vercel
+/apps/storybook/storybook-static
 /apps/web/src/lib/$path.ts
 /packages/generated/dist
