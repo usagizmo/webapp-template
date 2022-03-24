@@ -46,6 +46,7 @@ pnpm build   # Build all apps and packages
 pnpm dev     # Set up file monitoring builds and local servers for development
 pnpm lint    # eslint + prettier --check
 pnpm format  # eslint --fix + prettier --write
+pnpm clean   # rm .turbo, node_module and generated files
 ```
 
 ## Registering environment variables for GitHub / Vercel

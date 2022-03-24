@@ -12,7 +12,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint && prettier --check .",
-    "format": "turbo run lint:fix && prettier --write ."
+    "format": "turbo run lint:fix && prettier --write .",
+    "clean": "turbo run clean && rm -rf node_modules"
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown"

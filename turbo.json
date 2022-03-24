@@ -1,14 +1,23 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
-    "dev": {
-      "cache": false
-    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "dist/**", "src/lib/$path.ts"]
     },
-    "lint": {},
-    "lint:fix": {}
+    "lint": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "lint:fix": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    }
   }
 }
