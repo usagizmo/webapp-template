@@ -14,18 +14,18 @@ Monorepo template for creating a web service with Next.js.
 ### Apps and Packages
 
 - **Apps**
+  - `storybook`: [Storybook](https://storybook.js.org/) for `apps/web/` and `packages/ui/`
   - [`web`](./apps/web/README.md):  
     [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))
     [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Zustand](https://github.com/pmndrs/zustand)  
-    [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))  
-    [Storybook](https://storybook.js.org/)
+    [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
 - **Packages**
   - `constatns`: As the name implies
   - `eslint-preset`: The base preset for [ESLint](https://eslint.org/)  
     Include eslint-config-next / eslint-config-prettier / eslint-plugin-import
   - `generated`: The files output from graphql-codegen
   - `lintstagedrc`: The settings for applying [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged) in each JS/TS file
-  - `tailwind-config-base`: The base config for Tailwind CSS
+  - `tailwind-preset`: The base preset for Tailwind CSS (inc. postcss.config.cjs)
   - `tsconfig`: The base `tsconfig.json`
   - `types`: Various types
   - `ui`: Common components

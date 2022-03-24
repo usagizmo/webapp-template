@@ -1,9 +1,13 @@
 {
-  "name": "tailwind-config-base",
+  "name": "tailwind-preset",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "main": "./index.cjs",
+  "files": [
+    "index.cjs",
+    "postcss.config"
+  ],
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",
     "lint:fix": "eslint . --ext .js,.cjs --fix",
