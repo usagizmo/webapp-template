@@ -6,7 +6,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**"]
+      "outputs": [".next/**", "dist/**", "src/lib/$path.ts"]
     },
     "lint": {},
     "lint:fix": {}

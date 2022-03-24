@@ -1,15 +1,16 @@
 {
-  "name": "tailwind-config-base",
+  "name": "utils",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "main": "./index.cjs",
+  "main": "./index.ts",
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",
     "lint:fix": "eslint . --ext .js,.cjs --fix"
   },
   "devDependencies": {
     "eslint-preset": "workspace:*",
-    "lintstagedrc": "workspace:*"
+    "lintstagedrc": "workspace:*",
+    "tslib": "2.3.1"
   }
 }

@@ -1,7 +1,7 @@
 import {
   ArticlesQuery,
   UpdateArticleMutationVariables,
-} from '@/generated/graphql'
+} from 'generated/dist/graphql'
 
 export const createUpdateArticleMutationVariables = (
   article: ArticlesQuery['articles'][0]

@@ -1,0 +1,29 @@
+{
+  "name": "types",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.d.ts",
+  "files": [
+    "data-types.d.ts",
+    "extend-types.d.ts",
+    "index.d.ts",
+    "types.d.ts"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .js,.cjs",
+    "lint:fix": "eslint . --ext .js,.cjs --fix"
+  },
+  "devDependencies": {
+    "eslint-preset": "workspace:*",
+    "generated": "workspace:*",
+    "lintstagedrc": "workspace:*",
+    "next-auth": "4.3.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
+}

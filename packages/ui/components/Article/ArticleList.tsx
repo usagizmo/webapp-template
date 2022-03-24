@@ -1,16 +1,16 @@
 import { VFC } from 'react'
 import { ArticlesQuery } from 'generated/dist/graphql'
-import { EditArticleItem } from './EditArticleItem'
+import { ArticleItem } from './ArticleItem'
 
 type Props = {
   articles: ArticlesQuery['articles']
 }
 
-export const EditArticleList: VFC<Props> = ({ articles }) => {
+export const ArticleList: VFC<Props> = ({ articles }) => {
   return (
     <div className="space-y-6">
       {articles.map((article) => (
-        <EditArticleItem key={article.id} article={article} />
+        <ArticleItem key={article.id} article={article} />
       ))}
     </div>
   )

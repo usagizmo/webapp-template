@@ -7,4 +7,7 @@ generated
 *.log
 
 # Custom
+.turbo
 .vercel
+/apps/web/src/lib/$path.ts
+/packages/generated/dist
