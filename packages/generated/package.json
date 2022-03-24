@@ -7,10 +7,8 @@
     "dist"
   ],
   "scripts": {
-    "build:graphql": "graphql-codegen --require dotenv/config --config graphql/codegen.yml",
-    "build": "run-p build:*",
-    "dev:graphql": "graphql-codegen --require dotenv/config --config graphql/codegen.yml --watch",
-    "dev": "run-p dev:*"
+    "build": "graphql-codegen --require dotenv/config --config graphql/codegen.yml",
+    "dev": "graphql-codegen --require dotenv/config --config graphql/codegen.yml --watch"
   },
   "devDependencies": {
     "@graphql-codegen/add": "3.1.1",
