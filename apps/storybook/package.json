@@ -5,8 +5,8 @@
   "scripts": {
     "build": "build-storybook",
     "dev": "start-storybook -p 6006",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint .storybook --ext .js,.cjs",
+    "lint:fix": "eslint .storybook --ext .js,.cjs --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf storybook-static"
   },
   "devDependencies": {
@@ -19,8 +19,9 @@
     "@storybook/manager-webpack5": "6.4.19",
     "@storybook/react": "6.4.19",
     "babel-loader": "8.2.4",
-    "react-dom": "17.0.2",
+    "eslint-preset": "workspace:*",
     "react": "17.0.2",
+    "react-dom": "17.0.2",
     "tailwind-preset": "workspace:*",
     "typescript": "4.6.2",
     "webpack": "5.70.0"

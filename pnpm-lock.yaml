@@ -31,6 +31,7 @@ importers:
       '@storybook/manager-webpack5': 6.4.19
       '@storybook/react': 6.4.19
       babel-loader: 8.2.4
+      eslint-preset: workspace:*
       react: 17.0.2
       react-dom: 17.0.2
       tailwind-preset: workspace:*
@@ -46,6 +47,7 @@ importers:
       '@storybook/manager-webpack5': 6.4.19_aeaba09eb00f7665e5acdd7c57ed6790
       '@storybook/react': 6.4.19_6dd895dff89c89bc1d67fac1082598b5
       babel-loader: 8.2.4_fa907c5a4f16ccc493e21649ccc59574
+      eslint-preset: link:../../packages/eslint-preset
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       tailwind-preset: link:../../packages/tailwind-preset
