@@ -20,10 +20,16 @@ Monorepo template for creating a web service with Next.js.
     [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))  
     [Storybook](https://storybook.js.org/)
 - **Packages**
-  - `config`: for [ESLint](https://eslint.org/)  
-    eslint-config-next / eslint-config-prettier / eslint-plugin-import
-  - `lintstagedrc`: [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged)
-  - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+  - `constatns`: As the name implies
+  - `eslint-preset`: The base preset for [ESLint](https://eslint.org/)  
+    Include eslint-config-next / eslint-config-prettier / eslint-plugin-import
+  - `generated`: The files output from graphql-codegen
+  - `lintstagedrc`: The settings for applying [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged) in each JS/TS file
+  - `tailwind-config-base`: The base config for Tailwind CSS
+  - `tsconfig`: The base `tsconfig.json`
+  - `types`: Various types
+  - `ui`: Common components
+  - `utils`: Simple utilities
 - **Services**
   - [`firebase`](./services/firebase/README.md):  
     [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/) settings.
