@@ -31,7 +31,7 @@
     "zustand": "3.7.1"
   },
   "devDependencies": {
-    "@firebase/app-compat": "0.1.20",
+    "@firebase/app-compat": "0.1.21",
     "@firebase/app-types": "0.7.0",
     "@types/node": "17.0.21",
     "@types/react": "17.0.43",
