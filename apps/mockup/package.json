@@ -19,7 +19,7 @@
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf public/script.js && rm -rf public/styles.css",
     "clean-image": "./commands/clean-image.sh",
-    "command:deploy": "./commands/deploy.sh"
+    "deploy": "./commands/deploy.sh"
   },
   "devDependencies": {
     "@jest/globals": "27.5.1",
