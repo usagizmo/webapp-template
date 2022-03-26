@@ -19,7 +19,7 @@ Monorepo template for creating a web service with Next.js.
     A starting point for building a static site.
   - [`storybook`](./apps/storybook/README.md): [[Demo](https://nextjs-template-storybook.usagizmo.com/)]  
     [Storybook](https://storybook.js.org/) for `apps/web` and `packages/ui`.
-  - [`web`](./apps/web/README.md): [[Demo](https://nextjs-template.usagizmo.com/)]
+  - [`web`](./apps/web/README.md): [[Demo](https://nextjs-template.usagizmo.com/)]  
     A starting point for building a Next.js application.  
     [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))
     [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Zustand](https://github.com/pmndrs/zustand)  
@@ -73,10 +73,13 @@ If you need to prepare the GitHub / Vercel environment, you will need to set the
 ref: https://vercel.com/docs/concepts/git/monorepos#setup-turborepo
 
 Make the following settings in Vercel's `Project Settings`.
-※Change the 2 <mockup/storybook/web> parts below
+※Change the <mockup/storybook/web> parts below
 
 - `General` > `Build` & `Development Settings`
   - `BUILD COMMAND`: `cd ../.. && pnpm exec turbo run build --scope=<mockup/storybook/web> --include-dependencies --no-deps`
+  - `OUTPUT DIRECTORY`:
+    - for `mockup`: `public`
+    - for `storybook`: `storybook-static`
   - `INSTALL COMMAND`: `npm i pnpm -g && pnpm i`
 - `General` > `Root Directory`: `apps/<mockup/storybook/web>`
   - [x] Include source files outside of the Root Directory in the Build Step.
@@ -107,5 +110,5 @@ Then change your GitHub settings as follows.
   - [x] Require status checks to pass before merging
     - Status checks that are required:
       - `Build (Node 16 on ubuntu-latest)`
-      - `Vercel – nextjs-template`
-      - `Vercel – nextjs-template-mockup`
+      - `Vercel – <project-name-on-vercel>`
+      - ...
