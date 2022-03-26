@@ -8,7 +8,7 @@ Monorepo template for creating a web service with Next.js.
 - [Prettier](https://prettier.io/) / [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import))
 - [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
 - [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
-- GitHub Actions (Formatting + Linting)
+- GitHub Actions (Linting + Formatting)
 - Execute `eslint --fix` and `prettier` when saving with VS Code
 
 ### Apps and Packages
