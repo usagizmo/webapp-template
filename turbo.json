@@ -3,12 +3,19 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [
-        ".next/**",
-        "dist/**",
-        "src/lib/$path.ts",
-        "storybook-static/**"
-      ]
+      "outputs": ["dist/**"]
+    },
+    "mockup#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["public/script.js", "public/styles.css"]
+    },
+    "storybook#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["storybook-static/**"]
+    },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "src/lib/$path.ts"]
     },
     "lint": {
       "dependsOn": ["^build"],
@@ -20,6 +27,11 @@
     },
     "dev": {
       "cache": false
+    },
+    "test": {},
+    "mockup#test": {
+      "dependsOn": ["mockup#build"],
+      "outputs": []
     },
     "clean": {
       "cache": false
