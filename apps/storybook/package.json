@@ -20,6 +20,7 @@
     "@storybook/react": "6.4.19",
     "babel-loader": "8.2.4",
     "eslint-preset": "workspace:*",
+    "lintstagedrc": "workspace:*",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tailwind-preset": "workspace:*",

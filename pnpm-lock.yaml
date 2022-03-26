@@ -66,6 +66,7 @@ importers:
       '@storybook/react': 6.4.19
       babel-loader: 8.2.4
       eslint-preset: workspace:*
+      lintstagedrc: workspace:*
       react: 17.0.2
       react-dom: 17.0.2
       tailwind-preset: workspace:*
@@ -82,6 +83,7 @@ importers:
       '@storybook/react': 6.4.19_6dd895dff89c89bc1d67fac1082598b5
       babel-loader: 8.2.4_fa907c5a4f16ccc493e21649ccc59574
       eslint-preset: link:../../packages/eslint-preset
+      lintstagedrc: link:../../packages/lintstagedrc
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       tailwind-preset: link:../../packages/tailwind-preset
@@ -10969,7 +10971,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.14.9_debug@4.3.2
+      follow-redirects: 1.14.9
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
