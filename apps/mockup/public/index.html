@@ -3,25 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Static Site Template</title>
-    <meta name="description" content="Static Site Template Description" />
-    <meta property="og:title" content="Static Site Template" />
+    <title>Next.js Template (mockup)</title>
+    <meta name="description" content="Next.js Template (mockup) Description" />
+    <meta property="og:title" content="Next.js Template (mockup)" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nextjs-template.usagizmo.com" />
     <meta
       property="og:image"
       content="https://nextjs-template.usagizmo.com/images/ogp.png"
     />
-    <meta property="og:site_name" content="Static Site Template" />
+    <meta property="og:site_name" content="Next.js Template (mockup)" />
     <meta
       property="og:description"
-      content="Static Site Template Description"
+      content="Next.js Template (mockup) Description"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Static Site Template" />
+    <meta name="twitter:title" content="Next.js Template (mockup)" />
     <meta
       name="twitter:description"
-      content="Static Site Template Description"
+      content="Next.js Template (mockup) Description"
     />
     <meta
       name="twitter:image"
@@ -60,7 +60,7 @@
       class="top-0 z-30 flex h-[80vh] flex-col items-center justify-center bg-white px-8 md:sticky md:h-auto md:flex-row md:py-4"
     >
       <h1 class="text-[28px] font-semibold leading-[1.25] tracking-[-0.02em]">
-        Static Site Template
+        Next.js Template <code>(mockup)</code>
       </h1>
       <p class="mt-2 md:ml-auto md:mt-0 md:px-4 md:pl-4">
         A starting point for building a static site.
@@ -138,7 +138,22 @@
                   >
                 </li>
                 <li>
-                  GitHub Actions (Formating + Linting + Testing (Validate
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.whitesourcesoftware.com/free-developer-tools/renovate/"
+                    >Renovate</a
+                  >
+                  (w/
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/apps/renovate-approve"
+                    >renovate-approve</a
+                  >)
+                </li>
+                <li>
+                  GitHub Actions (Linting + Formatting + Testing (Validate
                   <code>href</code> and <code>src</code> paths))
                 </li>
                 <li>
@@ -158,7 +173,7 @@
                 <div data-in="slide-in">
                   <ul>
                     <li>
-                      <strong>web</strong> - Static Site<br />
+                      <strong>mockup</strong><br />
                       <a
                         class="link"
                         target="_blank"
@@ -199,24 +214,12 @@
                 <div data-in="slide-in">
                   <ul>
                     <li>
-                      <strong>eslint-preset</strong><br />Base settings used by
-                      <code>.eslintrc.cjs</code> for each package
-                    </li>
-                    <li>
-                      <strong>lintstagedrc</strong><br />Base settings used by
-                      <code>.lintstagedrc.js</code> for each package
-                    </li>
-                    <li>
                       <strong>pathtest-utils</strong><br />Used in
                       <code>apps/web/test/path.test.js</code>
                     </li>
                     <li>
                       <strong>script-modules</strong><br />JS modules used in
                       <code>apps/web/src/script.js</code>
-                    </li>
-                    <li>
-                      <strong>tailwind-config-base</strong><br />Used in
-                      <code>apps/web/tailwind.config.cjs</code>
                     </li>
                   </ul>
                 </div>
@@ -230,17 +233,16 @@
           </div>
 
           <div class="mockup-code slide-in bg-gray-900">
-            <pre><code><span class="text-teal-300">pnpm</span> i</code></pre>
+            <pre><code><span class="text-teal-300">pnpm</span> build     <span class="text-gray-400"># Build `src/styles.css` and `src/script.js` and output to `public/*`</span></code></pre>
+            <pre><code><span class="text-teal-300">pnpm</span> dev       <span class="text-gray-400"># Watch build files and launch browser-sync server on port 8000</span></code></pre>
+            <pre><code><span class="text-teal-300">pnpm</span> lint      <span class="text-gray-400"># Linting</span></code></pre>
+            <pre><code><span class="text-teal-300">pnpm</span> list:fix  <span class="text-gray-400"># Format with `eslint --fix`</span></code></pre>
+            <pre><code><span class="text-teal-300">pnpm</span> test      <span class="text-gray-400"># Testing</span></code></pre>
+            <pre><code><span class="text-teal-300">pnpm</span> clean     <span class="text-gray-400"># Delete `node_modules` etc.</span></code></pre>
             <pre><code></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> build   <span class="text-gray-400"># Build `apps/web/src/[styles.css,script.js]` and output `apps/web/public/*`</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> dev     <span class="text-gray-400"># Watch and build `apps/web/src/[styles.css,script.js]`</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> lint    <span class="text-gray-400"># Linting</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> format  <span class="text-gray-400"># Format with `eslint --fix` and `prettier`</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> test    <span class="text-gray-400"># Testing</span></code></pre>
-            <pre><code></code></pre>
-            <pre><code><span class="text-gray-400"># apps/web</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> clean   <span class="text-gray-400"># Remove unused image files in `public/images/*`</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> deploy  <span class="text-gray-400"># When deploying to a VPS such as DigitalOcean using `rsync`</span></code></pre>
+            <pre><code># commands/*</code></pre>
+            <pre><code><span class="text-teal-300">pnpm</span> clean-image  <span class="text-gray-400"># Remove unused image files in `public/images/*`</span></code></pre>
+            <pre><code><span class="text-teal-300">pnpm</span> deploy       <span class="text-gray-400"># When deploying to a VPS such as DigitalOcean using `rsync`</span></code></pre>
           </div>
 
           <!-- Buttons -->
