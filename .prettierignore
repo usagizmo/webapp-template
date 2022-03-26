@@ -1,7 +1,5 @@
 .next
-out
-public
-generated
+dist
 
 *-lock.yaml
 *.log
