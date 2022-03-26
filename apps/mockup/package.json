@@ -18,7 +18,7 @@
     "lint:fix": "run-p lint:fix:*",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf public/script.js && rm -rf public/styles.css",
-    "command:clean-image": "./commands/clean-image.sh",
+    "clean-image": "./commands/clean-image.sh",
     "command:deploy": "./commands/deploy.sh"
   },
   "devDependencies": {
