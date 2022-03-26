@@ -1,4 +1,4 @@
-const base = require('eslint-preset/base.cjs')
+const base = require('eslint-preset/react.cjs')
 
 module.exports = {
   ...base,

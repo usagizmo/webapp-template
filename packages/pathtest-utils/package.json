@@ -1,0 +1,18 @@
+{
+  "name": "pathtest-utils",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./utils.js",
+  "scripts": {
+    "lint": "eslint . --ext .js,.cjs",
+    "lint:fix": "eslint . --ext .js,.cjs --fix",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "devDependencies": {
+    "@jest/globals": "27.5.1",
+    "eslint-preset": "workspace:*",
+    "jest": "27.5.1",
+    "lintstagedrc": "workspace:*"
+  }
+}

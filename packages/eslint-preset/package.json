@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "files": [
-    "base.cjs"
+    "next.cjs",
+    "node.cjs",
+    "react.cjs",
+    "web.cjs"
   ],
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",

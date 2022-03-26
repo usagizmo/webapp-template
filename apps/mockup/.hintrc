@@ -1,0 +1,11 @@
+{
+  "extends": ["web-recommended"],
+  "hints": {
+    "sri": [
+      "warning",
+      {
+        "baseline": "sha384"
+      }
+    ]
+  }
+}

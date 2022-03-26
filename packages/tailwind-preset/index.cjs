@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: [], // Override in each package
   theme: {
@@ -14,7 +16,22 @@ module.exports = {
         mono: 'Source Code Pro, Noto Sans CJK JP, Noto Sans JP, monospace',
         keycode: 'Lucida Grande',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: colors.gray['600'],
+              '&:hover': {
+                color: colors.black,
+              },
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  daisyui: {
+    themes: false,
+  },
 }
