@@ -13,8 +13,6 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next && rm -rf src/lib/\\$path.ts"
   },
   "dependencies": {
