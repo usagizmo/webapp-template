@@ -17,5 +17,5 @@ const Template: ComponentStory<typeof TextLink> = (args) => (
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = Template.bind({})
 Default.args = {
-  href: 'https://static-site-template.usagizmo.com/',
+  href: 'https://nextjs-template.usagizmo.com/',
 }
