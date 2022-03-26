@@ -1,0 +1,45 @@
+{
+  "name": "mockup",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:js": "rollup --config -w",
+    "dev:tailwind": "tailwindcss -c ./tailwind.config.cjs -i ./src/styles.css -o ./public/styles.css --watch",
+    "dev:server": "browser-sync ./public/ -w",
+    "dev": "run-p dev:*",
+    "build:js": "cross-env NODE_ENV=production rollup --config",
+    "build:tailwind": "cross-env NODE_ENV=production tailwindcss -c ./tailwind.config.cjs -i ./src/styles.css -o ./public/styles.css --minify",
+    "build": "run-p build:*",
+    "lint:html": "htmlhint \"public/**/*.html\"",
+    "lint:js": "eslint . --ext .js,.cjs",
+    "lint": "run-p lint:*",
+    "lint:fix:js": "eslint . --ext .js,.cjs --fix",
+    "lint:fix": "run-p lint:fix:*",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf public/script.js && rm -rf public/styles.css",
+    "command:clean-image": "./commands/clean-image.sh",
+    "command:deploy": "./commands/deploy.sh"
+  },
+  "devDependencies": {
+    "@jest/globals": "27.5.1",
+    "@rollup/plugin-node-resolve": "13.1.3",
+    "autoprefixer": "10.4.4",
+    "browser-sync": "2.27.9",
+    "eslint-preset": "workspace:*",
+    "five-server": "0.1.3",
+    "htmlhint": "1.1.2",
+    "jest": "27.5.1",
+    "lintstagedrc": "workspace:*",
+    "pathtest-utils": "workspace:*",
+    "postcss": "8.4.8",
+    "rollup": "2.70.1",
+    "script-modules": "workspace:*",
+    "tailwind-preset": "workspace:*",
+    "tailwindcss": "3.0.23"
+  },
+  "peerDependencies": {
+    "autoprefixer": "10.4.4",
+    "postcss": "8.4.8"
+  }
+}

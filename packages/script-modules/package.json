@@ -1,0 +1,15 @@
+{
+  "name": "script-modules",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js,.cjs",
+    "lint:fix": "eslint . --ext .js,.cjs --fix"
+  },
+  "devDependencies": {
+    "eslint-preset": "workspace:*",
+    "lintstagedrc": "workspace:*"
+  }
+}

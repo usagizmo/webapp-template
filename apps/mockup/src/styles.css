@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@layer components {
+  .container {
+    @apply lg:max-w-[960px];
+  }
+}
+
+@layer utilities {
+  @media screen and (min-width: 768px) {
+    .u-sp {
+      @apply !hidden;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .u-pc {
+      @apply !hidden;
+    }
+  }
+
+  .u-prevent-animation * {
+    @apply !animate-none !transition-none;
+  }
+}
+
+[data-in] {
+  @apply duration-[600ms];
+}
+[data-in='fade-in']:not(.is-in) {
+  @apply pointer-events-none opacity-0;
+}
+[data-in='slide-in']:not(.is-in) {
+  @apply pointer-events-none translate-y-5 opacity-0;
+}
