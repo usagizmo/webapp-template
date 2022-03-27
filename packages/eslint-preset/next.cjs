@@ -2,12 +2,7 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
-  extends: [
-    'next',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
-    'prettier',
-  ],
+  extends: ['next', 'prettier'],
   rules: {
     'react-hooks/exhaustive-deps': [
       'error',
