@@ -80,7 +80,6 @@ Make the following settings in Vercel's `Project Settings`.
   - `OUTPUT DIRECTORY`:
     - for `mockup`: `public`
     - for `storybook`: `storybook-static`
-  - `INSTALL COMMAND`: `npm i pnpm -g && pnpm i`
 - `General` > `Root Directory`: `apps/<mockup/storybook/web>`
   - [x] Include source files outside of the Root Directory in the Build Step.
 
