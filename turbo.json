@@ -15,7 +15,7 @@
     },
     "web#build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "src/lib/$path.ts"]
+      "outputs": ["out/**", ".next/**", "src/lib/$path.ts"]
     },
     "dev": {
       "cache": false
