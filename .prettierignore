@@ -1,5 +1,6 @@
-.next
-dist
+# next.js
+.next/
+out/
 
 *-lock.yaml
 *.log
