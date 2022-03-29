@@ -6,7 +6,7 @@
   "files": [
     "next.cjs",
     "node.cjs",
-    "react.cjs",
+    "typescript.cjs",
     "web.cjs"
   ],
   "scripts": {
