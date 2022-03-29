@@ -3,7 +3,7 @@ import { TextLink } from './TextLink'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Components/TextLink',
+  title: 'packages/ui/TextLink',
   component: TextLink,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof TextLink>

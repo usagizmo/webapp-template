@@ -3,7 +3,7 @@ import { InlineInput } from './InlineInput'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Components/InlineInput',
+  title: 'packages/ui/InlineInput',
   component: InlineInput,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof InlineInput>
