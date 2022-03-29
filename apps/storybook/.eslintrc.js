@@ -1,4 +1,4 @@
-const base = require('eslint-preset/react.cjs')
+const base = require('eslint-preset/typescript.cjs')
 
 module.exports = {
   ...base,

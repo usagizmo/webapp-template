@@ -1,1 +1,1 @@
-module.exports = require('eslint-preset/react.cjs')
+module.exports = require('eslint-preset/typescript.cjs')
