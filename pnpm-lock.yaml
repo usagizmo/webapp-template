@@ -112,7 +112,7 @@ importers:
       postcss: 8.4.12
       react: 17.0.2
       react-dom: 17.0.2
-      react-hook-form: 7.28.1
+      react-hook-form: 7.29.0
       react-query: 3.34.19
       tailwind-preset: workspace:*
       tailwindcss: 3.0.23
@@ -133,7 +133,7 @@ importers:
       phosphor-react: 1.4.1_react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-hook-form: 7.28.1_react@17.0.2
+      react-hook-form: 7.29.0_react@17.0.2
       react-query: 3.34.19_react-dom@17.0.2+react@17.0.2
       ulid: 2.3.0
       zustand: 3.7.1_react@17.0.2
@@ -302,7 +302,7 @@ importers:
       phosphor-react: 1.4.1
       react: 17.0.2
       react-dom: 17.0.2
-      react-hook-form: 7.28.1
+      react-hook-form: 7.29.0
       tsconfig: workspace:*
       types: workspace:*
       typescript: 4.6.3
@@ -317,7 +317,7 @@ importers:
       phosphor-react: 1.4.1_react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-hook-form: 7.28.1_react@17.0.2
+      react-hook-form: 7.29.0_react@17.0.2
       tsconfig: link:../tsconfig
       types: link:../types
       typescript: 4.6.3
@@ -15122,11 +15122,11 @@ packages:
       shallowequal: 1.1.0
     dev: true
 
-  /react-hook-form/7.28.1_react@17.0.2:
-    resolution: {integrity: sha512-mgwxvXuvt3FMY/mdnWbPc++Zf1U5xYzkhOaL05mtFMLvXc9MvUhMUlKtUVuO12sOrgT3nPXBgVFawtiJ4ONrgg==}
+  /react-hook-form/7.29.0_react@17.0.2:
+    resolution: {integrity: sha512-NcJqWRF6el5HMW30fqZRt27s+lorvlCCDbTpAyHoodQeYWXgQCvZJJQLC1kRMKdrJknVH0NIg3At6TUzlZJFOQ==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
-      react: ^16.8.0 || ^17
+      react: ^16.8.0 || ^17 || ^18
     dependencies:
       react: 17.0.2
 
