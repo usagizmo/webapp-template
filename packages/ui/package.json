@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.17.8",
-    "@storybook/react": "6.4.19",
+    "@storybook/react": "6.4.20",
     "eslint-preset": "workspace:*",
     "generated": "workspace:*",
     "lintstagedrc": "workspace:*",
