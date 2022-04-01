@@ -1,19 +1,18 @@
-import { ReactNode, VFC } from 'react'
+import { FC } from 'react'
 import { CONST } from 'constants/const'
 import Head from 'next/head'
 import { PageLoading } from 'ui'
 import { useStore } from '@/store/useStore'
 
 type Props = {
-  children: ReactNode
   pageTitle?: string
   description?: string
 }
 
-export const Layout: VFC<Props> = ({
-  children,
+export const Layout: FC<Props> = ({
   pageTitle,
   description = 'Next.js Template Description',
+  children,
 }) => {
   const title = `${pageTitle ? pageTitle + ' | ' : ''}` + CONST.SITE_NAME
   const isPageLoading = useStore((state) => state.isPageLoading)
