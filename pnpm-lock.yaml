@@ -258,7 +258,7 @@ importers:
     specifiers:
       '@tailwindcss/typography': 0.5.2
       autoprefixer: 10.4.4
-      daisyui: 2.13.4
+      daisyui: 2.13.5
       eslint-preset: workspace:*
       lintstagedrc: workspace:*
       postcss: 8.4.12
@@ -266,7 +266,7 @@ importers:
     devDependencies:
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
       autoprefixer: 10.4.4_postcss@8.4.12
-      daisyui: 2.13.4_081650f2f4dba35b17265937ab2a2ec0
+      daisyui: 2.13.5_081650f2f4dba35b17265937ab2a2ec0
       eslint-preset: link:../eslint-preset
       lintstagedrc: link:../lintstagedrc
       postcss: 8.4.12
@@ -8377,8 +8377,8 @@ packages:
     resolution: {integrity: sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=}
     dev: true
 
-  /daisyui/2.13.4_081650f2f4dba35b17265937ab2a2ec0:
-    resolution: {integrity: sha512-seLNXMqOV0C2VigLi2OSmVm7LOr+ZcbnHW5f1byjWNhCc0DU8eX/Xc+aqPOynRnofAZ8igciKq6qmAYunewPAQ==}
+  /daisyui/2.13.5_081650f2f4dba35b17265937ab2a2ec0:
+    resolution: {integrity: sha512-H5hPjWqwW52Lv5mU3b1Ii0KcWHr605q9kURkT6tQOArVcjfH+LcXg3MswgbqQUY7cbcpcALLt6OUIx5vbqszqg==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
