@@ -27,7 +27,7 @@ importers:
       autoprefixer: 10.4.4
       browser-sync: 2.27.9
       eslint-preset: workspace:*
-      five-server: 0.1.3
+      five-server: 0.1.4
       htmlhint: 1.1.3
       jest: 27.5.1
       lintstagedrc: workspace:*
@@ -43,7 +43,7 @@ importers:
       autoprefixer: 10.4.4_postcss@8.4.8
       browser-sync: 2.27.9
       eslint-preset: link:../../packages/eslint-preset
-      five-server: 0.1.3_jest@27.5.1
+      five-server: 0.1.4_jest@27.5.1
       htmlhint: 1.1.3
       jest: 27.5.1
       lintstagedrc: link:../../packages/lintstagedrc
@@ -9985,8 +9985,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /five-server/0.1.3_jest@27.5.1:
-    resolution: {integrity: sha512-iN72KBWhz/I+RRPPHNHXez/1FHXEFNGQDW7Qu1NGlFIoKA929+1waXAfrX1xOCpSeSgZ0i3QP0aFLynwgB742A==}
+  /five-server/0.1.4_jest@27.5.1:
+    resolution: {integrity: sha512-cH4jYIjf8vcOZGm0zcbVN5ah06bWUEmSMFrDzG8yHbiFWVfx/wmo/+8jqVHHs+Fwff8IhIJXy4CKjJ4whub4eQ==}
     engines: {node: '>=12'}
     hasBin: true
     dependencies:
@@ -11054,7 +11054,7 @@ packages:
       depd: 1.1.2
       inherits: 2.0.3
       setprototypeof: 1.1.0
-      statuses: 1.4.0
+      statuses: 1.5.0
     dev: true
 
   /http-errors/1.8.1:
