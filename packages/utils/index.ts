@@ -1,12 +1,3 @@
-export const isLastIndex = (length: number, index: number): boolean => {
-  return index === length - 1
-}
-
-export const clone = <T>(obj: T): T => JSON.parse(JSON.stringify(obj))
-
-export const wait = async (ms: number): Promise<void> => {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
-
-export const classNames = (...classes: string[]): string =>
-  classes.filter(Boolean).join(' ')
+export * from './src/classNames/classNames'
+export * from './src/clone/clone'
+export * from './src/wait/wait'

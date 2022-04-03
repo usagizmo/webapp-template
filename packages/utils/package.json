@@ -6,11 +6,20 @@
   "main": "./index.ts",
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",
-    "lint:fix": "eslint . --ext .js,.cjs --fix"
+    "lint:fix": "eslint . --ext .js,.cjs --fix",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "27.4.1",
     "eslint-preset": "workspace:*",
+    "jest": "27.5.1",
     "lintstagedrc": "workspace:*",
-    "tslib": "2.3.1"
+    "ts-jest": "27.1.4",
+    "tsconfig": "workspace:*",
+    "tslib": "2.3.1",
+    "typescript": "4.6.3"
+  },
+  "peerDependencies": {
+    "typescript": "4.6.3"
   }
 }
