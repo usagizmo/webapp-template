@@ -107,7 +107,7 @@ importers:
       next: 12.1.4
       next-auth: 4.3.1
       next-transpile-modules: 9.0.0
-      pathpida: 0.18.0
+      pathpida: 0.18.1
       phosphor-react: 1.4.1
       postcss: 8.4.12
       react: 18.0.0
@@ -149,7 +149,7 @@ importers:
       graphql: 16.3.0
       lintstagedrc: link:../../packages/lintstagedrc
       next-transpile-modules: 9.0.0
-      pathpida: 0.18.0
+      pathpida: 0.18.1
       postcss: 8.4.12
       tailwind-preset: link:../../packages/tailwind-preset
       tailwindcss: 3.0.23_autoprefixer@10.4.4
@@ -14406,8 +14406,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /pathpida/0.18.0:
-    resolution: {integrity: sha512-ZSLERfsrB7R/aVFmzEOlQ1c7P+cPTIjqQIYgwXprTonnBCL52ZG4KcuDBWvXIWWOJSJwiR55sIXY0/7CHAhQ7w==}
+  /pathpida/0.18.1:
+    resolution: {integrity: sha512-rDWOi9lcbc2tV+2LSfQW7p5i6Tu0GSfsSXjYMP4qcXnnmuTYgOp7zE4ei2+P+wg9ntpwKAwHLpWZNNseJbKrSQ==}
     hasBin: true
     dependencies:
       chokidar: 3.5.3
