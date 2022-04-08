@@ -10,7 +10,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf storybook-static"
   },
   "devDependencies": {
-    "@babel/core": "7.17.8",
+    "@babel/core": "7.17.9",
     "@storybook/addon-actions": "6.4.20",
     "@storybook/addon-essentials": "6.4.20",
     "@storybook/addon-links": "6.4.20",
@@ -28,7 +28,7 @@
     "webpack": "5.71.0"
   },
   "peerDependencies": {
-    "@babel/core": "7.17.8",
+    "@babel/core": "7.17.9",
     "babel-loader": "8.2.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
