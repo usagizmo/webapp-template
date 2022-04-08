@@ -124,7 +124,7 @@ importers:
       ui: workspace:*
       ulid: 2.3.0
       utils: workspace:*
-      zustand: 3.7.1
+      zustand: 3.7.2
     dependencies:
       firebase: 9.6.10
       firebase-admin: 10.0.2_b2c59dabb74e592c496f4266c968bb15
@@ -136,7 +136,7 @@ importers:
       react-hook-form: 7.29.0_react@18.0.0
       react-query: 3.34.19_react-dom@18.0.0+react@18.0.0
       ulid: 2.3.0
-      zustand: 3.7.1_react@18.0.0
+      zustand: 3.7.2_react@18.0.0
     devDependencies:
       '@firebase/app-compat': 0.1.21
       '@firebase/app-types': 0.7.0
@@ -18415,8 +18415,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  /zustand/3.7.1_react@18.0.0:
-    resolution: {integrity: sha512-wHBCZlKj+bg03/hP+Tzv24YhnqqP8MCeN9ECPDXoF01062SIbnfl3j9O0znkDw1lNTY0a8WN3F///a0UhhaEqg==}
+  /zustand/3.7.2_react@18.0.0:
+    resolution: {integrity: sha512-PIJDIZKtokhof+9+60cpockVOq05sJzHCriyvaLBmEJixseQ1a5Kdov6fWZfWOu5SK9c+FhH1jU0tntLxRJYMA==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       react: '>=16.8'
