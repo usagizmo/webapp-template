@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { CONST } from 'constants/const'
 import Head from 'next/head'
 import { PageLoading } from 'ui'
+import { staticPath } from '@/lib/$path'
 import { useStore } from '@/store/useStore'
 
 type Props = {
@@ -40,11 +41,11 @@ export const Layout: FC<Props> = ({
           name="twitter:image"
           content="https://nextjs-template.io/images/ogp.jpg"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={staticPath.favicon_ico} />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/apple-touch-icon.png"
+          href={staticPath.apple_touch_icon_png}
         />
         {/* <link rel="canonical" href="https://nextjs-template.io/" /> */}
       </Head>
