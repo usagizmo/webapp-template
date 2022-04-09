@@ -4,6 +4,7 @@ import { classNames } from 'utils'
 type Props = {
   type?: 'submit' | 'button' | 'reset'
   primary?: boolean
+  black?: boolean
   icon?: boolean
   disabled?: boolean
   onClick?: MouseEventHandler<HTMLButtonElement>
@@ -12,19 +13,28 @@ type Props = {
 export const Button: FC<Props> = ({
   type = 'button',
   primary,
+  black,
   icon,
   disabled,
   onClick,
   children,
 }) => {
+  const isDefaultColor = !primary && !black
+
   return (
     <button
       type={type}
       className={classNames(
-        'disabled:opacity-50, inline-flex items-center justify-center rounded-[20px] border border-transparent py-2 px-5 text-sm font-medium leading-[22px] shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none',
+        'inline-flex items-center justify-center rounded-full px-5 py-2.5 text-center text-sm font-medium focus:outline-none focus:ring-4 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',
         primary
-          ? 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500'
-          : 'bg-gray-100 hover:bg-gray-200 focus:ring-gray-300',
+          ? 'bg-red-700 text-white hover:bg-red-800 focus:ring-red-300'
+          : '',
+        black
+          ? 'bg-gray-800 text-white hover:bg-gray-900 focus:ring-gray-300'
+          : '',
+        isDefaultColor
+          ? 'bg-gray-100 hover:bg-gray-200 focus:ring-gray-300'
+          : '',
         icon ? 'h-6 w-6 !p-0' : ''
       )}
       onClick={onClick}

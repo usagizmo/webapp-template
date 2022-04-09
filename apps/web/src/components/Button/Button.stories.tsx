@@ -29,6 +29,11 @@ Primary.args = {
   primary: true,
 }
 
+export const Black = Template.bind({})
+Black.args = {
+  black: true,
+}
+
 export const Icon = TemplateIcon.bind({})
 Icon.args = {
   icon: true,

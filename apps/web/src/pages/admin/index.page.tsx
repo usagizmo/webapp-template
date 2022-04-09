@@ -24,7 +24,7 @@ const AdminPage: VFC<Props> = () => {
   const { signOut, session, queryHandle } = useAdminPage()
 
   return (
-    <main className="container max-w-[480px]">
+    <main className="container max-w-lg">
       {queryHandle ??
         (session ? (
           <div className="text-center">

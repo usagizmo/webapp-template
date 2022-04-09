@@ -36,7 +36,7 @@ const useHomePage = () => {
 const HomePage: VFC<Props> = () => {
   const { articlesQuery, articlesQueryHandle } = useHomePage()
   return (
-    <main className="container max-w-[480px]">
+    <main className="container max-w-lg">
       {articlesQueryHandle ?? (
         <ArticleList articles={articlesQuery.data?.articles ?? []} />
       )}

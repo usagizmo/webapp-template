@@ -1,8 +1,8 @@
 import { VFC } from 'react'
 import { CONST } from 'constants/const'
 import { useSession } from 'next-auth/react'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { TextLink } from '@/components/TextLink/TextLink'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
 import { pagesPath } from '@/lib/$path'
 
@@ -42,25 +42,29 @@ export const LayoutHeader: VFC<Props> = () => {
   const filteredLinks = links.filter((link) => !link.auth || session)
 
   return (
-    <header className="container">
-      <h1 className="flex h-20 items-center justify-center text-[24px] font-bold">
-        {CONST.SITE_NAME}
-      </h1>
+    <header className="container max-w-lg">
+      <div className="mb-10 flex flex-col items-center  border-b border-gray-200 pb-8">
+        <h1 className="inline-block py-6 text-3xl font-extrabold tracking-tight text-gray-900">
+          {CONST.SITE_NAME}
+        </h1>
 
-      <ul className="flex justify-center">
-        {filteredLinks.map(({ href, title }) => (
-          <li
-            key={title}
-            className="relative before:px-2 before:content-['/'] first:before:hidden"
-          >
-            {router.pathname === href.pathname ? (
-              <span className="font-semibold">{title}</span>
-            ) : (
-              <TextLink href={href}>{title}</TextLink>
-            )}
-          </li>
-        ))}
-      </ul>
+        <ul className="flex">
+          {filteredLinks.map(({ href, title }) => (
+            <li
+              key={title}
+              className="relative flex items-center before:px-2 before:content-['/'] first:before:hidden"
+            >
+              {router.pathname === href.pathname ? (
+                <span className="font-semibold">{title}</span>
+              ) : (
+                <Link href={href}>
+                  <a className="c-hover-underline">{title}</a>
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   )
 }

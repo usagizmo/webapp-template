@@ -62,7 +62,7 @@ export const Layout: FC<Props> = ({ children }) => {
       <div className="flex h-full flex-col">
         <div className="flex-1">
           <LayoutHeader />
-          <div className="relative mt-6">
+          <div className="relative">
             <LayoutRouteTransition>{children}</LayoutRouteTransition>
           </div>
         </div>

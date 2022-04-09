@@ -49,7 +49,7 @@ const EditPage: VFC<Props> = () => {
   const { articlesQuery, articlesQueryHandle } = useEditPage()
 
   return (
-    <main className="container max-w-[480px]">
+    <main className="container max-w-lg">
       <CreateArticleItem />
       <div className="mt-6">
         {articlesQueryHandle ?? (
