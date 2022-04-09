@@ -19,9 +19,10 @@ module.exports = {
         mono: 'Source Code Pro, Noto Sans CJK JP, Noto Sans JP, monospace',
         keycode: 'Lucida Grande',
       },
-      typography: {
+      typography: ({ theme }) => ({
         DEFAULT: {
           css: {
+            '--tw-prose-bullets': theme('colors.gray[700]'),
             a: {
               color: colors.gray['600'],
               '&:hover': {
@@ -30,7 +31,7 @@ module.exports = {
             },
           },
         },
-      },
+      }),
     },
   },
   plugins: [require('@tailwindcss/typography')],
