@@ -1,22 +1,32 @@
 import { FC } from 'react'
 import { CONST } from 'constants/const'
+import { gsap } from 'gsap'
+import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Head from 'next/head'
-import { PageLoading } from 'ui'
+import { useRouter } from 'next/router'
+import { useSmoothScroll } from '@/hooks/useSmoothScroll/useSmoothScroll'
 import { staticPath } from '@/lib/$path'
-import { useStore } from '@/store/useStore'
+import { LayoutFooter } from './LayoutFooter'
+import { LayoutGoogleAnalytics } from './LayoutGoogleAnalytics/LayoutGoogleAnalytics'
+import { LayoutHeader } from './LayoutHeader'
+import { LayoutRouteTransition } from './LayoutRouteTransition/LayoutRouteTransition'
 
-type Props = {
-  pageTitle?: string
-  description?: string
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
+
+type Props = {}
+
+const useLayout = () => {
+  const title = CONST.SITE_NAME
+  const description = 'Next.js Template Description'
+
+  useSmoothScroll()
+
+  return { title, description }
 }
 
-export const Layout: FC<Props> = ({
-  pageTitle,
-  description = 'Next.js Template Description',
-  children,
-}) => {
-  const title = `${pageTitle ? pageTitle + ' | ' : ''}` + CONST.SITE_NAME
-  const isPageLoading = useStore((state) => state.isPageLoading)
+export const Layout: FC<Props> = ({ children }) => {
+  const { title, description } = useLayout()
 
   return (
     <>
@@ -25,7 +35,7 @@ export const Layout: FC<Props> = ({
         <meta name="viewport" content="width=device-width" />
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta property="og:title" content={pageTitle} />
+        <meta property="og:title" content={title} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://nextjs-template.io/" />
         <meta
@@ -49,8 +59,16 @@ export const Layout: FC<Props> = ({
         />
         {/* <link rel="canonical" href="https://nextjs-template.io/" /> */}
       </Head>
-      {children}
-      {isPageLoading && <PageLoading />}
+      <LayoutGoogleAnalytics />
+      <div className="flex h-full flex-col">
+        <div className="flex-1">
+          <LayoutHeader />
+          <div className="relative mt-6">
+            <LayoutRouteTransition>{children}</LayoutRouteTransition>
+          </div>
+        </div>
+        <LayoutFooter />
+      </div>
     </>
   )
 }

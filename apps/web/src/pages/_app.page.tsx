@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app'
+import { Layout } from '@/components/Layout/Layout'
 import { Providers } from '@/components/Providers'
 
 import '@/styles/globals.css'
@@ -9,7 +10,9 @@ export default function MyApp({
 }: AppProps) {
   return (
     <Providers session={session} dehydratedState={dehydratedState}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Providers>
   )
 }

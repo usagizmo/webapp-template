@@ -15,6 +15,12 @@
   }
 }
 
+@layer components {
+  .route-transition.is-entering {
+    @apply absolute inset-x-0 top-0;
+  }
+}
+
 @layer utilities {
   @media screen and (min-width: 768px) {
     .u-sp {
