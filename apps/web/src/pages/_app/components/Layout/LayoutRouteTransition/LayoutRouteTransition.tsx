@@ -2,9 +2,9 @@ import { FC, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { SwitchTransition, Transition } from 'react-transition-group'
 import { classNames } from 'utils'
-import { usePageTransition } from '@/components/Layout/LayoutRouteTransition/usePageTransition/usePageTransition'
 import { usePrefetchImages } from '@/hooks/usePrefetchImages'
 import { useRouteChangeComplete } from '@/hooks/useRouteChangeComplete'
+import { usePageTransition } from './usePageTransition/usePageTransition'
 
 type Props = {}
 
