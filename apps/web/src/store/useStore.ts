@@ -1,11 +1,14 @@
 import create, { StateCreator } from 'zustand'
-import { createLocalSlice, LocalSlice } from './slices/createLocalSlice'
+import {
+  createPageLoadingSlice,
+  PageLoadingSlice,
+} from './slices/createPageLoadingSlice'
 
-export type State = LocalSlice
+export type State = PageLoadingSlice // & OtherSlices
 
 export const store: StateCreator<State> = (set) => {
   return {
-    ...createLocalSlice(set),
+    ...createPageLoadingSlice(set),
   }
 }
 

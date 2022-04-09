@@ -28,7 +28,7 @@ const useRouteTransition = () => {
   }
 }
 
-export const LayoutRouteTransition: FC<Props> = ({ children }) => {
+export const RouteTransition: FC<Props> = ({ children }) => {
   const { router, ref, addEndListener } = useRouteTransition()
 
   return (

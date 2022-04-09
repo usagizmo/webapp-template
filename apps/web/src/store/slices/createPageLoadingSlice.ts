@@ -1,13 +1,15 @@
 import { SetState } from 'zustand'
 import { State } from '../useStore'
 
-export type LocalSlice = {
+export type PageLoadingSlice = {
   isPageLoading: boolean
   startPageLoading: () => void
   endPageLoading: () => void
 }
 
-export const createLocalSlice = (set: SetState<State>): LocalSlice => ({
+export const createPageLoadingSlice = (
+  set: SetState<State>
+): PageLoadingSlice => ({
   isPageLoading: false,
   startPageLoading: () => {
     set({ isPageLoading: true })
