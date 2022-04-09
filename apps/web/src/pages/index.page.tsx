@@ -2,7 +2,7 @@ import { VFC } from 'react'
 import { useArticlesQuery } from 'generated/dist/graphql'
 import { InferGetStaticPropsType } from 'next'
 import { QueryClient, dehydrate } from 'react-query'
-import { ArticleList } from 'ui'
+import { ArticleList } from '@/components/Article/ArticleList'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>

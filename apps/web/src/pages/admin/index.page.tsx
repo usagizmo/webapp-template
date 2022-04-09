@@ -1,7 +1,7 @@
 import { VFC } from 'react'
 import { useSession } from 'next-auth/react'
 import { SignOut } from 'phosphor-react'
-import { Button } from 'ui'
+import { Button } from '@/components/Button/Button'
 import { useAuth } from '@/hooks/useAuth'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
 import { LoginFields } from './components/LoginFields'

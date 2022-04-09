@@ -2,7 +2,8 @@ import { VFC } from 'react'
 import { CONST } from 'constants/const'
 import { ERROR } from 'constants/error'
 import { useForm } from 'react-hook-form'
-import { Button, Input } from 'ui'
+import { Button } from '@/components/Button/Button'
+import { Input } from '@/components/Input/Input'
 import { useAuth } from '@/hooks/useAuth'
 
 type Inputs = {

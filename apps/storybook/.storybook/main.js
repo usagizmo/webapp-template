@@ -5,8 +5,6 @@ module.exports = {
   stories: [
     '../../web/src/**/*.stories.mdx',
     '../../web/src/**/*.stories.@(js|jsx|ts|tsx)',
-    '../../../packages/ui/components/**/*.stories.mdx',
-    '../../../packages/ui/components/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-links',
@@ -29,7 +27,6 @@ module.exports = {
     config.resolve.modules = [
       ...(config.resolve.modules || []),
       path.resolve(__dirname, '../../web/src'),
-      path.resolve(__dirname, '../../../packages/ui/components'),
     ]
     config.resolve.plugins = [
       ...(config.resolve.plugins || []),
