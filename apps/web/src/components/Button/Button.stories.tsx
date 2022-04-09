@@ -14,11 +14,6 @@ export default meta
 const Template: ComponentStory<typeof Button> = (args) => (
   <Button {...args}>Button</Button>
 )
-const TemplateIcon: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>
-    <Trash width={16} height={16} />
-  </Button>
-)
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = Template.bind({})
@@ -34,9 +29,10 @@ Black.args = {
   black: true,
 }
 
-export const Icon = TemplateIcon.bind({})
+export const Icon = Template.bind({})
 Icon.args = {
   icon: true,
+  children: <Trash width={16} height={16} />,
 }
 
 export const Disabled = Template.bind({})
