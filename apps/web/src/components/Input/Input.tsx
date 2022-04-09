@@ -22,22 +22,20 @@ export const Input: VFC<Props> = ({
     <div>
       <label>
         {label && (
-          <span className="mb-1 block text-sm font-medium text-gray-700">
+          <span className="mb-2 block text-sm font-medium text-gray-900">
             {label}
           </span>
         )}
         <input
           type={type}
-          className="block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm hover:border-gray-400 focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 disabled:pointer-events-none disabled:opacity-50 sm:text-sm"
+          className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
           placeholder={placeholder}
           disabled={disabled}
           {...registerReturn}
         />
       </label>
       {fieldError && (
-        <p className="mt-1 text-[12px] leading-[16px] text-red-500">
-          {fieldError.message}
-        </p>
+        <p className="mt-2 text-sm text-red-600">{fieldError.message}</p>
       )}
     </div>
   )

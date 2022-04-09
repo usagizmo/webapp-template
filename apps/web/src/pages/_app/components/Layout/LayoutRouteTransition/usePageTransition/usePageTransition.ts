@@ -18,10 +18,10 @@ export const usePageTransition = () => {
       }
 
       const prevNode = document.querySelector(
-        '.route-transition:nth-child(1)'
+        '.c-route-transition:nth-child(1)'
       ) as HTMLElement
       const nextNode = document.querySelector(
-        '.route-transition:nth-child(2)'
+        '.c-route-transition:nth-child(2)'
       ) as HTMLElement
 
       const tl = gsap.timeline({

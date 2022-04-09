@@ -35,7 +35,7 @@ Monorepo template for creating a web service with Next.js.
   - `pathtest-utils`: The utilities used in `apps/mockup` for URL checking
   - `script-modules`: static site script used in `apps/mockup`
   - `tailwind-preset`: The base preset for Tailwind CSS  
-    inc. `postcss.config.cjs` / `@tailwindcss/typography` / `daisyui`
+    inc. `postcss.config.cjs` / `@tailwindcss/typography`
   - `tsconfig`: The base `tsconfig.json`
   - `types`: Various types
   - `utils`: Simple utilities

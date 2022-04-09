@@ -2,9 +2,9 @@ import { FC, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { SwitchTransition, Transition } from 'react-transition-group'
 import { classNames } from 'utils'
-import { usePageTransition } from '@/components/Layout/LayoutRouteTransition/usePageTransition/usePageTransition'
 import { usePrefetchImages } from '@/hooks/usePrefetchImages'
 import { useRouteChangeComplete } from '@/hooks/useRouteChangeComplete'
+import { usePageTransition } from './usePageTransition/usePageTransition'
 
 type Props = {}
 
@@ -41,7 +41,7 @@ export const LayoutRouteTransition: FC<Props> = ({ children }) => {
         {(state) => (
           <div
             ref={ref}
-            className={classNames('route-transition bg-white', `is-${state}`)}
+            className={classNames('c-route-transition bg-white', `is-${state}`)}
           >
             {children}
           </div>

@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app'
-import { Layout } from '@/components/Layout/Layout'
-import { Providers } from '@/components/Providers'
+import { Layout } from './_app/components/Layout/Layout'
+import { Providers } from './_app/components/Providers'
 
-import '@/styles/globals.css'
+import '../../../../packages/tailwind-preset/globals.css'
 
 export default function MyApp({
   Component,

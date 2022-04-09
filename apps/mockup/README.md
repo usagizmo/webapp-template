@@ -7,14 +7,14 @@ A starting point for building a static site.
 ## Commands
 
 ```bash
-pnpm build     # Build `src/styles.css` and `src/script.js` and output to `public/*`
+pnpm build     # Build and then output to `public/*`
 pnpm dev       # Watch build files and launch browser-sync server on port 8000
 pnpm lint      # Linting
 pnpm list:fix  # Format with `eslint --fix`
 pnpm test      # Testing
 pnpm clean     # Delete `node_modules` etc.
 
-# commands/*
+# `commands/*`
 pnpm clean-image  # Remove unused image files in `public/images/*`
 pnpm deploy       # When deploying to a VPS such as DigitalOcean using `rsync`
 ```

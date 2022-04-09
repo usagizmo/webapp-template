@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #__next {
+    @apply h-full;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@layer components {
+  .c-route-transition.is-entering {
+    @apply absolute inset-x-0 top-0;
+  }
+
+  .c-hover-underline {
+    @apply u-after-underline u-after-translate-left relative inline-block overflow-hidden text-gray-700 after:duration-150 hover:text-gray-900 hover:after:translate-x-0;
+  }
+}
+
+@layer utilities {
+  @media screen and (min-width: 768px) {
+    .u-sp {
+      @apply !hidden;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .u-pc {
+      @apply !hidden;
+    }
+  }
+
+  .u-prevent-animation * {
+    @apply !animate-none !transition-none;
+  }
+
+  .u-after-underline {
+    @apply after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-black;
+  }
+
+  .u-after-translate-left {
+    @apply after:translate-x-[calc(-100%-1px)];
+  }
+
+  [data-in] {
+    @apply duration-[600ms];
+  }
+  [data-in='fade-in']:not(.is-in) {
+    @apply pointer-events-none opacity-0;
+  }
+  [data-in='slide-in']:not(.is-in) {
+    @apply pointer-events-none translate-y-5 opacity-0;
+  }
+}
