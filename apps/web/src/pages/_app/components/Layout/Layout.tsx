@@ -6,10 +6,12 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Head from 'next/head'
 import { useSmoothScroll } from '@/hooks/useSmoothScroll/useSmoothScroll'
 import { staticPath } from '@/lib/$path'
+import { useStore } from '@/store/useStore'
+import { GoogleAnalytics } from './GoogleAnalytics/GoogleAnalytics'
 import { LayoutFooter } from './LayoutFooter'
-import { LayoutGoogleAnalytics } from './LayoutGoogleAnalytics/LayoutGoogleAnalytics'
 import { LayoutHeader } from './LayoutHeader'
-import { LayoutRouteTransition } from './LayoutRouteTransition/LayoutRouteTransition'
+import { PageLoading } from './PageLoading/PageLoading'
+import { RouteTransition } from './RouteTransition/RouteTransition'
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 
@@ -21,11 +23,13 @@ const useLayout = () => {
 
   useSmoothScroll()
 
-  return { title, description }
+  const isPageLoading = useStore((state) => state.isPageLoading)
+
+  return { title, description, isPageLoading }
 }
 
 export const Layout: FC<Props> = ({ children }) => {
-  const { title, description } = useLayout()
+  const { title, description, isPageLoading } = useLayout()
 
   return (
     <>
@@ -58,16 +62,17 @@ export const Layout: FC<Props> = ({ children }) => {
         />
         {/* <link rel="canonical" href="https://nextjs-template.io/" /> */}
       </Head>
-      <LayoutGoogleAnalytics />
+      <GoogleAnalytics />
       <div className="flex h-full flex-col">
         <div className="flex-1">
           <LayoutHeader />
           <div className="relative">
-            <LayoutRouteTransition>{children}</LayoutRouteTransition>
+            <RouteTransition>{children}</RouteTransition>
           </div>
         </div>
         <LayoutFooter />
       </div>
+      <PageLoading show={isPageLoading} />
     </>
   )
 }
