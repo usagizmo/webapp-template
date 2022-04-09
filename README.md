@@ -18,10 +18,11 @@ Monorepo template for creating a web service with Next.js.
   - [`mockup`](./apps/mockup/README.md): [[Demo](https://nextjs-template-mockup.usagizmo.com/)]  
     A starting point for building a static site.
   - [`storybook`](./apps/storybook/README.md): [[Demo](https://nextjs-template-storybook.usagizmo.com/)]  
-    [Storybook](https://storybook.js.org/) for `apps/web` and `packages/ui`.
+    [Storybook](https://storybook.js.org/) for `apps/web`.
   - [`web`](./apps/web/README.md): [[Demo](https://nextjs-template.usagizmo.com/)]  
     A starting point for building a Next.js application.  
-    [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))
+    [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))  
+    Page Transition ([react-transition-group](https://reactcommunity.org/react-transition-group/) x [GSAP](https://greensock.com/gsap/))  
     [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Zustand](https://github.com/pmndrs/zustand)  
     [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
 
@@ -37,7 +38,6 @@ Monorepo template for creating a web service with Next.js.
     inc. `postcss.config.cjs` / `@tailwindcss/typography` / `daisyui`
   - `tsconfig`: The base `tsconfig.json`
   - `types`: Various types
-  - `ui`: Common react components
   - `utils`: Simple utilities
 - **Services**
   - [`firebase`](./services/firebase/README.md):  

@@ -18,6 +18,7 @@
   "dependencies": {
     "firebase": "9.6.10",
     "firebase-admin": "10.0.2",
+    "gsap": "3.10.2",
     "next": "12.1.4",
     "next-auth": "4.3.1",
     "phosphor-react": "1.4.1",
@@ -25,14 +26,19 @@
     "react-dom": "18.0.0",
     "react-hook-form": "7.29.0",
     "react-query": "3.34.19",
+    "react-transition-group": "4.4.2",
     "ulid": "2.3.0",
     "zustand": "3.7.2"
   },
   "devDependencies": {
+    "@babel/core": "7.17.9",
     "@firebase/app-compat": "0.1.21",
     "@firebase/app-types": "0.7.0",
+    "@storybook/react": "6.4.20",
+    "@types/gtag.js": "0.0.10",
     "@types/node": "17.0.21",
     "@types/react": "17.0.44",
+    "@types/react-transition-group": "4.4.4",
     "autoprefixer": "10.4.4",
     "constants": "workspace:*",
     "eslint-preset": "workspace:*",
@@ -49,10 +55,10 @@
     "tslib": "2.3.1",
     "types": "workspace:*",
     "typescript": "4.6.3",
-    "ui": "workspace:*",
     "utils": "workspace:*"
   },
   "peerDependencies": {
+    "@babel/core": "7.17.9",
     "autoprefixer": "10.4.4",
     "graphql": "16.3.0",
     "postcss": "8.4.12"

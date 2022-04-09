@@ -6,7 +6,9 @@ import {
 } from 'generated/dist/graphql'
 import { Trash } from 'phosphor-react'
 import { useQueryClient } from 'react-query'
-import { ArticleImage, Button, InlineInput } from 'ui'
+import { ArticleImage } from '@/components/Article/ArticleImage'
+import { Button } from '@/components/Button/Button'
+import { InlineInput } from '@/components/InlineInput/InlineInput'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
 import { useArticleItemBindings } from '../hooks/useArticleItemBindings'
 

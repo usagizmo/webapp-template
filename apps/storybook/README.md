@@ -1,6 +1,6 @@
 # `storybook` app
 
-Storybook for `apps/web` and `packages/ui`.
+Storybook for `apps/web`.
 
 [[Demo](https://nextjs-template-storybook.usagizmo.com/)]
 
