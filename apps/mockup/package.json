@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "build:js": "cross-env NODE_ENV=production rollup --config",
-    "build:tailwind": "cross-env NODE_ENV=production tailwindcss -c ./tailwind.config.cjs -i ./src/styles.css -o ./public/styles.css --minify",
+    "build:tailwind": "cross-env NODE_ENV=production tailwindcss -c ./tailwind.config.cjs -i ../../packages/tailwind-preset/globals.css -o ./public/styles.css --minify",
     "build": "run-p build:*",
     "dev:js": "rollup --config -w",
-    "dev:tailwind": "tailwindcss -c ./tailwind.config.cjs -i ./src/styles.css -o ./public/styles.css --watch",
+    "dev:tailwind": "tailwindcss -c ./tailwind.config.cjs -i ../../packages/tailwind-preset/globals.css -o ./public/styles.css --watch",
     "dev:server": "browser-sync ./public/ -w --port 8000",
     "dev": "run-p dev:*",
     "lint:html": "htmlhint \"public/**/*.html\"",

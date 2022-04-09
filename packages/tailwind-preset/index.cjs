@@ -1,3 +1,6 @@
+// To hot reload on each app, update the value in tailwind.config.js for each
+// app, then update the following values
+
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -30,8 +33,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
-  daisyui: {
-    themes: false,
-  },
+  plugins: [require('@tailwindcss/typography')],
 }

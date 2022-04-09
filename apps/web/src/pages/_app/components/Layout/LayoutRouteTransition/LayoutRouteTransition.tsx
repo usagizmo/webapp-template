@@ -41,7 +41,7 @@ export const LayoutRouteTransition: FC<Props> = ({ children }) => {
         {(state) => (
           <div
             ref={ref}
-            className={classNames('route-transition bg-white', `is-${state}`)}
+            className={classNames('c-route-transition bg-white', `is-${state}`)}
           >
             {children}
           </div>

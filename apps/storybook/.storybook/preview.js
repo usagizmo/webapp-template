@@ -1,4 +1,4 @@
-import '../../web/src/styles/globals.css'
+import '../../../packages/tailwind-preset/globals.css'
 
 import * as NextImage from 'next/image'
 

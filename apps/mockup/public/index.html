@@ -65,14 +65,16 @@
       <p class="mt-2 md:ml-auto md:mt-0 md:px-4 md:pl-4">
         A starting point for building a static site.
       </p>
-      <a
-        href="https://github.com/usagizmo/nextjs-template"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn mt-6 rounded-full bg-gray-900 normal-case text-white md:mt-0"
-      >
-        GitHub
-      </a>
+      <div class="mt-6 md:mt-0">
+        <a
+          href="https://github.com/usagizmo/nextjs-template"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full bg-gray-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+        >
+          GitHub
+        </a>
+      </div>
     </header>
 
     <!-- Information -->
@@ -232,17 +234,19 @@
             <h2 class="text-center" data-in="slide-in">Commands</h2>
           </div>
 
-          <div class="mockup-code slide-in bg-gray-900">
-            <pre><code><span class="text-teal-300">pnpm</span> build     <span class="text-gray-400"># Build `src/styles.css` and `src/script.js` and output to `public/*`</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> dev       <span class="text-gray-400"># Watch build files and launch browser-sync server on port 8000</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> lint      <span class="text-gray-400"># Linting</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> list:fix  <span class="text-gray-400"># Format with `eslint --fix`</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> test      <span class="text-gray-400"># Testing</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> clean     <span class="text-gray-400"># Delete `node_modules` etc.</span></code></pre>
-            <pre><code></code></pre>
-            <pre><code># commands/*</code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> clean-image  <span class="text-gray-400"># Remove unused image files in `public/images/*`</span></code></pre>
-            <pre><code><span class="text-teal-300">pnpm</span> deploy       <span class="text-gray-400"># When deploying to a VPS such as DigitalOcean using `rsync`</span></code></pre>
+          <div
+            class="slide-in overflow-auto rounded-2xl bg-gray-900 p-6 text-white"
+          >
+            <pre><code><span class="text-teal-300">pnpm</span> build     <span class="text-gray-400"># Build and then output to `public/*`</span>
+<span class="text-teal-300">pnpm</span> dev       <span class="text-gray-400"># Watch build files and launch browser-sync server on port 8000</span>
+<span class="text-teal-300">pnpm</span> lint      <span class="text-gray-400"># Linting</span>
+<span class="text-teal-300">pnpm</span> list:fix  <span class="text-gray-400"># Format with `eslint --fix`</span>
+<span class="text-teal-300">pnpm</span> test      <span class="text-gray-400"># Testing</span>
+<span class="text-teal-300">pnpm</span> clean     <span class="text-gray-400"># Delete `node_modules` etc.</span>
+
+<span class="text-gray-400"># `commands/*`</span>
+<span class="text-teal-300">pnpm</span> clean-image  <span class="text-gray-400"># Remove unused image files in `public/images/*`</span>
+<span class="text-teal-300">pnpm</span> deploy       <span class="text-gray-400"># When deploying to a VPS such as DigitalOcean using `rsync`</span></code></pre>
           </div>
 
           <!-- Buttons -->
@@ -251,7 +255,7 @@
               href="https://github.com/usagizmo/nextjs-template"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn rounded-full bg-gray-900 normal-case text-white"
+              class="rounded-full bg-gray-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
             >
               GitHub
             </a>
