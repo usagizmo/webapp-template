@@ -4,7 +4,8 @@ import { useRouter } from 'next/router'
 type OnRouteChangeComplete = (path: string) => void
 
 export const useRouteChangeComplete = (
-  onRouteChangeComplete: OnRouteChangeComplete
+  onRouteChangeComplete: OnRouteChangeComplete,
+  callOnMount?: boolean
 ) => {
   const router = useRouter()
 
@@ -15,4 +16,10 @@ export const useRouteChangeComplete = (
       router.events.off('routeChangeComplete', onRouteChangeComplete)
     }
   }, [onRouteChangeComplete, router.events])
+
+  useEffect(() => {
+    if (!callOnMount) return
+    onRouteChangeComplete(router.pathname)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 }
