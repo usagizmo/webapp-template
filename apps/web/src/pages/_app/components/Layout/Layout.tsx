@@ -19,7 +19,7 @@ type Props = {}
 
 const useLayout = () => {
   const title = CONST.SITE_NAME
-  const description = 'Next.js Template Description'
+  const description = CONST.DESCRIPTION
 
   useSmoothScroll()
 
