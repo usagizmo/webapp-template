@@ -1,4 +1,5 @@
 import create, { StateCreator } from 'zustand'
+import { devtools } from 'zustand/middleware'
 import {
   createPageLoadingSlice,
   PageLoadingSlice,
@@ -12,4 +13,6 @@ export const store: StateCreator<State> = (set) => {
   }
 }
 
-export const useStore = create(store)
+export const useStore = create(
+  process.env.NODE_ENV === 'development' ? devtools(store) : store
+)
