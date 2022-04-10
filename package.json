@@ -31,6 +31,6 @@
     "npm-run-all": "4.1.5",
     "prettier": "2.6.2",
     "prettier-plugin-tailwindcss": "0.1.8",
-    "turbo": "1.1.10"
+    "turbo": "1.2.1"
   }
 }
