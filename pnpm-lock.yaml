@@ -28,7 +28,7 @@ importers:
       browser-sync: 2.27.9
       eslint-preset: workspace:*
       five-server: 0.1.4
-      htmlhint: 1.1.3
+      htmlhint: 1.1.4
       jest: 27.5.1
       lintstagedrc: workspace:*
       pathtest-utils: workspace:*
@@ -44,7 +44,7 @@ importers:
       browser-sync: 2.27.9
       eslint-preset: link:../../packages/eslint-preset
       five-server: 0.1.4_jest@27.5.1
-      htmlhint: 1.1.3
+      htmlhint: 1.1.4
       jest: 27.5.1
       lintstagedrc: link:../../packages/lintstagedrc
       pathtest-utils: link:../../packages/pathtest-utils
@@ -11691,8 +11691,8 @@ packages:
       webpack: 5.72.0
     dev: true
 
-  /htmlhint/1.1.3:
-    resolution: {integrity: sha512-Z2GtamhFnhCAXKP5lsfqShIDlk6eHEI5U6B9A/JXstdgakoOC2y9nF1b38DcVNBJ8eHn/wfSdh4GVrW4NmmFEQ==}
+  /htmlhint/1.1.4:
+    resolution: {integrity: sha512-tSKPefhIaaWDk/vKxAOQbN+QwZmDeJCq3bZZGbJMoMQAfTjepudC+MkuT9MOBbuQI3dLLzDWbmU7fLV3JASC7Q==}
     hasBin: true
     dependencies:
       async: 3.2.3
