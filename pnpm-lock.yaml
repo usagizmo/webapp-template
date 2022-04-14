@@ -107,7 +107,7 @@ importers:
       firebase-admin: 10.0.2
       generated: workspace:*
       graphql: 16.3.0
-      gsap: 3.10.2
+      gsap: 3.10.3
       lintstagedrc: workspace:*
       next: 12.1.4
       next-auth: 4.3.2
@@ -134,7 +134,7 @@ importers:
     dependencies:
       firebase: 9.6.10
       firebase-admin: 10.0.2_b2c59dabb74e592c496f4266c968bb15
-      gsap: 3.10.2
+      gsap: 3.10.3
       next: 12.1.4_cba0cb7a45c5be1acc73e969c348db7f
       next-auth: 4.3.2_react-dom@18.0.0+react@18.0.0
       phosphor-react: 1.4.1_react@18.0.0
@@ -11321,8 +11321,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.16.0 || >=16.0.0}
     dev: true
 
-  /gsap/3.10.2:
-    resolution: {integrity: sha512-exJVOda3O1NpgGjM4dzZONmSODWFP+JF/DwfiBfCPQPr15nm3M0TQczYKLZlMdBNdWxHMvRPKVqc1e1/6YD+zA==}
+  /gsap/3.10.3:
+    resolution: {integrity: sha512-O4P5mC6awoo0uSemZ1kS1Nm52I4/3gC8gy6ws6VFXvR1KmA4oRlBY/ZI4+LWsH0MoSDZrpwNyF9FAkB37UTGVg==}
     dev: false
 
   /gtoken/5.3.2:
