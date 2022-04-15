@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@jest/globals": "27.5.1",
-    "@rollup/plugin-node-resolve": "13.2.0",
+    "@rollup/plugin-node-resolve": "13.2.1",
     "autoprefixer": "10.4.4",
     "browser-sync": "2.27.9",
     "eslint-preset": "workspace:*",
