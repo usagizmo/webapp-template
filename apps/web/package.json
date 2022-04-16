@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.17.9",
-    "@firebase/app-compat": "0.1.21",
+    "@firebase/app-compat": "0.1.22",
     "@firebase/app-types": "0.7.0",
     "@storybook/react": "6.4.22",
     "@types/gtag.js": "0.0.10",
