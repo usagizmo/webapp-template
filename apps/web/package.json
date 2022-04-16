@@ -16,7 +16,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next && rm -rf src/lib/\\$path.ts"
   },
   "dependencies": {
-    "firebase": "9.6.10",
+    "firebase": "9.6.11",
     "firebase-admin": "10.0.2",
     "gsap": "3.10.3",
     "next": "12.1.4",
