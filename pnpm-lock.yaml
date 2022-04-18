@@ -117,7 +117,7 @@ importers:
       postcss: 8.4.12
       react: 18.0.0
       react-dom: 18.0.0
-      react-hook-form: 7.29.0
+      react-hook-form: 7.30.0
       react-query: 3.35.0
       react-transition-group: 4.4.2
       tailwind-preset: workspace:*
@@ -140,7 +140,7 @@ importers:
       phosphor-react: 1.4.1_react@18.0.0
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
-      react-hook-form: 7.29.0_react@18.0.0
+      react-hook-form: 7.30.0_react@18.0.0
       react-query: 3.35.0_react-dom@18.0.0+react@18.0.0
       react-transition-group: 4.4.2_react-dom@18.0.0+react@18.0.0
       ulid: 2.3.0
@@ -15815,8 +15815,8 @@ packages:
       shallowequal: 1.1.0
     dev: true
 
-  /react-hook-form/7.29.0_react@18.0.0:
-    resolution: {integrity: sha512-NcJqWRF6el5HMW30fqZRt27s+lorvlCCDbTpAyHoodQeYWXgQCvZJJQLC1kRMKdrJknVH0NIg3At6TUzlZJFOQ==}
+  /react-hook-form/7.30.0_react@18.0.0:
+    resolution: {integrity: sha512-DzjiM6o2vtDGNMB9I4yCqW8J21P314SboNG1O0obROkbg7KVS0I7bMtwSdKyapnCPjHgnxc3L7E5PEdISeEUcQ==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
