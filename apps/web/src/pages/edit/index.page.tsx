@@ -1,4 +1,4 @@
-import { useEffect, VFC } from 'react'
+import { useEffect, FC } from 'react'
 import { useArticlesQuery } from 'generated/dist/graphql'
 import { InferGetStaticPropsType } from 'next'
 import { useSession } from 'next-auth/react'
@@ -45,7 +45,7 @@ const useEditPage = () => {
   }
 }
 
-const EditPage: VFC<Props> = () => {
+const EditPage: FC<Props> = () => {
   const { articlesQuery, articlesQueryHandle } = useEditPage()
 
   return (

@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useCallback, VFC } from 'react'
+import { ChangeEventHandler, useCallback, FC } from 'react'
 import { ERROR } from 'constants/error'
 import { getDownloadURL, uploadBytes } from 'firebase/storage'
 import {
@@ -101,7 +101,7 @@ const useCreateArticleItem = () => {
   }
 }
 
-export const CreateArticleItem: VFC<Props> = () => {
+export const CreateArticleItem: FC<Props> = () => {
   const {
     queryHandle,
     register,

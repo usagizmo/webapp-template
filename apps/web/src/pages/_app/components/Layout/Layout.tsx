@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { CONST } from 'constants/const'
 import { gsap } from 'gsap'
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
@@ -15,7 +15,9 @@ import { RouteTransition } from './RouteTransition/RouteTransition'
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 
-type Props = {}
+type Props = {
+  children: ReactNode
+}
 
 const useLayout = () => {
   const title = CONST.SITE_NAME

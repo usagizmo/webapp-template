@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form'
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
   disabled?: boolean
 }
 
-export const Input: VFC<Props> = ({
+export const Input: FC<Props> = ({
   registerReturn,
   fieldError,
   type,

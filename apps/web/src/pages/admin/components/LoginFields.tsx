@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { CONST } from 'constants/const'
 import { ERROR } from 'constants/error'
 import { useForm } from 'react-hook-form'
@@ -29,7 +29,7 @@ const useLoginFields = () => {
   }
 }
 
-export const LoginFields: VFC = () => {
+export const LoginFields: FC = () => {
   const {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,

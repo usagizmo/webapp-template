@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { useArticlesQuery } from 'generated/dist/graphql'
 import { InferGetStaticPropsType } from 'next'
 import { QueryClient, dehydrate } from 'react-query'
@@ -33,7 +33,7 @@ const useHomePage = () => {
   }
 }
 
-const HomePage: VFC<Props> = () => {
+const HomePage: FC<Props> = () => {
   const { articlesQuery, articlesQueryHandle } = useHomePage()
   return (
     <main className="container max-w-lg">

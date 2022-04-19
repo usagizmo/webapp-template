@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { CONST } from 'constants/const'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
@@ -33,7 +33,7 @@ const links = [
   },
 ]
 
-export const LayoutHeader: VFC<Props> = () => {
+export const LayoutHeader: FC<Props> = () => {
   const router = useRouter()
   const { data: session, status } = useSession()
   const queryHandle = useQueryHandle({ status })

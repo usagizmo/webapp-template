@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import {
   ArticlesQuery,
   useArticlesQuery,
@@ -45,7 +45,7 @@ const useEditArticleItem = (article: ArticlesQuery['articles'][0]) => {
   }
 }
 
-export const EditArticleItem: VFC<Props> = ({ article }) => {
+export const EditArticleItem: FC<Props> = ({ article }) => {
   const {
     title,
     titleBindings,

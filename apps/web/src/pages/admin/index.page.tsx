@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { useSession } from 'next-auth/react'
 import { SignOut } from 'phosphor-react'
 import { Button } from '@/components/Button/Button'
@@ -20,7 +20,7 @@ const useAdminPage = () => {
   }
 }
 
-const AdminPage: VFC<Props> = () => {
+const AdminPage: FC<Props> = () => {
   const { signOut, session, queryHandle } = useAdminPage()
 
   return (
