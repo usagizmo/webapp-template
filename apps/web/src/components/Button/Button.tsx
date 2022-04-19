@@ -1,4 +1,4 @@
-import { MouseEventHandler, FC, useMemo } from 'react'
+import { MouseEventHandler, FC, useMemo, ReactNode } from 'react'
 import clsx from 'clsx'
 import { match } from 'ts-pattern'
 import { XOR } from 'ts-xor'
@@ -17,6 +17,7 @@ type Props = {
   black?: boolean
   icon?: boolean
   disabled?: boolean
+  children: ReactNode
 } & XOR<ButtonProps, SpanProps>
 
 export const Button: FC<Props> = ({

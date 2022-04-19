@@ -1,8 +1,9 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import clsx from 'clsx'
 
 type Props = {
   show?: boolean
+  children?: ReactNode
 }
 
 export const PageLoading: FC<Props> = ({ show, children }) => {

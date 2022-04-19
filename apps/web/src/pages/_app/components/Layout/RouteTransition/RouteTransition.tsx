@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react'
+import { FC, ReactNode, useRef } from 'react'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { SwitchTransition, Transition } from 'react-transition-group'
@@ -6,7 +6,9 @@ import { usePrefetchImages } from '@/hooks/usePrefetchImages'
 import { useRouteChangeComplete } from '@/hooks/useRouteChangeComplete'
 import { usePageTransition } from './usePageTransition/usePageTransition'
 
-type Props = {}
+type Props = {
+  children: ReactNode
+}
 
 const useRouteTransition = () => {
   const router = useRouter()

@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import Image from 'next/image'
 import { ArticleImageFIle } from 'types/data-types'
 
@@ -6,7 +6,7 @@ type Props = {
   imageFile: ArticleImageFIle
 }
 
-export const ArticleImage: VFC<Props> = ({ imageFile }) => {
+export const ArticleImage: FC<Props> = ({ imageFile }) => {
   return (
     <div>
       <div className="flex h-[120px] w-[120px] items-center justify-center border bg-gray-50">

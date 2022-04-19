@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, ReactNode, useState } from 'react'
 import { SessionProvider } from 'next-auth/react'
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 type Props = {
   session: any
   dehydratedState: any
+  children: ReactNode
 }
 
 const useProviders = () => {
