@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { classNames } from 'utils'
+import clsx from 'clsx'
 
 type Props = {
   show?: boolean
@@ -8,7 +8,7 @@ type Props = {
 export const PageLoading: FC<Props> = ({ show, children }) => {
   return (
     <div
-      className={classNames(
+      className={clsx(
         'fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 text-white transition-opacity',
         show ? 'opacity-100' : 'pointer-events-none opacity-0'
       )}

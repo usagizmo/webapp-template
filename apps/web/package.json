@@ -16,6 +16,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next && rm -rf src/lib/\\$path.ts"
   },
   "dependencies": {
+    "clsx": "1.1.1",
     "firebase": "9.6.11",
     "firebase-admin": "10.0.2",
     "gsap": "3.10.3",
@@ -27,6 +28,7 @@
     "react-hook-form": "7.30.0",
     "react-query": "3.35.0",
     "react-transition-group": "4.4.2",
+    "ts-pattern": "4.0.2",
     "ulid": "2.3.0",
     "zustand": "3.7.2"
   },
