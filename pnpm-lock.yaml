@@ -194,7 +194,7 @@ importers:
       eslint-config-next: 12.1.5
       eslint-config-prettier: 8.5.0
       eslint-plugin-import: 2.26.0
-      eslint-plugin-storybook: 0.5.10
+      eslint-plugin-storybook: 0.5.11
       lintstagedrc: workspace:*
       next: 12.1.5
       react: 18.0.0
@@ -208,7 +208,7 @@ importers:
       eslint-config-next: 12.1.5_73f9dd19bec33b69290ec95d96fcfe5a
       eslint-config-prettier: 8.5.0_eslint@8.13.0
       eslint-plugin-import: 2.26.0_eslint@8.13.0
-      eslint-plugin-storybook: 0.5.10_eslint@8.13.0+typescript@4.6.3
+      eslint-plugin-storybook: 0.5.11_eslint@8.13.0+typescript@4.6.3
       lintstagedrc: link:../lintstagedrc
       next: 12.1.5_cba0cb7a45c5be1acc73e969c348db7f
       react: 18.0.0
@@ -9562,8 +9562,8 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /eslint-plugin-storybook/0.5.10_eslint@8.13.0+typescript@4.6.3:
-    resolution: {integrity: sha512-tyXR7YmqIPC1nxRIgVDEyOPHub1F67nVT7OXxo8mNwB/uH0apRvrYkBpbiiLafmgBaiq8Yc31qyB+jj5nBzW7w==}
+  /eslint-plugin-storybook/0.5.11_eslint@8.13.0+typescript@4.6.3:
+    resolution: {integrity: sha512-uNQn9zjH/+UiFxRC4hd69DnxOu4RoRbr76+yc3Bp/vIEo/n2K+NdQGh3zK9JLdMoctFAbzMfoKi9FQbZVZsCvQ==}
     engines: {node: 12.x || 14.x || >= 16}
     peerDependencies:
       eslint: '>=6'
