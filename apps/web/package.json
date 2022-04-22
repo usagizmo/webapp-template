@@ -22,6 +22,7 @@
     "gsap": "3.10.3",
     "next": "12.1.5",
     "next-auth": "4.3.3",
+    "next-seo": "5.4.0",
     "phosphor-react": "1.4.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",

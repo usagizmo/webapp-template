@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useSession } from 'next-auth/react'
+import { NextSeo } from 'next-seo'
 import { SignOut } from 'phosphor-react'
 import { Button } from '@/components/Button/Button'
 import { useAuth } from '@/hooks/useAuth'
@@ -24,32 +25,35 @@ const AdminPage: FC<Props> = () => {
   const { signOut, session, queryHandle } = useAdminPage()
 
   return (
-    <main className="container max-w-lg">
-      {queryHandle ??
-        (session ? (
-          <div className="text-center">
-            <p>
-              Logged in as{' '}
-              <span className="mt-1 block text-2xl font-medium">
-                {session.user.email}
-              </span>
-              <span className="mt-1block text-sm">{session.user.id}</span>
-            </p>
-            <div className="mt-10">
-              <Button
-                onClick={() => {
-                  signOut()
-                }}
-              >
-                <SignOut width={20} height={20} className="mr-1.5" />
-                <span>Sign out</span>
-              </Button>
+    <>
+      <NextSeo title="Admin" />
+      <main className="container max-w-lg">
+        {queryHandle ??
+          (session ? (
+            <div className="text-center">
+              <p>
+                Logged in as{' '}
+                <span className="mt-1 block text-2xl font-medium">
+                  {session.user.email}
+                </span>
+                <span className="mt-1block text-sm">{session.user.id}</span>
+              </p>
+              <div className="mt-10">
+                <Button
+                  onClick={() => {
+                    signOut()
+                  }}
+                >
+                  <SignOut width={20} height={20} className="mr-1.5" />
+                  <span>Sign out</span>
+                </Button>
+              </div>
             </div>
-          </div>
-        ) : (
-          <LoginFields />
-        ))}
-    </main>
+          ) : (
+            <LoginFields />
+          ))}
+      </main>
+    </>
   )
 }
 
