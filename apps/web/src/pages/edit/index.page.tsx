@@ -2,6 +2,7 @@ import { useEffect, FC } from 'react'
 import { useArticlesQuery } from 'generated/dist/graphql'
 import { InferGetStaticPropsType } from 'next'
 import { useSession } from 'next-auth/react'
+import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import { dehydrate, QueryClient } from 'react-query'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
@@ -49,14 +50,17 @@ const EditPage: FC<Props> = () => {
   const { articlesQuery, articlesQueryHandle } = useEditPage()
 
   return (
-    <main className="container max-w-lg">
-      <CreateArticleItem />
-      <div className="mt-6">
-        {articlesQueryHandle ?? (
-          <EditArticleList articles={articlesQuery.data?.articles ?? []} />
-        )}
-      </div>
-    </main>
+    <>
+      <NextSeo title="Edit" />
+      <main className="container max-w-lg">
+        <CreateArticleItem />
+        <div className="mt-6">
+          {articlesQueryHandle ?? (
+            <EditArticleList articles={articlesQuery.data?.articles ?? []} />
+          )}
+        </div>
+      </main>
+    </>
   )
 }
 

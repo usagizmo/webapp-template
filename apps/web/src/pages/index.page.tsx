@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { useArticlesQuery } from 'generated/dist/graphql'
 import { InferGetStaticPropsType } from 'next'
+import { NextSeo } from 'next-seo'
 import { QueryClient, dehydrate } from 'react-query'
 import { ArticleList } from '@/components/Article/ArticleList'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
@@ -36,11 +37,14 @@ const useHomePage = () => {
 const HomePage: FC<Props> = () => {
   const { articlesQuery, articlesQueryHandle } = useHomePage()
   return (
-    <main className="container max-w-lg">
-      {articlesQueryHandle ?? (
-        <ArticleList articles={articlesQuery.data?.articles ?? []} />
-      )}
-    </main>
+    <>
+      <NextSeo title="Home" openGraph={{ type: 'website' /* Only Home */ }} />
+      <main className="container max-w-lg">
+        {articlesQueryHandle ?? (
+          <ArticleList articles={articlesQuery.data?.articles ?? []} />
+        )}
+      </main>
+    </>
   )
 }
 

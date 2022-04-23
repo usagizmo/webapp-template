@@ -112,6 +112,7 @@ importers:
       lintstagedrc: workspace:*
       next: 12.1.5
       next-auth: 4.3.3
+      next-seo: 5.4.0
       next-transpile-modules: 9.0.0
       pathpida: 0.18.1
       phosphor-react: 1.4.1
@@ -140,6 +141,7 @@ importers:
       gsap: 3.10.3
       next: 12.1.5_cba0cb7a45c5be1acc73e969c348db7f
       next-auth: 4.3.3_react-dom@18.0.0+react@18.0.0
+      next-seo: 5.4.0_1cf2cc49e2c27648b440cc4e09213966
       phosphor-react: 1.4.1_react@18.0.0
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
@@ -13825,6 +13827,18 @@ packages:
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
       uuid: 8.3.2
+
+  /next-seo/5.4.0_1cf2cc49e2c27648b440cc4e09213966:
+    resolution: {integrity: sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 12.1.5_cba0cb7a45c5be1acc73e969c348db7f
+      react: 18.0.0
+      react-dom: 18.0.0_react@18.0.0
+    dev: false
 
   /next-transpile-modules/9.0.0:
     resolution: {integrity: sha512-VCNFOazIAnXn1hvgYYSTYMnoWgKgwlYh4lm1pKbSfiB3kj5ZYLcKVhfh3jkPOg1cnd9DP+pte9yCUocdPEUBTQ==}

@@ -3,7 +3,7 @@ import { CONST } from 'constants/const'
 import { gsap } from 'gsap'
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-import Head from 'next/head'
+import { DefaultSeo } from 'next-seo'
 import { useSmoothScroll } from '@/hooks/useSmoothScroll/useSmoothScroll'
 import { staticPath } from '@/lib/$path'
 import { useStore } from '@/store/useStore'
@@ -20,50 +20,63 @@ type Props = {
 }
 
 const useLayout = () => {
-  const title = CONST.SITE_NAME
-  const description = CONST.DESCRIPTION
-
   useSmoothScroll()
-
   const isPageLoading = useStore((state) => state.isPageLoading)
 
-  return { title, description, isPageLoading }
+  return { isPageLoading }
 }
 
 export const Layout: FC<Props> = ({ children }) => {
-  const { title, description, isPageLoading } = useLayout()
+  const { isPageLoading } = useLayout()
 
   return (
     <>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://nextjs-template.io/" />
-        <meta
-          property="og:image"
-          content="https://nextjs-template.io/images/ogp.jpg"
-        />
-        <meta property="og:site_name" content={CONST.SITE_NAME} />
-        <meta property="og:description" content={description} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta
-          name="twitter:image"
-          content="https://nextjs-template.io/images/ogp.jpg"
-        />
-        <link rel="icon" href={staticPath.favicon_ico} />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={staticPath.apple_touch_icon_png}
-        />
-        {/* <link rel="canonical" href="https://nextjs-template.io/" /> */}
-      </Head>
+      <DefaultSeo
+        titleTemplate={`%s | ${CONST.SITE_NAME}`}
+        defaultTitle={CONST.SITE_NAME}
+        description={CONST.SITE_DESCRIPTION}
+        openGraph={{
+          type: 'article',
+          site_name: CONST.SITE_NAME,
+          images: [
+            {
+              url: staticPath.images.ogp_png,
+              width: 1200,
+              height: 630,
+              type: 'image/png',
+            },
+          ],
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+          site: '@usagizmo',
+        }}
+        additionalLinkTags={[
+          {
+            rel: 'icon',
+            href: staticPath.favicon_ico,
+          },
+          {
+            rel: 'apple-touch-icon',
+            href: staticPath.apple_touch_icon_png,
+            sizes: '180x180',
+          },
+          { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+          {
+            rel: 'preconnect',
+            href: 'https://fonts.gstatic.com',
+            crossOrigin: 'anonymous',
+          },
+          {
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Source+Code+Pro:wght@400;500;600;700&display=swap',
+          },
+          {
+            rel: 'stylesheet',
+            href: 'https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css',
+          },
+        ]}
+      />
       <GoogleAnalytics />
       <div className="flex h-full flex-col">
         <div className="flex-1">
