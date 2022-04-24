@@ -1,1 +1,1 @@
-module.exports = require('./node.cjs')
+module.exports = require('./node.js')

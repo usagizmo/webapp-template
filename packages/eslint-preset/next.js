@@ -3,6 +3,11 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   extends: ['next', 'prettier'],
+  settings: {
+    next: {
+      rootDir: ['apps/*/', 'packages/*/'],
+    },
+  },
   rules: {
     'react-hooks/exhaustive-deps': [
       'error',
