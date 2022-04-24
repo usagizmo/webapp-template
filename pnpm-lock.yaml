@@ -24,7 +24,7 @@ importers:
     specifiers:
       '@jest/globals': 27.5.1
       '@rollup/plugin-node-resolve': 13.2.1
-      autoprefixer: 10.4.4
+      autoprefixer: 10.4.5
       browser-sync: 2.27.9
       eslint-preset: workspace:*
       five-server: 0.1.4
@@ -40,7 +40,7 @@ importers:
     devDependencies:
       '@jest/globals': 27.5.1
       '@rollup/plugin-node-resolve': 13.2.1_rollup@2.70.2
-      autoprefixer: 10.4.4_postcss@8.4.8
+      autoprefixer: 10.4.5_postcss@8.4.8
       browser-sync: 2.27.9
       eslint-preset: link:../../packages/eslint-preset
       five-server: 0.1.4_jest@27.5.1
@@ -100,7 +100,7 @@ importers:
       '@types/node': 17.0.21
       '@types/react': 18.0.6
       '@types/react-transition-group': 4.4.4
-      autoprefixer: 10.4.4
+      autoprefixer: 10.4.5
       clsx: 1.1.1
       constants: workspace:*
       eslint-preset: workspace:*
@@ -160,7 +160,7 @@ importers:
       '@types/node': 17.0.21
       '@types/react': 18.0.6
       '@types/react-transition-group': 4.4.4
-      autoprefixer: 10.4.4_postcss@8.4.12
+      autoprefixer: 10.4.5_postcss@8.4.12
       constants: link:../../packages/constants
       eslint-preset: link:../../packages/eslint-preset
       generated: link:../../packages/generated
@@ -275,14 +275,14 @@ importers:
   packages/tailwind-preset:
     specifiers:
       '@tailwindcss/typography': 0.5.2
-      autoprefixer: 10.4.4
+      autoprefixer: 10.4.5
       eslint-preset: workspace:*
       lintstagedrc: workspace:*
       postcss: 8.4.12
       tailwindcss: 3.0.24
     devDependencies:
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
-      autoprefixer: 10.4.4_postcss@8.4.12
+      autoprefixer: 10.4.5_postcss@8.4.12
       eslint-preset: link:../eslint-preset
       lintstagedrc: link:../lintstagedrc
       postcss: 8.4.12
@@ -6950,8 +6950,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /autoprefixer/10.4.4_postcss@8.4.12:
-    resolution: {integrity: sha512-Tm8JxsB286VweiZ5F0anmbyGiNI3v3wGv3mz9W+cxEDYB/6jbnj6GM9H9mK3wIL8ftgl+C07Lcwb8PG5PCCPzA==}
+  /autoprefixer/10.4.5_postcss@8.4.12:
+    resolution: {integrity: sha512-Fvd8yCoA7lNX/OUllvS+aS1I7WRBclGXsepbvT8ZaPgrH24rgXpZzF0/6Hh3ZEkwg+0AES/Osd196VZmYoEFtw==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -6966,8 +6966,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /autoprefixer/10.4.4_postcss@8.4.8:
-    resolution: {integrity: sha512-Tm8JxsB286VweiZ5F0anmbyGiNI3v3wGv3mz9W+cxEDYB/6jbnj6GM9H9mK3wIL8ftgl+C07Lcwb8PG5PCCPzA==}
+  /autoprefixer/10.4.5_postcss@8.4.8:
+    resolution: {integrity: sha512-Fvd8yCoA7lNX/OUllvS+aS1I7WRBclGXsepbvT8ZaPgrH24rgXpZzF0/6Hh3ZEkwg+0AES/Osd196VZmYoEFtw==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
