@@ -1,4 +1,4 @@
-const base = require('./next.cjs')
+const base = require('./next.js')
 
 module.exports = {
   ...base,

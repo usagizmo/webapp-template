@@ -1,4 +1,4 @@
-const base = require('./node.cjs')
+const base = require('./node.js')
 
 module.exports = {
   ...base,

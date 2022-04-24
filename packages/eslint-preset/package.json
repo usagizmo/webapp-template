@@ -2,16 +2,15 @@
   "name": "eslint-preset",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "files": [
-    "next.cjs",
-    "node.cjs",
-    "typescript.cjs",
-    "web.cjs"
+    "next.js",
+    "node.js",
+    "typescript.js",
+    "web.js"
   ],
   "scripts": {
-    "lint": "eslint . --ext .js,.cjs",
-    "lint:fix": "eslint . --ext .js,.cjs --fix",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "devDependencies": {
