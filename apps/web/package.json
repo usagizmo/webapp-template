@@ -46,7 +46,7 @@
     "constants": "workspace:*",
     "eslint-preset": "workspace:*",
     "generated": "workspace:*",
-    "graphql": "16.3.0",
+    "graphql": "16.4.0",
     "lintstagedrc": "workspace:*",
     "next-transpile-modules": "9.0.0",
     "pathpida": "0.18.1",
@@ -64,7 +64,7 @@
   "peerDependencies": {
     "@babel/core": "7.17.9",
     "autoprefixer": "10.4.5",
-    "graphql": "16.3.0",
+    "graphql": "16.4.0",
     "postcss": "8.4.12"
   }
 }
