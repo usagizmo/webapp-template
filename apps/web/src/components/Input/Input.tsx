@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { FieldError, UseFormRegisterReturn } from 'react-hook-form'
+import type { FC } from 'react'
+import type { FieldError, UseFormRegisterReturn } from 'react-hook-form'
 
 type Props = {
   registerReturn: UseFormRegisterReturn

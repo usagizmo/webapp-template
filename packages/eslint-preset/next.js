@@ -36,5 +36,6 @@ module.exports = {
         pathGroupsExcludedImportTypes: ['react'],
       },
     ],
+    '@typescript-eslint/consistent-type-imports': 'error',
   },
 }

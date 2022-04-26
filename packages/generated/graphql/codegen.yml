@@ -17,7 +17,7 @@ generates:
       - typescript-react-query
     config:
       fetcher:
-        endpoint: 'process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT'
+        endpoint: "process.env['NEXT_PUBLIC_GRAPHQL_ENDPOINT']"
         fetchParams: 'await getFetchParams()'
       exposeFetcher: true
       exposeQueryKeys: true

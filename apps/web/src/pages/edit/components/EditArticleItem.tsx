@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import type { FC } from 'react'
+import type { ArticlesQuery } from 'generated/dist/graphql'
 import {
-  ArticlesQuery,
   useArticlesQuery,
   useDeleteArticleMutation,
 } from 'generated/dist/graphql'

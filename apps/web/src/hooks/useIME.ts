@@ -1,4 +1,5 @@
-import { KeyboardEventHandler, useState } from 'react'
+import type { KeyboardEventHandler } from 'react'
+import { useState } from 'react'
 
 export const useIME = (): [
   boolean,

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { useSession } from 'next-auth/react'
 import { NextSeo } from 'next-seo'
 import { SignOut } from 'phosphor-react'

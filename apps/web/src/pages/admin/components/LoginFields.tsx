@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { CONST } from 'constants/const'
 import { ERROR } from 'constants/error'
 import { useForm } from 'react-hook-form'

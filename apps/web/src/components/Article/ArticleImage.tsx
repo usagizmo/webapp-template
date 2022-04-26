@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import Image from 'next/image'
-import { ArticleImageFIle } from 'types/data-types'
+import type { ArticleImageFIle } from 'types/data-types'
 
 type Props = {
   imageFile: ArticleImageFIle
