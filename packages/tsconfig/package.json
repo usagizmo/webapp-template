@@ -6,5 +6,8 @@
     "base.json",
     "nextjs.json",
     "react-library.json"
-  ]
+  ],
+  "devDependencies": {
+    "@tsconfig/strictest": "1.0.1"
+  }
 }

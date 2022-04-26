@@ -289,7 +289,10 @@ importers:
       tailwindcss: 3.0.24
 
   packages/tsconfig:
-    specifiers: {}
+    specifiers:
+      '@tsconfig/strictest': 1.0.1
+    devDependencies:
+      '@tsconfig/strictest': 1.0.1
 
   packages/types:
     specifiers:
@@ -5635,6 +5638,10 @@ packages:
   /@tootallnate/once/2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
+
+  /@tsconfig/strictest/1.0.1:
+    resolution: {integrity: sha512-7O8Q537UQdTZSKEV0f5WRLRFtfL9B8agGqIZrCOwOiWvbjZWPP2rAoZ7LHcwjdG4vnjdleHMEE+ZetM+lhRkcA==}
+    dev: true
 
   /@types/babel__core/7.1.19:
     resolution: {integrity: sha512-WEOTgRsbYkvA/KCsDwVEGkd7WAr1e3g31VHQ8zy5gul/V1qKullU/BU5I68X5v7V3GnB9eotmom4v5a5gjxorw==}
