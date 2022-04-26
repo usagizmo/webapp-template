@@ -27,24 +27,24 @@ export default NextAuth({
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.idToken = user.idToken
-        token.uid = user.uid
+        token['idToken'] = user['idToken']
+        token['uid'] = user['uid']
       }
       return token
     },
     async session({ session, token }) {
-      const idToken = token.idToken as string
+      const idToken = token['idToken'] as string
 
       const { users_by_pk } = await useCurrentUserQuery.fetcher(
         {
-          endpoint: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT as string,
+          endpoint: process.env['NEXT_PUBLIC_GRAPHQL_ENDPOINT'] as string,
           fetchParams: {
             headers: {
               Authorization: `Bearer ${idToken}`,
             },
           },
         },
-        { id: token.uid as string }
+        { id: token['uid'] as string }
       )()
       const { __typename, ...hasuraUser } = users_by_pk ?? {}
       const extraProps = (
@@ -63,8 +63,8 @@ export default NextAuth({
       return session
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env['NEXTAUTH_SECRET']!,
   jwt: {
-    secret: process.env.NEXTAUTH_SECRET,
+    secret: process.env['NEXTAUTH_SECRET']!,
   },
 })

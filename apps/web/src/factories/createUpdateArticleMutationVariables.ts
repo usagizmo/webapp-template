@@ -1,4 +1,4 @@
-import {
+import type {
   ArticlesQuery,
   UpdateArticleMutationVariables,
 } from 'generated/dist/graphql'

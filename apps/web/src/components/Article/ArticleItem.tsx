@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { ArticlesQuery } from 'generated/dist/graphql'
+import type { FC } from 'react'
+import type { ArticlesQuery } from 'generated/dist/graphql'
 import { ArticleImage } from './ArticleImage'
 
 type Props = {

@@ -1,9 +1,8 @@
-import create, { StateCreator } from 'zustand'
+import type { StateCreator } from 'zustand'
+import create from 'zustand'
 import { devtools } from 'zustand/middleware'
-import {
-  createPageLoadingSlice,
-  PageLoadingSlice,
-} from './slices/createPageLoadingSlice'
+import type { PageLoadingSlice } from './slices/createPageLoadingSlice'
+import { createPageLoadingSlice } from './slices/createPageLoadingSlice'
 
 export type State = PageLoadingSlice // & OtherSlices
 

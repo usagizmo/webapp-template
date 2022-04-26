@@ -1,4 +1,5 @@
-import { FC, ReactNode, useState } from 'react'
+import type { FC, ReactNode } from 'react'
+import { useState } from 'react'
 import { SessionProvider } from 'next-auth/react'
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'

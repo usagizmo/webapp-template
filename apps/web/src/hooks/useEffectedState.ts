@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
+import { useEffect, useState } from 'react'
 
 export const useEffectedState = <T>(
   stateValue: T

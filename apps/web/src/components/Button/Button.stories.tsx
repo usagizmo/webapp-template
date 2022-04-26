@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Trash } from 'phosphor-react'
 import { Button } from './Button'
 

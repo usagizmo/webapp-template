@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { useArticlesQuery } from 'generated/dist/graphql'
-import { InferGetStaticPropsType } from 'next'
+import type { InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 import { QueryClient, dehydrate } from 'react-query'
 import { ArticleList } from '@/components/Article/ArticleList'

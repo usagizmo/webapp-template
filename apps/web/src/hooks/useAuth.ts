@@ -1,11 +1,11 @@
 import { useCallback, useEffect } from 'react'
 import { CONST } from 'constants/const'
+import type { User as FirebaseUser } from 'firebase/auth'
 import {
   createUserWithEmailAndPassword as firebaseCreateUserWithEmailAndPassword,
   signInWithEmailAndPassword as firebaseSignInWithEmailAndPassword,
   signInWithRedirect,
   GoogleAuthProvider,
-  User as FirebaseUser,
   signOut as firebaseSignOut,
   getRedirectResult,
 } from 'firebase/auth'

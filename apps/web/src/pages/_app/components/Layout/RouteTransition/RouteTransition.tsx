@@ -1,4 +1,5 @@
-import { FC, ReactNode, useRef } from 'react'
+import type { FC, ReactNode } from 'react'
+import { useRef } from 'react'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { SwitchTransition, Transition } from 'react-transition-group'

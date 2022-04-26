@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { NextSeo } from 'next-seo'
 
 const _1Page: FC = () => {

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { CONST } from 'constants/const'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'

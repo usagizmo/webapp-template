@@ -1,2 +1,10 @@
 // eslint-disable-next-line no-undef
-module.exports = require('eslint-preset/web.js')
+const base = require('eslint-preset/web.js')
+
+// eslint-disable-next-line no-undef
+module.exports = {
+  ...base,
+  globals: {
+    gsap: true,
+  },
+}

@@ -1,5 +1,6 @@
-import { ChangeEventHandler } from 'react'
-import { ArticlesQuery, useUpdateArticleMutation } from 'generated/dist/graphql'
+import type { ChangeEventHandler } from 'react'
+import type { ArticlesQuery } from 'generated/dist/graphql'
+import { useUpdateArticleMutation } from 'generated/dist/graphql'
 import { useQueryClient } from 'react-query'
 import { createUpdateArticleMutationVariables } from '@/factories/createUpdateArticleMutationVariables'
 import { useEffectedState } from '@/hooks/useEffectedState'

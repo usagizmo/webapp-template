@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 import { CONST } from 'constants/const'
 import { gsap } from 'gsap'
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'

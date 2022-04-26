@@ -1,7 +1,8 @@
-import { MouseEventHandler, FC, useMemo, ReactNode } from 'react'
+import type { MouseEventHandler, FC, ReactNode } from 'react'
+import { useMemo } from 'react'
 import clsx from 'clsx'
 import { match } from 'ts-pattern'
-import { XOR } from 'ts-xor'
+import type { XOR } from 'ts-xor'
 
 type ButtonProps = {
   type?: 'submit' | 'button' | 'reset'

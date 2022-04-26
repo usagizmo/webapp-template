@@ -1,4 +1,4 @@
-import { AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import { Layout } from './_app/components/Layout/Layout'
 import { Providers } from './_app/components/Providers'
 

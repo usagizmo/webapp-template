@@ -1,5 +1,5 @@
-import { SetState } from 'zustand'
-import { State } from '../useStore'
+import type { SetState } from 'zustand'
+import type { State } from '../useStore'
 
 export type PageLoadingSlice = {
   isPageLoading: boolean

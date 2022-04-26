@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { ComponentStory, ComponentMeta } from '@storybook/react'
 import { PageLoading } from './PageLoading'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

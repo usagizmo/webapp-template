@@ -6,6 +6,7 @@ import {
   startAnimation,
 } from 'script-modules'
 
+// eslint-disable-next-line no-undef
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 startAnimation()

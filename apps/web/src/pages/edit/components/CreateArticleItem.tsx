@@ -1,15 +1,16 @@
-import { ChangeEventHandler, useCallback, FC } from 'react'
+import type { ChangeEventHandler, FC } from 'react'
+import { useCallback } from 'react'
 import { ERROR } from 'constants/error'
 import { getDownloadURL, uploadBytes } from 'firebase/storage'
+import type { ArticlesQuery } from 'generated/dist/graphql'
 import {
-  ArticlesQuery,
   useArticlesQuery,
   useCreateArticleMutation,
 } from 'generated/dist/graphql'
 import { FileArrowUp } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { useQueryClient } from 'react-query'
-import { ArticleImageFIle } from 'types/data-types'
+import type { ArticleImageFIle } from 'types/data-types'
 import { ArticleImage } from '@/components/Article/ArticleImage'
 import { Button } from '@/components/Button/Button'
 import { Input } from '@/components/Input/Input'
