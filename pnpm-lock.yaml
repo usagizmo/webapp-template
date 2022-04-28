@@ -111,7 +111,7 @@ importers:
       gsap: 3.10.4
       lintstagedrc: workspace:*
       next: 12.1.5
-      next-auth: 4.3.3
+      next-auth: 4.3.4
       next-seo: 5.4.0
       next-transpile-modules: 9.0.0
       pathpida: 0.18.1
@@ -140,7 +140,7 @@ importers:
       firebase-admin: 10.1.0_5395f954a08b86dffb8e74f386d79234
       gsap: 3.10.4
       next: 12.1.5_cba0cb7a45c5be1acc73e969c348db7f
-      next-auth: 4.3.3_react-dom@18.0.0+react@18.0.0
+      next-auth: 4.3.4_react-dom@18.0.0+react@18.0.0
       next-seo: 5.4.0_1cf2cc49e2c27648b440cc4e09213966
       phosphor-react: 1.4.1_react@18.0.0
       react: 18.0.0
@@ -227,7 +227,7 @@ importers:
       '@graphql-codegen/typescript-react-query': 3.5.9
       graphql: 16.4.0
       lintstagedrc: workspace:*
-      next-auth: 4.3.3
+      next-auth: 4.3.4
       react: 18.0.0
       react-dom: 18.0.0
       react-query: 3.38.0
@@ -242,7 +242,7 @@ importers:
       '@graphql-codegen/typescript-react-query': 3.5.9_graphql@16.4.0
       graphql: 16.4.0
       lintstagedrc: link:../lintstagedrc
-      next-auth: 4.3.3_react-dom@18.0.0+react@18.0.0
+      next-auth: 4.3.4_react-dom@18.0.0+react@18.0.0
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
       react-query: 3.38.0_react-dom@18.0.0+react@18.0.0
@@ -299,14 +299,14 @@ importers:
       eslint-preset: workspace:*
       generated: workspace:*
       lintstagedrc: workspace:*
-      next-auth: 4.3.3
+      next-auth: 4.3.4
       react: 18.0.0
       react-dom: 18.0.0
     devDependencies:
       eslint-preset: link:../eslint-preset
       generated: link:../generated
       lintstagedrc: link:../lintstagedrc
-      next-auth: 4.3.3_react-dom@18.0.0+react@18.0.0
+      next-auth: 4.3.4_react-dom@18.0.0+react@18.0.0
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
 
@@ -13813,13 +13813,13 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /next-auth/4.3.3_react-dom@18.0.0+react@18.0.0:
-    resolution: {integrity: sha512-bUs+oOOPT18Pq/+4v9q4PA/DGoVoAX6jwY7RTfE/akFXwlny+y/mNS6lPSUwpqcHjljqBaq34PQA3+01SdOOPw==}
+  /next-auth/4.3.4_react-dom@18.0.0+react@18.0.0:
+    resolution: {integrity: sha512-8dGkNicbxY2BYsJq4uOJIEsGt39wXj5AViTBsVfbRQqtAFmZmXYHutf90VBmobm8rT2+Xl60HDUTkuVVK+x+xw==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
     peerDependencies:
       nodemailer: ^6.6.5
-      react: ^17.0.2 || ^18.0.0-0
-      react-dom: ^17.0.2 || ^18.0.0-0
+      react: ^17.0.2 || ^18
+      react-dom: ^17.0.2 || ^18
     peerDependenciesMeta:
       nodemailer:
         optional: true
