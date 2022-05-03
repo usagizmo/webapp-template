@@ -120,7 +120,7 @@ importers:
       react: 18.0.0
       react-dom: 18.0.0
       react-hook-form: 7.30.0
-      react-query: 3.38.0
+      react-query: 3.38.1
       react-transition-group: 4.4.2
       tailwind-preset: workspace:*
       tailwindcss: 3.0.24
@@ -146,7 +146,7 @@ importers:
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
       react-hook-form: 7.30.0_react@18.0.0
-      react-query: 3.38.0_react-dom@18.0.0+react@18.0.0
+      react-query: 3.38.1_react-dom@18.0.0+react@18.0.0
       react-transition-group: 4.4.2_react-dom@18.0.0+react@18.0.0
       ts-pattern: 4.0.2
       ulid: 2.3.0
@@ -230,7 +230,7 @@ importers:
       next-auth: 4.3.4
       react: 18.0.0
       react-dom: 18.0.0
-      react-query: 3.38.0
+      react-query: 3.38.1
       tslib: 2.4.0
       typescript: 4.6.3
     devDependencies:
@@ -245,7 +245,7 @@ importers:
       next-auth: 4.3.4_react-dom@18.0.0+react@18.0.0
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
-      react-query: 3.38.0_react-dom@18.0.0+react@18.0.0
+      react-query: 3.38.1_react-dom@18.0.0+react@18.0.0
       tslib: 2.4.0
       typescript: 4.6.3
 
@@ -15449,8 +15449,8 @@ packages:
       warning: 4.0.3
     dev: true
 
-  /react-query/3.38.0_react-dom@18.0.0+react@18.0.0:
-    resolution: {integrity: sha512-VRbCTRrDfC5FsB70+JfZuxFRv9SAvkZ1h36MsN8+QaDN+NWB6s1vJndqpoLQnJqN0COTG2zsInMq0KFdYze6TA==}
+  /react-query/3.38.1_react-dom@18.0.0+react@18.0.0:
+    resolution: {integrity: sha512-CM9hsz6oib17hsBguGaMJr+a0swMzou2gvNHHjAusnXvkfTx6CTzx0Iwuplox1jI2j3WiY91BGrcIN6bp1n1Iw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: '*'
