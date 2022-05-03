@@ -24,7 +24,7 @@
   "devDependencies": {
     "@jest/globals": "27.5.1",
     "@rollup/plugin-node-resolve": "13.2.1",
-    "autoprefixer": "10.4.5",
+    "autoprefixer": "10.4.7",
     "browser-sync": "2.27.9",
     "eslint-preset": "workspace:*",
     "five-server": "0.1.4",
@@ -39,7 +39,7 @@
     "tailwindcss": "3.0.24"
   },
   "peerDependencies": {
-    "autoprefixer": "10.4.5",
+    "autoprefixer": "10.4.7",
     "postcss": "8.4.8"
   }
 }
