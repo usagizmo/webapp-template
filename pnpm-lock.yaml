@@ -332,9 +332,9 @@ importers:
 
   services/hasura:
     specifiers:
-      hasura-cli: 2.6.0
+      hasura-cli: 2.6.1
     devDependencies:
-      hasura-cli: 2.6.0
+      hasura-cli: 2.6.1
 
 packages:
 
@@ -11143,8 +11143,8 @@ packages:
       space-separated-tokens: 1.1.5
     dev: true
 
-  /hasura-cli/2.6.0:
-    resolution: {integrity: sha512-nohlfU1pA2pbexUG2sfUiRHGAC2MPv23rKXFc4N099DeOz6/QYsDW/idlt0r72NRM4ddusEmaMiKKsGM/OVDhA==}
+  /hasura-cli/2.6.1:
+    resolution: {integrity: sha512-0AdqIKEsXQ9R3uSykFzREfXtUF0xaxRXmP2kBNQbusaoDUO2VhnRjBmhCgu5DEKaD1U0Xk2jptDubZlxQVFI1Q==}
     engines: {node: '>=8'}
     hasBin: true
     requiresBuild: true
