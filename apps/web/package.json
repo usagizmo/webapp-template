@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "clsx": "1.1.1",
-    "firebase": "9.7.0",
+    "firebase": "9.8.0",
     "firebase-admin": "10.2.0",
     "gsap": "3.10.4",
     "next": "12.1.5",
