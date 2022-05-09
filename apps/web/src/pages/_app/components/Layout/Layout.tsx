@@ -40,7 +40,7 @@ export const Layout: FC<Props> = ({ children }) => {
           site_name: CONST.SITE_NAME,
           images: [
             {
-              url: staticPath.images.ogp_png,
+              url: 'https://nextjs-template.usagizmo.com/images/ogp.png',
               width: 1200,
               height: 630,
               type: 'image/png',
