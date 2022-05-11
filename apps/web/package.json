@@ -26,7 +26,7 @@
     "phosphor-react": "1.4.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-hook-form": "7.30.0",
+    "react-hook-form": "7.31.1",
     "react-query": "3.38.1",
     "react-transition-group": "4.4.2",
     "ts-pattern": "4.0.2",
