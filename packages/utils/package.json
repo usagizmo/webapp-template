@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/jest": "27.5.0",
+    "@types/jest": "27.5.1",
     "eslint-preset": "workspace:*",
     "jest": "27.5.1",
     "lintstagedrc": "workspace:*",
