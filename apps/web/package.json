@@ -20,7 +20,7 @@
     "firebase": "9.8.1",
     "firebase-admin": "10.2.0",
     "gsap": "3.10.4",
-    "next": "12.1.5",
+    "next": "12.1.6",
     "next-auth": "4.3.4",
     "next-seo": "5.4.0",
     "phosphor-react": "1.4.1",
