@@ -10,7 +10,7 @@ import {
 import { FileArrowUp } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { useQueryClient } from 'react-query'
-import type { ArticleImageFIle } from 'types/data-types'
+import type { ArticleImageFIle } from 'types'
 import { ArticleImage } from '@/components/Article/ArticleImage'
 import { Button } from '@/components/Button/Button'
 import { Input } from '@/components/Input/Input'
