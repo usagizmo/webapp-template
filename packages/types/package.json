@@ -4,12 +4,7 @@
   "private": true,
   "type": "module",
   "main": "./index.d.ts",
-  "files": [
-    "data-types.d.ts",
-    "extend-types.d.ts",
-    "index.d.ts",
-    "types.d.ts"
-  ],
+  "types": "./index.d.ts",
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",
     "lint:fix": "eslint . --ext .js,.cjs --fix",
