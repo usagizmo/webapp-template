@@ -6,7 +6,7 @@ importers:
     specifiers:
       cross-env: 7.0.3
       husky: 8.0.1
-      lint-staged: 12.4.2
+      lint-staged: 12.4.3
       npm-run-all: 4.1.5
       prettier: 2.6.2
       prettier-plugin-tailwindcss: 0.1.11
@@ -14,7 +14,7 @@ importers:
     devDependencies:
       cross-env: 7.0.3
       husky: 8.0.1
-      lint-staged: 12.4.2
+      lint-staged: 12.4.3
       npm-run-all: 4.1.5
       prettier: 2.6.2
       prettier-plugin-tailwindcss: 0.1.11_prettier@2.6.2
@@ -8565,6 +8565,11 @@ packages:
     engines: {node: ^12.20.0 || >=14}
     dev: true
 
+  /commander/9.3.0:
+    resolution: {integrity: sha512-hv95iU5uXPbK83mjrJKuZyFM/LBAoCV/XhVGkS5Je6tl7sxr6A0ITMw5WoRV46/UaJ46Nllm3Xt7IaJhXTIkzw==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: true
+
   /common-path-prefix/3.0.0:
     resolution: {integrity: sha512-QE33hToZseCH3jS0qN96O/bSh3kaw/h+Tq7ngyY9eWDUnTlTNUyqfqvCXioLe5Na5jFsL78ra/wuBU4iuEgd4w==}
     dev: true
@@ -9696,7 +9701,7 @@ packages:
       is-shared-array-buffer: 1.0.2
       is-string: 1.0.7
       is-weakref: 1.0.2
-      object-inspect: 1.12.0
+      object-inspect: 1.12.2
       object-keys: 1.1.1
       object.assign: 4.1.2
       string.prototype.trimend: 1.0.4
@@ -13473,11 +13478,6 @@ packages:
       immediate: 3.0.6
     dev: false
 
-  /lilconfig/2.0.4:
-    resolution: {integrity: sha512-bfTIN7lEsiooCocSISTWXkiWJkRqtL9wYtYy+8EK3Y41qh3mpwPU0ycTOgjdY9ErwXCc8QyrQp82bdL0Xkm9yA==}
-    engines: {node: '>=10'}
-    dev: true
-
   /lilconfig/2.0.5:
     resolution: {integrity: sha512-xaYmXZtTHPAw5m+xLN8ab9C+3a8YmV3asNSPOATITbtwrfbwaLJj8h66H1WMIpALCkqsIzK3h7oQ+PdX+LQ9Eg==}
     engines: {node: '>=10'}
@@ -13490,21 +13490,21 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged/12.4.2:
-    resolution: {integrity: sha512-JAJGIzY/OioIUtrRePr8go6qUxij//mL+RGGoFKU3VWQRtIHgWoHizSqH0QVn2OwrbXS9Q6CICQjfj+E5qvrXg==}
+  /lint-staged/12.4.3:
+    resolution: {integrity: sha512-eH6SKOmdm/ZwCRMTZAmM3q3dPkpq6vco/BfrOw8iGun4Xs/thYegPD/MLIwKO+iPkzibkLJuQcRhRLXKvaKreg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
       cli-truncate: 3.1.0
       colorette: 2.0.16
-      commander: 8.3.0
+      commander: 9.3.0
       debug: 4.3.4_supports-color@9.2.2
       execa: 5.1.1
-      lilconfig: 2.0.4
+      lilconfig: 2.0.5
       listr2: 4.0.5
       micromatch: 4.0.5
       normalize-path: 3.0.0
-      object-inspect: 1.12.0
+      object-inspect: 1.12.2
       pidtree: 0.5.0
       string-argv: 0.3.1
       supports-color: 9.2.2
@@ -14586,6 +14586,10 @@ packages:
 
   /object-inspect/1.12.0:
     resolution: {integrity: sha512-Ho2z80bVIvJloH+YzRmpZVQe87+qASmBUKZDWgx9cu+KDrX2ZDH/3tMy+gXbZETVGs2M8YdxObOh7XAtim9Y0g==}
+    dev: true
+
+  /object-inspect/1.12.2:
+    resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
     dev: true
 
   /object-keys/1.1.1:
