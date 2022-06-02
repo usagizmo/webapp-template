@@ -29,33 +29,33 @@ curl "<url>" | openssl dgst -sha384 -binary | openssl base64 -A
 
 Ref: [Subresource Integrity - Web security | MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
 
-### With Basic Authentication (Draft)
+### With Basic Authentication
 
 ```bash
 # Add packages
 pnpm add -D static-auth safe-compare
 ```
 
-Run the following, then change the `username` and `password` in `index.js`.
+Run the following, then change the `username` and `password` in `index.cjs`.
 
 ```bash
 # vercel.json
 printf "{
   \"builds\": [
     {
-      \"src\": \"index.js\",
+      \"src\": \"index.cjs\",
       \"use\": \"@vercel/node\"
     }
   ],
-  \"routes\": [{ \"src\": \"/.*\", \"dest\": \"index.js\" }]
+  \"routes\": [{ \"src\": \"/.*\", \"dest\": \"index.cjs\" }]
 }
 " > vercel.json
 
-# index.js
+# index.cjs
 printf "const path = require('path')
-const protect = require('static-auth')
 const safeCompare = require('safe-compare')
-const directory = path.join(__dirname, '/apps/web/public')
+const protect = require('static-auth')
+const directory = path.join(__dirname, '/apps/mockup/public')
 
 const app = protect(
   '/',
@@ -70,7 +70,7 @@ const app = protect(
 )
 
 module.exports = app
-" > index.js
+" > index.cjs
 ```
 
 Add the `vercel-build` command to `package.json`.
@@ -79,3 +79,8 @@ Add the `vercel-build` command to `package.json`.
 "build": "turbo run build",
 + "vercel-build": "npm run build",
 ```
+
+Make the following settings in Vercel's `Project Settings`.
+
+- `General` > `Root Directory`: `appsmockup`
+  - [x] Include source files outside of the Root Directory in the Build Step.
