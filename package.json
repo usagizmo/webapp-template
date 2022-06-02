@@ -23,7 +23,7 @@
     "npm": ">=7.0.0",
     "node": "16.x"
   },
-  "packageManager": "pnpm@6.32.15",
+  "packageManager": "pnpm@6.32.19",
   "devDependencies": {
     "cross-env": "7.0.3",
     "husky": "8.0.1",
