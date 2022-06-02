@@ -312,7 +312,7 @@ importers:
 
   packages/utils:
     specifiers:
-      '@types/jest': 27.5.1
+      '@types/jest': 27.5.2
       eslint-preset: workspace:*
       jest: 27.5.1
       lintstagedrc: workspace:*
@@ -321,11 +321,11 @@ importers:
       tslib: 2.4.0
       typescript: 4.6.4
     devDependencies:
-      '@types/jest': 27.5.1
+      '@types/jest': 27.5.2
       eslint-preset: link:../eslint-preset
       jest: 27.5.1
       lintstagedrc: link:../lintstagedrc
-      ts-jest: 27.1.5_404f7d90f78cf4a331485702acb30422
+      ts-jest: 27.1.5_0588c40ff47025e294a4a1ca57d5eeab
       tsconfig: link:../tsconfig
       tslib: 2.4.0
       typescript: 4.6.4
@@ -6101,8 +6101,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/27.5.1:
-    resolution: {integrity: sha512-fUy7YRpT+rHXto1YlL+J9rs0uLGyiqVt3ZOTQR+4ROc47yNl8WLdVLgUloBRhOxP1PZvguHl44T3H0wAWxahYQ==}
+  /@types/jest/27.5.2:
+    resolution: {integrity: sha512-mpT8LJJ4CMeeahobofYWIjFo0xonRS/HfxnVEPMPFSQdGUt1uHCnoPT7Zhb+sjDU2wz0oKV0OLUR0WzrHNgfeA==}
     dependencies:
       jest-matcher-utils: 27.5.1
       pretty-format: 27.5.1
@@ -17921,7 +17921,7 @@ packages:
     engines: {node: '>=6.10'}
     dev: true
 
-  /ts-jest/27.1.5_404f7d90f78cf4a331485702acb30422:
+  /ts-jest/27.1.5_0588c40ff47025e294a4a1ca57d5eeab:
     resolution: {integrity: sha512-Xv6jBQPoBEvBq/5i2TeSG9tt/nqkbpcurrEG1b+2yfBrcJelOZF9Ml6dmyMh7bcW9JyFbRYpR5rxROSlBLTZHA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
@@ -17942,7 +17942,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@types/jest': 27.5.1
+      '@types/jest': 27.5.2
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 27.5.1
