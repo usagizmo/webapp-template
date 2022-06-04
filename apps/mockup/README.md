@@ -55,7 +55,7 @@ printf "{
 printf "const path = require('path')
 const safeCompare = require('safe-compare')
 const protect = require('static-auth')
-const directory = path.join(__dirname, '/apps/mockup/public')
+const directory = path.join(__dirname, '/public')
 
 const app = protect(
   '/',
@@ -82,5 +82,5 @@ Add the `vercel-build` command to `package.json`.
 
 Make the following settings in Vercel's `Project Settings`.
 
-- `General` > `Root Directory`: `appsmockup`
+- `General` > `Root Directory`: `apps/mockup`
   - [x] Include source files outside of the Root Directory in the Build Step.
