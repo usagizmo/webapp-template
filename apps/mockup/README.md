@@ -33,7 +33,7 @@ Ref: [Subresource Integrity - Web security | MDN](https://developer.mozilla.org/
 
 ```bash
 # Add packages
-pnpm add -D static-auth safe-compare
+pnpm add -D express express-basic-auth cors
 ```
 
 Run the following, then change the `username` and `password` in `index.cjs`.
@@ -53,21 +53,31 @@ printf "{
 
 # index.cjs
 printf "const path = require('path')
-const safeCompare = require('safe-compare')
-const protect = require('static-auth')
-const directory = path.join(__dirname, '/public')
+const cors = require('cors')
+const express = require('express')
+const basicAuth = require('express-basic-auth')
+const app = express()
 
-const app = protect(
-  '/',
-  (username, password) =>
-    safeCompare(username, '<username>') && safeCompare(password, '<password>'),
-  {
-    directory,
-    onAuthFailed: (res) => {
-      res.end('Authentication failed')
+// Local runtime port number
+// Any number will be ignored by Vercel and will work
+const port = 8080
+
+app.use(cors())
+
+app.use(
+  basicAuth({
+    users: {
+      <username>: '<password>'
     },
-  }
+    challenge: true,
+  })
 )
+
+app.use(express.static(path.join(__dirname, '/public')))
+
+app.listen(port, () => {
+  console.log(`Listening on port \${port}`)
+})
 
 module.exports = app
 " > index.cjs
