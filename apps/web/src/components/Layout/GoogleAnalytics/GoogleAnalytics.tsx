@@ -1,5 +1,5 @@
 import Script from 'next/script'
-import { usePageView } from '@/pages/_app/components/Layout/GoogleAnalytics/usePageView'
+import { usePageView } from '@/components/Layout/GoogleAnalytics/usePageView'
 import { GA_ID } from './googleAnalyticsUtils'
 
 export const GoogleAnalytics = () => {

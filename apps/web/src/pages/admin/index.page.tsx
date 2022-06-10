@@ -1,15 +1,15 @@
-import type { FC } from 'react'
+import type { ReactElement } from 'react'
 import { useSession } from 'next-auth/react'
 import { NextSeo } from 'next-seo'
 import { SignOut } from 'phosphor-react'
 import { Button } from '@/components/Button/Button'
+import { Layout } from '@/components/Layout/Layout'
 import { useAuth } from '@/hooks/useAuth'
 import { useQueryHandle } from '@/hooks/useQueryHandle'
+import type { NextPageWithLayout } from '@/types'
 import { LoginFields } from './components/LoginFields'
 
-type Props = {}
-
-const useAdminPage = () => {
+const usePage = () => {
   const { signOut } = useAuth()
   const { data: session, status } = useSession()
   const queryHandle = useQueryHandle({ status })
@@ -21,8 +21,8 @@ const useAdminPage = () => {
   }
 }
 
-const AdminPage: FC<Props> = () => {
-  const { signOut, session, queryHandle } = useAdminPage()
+const Page: NextPageWithLayout = () => {
+  const { signOut, session, queryHandle } = usePage()
 
   return (
     <>
@@ -57,4 +57,8 @@ const AdminPage: FC<Props> = () => {
   )
 }
 
-export default AdminPage
+Page.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>
+}
+
+export default Page
