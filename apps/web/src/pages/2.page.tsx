@@ -1,15 +1,21 @@
-import type { FC } from 'react'
+import type { ReactElement } from 'react'
 import { NextSeo } from 'next-seo'
+import type { NextPageWithLayout } from '@/types'
+import { Layout } from '../components/Layout/Layout'
 
-const _1Page: FC = () => {
+const Page: NextPageWithLayout = () => {
   return (
     <>
       <NextSeo title="2" />
-      <div className="container max-w-lg">
+      <main className="container max-w-lg">
         <div>2.page.tsx</div>
-      </div>
+      </main>
     </>
   )
 }
 
-export default _1Page
+Page.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>
+}
+
+export default Page
