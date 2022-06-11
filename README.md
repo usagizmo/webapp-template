@@ -64,6 +64,13 @@ pnpm format  # eslint --fix + prettier --write
 pnpm clean   # rm .turbo, node_module and generated files
 ```
 
+## Ports (on `pnpm dev`)
+
+- `3000`: `apps/web/`
+- `6006`: `apps/storybook/`
+- `8000`: `apps/mockup/`
+- `8080`: `apps/hasura/`
+
 ## Registering environment variables for GitHub / Vercel
 
 If you need to prepare the GitHub / Vercel environment, you will need to set the environment variables (the contents of `.env`) at build time.
