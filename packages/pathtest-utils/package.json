@@ -10,9 +10,9 @@
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "devDependencies": {
-    "@jest/globals": "27.5.1",
+    "@jest/globals": "28.1.1",
     "eslint-preset": "workspace:*",
-    "jest": "27.5.1",
+    "jest": "28.1.1",
     "lintstagedrc": "workspace:*"
   }
 }
