@@ -4,8 +4,7 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*",
-    "services/*"
+    "packages/*"
   ],
   "scripts": {
     "prepare": "husky install && ./commands/init.sh",

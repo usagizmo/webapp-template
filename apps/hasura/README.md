@@ -3,7 +3,8 @@
 ## Docker
 
 ```bash
-pnpm dev # Run hasura server on port 8080
+pnpm dev # Run hasura server on http://localhost:49180
+# admin-secret is: hasuraadminsecret
 ```
 
 ### Connect Database

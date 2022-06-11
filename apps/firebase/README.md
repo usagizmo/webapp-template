@@ -16,14 +16,11 @@
 ## Commands
 
 ```bash
-# Execute command operations in the `firebase/`
-cd firebase
+# Set project
+firebase use --add <firebase-project-id>
 
 # Already done it
 # firebase init
-
-# Set project
-firebase use --add <firebase-project-id>
 
 # In the `firebase/functions/`
 cd functions
