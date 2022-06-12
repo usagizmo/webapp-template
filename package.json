@@ -20,7 +20,7 @@
   },
   "engines": {
     "npm": ">=7.0.0",
-    "node": "16.x"
+    "node": "16"
   },
   "packageManager": "pnpm@7.2.0",
   "devDependencies": {

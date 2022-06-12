@@ -12,7 +12,7 @@
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "16.x"
+    "node": "16"
   },
   "main": "lib/index.js",
   "dependencies": {
