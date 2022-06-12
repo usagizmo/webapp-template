@@ -1,0 +1,10 @@
+{
+  "name": "firebase",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm --dir functions build",
+    "dev": "firebase emulators:start"
+  }
+}

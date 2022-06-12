@@ -7,27 +7,21 @@
 - Functions (Need to upgrade to **Blaze** plan)
 - Storege
 
-※Before using the CLI, please make sure you have set up Firebase
-
 ## Requirement
 
-- [Firebase CLI](https://firebase.google.com/docs/cli) (v9.23.0+)
+- [Firebase CLI](https://firebase.google.com/docs/cli) (v11.0.1+)
+
+※Before using the CLI, please make sure you have set up [Firebase](https://firebase.google.com/)
 
 ## Commands
 
 ```bash
-# Execute command operations in the `firebase/`
-cd firebase
-
-# Already done it
-# firebase init
-
 # Set project
 firebase use --add <firebase-project-id>
+# `.firebaserc` is created
 
 # In the `firebase/functions/`
 cd functions
-pnpm i
 
 # Add 2 environment variables
 firebase functions:config:set hasura.endpoint=https://<hasura-project-name>.hasura.app/v1/graphql
@@ -39,6 +33,7 @@ firebase functions:config:set hasura.admin.secret=<HASURA_GRAPHQL_ADMIN_SECRET>
 # Deploy firebase
 firebase deploy
 
-# Deploy only functions
-# pnpm deploy
+# Custom commands
+pnpm build # build functions and update `./functions/lib`
+pnpm dev   # Start the emulator server on http://localhost:4000 (and on port 9099, 5001, 8080, 8085, 9119)
 ```

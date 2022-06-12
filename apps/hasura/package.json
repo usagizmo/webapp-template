@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "docker-compose up",
     "migrate:apply": "hasura migrate apply",
     "migrate:export": "hasura migrate create init --from-server",
     "seed:apply": "hasura seed apply",

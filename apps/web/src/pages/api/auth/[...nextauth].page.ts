@@ -1,7 +1,15 @@
 import { useCurrentUserQuery } from 'generated/dist/graphql-api'
+import * as jwt from 'jsonwebtoken'
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { firebaseAdmin } from '@/lib/firebaseAdmin'
+
+const getEmulatedSignedToken = (token: string) => {
+  return jwt.sign(
+    jwt.decode(token) as string,
+    'hasura_graphql_admin_secret_xxxx'
+  )
+}
 
 export default NextAuth({
   providers: [
@@ -39,9 +47,17 @@ export default NextAuth({
         {
           endpoint: process.env['NEXT_PUBLIC_GRAPHQL_ENDPOINT'] as string,
           fetchParams: {
-            headers: {
-              Authorization: `Bearer ${idToken}`,
-            },
+            headers: idToken
+              ? {
+                  Authorization: `Bearer ${
+                    process.env['NEXT_PUBLIC_USE_EMURATOR']
+                      ? getEmulatedSignedToken(idToken)
+                      : idToken
+                  }`,
+                }
+              : {
+                  'X-Hasura-Role': 'anonymous',
+                },
           },
         },
         { id: token['uid'] as string }
