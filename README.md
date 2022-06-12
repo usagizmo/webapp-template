@@ -16,9 +16,10 @@ Monorepo template for creating a web service with Next.js.
 - **Apps**
 
   - [`firebase`](./apps/firebase/README.md):  
-    [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/) settings.
+    [Firebase Local Emulator Suite](https://firebase.google.com/docs/emulator-suite) and Firebase settings.
+    [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/)
   - [`hasura`](./apps/hasura/README.md):  
-    [Hasura Cloud](https://hasura.io/) settings.
+    [Hasura](https://hasura.io/) on Docker and [Hasura Cloud](https://hasura.io/cloud/) settings.
   - [`mockup`](./apps/mockup/README.md): [[Demo](https://nextjs-template-mockup.usagizmo.com/)]  
     A starting point for building a static site.
   - [`storybook`](./apps/storybook/README.md): [[Demo](https://nextjs-template-storybook.usagizmo.com/)]  
@@ -64,10 +65,10 @@ pnpm format  # eslint --fix + prettier --write
 pnpm clean   # rm .turbo, node_module and generated files
 ```
 
-## List of port numbers used (by `pnpm dev`)
+## List of listening port numbers
 
 - `3000`: `apps/web/` - Next.js application
-- `4000`: `apps/firebase/functions` - Emulator UI
+- `4000`: `apps/firebase/` - Emulator UI
   - Services
     - `9099`: Authentication
     - `5001`: Functions

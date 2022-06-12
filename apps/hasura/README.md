@@ -1,22 +1,28 @@
 # Hasura
 
-## Docker
+## Handling Hasura Cloud's database in code
+
+The [Hasura CLI](https://hasura.io/docs/latest/graphql/core/hasura-cli/index/) allows you to easily manage Hasura Cloud's database.
+
+## Start Hasura on Docker
 
 ```bash
-pnpm dev # Run hasura server on http://localhost:49180
+pnpm dev # Run local hasura server on http://localhost:49180
 # admin-secret is: hasura_graphql_admin_secret_xxxx
 ```
 
 ### Connect Database
 
-`Data > Connect Database (Connect Existing Database)`
+`Data > Connect Database [Connect Existing Database]`
 
 - Database Display Name: `default`
 - Data Source Driver: `PostgreSQL`
 - Connect Database Via: `Environment Variable`
   - Environment Variable: `PG_DATABASE_URL`
 
-ref: https://hasura.io/docs/latest/graphql/core/getting-started/docker-simple/ｓ
+ref: https://hasura.io/docs/latest/graphql/core/getting-started/docker-simple/
+
+## Commands
 
 ```bash
 pnpm migrate:apply # Apply table structure to Hasura
@@ -31,14 +37,7 @@ pnpm seed:export -- --from-table <table1> [--from-table <table2>] # Export seed 
 pnpm metadata:export  # Get DB meta information from Hasura
 ```
 
-## Handling Hasura Cloud's database in code
-
-The [Hasura CLI](https://hasura.io/docs/latest/graphql/core/hasura-cli/index/) allows you to easily manage Hasura Cloud's database.  
-After completing the settings in Hasura Cloud, execute the following command.
-
-※Before using the CLI, please make sure you have set up Hasura Cloud (create a project/database connection)
-
-### Prepare to use hasura-cli
+### Prepare Hasura Cloud
 
 Set the following 2 environment variables.
 
