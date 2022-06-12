@@ -12,7 +12,7 @@
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "16"
+    "node": "16.x"
   },
   "main": "lib/index.js",
   "dependencies": {
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@firebase/app-compat": "0.1.27",
     "@firebase/app-types": "0.7.0",
+    "@types/node": "16.11.39",
     "@typescript-eslint/eslint-plugin": "5.27.1",
     "@typescript-eslint/parser": "5.27.1",
     "eslint": "8.17.0",
@@ -36,6 +37,7 @@
   "peerDependencies": {
     "@firebase/app-compat": "0.1.27",
     "@firebase/app-types": "0.7.0",
+    "@types/node": "16.11.39",
     "jest": "28.1.1"
   }
 }
