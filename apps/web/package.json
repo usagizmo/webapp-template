@@ -20,6 +20,7 @@
     "firebase": "9.8.3",
     "firebase-admin": "10.2.0",
     "gsap": "3.10.4",
+    "jsonwebtoken": "8.5.1",
     "next": "12.1.6",
     "next-auth": "4.3.4",
     "next-seo": "5.4.0",
@@ -39,6 +40,7 @@
     "@firebase/app-types": "0.7.0",
     "@storybook/react": "6.5.6",
     "@types/gtag.js": "0.0.10",
+    "@types/jsonwebtoken": "8.5.8",
     "@types/node": "17.0.21",
     "@types/react": "18.0.12",
     "@types/react-transition-group": "4.4.4",
@@ -51,6 +53,7 @@
     "next-transpile-modules": "9.0.0",
     "pathpida": "0.18.1",
     "postcss": "8.4.14",
+    "require-from-string": "2.0.2",
     "tailwind-preset": "workspace:*",
     "tailwindcss": "3.0.24",
     "ts-xor": "1.0.8",
@@ -65,6 +68,7 @@
     "@babel/core": "7.18.2",
     "autoprefixer": "10.4.7",
     "graphql": "16.5.0",
-    "postcss": "8.4.14"
+    "postcss": "8.4.14",
+    "require-from-string": "2.0.2"
   }
 }

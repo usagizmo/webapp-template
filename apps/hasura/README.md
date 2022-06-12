@@ -4,7 +4,7 @@
 
 ```bash
 pnpm dev # Run hasura server on http://localhost:49180
-# admin-secret is: hasuraadminsecret
+# admin-secret is: hasura_graphql_admin_secret_xxxx
 ```
 
 ### Connect Database
@@ -22,10 +22,12 @@ ref: https://hasura.io/docs/latest/graphql/core/getting-started/docker-simple/ï½
 pnpm migrate:apply # Apply table structure to Hasura
 # The first time you run this, you may need to [Track] all tables on Hasura
 
-pnpm migrate:export   # Get table structure from Hasura
 pnpm seed:apply       # Apply Seed to Hasura
-pnpm seed:export -- --from-table <table1> [--from-table <table2>] # Export seed data from tables
 pnpm metadata:apply   # Apply DB meta information to Hasura
+
+# Exports
+pnpm migrate:export   # Get table structure from Hasura
+pnpm seed:export -- --from-table <table1> [--from-table <table2>] # Export seed data from tables
 pnpm metadata:export  # Get DB meta information from Hasura
 ```
 

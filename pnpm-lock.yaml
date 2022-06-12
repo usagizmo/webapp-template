@@ -136,6 +136,7 @@ importers:
       '@firebase/app-types': 0.7.0
       '@storybook/react': 6.5.6
       '@types/gtag.js': 0.0.10
+      '@types/jsonwebtoken': 8.5.8
       '@types/node': 17.0.21
       '@types/react': 18.0.12
       '@types/react-transition-group': 4.4.4
@@ -148,6 +149,7 @@ importers:
       generated: workspace:*
       graphql: 16.5.0
       gsap: 3.10.4
+      jsonwebtoken: 8.5.1
       lintstagedrc: workspace:*
       next: 12.1.6
       next-auth: 4.3.4
@@ -161,6 +163,7 @@ importers:
       react-hook-form: 7.31.3
       react-query: 3.39.1
       react-transition-group: 4.4.2
+      require-from-string: 2.0.2
       tailwind-preset: workspace:*
       tailwindcss: 3.0.24
       ts-pattern: 4.0.3
@@ -178,6 +181,7 @@ importers:
       firebase: 9.8.3
       firebase-admin: 10.2.0_u4yqy2tmjwwj7g7fqz3o6qbxfy
       gsap: 3.10.4
+      jsonwebtoken: 8.5.1
       next: 12.1.6_6j5eyi3us3liopewjenwniphpy
       next-auth: 4.3.4_ef5jwxihqo6n7gxfmzogljlgcm
       next-seo: 5.4.0_2mgcgz5qhsdxw4fgpqzqeafmkq
@@ -194,8 +198,9 @@ importers:
       '@babel/core': 7.18.2
       '@firebase/app-compat': 0.1.27
       '@firebase/app-types': 0.7.0
-      '@storybook/react': 6.5.6_2p7xxw2s54a6lhipo6wk2emj5e
+      '@storybook/react': 6.5.6_vtrhiemv2bp24zv33vs3lstf2a
       '@types/gtag.js': 0.0.10
+      '@types/jsonwebtoken': 8.5.8
       '@types/node': 17.0.21
       '@types/react': 18.0.12
       '@types/react-transition-group': 4.4.4
@@ -208,6 +213,7 @@ importers:
       next-transpile-modules: 9.0.0
       pathpida: 0.18.1
       postcss: 8.4.14
+      require-from-string: 2.0.2
       tailwind-preset: link:../../packages/tailwind-preset
       tailwindcss: 3.0.24
       ts-xor: 1.0.8
@@ -2922,42 +2928,6 @@ packages:
     engines: {node: '>=10'}
     optional: true
 
-  /@google-cloud/storage/5.19.3:
-    resolution: {integrity: sha512-l+8X0BoA7rg9jyZaS4p2DwMg1Ivju+VAL6PeQZE1u2q52LQ0KemrZmdQWhtrplHYo8UdYtqpbj4A6Fc5fKDZdg==}
-    engines: {node: '>=10'}
-    requiresBuild: true
-    dependencies:
-      '@google-cloud/paginator': 3.0.7
-      '@google-cloud/projectify': 2.1.1
-      '@google-cloud/promisify': 2.0.4
-      abort-controller: 3.0.0
-      arrify: 2.0.1
-      async-retry: 1.3.3
-      compressible: 2.0.18
-      configstore: 5.0.1
-      date-and-time: 2.3.1
-      duplexify: 4.1.2
-      ent: 2.2.0
-      extend: 3.0.2
-      gaxios: 4.3.3
-      get-stream: 6.0.1
-      google-auth-library: 7.14.1
-      hash-stream-validation: 0.2.4
-      mime: 3.0.0
-      mime-types: 2.1.35
-      p-limit: 3.1.0
-      pumpify: 2.0.1
-      retry-request: 4.2.2
-      snakeize: 0.1.0
-      stream-events: 1.0.5
-      teeny-request: 7.2.0
-      xdg-basedir: 4.0.0
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-    dev: false
-    optional: true
-
   /@google-cloud/storage/5.20.5:
     resolution: {integrity: sha512-lOs/dCyveVF8TkVFnFSF7IGd0CJrTm91qiK6JLu+Z8qiT+7Ag0RyVhxZIWkhiACqwABo7kSHDm8FdH8p2wxSSw==}
     engines: {node: '>=10'}
@@ -5605,7 +5575,7 @@ packages:
       - webpack-plugin-serve
     dev: true
 
-  /@storybook/react/6.5.6_2p7xxw2s54a6lhipo6wk2emj5e:
+  /@storybook/react/6.5.6_vtrhiemv2bp24zv33vs3lstf2a:
     resolution: {integrity: sha512-lU2ggvZe9PbKWK4cbwHI6eDT7tlRAqdx489kLrfKhGTUVE8zhc/uosVEMpxbxS/zf1YYnXumr2DH1Uw2S3JeqA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -5668,6 +5638,7 @@ packages:
       react-refresh: 0.11.0
       read-pkg-up: 7.0.1
       regenerator-runtime: 0.13.9
+      require-from-string: 2.0.2
       ts-dedent: 2.2.0
       typescript: 4.7.2
       util-deprecate: 1.0.2
@@ -5961,7 +5932,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 17.0.25
+      '@types/node': 17.0.42
     dev: true
 
   /@types/graceful-fs/4.1.5:
@@ -6069,7 +6040,7 @@ packages:
   /@types/node-fetch/2.6.1:
     resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==}
     dependencies:
-      '@types/node': 17.0.25
+      '@types/node': 17.0.42
       form-data: 3.0.1
     dev: true
 
@@ -6200,7 +6171,7 @@ packages:
   /@types/webpack-sources/3.2.0:
     resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
     dependencies:
-      '@types/node': 17.0.25
+      '@types/node': 17.0.42
       '@types/source-list-map': 0.1.2
       source-map: 0.7.3
     dev: true
@@ -6208,7 +6179,7 @@ packages:
   /@types/webpack/4.41.32:
     resolution: {integrity: sha512-cb+0ioil/7oz5//7tZUSwbrSAN/NWHrQylz5cW8G0dWTcF/g+/dSdMlKVZspBYuMAN1+WnwHrkxiRrLcwd0Heg==}
     dependencies:
-      '@types/node': 17.0.25
+      '@types/node': 17.0.42
       '@types/tapable': 1.0.8
       '@types/uglify-js': 3.13.2
       '@types/webpack-sources': 3.2.0
@@ -9036,11 +9007,6 @@ packages:
     resolution: {integrity: sha512-qTcEYLen3r7ojZNgVUaRggOI+KM7jrKxXeSHhogh/TWxYMeONEMqY+hmkobiYQozsGIyg9OYVzO4ZIfoB4I0pQ==}
     dev: true
 
-  /date-and-time/2.3.1:
-    resolution: {integrity: sha512-OaIRmSJXifwEN21rMVVDs0Kz8uhJ3wWPYd86atkRiqN54liaMQYEbbrgjZQea75YXOBWL4ZFb3rG/waenw1TEg==}
-    dev: false
-    optional: true
-
   /date-fns/1.30.1:
     resolution: {integrity: sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==}
     dev: true
@@ -10824,7 +10790,7 @@ packages:
       uuid: 8.3.2
     optionalDependencies:
       '@google-cloud/firestore': 4.15.1
-      '@google-cloud/storage': 5.19.3
+      '@google-cloud/storage': 5.20.5
     transitivePeerDependencies:
       - '@firebase/app-compat'
       - '@firebase/app-types'
@@ -11340,6 +11306,7 @@ packages:
   /get-stream/6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
+    dev: true
 
   /get-symbol-description/1.0.0:
     resolution: {integrity: sha512-2EmdH1YvIQiZpltCNgkuiUnyukzxM/R6NDJX31Ke3BG1Nq5b0S2PhX59UKi9vZpPDQVdqn+1IcaAwnzTT5vCjw==}
@@ -13305,7 +13272,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 17.0.25
+      '@types/node': 17.0.42
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
@@ -13314,7 +13281,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 17.0.25
+      '@types/node': 17.0.42
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -15868,7 +15835,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.1
-      '@types/node': 17.0.25
+      '@types/node': 17.0.42
       long: 4.0.0
     dev: false
 
@@ -17158,11 +17125,6 @@ packages:
       dot-case: 3.0.4
       tslib: 2.4.0
     dev: true
-
-  /snakeize/0.1.0:
-    resolution: {integrity: sha512-ot3bb6pQt6IVq5G/JQ640ceSYTPtriVrwNyfoUw1LmQQGzPMAGxE5F+ded2UwSUCyf2PW1fFAYUnVEX21PWbpQ==}
-    dev: false
-    optional: true
 
   /snapdragon-node/2.1.1:
     resolution: {integrity: sha512-O27l4xaMYt/RSQ5TR3vpWCAB5Kb/czIcqUFOM/C4fYcLnbZUc1PkjTAMjof2pBWaSTwOUd6qUHcFGVGj7aIwnw==}
