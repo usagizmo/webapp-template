@@ -6,6 +6,13 @@
       "@/*": ["../web/src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".eslintrc.cjs",
+    ".storybook/preview.js",
+    ".storybook/main.js"
+  ],
   "exclude": ["node_modules"]
 }

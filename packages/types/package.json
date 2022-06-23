@@ -16,7 +16,8 @@
     "lintstagedrc": "workspace:*",
     "next-auth": "4.3.4",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "tsconfig": "workspace:*"
   },
   "peerDependencies": {
     "react": "18.1.0",

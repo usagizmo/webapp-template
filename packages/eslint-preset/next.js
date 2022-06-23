@@ -8,6 +8,9 @@ module.exports = {
       rootDir: ['apps/*/', 'packages/*/'],
     },
   },
+  parserOptions: {
+    project: './tsconfig.json',
+  },
   rules: {
     'react-hooks/exhaustive-deps': [
       'error',
