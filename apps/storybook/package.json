@@ -25,6 +25,7 @@
     "react-dom": "18.1.0",
     "require-from-string": "2.0.2",
     "tailwind-preset": "workspace:*",
+    "tsconfig": "workspace:*",
     "typescript": "4.7.2",
     "webpack": "5.73.0"
   },
