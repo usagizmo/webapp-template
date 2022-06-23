@@ -1,4 +1,4 @@
-## `web` app
+# `web` app
 
 A starting point for building a Next.js application.
 
