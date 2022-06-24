@@ -26,7 +26,7 @@ const Page: NextPageWithLayout<Props> = () => {
   return (
     <>
       <NextSeo title="Home" openGraph={{ type: 'website' /* Only Home */ }} />
-      <main className="container max-w-lg">
+      <main className="container max-w-2xl">
         <NoSSR>
           {articlesQueryHandle ?? (
             <ArticleList articles={articlesQuery.data?.articles ?? []} />
