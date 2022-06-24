@@ -35,7 +35,7 @@
     "zustand": "3.7.2"
   },
   "devDependencies": {
-    "@babel/core": "7.18.2",
+    "@babel/core": "7.18.5",
     "@firebase/app-compat": "0.1.27",
     "@firebase/app-types": "0.7.0",
     "@storybook/react": "6.5.9",
@@ -65,7 +65,7 @@
     "utils": "workspace:*"
   },
   "peerDependencies": {
-    "@babel/core": "7.18.2",
+    "@babel/core": "7.18.5",
     "autoprefixer": "10.4.7",
     "graphql": "16.5.0",
     "postcss": "8.4.14",
