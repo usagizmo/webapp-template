@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html,
-  body,
-  #__next {
-    @apply h-full;
-  }
+#__next {
+  @apply h-full;
+}
 
+@layer base {
   a,
   button {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
