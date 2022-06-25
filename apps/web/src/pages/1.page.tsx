@@ -7,7 +7,7 @@ const Page: NextPageWithLayout = () => {
   return (
     <>
       <NextSeo title="1" />
-      <main className="container max-w-lg">
+      <main className="container max-w-2xl">
         <div>1.page.tsx</div>
       </main>
     </>

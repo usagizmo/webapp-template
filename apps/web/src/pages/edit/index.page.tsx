@@ -39,7 +39,7 @@ const Page: NextPageWithLayout<Props> = () => {
   return (
     <>
       <NextSeo title="Edit" />
-      <main className="container max-w-lg">
+      <main className="container max-w-2xl">
         <CreateArticleItem />
         <div className="mt-6">
           {articlesQueryHandle ?? (

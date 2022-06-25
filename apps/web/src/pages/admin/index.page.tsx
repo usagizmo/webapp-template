@@ -27,7 +27,7 @@ const Page: NextPageWithLayout = () => {
   return (
     <>
       <NextSeo title="Admin" />
-      <main className="container max-w-lg">
+      <main className="container max-w-2xl">
         {queryHandle ??
           (session ? (
             <div className="text-center">
