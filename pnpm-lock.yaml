@@ -150,7 +150,7 @@ importers:
       '@types/jsonwebtoken': 8.5.8
       '@types/node': 16.11.41
       '@types/react': 18.0.12
-      '@types/react-transition-group': 4.4.4
+      '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7
       clsx: 1.1.1
       constants: workspace:*
@@ -214,7 +214,7 @@ importers:
       '@types/jsonwebtoken': 8.5.8
       '@types/node': 16.11.41
       '@types/react': 18.0.12
-      '@types/react-transition-group': 4.4.4
+      '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7_postcss@8.4.14
       constants: link:../../packages/constants
       eslint-preset: link:../../packages/eslint-preset
@@ -6444,8 +6444,8 @@ packages:
       '@types/react': 18.0.12
     dev: true
 
-  /@types/react-transition-group/4.4.4:
-    resolution: {integrity: sha512-7gAPz7anVK5xzbeQW9wFBDg7G++aPLAFY0QaSMOou9rJZpbuI58WAuJrgu+qR92l61grlnCUe7AFX8KGahAgug==}
+  /@types/react-transition-group/4.4.5:
+    resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}
     dependencies:
       '@types/react': 18.0.12
     dev: true
