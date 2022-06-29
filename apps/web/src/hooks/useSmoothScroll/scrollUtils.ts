@@ -10,8 +10,8 @@ export const scrollByHash = (hash: string) => {
   const target = document.querySelector<HTMLElement>(hash)
   if (!target) return
 
-  const fixedHeaer = document.querySelector('#fixed-header')
-  const offset = fixedHeaer ? fixedHeaer.clientHeight : 0
+  const fixedHeader = document.querySelector('#fixed-header')
+  const offset = fixedHeader ? fixedHeader.clientHeight : 0
   const scrollTop = target ? target.offsetTop - offset : 0
 
   gsap.to(window, {
