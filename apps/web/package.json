@@ -42,7 +42,7 @@
     "@types/gtag.js": "0.0.10",
     "@types/jsonwebtoken": "8.5.8",
     "@types/node": "18.0.0",
-    "@types/react": "18.0.14",
+    "@types/react": "18.0.12",
     "@types/react-transition-group": "4.4.5",
     "constants": "workspace:*",
     "eslint-preset": "workspace:*",
