@@ -14,7 +14,7 @@
     "eslint-preset": "workspace:*",
     "generated": "workspace:*",
     "lintstagedrc": "workspace:*",
-    "next-auth": "4.7.0",
+    "next-auth": "4.8.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "tsconfig": "workspace:*"
