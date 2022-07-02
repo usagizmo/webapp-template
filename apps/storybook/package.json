@@ -10,6 +10,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf storybook-static"
   },
   "devDependencies": {
+    "@babel/core": "7.18.6",
     "@storybook/addon-actions": "6.5.9",
     "@storybook/addon-essentials": "6.5.9",
     "@storybook/addon-links": "6.5.9",
@@ -19,7 +20,20 @@
     "@storybook/react": "6.5.9",
     "eslint-preset": "workspace:*",
     "lintstagedrc": "workspace:*",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "require-from-string": "2.0.2",
     "tailwind-preset": "workspace:*",
-    "tsconfig": "workspace:*"
+    "tsconfig": "workspace:*",
+    "typescript": "4.7.4",
+    "webpack": "5.73.0"
+  },
+  "peerDependencies": {
+    "@babel/core": "7.18.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "require-from-string": "2.0.2",
+    "typescript": "4.7.4",
+    "webpack": "5.73.0"
   }
 }

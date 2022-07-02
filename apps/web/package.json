@@ -17,17 +17,17 @@
   },
   "dependencies": {
     "clsx": "1.1.1",
-    "firebase": "9.8.3",
-    "firebase-admin": "10.3.0",
+    "firebase": "9.8.4",
+    "firebase-admin": "11.0.0",
     "gsap": "3.10.4",
     "jsonwebtoken": "8.5.1",
-    "next": "12.1.6",
-    "next-auth": "4.7.0",
+    "next": "12.2.0",
+    "next-auth": "4.8.0",
     "next-seo": "5.4.0",
     "phosphor-react": "1.4.1",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-hook-form": "7.31.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.33.1",
     "react-query": "3.39.1",
     "react-transition-group": "4.4.2",
     "ts-pattern": "4.0.3",
@@ -35,13 +35,14 @@
     "zustand": "3.7.2"
   },
   "devDependencies": {
+    "@babel/core": "7.18.6",
     "@firebase/app-compat": "0.1.28",
     "@firebase/app-types": "0.7.0",
     "@storybook/react": "6.5.9",
     "@types/gtag.js": "0.0.10",
     "@types/jsonwebtoken": "8.5.8",
-    "@types/node": "16.11.41",
-    "@types/react": "18.0.12",
+    "@types/node": "18.0.0",
+    "@types/react": "18.0.14",
     "@types/react-transition-group": "4.4.5",
     "constants": "workspace:*",
     "eslint-preset": "workspace:*",
@@ -49,8 +50,9 @@
     "lintstagedrc": "workspace:*",
     "next-transpile-modules": "9.0.0",
     "pathpida": "0.18.1",
+    "require-from-string": "2.0.2",
     "tailwind-preset": "workspace:*",
-    "tailwindcss": "3.0.24",
+    "tailwindcss": "3.1.4",
     "ts-xor": "1.0.8",
     "tsconfig": "workspace:*",
     "tsconfig-paths-webpack-plugin": "3.5.2",
@@ -58,5 +60,9 @@
     "types": "workspace:*",
     "typescript": "4.7.4",
     "utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "@babel/core": "7.18.6",
+    "require-from-string": "2.0.2"
   }
 }
