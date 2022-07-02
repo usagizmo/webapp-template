@@ -35,7 +35,6 @@
     "zustand": "3.7.2"
   },
   "devDependencies": {
-    "@babel/core": "7.18.5",
     "@firebase/app-compat": "0.1.28",
     "@firebase/app-types": "0.7.0",
     "@storybook/react": "6.5.9",
@@ -44,16 +43,12 @@
     "@types/node": "16.11.41",
     "@types/react": "18.0.12",
     "@types/react-transition-group": "4.4.5",
-    "autoprefixer": "10.4.7",
     "constants": "workspace:*",
     "eslint-preset": "workspace:*",
     "generated": "workspace:*",
-    "graphql": "16.5.0",
     "lintstagedrc": "workspace:*",
     "next-transpile-modules": "9.0.0",
     "pathpida": "0.18.1",
-    "postcss": "8.4.14",
-    "require-from-string": "2.0.2",
     "tailwind-preset": "workspace:*",
     "tailwindcss": "3.0.24",
     "ts-xor": "1.0.8",
@@ -63,12 +58,5 @@
     "types": "workspace:*",
     "typescript": "4.7.4",
     "utils": "workspace:*"
-  },
-  "peerDependencies": {
-    "@babel/core": "7.18.5",
-    "autoprefixer": "10.4.7",
-    "graphql": "16.5.0",
-    "postcss": "8.4.14",
-    "require-from-string": "2.0.2"
   }
 }
