@@ -7,6 +7,9 @@ module.exports = {
     next: {
       rootDir: ['apps/*/', 'packages/*/'],
     },
+    react: {
+      version: '18.1.0',
+    },
   },
   parserOptions: {
     project: './tsconfig.json',

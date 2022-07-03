@@ -13,6 +13,11 @@ module.exports = {
     'plugin:import/typescript',
     'prettier',
   ],
+  settings: {
+    react: {
+      version: '18.1.0',
+    },
+  },
   rules: {
     'import/order': [
       'error',
