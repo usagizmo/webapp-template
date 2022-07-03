@@ -152,7 +152,7 @@ importers:
       '@types/react': 18.0.12
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7
-      clsx: 1.1.1
+      clsx: 1.2.0
       constants: workspace:*
       eslint-preset: workspace:*
       firebase: 9.8.3
@@ -188,7 +188,7 @@ importers:
       utils: workspace:*
       zustand: 3.7.2
     dependencies:
-      clsx: 1.1.1
+      clsx: 1.2.0
       firebase: 9.8.3
       firebase-admin: 10.3.0_@firebase+app-types@0.7.0
       gsap: 3.10.4
@@ -8233,8 +8233,8 @@ packages:
     engines: {node: '>=0.8'}
     dev: true
 
-  /clsx/1.1.1:
-    resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
+  /clsx/1.2.0:
+    resolution: {integrity: sha512-EPRP7XJsM1y0iCU3Z7C7jFKdQboXSeHgEfzQUTlz7m5NP3hDrlz48aUsmNGp4pC+JOW9WA3vIRqlYuo/bl4Drw==}
     engines: {node: '>=6'}
     dev: false
 
