@@ -13,6 +13,6 @@
     "metadata:export": "hasura metadata export"
   },
   "devDependencies": {
-    "hasura-cli": "2.7.0"
+    "hasura-cli": "2.8.3"
   }
 }
