@@ -62,9 +62,9 @@ importers:
 
   apps/hasura:
     specifiers:
-      hasura-cli: 2.7.0
+      hasura-cli: 2.8.3
     devDependencies:
-      hasura-cli: 2.7.0
+      hasura-cli: 2.8.3
 
   apps/mockup:
     specifiers:
@@ -7111,7 +7111,7 @@ packages:
   /axios/0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.14.9
+      follow-redirects: 1.15.1
     transitivePeerDependencies:
       - debug
     dev: true
@@ -7119,7 +7119,7 @@ packages:
   /axios/0.21.4_debug@4.3.2:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.14.9_debug@4.3.2
+      follow-redirects: 1.15.1_debug@4.3.2
     transitivePeerDependencies:
       - debug
     dev: true
@@ -10617,8 +10617,17 @@ packages:
         optional: true
     dev: true
 
-  /follow-redirects/1.14.9_debug@4.3.2:
-    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
+  /follow-redirects/1.15.1:
+    resolution: {integrity: sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+
+  /follow-redirects/1.15.1_debug@4.3.2:
+    resolution: {integrity: sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -10628,16 +10637,6 @@ packages:
     dependencies:
       debug: 4.3.2
     dev: true
-
-  /follow-redirects/1.15.1:
-    resolution: {integrity: sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dev: false
 
   /for-in/1.0.2:
     resolution: {integrity: sha512-7EwmXrOjyL+ChxMhmG5lnW9MPt1aIeZEwKhQzoBUdTV0N3zuwWDZYVJatDvZ2OyzPUvdIAZDsCetk3coyMfcnQ==}
@@ -11506,8 +11505,8 @@ packages:
       space-separated-tokens: 1.1.5
     dev: true
 
-  /hasura-cli/2.7.0:
-    resolution: {integrity: sha512-wxoZE781ALUV2KWwhe/ezmtaUCtK/XMVHdCAkAGJWjq1dQ4r2/nStk4RMBxRLFxd7A8YQQvd5A6CTst7S45BMA==}
+  /hasura-cli/2.8.3:
+    resolution: {integrity: sha512-sIOnf8lE+kSLx3dOzhmaPepR+dzk5QXfkaz9WzCh1ZRESU+Mgf5TgmD7CXM8qYuldNf6wmZ0LvMDCoO/uErlTg==}
     engines: {node: '>=8'}
     hasBin: true
     requiresBuild: true
