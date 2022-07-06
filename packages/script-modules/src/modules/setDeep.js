@@ -13,7 +13,7 @@ export const setDeep = function () {
   }
 
   gsap.utils.toArray('[data-deep]').forEach(function (el) {
-    const deep = el.dataset.deep // 0 - 1
+    const deep = el.dataset.deep || 0.075 // 0 - 1
     addDeep(el, deep, el)
   })
 

@@ -57,4 +57,11 @@
   [data-in='slide-in']:not(.is-in) {
     @apply pointer-events-none translate-y-5 opacity-0;
   }
+
+  [data-modal] {
+    @apply duration-200;
+  }
+  [data-modal]:not(.is-open) {
+    @apply pointer-events-none opacity-0;
+  }
 }
