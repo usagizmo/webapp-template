@@ -36,7 +36,7 @@ export const setModal = function () {
     el.addEventListener('click', function (e) {
       e.preventDefault()
 
-      const hash = el.getAttribute('href')
+      const hash = el.getAttribute('href') || el.getAttribute('data-modal-open')
       open(hash)
 
       nextTick(function () {
