@@ -30,7 +30,7 @@
     "react-hook-form": "7.33.1",
     "react-query": "3.39.1",
     "react-transition-group": "4.4.2",
-    "ts-pattern": "4.0.3",
+    "ts-pattern": "4.0.4",
     "ulid": "2.3.0",
     "zustand": "3.7.2"
   },
