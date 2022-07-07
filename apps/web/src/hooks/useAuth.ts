@@ -16,7 +16,7 @@ import {
   signOut as nextAuthSignOut,
 } from 'next-auth/react'
 import { auth, db } from '@/lib/firebase'
-import { isPageLoadingAtom } from '@/store'
+import { endPageLoadingAtom, startPageLoadingAtom } from '@/store'
 
 let unsubscribeUser = () => {
   // This is intentional
@@ -28,7 +28,8 @@ type Inputs = {
 }
 
 export const useAuth = () => {
-  const [, setIsPageLoading] = useAtom(isPageLoadingAtom)
+  const [, startPageLoading] = useAtom(startPageLoadingAtom)
+  const [, endPageLoading] = useAtom(endPageLoadingAtom)
 
   const setIdToken = useCallback(async (user: FirebaseUser) => {
     const idToken = await getIdTokenByFirebaseUser(user)
@@ -47,7 +48,7 @@ export const useAuth = () => {
 
   const createUserWithEmailAndPassword = useCallback(
     async ({ email, password }: Inputs) => {
-      setIsPageLoading(true)
+      startPageLoading()
 
       let user
       try {
@@ -56,17 +57,17 @@ export const useAuth = () => {
         user = credentialUser
       } catch (err: any) {
         alert(err.message)
-        setIsPageLoading(false)
+        endPageLoading()
         return
       }
       setIdToken(user)
     },
-    [setIdToken, setIsPageLoading]
+    [endPageLoading, setIdToken, startPageLoading]
   )
 
   const signInWithEmailAndPassword = useCallback(
     async ({ email, password }: Inputs) => {
-      setIsPageLoading(true)
+      startPageLoading()
 
       let user
       try {
@@ -75,18 +76,18 @@ export const useAuth = () => {
         user = credentialUser
       } catch (err: any) {
         alert(err.message)
-        setIsPageLoading(false)
+        endPageLoading()
         return
       }
       setIdToken(user)
     },
-    [setIdToken, setIsPageLoading]
+    [endPageLoading, setIdToken, startPageLoading]
   )
 
   const signInWithGoogle = useCallback(async () => {
     const googleProvider = new GoogleAuthProvider()
 
-    setIsPageLoading(true)
+    startPageLoading()
 
     let user
     try {
@@ -99,11 +100,11 @@ export const useAuth = () => {
       user = credentialUser
     } catch (err: any) {
       alert(err.message)
-      setIsPageLoading(false)
+      endPageLoading()
       return
     }
     setIdToken(user)
-  }, [setIdToken, setIsPageLoading])
+  }, [endPageLoading, setIdToken, startPageLoading])
 
   const signOut = useCallback(async () => {
     await firebaseSignOut(auth)
