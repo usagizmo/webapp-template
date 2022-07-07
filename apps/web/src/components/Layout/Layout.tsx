@@ -2,8 +2,9 @@ import type { FC, ReactNode } from 'react'
 import { gsap } from 'gsap'
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import { useAtom } from 'jotai'
 import { useSmoothScroll } from '@/hooks/useSmoothScroll/useSmoothScroll'
-import { useStore } from '@/store/useStore'
+import { isPageLoadingAtom } from '@/store'
 import { LayoutFooter } from './LayoutFooter'
 import { LayoutHeader } from './LayoutHeader'
 import { PageLoading } from './PageLoading/PageLoading'
@@ -17,7 +18,7 @@ type Props = {
 
 const useLayout = () => {
   useSmoothScroll()
-  const isPageLoading = useStore((state) => state.isPageLoading)
+  const [isPageLoading] = useAtom(isPageLoadingAtom)
 
   return { isPageLoading }
 }

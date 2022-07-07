@@ -160,6 +160,7 @@ importers:
       generated: workspace:*
       graphql: 16.5.0
       gsap: 3.10.4
+      jotai: 1.7.2
       jsonwebtoken: 8.5.1
       lintstagedrc: workspace:*
       next: 12.1.6
@@ -186,12 +187,12 @@ importers:
       typescript: 4.7.4
       ulid: 2.3.0
       utils: workspace:*
-      zustand: 3.7.2
     dependencies:
       clsx: 1.2.1
       firebase: 9.8.3
       firebase-admin: 10.3.0_@firebase+app-types@0.7.0
       gsap: 3.10.4
+      jotai: 1.7.2_mbmnyybihvh3q6rp45nioqf3cy
       jsonwebtoken: 8.5.1
       next: 12.1.6_5ovelu635kdjiiodz74uabvzfu
       next-auth: 4.9.0_ef5jwxihqo6n7gxfmzogljlgcm
@@ -204,7 +205,6 @@ importers:
       react-transition-group: 4.4.2_ef5jwxihqo6n7gxfmzogljlgcm
       ts-pattern: 4.0.4
       ulid: 2.3.0
-      zustand: 3.7.2_react@18.1.0
     devDependencies:
       '@babel/core': 7.18.5
       '@firebase/app-compat': 0.1.28
@@ -12979,6 +12979,45 @@ packages:
   /jose/4.7.0:
     resolution: {integrity: sha512-DJNm2vlcVW+0Fhl5LVxdhXK5Nw5VYZvL79uiq3ZCRm6vqzTuEVT9T5lIRfzmkGbaaiV+edefGog25TWVyJ4mRQ==}
 
+  /jotai/1.7.2_mbmnyybihvh3q6rp45nioqf3cy:
+    resolution: {integrity: sha512-ksvpW1Wu+/HwW1iDYq23PpXLu2df5Vv+eWw70jRAx7IEY4c+qRsORULnqPFurSy/X8LSoPcRhVDJx/cyf8jjMg==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      '@babel/core': '*'
+      '@babel/template': '*'
+      '@urql/core': '*'
+      immer: '*'
+      optics-ts: '*'
+      react: '>=16.8'
+      react-query: '*'
+      valtio: '*'
+      wonka: '*'
+      xstate: '*'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/template':
+        optional: true
+      '@urql/core':
+        optional: true
+      immer:
+        optional: true
+      optics-ts:
+        optional: true
+      react-query:
+        optional: true
+      valtio:
+        optional: true
+      wonka:
+        optional: true
+      xstate:
+        optional: true
+    dependencies:
+      '@babel/core': 7.18.5
+      react: 18.1.0
+      react-query: 3.39.1_ef5jwxihqo6n7gxfmzogljlgcm
+    dev: false
+
   /js-sha3/0.8.0:
     resolution: {integrity: sha512-gF1cRrHhIzNfToc802P800N8PpXS+evLLXfsVpowqmAFR9uwbi89WvXg2QspOmXL8QL86J4T1EpFu+yUkwJY3Q==}
 
@@ -18882,18 +18921,6 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  /zustand/3.7.2_react@18.1.0:
-    resolution: {integrity: sha512-PIJDIZKtokhof+9+60cpockVOq05sJzHCriyvaLBmEJixseQ1a5Kdov6fWZfWOu5SK9c+FhH1jU0tntLxRJYMA==}
-    engines: {node: '>=12.7.0'}
-    peerDependencies:
-      react: '>=16.8'
-    peerDependenciesMeta:
-      react:
-        optional: true
-    dependencies:
-      react: 18.1.0
-    dev: false
 
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}

@@ -20,6 +20,7 @@
     "firebase": "9.8.3",
     "firebase-admin": "10.3.0",
     "gsap": "3.10.4",
+    "jotai": "1.7.2",
     "jsonwebtoken": "8.5.1",
     "next": "12.1.6",
     "next-auth": "4.9.0",
@@ -31,8 +32,7 @@
     "react-query": "3.39.1",
     "react-transition-group": "4.4.2",
     "ts-pattern": "4.0.4",
-    "ulid": "2.3.0",
-    "zustand": "3.7.2"
+    "ulid": "2.3.0"
   },
   "devDependencies": {
     "@babel/core": "7.18.5",

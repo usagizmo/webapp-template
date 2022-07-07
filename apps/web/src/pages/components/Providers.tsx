@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react'
 import { useState } from 'react'
 import { CONST } from 'constants/const'
+import { useAtomsDebugValue } from 'jotai/devtools'
 import { SessionProvider } from 'next-auth/react'
 import { DefaultSeo } from 'next-seo'
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query'
@@ -15,6 +16,8 @@ type Props = {
 }
 
 const useProviders = () => {
+  useAtomsDebugValue()
+
   const [queryClient] = useState(
     () =>
       new QueryClient({

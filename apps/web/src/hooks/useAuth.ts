@@ -10,12 +10,13 @@ import {
   getRedirectResult,
 } from 'firebase/auth'
 import { doc, onSnapshot } from 'firebase/firestore'
+import { useAtom } from 'jotai'
 import {
   signIn as nextAuthSignIn,
   signOut as nextAuthSignOut,
 } from 'next-auth/react'
 import { auth, db } from '@/lib/firebase'
-import { useStore } from '@/store/useStore'
+import { isPageLoadingAtom } from '@/store'
 
 let unsubscribeUser = () => {
   // This is intentional
@@ -27,8 +28,7 @@ type Inputs = {
 }
 
 export const useAuth = () => {
-  const startPageLoading = useStore((state) => state.startPageLoading)
-  const endPageLoading = useStore((state) => state.endPageLoading)
+  const [, setIsPageLoading] = useAtom(isPageLoadingAtom)
 
   const setIdToken = useCallback(async (user: FirebaseUser) => {
     const idToken = await getIdTokenByFirebaseUser(user)
@@ -47,7 +47,7 @@ export const useAuth = () => {
 
   const createUserWithEmailAndPassword = useCallback(
     async ({ email, password }: Inputs) => {
-      startPageLoading()
+      setIsPageLoading(true)
 
       let user
       try {
@@ -56,17 +56,17 @@ export const useAuth = () => {
         user = credentialUser
       } catch (err: any) {
         alert(err.message)
-        endPageLoading()
+        setIsPageLoading(false)
         return
       }
       setIdToken(user)
     },
-    [endPageLoading, setIdToken, startPageLoading]
+    [setIdToken, setIsPageLoading]
   )
 
   const signInWithEmailAndPassword = useCallback(
     async ({ email, password }: Inputs) => {
-      startPageLoading()
+      setIsPageLoading(true)
 
       let user
       try {
@@ -75,18 +75,18 @@ export const useAuth = () => {
         user = credentialUser
       } catch (err: any) {
         alert(err.message)
-        endPageLoading()
+        setIsPageLoading(false)
         return
       }
       setIdToken(user)
     },
-    [endPageLoading, setIdToken, startPageLoading]
+    [setIdToken, setIsPageLoading]
   )
 
   const signInWithGoogle = useCallback(async () => {
     const googleProvider = new GoogleAuthProvider()
 
-    startPageLoading()
+    setIsPageLoading(true)
 
     let user
     try {
@@ -99,11 +99,11 @@ export const useAuth = () => {
       user = credentialUser
     } catch (err: any) {
       alert(err.message)
-      endPageLoading()
+      setIsPageLoading(false)
       return
     }
     setIdToken(user)
-  }, [endPageLoading, setIdToken, startPageLoading])
+  }, [setIdToken, setIsPageLoading])
 
   const signOut = useCallback(async () => {
     await firebaseSignOut(auth)

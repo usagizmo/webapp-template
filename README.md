@@ -28,7 +28,7 @@ Monorepo template for creating a web service with Next.js.
     A starting point for building a Next.js application.  
     [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))  
     Page Transition ([react-transition-group](https://reactcommunity.org/react-transition-group/) x [GSAP](https://greensock.com/gsap/))  
-    [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Zustand](https://github.com/pmndrs/zustand)  
+    [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Jotai](https://jotai.org/)  
     [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
 
 - **Packages**
