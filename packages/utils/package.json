@@ -10,9 +10,9 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/jest": "28.1.3",
+    "@types/jest": "28.1.4",
     "eslint-preset": "workspace:*",
-    "jest": "28.1.1",
+    "jest": "28.1.2",
     "lintstagedrc": "workspace:*",
     "ts-jest": "28.0.5",
     "tsconfig": "workspace:*",
