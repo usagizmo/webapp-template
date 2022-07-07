@@ -10,12 +10,13 @@ import {
   getRedirectResult,
 } from 'firebase/auth'
 import { doc, onSnapshot } from 'firebase/firestore'
+import { useAtom } from 'jotai'
 import {
   signIn as nextAuthSignIn,
   signOut as nextAuthSignOut,
 } from 'next-auth/react'
 import { auth, db } from '@/lib/firebase'
-import { useStore } from '@/store/useStore'
+import { endPageLoadingAtom, startPageLoadingAtom } from '@/store'
 
 let unsubscribeUser = () => {
   // This is intentional
@@ -27,8 +28,8 @@ type Inputs = {
 }
 
 export const useAuth = () => {
-  const startPageLoading = useStore((state) => state.startPageLoading)
-  const endPageLoading = useStore((state) => state.endPageLoading)
+  const [, startPageLoading] = useAtom(startPageLoadingAtom)
+  const [, endPageLoading] = useAtom(endPageLoadingAtom)
 
   const setIdToken = useCallback(async (user: FirebaseUser) => {
     const idToken = await getIdTokenByFirebaseUser(user)
