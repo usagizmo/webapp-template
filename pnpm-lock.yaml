@@ -332,14 +332,14 @@ importers:
 
   packages/tailwind-preset:
     specifiers:
-      '@tailwindcss/typography': 0.5.2
+      '@tailwindcss/typography': 0.5.3
       autoprefixer: 10.4.7
       eslint-preset: workspace:*
       lintstagedrc: workspace:*
       postcss: 8.4.14
       tailwindcss: 3.1.4
     devDependencies:
-      '@tailwindcss/typography': 0.5.2_tailwindcss@3.1.4
+      '@tailwindcss/typography': 0.5.3_tailwindcss@3.1.4
       autoprefixer: 10.4.7_postcss@8.4.14
       eslint-preset: link:../eslint-preset
       lintstagedrc: link:../lintstagedrc
@@ -5580,10 +5580,10 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
-  /@tailwindcss/typography/0.5.2_tailwindcss@3.1.4:
-    resolution: {integrity: sha512-coq8DBABRPFcVhVIk6IbKyyHUt7YTEC/C992tatFB+yEx5WGBQrCgsSFjxHUr8AWXphWckadVJbominEduYBqw==}
+  /@tailwindcss/typography/0.5.3_tailwindcss@3.1.4:
+    resolution: {integrity: sha512-Cn4MufL/xiTh2Npw26xiL7gP3GFkJH+zWM8DAm/NNEr4gF5N9D6gY9zMNNQUu27m8g0IIk665BUuoU92wVUBkA==}
     peerDependencies:
-      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || insiders'
+      tailwindcss: '>=3.0.0 || insiders'
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
@@ -13520,7 +13520,7 @@ packages:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
 
   /lodash.castarray/4.4.0:
-    resolution: {integrity: sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=}
+    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
     dev: true
 
   /lodash.clonedeep/4.5.0:
