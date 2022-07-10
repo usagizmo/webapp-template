@@ -62,9 +62,9 @@ importers:
 
   apps/hasura:
     specifiers:
-      hasura-cli: 2.8.3
+      hasura-cli: 2.8.4
     devDependencies:
-      hasura-cli: 2.8.3
+      hasura-cli: 2.8.4
 
   apps/mockup:
     specifiers:
@@ -11390,8 +11390,8 @@ packages:
       space-separated-tokens: 1.1.5
     dev: true
 
-  /hasura-cli/2.8.3:
-    resolution: {integrity: sha512-sIOnf8lE+kSLx3dOzhmaPepR+dzk5QXfkaz9WzCh1ZRESU+Mgf5TgmD7CXM8qYuldNf6wmZ0LvMDCoO/uErlTg==}
+  /hasura-cli/2.8.4:
+    resolution: {integrity: sha512-3jhTEOOt6SxEDUx/efxZKJ3X4wgQfE3KVZKF4y2M/yaZpRoXTMN/Y9KbMSisDrtbU9+tBBtTEQwLPcVALhEjWw==}
     engines: {node: '>=8'}
     hasBin: true
     requiresBuild: true
