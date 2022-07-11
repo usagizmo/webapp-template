@@ -12,12 +12,12 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "@graphql-codegen/add": "3.1.1",
-    "@graphql-codegen/cli": "2.6.3",
-    "@graphql-codegen/introspection": "2.1.1",
-    "@graphql-codegen/typescript": "2.5.1",
-    "@graphql-codegen/typescript-operations": "2.4.2",
-    "@graphql-codegen/typescript-react-query": "3.5.14",
+    "@graphql-codegen/add": "3.2.0",
+    "@graphql-codegen/cli": "2.8.0",
+    "@graphql-codegen/introspection": "2.2.0",
+    "@graphql-codegen/typescript": "2.7.1",
+    "@graphql-codegen/typescript-operations": "2.5.1",
+    "@graphql-codegen/typescript-react-query": "3.6.1",
     "graphql": "16.5.0",
     "lintstagedrc": "workspace:*",
     "next-auth": "4.9.0",
