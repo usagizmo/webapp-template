@@ -278,7 +278,7 @@ importers:
   packages/generated:
     specifiers:
       '@graphql-codegen/add': 3.2.0
-      '@graphql-codegen/cli': 2.8.0
+      '@graphql-codegen/cli': 2.8.1
       '@graphql-codegen/introspection': 2.2.0
       '@graphql-codegen/typescript': 2.7.1
       '@graphql-codegen/typescript-operations': 2.5.1
@@ -293,7 +293,7 @@ importers:
       typescript: 4.7.4
     devDependencies:
       '@graphql-codegen/add': 3.2.0_graphql@16.5.0
-      '@graphql-codegen/cli': 2.8.0_nx5rldzsxkqp2qf2miljeykxp4
+      '@graphql-codegen/cli': 2.8.1_nx5rldzsxkqp2qf2miljeykxp4
       '@graphql-codegen/introspection': 2.2.0_graphql@16.5.0
       '@graphql-codegen/typescript': 2.7.1_graphql@16.5.0
       '@graphql-codegen/typescript-operations': 2.5.1_graphql@16.5.0
@@ -2704,8 +2704,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@graphql-codegen/cli/2.8.0_nx5rldzsxkqp2qf2miljeykxp4:
-    resolution: {integrity: sha512-qpLnfWLd7M6ISlXN5c9WPwUE9iZkzS6996hwlvKcYpyGWj10ZtDcEQpH+NFoNjNP3Bu+QOSt6gSnpnCnajwadA==}
+  /@graphql-codegen/cli/2.8.1_nx5rldzsxkqp2qf2miljeykxp4:
+    resolution: {integrity: sha512-o+Za1483WhnbMA5G4JJq72EeqXROsdEiDTfUTxtX1iPPebv+VMekTFfHnBCUXpes0XTeZViXTd16AX6cmtUF4Q==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2739,6 +2739,7 @@ packages:
       mkdirp: 1.0.4
       string-env-interpolation: 1.0.1
       ts-log: 2.2.4
+      tslib: 2.4.0
       yaml: 1.10.2
       yargs: 17.4.1
     transitivePeerDependencies:
@@ -3021,16 +3022,6 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@graphql-tools/merge/8.2.10_graphql@16.5.0:
-    resolution: {integrity: sha512-wpg22seOTNfkIO8jFAgo8w1BsT3IS2OTMpkCNf+dvcKSP09SVidYCOliyWHgjDCmpCrvvSjOX855NUKDx/Biew==}
-    peerDependencies:
-      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      '@graphql-tools/utils': 8.6.9_graphql@16.5.0
-      graphql: 16.5.0
-      tslib: 2.3.1
-    dev: true
-
   /@graphql-tools/merge/8.3.0_graphql@16.5.0:
     resolution: {integrity: sha512-xRa7RAQok/0DD2YnjuqikMrr7dUAxTpdGtZ7BkvUUGhYs3B3p7reCAfvOVr1DJAqVToP7hdlMk+S5+Ylk+AaqA==}
     peerDependencies:
@@ -3136,15 +3127,6 @@ packages:
       - bufferutil
       - encoding
       - utf-8-validate
-    dev: true
-
-  /@graphql-tools/utils/8.6.9_graphql@16.5.0:
-    resolution: {integrity: sha512-Z1X4d4GCT81+8CSt6SgU4t1w1UAUsAIRb67mI90k/zAs+ArkB95iE3bWXuJCUmd1+r8DGGtmUNOArtd6wkt+OQ==}
-    peerDependencies:
-      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      graphql: 16.5.0
-      tslib: 2.3.1
     dev: true
 
   /@graphql-tools/utils/8.8.0_graphql@16.5.0:
@@ -10824,7 +10806,7 @@ packages:
       '@graphql-tools/graphql-file-loader': 7.4.0_graphql@16.5.0
       '@graphql-tools/json-file-loader': 7.4.0_graphql@16.5.0
       '@graphql-tools/load': 7.7.0_graphql@16.5.0
-      '@graphql-tools/merge': 8.2.10_graphql@16.5.0
+      '@graphql-tools/merge': 8.3.0_graphql@16.5.0
       '@graphql-tools/url-loader': 7.12.1_graphql@16.5.0
       '@graphql-tools/utils': 8.8.0_graphql@16.5.0
       cosmiconfig: 7.0.1
@@ -17245,10 +17227,6 @@ packages:
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: true
-
-  /tslib/2.3.1:
-    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: true
 
   /tslib/2.4.0:
