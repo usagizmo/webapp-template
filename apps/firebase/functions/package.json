@@ -23,7 +23,7 @@
   "devDependencies": {
     "@firebase/app-compat": "0.1.28",
     "@firebase/app-types": "0.7.0",
-    "@types/node": "16.11.43",
+    "@types/node": "16.11.44",
     "@typescript-eslint/eslint-plugin": "5.29.0",
     "@typescript-eslint/parser": "5.29.0",
     "eslint": "8.19.0",
@@ -37,7 +37,7 @@
   "peerDependencies": {
     "@firebase/app-compat": "0.1.28",
     "@firebase/app-types": "0.7.0",
-    "@types/node": "16.11.43",
+    "@types/node": "16.11.44",
     "jest": "28.1.2"
   }
 }

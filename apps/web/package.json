@@ -41,7 +41,7 @@
     "@storybook/react": "6.5.9",
     "@types/gtag.js": "0.0.10",
     "@types/jsonwebtoken": "8.5.8",
-    "@types/node": "16.11.43",
+    "@types/node": "16.11.44",
     "@types/react": "18.0.12",
     "@types/react-transition-group": "4.4.5",
     "autoprefixer": "10.4.7",
