@@ -29,7 +29,7 @@ importers:
     specifiers:
       '@firebase/app-compat': 0.1.28
       '@firebase/app-types': 0.7.0
-      '@types/node': 16.11.43
+      '@types/node': 16.11.44
       '@typescript-eslint/eslint-plugin': 5.29.0
       '@typescript-eslint/parser': 5.29.0
       axios: 0.27.2
@@ -49,7 +49,7 @@ importers:
     devDependencies:
       '@firebase/app-compat': 0.1.28
       '@firebase/app-types': 0.7.0
-      '@types/node': 16.11.43
+      '@types/node': 16.11.44
       '@typescript-eslint/eslint-plugin': 5.29.0_hyhkoiy62keebsro2cuewzwyme
       '@typescript-eslint/parser': 5.29.0_4x5o4skxv6sl53vpwefgt23khm
       eslint: 8.19.0
@@ -57,7 +57,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.19.0
       eslint-plugin-import: 2.26.0_57gvyn65w4xhr7pbo3dz7muce4
       firebase-functions-test: 2.2.0_bsqlk4ycfqocs3c3zevv5335ni
-      jest: 28.1.2_@types+node@16.11.43
+      jest: 28.1.2_@types+node@16.11.44
       typescript: 4.7.4
 
   apps/hasura:
@@ -148,7 +148,7 @@ importers:
       '@storybook/react': 6.5.9
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
-      '@types/node': 16.11.43
+      '@types/node': 16.11.44
       '@types/react': 18.0.12
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7
@@ -212,7 +212,7 @@ importers:
       '@storybook/react': 6.5.9_jniyufg537t7d73ulmqbkimkei
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
-      '@types/node': 16.11.43
+      '@types/node': 16.11.44
       '@types/react': 18.0.12
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7_postcss@8.4.14
@@ -5677,8 +5677,8 @@ packages:
     resolution: {integrity: sha512-K0MsdV42vPwm9L6UwhIxMAOmcvH/1OoVkZyCgEtVu4Wx7sElGloy/W7kMBNe/oJ7V/jW9BVt1F6RahH6e7tPXw==}
     dev: true
 
-  /@types/node/16.11.43:
-    resolution: {integrity: sha512-GqWykok+3uocgfAJM8imbozrqLnPyTrpFlrryURQlw1EesPUCx5XxTiucWDSFF9/NUEXDuD4bnvHm8xfVGWTpQ==}
+  /@types/node/16.11.44:
+    resolution: {integrity: sha512-gwP6+QDgL5TDBIWh1lbYh3EFPU11pa+8xcamcsA3ROkp3A9X+/3Y5cRgq93VPEEE+CGfxlQnqkg1kkWGBgh3fw==}
     dev: true
 
   /@types/node/17.0.25:
@@ -10095,7 +10095,7 @@ packages:
       '@types/lodash': 4.14.182
       firebase-admin: 10.3.0_@firebase+app-types@0.7.0
       firebase-functions: 3.22.0_firebase-admin@10.3.0
-      jest: 28.1.2_@types+node@16.11.43
+      jest: 28.1.2_@types+node@16.11.44
       lodash: 4.17.21
       ts-deepmerge: 2.0.1
     dev: true
@@ -12082,7 +12082,7 @@ packages:
       - ts-node
     dev: true
 
-  /jest-cli/28.1.2_@types+node@16.11.43:
+  /jest-cli/28.1.2_@types+node@16.11.44:
     resolution: {integrity: sha512-l6eoi5Do/IJUXAFL9qRmDiFpBeEJAnjJb1dcd9i/VWfVWbp3mJhuH50dNtX67Ali4Ecvt4eBkWb4hXhPHkAZTw==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -12099,7 +12099,7 @@ packages:
       exit: 0.1.2
       graceful-fs: 4.2.10
       import-local: 3.1.0
-      jest-config: 28.1.2_@types+node@16.11.43
+      jest-config: 28.1.2_@types+node@16.11.44
       jest-util: 28.1.1
       jest-validate: 28.1.1
       prompts: 2.4.2
@@ -12148,7 +12148,7 @@ packages:
       - supports-color
     dev: true
 
-  /jest-config/28.1.2_@types+node@16.11.43:
+  /jest-config/28.1.2_@types+node@16.11.44:
     resolution: {integrity: sha512-g6EfeRqddVbjPVBVY4JWpUY4IvQoFRIZcv4V36QkqzE0IGhEC/VkugFeBMAeUE7PRgC8KJF0yvJNDeQRbamEVA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     peerDependencies:
@@ -12163,7 +12163,7 @@ packages:
       '@babel/core': 7.18.5
       '@jest/test-sequencer': 28.1.1
       '@jest/types': 28.1.1
-      '@types/node': 16.11.43
+      '@types/node': 16.11.44
       babel-jest: 28.1.2_@babel+core@7.18.5
       chalk: 4.1.2
       ci-info: 3.3.0
@@ -12596,7 +12596,7 @@ packages:
       - ts-node
     dev: true
 
-  /jest/28.1.2_@types+node@16.11.43:
+  /jest/28.1.2_@types+node@16.11.44:
     resolution: {integrity: sha512-Tuf05DwLeCh2cfWCQbcz9UxldoDyiR1E9Igaei5khjonKncYdc6LDfynKCEWozK0oLE3GD+xKAo2u8x/0s6GOg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -12609,7 +12609,7 @@ packages:
       '@jest/core': 28.1.2
       '@jest/types': 28.1.1
       import-local: 3.1.0
-      jest-cli: 28.1.2_@types+node@16.11.43
+      jest-cli: 28.1.2_@types+node@16.11.44
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
