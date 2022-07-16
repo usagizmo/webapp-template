@@ -149,7 +149,7 @@ importers:
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
       '@types/node': 16.11.44
-      '@types/react': 18.0.12
+      '@types/react': 18.0.15
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7
       clsx: 1.2.1
@@ -213,7 +213,7 @@ importers:
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
       '@types/node': 16.11.44
-      '@types/react': 18.0.12
+      '@types/react': 18.0.15
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7_postcss@8.4.14
       constants: link:../../packages/constants
@@ -6184,15 +6184,7 @@ packages:
   /@types/react-transition-group/4.4.5:
     resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}
     dependencies:
-      '@types/react': 18.0.12
-    dev: true
-
-  /@types/react/18.0.12:
-    resolution: {integrity: sha512-duF1OTASSBQtcigUvhuiTB1Ya3OvSy+xORCiEf20H0P0lzx+/KeVsA99U5UjLXSbyo1DRJDlLKqTeM1ngosqtg==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.1.0
+      '@types/react': 18.0.15
     dev: true
 
   /@types/react/18.0.15:
