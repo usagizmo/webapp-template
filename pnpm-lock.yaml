@@ -29,7 +29,7 @@ importers:
     specifiers:
       '@firebase/app-compat': 0.1.29
       '@firebase/app-types': 0.7.0
-      '@types/node': 16.11.45
+      '@types/node': 16.11.44
       '@typescript-eslint/eslint-plugin': 5.29.0
       '@typescript-eslint/parser': 5.29.0
       axios: 0.27.2
@@ -49,7 +49,7 @@ importers:
     devDependencies:
       '@firebase/app-compat': 0.1.29
       '@firebase/app-types': 0.7.0
-      '@types/node': 16.11.45
+      '@types/node': 16.11.44
       '@typescript-eslint/eslint-plugin': 5.29.0_hyhkoiy62keebsro2cuewzwyme
       '@typescript-eslint/parser': 5.29.0_4x5o4skxv6sl53vpwefgt23khm
       eslint: 8.19.0
@@ -57,7 +57,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.19.0
       eslint-plugin-import: 2.26.0_57gvyn65w4xhr7pbo3dz7muce4
       firebase-functions-test: 2.2.0_bsqlk4ycfqocs3c3zevv5335ni
-      jest: 28.1.2_@types+node@16.11.45
+      jest: 28.1.2_@types+node@16.11.44
       typescript: 4.7.4
 
   apps/hasura:
@@ -82,7 +82,7 @@ importers:
       rollup: 2.76.0
       script-modules: workspace:*
       tailwind-preset: workspace:*
-      tailwindcss: 3.1.6
+      tailwindcss: 3.1.4
     devDependencies:
       '@jest/globals': 28.1.2
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.76.0
@@ -98,7 +98,7 @@ importers:
       rollup: 2.76.0
       script-modules: link:../../packages/script-modules
       tailwind-preset: link:../../packages/tailwind-preset
-      tailwindcss: 3.1.6
+      tailwindcss: 3.1.4
 
   apps/storybook:
     specifiers:
@@ -148,7 +148,7 @@ importers:
       '@storybook/react': 6.5.9
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
-      '@types/node': 16.11.45
+      '@types/node': 16.11.44
       '@types/react': 18.0.15
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7
@@ -160,7 +160,7 @@ importers:
       generated: workspace:*
       graphql: 16.5.0
       gsap: 3.10.4
-      jotai: 1.7.5
+      jotai: 1.7.4
       jsonwebtoken: 8.5.1
       lintstagedrc: workspace:*
       next: 12.2.2
@@ -177,7 +177,7 @@ importers:
       react-transition-group: 4.4.2
       require-from-string: 2.0.2
       tailwind-preset: workspace:*
-      tailwindcss: 3.1.6
+      tailwindcss: 3.1.4
       ts-pattern: 4.0.4
       ts-xor: 1.0.8
       tsconfig: workspace:*
@@ -192,7 +192,7 @@ importers:
       firebase: 9.8.3
       firebase-admin: 10.3.0_@firebase+app-types@0.7.0
       gsap: 3.10.4
-      jotai: 1.7.5_mbmnyybihvh3q6rp45nioqf3cy
+      jotai: 1.7.4_mbmnyybihvh3q6rp45nioqf3cy
       jsonwebtoken: 8.5.1
       next: 12.2.2_5ovelu635kdjiiodz74uabvzfu
       next-auth: 4.9.0_ef5jwxihqo6n7gxfmzogljlgcm
@@ -212,7 +212,7 @@ importers:
       '@storybook/react': 6.5.9_jniyufg537t7d73ulmqbkimkei
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
-      '@types/node': 16.11.45
+      '@types/node': 16.11.44
       '@types/react': 18.0.15
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7_postcss@8.4.14
@@ -226,7 +226,7 @@ importers:
       postcss: 8.4.14
       require-from-string: 2.0.2
       tailwind-preset: link:../../packages/tailwind-preset
-      tailwindcss: 3.1.6
+      tailwindcss: 3.1.4
       ts-xor: 1.0.8
       tsconfig: link:../../packages/tsconfig
       tsconfig-paths-webpack-plugin: 3.5.2
@@ -337,14 +337,14 @@ importers:
       eslint-preset: workspace:*
       lintstagedrc: workspace:*
       postcss: 8.4.14
-      tailwindcss: 3.1.6
+      tailwindcss: 3.1.4
     devDependencies:
-      '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
+      '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.4
       autoprefixer: 10.4.7_postcss@8.4.14
       eslint-preset: link:../eslint-preset
       lintstagedrc: link:../lintstagedrc
       postcss: 8.4.14
-      tailwindcss: 3.1.6
+      tailwindcss: 3.1.4
 
   packages/tsconfig:
     specifiers:
@@ -3620,7 +3620,7 @@ packages:
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.6.13
-      '@types/node': 18.0.4
+      '@types/node': 16.11.44
 
   /@grpc/proto-loader/0.6.13:
     resolution: {integrity: sha512-FjxPYDRTn6Ec3V0arm1FtSpmP6V50wuph2yILpyvTKzjc76oDdoihXqM1DzOW5ubvCC8GivfCnNtfaRE8myJ7g==}
@@ -5142,7 +5142,7 @@ packages:
       '@storybook/semver': 7.3.2
       '@storybook/store': 6.5.9_ef5jwxihqo6n7gxfmzogljlgcm
       '@storybook/telemetry': 6.5.9_43ynsg6k4f7jhm52qj4dj6xrhi
-      '@types/node': 16.11.45
+      '@types/node': 16.11.44
       '@types/node-fetch': 2.6.2
       '@types/pretty-hrtime': 1.0.1
       '@types/webpack': 4.41.32
@@ -5728,7 +5728,7 @@ packages:
       '@storybook/semver': 7.3.2
       '@storybook/store': 6.5.9_ef5jwxihqo6n7gxfmzogljlgcm
       '@types/estree': 0.0.51
-      '@types/node': 16.11.45
+      '@types/node': 16.11.44
       '@types/webpack-env': 1.17.0
       acorn: 7.4.1
       acorn-jsx: 5.3.2_acorn@7.4.1
@@ -5914,7 +5914,7 @@ packages:
     dependencies:
       tslib: 2.4.0
 
-  /@tailwindcss/typography/0.5.4_tailwindcss@3.1.6:
+  /@tailwindcss/typography/0.5.4_tailwindcss@3.1.4:
     resolution: {integrity: sha512-QEdg40EmGvE7kKoDei8zr5sf4D1pIayHj4R31bH3lX8x2BtTiR+jNejYPOkhbmy3DXgkMF9jC8xqNiGFAuL9Sg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -5922,7 +5922,7 @@ packages:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
-      tailwindcss: 3.1.6
+      tailwindcss: 3.1.4
     dev: true
 
   /@tootallnate/once/2.0.0:
@@ -5966,7 +5966,7 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 18.0.4
+      '@types/node': 16.11.44
 
   /@types/component-emitter/1.2.11:
     resolution: {integrity: sha512-SRXjM+tfsSlA9VuG8hGO2nft2p8zjXCK1VcC6N4NXbBbYbSia9kzCChYQajIjzIqOOOuh5Ock6MmV2oux4jDZQ==}
@@ -5975,7 +5975,7 @@ packages:
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 18.0.4
+      '@types/node': 16.11.44
 
   /@types/cookie/0.4.1:
     resolution: {integrity: sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==}
@@ -6009,7 +6009,7 @@ packages:
   /@types/express-serve-static-core/4.17.29:
     resolution: {integrity: sha512-uMd++6dMKS32EOuw1Uli3e3BPgdLIXmezcfHv7N4c1s3gkhikBplORPpMq3fuWkxncZN1reb16d5n8yhQ80x7Q==}
     dependencies:
-      '@types/node': 18.0.4
+      '@types/node': 16.11.44
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
 
@@ -6105,7 +6105,7 @@ packages:
   /@types/jsonwebtoken/8.5.8:
     resolution: {integrity: sha512-zm6xBQpFDIDM6o9r6HSgDeIcLy82TKWctCXEPbJJcXb5AKmi5BNNdLXneixK4lplX3PqIVcwLBCGE/kAGnlD4A==}
     dependencies:
-      '@types/node': 18.0.4
+      '@types/node': 16.11.44
 
   /@types/lodash/4.14.182:
     resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
@@ -6136,14 +6136,10 @@ packages:
 
   /@types/node/16.11.44:
     resolution: {integrity: sha512-gwP6+QDgL5TDBIWh1lbYh3EFPU11pa+8xcamcsA3ROkp3A9X+/3Y5cRgq93VPEEE+CGfxlQnqkg1kkWGBgh3fw==}
-    dev: true
-
-  /@types/node/16.11.45:
-    resolution: {integrity: sha512-3rKg/L5x0rofKuuUt5zlXzOnKyIHXmIu5R8A0TuNDMF2062/AOIDBciFIjToLEJ/9F9DzkHNot+BpNsMI1OLdQ==}
-    dev: true
 
   /@types/node/18.0.4:
     resolution: {integrity: sha512-M0+G6V0Y4YV8cqzHssZpaNCqvYwlCiulmm0PwpNLF55r/+cT8Ol42CHRU1SEaYFH2rTwiiE1aYg/2g2rrtGdPA==}
+    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -6213,7 +6209,7 @@ packages:
     resolution: {integrity: sha512-nCkHGI4w7ZgAdNkrEu0bv+4xNV/XDqW+DydknebMOQwkpDGx8G+HTlj7R7ABI8i8nKxVw0wtKPi1D+lPOkh4YQ==}
     dependencies:
       '@types/mime': 1.3.2
-      '@types/node': 18.0.4
+      '@types/node': 16.11.44
 
   /@types/source-list-map/0.1.2:
     resolution: {integrity: sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==}
@@ -10477,7 +10473,7 @@ packages:
       '@fastify/busboy': 1.1.0
       '@firebase/database-compat': 0.2.3_@firebase+app-types@0.7.0
       '@firebase/database-types': 0.9.11
-      '@types/node': 18.0.4
+      '@types/node': 16.11.44
       jsonwebtoken: 8.5.1
       jwks-rsa: 2.1.4
       node-forge: 1.3.1
@@ -10501,7 +10497,7 @@ packages:
       '@types/lodash': 4.14.182
       firebase-admin: 10.3.0_@firebase+app-types@0.7.0
       firebase-functions: 3.22.0_firebase-admin@10.3.0
-      jest: 28.1.2_@types+node@16.11.45
+      jest: 28.1.2_@types+node@16.11.44
       lodash: 4.17.21
       ts-deepmerge: 2.0.3
     dev: true
@@ -12454,7 +12450,7 @@ packages:
       - ts-node
     dev: true
 
-  /jest-cli/28.1.3_@types+node@16.11.45:
+  /jest-cli/28.1.3_@types+node@16.11.44:
     resolution: {integrity: sha512-roY3kvrv57Azn1yPgdTebPAXvdR2xfezaKKYzVxZ6It/5NCxzJym6tUI5P1zkdWhfUYkxEI9uZWcQdaFLo8mJQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -12471,7 +12467,7 @@ packages:
       exit: 0.1.2
       graceful-fs: 4.2.10
       import-local: 3.1.0
-      jest-config: 28.1.3_@types+node@16.11.45
+      jest-config: 28.1.3_@types+node@16.11.44
       jest-util: 28.1.3
       jest-validate: 28.1.3
       prompts: 2.4.2
@@ -12536,45 +12532,6 @@ packages:
       '@jest/test-sequencer': 28.1.3
       '@jest/types': 28.1.3
       '@types/node': 16.11.44
-      babel-jest: 28.1.3_@babel+core@7.18.6
-      chalk: 4.1.2
-      ci-info: 3.3.2
-      deepmerge: 4.2.2
-      glob: 7.2.3
-      graceful-fs: 4.2.10
-      jest-circus: 28.1.3
-      jest-environment-node: 28.1.3
-      jest-get-type: 28.0.2
-      jest-regex-util: 28.0.2
-      jest-resolve: 28.1.3
-      jest-runner: 28.1.3
-      jest-util: 28.1.3
-      jest-validate: 28.1.3
-      micromatch: 4.0.5
-      parse-json: 5.2.0
-      pretty-format: 28.1.3
-      slash: 3.0.0
-      strip-json-comments: 3.1.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /jest-config/28.1.3_@types+node@16.11.45:
-    resolution: {integrity: sha512-MG3INjByJ0J4AsNBm7T3hsuxKQqFIiRo/AUqb1q9LRKI5UU6Aar9JHbr9Ivn1TVwfUD9KirRoM/T6u8XlcQPHQ==}
-    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
-    peerDependencies:
-      '@types/node': '*'
-      ts-node: '>=9.0.0'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      ts-node:
-        optional: true
-    dependencies:
-      '@babel/core': 7.18.6
-      '@jest/test-sequencer': 28.1.3
-      '@jest/types': 28.1.3
-      '@types/node': 16.11.45
       babel-jest: 28.1.3_@babel+core@7.18.6
       chalk: 4.1.2
       ci-info: 3.3.2
@@ -12968,7 +12925,7 @@ packages:
       - ts-node
     dev: true
 
-  /jest/28.1.2_@types+node@16.11.45:
+  /jest/28.1.2_@types+node@16.11.44:
     resolution: {integrity: sha512-Tuf05DwLeCh2cfWCQbcz9UxldoDyiR1E9Igaei5khjonKncYdc6LDfynKCEWozK0oLE3GD+xKAo2u8x/0s6GOg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -12981,7 +12938,7 @@ packages:
       '@jest/core': 28.1.3
       '@jest/types': 28.1.3
       import-local: 3.1.0
-      jest-cli: 28.1.3_@types+node@16.11.45
+      jest-cli: 28.1.3_@types+node@16.11.44
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -12997,8 +12954,8 @@ packages:
   /jose/4.8.3:
     resolution: {integrity: sha512-7rySkpW78d8LBp4YU70Wb7+OTgE3OwAALNVZxhoIhp4Kscp+p/fBkdpxGAMKxvCAMV4QfXBU9m6l9nX/vGwd2g==}
 
-  /jotai/1.7.5_mbmnyybihvh3q6rp45nioqf3cy:
-    resolution: {integrity: sha512-EpawdHUOQmiKDoKRaFkO0L7R7YAFYBylK6M9IivMUPUpiHnXnt5e80AlqHvMUwg4p8BcQewh2JLWGQqFhtjpEA==}
+  /jotai/1.7.4_mbmnyybihvh3q6rp45nioqf3cy:
+    resolution: {integrity: sha512-PvkjL6DA4I0GFNFWt/1MKouTpN6Ohj0qyfuV4LoYGBHQRlf38qF6cPILozYsYZi2Nfeap9MdzWVGSYu1qBElKQ==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@babel/core': '*'
@@ -15401,7 +15358,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 18.0.4
+      '@types/node': 16.11.44
       long: 4.0.0
 
   /proxy-addr/2.0.7:
@@ -17178,8 +17135,8 @@ packages:
     resolution: {integrity: sha512-k8uzYIkIVwmT+TcglpdN50pS2y1BDcUnBPK9iJeGu0Pl1lOI8pD6wtzgw91Pjpe+RxtTncw32tLxs/R0yNL2Mg==}
     dev: true
 
-  /tailwindcss/3.1.6:
-    resolution: {integrity: sha512-7skAOY56erZAFQssT1xkpk+kWt2NrO45kORlxFPXUt3CiGsVPhH1smuH5XoDH6sGPXLyBv+zgCKA2HWBsgCytg==}
+  /tailwindcss/3.1.4:
+    resolution: {integrity: sha512-NrxbFV4tYsga/hpWbRyUfIaBrNMXDxx5BsHgBS4v5tlyjf+sDsgBg5m9OxjrXIqAS/uR9kicxLKP+bEHI7BSeQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
