@@ -15,9 +15,8 @@ Monorepo template for creating a web service with Next.js.
 
 - **Apps**
 
-  - [`firebase`](./apps/firebase/README.md):  
-    [Firebase Local Emulator Suite](https://firebase.google.com/docs/emulator-suite) and Firebase settings.
-    [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/)
+  - [`nhost`](./apps/nhost/README.md):  
+    [Nhost](https://nhost.io/) provides - GraphQL / Authentication / Storage / Functions
   - [`hasura`](./apps/hasura/README.md):  
     [Hasura](https://hasura.io/) on Docker and [Hasura Cloud](https://hasura.io/cloud/) settings.
   - [`mockup`](./apps/mockup/README.md): [[Demo](https://nextjs-template-mockup.usagizmo.com/)]  
@@ -67,20 +66,13 @@ pnpm clean   # rm .turbo, node_module and generated files
 
 ## List of listening port numbers
 
+- `1337`: `apps/nhost/` - Hasura
+  - `* (auto)`: GraphQL Endpoint
+  - `* (auto)`: MailHog
 - `3000`: `apps/web/` - Next.js application
-- `4000`: `apps/firebase/` - Emulator UI
-  - Services
-    - `9099`: Authentication
-    - `5001`: Functions
-    - `8080`: Firestore
-    - `8085`: Pub/Sub
-    - `9199`: Storage
-  - `4400`: Emulator Hub
-  - `4500`: Other reserved port
 - `6006`: `apps/storybook/` - Storybook
 - `8000`: `apps/mockup/` - Static site
 - `49160`: `apps/mockup/` - Express server
-- `49180`: `apps/hasura/` - Hasura
 
 ## Registering environment variables for GitHub / Vercel
 

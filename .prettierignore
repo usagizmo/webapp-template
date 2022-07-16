@@ -8,7 +8,7 @@ out/
 # Custom
 .turbo
 .vercel
-/apps/firebase/functions/lib
+/apps/nhost/.nhost
 /apps/mockup/public/script.js
 /apps/mockup/public/styles.css
 /apps/storybook/storybook-static
