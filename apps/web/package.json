@@ -20,7 +20,7 @@
     "firebase": "9.8.3",
     "firebase-admin": "10.3.0",
     "gsap": "3.10.4",
-    "jotai": "1.7.4",
+    "jotai": "1.7.5",
     "jsonwebtoken": "8.5.1",
     "next": "12.2.2",
     "next-auth": "4.9.0",
