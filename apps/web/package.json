@@ -31,7 +31,7 @@
     "react-hook-form": "7.33.1",
     "react-query": "3.39.2",
     "react-transition-group": "4.4.2",
-    "ts-pattern": "4.0.4",
+    "ts-pattern": "4.0.5",
     "ulid": "2.3.0"
   },
   "devDependencies": {

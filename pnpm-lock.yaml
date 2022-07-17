@@ -178,7 +178,7 @@ importers:
       require-from-string: 2.0.2
       tailwind-preset: workspace:*
       tailwindcss: 3.1.6
-      ts-pattern: 4.0.4
+      ts-pattern: 4.0.5
       ts-xor: 1.0.8
       tsconfig: workspace:*
       tsconfig-paths-webpack-plugin: 3.5.2
@@ -203,7 +203,7 @@ importers:
       react-hook-form: 7.33.1_react@18.1.0
       react-query: 3.39.2_ef5jwxihqo6n7gxfmzogljlgcm
       react-transition-group: 4.4.2_ef5jwxihqo6n7gxfmzogljlgcm
-      ts-pattern: 4.0.4
+      ts-pattern: 4.0.5
       ulid: 2.3.0
     devDependencies:
       '@babel/core': 7.18.5
@@ -17542,8 +17542,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-pattern/4.0.4:
-    resolution: {integrity: sha512-gDKHf3T+4X2w5k5IpD4FQ6P5b0LRYW7sJdf/yG7uAdxKitgk2Z8UZLdSBjrXs5mI0Vq6E/hRQd6+Kh3FbdjBzw==}
+  /ts-pattern/4.0.5:
+    resolution: {integrity: sha512-Bq44KCEt7JVaNLa148mBCJkcQf4l7jtLEBDuDdeuLynWDA+1a60P4D0rMkqSM9mOKLQbIWUddE9h3XKyKwBeqA==}
     dev: false
 
   /ts-pnp/1.2.0_typescript@4.7.4:
