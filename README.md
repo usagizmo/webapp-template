@@ -17,8 +17,6 @@ Monorepo template for creating a web service with Next.js.
 
   - [`nhost`](./apps/nhost/README.md):  
     [Nhost](https://nhost.io/) dev server for prod/test server migration
-  - [`hasura`](./apps/hasura/README.md):  
-    [Hasura](https://hasura.io/) on Docker and [Hasura Cloud](https://hasura.io/cloud/) settings.
   - [`mockup`](./apps/mockup/README.md): [[Demo](https://nextjs-template-mockup.usagizmo.com/)]  
     A starting point for building a static site.
   - [`storybook`](./apps/storybook/README.md): [[Demo](https://nextjs-template-storybook.usagizmo.com/)]  
@@ -76,7 +74,7 @@ pnpm clean   # rm .turbo, node_module and generated files
 
 ## Registering environment variables for GitHub / Vercel
 
-If you need to prepare the GitHub / Vercel environment, you will need to set the environment variables (the contents of `.env`) at build time.
+If you need to prepare GitHub / Vercel environment, you need to set environment variables (`.env` items) in each service.
 
 ## Deploy to Vercel
 
