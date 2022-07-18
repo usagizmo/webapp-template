@@ -119,7 +119,7 @@ importers:
       '@storybook/react': 6.5.9
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
-      '@types/node': 16.11.44
+      '@types/node': 16.11.45
       '@types/react': 18.0.15
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7
@@ -132,7 +132,7 @@ importers:
       generated: workspace:*
       graphql: 16.5.0
       gsap: 3.10.4
-      jotai: 1.7.4
+      jotai: 1.7.5
       jsonwebtoken: 8.5.1
       lintstagedrc: workspace:*
       next: 12.2.2
@@ -167,7 +167,7 @@ importers:
       firebase: 9.8.3
       firebase-admin: 10.3.0_@firebase+app-types@0.7.0
       gsap: 3.10.4
-      jotai: 1.7.4_shgvq7qfmod6gettataqzyikli
+      jotai: 1.7.5_shgvq7qfmod6gettataqzyikli
       jsonwebtoken: 8.5.1
       next: 12.2.2_5ovelu635kdjiiodz74uabvzfu
       next-seo: 5.4.0_45agcmq65snpvuwd4zeycnaysa
@@ -188,7 +188,7 @@ importers:
       '@storybook/react': 6.5.9_jniyufg537t7d73ulmqbkimkei
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
-      '@types/node': 16.11.44
+      '@types/node': 16.11.45
       '@types/react': 18.0.15
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.7_postcss@8.4.14
@@ -3645,7 +3645,7 @@ packages:
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.6.13
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
     dev: false
 
   /@grpc/proto-loader/0.6.13:
@@ -5228,7 +5228,7 @@ packages:
       '@babel/register': 7.18.6_@babel+core@7.18.5
       '@storybook/node-logger': 6.5.9
       '@storybook/semver': 7.3.2
-      '@types/node': 16.11.44
+      '@types/node': 16.11.45
       '@types/pretty-hrtime': 1.0.1
       babel-loader: 8.2.5_p4a4vpdmvzvrx3lnpkqvj5nmla
       babel-plugin-macros: 3.1.0
@@ -5299,7 +5299,7 @@ packages:
       '@storybook/semver': 7.3.2
       '@storybook/store': 6.5.9_ef5jwxihqo6n7gxfmzogljlgcm
       '@storybook/telemetry': 6.5.9_43ynsg6k4f7jhm52qj4dj6xrhi
-      '@types/node': 16.11.44
+      '@types/node': 16.11.45
       '@types/node-fetch': 2.6.2
       '@types/pretty-hrtime': 1.0.1
       '@types/webpack': 4.41.32
@@ -5885,7 +5885,7 @@ packages:
       '@storybook/semver': 7.3.2
       '@storybook/store': 6.5.9_ef5jwxihqo6n7gxfmzogljlgcm
       '@types/estree': 0.0.51
-      '@types/node': 16.11.44
+      '@types/node': 16.11.45
       '@types/webpack-env': 1.17.0
       acorn: 7.4.1
       acorn-jsx: 5.3.2_acorn@7.4.1
@@ -6123,7 +6123,7 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
     dev: false
 
   /@types/component-emitter/1.2.11:
@@ -6133,7 +6133,7 @@ packages:
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
     dev: false
 
   /@types/cookie/0.4.1:
@@ -6169,7 +6169,7 @@ packages:
   /@types/express-serve-static-core/4.17.29:
     resolution: {integrity: sha512-uMd++6dMKS32EOuw1Uli3e3BPgdLIXmezcfHv7N4c1s3gkhikBplORPpMq3fuWkxncZN1reb16d5n8yhQ80x7Q==}
     dependencies:
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
     dev: false
@@ -6264,7 +6264,7 @@ packages:
   /@types/jsonwebtoken/8.5.8:
     resolution: {integrity: sha512-zm6xBQpFDIDM6o9r6HSgDeIcLy82TKWctCXEPbJJcXb5AKmi5BNNdLXneixK4lplX3PqIVcwLBCGE/kAGnlD4A==}
     dependencies:
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
 
   /@types/lodash/4.14.182:
     resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
@@ -6297,10 +6297,14 @@ packages:
 
   /@types/node/16.11.44:
     resolution: {integrity: sha512-gwP6+QDgL5TDBIWh1lbYh3EFPU11pa+8xcamcsA3ROkp3A9X+/3Y5cRgq93VPEEE+CGfxlQnqkg1kkWGBgh3fw==}
+    dev: true
+
+  /@types/node/16.11.45:
+    resolution: {integrity: sha512-3rKg/L5x0rofKuuUt5zlXzOnKyIHXmIu5R8A0TuNDMF2062/AOIDBciFIjToLEJ/9F9DzkHNot+BpNsMI1OLdQ==}
+    dev: true
 
   /@types/node/18.0.4:
     resolution: {integrity: sha512-M0+G6V0Y4YV8cqzHssZpaNCqvYwlCiulmm0PwpNLF55r/+cT8Ol42CHRU1SEaYFH2rTwiiE1aYg/2g2rrtGdPA==}
-    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -6368,7 +6372,7 @@ packages:
     resolution: {integrity: sha512-nCkHGI4w7ZgAdNkrEu0bv+4xNV/XDqW+DydknebMOQwkpDGx8G+HTlj7R7ABI8i8nKxVw0wtKPi1D+lPOkh4YQ==}
     dependencies:
       '@types/mime': 1.3.2
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
     dev: false
 
   /@types/source-list-map/0.1.2:
@@ -6400,7 +6404,7 @@ packages:
   /@types/webpack-sources/3.2.0:
     resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
     dependencies:
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
       '@types/source-list-map': 0.1.2
       source-map: 0.7.4
     dev: true
@@ -10704,7 +10708,7 @@ packages:
       '@fastify/busboy': 1.1.0
       '@firebase/database-compat': 0.2.3_@firebase+app-types@0.7.0
       '@firebase/database-types': 0.9.11
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
       jsonwebtoken: 8.5.1
       jwks-rsa: 2.1.4
       node-forge: 1.3.1
@@ -13109,8 +13113,8 @@ packages:
       '@panva/asn1.js': 1.0.0
     dev: false
 
-  /jotai/1.7.4_shgvq7qfmod6gettataqzyikli:
-    resolution: {integrity: sha512-PvkjL6DA4I0GFNFWt/1MKouTpN6Ohj0qyfuV4LoYGBHQRlf38qF6cPILozYsYZi2Nfeap9MdzWVGSYu1qBElKQ==}
+  /jotai/1.7.5_shgvq7qfmod6gettataqzyikli:
+    resolution: {integrity: sha512-EpawdHUOQmiKDoKRaFkO0L7R7YAFYBylK6M9IivMUPUpiHnXnt5e80AlqHvMUwg4p8BcQewh2JLWGQqFhtjpEA==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@babel/core': '*'
@@ -15496,7 +15500,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
       long: 4.0.0
     dev: false
 
