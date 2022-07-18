@@ -11,9 +11,9 @@
   },
   "devDependencies": {
     "@jest/types": "28.1.3",
-    "@types/jest": "28.1.4",
+    "@types/jest": "28.1.6",
     "eslint-preset": "workspace:*",
-    "jest": "28.1.2",
+    "jest": "28.1.3",
     "lintstagedrc": "workspace:*",
     "ts-jest": "28.0.7",
     "tsconfig": "workspace:*",
