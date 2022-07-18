@@ -2,6 +2,7 @@
   "ignorePaths": [
     "./pnpm-lock.yaml",
     "./apps/nhost/nhost/emails/fr",
+    "./apps/nhost/nhost/migrations",
     "./apps/storybook/storybook-static"
   ],
   "words": [

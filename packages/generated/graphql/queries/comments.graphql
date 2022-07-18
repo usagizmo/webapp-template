@@ -1,0 +1,12 @@
+query Comments {
+  comments(order_by: { created_at: desc }) {
+    id
+    comment
+    user {
+      id
+      displayName
+    }
+    created_at
+    updated_at
+  }
+}

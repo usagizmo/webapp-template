@@ -1,44 +1,25 @@
 import type { FC, ReactNode } from 'react'
-import { useState } from 'react'
+import type { NhostSession } from '@nhost/nextjs'
+import { NhostNextProvider } from '@nhost/nextjs'
+import { NhostApolloProvider } from '@nhost/react-apollo'
 import { CONST } from 'constants/const'
 import { useAtomsDebugValue } from 'jotai/devtools'
-import { SessionProvider } from 'next-auth/react'
 import { DefaultSeo } from 'next-seo'
-import { QueryClient, QueryClientProvider, Hydrate } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
 import { staticPath } from '@/lib/$path'
+import { nhost } from '@/lib/nhost'
 import { GoogleAnalytics } from './GoogleAnalytics/GoogleAnalytics'
 
 type Props = {
-  session: any
-  dehydratedState: any
+  nhostSession: NhostSession
   children: ReactNode
 }
 
 const useProviders = () => {
   useAtomsDebugValue()
-
-  const [queryClient] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            retry: false,
-            refetchOnWindowFocus: false,
-          },
-        },
-      })
-  )
-
-  return { queryClient }
 }
 
-export const Providers: FC<Props> = ({
-  session,
-  dehydratedState,
-  children,
-}) => {
-  const { queryClient } = useProviders()
+export const Providers: FC<Props> = ({ nhostSession, children }) => {
+  useProviders()
   return (
     <>
       <DefaultSeo
@@ -74,14 +55,9 @@ export const Providers: FC<Props> = ({
         ]}
       />
       <GoogleAnalytics />
-      <SessionProvider session={session}>
-        <QueryClientProvider client={queryClient}>
-          <Hydrate state={dehydratedState}>
-            {children}
-            <ReactQueryDevtools />
-          </Hydrate>
-        </QueryClientProvider>
-      </SessionProvider>
+      <NhostNextProvider nhost={nhost} initial={nhostSession}>
+        <NhostApolloProvider nhost={nhost}>{children}</NhostApolloProvider>
+      </NhostNextProvider>
     </>
   )
 }

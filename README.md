@@ -16,7 +16,7 @@ Monorepo template for creating a web service with Next.js.
 - **Apps**
 
   - [`nhost`](./apps/nhost/README.md):  
-    [Nhost](https://nhost.io/) provides - GraphQL / Authentication / Storage / Functions
+    [Nhost](https://nhost.io/) dev server for prod/test server migration
   - [`hasura`](./apps/hasura/README.md):  
     [Hasura](https://hasura.io/) on Docker and [Hasura Cloud](https://hasura.io/cloud/) settings.
   - [`mockup`](./apps/mockup/README.md): [[Demo](https://nextjs-template-mockup.usagizmo.com/)]  
@@ -27,8 +27,8 @@ Monorepo template for creating a web service with Next.js.
     A starting point for building a Next.js application.  
     [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))  
     Page Transition ([react-transition-group](https://reactcommunity.org/react-transition-group/) x [GSAP](https://greensock.com/gsap/))  
-    [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Jotai](https://jotai.org/)  
-    [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
+    [pathpida](https://github.com/aspida/pathpida) / [Jotai](https://jotai.org/)  
+    [Nhost](https://nhost.io/) (w/ [Apollo Client](https://www.apollographql.com/apollo-client) x [GraphQL Code Generator](https://www.graphql-code-generator.com/))
 
 - **Packages**
 
