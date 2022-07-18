@@ -10,18 +10,18 @@ import { useTab } from './components/useTab'
 const usePage = () => {
   const { isAuthenticated } = useAuthenticationStatus()
   const user = useUserData()
-  const { Tab, tabId } = useTab()
+  const { Tab, activeTabId } = useTab()
 
   return {
     isAuthenticated,
     user,
     Tab,
-    tabId,
+    activeTabId,
   }
 }
 
 const Page: NextPageWithLayout = () => {
-  const { isAuthenticated, user, Tab, tabId } = usePage()
+  const { isAuthenticated, user, Tab, activeTabId } = usePage()
 
   return (
     <>
@@ -35,7 +35,7 @@ const Page: NextPageWithLayout = () => {
         {user ? (
           <AuthorizedContent user={user} />
         ) : (
-          <LoginFields type={tabId} />
+          <LoginFields type={activeTabId} />
         )}
       </main>
     </>
