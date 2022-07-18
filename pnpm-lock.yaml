@@ -149,7 +149,7 @@ importers:
       require-from-string: 2.0.2
       tailwind-preset: workspace:*
       tailwindcss: 3.1.4
-      ts-pattern: 4.0.4
+      ts-pattern: 4.0.5
       ts-xor: 1.0.8
       tsconfig: workspace:*
       tsconfig-paths-webpack-plugin: 3.5.2
@@ -177,7 +177,7 @@ importers:
       react-hook-form: 7.33.1_react@18.1.0
       react-transition-group: 4.4.2_ef5jwxihqo6n7gxfmzogljlgcm
       react-use: 17.4.0_ef5jwxihqo6n7gxfmzogljlgcm
-      ts-pattern: 4.0.4
+      ts-pattern: 4.0.5
       ulid: 2.3.0
     devDependencies:
       '@babel/core': 7.18.5
@@ -351,7 +351,7 @@ importers:
       eslint-preset: workspace:*
       jest: 28.1.2
       lintstagedrc: workspace:*
-      ts-jest: 28.0.6
+      ts-jest: 28.0.7
       tsconfig: workspace:*
       tslib: 2.4.0
       typescript: 4.7.4
@@ -361,7 +361,7 @@ importers:
       eslint-preset: link:../eslint-preset
       jest: 28.1.2
       lintstagedrc: link:../lintstagedrc
-      ts-jest: 28.0.6_bjr6oisjxqj4vampwk27utycme
+      ts-jest: 28.0.7_bjr6oisjxqj4vampwk27utycme
       tsconfig: link:../tsconfig
       tslib: 2.4.0
       typescript: 4.7.4
@@ -6193,7 +6193,7 @@ packages:
   /@types/graceful-fs/4.1.5:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
     dependencies:
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
     dev: true
 
   /@types/gtag.js/0.0.10:
@@ -12916,7 +12916,7 @@ packages:
       '@jest/test-result': 28.1.3
       '@jest/transform': 28.1.3
       '@jest/types': 28.1.3
-      '@types/node': 16.11.44
+      '@types/node': 18.0.4
       chalk: 4.1.2
       emittery: 0.10.2
       graceful-fs: 4.2.10
@@ -17705,8 +17705,8 @@ packages:
     dependencies:
       tslib: 2.4.0
 
-  /ts-jest/28.0.6_bjr6oisjxqj4vampwk27utycme:
-    resolution: {integrity: sha512-yLAWoaSJ6c9o+IT7+nyutp5uvwGzhMYb/LD5WEQAi2tBq4ZSAPay4Lf69pP/IU+GFYg87pdg5eADSzuNAFSK4g==}
+  /ts-jest/28.0.7_bjr6oisjxqj4vampwk27utycme:
+    resolution: {integrity: sha512-wWXCSmTwBVmdvWrOpYhal79bDpioDy4rTT+0vyUnE3ZzM7LOAAGG9NXwzkEL/a516rQEgnMmS/WKP9jBPCVJyA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
@@ -17718,6 +17718,8 @@ packages:
       typescript: '>=4.3'
     peerDependenciesMeta:
       '@babel/core':
+        optional: true
+      '@jest/types':
         optional: true
       babel-jest:
         optional: true
@@ -17757,8 +17759,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-pattern/4.0.4:
-    resolution: {integrity: sha512-gDKHf3T+4X2w5k5IpD4FQ6P5b0LRYW7sJdf/yG7uAdxKitgk2Z8UZLdSBjrXs5mI0Vq6E/hRQd6+Kh3FbdjBzw==}
+  /ts-pattern/4.0.5:
+    resolution: {integrity: sha512-Bq44KCEt7JVaNLa148mBCJkcQf4l7jtLEBDuDdeuLynWDA+1a60P4D0rMkqSM9mOKLQbIWUddE9h3XKyKwBeqA==}
     dev: false
 
   /ts-pnp/1.2.0_typescript@4.7.4:
