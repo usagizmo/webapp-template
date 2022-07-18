@@ -1,6 +1,0 @@
-query CurrentUser($id: uuid!) {
-  user(id: $id) {
-    id
-    email
-  }
-}

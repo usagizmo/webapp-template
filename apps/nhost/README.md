@@ -1,9 +1,12 @@
 # `nhost` app
 
-A starting point for building a Next.js application.
+> The Open Source Firebase Alternative with GraphQL
+> Database / GraphQL API / Authentication / Storage / Serverless Functions
+
+ref: https://nhost.io/
 
 ## Commands
 
 ```bash
-pnpm dev  # Launch nhost dev
+pnpm dev  # Launch Nhost dev server
 ```
