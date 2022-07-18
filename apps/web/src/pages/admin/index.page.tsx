@@ -1,57 +1,42 @@
 import type { ReactElement } from 'react'
-import { useSession } from 'next-auth/react'
+import { useAuthenticationStatus, useUserData } from '@nhost/nextjs'
 import { NextSeo } from 'next-seo'
-import { SignOut } from 'phosphor-react'
-import { Button } from '@/components/Button/Button'
 import { Layout } from '@/components/Layout/Layout'
-import { useAuth } from '@/hooks/useAuth'
-import { useQueryHandle } from '@/hooks/useQueryHandle'
 import type { NextPageWithLayout } from '@/types'
+import { AuthorizedContent } from './components/AuthorizedContent'
 import { LoginFields } from './components/LoginFields'
+import { useTab } from './components/useTab'
 
 const usePage = () => {
-  const { signOut } = useAuth()
-  const { data: session, status } = useSession()
-  const queryHandle = useQueryHandle({ status })
+  const { isAuthenticated } = useAuthenticationStatus()
+  const user = useUserData()
+  const { Tab, activeTabId } = useTab()
 
   return {
-    signOut,
-    session,
-    queryHandle,
+    isAuthenticated,
+    user,
+    Tab,
+    activeTabId,
   }
 }
 
 const Page: NextPageWithLayout = () => {
-  const { signOut, session, queryHandle } = usePage()
+  const { isAuthenticated, user, Tab, activeTabId } = usePage()
 
   return (
     <>
       <NextSeo title="Admin" />
       <main className="container max-w-2xl">
-        {queryHandle ??
-          (session ? (
-            <div className="text-center">
-              <p>
-                Logged in as{' '}
-                <span className="mt-1 block text-2xl font-medium">
-                  {session.user.email}
-                </span>
-                <span className="mt-1block text-sm">{session.user.id}</span>
-              </p>
-              <div className="mt-10">
-                <Button
-                  onClick={() => {
-                    signOut()
-                  }}
-                >
-                  <SignOut width={20} height={20} className="mr-1.5" />
-                  <span>Sign out</span>
-                </Button>
-              </div>
-            </div>
-          ) : (
-            <LoginFields />
-          ))}
+        {!isAuthenticated && (
+          <div className="mb-6">
+            <Tab />
+          </div>
+        )}
+        {user ? (
+          <AuthorizedContent user={user} />
+        ) : (
+          <LoginFields type={activeTabId} />
+        )}
       </main>
     </>
   )

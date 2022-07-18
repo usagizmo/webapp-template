@@ -10,11 +10,11 @@ type AppPropsWithLayout = AppProps & {
 
 export default function MyApp({
   Component,
-  pageProps: { session, dehydratedState, ...pageProps },
+  pageProps: { nhostSession, ...pageProps },
 }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
   return (
-    <Providers session={session} dehydratedState={dehydratedState}>
+    <Providers nhostSession={nhostSession}>
       {getLayout(<Component {...pageProps} />)}
     </Providers>
   )

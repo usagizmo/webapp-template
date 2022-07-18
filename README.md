@@ -15,11 +15,8 @@ Monorepo template for creating a web service with Next.js.
 
 - **Apps**
 
-  - [`firebase`](./apps/firebase/README.md):  
-    [Firebase Local Emulator Suite](https://firebase.google.com/docs/emulator-suite) and Firebase settings.
-    [Firebase (Authentication/Firestore/Functions/Storage)](https://firebase.google.com/)
-  - [`hasura`](./apps/hasura/README.md):  
-    [Hasura](https://hasura.io/) on Docker and [Hasura Cloud](https://hasura.io/cloud/) settings.
+  - [`nhost`](./apps/nhost/README.md):  
+    [Nhost](https://nhost.io/) dev server for prod/test server migration
   - [`mockup`](./apps/mockup/README.md): [[Demo](https://nextjs-template-mockup.usagizmo.com/)]  
     A starting point for building a static site.
   - [`storybook`](./apps/storybook/README.md): [[Demo](https://nextjs-template-storybook.usagizmo.com/)]  
@@ -28,8 +25,8 @@ Monorepo template for creating a web service with Next.js.
     A starting point for building a Next.js application.  
     [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))  
     Page Transition ([react-transition-group](https://reactcommunity.org/react-transition-group/) x [GSAP](https://greensock.com/gsap/))  
-    [pathpida](https://github.com/aspida/pathpida) / [NextAuth](https://next-auth.js.org/) / [Jotai](https://jotai.org/)  
-    [React Query](https://react-query.tanstack.com/) (w/ [GraphQL Code Generator](https://www.graphql-code-generator.com/))
+    [pathpida](https://github.com/aspida/pathpida) / [Jotai](https://jotai.org/)  
+    [Nhost](https://nhost.io/) (w/ [Apollo Client](https://www.apollographql.com/apollo-client) x [GraphQL Code Generator](https://www.graphql-code-generator.com/))
 
 - **Packages**
 
@@ -67,24 +64,17 @@ pnpm clean   # rm .turbo, node_module and generated files
 
 ## List of listening port numbers
 
+- `1337`: `apps/nhost/` - Hasura
+  - `* (auto)`: GraphQL Endpoint
+  - `* (auto)`: MailHog
 - `3000`: `apps/web/` - Next.js application
-- `4000`: `apps/firebase/` - Emulator UI
-  - Services
-    - `9099`: Authentication
-    - `5001`: Functions
-    - `8080`: Firestore
-    - `8085`: Pub/Sub
-    - `9199`: Storage
-  - `4400`: Emulator Hub
-  - `4500`: Other reserved port
 - `6006`: `apps/storybook/` - Storybook
 - `8000`: `apps/mockup/` - Static site
 - `49160`: `apps/mockup/` - Express server
-- `49180`: `apps/hasura/` - Hasura
 
 ## Registering environment variables for GitHub / Vercel
 
-If you need to prepare the GitHub / Vercel environment, you will need to set the environment variables (the contents of `.env`) at build time.
+If you need to prepare GitHub / Vercel environment, you need to set environment variables (`.env` items) in each service.
 
 ## Deploy to Vercel
 
