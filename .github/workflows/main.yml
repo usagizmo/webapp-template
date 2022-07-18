@@ -60,13 +60,10 @@ jobs:
       - name: Run build 🐣
         run: pnpm build
         env:
-          NEXT_PUBLIC_GRAPHQL_ENDPOINT: ${{ secrets.NEXT_PUBLIC_GRAPHQL_ENDPOINT }}
-          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
-          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-          # Just set it up for Vercel only
+          NEXT_PUBLIC_NHOST_SUBDOMAIN: ${{ secrets.NEXT_PUBLIC_NHOST_SUBDOMAIN }}
+          NEXT_PUBLIC_NHOST_REGION: ${{ secrets.NEXT_PUBLIC_NHOST_REGION }}
           HASURA_GRAPHQL_ENDPOINT: ${{ secrets.HASURA_GRAPHQL_ENDPOINT }}
           HASURA_GRAPHQL_ADMIN_SECRET: ${{ secrets.HASURA_GRAPHQL_ADMIN_SECRET }}
-          HASURA_GRAPHQL_API_PATHS_GRAPHQL: ${{ secrets.HASURA_GRAPHQL_API_PATHS_GRAPHQL }}
 
       - name: Run lint 👀
         run: pnpm lint

@@ -1,6 +1,6 @@
 overwrite: true
 schema:
-  ${NEXT_PUBLIC_GRAPHQL_ENDPOINT}:
+  ${HASURA_GRAPHQL_ENDPOINT}:
     headers:
       x-hasura-admin-secret: '${HASURA_GRAPHQL_ADMIN_SECRET}'
       x-hasura-role: 'admin'
