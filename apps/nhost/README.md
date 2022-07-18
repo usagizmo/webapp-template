@@ -8,5 +8,6 @@ ref: https://nhost.io/
 ## Commands
 
 ```bash
-pnpm dev  # Launch Nhost dev server
+pnpm dev   # Launch Nhost dev server
+pnpm lint  # htmlhint the contents of email
 ```
