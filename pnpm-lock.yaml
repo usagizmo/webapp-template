@@ -132,7 +132,7 @@ importers:
       generated: workspace:*
       graphql: 16.5.0
       gsap: 3.10.4
-      jotai: 1.7.5
+      jotai: 1.7.6
       jsonwebtoken: 8.5.1
       lintstagedrc: workspace:*
       next: 12.2.2
@@ -167,7 +167,7 @@ importers:
       firebase: 9.8.3
       firebase-admin: 10.3.0_@firebase+app-types@0.7.0
       gsap: 3.10.4
-      jotai: 1.7.5_aynp3cbqp3olq3gpzw4njllqva
+      jotai: 1.7.6_aynp3cbqp3olq3gpzw4njllqva
       jsonwebtoken: 8.5.1
       next: 12.2.2_4di26glecblazzvoncj7joqlju
       next-seo: 5.4.0_45agcmq65snpvuwd4zeycnaysa
@@ -12671,8 +12671,8 @@ packages:
       '@panva/asn1.js': 1.0.0
     dev: false
 
-  /jotai/1.7.5_aynp3cbqp3olq3gpzw4njllqva:
-    resolution: {integrity: sha512-EpawdHUOQmiKDoKRaFkO0L7R7YAFYBylK6M9IivMUPUpiHnXnt5e80AlqHvMUwg4p8BcQewh2JLWGQqFhtjpEA==}
+  /jotai/1.7.6_aynp3cbqp3olq3gpzw4njllqva:
+    resolution: {integrity: sha512-D3R5f6OvwUPUyTPQY3wGP800nb6bDEOl/mqftjxg3gcHVITeFcldr9W9IBK+gXsow357vhNXuci/LfD+rl92PA==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@babel/core': '*'
