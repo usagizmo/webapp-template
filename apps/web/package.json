@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.18.9",
-    "@firebase/app-compat": "0.1.29",
+    "@firebase/app-compat": "0.1.30",
     "@firebase/app-types": "0.7.0",
     "@nhost/core": "0.7.5",
     "@nhost/react": "0.11.2",
