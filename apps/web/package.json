@@ -26,7 +26,7 @@
     "gsap": "3.10.4",
     "jotai": "1.7.6",
     "jsonwebtoken": "8.5.1",
-    "next": "12.2.2",
+    "next": "12.2.3",
     "next-seo": "5.4.0",
     "phosphor-react": "1.4.1",
     "react": "18.1.0",
