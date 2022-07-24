@@ -20,7 +20,7 @@
     "@nhost/nextjs": "1.6.2",
     "@nhost/react-apollo": "4.6.3",
     "clsx": "1.2.1",
-    "date-fns": "2.28.0",
+    "date-fns": "2.29.1",
     "firebase": "9.8.3",
     "firebase-admin": "10.3.0",
     "gsap": "3.10.4",

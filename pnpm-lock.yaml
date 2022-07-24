@@ -125,7 +125,7 @@ importers:
       autoprefixer: 10.4.7
       clsx: 1.2.1
       constants: workspace:*
-      date-fns: 2.28.0
+      date-fns: 2.29.1
       eslint-preset: workspace:*
       firebase: 9.8.3
       firebase-admin: 10.3.0
@@ -163,7 +163,7 @@ importers:
       '@nhost/nextjs': 1.6.2_uomfk52qlchcgrdo4zfc5blzpu
       '@nhost/react-apollo': 4.6.3_hdibi4coj4pbzv6bnqcb6xvgai
       clsx: 1.2.1
-      date-fns: 2.28.0
+      date-fns: 2.29.1
       firebase: 9.8.3
       firebase-admin: 10.3.0_@firebase+app-types@0.7.0
       gsap: 3.10.4
@@ -8739,8 +8739,8 @@ packages:
     resolution: {integrity: sha512-qTcEYLen3r7ojZNgVUaRggOI+KM7jrKxXeSHhogh/TWxYMeONEMqY+hmkobiYQozsGIyg9OYVzO4ZIfoB4I0pQ==}
     dev: true
 
-  /date-fns/2.28.0:
-    resolution: {integrity: sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==}
+  /date-fns/2.29.1:
+    resolution: {integrity: sha512-dlLD5rKaKxpFdnjrs+5azHDFOPEu4ANy/LTh04A1DTzMM7qoajmKCBc8pkKRFT41CNzw+4gQh79X5C+Jq27HAw==}
     engines: {node: '>=0.11'}
     dev: false
 
