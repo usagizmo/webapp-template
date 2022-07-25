@@ -136,7 +136,7 @@ importers:
       jsonwebtoken: 8.5.1
       lintstagedrc: workspace:*
       next: 12.2.3
-      next-seo: 5.4.0
+      next-seo: 5.5.0
       next-transpile-modules: 9.0.0
       pathpida: 0.18.1
       phosphor-react: 1.4.1
@@ -170,7 +170,7 @@ importers:
       jotai: 1.7.6_aynp3cbqp3olq3gpzw4njllqva
       jsonwebtoken: 8.5.1
       next: 12.2.3_4di26glecblazzvoncj7joqlju
-      next-seo: 5.4.0_nocldovdl2sm3rk3zuxp56hube
+      next-seo: 5.5.0_nocldovdl2sm3rk3zuxp56hube
       phosphor-react: 1.4.1_react@18.1.0
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
@@ -13729,8 +13729,8 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /next-seo/5.4.0_nocldovdl2sm3rk3zuxp56hube:
-    resolution: {integrity: sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==}
+  /next-seo/5.5.0_nocldovdl2sm3rk3zuxp56hube:
+    resolution: {integrity: sha512-5ouBHFtx8YrSDW44lj0qIEQ+oMcz6stgoITB+SqHUZbhgizoJsyLmq73gJ0lxtEKpcN8vG2QgRIJfdb8OAPChw==}
     peerDependencies:
       next: ^8.1.1-canary.54 || >=9.0.0
       react: '>=16.0.0'
