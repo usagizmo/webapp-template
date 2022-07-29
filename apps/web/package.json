@@ -41,7 +41,7 @@
     "@babel/core": "7.18.9",
     "@firebase/app-compat": "0.1.30",
     "@firebase/app-types": "0.7.0",
-    "@nhost/core": "0.7.5",
+    "@nhost/core": "0.7.6",
     "@nhost/react": "0.11.2",
     "@storybook/react": "6.5.9",
     "@types/gtag.js": "0.0.10",
@@ -71,7 +71,7 @@
   },
   "peerDependencies": {
     "@babel/core": "7.18.9",
-    "@nhost/core": "0.7.5",
+    "@nhost/core": "0.7.6",
     "@nhost/react": "0.11.2",
     "autoprefixer": "10.4.7",
     "graphql": "16.5.0",
