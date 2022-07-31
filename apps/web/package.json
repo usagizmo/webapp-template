@@ -21,8 +21,6 @@
     "@nhost/react-apollo": "4.6.3",
     "clsx": "1.2.1",
     "date-fns": "2.29.1",
-    "firebase": "9.9.1",
-    "firebase-admin": "10.3.0",
     "gsap": "3.10.4",
     "jotai": "1.7.6",
     "jsonwebtoken": "8.5.1",
@@ -39,8 +37,6 @@
   },
   "devDependencies": {
     "@babel/core": "7.18.9",
-    "@firebase/app-compat": "0.1.30",
-    "@firebase/app-types": "0.7.0",
     "@nhost/core": "0.7.6",
     "@nhost/react": "0.11.2",
     "@storybook/react": "6.5.9",
