@@ -255,7 +255,7 @@ importers:
     specifiers:
       '@apollo/client': 3.6.9
       '@graphql-codegen/add': 3.2.0
-      '@graphql-codegen/cli': 2.11.2
+      '@graphql-codegen/cli': 2.11.3
       '@graphql-codegen/introspection': 2.2.0
       '@graphql-codegen/typescript': 2.7.2
       '@graphql-codegen/typescript-operations': 2.5.2
@@ -270,7 +270,7 @@ importers:
     devDependencies:
       '@apollo/client': 3.6.9_7oyq4t3ocdziwagw7zfqg4youi
       '@graphql-codegen/add': 3.2.0_graphql@16.5.0
-      '@graphql-codegen/cli': 2.11.2_nx5rldzsxkqp2qf2miljeykxp4
+      '@graphql-codegen/cli': 2.11.3_nx5rldzsxkqp2qf2miljeykxp4
       '@graphql-codegen/introspection': 2.2.0_graphql@16.5.0
       '@graphql-codegen/typescript': 2.7.2_graphql@16.5.0
       '@graphql-codegen/typescript-operations': 2.5.2_graphql@16.5.0
@@ -2712,8 +2712,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@graphql-codegen/cli/2.11.2_nx5rldzsxkqp2qf2miljeykxp4:
-    resolution: {integrity: sha512-dt70+et0QFmhL3krrlYWcsp7T6pvChEQ1vEGoNn46Rn53velGDwP546DtSPpHJmajY/eJ11CueoI0J/3o0/BTA==}
+  /@graphql-codegen/cli/2.11.3_nx5rldzsxkqp2qf2miljeykxp4:
+    resolution: {integrity: sha512-C1d88Kx0a0PF1tOR00UIZjHq5aWNNcw5fM2k08rOY9O5b4sU7kEb+YbGKP6EExTtJnYb49fePLKVvrIv1ejDFg==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
