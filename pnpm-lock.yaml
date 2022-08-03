@@ -140,7 +140,7 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0
       react-hook-form: 7.33.1
-      react-transition-group: 4.4.4
+      react-transition-group: 4.4.5
       react-use: 17.4.0
       require-from-string: 2.0.2
       tailwind-preset: workspace:*
@@ -169,7 +169,7 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
       react-hook-form: 7.33.1_react@18.1.0
-      react-transition-group: 4.4.4_ef5jwxihqo6n7gxfmzogljlgcm
+      react-transition-group: 4.4.5_ef5jwxihqo6n7gxfmzogljlgcm
       react-use: 17.4.0_ef5jwxihqo6n7gxfmzogljlgcm
       ts-pattern: 4.0.5
       ulid: 2.3.0
@@ -14399,8 +14399,8 @@ packages:
       refractor: 3.6.0
     dev: true
 
-  /react-transition-group/4.4.4_ef5jwxihqo6n7gxfmzogljlgcm:
-    resolution: {integrity: sha512-TKS7/dTpwBKEG9nrzVK3qNzvaJyKzEIFB5xVtnKdjEk5wTstklWnNJ/N3RM6uKG8wm36nlgHTT7+UZT3LIFHLA==}
+  /react-transition-group/4.4.5_ef5jwxihqo6n7gxfmzogljlgcm:
+    resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
     peerDependencies:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'
