@@ -222,7 +222,7 @@ importers:
       eslint-config-next: 12.2.3
       eslint-config-prettier: 8.5.0
       eslint-plugin-import: 2.26.0
-      eslint-plugin-storybook: 0.6.1
+      eslint-plugin-storybook: 0.6.3
       lintstagedrc: workspace:*
       next: 12.2.3
       react: 18.1.0
@@ -236,7 +236,7 @@ importers:
       eslint-config-next: 12.2.3_he2ccbldppg44uulnyq4rwocfa
       eslint-config-prettier: 8.5.0_eslint@8.20.0
       eslint-plugin-import: 2.26.0_iwgptdptnivlpb26w4guqgzghe
-      eslint-plugin-storybook: 0.6.1_he2ccbldppg44uulnyq4rwocfa
+      eslint-plugin-storybook: 0.6.3_he2ccbldppg44uulnyq4rwocfa
       lintstagedrc: link:../lintstagedrc
       next: 12.2.3_4di26glecblazzvoncj7joqlju
       react: 18.1.0
@@ -8967,8 +8967,8 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /eslint-plugin-storybook/0.6.1_he2ccbldppg44uulnyq4rwocfa:
-    resolution: {integrity: sha512-RHbxn4jqbXQ4dkDHUjI6y47hxF6h+aCsIyuXLfmA1sTtFtea3o1p9taQcsnzOFEE/szgLXxH9jsig9yc//2hug==}
+  /eslint-plugin-storybook/0.6.3_he2ccbldppg44uulnyq4rwocfa:
+    resolution: {integrity: sha512-e0zIqHsgUz3Bs3PSyiYwCZ3QqyVmRgNQceBtYlnWXscCJLgdvBH8WwqBOvZUb3SAB4ZTYDLG3GMqpxI6PJZwKg==}
     engines: {node: 12.x || 14.x || >= 16}
     peerDependencies:
       eslint: '>=6'
@@ -8977,6 +8977,7 @@ packages:
       '@typescript-eslint/experimental-utils': 5.31.0_he2ccbldppg44uulnyq4rwocfa
       eslint: 8.20.0
       requireindex: 1.2.0
+      ts-dedent: 2.2.0
     transitivePeerDependencies:
       - supports-color
       - typescript
