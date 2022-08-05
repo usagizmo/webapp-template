@@ -1,17 +1,28 @@
 import { execSync } from 'child_process'
 import { readFile, access } from 'fs/promises'
 import { dirname, join, basename } from 'path'
+import { fileURLToPath } from 'url'
 import { describe, test, expect } from '@jest/globals'
 import { isValidPath, relativeUrlToFilePath } from 'pathtest-utils'
-import { allowedPathList, publicDir, imageExtensions } from './config'
+import {
+  allowedPathList,
+  publicDir as _publicDir,
+  targetDir,
+  imageExtensions,
+} from './config'
 
-const findHtml = execSync(`find ${publicDir} -type f -name "*.html"`)
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+const rootDir = join(__dirname, '..')
+const publicDir = join(rootDir, _publicDir)
+
+const findHtml = execSync(`find ${targetDir} -type f -name "*.html"`)
 const htmlFilePaths = findHtml.toString().trim().split('\n')
 
 const findImagesOption = imageExtensions
   .map((ext) => `-name "*.${ext}"`)
   .join(' -o ')
-const findImages = execSync(`find ${publicDir} -type f ${findImagesOption}`)
+const findImages = execSync(`find ${targetDir} -type f ${findImagesOption}`)
 const imageFilePaths = findImages.toString().trim().split('\n')
 
 describe('All paths are valid:', () => {
@@ -30,16 +41,28 @@ describe('All paths are valid:', () => {
           return [path, { exists: true, isValid: true }]
         }
 
+        const isRootRelative = path.startsWith('/')
         let exists = false
-        try {
-          await access(join(baseDir, relativeUrlToFilePath(path)))
-          exists = true
-        } catch (err) {
-          console.error(err)
-        }
+        if (isRootRelative) {
+          try {
+            await access(join(publicDir, path))
+            exists = true
+          } catch (err) {
+            console.error(err)
+          }
 
-        const isValid = isValidPath(path)
-        return [path, { exists, isValid }]
+          return [path, { exists, isValid: true }]
+        } else {
+          try {
+            await access(join(baseDir, relativeUrlToFilePath(path)))
+            exists = true
+          } catch (err) {
+            console.error(err)
+          }
+
+          const isValid = isValidPath(path)
+          return [path, { exists, isValid }]
+        }
       })
     )
 
