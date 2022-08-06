@@ -1,4 +1,5 @@
 export const publicDir = './public'
+export const targetDir = './public'
 export const imageExtensions = ['jpg', 'png', 'webp']
 
 export const allowedPathList = [
