@@ -20,11 +20,11 @@
     "eslint-preset": "workspace:*",
     "lintstagedrc": "workspace:*",
     "postcss": "8.4.14",
-    "tailwindcss": "3.1.7"
+    "tailwindcss": "3.1.8"
   },
   "peerDependencies": {
     "autoprefixer": "10.4.8",
     "postcss": "8.4.14",
-    "tailwindcss": "3.1.7"
+    "tailwindcss": "3.1.8"
   }
 }
