@@ -9,7 +9,7 @@
   "scripts": {
     "build": "graphql-codegen --require dotenv/config --config graphql/codegen.yml",
     "dev": "graphql-codegen --require dotenv/config --config graphql/codegen.yml --watch",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm .env"
   },
   "devDependencies": {
     "@apollo/client": "3.6.9",
