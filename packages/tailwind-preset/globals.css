@@ -14,10 +14,6 @@
 }
 
 @layer components {
-  .container {
-    @apply mx-auto max-w-[1152px] px-[1rem];
-  }
-
   .c-route-transition.is-entering {
     @apply absolute inset-x-0 top-0;
   }

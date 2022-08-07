@@ -7,6 +7,10 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   content: [], // Override in each package
   theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+    },
     extend: {
       fontFamily: {
         // When not using Web fonts
