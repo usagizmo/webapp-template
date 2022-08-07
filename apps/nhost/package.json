@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nhost dev",
     "lint:html": "htmlhint \"nhost/**/*.html\"",
-    "lint": "run-p lint:*",
+    "lint": "concurrently pnpm:lint:*",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .nhost && rm .env"
   },
   "devDependencies": {
