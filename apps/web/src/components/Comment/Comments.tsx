@@ -8,7 +8,7 @@ type Props = {
 
 export const Comments: FC<Props> = ({ comments }) => {
   return (
-    <div className="divide-y divide-gray-200 px-4 md:px-8">
+    <div className="divide-y divide-[#e2e8f0]">
       {comments.map((comment) => (
         <Comment key={comment.id} comment={comment} />
       ))}

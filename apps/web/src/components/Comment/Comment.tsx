@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import { useMemo } from 'react'
 import { formatRelative } from 'date-fns'
+import { CheckCircle } from 'phosphor-react'
 
 export type CommentType = {
   id: string
@@ -21,14 +22,22 @@ export const Comment: FC<Props> = ({ comment }) => {
   const date = useMemo(() => new Date(comment.created_at), [comment.created_at])
 
   return (
-    <div className="py-4">
-      <h3 className="font-medium text-gray-900">{comment.user.displayName}</h3>
-      <p>
-        <time dateTime={comment.created_at}>
+    <div className="py-2.5">
+      <div className="flex items-center justify-start">
+        <div className="flex items-center justify-start">
+          <h3 className="font-bold">{comment.user.displayName}</h3>
+          <div className="ml-0.5">
+            <CheckCircle size={20} weight="fill" />
+          </div>
+        </div>
+        <time
+          className="ml-2 text-sm text-[#71717a]"
+          dateTime={comment.created_at}
+        >
           {formatRelative(date, new Date())}
         </time>
-      </p>
-      <div className="mt-4 text-sm text-gray-500">
+      </div>
+      <div className="mt-0.5">
         <p>{comment.comment}</p>
       </div>
     </div>

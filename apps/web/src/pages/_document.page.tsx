@@ -21,7 +21,7 @@ class MyDocument extends Document {
             href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css"
           />
         </Head>
-        <body className="h-full">
+        <body className="h-full bg-gray-100 text-[#18181b]">
           <Main />
           <NextScript />
         </body>

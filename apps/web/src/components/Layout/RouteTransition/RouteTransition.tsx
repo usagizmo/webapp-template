@@ -42,10 +42,7 @@ export const RouteTransition: FC<Props> = ({ children }) => {
         nodeRef={ref}
       >
         {(state) => (
-          <div
-            ref={ref}
-            className={clsx('c-route-transition bg-white', `is-${state}`)}
-          >
+          <div ref={ref} className={`c-route-transition is-${state} py-5`}>
             {children}
           </div>
         )}

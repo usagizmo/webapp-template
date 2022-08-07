@@ -20,6 +20,9 @@ module.exports = {
         mono: 'Source Code Pro, Noto Sans CJK JP, Noto Sans JP, monospace',
         keycode: 'Lucida Grande',
       },
+      maxWidth: {
+        message: '824px',
+      },
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
