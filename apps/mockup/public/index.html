@@ -53,8 +53,11 @@
     ></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="u-prevent-animation">
-    <!-- <div id="initial-cover" class="fixed z-[60] top-0 left-0 w-full h-full bg-white duration-500"></div> -->
+  <body class="[&_*]:!animate-none [&_*]:!transition-none">
+    <div
+      id="initial-cover"
+      class="fixed top-0 left-0 z-[60] h-full w-full bg-white duration-500"
+    ></div>
     <header
       id="header"
       class="top-0 z-30 flex h-[80vh] flex-col items-center justify-center bg-white px-8 md:sticky md:h-auto md:flex-row md:py-4"

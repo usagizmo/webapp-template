@@ -36,10 +36,6 @@
     }
   }
 
-  .u-prevent-animation * {
-    @apply !animate-none !transition-none;
-  }
-
   .u-after-underline {
     @apply after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-black;
   }
