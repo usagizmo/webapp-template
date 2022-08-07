@@ -14,12 +14,12 @@
 }
 
 @layer components {
-  .c-route-transition.is-entering {
-    @apply absolute inset-x-0 top-0;
+  .container {
+    @apply mx-auto max-w-[1152px] px-[1rem];
   }
 
-  .c-hover-underline {
-    @apply u-after-underline u-after-translate-left relative inline-block overflow-hidden text-gray-700 after:duration-150 hover:text-gray-900 hover:after:translate-x-0;
+  .c-route-transition.is-entering {
+    @apply absolute inset-x-0 top-0;
   }
 }
 
@@ -42,6 +42,10 @@
 
   .u-after-translate-left {
     @apply after:translate-x-[calc(-100%-1px)];
+  }
+
+  .u-hover-underline {
+    @apply u-after-underline u-after-translate-left relative inline-block overflow-hidden text-[#71717a] duration-150 after:duration-150 hover:text-[#18181b] hover:after:translate-x-0;
   }
 
   [data-in] {

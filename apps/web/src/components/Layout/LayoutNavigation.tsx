@@ -47,7 +47,7 @@ export const LayoutNavigation: FC<Props> = () => {
             <span className="font-medium">{title}</span>
           ) : (
             <Link href={href}>
-              <a className="c-hover-underline text-gray-400">{title}</a>
+              <a className="u-hover-underline text-gray-400">{title}</a>
             </Link>
           )}
         </li>

@@ -53,29 +53,38 @@
     ></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="text-[#18181b] [&_*]:!animate-none [&_*]:!transition-none">
+  <body
+    class="bg-[#f3f4f6] text-[#18181b] [&_*]:!animate-none [&_*]:!transition-none"
+  >
     <div
       id="initial-cover"
       class="fixed top-0 left-0 z-[60] h-full w-full bg-white duration-500"
     ></div>
 
-    <header id="header" class="sticky top-0 z-30 h-16 bg-white">
+    <header
+      id="header"
+      class="border-b border-[#e2e8f0] bg-[#f8fafc] md:sticky md:top-0 md:z-30 md:h-16"
+    >
       <div
-        class="container flex h-full max-w-[1152px] items-center justify-between"
+        class="container py-5 text-center md:flex md:h-full md:items-center md:justify-between md:py-0"
       >
-        <h1 class="text-[32px] font-bold tracking-tighter">
+        <h1
+          class="text-2xl font-bold leading-tight tracking-tighter lg:text-[32px]"
+        >
           Next.js Template (mockup)
         </h1>
-        <div class="flex">
-          <p class="mt-2 text-[#71717a] md:ml-auto md:mt-0 md:mr-5">
+        <div class="md:flex md:items-center md:justify-center">
+          <p
+            class="mt-4 text-sm text-[#71717a] md:ml-auto md:mt-0 md:mr-5 lg:text-base"
+          >
             A starting point for building a static site.
           </p>
-          <div class="mt-6 md:mt-0">
+          <div class="mt-4 md:mt-0">
             <a
               href="https://github.com/usagizmo/nextjs-template"
               target="_blank"
               rel="noopener noreferrer"
-              class="rounded-md border border-[#18181b] bg-[#18181b] px-5 py-[7px] text-center text-[#f8fafc] duration-300 hover:bg-[#f8fafc] hover:text-[#18181b]"
+              class="inline-flex h-9 items-center justify-center rounded-md border border-[#18181b] bg-[#18181b] px-5 text-center text-[#f8fafc] duration-150 hover:bg-[#f8fafc] hover:text-[#18181b]"
             >
               GitHub
             </a>
@@ -85,194 +94,257 @@
     </header>
 
     <!-- Information -->
-    <div class="c-information">
-      <main class="bg-gradient-to-b from-blue-300 to-green-200 py-10">
-        <div class="container space-y-12">
+    <main class="pt-10 pb-20">
+      <div class="container">
+        <!-- Sections -->
+        <div class="space-y-9">
           <!-- Development -->
-          <div class="prose max-w-none">
-            <h2 class="text-center" data-in="slide-in">Development</h2>
-            <h3 data-in="slide-in">Uses</h3>
-            <div data-in="slide-in">
-              <ul>
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://turborepo.org/"
-                    >Turborepo</a
-                  >
-                  x
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://pnpm.io/"
-                    >pnpm</a
-                  >
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://prettier.io/"
-                    >Prettier</a
-                  >
-                  /
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://eslint.org"
-                    >ESLint</a
-                  >
-                  (w/
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/import-js/eslint-plugin-import"
-                    >eslint-plugin-import</a
-                  >)
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/okonet/lint-staged"
-                    >lint-staged</a
-                  >
-                  /
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/typicode/husky"
-                    >husky</a
-                  >
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.whitesourcesoftware.com/free-developer-tools/renovate/"
-                    >Renovate</a
-                  >
-                  (w/
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/apps/renovate-approve"
-                    >renovate-approve</a
-                  >)
-                </li>
-                <li>
-                  GitHub Actions (Linting + Formatting + Testing (Validate
-                  <code>href</code> and <code>src</code> paths))
-                </li>
-                <li>
-                  Execute <code>eslint --fix</code> and
-                  <code>prettier</code> when saving with VS Code
-                </li>
-              </ul>
+          <section>
+            <h2 class="text-3xl font-bold" data-in="slide-in">Development</h2>
+            <div class="mt-4">
+              <div class="md:space-y- space-y-5 md:flex md:space-x-5">
+                <div
+                  class="flex-1 rounded-lg border border-[#e2e8f0] px-6 pt-5 pb-8"
+                >
+                  <h3 class="text-2xl font-semibold" data-in="slide-in">
+                    Uses
+                  </h3>
+                  <div class="mt-1.5" data-in="slide-in">
+                    <ul class="space-y-0.5">
+                      <li
+                        class="relative pl-5 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-[#18181b] before:content-['']"
+                      >
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://turborepo.org/"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >Turborepo</a
+                        >
+                        x
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://pnpm.io/"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >pnpm</a
+                        >
+                      </li>
+                      <li
+                        class="relative pl-5 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-[#18181b] before:content-['']"
+                      >
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://prettier.io/"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >Prettier</a
+                        >
+                        /
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://eslint.org"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >ESLint</a
+                        >
+                        (w/
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://github.com/import-js/eslint-plugin-import"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >eslint-plugin-import</a
+                        >)
+                      </li>
+                      <li
+                        class="relative pl-5 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-[#18181b] before:content-['']"
+                      >
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://github.com/okonet/lint-staged"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >lint-staged</a
+                        >
+                        /
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://github.com/typicode/husky"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >husky</a
+                        >
+                      </li>
+                      <li
+                        class="relative pl-5 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-[#18181b] before:content-['']"
+                      >
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://www.whitesourcesoftware.com/free-developer-tools/renovate/"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >Renovate</a
+                        >
+                        (w/
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://github.com/apps/renovate-approve"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >renovate-approve</a
+                        >)
+                      </li>
+                      <li
+                        class="relative pl-5 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-[#18181b] before:content-['']"
+                      >
+                        GitHub Actions (Linting + Formatting + Testing (Validate
+                        <code class="font-bold">`href`</code> and
+                        <code class="font-bold">`src`</code> paths))
+                      </li>
+                      <li
+                        class="relative pl-5 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-[#18181b] before:content-['']"
+                      >
+                        Execute
+                        <code class="font-bold">`eslint --fix`</code> and
+                        <code class="font-bold">`prettier`</code> when saving
+                        with VS Code
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
 
           <!-- Apps and Packages -->
-          <div class="prose max-w-none">
-            <h2 class="text-center" data-in="slide-in">Apps and Packages</h2>
-            <div class="space-y-6 md:flex md:space-y-0">
-              <div class="flex-1 md:px-4">
-                <h3 class="slide-in">apps</h3>
-                <div data-in="slide-in">
-                  <ul>
-                    <li>
-                      <strong>mockup</strong><br />
-                      <a
-                        class="link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://tailwindcss.com"
-                        >Tailwind CSS</a
+          <section>
+            <h2 class="text-3xl font-bold" data-in="slide-in">
+              Apps and Packages
+            </h2>
+            <div class="mt-4">
+              <div class="md:space-y- space-y-5 md:flex md:space-x-5">
+                <div
+                  class="flex-1 rounded-lg border border-[#e2e8f0] px-6 pt-5 pb-8"
+                >
+                  <h3 class="text-2xl font-semibold" data-in="slide-in">
+                    Apps
+                  </h3>
+                  <div class="mt-1.5" data-in="slide-in">
+                    <ul class="space-y-0.5">
+                      <li
+                        class="relative pl-5 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-[#18181b] before:content-['']"
                       >
-                      /
-                      <a
-                        class="link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://rollupjs.org/"
-                        >Rollup</a
-                      >
-                      /
-                      <a
-                        class="link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://htmlhint.com"
-                        >HTMLHint</a
-                      >
-                      /
-                      <a
-                        class="link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://webhint.io/"
-                        >webhint</a
-                      >
-                    </li>
-                  </ul>
+                        <strong>mockup</strong><br />
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://tailwindcss.com"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >Tailwind CSS</a
+                        >
+                        /
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://rollupjs.org/"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >Rollup</a
+                        >
+                        /
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://htmlhint.com"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >HTMLHint</a
+                        >
+                        /
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://webhint.io/"
+                          class="font-semibold text-[#3b82f6] hover:opacity-75"
+                          >webhint</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="md:px-4">
-                <h3 data-in="slide-in">packages</h3>
-                <div data-in="slide-in">
-                  <ul>
-                    <li>
-                      <strong>pathtest-utils</strong><br />Used in
-                      <code>apps/web/test/path.test.js</code>
-                    </li>
-                    <li>
-                      <strong>script-modules</strong><br />JS modules used in
-                      <code>apps/web/src/script.js</code>
-                    </li>
-                  </ul>
+                <div
+                  class="flex-1 rounded-lg border border-[#e2e8f0] px-6 pt-5 pb-8"
+                >
+                  <h3 class="text-2xl font-semibold" data-in="slide-in">
+                    Packages
+                  </h3>
+                  <div class="mt-1.5" data-in="slide-in">
+                    <ul class="space-y-0.5">
+                      <li
+                        class="relative pl-5 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-[#18181b] before:content-['']"
+                      >
+                        <strong>pathtest-utils</strong><br />Used in
+                        <code class="font-bold"
+                          >`apps/web/test/path.test.js`</code
+                        >
+                      </li>
+                      <li
+                        class="relative pl-5 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-[#18181b] before:content-['']"
+                      >
+                        <strong>script-modules</strong><br />JS modules used in
+                        <code class="font-bold">`apps/web/src/script.js`</code>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
           <!-- Commands -->
-          <div class="prose mb-[1em] max-w-none">
-            <h2 class="text-center" data-in="slide-in">Commands</h2>
-          </div>
+          <section>
+            <h2 class="text-3xl font-bold" data-in="slide-in">Commands</h2>
+            <div class="mt-4">
+              <pre
+                class="slide-in overflow-auto rounded-lg bg-[#1e293b] p-6 text-[#f8fafc]"
+              ><code><span class="text-[#7dd3fc]">pnpm</span> build     <span class="text-[#64748b]"># Build and then output to `public/*`</span>
+<span class="text-[#7dd3fc]">pnpm</span> dev       <span class="text-[#64748b]"># Watch build files and launch browser-sync server on port 8000</span>
+<span class="text-[#7dd3fc]">pnpm</span> lint      <span class="text-[#64748b]"># Linting</span>
+<span class="text-[#7dd3fc]">pnpm</span> list:fix  <span class="text-[#64748b]"># Format with `eslint --fix`</span>
+<span class="text-[#7dd3fc]">pnpm</span> test      <span class="text-[#64748b]"># Testing</span>
+<span class="text-[#7dd3fc]">pnpm</span> clean     <span class="text-[#64748b]"># Delete `node_modules` etc.</span>
 
-          <pre
-            class="slide-in overflow-auto rounded-2xl bg-gray-900 p-6 text-white"
-          ><code><span class="text-teal-300">pnpm</span> build     <span class="text-gray-400"># Build and then output to `public/*`</span>
-<span class="text-teal-300">pnpm</span> dev       <span class="text-gray-400"># Watch build files and launch browser-sync server on port 8000</span>
-<span class="text-teal-300">pnpm</span> lint      <span class="text-gray-400"># Linting</span>
-<span class="text-teal-300">pnpm</span> list:fix  <span class="text-gray-400"># Format with `eslint --fix`</span>
-<span class="text-teal-300">pnpm</span> test      <span class="text-gray-400"># Testing</span>
-<span class="text-teal-300">pnpm</span> clean     <span class="text-gray-400"># Delete `node_modules` etc.</span>
-
-<span class="text-gray-400"># `commands/*`</span>
-<span class="text-teal-300">pnpm</span> clean-image  <span class="text-gray-400"># Remove unused image files in `public/images/*`</span>
-<span class="text-teal-300">pnpm</span> deploy       <span class="text-gray-400"># When deploying to a VPS such as DigitalOcean using `rsync`</span></code></pre>
-
-          <!-- Buttons -->
-          <div class="flex items-center justify-center" data-in="slide-in">
-            <a
-              href="https://github.com/usagizmo/nextjs-template"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="rounded-full bg-gray-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-            >
-              GitHub
-            </a>
-          </div>
+<span class="text-[#64748b]"># `commands/*`</span>
+<span class="text-[#7dd3fc]">pnpm</span> clean-image  <span class="text-[#64748b]"># Remove unused image files in `public/images/*`</span>
+<span class="text-[#7dd3fc]">pnpm</span> deploy       <span class="text-[#64748b]"># When deploying to a VPS such as DigitalOcean using `rsync`</span></code></pre>
+            </div>
+          </section>
         </div>
-      </main>
-    </div>
 
-    <footer class="mt-4 flex items-center justify-center py-4">
-      <a href="https://usagizmo.com" target="_blank" rel="noopener noreferrer">
-        <small class="c-hover-underline text-[12px]">@usagizmo</small>
-      </a>
+        <!-- Buttons -->
+        <div class="mt-9 text-center" data-in="slide-in">
+          <a
+            href="https://github.com/usagizmo/nextjs-template"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex h-9 items-center justify-center rounded-md border border-[#18181b] bg-[#18181b] px-5 text-center text-[#f8fafc] duration-150 hover:bg-[#f8fafc] hover:text-[#18181b]"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="border-t border-[#e2e8f0] pt-3 pb-6">
+      <div class="container flex items-center justify-center">
+        <a
+          class="u-hover-underline text-sm"
+          href="https://usagizmo.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @usagizmo
+        </a>
+      </div>
     </footer>
 
     <script
