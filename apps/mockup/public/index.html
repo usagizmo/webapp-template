@@ -53,30 +53,34 @@
     ></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="[&_*]:!animate-none [&_*]:!transition-none">
+  <body class="text-[#18181b] [&_*]:!animate-none [&_*]:!transition-none">
     <div
       id="initial-cover"
       class="fixed top-0 left-0 z-[60] h-full w-full bg-white duration-500"
     ></div>
-    <header
-      id="header"
-      class="top-0 z-30 flex h-[80vh] flex-col items-center justify-center bg-white px-8 md:sticky md:h-auto md:flex-row md:py-4"
-    >
-      <h1 class="text-[28px] font-semibold leading-[1.25] tracking-[-0.02em]">
-        Next.js Template <code>(mockup)</code>
-      </h1>
-      <p class="mt-2 md:ml-auto md:mt-0 md:px-4 md:pl-4">
-        A starting point for building a static site.
-      </p>
-      <div class="mt-6 md:mt-0">
-        <a
-          href="https://github.com/usagizmo/nextjs-template"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="rounded-full bg-gray-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-        >
-          GitHub
-        </a>
+
+    <header id="header" class="sticky top-0 z-30 h-16 bg-white">
+      <div
+        class="container flex h-full max-w-[1152px] items-center justify-between"
+      >
+        <h1 class="text-[32px] font-bold tracking-tighter">
+          Next.js Template (mockup)
+        </h1>
+        <div class="flex">
+          <p class="mt-2 text-[#71717a] md:ml-auto md:mt-0 md:mr-5">
+            A starting point for building a static site.
+          </p>
+          <div class="mt-6 md:mt-0">
+            <a
+              href="https://github.com/usagizmo/nextjs-template"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-md border border-[#18181b] bg-[#18181b] px-5 py-[7px] text-center text-[#f8fafc] duration-300 hover:bg-[#f8fafc] hover:text-[#18181b]"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 
