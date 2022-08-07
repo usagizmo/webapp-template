@@ -13,7 +13,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next && rm -rf src/lib/\\$path.ts"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next && rm -rf src/lib/\\$path.ts && rm .env.local"
   },
   "dependencies": {
     "@apollo/client": "3.6.9",
