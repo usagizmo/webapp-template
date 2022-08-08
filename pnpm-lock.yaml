@@ -118,7 +118,7 @@ importers:
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
       '@types/node': 16.11.47
-      '@types/react': 18.0.16
+      '@types/react': 18.0.17
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.8
       clsx: 1.2.1
@@ -176,12 +176,12 @@ importers:
     devDependencies:
       '@babel/core': 7.18.10
       '@nhost/core': 0.7.6
-      '@nhost/react': 0.12.0_vm4gs2nntbfary4akrm3wehqne
+      '@nhost/react': 0.12.0_pvua4hzw7icfpxczibcacyiyeq
       '@storybook/react': 6.5.10_ydmn5yg7d2l3ov3m7szey6wsna
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
       '@types/node': 16.11.47
-      '@types/react': 18.0.16
+      '@types/react': 18.0.17
       '@types/react-transition-group': 4.4.5
       autoprefixer: 10.4.8_postcss@8.4.14
       constants: link:../../packages/constants
@@ -3657,7 +3657,7 @@ packages:
     dependencies:
       '@nhost/core': 0.7.6
       '@nhost/nhost-js': 1.4.7_hfeped4xerqlpr3v7l2hekgwaa
-      '@nhost/react': 0.12.0_vm4gs2nntbfary4akrm3wehqne
+      '@nhost/react': 0.12.0_pvua4hzw7icfpxczibcacyiyeq
       cross-fetch: 3.1.5
       js-cookie: 3.0.1
       next: 12.2.4_oilcy444popke7cin4orzlm63e
@@ -3696,7 +3696,7 @@ packages:
     dependencies:
       '@apollo/client': 3.6.9_7oyq4t3ocdziwagw7zfqg4youi
       '@nhost/apollo': 0.5.24_4j7wwyqvnhfu4vp4rfp2pg7n4q
-      '@nhost/react': 0.12.0_vm4gs2nntbfary4akrm3wehqne
+      '@nhost/react': 0.12.0_pvua4hzw7icfpxczibcacyiyeq
       graphql: 16.5.0
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
@@ -3705,7 +3705,7 @@ packages:
       - debug
     dev: false
 
-  /@nhost/react/0.12.0_vm4gs2nntbfary4akrm3wehqne:
+  /@nhost/react/0.12.0_pvua4hzw7icfpxczibcacyiyeq:
     resolution: {integrity: sha512-c0yx/lP48Fg2u/KkkKtpYjHX6uC5p0JM/2bQGS3+92eyI4vFAbp9hJ5sNd1YRrA3Y6QsfukpyFiTNxPicq7j+Q==}
     peerDependencies:
       react: ^17.0.0 || ^18.1.0
@@ -3714,7 +3714,7 @@ packages:
       '@nhost/core': 0.7.6
       '@nhost/hasura-storage-js': 0.5.3_@nhost+core@0.7.6
       '@nhost/nhost-js': 1.4.7_hfeped4xerqlpr3v7l2hekgwaa
-      '@xstate/react': 3.0.0_nc5lzaglycvznxmyjrmlpwevuy
+      '@xstate/react': 3.0.0_kecozofjtyde5bd2scklwqa43e
       immer: 9.0.15
       jwt-decode: 3.1.2
       react: 18.1.0
@@ -5739,11 +5739,11 @@ packages:
   /@types/react-transition-group/4.4.5:
     resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}
     dependencies:
-      '@types/react': 18.0.16
+      '@types/react': 18.0.17
     dev: true
 
-  /@types/react/18.0.16:
-    resolution: {integrity: sha512-3vX1dzVucqc2nhXtzyaParTIIRZeNbisRqLE7QdeLomVybEyeiuAouzZXgz71P+2kbJOqj3dy0fzoATg2I06GQ==}
+  /@types/react/18.0.17:
+    resolution: {integrity: sha512-38ETy4tL+rn4uQQi7mB81G7V1g0u2ryquNmsVIOKUAEIDK+3CUjZ6rSRpdvS99dNBnkLFL83qfmtLacGOTIhwQ==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -6295,7 +6295,7 @@ packages:
     resolution: {integrity: sha512-N8tkAACJx2ww8vFMneJmaAgmjAG1tnVBZJRLRcx061tmsLRZHSEZSLuGWnwPtunsSLvSqXQ2wfp7Mgqg1I+2dQ==}
     dev: false
 
-  /@xstate/react/3.0.0_nc5lzaglycvznxmyjrmlpwevuy:
+  /@xstate/react/3.0.0_kecozofjtyde5bd2scklwqa43e:
     resolution: {integrity: sha512-KHSCfwtb8gZ7QH2luihvmKYI+0lcdHQOmGNRUxUEs4zVgaJCyd8csCEmwPsudpliLdUmyxX2pzUBojFkINpotw==}
     peerDependencies:
       '@xstate/fsm': ^2.0.0
@@ -6308,7 +6308,7 @@ packages:
         optional: true
     dependencies:
       react: 18.1.0
-      use-isomorphic-layout-effect: 1.1.2_yz7g7dhpz64cbf5k5726dlaeuy
+      use-isomorphic-layout-effect: 1.1.2_y7iqb7nmjkfv46lgnnjsvges64
       use-sync-external-store: 1.2.0_react@18.1.0
       xstate: 4.32.1
     transitivePeerDependencies:
@@ -17274,7 +17274,7 @@ packages:
       querystring: 0.2.0
     dev: true
 
-  /use-isomorphic-layout-effect/1.1.2_yz7g7dhpz64cbf5k5726dlaeuy:
+  /use-isomorphic-layout-effect/1.1.2_y7iqb7nmjkfv46lgnnjsvges64:
     resolution: {integrity: sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA==}
     peerDependencies:
       '@types/react': '*'
@@ -17283,7 +17283,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 18.0.16
+      '@types/react': 18.0.17
       react: 18.1.0
 
   /use-sync-external-store/1.2.0_react@18.1.0:
