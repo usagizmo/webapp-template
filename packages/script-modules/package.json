@@ -6,7 +6,8 @@
   "main": "./src/index.js",
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",
-    "lint:fix": "eslint . --ext .js,.cjs --fix"
+    "lint:fix": "eslint . --ext .js,.cjs --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "devDependencies": {
     "eslint-preset": "workspace:*",

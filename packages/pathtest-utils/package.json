@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",
     "lint:fix": "eslint . --ext .js,.cjs --fix",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "devDependencies": {
     "@jest/globals": "28.1.3",
