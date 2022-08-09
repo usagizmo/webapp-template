@@ -7,6 +7,9 @@
     "nextjs.json",
     "react-library.json"
   ],
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
   "devDependencies": {
     "@tsconfig/strictest": "1.0.1"
   }

@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",
     "lint:fix": "eslint . --ext .js,.cjs --fix",
-    "test": "jest"
+    "test": "jest",
+    "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "devDependencies": {
     "@jest/types": "28.1.3",
