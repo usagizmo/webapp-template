@@ -21,7 +21,7 @@
     "eslint-config-next": "12.2.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-storybook": "0.6.3",
+    "eslint-plugin-storybook": "0.6.4",
     "lintstagedrc": "workspace:*",
     "next": "12.2.4",
     "react": "18.1.0",
