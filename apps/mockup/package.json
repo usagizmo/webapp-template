@@ -33,7 +33,7 @@
     "lintstagedrc": "workspace:*",
     "pathtest-utils": "workspace:*",
     "postcss": "8.4.14",
-    "rollup": "2.77.2",
+    "rollup": "2.77.3",
     "script-modules": "workspace:*",
     "tailwind-preset": "workspace:*",
     "tailwindcss": "3.1.8"
