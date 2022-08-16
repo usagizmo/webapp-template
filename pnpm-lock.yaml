@@ -341,7 +341,7 @@ importers:
   packages/utils:
     specifiers:
       '@jest/types': 28.1.3
-      '@types/jest': 28.1.6
+      '@types/jest': 28.1.7
       eslint-preset: workspace:*
       jest: 28.1.3
       lintstagedrc: workspace:*
@@ -351,7 +351,7 @@ importers:
       typescript: 4.7.4
     devDependencies:
       '@jest/types': 28.1.3
-      '@types/jest': 28.1.6
+      '@types/jest': 28.1.7
       eslint-preset: link:../eslint-preset
       jest: 28.1.3
       lintstagedrc: link:../lintstagedrc
@@ -5384,10 +5384,10 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/28.1.6:
-    resolution: {integrity: sha512-0RbGAFMfcBJKOmqRazM8L98uokwuwD5F8rHrv/ZMbrZBwVOWZUyPG6VFNscjYr/vjM3Vu4fRrCPbOs42AfemaQ==}
+  /@types/jest/28.1.7:
+    resolution: {integrity: sha512-acDN4VHD40V24tgu0iC44jchXavRNVFXQ/E6Z5XNsswgoSO/4NgsXoEYmPUGookKldlZQyIpmrEXsHI9cA3ZTA==}
     dependencies:
-      jest-matcher-utils: 28.1.3
+      expect: 28.1.3
       pretty-format: 28.1.3
     dev: true
 
