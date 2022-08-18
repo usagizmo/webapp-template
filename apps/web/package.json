@@ -20,7 +20,7 @@
     "@nhost/nextjs": "1.7.0",
     "@nhost/react-apollo": "4.7.0",
     "clsx": "1.2.1",
-    "date-fns": "2.29.1",
+    "date-fns": "2.29.2",
     "gsap": "3.11.0",
     "jotai": "1.7.8",
     "jsonwebtoken": "8.5.1",
