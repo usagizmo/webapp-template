@@ -128,7 +128,7 @@ importers:
       generated: workspace:*
       graphql: 16.5.0
       gsap: 3.11.0
-      jotai: 1.7.8
+      jotai: 1.8.0
       jsonwebtoken: 8.5.1
       lintstagedrc: workspace:*
       next: 12.2.4
@@ -161,7 +161,7 @@ importers:
       clsx: 1.2.1
       date-fns: 2.29.2
       gsap: 3.11.0
-      jotai: 1.7.8_57nx2npbr4vf4d6fhuyhqdilqu
+      jotai: 1.8.0_57nx2npbr4vf4d6fhuyhqdilqu
       jsonwebtoken: 8.5.1
       next: 12.2.4_oilcy444popke7cin4orzlm63e
       next-seo: 5.5.0_yvocaa5laqq4lii6e25wp4dnnu
@@ -12111,8 +12111,8 @@ packages:
       - ts-node
     dev: true
 
-  /jotai/1.7.8_57nx2npbr4vf4d6fhuyhqdilqu:
-    resolution: {integrity: sha512-rXwWz6uLqyZUCRzWIPiYTjI1hjskVxVpDN3lBoOHi66z6uQFkFmKwR8YhcQd+Ex4lODlReuKNIx6WwsF9aKy3g==}
+  /jotai/1.8.0_57nx2npbr4vf4d6fhuyhqdilqu:
+    resolution: {integrity: sha512-B77a5hIDGCxePYrYBpHP6YePGyNwivA+vXO6QME+8+t3V0y+OHwwnHu4Wy/LWEChE/G8vI+K7P2tlToT8Zmjng==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@babel/core': '*'
