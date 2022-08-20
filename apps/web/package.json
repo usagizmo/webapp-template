@@ -22,7 +22,7 @@
     "clsx": "1.2.1",
     "date-fns": "2.29.2",
     "gsap": "3.11.0",
-    "jotai": "1.7.8",
+    "jotai": "1.8.0",
     "jsonwebtoken": "8.5.1",
     "next": "12.2.4",
     "next-seo": "5.5.0",
