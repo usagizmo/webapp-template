@@ -40,5 +40,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/strict-boolean-expressions': 'error',
   },
 }
