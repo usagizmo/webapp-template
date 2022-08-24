@@ -112,7 +112,7 @@ importers:
       '@babel/core': 7.18.10
       '@nhost/core': 0.7.6
       '@nhost/nextjs': 1.7.0
-      '@nhost/react': 0.12.0
+      '@nhost/react': 0.12.2
       '@nhost/react-apollo': 4.7.0
       '@storybook/react': 6.5.10
       '@types/gtag.js': 0.0.10
@@ -156,8 +156,8 @@ importers:
       utils: workspace:*
     dependencies:
       '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
-      '@nhost/nextjs': 1.7.0_nntuqwel3qoiiut4yqwts7dyte
-      '@nhost/react-apollo': 4.7.0_ujicxkarepfh6lzioeva5ljp4e
+      '@nhost/nextjs': 1.7.0_vu7pna54onztftf44z4dpujzgm
+      '@nhost/react-apollo': 4.7.0_ytohgrm7wshmf3uihpixnsf4m4
       clsx: 1.2.1
       date-fns: 2.29.2
       gsap: 3.11.0
@@ -176,7 +176,7 @@ importers:
     devDependencies:
       '@babel/core': 7.18.10
       '@nhost/core': 0.7.6
-      '@nhost/react': 0.12.0_zqybwjkdfbc7xwpcrdre7ggc6y
+      '@nhost/react': 0.12.2_zqybwjkdfbc7xwpcrdre7ggc6y
       '@storybook/react': 6.5.10_ydmn5yg7d2l3ov3m7szey6wsna
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.8
@@ -3376,6 +3376,16 @@ packages:
       xstate: 4.32.1
     transitivePeerDependencies:
       - debug
+    dev: false
+
+  /@nhost/hasura-auth-js/1.4.1:
+    resolution: {integrity: sha512-D/zNpGuzGzu7pnLu7vpPFxtJHWEoDko1kabyvGnSkaXWCxlvoTWJcUQv9JPywJVpWSRiKtAXGAbdIbmvseBgbQ==}
+    dependencies:
+      '@nhost/core': 0.7.6
+      jwt-decode: 3.1.2
+      xstate: 4.32.1
+    transitivePeerDependencies:
+      - debug
 
   /@nhost/hasura-storage-js/0.5.3_@nhost+core@0.7.6:
     resolution: {integrity: sha512-tgSU7LfI3rH9/Y0kFlfnRS0MCwctgQuZGy+NzAzPPvuyf/iT8/rspYTXlLbbLzYjnDj9SVU1PHgv7q6KBqaQOA==}
@@ -3388,7 +3398,7 @@ packages:
     transitivePeerDependencies:
       - debug
 
-  /@nhost/nextjs/1.7.0_nntuqwel3qoiiut4yqwts7dyte:
+  /@nhost/nextjs/1.7.0_vu7pna54onztftf44z4dpujzgm:
     resolution: {integrity: sha512-MN5Dg9/pG1v07LswuI0luLYpvCIGl0sChL7NgZBQAP+Or/IM2bZNIXo0UM8fSWSyw2P4F8lDszNX1ic7uGJzYw==}
     peerDependencies:
       '@nhost/react': 0.12.0
@@ -3398,7 +3408,7 @@ packages:
     dependencies:
       '@nhost/core': 0.7.6
       '@nhost/nhost-js': 1.4.7_24pxzis3pohsknbptwelreag64
-      '@nhost/react': 0.12.0_zqybwjkdfbc7xwpcrdre7ggc6y
+      '@nhost/react': 0.12.2_zqybwjkdfbc7xwpcrdre7ggc6y
       cross-fetch: 3.1.5
       js-cookie: 3.0.1
       next: 12.2.5_oilcy444popke7cin4orzlm63e
@@ -3425,8 +3435,24 @@ packages:
     transitivePeerDependencies:
       - '@nhost/core'
       - debug
+    dev: false
 
-  /@nhost/react-apollo/4.7.0_ujicxkarepfh6lzioeva5ljp4e:
+  /@nhost/nhost-js/1.4.9_24pxzis3pohsknbptwelreag64:
+    resolution: {integrity: sha512-RcOtwDKQUU5kq49uYbArCxjwOw8onmBdng5r+VDGffJB/2V2dsyryDIpC/RPLAIPzMhPGKDKr0h2UFLv1fr5Mw==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@nhost/hasura-auth-js': 1.4.1
+      '@nhost/hasura-storage-js': 0.5.3_@nhost+core@0.7.6
+      axios: 0.27.2
+      graphql: 16.6.0
+      jwt-decode: 3.1.2
+      query-string: 7.1.1
+    transitivePeerDependencies:
+      - '@nhost/core'
+      - debug
+
+  /@nhost/react-apollo/4.7.0_ytohgrm7wshmf3uihpixnsf4m4:
     resolution: {integrity: sha512-pBT5s0IrfK9SsNfn9tqMpMmk5quqxu5ScR21f93ebk1tbUEgdkhcKWFVinJI9aBKHqM3JusVHILSjuogcrukJw==}
     peerDependencies:
       '@apollo/client': ^3.6.2
@@ -3437,7 +3463,7 @@ packages:
     dependencies:
       '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
       '@nhost/apollo': 0.5.24_4j7wwyqvnhfu4vp4rfp2pg7n4q
-      '@nhost/react': 0.12.0_zqybwjkdfbc7xwpcrdre7ggc6y
+      '@nhost/react': 0.12.2_zqybwjkdfbc7xwpcrdre7ggc6y
       graphql: 16.6.0
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
@@ -3446,15 +3472,15 @@ packages:
       - debug
     dev: false
 
-  /@nhost/react/0.12.0_zqybwjkdfbc7xwpcrdre7ggc6y:
-    resolution: {integrity: sha512-c0yx/lP48Fg2u/KkkKtpYjHX6uC5p0JM/2bQGS3+92eyI4vFAbp9hJ5sNd1YRrA3Y6QsfukpyFiTNxPicq7j+Q==}
+  /@nhost/react/0.12.2_zqybwjkdfbc7xwpcrdre7ggc6y:
+    resolution: {integrity: sha512-ZMraIqX+yAouScLN5ZMVzcMYhBih4mLpCGYyMBHT1+Z27zKiLp5DOES+FYfajpBsdBY6N4quMZIQV/lPAS8Ulw==}
     peerDependencies:
       react: ^17.0.0 || ^18.1.0
       react-dom: ^17.0.0 || ^18.1.0
     dependencies:
       '@nhost/core': 0.7.6
       '@nhost/hasura-storage-js': 0.5.3_@nhost+core@0.7.6
-      '@nhost/nhost-js': 1.4.7_24pxzis3pohsknbptwelreag64
+      '@nhost/nhost-js': 1.4.9_24pxzis3pohsknbptwelreag64
       '@xstate/react': 3.0.0_kecozofjtyde5bd2scklwqa43e
       immer: 9.0.15
       jwt-decode: 3.1.2
