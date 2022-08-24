@@ -20,7 +20,7 @@
     "@graphql-codegen/typescript-operations": "2.5.3",
     "@graphql-codegen/typescript-react-apollo": "3.3.3",
     "@types/node": "16.11.56",
-    "graphql": "16.5.0",
+    "graphql": "16.6.0",
     "graphql-tag": "2.12.6",
     "lintstagedrc": "workspace:*",
     "react": "18.1.0",
@@ -31,7 +31,7 @@
   "peerDependencies": {
     "@apollo/client": "3.6.9",
     "@types/node": "16.11.56",
-    "graphql": "16.5.0",
+    "graphql": "16.6.0",
     "graphql-tag": "2.12.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
