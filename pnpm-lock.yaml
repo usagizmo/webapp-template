@@ -247,7 +247,7 @@ importers:
     specifiers:
       '@apollo/client': 3.6.9
       '@graphql-codegen/add': 3.2.1
-      '@graphql-codegen/cli': 2.11.6
+      '@graphql-codegen/cli': 2.11.7
       '@graphql-codegen/introspection': 2.2.1
       '@graphql-codegen/typescript': 2.7.3
       '@graphql-codegen/typescript-operations': 2.5.3
@@ -263,7 +263,7 @@ importers:
     devDependencies:
       '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
       '@graphql-codegen/add': 3.2.1_graphql@16.6.0
-      '@graphql-codegen/cli': 2.11.6_ihzwdkrlcwhbge3axz5maidpo4
+      '@graphql-codegen/cli': 2.11.7_ihzwdkrlcwhbge3axz5maidpo4
       '@graphql-codegen/introspection': 2.2.1_graphql@16.6.0
       '@graphql-codegen/typescript': 2.7.3_graphql@16.6.0
       '@graphql-codegen/typescript-operations': 2.5.3_graphql@16.6.0
@@ -2349,8 +2349,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@graphql-codegen/cli/2.11.6_ihzwdkrlcwhbge3axz5maidpo4:
-    resolution: {integrity: sha512-0R2Bhgjt3XZTSdsn8MGGuJjDEN2z+KCo7920zLZz9boy6bQ0EyuxS9AUATePS9aC3djy2POAIPCHz8iHK68IlQ==}
+  /@graphql-codegen/cli/2.11.7_ihzwdkrlcwhbge3axz5maidpo4:
+    resolution: {integrity: sha512-Ldh9gRfmRL2ulMfEOGr3nuIv3s0YMnmJZ52Q1Z/eQoiW+x8KLwNIJNCS/O++YyoEO975WA5GLjfBoNzJ5qUQYw==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2366,8 +2366,8 @@ packages:
       '@graphql-tools/load': 7.7.1_graphql@16.6.0
       '@graphql-tools/prisma-loader': 7.2.7_o5y4mdthrs7ed27ibxm4wyqwiq
       '@graphql-tools/url-loader': 7.13.2_o5y4mdthrs7ed27ibxm4wyqwiq
-      '@graphql-tools/utils': 8.9.0_graphql@16.6.0
-      '@whatwg-node/fetch': 0.2.6
+      '@graphql-tools/utils': 8.10.0_graphql@16.6.0
+      '@whatwg-node/fetch': 0.3.2
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       chokidar: 3.5.3
@@ -2406,7 +2406,7 @@ packages:
     dependencies:
       '@graphql-codegen/plugin-helpers': 2.6.2_graphql@16.6.0
       '@graphql-tools/schema': 9.0.1_graphql@16.6.0
-      '@graphql-tools/utils': 8.9.0_graphql@16.6.0
+      '@graphql-tools/utils': 8.10.0_graphql@16.6.0
       graphql: 16.6.0
       tslib: 2.4.0
     dev: true
@@ -2430,7 +2430,7 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 8.9.0_graphql@16.6.0
+      '@graphql-tools/utils': 8.10.0_graphql@16.6.0
       change-case-all: 1.0.14
       common-tags: 1.8.2
       graphql: 16.6.0
@@ -2709,7 +2709,7 @@ packages:
       '@graphql-tools/utils': 8.9.0_graphql@16.6.0
       '@types/js-yaml': 4.0.5
       '@types/json-stable-stringify': 1.0.34
-      '@types/jsonwebtoken': 8.5.8
+      '@types/jsonwebtoken': 8.5.9
       chalk: 4.1.2
       debug: 4.3.4
       dotenv: 16.0.1
@@ -5411,12 +5411,6 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/jsonwebtoken/8.5.8:
-    resolution: {integrity: sha512-zm6xBQpFDIDM6o9r6HSgDeIcLy82TKWctCXEPbJJcXb5AKmi5BNNdLXneixK4lplX3PqIVcwLBCGE/kAGnlD4A==}
-    dependencies:
-      '@types/node': 18.6.3
-    dev: true
-
   /@types/jsonwebtoken/8.5.9:
     resolution: {integrity: sha512-272FMnFGzAVMGtu9tkr29hRL6bZj4Zs1KZNeHLnKqAvp06tAIcarTMwOh8/8bz4FmKRcMxZhZNeUAQsNLoiPhg==}
     dependencies:
@@ -6010,6 +6004,22 @@ packages:
 
   /@whatwg-node/fetch/0.2.6:
     resolution: {integrity: sha512-NhHiqeGcKjgqUZvJTZSou9qsFEPBBG1LPm2Npz0cmcPvukhhQfjX+p3quRx6b9AyjNPp1f73VB1z4ApHy9FcNg==}
+    dependencies:
+      '@peculiar/webcrypto': 1.4.0
+      abort-controller: 3.0.0
+      busboy: 1.6.0
+      event-target-polyfill: 0.0.3
+      form-data-encoder: 1.7.2
+      formdata-node: 4.3.3
+      node-fetch: 2.6.7
+      undici: 5.8.0
+      web-streams-polyfill: 3.2.1
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
+  /@whatwg-node/fetch/0.3.2:
+    resolution: {integrity: sha512-Bs5zAWQs0tXsLa4mRmLw7Psps1EN78vPtgcLpw3qPY8s6UYPUM67zFZ9cy+7tZ64PXhfwzxJn+m7RH2Lq48RNQ==}
     dependencies:
       '@peculiar/webcrypto': 1.4.0
       abort-controller: 3.0.0
@@ -10407,9 +10417,9 @@ packages:
       '@graphql-tools/graphql-file-loader': 7.5.0_graphql@16.6.0
       '@graphql-tools/json-file-loader': 7.4.1_graphql@16.6.0
       '@graphql-tools/load': 7.7.1_graphql@16.6.0
-      '@graphql-tools/merge': 8.3.1_graphql@16.6.0
+      '@graphql-tools/merge': 8.3.3_graphql@16.6.0
       '@graphql-tools/url-loader': 7.13.2_o5y4mdthrs7ed27ibxm4wyqwiq
-      '@graphql-tools/utils': 8.9.0_graphql@16.6.0
+      '@graphql-tools/utils': 8.10.0_graphql@16.6.0
       cosmiconfig: 7.0.1
       cosmiconfig-toml-loader: 1.0.0
       cosmiconfig-typescript-loader: 3.1.1_m3jqkuhoo5mndv6gjeo3xir7ne
