@@ -113,7 +113,7 @@ importers:
       '@nhost/core': 0.7.6
       '@nhost/nextjs': 1.7.0
       '@nhost/react': 0.12.0
-      '@nhost/react-apollo': 4.7.0
+      '@nhost/react-apollo': 4.7.3
       '@storybook/react': 6.5.10
       '@types/gtag.js': 0.0.10
       '@types/jsonwebtoken': 8.5.9
@@ -157,7 +157,7 @@ importers:
     dependencies:
       '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
       '@nhost/nextjs': 1.7.0_nntuqwel3qoiiut4yqwts7dyte
-      '@nhost/react-apollo': 4.7.0_ujicxkarepfh6lzioeva5ljp4e
+      '@nhost/react-apollo': 4.7.3_ujicxkarepfh6lzioeva5ljp4e
       clsx: 1.2.1
       date-fns: 2.29.2
       gsap: 3.11.0
@@ -3344,13 +3344,13 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@nhost/apollo/0.5.24_4j7wwyqvnhfu4vp4rfp2pg7n4q:
-    resolution: {integrity: sha512-wBEwsOuvDpvhwV3Lo0/pU+gQmQCAuc7bAF25gyplBZrQjl0oq/flT/Lk8JCM5Dql+q7j3Eet+lH1QMV5csnMVg==}
+  /@nhost/apollo/0.5.27_4j7wwyqvnhfu4vp4rfp2pg7n4q:
+    resolution: {integrity: sha512-B3d+0/RUONINzCqKm8cr2pqPdP3mjbgo1Wtv0N/1zfXR+I+p+rXY4gW+kizV84KF/SKTu7QVyb8ZMwLheI5q5g==}
     peerDependencies:
       '@apollo/client': ^3.6.2
     dependencies:
       '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
-      '@nhost/nhost-js': 1.4.7_24pxzis3pohsknbptwelreag64
+      '@nhost/nhost-js': 1.4.10_24pxzis3pohsknbptwelreag64
       graphql: 16.6.0
       graphql-ws: 5.9.1_graphql@16.6.0
     transitivePeerDependencies:
@@ -3376,6 +3376,16 @@ packages:
     transitivePeerDependencies:
       - debug
 
+  /@nhost/hasura-auth-js/1.4.1:
+    resolution: {integrity: sha512-D/zNpGuzGzu7pnLu7vpPFxtJHWEoDko1kabyvGnSkaXWCxlvoTWJcUQv9JPywJVpWSRiKtAXGAbdIbmvseBgbQ==}
+    dependencies:
+      '@nhost/core': 0.7.6
+      jwt-decode: 3.1.2
+      xstate: 4.32.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /@nhost/hasura-storage-js/0.5.3_@nhost+core@0.7.6:
     resolution: {integrity: sha512-tgSU7LfI3rH9/Y0kFlfnRS0MCwctgQuZGy+NzAzPPvuyf/iT8/rspYTXlLbbLzYjnDj9SVU1PHgv7q6KBqaQOA==}
     peerDependencies:
@@ -3386,6 +3396,19 @@ packages:
       xstate: 4.32.1
     transitivePeerDependencies:
       - debug
+
+  /@nhost/hasura-storage-js/0.6.0_@nhost+core@0.7.6:
+    resolution: {integrity: sha512-6DWBlqWP/opGcOKeTGQd1u3KPL36C6HMVttLvigKfwntL944w0+HFObj9jfBdtwNNoJ9EH0uZ3do13tzUW3Lug==}
+    peerDependencies:
+      '@nhost/core': 0.7.6
+    dependencies:
+      '@nhost/core': 0.7.6
+      axios: 0.27.2
+      form-data: 4.0.0
+      xstate: 4.32.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /@nhost/nextjs/1.7.0_nntuqwel3qoiiut4yqwts7dyte:
     resolution: {integrity: sha512-MN5Dg9/pG1v07LswuI0luLYpvCIGl0sChL7NgZBQAP+Or/IM2bZNIXo0UM8fSWSyw2P4F8lDszNX1ic7uGJzYw==}
@@ -3410,6 +3433,22 @@ packages:
       - graphql
     dev: false
 
+  /@nhost/nhost-js/1.4.10_24pxzis3pohsknbptwelreag64:
+    resolution: {integrity: sha512-hi+UOeNMA/HWOOI0V6LovxjCY5cPiNKproONf1mpdYt0DWLZ1UGQ010r/SPi5EvsUS7234oUAYSBFSJZDrS1lw==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@nhost/hasura-auth-js': 1.4.1
+      '@nhost/hasura-storage-js': 0.6.0_@nhost+core@0.7.6
+      axios: 0.27.2
+      graphql: 16.6.0
+      jwt-decode: 3.1.2
+      query-string: 7.1.1
+    transitivePeerDependencies:
+      - '@nhost/core'
+      - debug
+    dev: false
+
   /@nhost/nhost-js/1.4.7_24pxzis3pohsknbptwelreag64:
     resolution: {integrity: sha512-qTj/1OKaudYRO007Ut+ZSsgM3T1kej8JrbV3EdrQpKPEUb8iPMVqYGkfjCCeifZ3c+itoBGVAROrKbaOTE5cVA==}
     peerDependencies:
@@ -3425,17 +3464,17 @@ packages:
       - '@nhost/core'
       - debug
 
-  /@nhost/react-apollo/4.7.0_ujicxkarepfh6lzioeva5ljp4e:
-    resolution: {integrity: sha512-pBT5s0IrfK9SsNfn9tqMpMmk5quqxu5ScR21f93ebk1tbUEgdkhcKWFVinJI9aBKHqM3JusVHILSjuogcrukJw==}
+  /@nhost/react-apollo/4.7.3_ujicxkarepfh6lzioeva5ljp4e:
+    resolution: {integrity: sha512-GZNfNJhVDUXZFzJFke7rwugm95oGtyHYOo3sKKp9DtGDSHxW0agE9BQJCpO5dmFmX7DNHmUQ3odag156YqDnaw==}
     peerDependencies:
       '@apollo/client': ^3.6.2
-      '@nhost/react': 0.12.0
+      '@nhost/react': 0.12.3
       graphql: ^16.0.0
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
-      '@nhost/apollo': 0.5.24_4j7wwyqvnhfu4vp4rfp2pg7n4q
+      '@nhost/apollo': 0.5.27_4j7wwyqvnhfu4vp4rfp2pg7n4q
       '@nhost/react': 0.12.0_zqybwjkdfbc7xwpcrdre7ggc6y
       graphql: 16.6.0
       react: 18.1.0
