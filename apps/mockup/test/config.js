@@ -5,9 +5,9 @@ export const imageExtensions = ['jpg', 'png', 'webp']
 export const allowedPathList = [
   '/apple-touch-icon.png',
   '/favicon.ico',
-  'https://cdn.jsdelivr.net/npm/gsap@3.8.0/dist/gsap.min.js',
-  'https://cdn.jsdelivr.net/npm/gsap@3.8.0/dist/ScrollToPlugin.min.js',
-  'https://cdn.jsdelivr.net/npm/gsap@3.8.0/dist/ScrollTrigger.min.js',
+  'https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min.js',
+  'https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/ScrollToPlugin.min.js',
+  'https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/ScrollTrigger.min.js',
   'https://cdn.jsdelivr.net/npm/picturefill@3.0.3/dist/picturefill.min.js',
   'https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css',
   'https://eslint.org',
