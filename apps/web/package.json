@@ -43,7 +43,7 @@
     "@types/gtag.js": "0.0.10",
     "@types/jsonwebtoken": "8.5.9",
     "@types/node": "16.11.56",
-    "@types/react": "18.0.17",
+    "@types/react": "18.0.18",
     "@types/react-transition-group": "4.4.5",
     "autoprefixer": "10.4.8",
     "constants": "workspace:*",
