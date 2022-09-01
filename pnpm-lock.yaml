@@ -115,7 +115,7 @@ importers:
       '@nhost/react': 0.12.3
       '@nhost/react-apollo': 4.7.3
       '@storybook/react': 6.5.10
-      '@types/gtag.js': 0.0.10
+      '@types/gtag.js': 0.0.11
       '@types/jsonwebtoken': 8.5.9
       '@types/node': 16.11.56
       '@types/react': 18.0.18
@@ -178,7 +178,7 @@ importers:
       '@nhost/core': 0.7.6
       '@nhost/react': 0.12.3_vzl55uhydlmwozo6dd6utwali4
       '@storybook/react': 6.5.10_fxbjc6hjl5xqzwftgmsa5csfly
-      '@types/gtag.js': 0.0.10
+      '@types/gtag.js': 0.0.11
       '@types/jsonwebtoken': 8.5.9
       '@types/node': 16.11.56
       '@types/react': 18.0.18
@@ -5750,8 +5750,8 @@ packages:
       '@types/node': 18.6.3
     dev: true
 
-  /@types/gtag.js/0.0.10:
-    resolution: {integrity: sha512-98Hy7woUb3jMAMXkZQwfIOYNyfxmI0+U4m0PpCGdnd/FHk0tDpQFCqgXdNkdEoXsKkcGya/2Gew1cAJjKJspVw==}
+  /@types/gtag.js/0.0.11:
+    resolution: {integrity: sha512-rUuSDedDjcuUpoc2zf6eX6zRrxqALNgwrmMBfVFopkLH7YGM52C7tt6j9GsYIvaxn+ioVRpOKoHnN1DXzHEqIg==}
     dev: true
 
   /@types/hast/2.3.4:
