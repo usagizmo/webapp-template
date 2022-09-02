@@ -15,7 +15,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "0.5.4",
+    "@tailwindcss/typography": "0.5.7",
     "autoprefixer": "10.4.8",
     "eslint-preset": "workspace:*",
     "lintstagedrc": "workspace:*",
