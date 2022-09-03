@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "@babel/core": "7.18.13",
-    "@typescript-eslint/eslint-plugin": "5.29.0",
-    "@typescript-eslint/parser": "5.29.0",
+    "@typescript-eslint/eslint-plugin": "5.36.1",
+    "@typescript-eslint/parser": "5.36.1",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "8.5.0",
