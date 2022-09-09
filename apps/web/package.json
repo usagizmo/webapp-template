@@ -21,7 +21,7 @@
     "@nhost/react-apollo": "4.7.3",
     "clsx": "1.2.1",
     "date-fns": "2.29.2",
-    "gsap": "3.11.0",
+    "gsap": "3.11.1",
     "jotai": "1.8.2",
     "jsonwebtoken": "8.5.1",
     "next": "12.2.5",
