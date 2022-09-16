@@ -123,7 +123,7 @@ importers:
       autoprefixer: 10.4.8
       clsx: 1.2.1
       constants: workspace:*
-      date-fns: 2.29.2
+      date-fns: 2.29.3
       eslint-preset: workspace:*
       generated: workspace:*
       graphql: 16.6.0
@@ -159,7 +159,7 @@ importers:
       '@nhost/nextjs': 1.7.3_7v3xzavn2qnbwbq5kgkhtyhphy
       '@nhost/react-apollo': 4.7.3_3bqh6ib22a6cj7jwidmlpnzu7q
       clsx: 1.2.1
-      date-fns: 2.29.2
+      date-fns: 2.29.3
       gsap: 3.11.1
       jotai: 1.8.3_6r6e3esjotgf6paivxx3vltazm
       jsonwebtoken: 8.5.1
@@ -8791,8 +8791,8 @@ packages:
     engines: {node: '>=0.11'}
     dev: true
 
-  /date-fns/2.29.2:
-    resolution: {integrity: sha512-0VNbwmWJDS/G3ySwFSJA3ayhbURMTJLtwM2DTxf9CWondCnh6DTNlO9JgRSq6ibf4eD0lfMJNBxUdEAHHix+bA==}
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
     engines: {node: '>=0.11'}
     dev: false
 
