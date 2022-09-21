@@ -45,7 +45,7 @@
     "@types/node": "16.11.56",
     "@types/react": "18.0.20",
     "@types/react-transition-group": "4.4.5",
-    "autoprefixer": "10.4.8",
+    "autoprefixer": "10.4.12",
     "constants": "workspace:*",
     "eslint-preset": "workspace:*",
     "generated": "workspace:*",
@@ -69,7 +69,7 @@
     "@babel/core": "7.18.13",
     "@nhost/core": "0.7.6",
     "@nhost/react": "0.12.3",
-    "autoprefixer": "10.4.8",
+    "autoprefixer": "10.4.12",
     "graphql": "16.6.0",
     "postcss": "8.4.16",
     "require-from-string": "2.0.2"
