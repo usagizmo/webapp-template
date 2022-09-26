@@ -113,7 +113,7 @@ importers:
       '@nhost/core': 0.7.6
       '@nhost/nextjs': 1.7.3
       '@nhost/react': 0.12.3
-      '@nhost/react-apollo': 4.7.3
+      '@nhost/react-apollo': 4.7.6
       '@storybook/react': 6.5.12
       '@types/gtag.js': 0.0.11
       '@types/jsonwebtoken': 8.5.9
@@ -157,7 +157,7 @@ importers:
     dependencies:
       '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
       '@nhost/nextjs': 1.7.3_7v3xzavn2qnbwbq5kgkhtyhphy
-      '@nhost/react-apollo': 4.7.3_3bqh6ib22a6cj7jwidmlpnzu7q
+      '@nhost/react-apollo': 4.7.6_3bqh6ib22a6cj7jwidmlpnzu7q
       clsx: 1.2.1
       date-fns: 2.29.3
       gsap: 3.11.1
@@ -3713,13 +3713,13 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@nhost/apollo/0.5.27_4j7wwyqvnhfu4vp4rfp2pg7n4q:
-    resolution: {integrity: sha512-B3d+0/RUONINzCqKm8cr2pqPdP3mjbgo1Wtv0N/1zfXR+I+p+rXY4gW+kizV84KF/SKTu7QVyb8ZMwLheI5q5g==}
+  /@nhost/apollo/0.5.30_4j7wwyqvnhfu4vp4rfp2pg7n4q:
+    resolution: {integrity: sha512-oXocsOLiWqBBTrR4YdgQlDr6jskr+fKALdVXeWSmABofCUdRJfFGsBqszBKpRGtHF5iy8udJJeVBjpUxvhnYPA==}
     peerDependencies:
       '@apollo/client': ^3.6.2
     dependencies:
       '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
-      '@nhost/nhost-js': 1.4.10_24pxzis3pohsknbptwelreag64
+      '@nhost/nhost-js': 1.5.0_24pxzis3pohsknbptwelreag64
       graphql: 16.6.0
       graphql-ws: 5.9.1_graphql@16.6.0
     transitivePeerDependencies:
@@ -3736,6 +3736,17 @@ packages:
     transitivePeerDependencies:
       - debug
 
+  /@nhost/core/0.8.0:
+    resolution: {integrity: sha512-qO2Sj4JJtjRbw8lKqGJ3QVNE2O6BWM1iISUwV78QWqO8BcnpFNhWIQgqWggBckPnnaRQCRyacBXdtNklBw+xvA==}
+    dependencies:
+      '@simplewebauthn/browser': 6.0.0
+      axios: 0.27.2
+      js-cookie: 3.0.1
+      xstate: 4.32.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /@nhost/hasura-auth-js/1.4.1:
     resolution: {integrity: sha512-D/zNpGuzGzu7pnLu7vpPFxtJHWEoDko1kabyvGnSkaXWCxlvoTWJcUQv9JPywJVpWSRiKtAXGAbdIbmvseBgbQ==}
     dependencies:
@@ -3744,6 +3755,16 @@ packages:
       xstate: 4.32.1
     transitivePeerDependencies:
       - debug
+
+  /@nhost/hasura-auth-js/1.5.0:
+    resolution: {integrity: sha512-n2emPpDZgM0YuouKKkoz10mGE1PwBFMjzQAtx32rlTmOdlbuAtp7KSEiwZU6h7UjWDHrU3C2xExhePRDHIxOuQ==}
+    dependencies:
+      '@nhost/core': 0.8.0
+      jwt-decode: 3.1.2
+      xstate: 4.32.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /@nhost/hasura-storage-js/0.6.0_@nhost+core@0.7.6:
     resolution: {integrity: sha512-6DWBlqWP/opGcOKeTGQd1u3KPL36C6HMVttLvigKfwntL944w0+HFObj9jfBdtwNNoJ9EH0uZ3do13tzUW3Lug==}
@@ -3756,6 +3777,19 @@ packages:
       xstate: 4.32.1
     transitivePeerDependencies:
       - debug
+
+  /@nhost/hasura-storage-js/0.6.2_@nhost+core@0.7.6:
+    resolution: {integrity: sha512-pVM9GNepX3zITqwGMccozSfwMS22h6xr7fWVaa6K5E4IFy1AYRs6KVZ8YWqJstyHt5k0ZzyNh0YtMMHLzvw0gg==}
+    peerDependencies:
+      '@nhost/core': 0.8.0
+    dependencies:
+      '@nhost/core': 0.7.6
+      axios: 0.27.2
+      form-data: 4.0.0
+      xstate: 4.32.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /@nhost/nextjs/1.7.3_7v3xzavn2qnbwbq5kgkhtyhphy:
     resolution: {integrity: sha512-g3EdbNPPdKV3BxwvzmHViFJeqJcYQD9cY4vHfexQsR8CVaUnENjFa+jVT6EBqqSy8H7EPrgyJdyPDxMvX5HiTQ==}
@@ -3795,17 +3829,33 @@ packages:
       - '@nhost/core'
       - debug
 
-  /@nhost/react-apollo/4.7.3_3bqh6ib22a6cj7jwidmlpnzu7q:
-    resolution: {integrity: sha512-GZNfNJhVDUXZFzJFke7rwugm95oGtyHYOo3sKKp9DtGDSHxW0agE9BQJCpO5dmFmX7DNHmUQ3odag156YqDnaw==}
+  /@nhost/nhost-js/1.5.0_24pxzis3pohsknbptwelreag64:
+    resolution: {integrity: sha512-b9HZwzI7gvdNYwQ2DCNzLbGYSgawnYAvTrmRaYyQHgVVuRNSqNUt2at8Cjhkf+8pdkNcLJ4IpWYqWU8fsz4WqQ==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@nhost/hasura-auth-js': 1.5.0
+      '@nhost/hasura-storage-js': 0.6.2_@nhost+core@0.7.6
+      axios: 0.27.2
+      graphql: 16.6.0
+      jwt-decode: 3.1.2
+      query-string: 7.1.1
+    transitivePeerDependencies:
+      - '@nhost/core'
+      - debug
+    dev: false
+
+  /@nhost/react-apollo/4.7.6_3bqh6ib22a6cj7jwidmlpnzu7q:
+    resolution: {integrity: sha512-rOv4BWuO1bzJskUKoqn3uuPM0OIJ2iLutN5ynlmmF2ZpVO0uahavtulr4u2G5y99tlymKIuFYWRilzTdlhA7tw==}
     peerDependencies:
       '@apollo/client': ^3.6.2
-      '@nhost/react': 0.12.3
+      '@nhost/react': 0.13.0
       graphql: ^16.0.0
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
-      '@nhost/apollo': 0.5.27_4j7wwyqvnhfu4vp4rfp2pg7n4q
+      '@nhost/apollo': 0.5.30_4j7wwyqvnhfu4vp4rfp2pg7n4q
       '@nhost/react': 0.12.3_6ttr5i473tcskiuvst7kpfb624
       graphql: 16.6.0
       react: 18.1.0
@@ -3983,6 +4033,10 @@ packages:
       ajv: 8.11.0
       chalk: 4.1.2
     dev: true
+
+  /@simplewebauthn/browser/6.0.0:
+    resolution: {integrity: sha512-gaXZmNfBPFawVZLhDPHkArCt0ttUbNSQSq24muyFmUi/QfJIhvQfQH7kfqIwlAXKqs79qpJ4RCYsRUjVj0Yl6w==}
+    dev: false
 
   /@sinclair/typebox/0.24.22:
     resolution: {integrity: sha512-JsBe3cOFpNZ6yjBYnXKhcENWy5qZE3PQZwExQ5ksA/h8qp4bwwxFmy07A6bC2R6qv6+RF3SfrbQTskTwYNTXUQ==}
