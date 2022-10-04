@@ -26,7 +26,7 @@ importers:
     specifiers:
       '@jest/globals': 28.1.3
       '@rollup/plugin-node-resolve': 13.3.0
-      autoprefixer: 10.4.8
+      autoprefixer: 10.4.12
       browser-sync: 2.27.10
       eslint-preset: workspace:*
       five-server: 0.1.6
@@ -42,7 +42,7 @@ importers:
     devDependencies:
       '@jest/globals': 28.1.3
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.0
-      autoprefixer: 10.4.8_postcss@8.4.16
+      autoprefixer: 10.4.12_postcss@8.4.16
       browser-sync: 2.27.10
       eslint-preset: link:../../packages/eslint-preset
       five-server: 0.1.6_jest@28.1.3
@@ -120,7 +120,7 @@ importers:
       '@types/node': 16.11.56
       '@types/react': 18.0.20
       '@types/react-transition-group': 4.4.5
-      autoprefixer: 10.4.8
+      autoprefixer: 10.4.12
       clsx: 1.2.1
       constants: workspace:*
       date-fns: 2.29.3
@@ -183,7 +183,7 @@ importers:
       '@types/node': 16.11.56
       '@types/react': 18.0.20
       '@types/react-transition-group': 4.4.5
-      autoprefixer: 10.4.8_postcss@8.4.16
+      autoprefixer: 10.4.12_postcss@8.4.16
       constants: link:../../packages/constants
       eslint-preset: link:../../packages/eslint-preset
       generated: link:../../packages/generated
@@ -303,14 +303,14 @@ importers:
   packages/tailwind-preset:
     specifiers:
       '@tailwindcss/typography': 0.5.7
-      autoprefixer: 10.4.8
+      autoprefixer: 10.4.12
       eslint-preset: workspace:*
       lintstagedrc: workspace:*
       postcss: 8.4.16
       tailwindcss: 3.1.8
     devDependencies:
       '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
-      autoprefixer: 10.4.8_postcss@8.4.16
+      autoprefixer: 10.4.12_postcss@8.4.16
       eslint-preset: link:../eslint-preset
       lintstagedrc: link:../lintstagedrc
       postcss: 8.4.16
@@ -6942,15 +6942,15 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /autoprefixer/10.4.8_postcss@8.4.16:
-    resolution: {integrity: sha512-75Jr6Q/XpTqEf6D2ltS5uMewJIx5irCU1oBYJrWjFenq/m12WRRrz6g15L1EIoYvPLXTbEry7rDOwrcYNj77xw==}
+  /autoprefixer/10.4.12_postcss@8.4.16:
+    resolution: {integrity: sha512-WrCGV9/b97Pa+jtwf5UGaRjgQIg7OK3D06GnoYoZNcG1Xb8Gt3EfuKjlhh9i/VtT16g6PYjZ69jdJ2g8FxSC4Q==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      browserslist: 4.21.3
-      caniuse-lite: 1.0.30001373
+      browserslist: 4.21.4
+      caniuse-lite: 1.0.30001409
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -7550,6 +7550,17 @@ packages:
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
 
+  /browserslist/4.21.4:
+    resolution: {integrity: sha512-CBHJJdDmgjl3daYjN5Cp5kbTf1mUhZoS+beLklHIvkOWscs83YAhLlF3Wsh/lciQYAcbBJgTOD44VtG31ZM4Hw==}
+    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
+    hasBin: true
+    dependencies:
+      caniuse-lite: 1.0.30001409
+      electron-to-chromium: 1.4.256
+      node-releases: 2.0.6
+      update-browserslist-db: 1.0.9_browserslist@4.21.4
+    dev: true
+
   /bs-logger/0.2.6:
     resolution: {integrity: sha512-pd8DCoxmbgc7hyPKOvxtqNcjYoOsABPQdcCUjGp3d42VR2CX1ORhk2A87oqqu5R1kk+76nsxZupkmyd+MVtCog==}
     engines: {node: '>= 6'}
@@ -7758,6 +7769,10 @@ packages:
 
   /caniuse-lite/1.0.30001373:
     resolution: {integrity: sha512-pJYArGHrPp3TUqQzFYRmP/lwJlj8RCbVe3Gd3eJQkAV8SAC6b19XS9BjMvRdvaS8RMkaTN8ZhoHP6S1y8zzwEQ==}
+
+  /caniuse-lite/1.0.30001409:
+    resolution: {integrity: sha512-V0mnJ5dwarmhYv8/MzhJ//aW68UpvnQBXv8lJ2QUsvn2pHcmAuNtu8hQEDz37XnA1iE+lRR9CIfGWWpgJ5QedQ==}
+    dev: true
 
   /capital-case/1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
@@ -9147,6 +9162,10 @@ packages:
 
   /electron-to-chromium/1.4.206:
     resolution: {integrity: sha512-h+Fadt1gIaQ06JaIiyqPsBjJ08fV5Q7md+V8bUvQW/9OvXfL2LRICTz2EcnnCP7QzrFTS6/27MRV6Bl9Yn97zA==}
+
+  /electron-to-chromium/1.4.256:
+    resolution: {integrity: sha512-x+JnqyluoJv8I0U9gVe+Sk2st8vF0CzMt78SXxuoWCooLLY2k5VerIBdpvG7ql6GKI4dzNnPjmqgDJ76EdaAKw==}
+    dev: true
 
   /elliptic/6.5.4:
     resolution: {integrity: sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==}
@@ -17385,6 +17404,17 @@ packages:
       browserslist: 4.21.3
       escalade: 3.1.1
       picocolors: 1.0.0
+
+  /update-browserslist-db/1.0.9_browserslist@4.21.4:
+    resolution: {integrity: sha512-/xsqn21EGVdXI3EXSum1Yckj3ZVZugqyOZQ/CxYPBD/R+ko9NSUScf8tFF4dOKY+2pvSSJA/S+5B8s4Zr4kyvg==}
+    hasBin: true
+    peerDependencies:
+      browserslist: '>= 4.21.0'
+    dependencies:
+      browserslist: 4.21.4
+      escalade: 3.1.1
+      picocolors: 1.0.0
+    dev: true
 
   /upper-case-first/2.0.2:
     resolution: {integrity: sha512-514ppYHBaKwfJRK/pNC6c/OxfGa0obSnAl106u97Ed0I625Nin96KAjttZF6ZL3e1XLtphxnqrOi9iWgm+u+bg==}
