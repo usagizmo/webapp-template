@@ -318,9 +318,9 @@ importers:
 
   packages/tsconfig:
     specifiers:
-      '@tsconfig/strictest': 1.0.1
+      '@tsconfig/strictest': 1.0.2
     devDependencies:
-      '@tsconfig/strictest': 1.0.1
+      '@tsconfig/strictest': 1.0.2
 
   packages/types:
     specifiers:
@@ -5474,8 +5474,8 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@tsconfig/strictest/1.0.1:
-    resolution: {integrity: sha512-7O8Q537UQdTZSKEV0f5WRLRFtfL9B8agGqIZrCOwOiWvbjZWPP2rAoZ7LHcwjdG4vnjdleHMEE+ZetM+lhRkcA==}
+  /@tsconfig/strictest/1.0.2:
+    resolution: {integrity: sha512-IRKlC8cnP7zMz1SDBjyIVyPapkEGWLZ6wkF6Z8T+xU80P9sO5uGXlIUvtzjx+7ehPJRWxkB6CeIDwUfyqNtYkQ==}
     dev: true
 
   /@types/babel__core/7.1.19:
