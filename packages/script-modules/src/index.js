@@ -1,4 +1,5 @@
 export { removeInitialCover } from './modules/removeInitialCover.js'
+export { setAdjustVh } from './modules/setAdjustVh'
 export { setDeep } from './modules/setDeep'
 export { setIn } from './modules/setIn'
 export { setModal } from './modules/setModal'
