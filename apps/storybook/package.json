@@ -10,7 +10,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf storybook-static"
   },
   "devDependencies": {
-    "@babel/core": "7.18.13",
+    "@babel/core": "7.19.3",
     "@storybook/addon-actions": "6.5.12",
     "@storybook/addon-essentials": "6.5.12",
     "@storybook/addon-links": "6.5.12",
@@ -26,7 +26,7 @@
     "require-from-string": "2.0.2",
     "tailwind-preset": "workspace:*",
     "tsconfig": "workspace:*",
-    "typescript": "4.7.4",
+    "typescript": "4.8.4",
     "webpack": "5.74.0"
   },
   "peerDependencies": {
