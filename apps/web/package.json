@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.18.13",
-    "@nhost/core": "0.7.6",
+    "@nhost/core": "0.8.0",
     "@nhost/react": "0.12.3",
     "@storybook/react": "6.5.12",
     "@types/gtag.js": "0.0.11",
@@ -67,7 +67,7 @@
   },
   "peerDependencies": {
     "@babel/core": "7.18.13",
-    "@nhost/core": "0.7.6",
+    "@nhost/core": "0.8.0",
     "@nhost/react": "0.12.3",
     "autoprefixer": "10.4.12",
     "graphql": "16.6.0",
