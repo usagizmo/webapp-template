@@ -111,7 +111,7 @@ importers:
       '@apollo/client': 3.7.0
       '@babel/core': 7.19.3
       '@nhost/core': 0.8.0
-      '@nhost/nextjs': 1.7.6
+      '@nhost/nextjs': 1.7.7
       '@nhost/react': 0.13.0
       '@nhost/react-apollo': 4.7.6
       '@storybook/react': 6.5.12
@@ -156,7 +156,7 @@ importers:
       utils: workspace:*
     dependencies:
       '@apollo/client': 3.7.0_gdcq4dv6opitr3wbfwyjmanyra
-      '@nhost/nextjs': 1.7.6_42oht6pmao43qg4wwjfpyllkv4
+      '@nhost/nextjs': 1.7.7_42oht6pmao43qg4wwjfpyllkv4
       '@nhost/react-apollo': 4.7.6_a6ad24rgci22xrts6harjzzs4u
       clsx: 1.2.1
       date-fns: 2.29.3
@@ -3595,8 +3595,8 @@ packages:
     transitivePeerDependencies:
       - debug
 
-  /@nhost/nextjs/1.7.6_42oht6pmao43qg4wwjfpyllkv4:
-    resolution: {integrity: sha512-FKWJMjoWMZPURLD7L94U0GvDHNzO+Mo2N1cYlkfkn065DAOewBXnP9rzUJJ/W4x9YD0PSKH8DlUuHUnqs9aKqA==}
+  /@nhost/nextjs/1.7.7_42oht6pmao43qg4wwjfpyllkv4:
+    resolution: {integrity: sha512-je8oY4SiEtK3OzLhpFGv32kKWv8TL3+zFtPJxLlJ7IMCduuvuLk/lJIKmIccJK4HU/4tfQKQ9UU2CdUCflySgg==}
     peerDependencies:
       '@nhost/react': 0.13.0
       next: ^12.0.10
