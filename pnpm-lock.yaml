@@ -127,7 +127,7 @@ importers:
       eslint-preset: workspace:*
       generated: workspace:*
       graphql: 16.6.0
-      gsap: 3.11.2
+      gsap: 3.11.3
       jotai: 1.8.4
       jsonwebtoken: 8.5.1
       lintstagedrc: workspace:*
@@ -160,7 +160,7 @@ importers:
       '@nhost/react-apollo': 4.7.6_a6ad24rgci22xrts6harjzzs4u
       clsx: 1.2.1
       date-fns: 2.29.3
-      gsap: 3.11.2
+      gsap: 3.11.3
       jotai: 1.8.4_b6k74wvxdvqypha4emuv7fd2ke
       jsonwebtoken: 8.5.1
       next: 12.3.1_6tziyx3dehkoeijunclpkpolha
@@ -10760,8 +10760,8 @@ packages:
     resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
-  /gsap/3.11.2:
-    resolution: {integrity: sha512-y1NSjM2i2yCjLtoNuoyIhhh9kmYOpFEU9su1EbHuZGN3OWr8M6NIjNHBurSWu/blbHAPQqGm7mUIokSxqTTp2Q==}
+  /gsap/3.11.3:
+    resolution: {integrity: sha512-xc/iIJy+LWiMbRa4IdMtdnnKa/7PXEK6NNzV71gdOYUVeTZN7UWnLU0fB7Hi1iwiz4ZZoYkBZPPYGg+2+zzFHA==}
     dev: false
 
   /handlebars/4.7.7:
