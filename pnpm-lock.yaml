@@ -139,7 +139,7 @@ importers:
       postcss: 8.4.17
       react: 18.2.0
       react-dom: 18.2.0
-      react-hook-form: 7.36.1
+      react-hook-form: 7.37.0
       react-transition-group: 4.4.5
       react-use: 17.4.0
       require-from-string: 2.0.2
@@ -168,7 +168,7 @@ importers:
       phosphor-react: 1.4.1_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-hook-form: 7.36.1_react@18.2.0
+      react-hook-form: 7.37.0_react@18.2.0
       react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
       react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
       ts-pattern: 4.0.5
@@ -15417,8 +15417,8 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /react-hook-form/7.36.1_react@18.2.0:
-    resolution: {integrity: sha512-EbYYkCG2p8ywe7ikOH2l02lAFMrrrslZi1I8fqd8ifDGNAkhomHZQzQsP6ksvzrWBKntRe8b5L5L7Zsd+Gm02Q==}
+  /react-hook-form/7.37.0_react@18.2.0:
+    resolution: {integrity: sha512-6NFTxsnw+EXSpNNvLr5nFMjPdYKRryQcelTHg7zwBB6vAzfPIcZq4AExP4heVlwdzntepQgwiOQW4z7Mr99Lsg==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
