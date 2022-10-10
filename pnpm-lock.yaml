@@ -133,7 +133,7 @@ importers:
       lintstagedrc: workspace:*
       next: 12.3.1
       next-seo: 5.5.0
-      next-transpile-modules: 9.0.0
+      next-transpile-modules: 9.1.0
       pathpida: 0.18.1
       phosphor-react: 1.4.1
       postcss: 8.4.17
@@ -189,7 +189,7 @@ importers:
       generated: link:../../packages/generated
       graphql: 16.6.0
       lintstagedrc: link:../../packages/lintstagedrc
-      next-transpile-modules: 9.0.0
+      next-transpile-modules: 9.1.0
       pathpida: 0.18.1
       postcss: 8.4.17
       require-from-string: 2.0.2
@@ -13904,8 +13904,8 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /next-transpile-modules/9.0.0:
-    resolution: {integrity: sha512-VCNFOazIAnXn1hvgYYSTYMnoWgKgwlYh4lm1pKbSfiB3kj5ZYLcKVhfh3jkPOg1cnd9DP+pte9yCUocdPEUBTQ==}
+  /next-transpile-modules/9.1.0:
+    resolution: {integrity: sha512-yzJji65xDqcIqjvx5vPJcs1M+MYQTzLM1pXH/qf8Q88ohx+bwVGDc1AeV+HKr1NwvMCNTpwVPSFI7cA5WdyeWA==}
     dependencies:
       enhanced-resolve: 5.10.0
       escalade: 3.1.1
