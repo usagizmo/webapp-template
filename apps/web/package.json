@@ -51,7 +51,7 @@
     "generated": "workspace:*",
     "graphql": "16.6.0",
     "lintstagedrc": "workspace:*",
-    "next-transpile-modules": "9.0.0",
+    "next-transpile-modules": "9.1.0",
     "pathpida": "0.18.1",
     "postcss": "8.4.17",
     "require-from-string": "2.0.2",
