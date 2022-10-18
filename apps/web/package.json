@@ -46,7 +46,6 @@
     "@types/react": "18.0.21",
     "@types/react-transition-group": "4.4.5",
     "autoprefixer": "10.4.12",
-    "constants": "workspace:*",
     "eslint-preset": "workspace:*",
     "generated": "workspace:*",
     "graphql": "16.6.0",

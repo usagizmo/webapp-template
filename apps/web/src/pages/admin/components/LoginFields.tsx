@@ -1,11 +1,10 @@
 import type { FC } from 'react'
-import { CONST } from 'constants/const'
-import { ERROR } from 'constants/error'
 import { useForm } from 'react-hook-form'
 import { Button } from '@/components/Button/Button'
 import { Input } from '@/components/Input/Input'
 import type { Inputs } from '@/hooks/useAuth'
 import { useAuth } from '@/hooks/useAuth'
+import { ERROR, REGEX } from '@/validation'
 
 export const LOGIN_FIELDS_TYPE = {
   SIGN_UP: 'sign-up',
@@ -91,7 +90,7 @@ export const LoginFields: FC<Props> = ({ type }) => {
           registerReturn={register('email', {
             required: ERROR.REQUIRED('E-mail'),
             pattern: {
-              value: CONST.REGEX_EMAIL,
+              value: REGEX.EMAIL,
               message: ERROR.PATTERN('E-mail'),
             },
           })}

@@ -1,4 +1,4 @@
-// To hot reload on each app, update the value in tailwind.config.js for each
+// To hot reload on each app, update the value in tailwind.config.cjs for each
 // app, then update the following values
 
 const colors = require('tailwindcss/colors')

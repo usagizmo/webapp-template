@@ -2,7 +2,6 @@ import type { FC, ReactNode } from 'react'
 import type { NhostSession } from '@nhost/nextjs'
 import { NhostNextProvider } from '@nhost/nextjs'
 import { NhostApolloProvider } from '@nhost/react-apollo'
-import { CONST } from 'constants/const'
 import { useAtomsDebugValue } from 'jotai/devtools'
 import { DefaultSeo } from 'next-seo'
 import { staticPath } from '@/lib/$path'
@@ -23,12 +22,12 @@ export const Providers: FC<Props> = ({ nhostSession, children }) => {
   return (
     <>
       <DefaultSeo
-        titleTemplate={`%s | ${CONST.SITE_NAME}`}
-        defaultTitle={CONST.SITE_NAME}
-        description={CONST.SITE_DESCRIPTION}
+        titleTemplate="%s | Next.js Template"
+        defaultTitle="Next.js Template"
+        description="Next.js Template Description"
         openGraph={{
           type: 'article',
-          site_name: CONST.SITE_NAME,
+          site_name: 'Next.js Template',
           images: [
             {
               url: 'https://nextjs-template.usagizmo.com/images/ogp.png',
