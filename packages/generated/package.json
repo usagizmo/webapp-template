@@ -12,7 +12,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm .env"
   },
   "devDependencies": {
-    "@apollo/client": "3.6.9",
+    "@apollo/client": "3.7.0",
     "@graphql-codegen/add": "3.2.1",
     "@graphql-codegen/cli": "2.13.7",
     "@graphql-codegen/introspection": "2.2.1",
@@ -29,7 +29,7 @@
     "typescript": "4.7.4"
   },
   "peerDependencies": {
-    "@apollo/client": "3.6.9",
+    "@apollo/client": "3.7.0",
     "@types/node": "16.11.56",
     "graphql": "16.6.0",
     "graphql-tag": "2.12.6",
