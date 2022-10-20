@@ -1,19 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:base", ":timezone(Asia/Tokyo)"],
   "assignees": ["usagizmo"],
-  "timezone": "Asia/Tokyo",
-  "schedule": ["before 3am"],
-  "lockFileMaintenance": {
-    "enabled": true
-  },
+  "schedule": ["before 5am on monday"],
   "packageRules": [
     {
+      "matchUpdateTypes": ["major"],
+      "matchDepTypes": ["dependencies", "devDependencies"]
+    },
+    {
       "automerge": true,
-      "major": {
-        "automerge": false
-      },
-      "depTypeList": ["dependencies", "devDependencies"]
+      "matchUpdateTypes": ["patch", "minor"],
+      "matchDepTypes": ["dependencies", "devDependencies"]
     }
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  }
 }
