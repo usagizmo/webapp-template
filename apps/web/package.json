@@ -65,7 +65,7 @@
     "utils": "workspace:*"
   },
   "peerDependencies": {
-    "@babel/core": "7.18.13",
+    "@babel/core": "7.19.3",
     "@nhost/core": "0.7.6",
     "@nhost/react": "0.12.3",
     "autoprefixer": "10.4.12",
