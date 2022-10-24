@@ -36,7 +36,7 @@
     "ulid": "2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "7.19.3",
+    "@babel/core": "7.19.6",
     "@nhost/core": "0.8.0",
     "@nhost/react": "0.13.0",
     "@storybook/react": "6.5.12",
@@ -65,7 +65,7 @@
     "utils": "workspace:*"
   },
   "peerDependencies": {
-    "@babel/core": "7.19.3",
+    "@babel/core": "7.19.6",
     "@nhost/core": "0.7.6",
     "@nhost/react": "0.12.3",
     "autoprefixer": "10.4.12",
