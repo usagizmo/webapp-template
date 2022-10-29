@@ -1,7 +1,7 @@
 import type { NhostSession } from '@nhost/nextjs'
 import type { AppProps } from 'next/app'
 import type { NextPageWithLayout } from '@/types'
-import { Providers } from './components/Providers'
+import { Providers } from '../components/Providers'
 
 import 'tailwind-preset/globals.css'
 
