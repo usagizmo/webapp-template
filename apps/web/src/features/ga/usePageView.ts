@@ -1,5 +1,5 @@
 import { useRouteChangeComplete } from '@/hooks/useRouteChangeComplete'
-import { GA_ID, pageview } from './googleAnalyticsUtils'
+import { GA_ID, pageview } from './gaUtils'
 
 export const usePageView = () => {
   useRouteChangeComplete((path: string) => {

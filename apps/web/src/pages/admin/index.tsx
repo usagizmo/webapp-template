@@ -1,11 +1,11 @@
 import type { ReactElement } from 'react'
 import { useAuthenticationStatus, useUserData } from '@nhost/nextjs'
 import { NextSeo } from 'next-seo'
-import { Layout } from '@/components/Layout/Layout'
+import { Layout } from '@/features/layout/Layout'
 import type { NextPageWithLayout } from '@/types'
-import { AuthorizedContent } from './components/AuthorizedContent'
-import { LoginFields } from './components/LoginFields'
-import { useTab } from './components/useTab'
+import { AuthorizedContent } from '../../features/auth/AuthorizedContent'
+import { LoginFields } from '../../features/auth/LoginFields'
+import { useTab } from '../../features/auth/useTab'
 
 const useHook = () => {
   const { isAuthenticated } = useAuthenticationStatus()

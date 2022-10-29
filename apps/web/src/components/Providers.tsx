@@ -6,7 +6,7 @@ import { useAtomsDebugValue } from 'jotai/devtools'
 import { DefaultSeo } from 'next-seo'
 import { staticPath } from '@/lib/$path'
 import { nhost } from '@/lib/nhost'
-import { GoogleAnalytics } from './GoogleAnalytics/GoogleAnalytics'
+import { GoogleAnalytics } from '../features/ga/GoogleAnalytics'
 
 type Props = {
   nhostSession: NhostSession

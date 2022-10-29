@@ -3,7 +3,7 @@ import { CommentsDocument } from 'generated/dist/graphql'
 import type { InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 import { Comments } from '@/components/Comment/Comments'
-import { Layout } from '@/components/Layout/Layout'
+import { Layout } from '@/features/layout/Layout'
 import { nhost } from '@/lib/nhost'
 import type { NextPageWithLayout } from '@/types'
 

@@ -1,15 +1,15 @@
 import type { ReactElement } from 'react'
 import { NextSeo } from 'next-seo'
-import { withAuth } from '@/components/withAuth'
+import { withAuth } from '@/features/auth/withAuth'
 import type { NextPageWithLayout } from '@/types'
-import { Layout } from '../components/Layout/Layout'
+import { Layout } from '../features/layout/Layout'
 
 const Page: NextPageWithLayout = () => {
   return (
     <>
       <NextSeo title="Secret" />
       <main className="container max-w-2xl">
-        <div>secret.page.tsx</div>
+        <div>secret.tsx</div>
       </main>
     </>
   )
