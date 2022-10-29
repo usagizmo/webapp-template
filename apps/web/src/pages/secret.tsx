@@ -9,7 +9,7 @@ const Page: NextPageWithLayout = () => {
     <>
       <NextSeo title="Secret" />
       <main className="container max-w-2xl">
-        <div>secret.page.tsx</div>
+        <div>secret.tsx</div>
       </main>
     </>
   )
