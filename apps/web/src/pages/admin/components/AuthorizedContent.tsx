@@ -8,7 +8,7 @@ type Props = {
   user: User
 }
 
-const useAuthorizedContent = () => {
+const useHook = () => {
   const { signOut } = useAuth()
 
   return {
@@ -17,7 +17,7 @@ const useAuthorizedContent = () => {
 }
 
 export const AuthorizedContent: FC<Props> = ({ user }) => {
-  const { signOut } = useAuthorizedContent()
+  const { signOut } = useHook()
 
   return (
     <div className="text-center">

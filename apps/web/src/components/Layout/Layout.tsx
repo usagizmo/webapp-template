@@ -16,7 +16,7 @@ type Props = {
   children: ReactNode
 }
 
-const useLayout = () => {
+const useHook = () => {
   useSmoothScroll()
   const [isPageLoading] = useAtom(isPageLoadingAtom)
 
@@ -24,7 +24,7 @@ const useLayout = () => {
 }
 
 export const Layout: FC<Props> = ({ children }) => {
-  const { isPageLoading } = useLayout()
+  const { isPageLoading } = useHook()
 
   return (
     <>

@@ -13,12 +13,13 @@ type Props = {
   children: ReactNode
 }
 
-const useProviders = () => {
+const useHook = () => {
   useAtomsDebugValue()
 }
 
 export const Providers: FC<Props> = ({ nhostSession, children }) => {
-  useProviders()
+  useHook()
+
   return (
     <>
       <DefaultSeo

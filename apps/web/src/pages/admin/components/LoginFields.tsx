@@ -18,7 +18,7 @@ type Props = {
   type: LOGIN_FIELDS_TYPE
 }
 
-const useLoginFields = () => {
+const useHook = () => {
   const { signInWithEmailAndPassword, createUserWithEmailAndPassword } =
     useAuth()
 
@@ -49,7 +49,7 @@ export const LoginFields: FC<Props> = ({ type }) => {
     register,
     errors,
     handleSubmit,
-  } = useLoginFields()
+  } = useHook()
 
   return (
     <form
