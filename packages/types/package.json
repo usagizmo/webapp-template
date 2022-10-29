@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "main": "./index.d.ts",
-  "types": "./index.d.ts",
+  "main": "./index.ts",
+  "types": "./index.ts",
   "scripts": {
     "lint": "eslint . --ext .js,.cjs",
     "lint:fix": "eslint . --ext .js,.cjs --fix",
