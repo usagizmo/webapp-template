@@ -7,7 +7,7 @@ import { AuthorizedContent } from './components/AuthorizedContent'
 import { LoginFields } from './components/LoginFields'
 import { useTab } from './components/useTab'
 
-const usePage = () => {
+const useHook = () => {
   const { isAuthenticated } = useAuthenticationStatus()
   const user = useUserData()
   const { Tab, activeTabId } = useTab()
@@ -21,7 +21,7 @@ const usePage = () => {
 }
 
 const Page: NextPageWithLayout = () => {
-  const { isAuthenticated, user, Tab, activeTabId } = usePage()
+  const { isAuthenticated, user, Tab, activeTabId } = useHook()
 
   return (
     <>

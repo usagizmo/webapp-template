@@ -11,7 +11,7 @@ type Props = {
   children: ReactNode
 }
 
-const useRouteTransition = () => {
+const useHook = () => {
   const router = useRouter()
   const ref = useRef(null)
   const { addEndListener } = usePageTransition()
@@ -32,7 +32,7 @@ const useRouteTransition = () => {
 }
 
 export const RouteTransition: FC<Props> = ({ children }) => {
-  const { router, ref, addEndListener } = useRouteTransition()
+  const { router, ref, addEndListener } = useHook()
 
   return (
     <SwitchTransition mode="in-out">
