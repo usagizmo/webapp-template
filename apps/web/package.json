@@ -59,7 +59,7 @@
     "ts-xor": "1.0.8",
     "tsconfig": "workspace:*",
     "tsconfig-paths-webpack-plugin": "4.0.0",
-    "tslib": "2.4.0",
+    "tslib": "2.4.1",
     "types": "workspace:*",
     "typescript": "4.8.4",
     "utils": "workspace:*"
