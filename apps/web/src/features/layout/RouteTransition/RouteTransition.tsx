@@ -1,6 +1,5 @@
 import type { FC, ReactNode } from 'react'
 import { useRef } from 'react'
-import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { SwitchTransition, Transition } from 'react-transition-group'
 import { usePrefetchImages } from '@/hooks/usePrefetchImages'
@@ -42,10 +41,7 @@ export const RouteTransition: FC<Props> = ({ children }) => {
         nodeRef={ref}
       >
         {(state) => (
-          <div
-            ref={ref}
-            className={clsx('c-route-transition bg-white', `is-${state}`)}
-          >
+          <div ref={ref} className={`c-route-transition bg-white is-${state}`}>
             {children}
           </div>
         )}
