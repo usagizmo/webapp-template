@@ -30,7 +30,6 @@ Monorepo template for creating a web service with Next.js.
 
 - **Packages**
 
-  - `constatns`: As the name implies
   - `eslint-preset`: The base preset for [ESLint](https://eslint.org/)  
     inc. `eslint-config-next` / `eslint-config-prettier` / `eslint-plugin-import`
   - `generated`: The files output from graphql-codegen
