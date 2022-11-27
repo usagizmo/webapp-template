@@ -31,7 +31,7 @@
     "cross-env": "7.0.3",
     "cspell": "6.12.0",
     "husky": "8.0.2",
-    "lint-staged": "13.0.3",
+    "lint-staged": "13.0.4",
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "0.1.13",
     "turbo": "1.5.6"
