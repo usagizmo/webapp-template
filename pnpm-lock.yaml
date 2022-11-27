@@ -26,7 +26,7 @@ importers:
     specifiers:
       '@jest/globals': 29.2.2
       '@rollup/plugin-node-resolve': 15.0.1
-      autoprefixer: 10.4.12
+      autoprefixer: 10.4.13
       browser-sync: 2.27.10
       eslint-preset: workspace:*
       htmlhint: 1.1.4
@@ -41,7 +41,7 @@ importers:
     devDependencies:
       '@jest/globals': 29.2.2
       '@rollup/plugin-node-resolve': 15.0.1_rollup@2.79.1
-      autoprefixer: 10.4.12_postcss@8.4.18
+      autoprefixer: 10.4.13_postcss@8.4.18
       browser-sync: 2.27.10
       eslint-preset: link:../../packages/eslint-preset
       htmlhint: 1.1.4
@@ -118,7 +118,7 @@ importers:
       '@types/node': 18.8.1
       '@types/react': 18.0.25
       '@types/react-transition-group': 4.4.5
-      autoprefixer: 10.4.12
+      autoprefixer: 10.4.13
       clsx: 1.2.1
       date-fns: 2.29.3
       eslint-preset: workspace:*
@@ -180,7 +180,7 @@ importers:
       '@types/node': 18.8.1
       '@types/react': 18.0.25
       '@types/react-transition-group': 4.4.5
-      autoprefixer: 10.4.12_postcss@8.4.18
+      autoprefixer: 10.4.13_postcss@8.4.18
       eslint-preset: link:../../packages/eslint-preset
       generated: link:../../packages/generated
       graphql: 16.6.0
@@ -291,14 +291,14 @@ importers:
   packages/tailwind-preset:
     specifiers:
       '@tailwindcss/typography': 0.5.8
-      autoprefixer: 10.4.12
+      autoprefixer: 10.4.13
       eslint-preset: workspace:*
       lintstagedrc: workspace:*
       postcss: 8.4.18
       tailwindcss: 3.1.8
     devDependencies:
       '@tailwindcss/typography': 0.5.8_tailwindcss@3.1.8
-      autoprefixer: 10.4.12_postcss@8.4.18
+      autoprefixer: 10.4.13_postcss@8.4.18
       eslint-preset: link:../eslint-preset
       lintstagedrc: link:../lintstagedrc
       postcss: 8.4.18
@@ -6544,15 +6544,15 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /autoprefixer/10.4.12_postcss@8.4.18:
-    resolution: {integrity: sha512-WrCGV9/b97Pa+jtwf5UGaRjgQIg7OK3D06GnoYoZNcG1Xb8Gt3EfuKjlhh9i/VtT16g6PYjZ69jdJ2g8FxSC4Q==}
+  /autoprefixer/10.4.13_postcss@8.4.18:
+    resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001423
+      caniuse-lite: 1.0.30001434
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -6565,7 +6565,7 @@ packages:
     hasBin: true
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001423
+      caniuse-lite: 1.0.30001434
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       picocolors: 0.2.1
@@ -7180,7 +7180,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001423
+      caniuse-lite: 1.0.30001434
       electron-to-chromium: 1.4.284
       node-releases: 2.0.6
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -7393,6 +7393,9 @@ packages:
 
   /caniuse-lite/1.0.30001423:
     resolution: {integrity: sha512-09iwWGOlifvE1XuHokFMP7eR38a0JnajoyL3/i87c8ZjRWRrdKo1fqjNfugfBD0UDBIOz0U+jtNhJ0EPm1VleQ==}
+
+  /caniuse-lite/1.0.30001434:
+    resolution: {integrity: sha512-aOBHrLmTQw//WFa2rcF1If9fa3ypkC1wzqqiKHgfdrXTWcU8C4gKVZT77eQAPWN1APys3+uQ0Df07rKauXGEYA==}
 
   /capital-case/1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
