@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LinkButton from '$lib/features/ui/button/LinkButton.svelte';
+  import LinkButton from '$lib/features/ui/buttons/LinkButton.svelte';
   import NavigationItems from './NavigationItems.svelte';
 
   const items = [
@@ -30,8 +30,10 @@
     >
       <NavigationItems {items} />
     </div>
-    <div class="mt-6 md:mt-0 lg:ml-auto">
-      <LinkButton href="https://github.com/usagizmo/webapp-template" primary>GitHub</LinkButton>
+    <div class="mt-5 md:mt-0 lg:ml-auto">
+      <LinkButton href="https://github.com/usagizmo/webapp-template" primary blank
+        >GitHub</LinkButton
+      >
     </div>
   </div>
 </header>
