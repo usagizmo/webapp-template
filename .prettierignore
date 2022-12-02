@@ -15,5 +15,6 @@ package-lock.json
 yarn.lock
 
 # custom
-/apps/nhost/nhost/*
+/apps/mockup/public/styles.css
 !/apps/nhost/nhost/emails/
+/apps/nhost/nhost/*

@@ -3,10 +3,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build:js": "cross-env NODE_ENV=production rollup --config",
-    "build:tailwind": "cross-env NODE_ENV=production tailwindcss -c ./tailwind.config.cjs -i ../../packages/tailwind-preset/globals.css -o ./public/styles.css --minify",
-    "build": "concurrently pnpm:build:*",
-    "dev:tailwind": "tailwindcss -c ./tailwind.config.cjs -i ./src/input.css -o ./public/styles.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./public/styles.css --minify",
+    "dev:tailwind": "tailwindcss -i ./src/input.css -o ./public/styles.css --watch",
     "dev:server": "browser-sync ./public/ -w --port 8000",
     "dev": "concurrently pnpm:dev:*",
     "lint:markup": "markuplint \"public/**/*.html\"",

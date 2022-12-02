@@ -5,6 +5,10 @@
       "dependsOn": ["^build"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
+    "mockup#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["public/styles.css"]
+    },
     "dev": {
       "cache": false
     },
