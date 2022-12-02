@@ -1,5 +1,5 @@
 {
   "pluginSearchDirs": ["."],
-  "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "printWidth": 100
 }

@@ -8,6 +8,7 @@ ref: https://nhost.io/
 ## Commands
 
 ```bash
-pnpm dev   # Launch Nhost dev server
-pnpm lint  # htmlhint the contents of email
+pnpm dev     # Launch Nhost dev server
+pnpm lint    # markuplint + cspell the contents of email
+pnpm format  # Format with `prettier`
 ```

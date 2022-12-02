@@ -1,0 +1,14 @@
+{
+  "parser": {
+    "\\.svelte$": "@markuplint/svelte-parser"
+  },
+  "extends": [
+    "markuplint:recommended"
+  ],
+  "excludeFiles": [
+    "./apps/web/src/app.html"
+  ],
+  "rules": {
+    "character-reference": false
+  }
+}

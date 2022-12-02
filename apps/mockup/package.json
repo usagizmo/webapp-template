@@ -1,44 +1,26 @@
 {
   "name": "mockup",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
   "scripts": {
     "build:js": "cross-env NODE_ENV=production rollup --config",
     "build:tailwind": "cross-env NODE_ENV=production tailwindcss -c ./tailwind.config.cjs -i ../../packages/tailwind-preset/globals.css -o ./public/styles.css --minify",
     "build": "concurrently pnpm:build:*",
-    "dev:js": "rollup --config -w",
-    "dev:tailwind": "tailwindcss -c ./tailwind.config.cjs -i ../../packages/tailwind-preset/globals.css -o ./public/styles.css --watch",
+    "dev:tailwind": "tailwindcss -c ./tailwind.config.cjs -i ./src/input.css -o ./public/styles.css --watch",
     "dev:server": "browser-sync ./public/ -w --port 8000",
     "dev": "concurrently pnpm:dev:*",
-    "lint:html": "htmlhint \"public/**/*.html\"",
-    "lint:js": "eslint . --ext .js,.cjs",
-    "lint": "concurrently pnpm:lint:*",
-    "lint:fix:js": "eslint . --ext .js,.cjs --fix",
-    "lint:fix": "concurrently pnpm:lint:fix:*",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf public/script.js && rm -rf public/styles.css",
+    "lint:markup": "markuplint \"public/**/*.html\"",
+    "lint:js": "eslint \"public\"",
+    "lint:cspell": "cspell \"public/**\" \"src/**\"",
+    "lint": "prettier --check --ignore-path=../../.prettierignore . && concurrently pnpm:lint:*",
+    "format": "prettier --write --ignore-path=../../.prettierignore .",
     "clean-image": "./commands/clean-image.sh",
     "deploy": "./commands/deploy.sh"
   },
   "devDependencies": {
-    "@jest/globals": "29.2.2",
-    "@rollup/plugin-node-resolve": "15.0.1",
-    "autoprefixer": "10.4.12",
     "browser-sync": "2.27.10",
-    "eslint-preset": "workspace:*",
-    "htmlhint": "1.1.4",
-    "jest": "29.2.2",
-    "lintstagedrc": "workspace:*",
-    "pathtest-utils": "workspace:*",
-    "postcss": "8.4.18",
-    "rollup": "2.79.1",
-    "script-modules": "workspace:*",
-    "tailwind-preset": "workspace:*",
+    "eslint-config-custom": "workspace:*",
+    "tailwind-preset-base": "workspace:*",
     "tailwindcss": "3.1.8"
-  },
-  "peerDependencies": {
-    "autoprefixer": "10.4.12",
-    "postcss": "8.4.18"
   }
 }

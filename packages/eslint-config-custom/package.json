@@ -1,0 +1,20 @@
+{
+  "name": "eslint-config-custom",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint:cspell": "cspell \"**\"",
+    "lint": "prettier --check --ignore-path=../../.prettierignore . && concurrently pnpm:lint:*",
+    "format": "prettier --write --ignore-path=../../.prettierignore ."
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-turbo": "^0.0.6",
+    "eslint-plugin-svelte3": "^4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

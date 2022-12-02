@@ -1,1 +1,4 @@
-module.exports = require('eslint-preset/next.js')
+module.exports = {
+  root: true,
+  extends: ['custom'],
+};
