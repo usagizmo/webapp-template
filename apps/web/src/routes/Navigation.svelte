@@ -18,9 +18,9 @@
   ];
 </script>
 
-<header class="border-b border-[#e2e8f0] bg-slate-50 md:sticky md:top-0 md:z-20">
+<header class="border-b border-slate-200 bg-slate-50 px-4 md:sticky md:top-0 md:z-20">
   <div
-    class="relative mx-auto flex max-w-[1152px] flex-col items-center justify-center py-5 px-4 md:h-16 md:flex-row md:py-0"
+    class="relative mx-auto flex max-w-[1120px] flex-col items-center justify-center py-5 md:h-16 md:flex-row md:py-0"
   >
     <h1 class="text-center text-[26px] font-bold leading-tight tracking-tighter lg:text-[32px]">
       WebApp Template (web)

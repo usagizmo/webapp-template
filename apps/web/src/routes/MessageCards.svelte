@@ -45,7 +45,7 @@
   };
 </script>
 
-<div class="divide-y divide-[#e2e8f0]">
+<div class="divide-y divide-slate-200">
   {#each cards as { id, name, me, date, message, image }}
     <div
       class="py-2.5"
@@ -60,7 +60,7 @@
               <CircleCheckIcon />
             </figure>
           {/if}
-          <p class="ml-2 text-sm font-medium text-[#71717a]">{format(date)}</p>
+          <p class="ml-2 text-sm font-medium text-zinc-500">{format(date)}</p>
         </div>
         <div class="mt-0.5 flex">
           <p>{message}</p>
@@ -70,7 +70,7 @@
                 <!-- <img /> -->
               </figure>
               {#if me && hoveredId === id}
-                <button class="absolute right-[-8px] top-[-8px]" transition:fade={{ duration: 80 }}>
+                <button class="absolute right-[-8px] top-[-8px]" transition:fade={{ duration: 75 }}>
                   <CircleCloseIcon />
                 </button>
               {/if}
@@ -79,7 +79,7 @@
         </div>
 
         {#if me && hoveredId === id}
-          <div class="absolute right-0 bottom-0" transition:fade={{ duration: 80 }}>
+          <div class="absolute right-0 bottom-0" transition:fade={{ duration: 75 }}>
             <LinkButton href="#" warn>Delete</LinkButton>
             <LinkButton href="#">Edit</LinkButton>
           </div>

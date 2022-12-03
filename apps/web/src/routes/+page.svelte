@@ -3,8 +3,8 @@
   import MessageCards from './MessageCards.svelte';
 </script>
 
-<main class="pt-[68px] pb-20 md:pt-10">
-  <div class="mx-auto max-w-[824px] px-4">
+<main class="px-4 pt-[68px] pb-20 md:pt-10">
+  <div class="mx-auto max-w-[792px]">
     <section class="rounded-lg bg-slate-50 p-4">
       <div class="flex items-center justify-center">
         <LinkButton href="/admin" blank>Log in to send a message</LinkButton>
@@ -13,8 +13,8 @@
 
     <section class="mt-5 rounded-lg bg-slate-50 px-6 pb-[14px]">
       <!-- attention -->
-      <div class="flex items-center justify-center border-b border-[#e2e8f0] pt-2.5 pb-2">
-        <p class="text-sm text-[#71717a]">Comments will be deleted as appropriate.</p>
+      <div class="flex items-center justify-center border-b border-slate-200 pt-2.5 pb-2">
+        <p class="text-sm text-zinc-500">Comments will be deleted as appropriate.</p>
       </div>
 
       <div>
@@ -24,13 +24,13 @@
   </div>
 </main>
 
-<footer class="border-[bg-[#18181b] mt-4 border-t pb-4 text-center">
-  <div class="mx-auto max-w-[1152px] py-3 px-4">
+<footer class="mt-4 px-4">
+  <div class="mx-auto max-w-[1120px] border-t border-zinc-200 py-3 pb-4 text-center">
     <a
       href="https://usagizmo.com"
       target="_blank"
       rel="noopener noreferrer"
-      class="mt-2 text-sm text-[#71717a] hover:opacity-80"
+      class="mt-2 text-sm text-zinc-500 hover:opacity-80"
     >
       @usagizmo
     </a>

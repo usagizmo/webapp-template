@@ -6,7 +6,7 @@
   export let items: { label: string; href: string }[] = [];
 
   const [send, receive] = crossfade({
-    duration: 800,
+    duration: 400,
     easing: quintOut,
   });
 
@@ -21,7 +21,7 @@
       {:else}
         <a
           {href}
-          class="flex h-full items-center justify-center font-bold text-[#71717a] hover:text-[#18181b]"
+          class="flex h-full items-center justify-center font-bold text-zinc-500 duration-200 hover:text-zinc-900"
           >{label}</a
         >
       {/if}
@@ -29,7 +29,7 @@
         <span
           in:receive={{ key: 'navigation-item' }}
           out:send={{ key: 'navigation-item' }}
-          class="context-[''] absolute inset-x-0 bottom-0 block h-0.5 bg-[#18181b]"
+          class="context-[''] absolute inset-x-0 bottom-0 block h-0.5 bg-zinc-900"
         />
       {/if}
     </li>
