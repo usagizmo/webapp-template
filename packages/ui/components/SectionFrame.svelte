@@ -3,10 +3,10 @@
 
   $: pad = (() => {
     switch (noPad) {
-      case 'x':
-        return 'py-6';
       case 'y':
         return 'px-6';
+      case 'top':
+        return 'px-6 pb-6';
       case true:
         return '';
       default:

@@ -19,7 +19,7 @@
 <a
   {href}
   {...blankAttrs}
-  class="inline-flex rounded-md px-5 py-2 text-sm duration-200 {kindClass} {warnClass}"
+  class="inline-flex items-center justify-center space-x-1 rounded-md px-5 py-2 text-sm duration-200 {kindClass} {warnClass}"
 >
   <slot />
 </a>

@@ -45,6 +45,7 @@
 
 <div class="divide-y divide-slate-200">
   {#each cards as { id, name, me, date, message, image }}
+    {@const isActionVisible = me && hoveredId === id}
     <div
       class="py-2.5"
       on:mouseenter={() => (hoveredId = id)}
@@ -64,19 +65,19 @@
           <p>{message}</p>
           {#if image}
             <div class="relative ml-2.5 flex-shrink-0">
-              <figure class=" h-[120px] w-[200px] overflow-hidden rounded-md bg-[#d9d9d9]">
+              <figure class="h-[120px] w-[200px] overflow-hidden rounded-md bg-[#d9d9d9]">
                 <!-- <img /> -->
               </figure>
-              {#if me && hoveredId === id}
+              {#if isActionVisible}
                 <button class="absolute right-[-8px] top-[-8px]" transition:fade={{ duration: 75 }}>
-                  <CircleCloseIcon />
+                  <CircleCloseIcon size={24} />
                 </button>
               {/if}
             </div>
           {/if}
         </div>
 
-        {#if me && hoveredId === id}
+        {#if isActionVisible}
           <div class="absolute right-0 bottom-0" transition:fade={{ duration: 75 }}>
             <LinkButton href="#" warn>Delete</LinkButton>
             <LinkButton href="#">Edit</LinkButton>

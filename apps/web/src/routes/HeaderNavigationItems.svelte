@@ -3,7 +3,7 @@
   import { crossfade } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
 
-  export let items: { label: string; href: string }[] = [];
+  export let navItems: { label: string; href: string }[] = [];
 
   const [send, receive] = crossfade({
     duration: 400,
@@ -12,8 +12,9 @@
 </script>
 
 <ul class="flex h-full items-center gap-5">
-  {#each items as { label, href }}
-    {@const isActive = href === $page.url.pathname}
+  {#each navItems as { label, href }}
+    {@const isActive =
+      href === '/' ? href === $page.url.pathname : $page.url.pathname.indexOf(href) === 0}
     <li class="relative flex h-full items-center justify-center">
       {#if isActive}
         <span class="font-bold">{label}</span>
@@ -26,8 +27,8 @@
       {/if}
       {#if isActive}
         <span
-          in:receive={{ key: 'navigation-item' }}
-          out:send={{ key: 'navigation-item' }}
+          in:receive={{ key: 'header-navigation-items-bar' }}
+          out:send={{ key: 'header-navigation-items-bar' }}
           class="context-[''] absolute inset-x-0 bottom-0 block h-0.5 bg-zinc-900"
         />
       {/if}
