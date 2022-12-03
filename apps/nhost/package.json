@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "nhost dev",
     "lint:markup": "markuplint \"**/*.html\"",
-    "lint:cspell": "cspell \"nhost/emails/en/**\"",
     "lint": "prettier --check --ignore-path=../../.prettierignore . && concurrently pnpm:lint:*",
     "format": "prettier --write --ignore-path=../../.prettierignore ."
   },

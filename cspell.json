@@ -1,5 +1,5 @@
 {
-  "ignorePaths": ["/.vscode/", "/apps/nhost/nhost/emails/fr/", "/pnpm-lock.yaml"],
+  "ignorePaths": ["/.vscode/", "/apps/nhost/nhost/", "/pnpm-lock.yaml"],
   "words": [
     "automerge",
     "codegen",

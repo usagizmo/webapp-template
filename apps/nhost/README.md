@@ -9,6 +9,6 @@ ref: https://nhost.io/
 
 ```bash
 pnpm dev     # Launch Nhost dev server
-pnpm lint    # markuplint + cspell the contents of email
+pnpm lint    # markuplint the contents of email
 pnpm format  # Format with `prettier`
 ```
