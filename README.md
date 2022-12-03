@@ -30,7 +30,7 @@ Monorepo template for creating a web application.
 
 #### `packages/`
 
-- `ui`: a stub Svelte component library (Not in use)
+- `ui`: a stub Svelte component library
 - `eslint-config-custom`: `eslint` configurations (w/ `eslint-plugin-svelte` and `eslint-config-prettier`)
 
 ### VS Code Extensions (Recommend)

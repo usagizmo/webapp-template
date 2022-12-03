@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LinkButton from '$lib/features/ui/buttons/LinkButton.svelte';
+  import { LinkButton } from 'ui';
   import NavigationItems from './NavigationItems.svelte';
 
   const items = [

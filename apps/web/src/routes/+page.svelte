@@ -1,26 +1,28 @@
 <script lang="ts">
-  import LinkButton from '$lib/features/ui/buttons/LinkButton.svelte';
+  import { LinkButton, SectionFrame } from 'ui';
   import MessageCards from './MessageCards.svelte';
 </script>
 
 <main class="px-4 pt-[68px] pb-20 md:pt-10">
-  <div class="mx-auto max-w-[792px]">
-    <section class="rounded-lg bg-slate-50 p-4">
-      <div class="flex items-center justify-center">
-        <LinkButton href="/admin" blank>Log in to send a message</LinkButton>
+  <div class="mx-auto max-w-[792px] space-y-5">
+    <SectionFrame noPad="y">
+      <div class="flex items-center justify-center py-5">
+        <LinkButton href="/admin">Log in to send a message</LinkButton>
       </div>
-    </section>
+    </SectionFrame>
 
-    <section class="mt-5 rounded-lg bg-slate-50 px-6 pb-[14px]">
-      <!-- attention -->
-      <div class="flex items-center justify-center border-b border-slate-200 pt-2.5 pb-2">
-        <p class="text-sm text-zinc-500">Comments will be deleted as appropriate.</p>
-      </div>
+    <SectionFrame noPad="y">
+      <div class="pb-[14px]">
+        <!-- attention -->
+        <div class="flex items-center justify-center border-b border-slate-200 pt-2.5 pb-2">
+          <p class="text-sm text-zinc-500">Comments will be deleted as appropriate.</p>
+        </div>
 
-      <div>
-        <MessageCards />
+        <div>
+          <MessageCards />
+        </div>
       </div>
-    </section>
+    </SectionFrame>
   </div>
 </main>
 

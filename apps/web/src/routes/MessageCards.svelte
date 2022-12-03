@@ -1,8 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
-  import LinkButton from '$lib/features/ui/buttons/LinkButton.svelte';
-  import CircleCheckIcon from '$lib/features/ui/icons/CircleCheckIcon.svelte';
-  import CircleCloseIcon from '$lib/features/ui/icons/CircleCloseIcon.svelte';
+  import { LinkButton, CircleCheckIcon, CircleCloseIcon } from 'ui';
 
   let hoveredId = '';
 
