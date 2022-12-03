@@ -9,14 +9,13 @@
     duration: 400,
     easing: quintOut,
   });
-
-  $: isActive = (href: string) => href === $page.url.pathname;
 </script>
 
 <ul class="flex h-full items-center gap-5">
   {#each items as { label, href }}
+    {@const isActive = href === $page.url.pathname}
     <li class="relative flex h-full items-center justify-center">
-      {#if isActive(href)}
+      {#if isActive}
         <span class="font-bold">{label}</span>
       {:else}
         <a
@@ -25,7 +24,7 @@
           >{label}</a
         >
       {/if}
-      {#if isActive(href)}
+      {#if isActive}
         <span
           in:receive={{ key: 'navigation-item' }}
           out:send={{ key: 'navigation-item' }}
