@@ -1,9 +1,18 @@
 <script lang="ts">
   import '../app.css';
 
-  import Navigation from './Navigation.svelte';
+  import Footer from './Footer.svelte';
+  import HeaderNavigation from './HeaderNavigation.svelte';
 </script>
 
-<Navigation />
+<div class="flex h-full flex-col">
+  <HeaderNavigation />
 
-<slot />
+  <div class="flex flex-1 flex-col">
+    <main class="flex-1 px-4 pt-[68px] pb-16 md:pt-10">
+      <slot />
+    </main>
+
+    <Footer />
+  </div>
+</div>
