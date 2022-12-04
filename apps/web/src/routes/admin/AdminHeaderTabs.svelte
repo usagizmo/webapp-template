@@ -3,19 +3,23 @@
   import { quintOut } from 'svelte/easing';
   import { crossfade } from 'svelte/transition';
 
-  export let tabs: { name: string; href: string }[] = [];
+  const tabs = [
+    {
+      name: 'Log in',
+      href: '/admin/login',
+    },
+    {
+      name: 'Sign up',
+      href: '/admin/signup',
+    },
+  ];
 
   const [send, receive] = crossfade({
     duration: 400,
     easing: quintOut,
-    fallback() {
-      return {
-        duration: 0,
-      };
-    },
   });
 
-  // for crossfade transition routing bug
+  // for a bug in routing transitions using crossfade
   $: hasActiveTab = tabs.some((tab) => tab.href === $page.url.pathname);
 </script>
 
@@ -27,8 +31,8 @@
         <li class="relative rounded-md">
           {#if isActive}
             <span
-              in:receive={{ key: 'admin-tab-background' }}
-              out:send={{ key: 'admin-tab-background' }}
+              in:receive={{ key: 'admin-header-tabs-background' }}
+              out:send={{ key: 'admin-header-tabs-background' }}
               class="context-[''] absolute inset-0 block rounded-md bg-gray-100"
             />
           {/if}

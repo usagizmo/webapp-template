@@ -1,8 +1,19 @@
 <script lang="ts">
-  import { LinkButton } from 'ui';
+  import { Button } from 'ui';
+  import { adminPath } from '$lib/store';
+  import { isLoggedIn } from '$lib/nhost';
   import HeaderNavigationItems from './HeaderNavigationItems.svelte';
 
-  export let navItems: { label: string; href: string }[] = [];
+  $: navItems = [
+    {
+      label: 'Home',
+      href: '/',
+    },
+    {
+      label: 'Admin',
+      href: $adminPath,
+    },
+  ].concat($isLoggedIn ? [{ label: 'Secret', href: '/secret' }] : []);
 </script>
 
 <header class="border-b border-slate-200 bg-slate-50 px-4 md:sticky md:top-0 md:z-20">
@@ -18,9 +29,7 @@
       <HeaderNavigationItems {navItems} />
     </div>
     <div class="mt-5 md:mt-0 lg:ml-auto">
-      <LinkButton href="https://github.com/usagizmo/webapp-template" primary blank
-        >GitHub</LinkButton
-      >
+      <Button href="https://github.com/usagizmo/webapp-template" primary blank>GitHub</Button>
     </div>
   </div>
 </header>

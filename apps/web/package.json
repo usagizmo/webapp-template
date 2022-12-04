@@ -16,6 +16,8 @@
     "format": "prettier --write --ignore-path=../../.prettierignore ."
   },
   "dependencies": {
+    "@nhost/nhost-js": "^1.6.2",
+    "graphql": "^16.6.0",
     "ui": "workspace:*"
   },
   "devDependencies": {

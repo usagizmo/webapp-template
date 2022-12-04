@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { LinkButton, SectionFrame } from 'ui';
+  import { isLoggedIn } from '$lib/nhost';
+  import { SectionFrame } from 'ui';
+  import LoginMessage from './LoginMessage.svelte';
   import MessageCards from './MessageCards.svelte';
 </script>
 
 <div class="mx-auto max-w-[792px] space-y-5">
-  <SectionFrame noPad="y">
-    <div class="flex items-center justify-center py-5">
-      <LinkButton href="/admin">Log in to send a message</LinkButton>
-    </div>
-  </SectionFrame>
+  {#if !$isLoggedIn}
+    <LoginMessage />
+  {/if}
 
   <SectionFrame noPad="y">
     <div class="pb-[14px]">

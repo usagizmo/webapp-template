@@ -9,12 +9,14 @@
     duration: 400,
     easing: quintOut,
   });
+
+  $: getScope = (href: string) => href.split('/')[1];
 </script>
 
 <ul class="flex h-full items-center gap-5">
   {#each navItems as { label, href }}
     {@const isActive =
-      href === '/' ? href === $page.url.pathname : $page.url.pathname.indexOf(href) === 0}
+      href === '/' ? href === $page.url.pathname : getScope($page.url.pathname) === getScope(href)}
     <li class="relative flex h-full items-center justify-center">
       {#if isActive}
         <span class="font-bold">{label}</span>

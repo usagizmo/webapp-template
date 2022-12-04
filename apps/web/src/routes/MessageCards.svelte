@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
-  import { LinkButton, CircleCheckIcon, CircleCloseIcon } from 'ui';
+  import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
 
   let hoveredId = '';
 
@@ -79,8 +79,8 @@
 
         {#if isActionVisible}
           <div class="absolute right-0 bottom-0" transition:fade={{ duration: 75 }}>
-            <LinkButton href="#" warn>Delete</LinkButton>
-            <LinkButton href="#">Edit</LinkButton>
+            <Button type="button" warn>Delete</Button>
+            <Button type="button">Edit</Button>
           </div>
         {/if}
       </div>

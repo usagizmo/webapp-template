@@ -4,7 +4,7 @@
   export let value = '';
   export let error = '';
 
-  function typeAction(node) {
+  function typeAction(node: HTMLInputElement) {
     node.type = type;
   }
 </script>

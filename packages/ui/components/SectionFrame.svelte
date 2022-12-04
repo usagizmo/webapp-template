@@ -1,7 +1,7 @@
 <script lang="ts">
   export let noPad: boolean | string = false;
 
-  $: pad = (() => {
+  $: padClass = (() => {
     switch (noPad) {
       case 'y':
         return 'px-6';
@@ -15,4 +15,4 @@
   })();
 </script>
 
-<section class="rounded-lg bg-slate-50 {pad}"><slot /></section>
+<section class="rounded-lg bg-slate-50 {padClass}"><slot /></section>
