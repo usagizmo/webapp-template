@@ -17,7 +17,6 @@ export const isLoggedIn = writable(false);
 export const user = writable<User | null>(null);
 
 nhost.auth.onAuthStateChanged((event, session) => {
-  console.log(`auth state changed. State is now ${event} with session:`, session);
   let _user;
 
   switch (event) {

@@ -1,7 +1,13 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import { isLoggedIn, logOut, user } from '$lib/nhost';
   import { Button, SectionFrame, CircleEditIcon, SignOutIcon } from 'ui';
   import LoginMessage from '../LoginMessage.svelte';
+
+  function handleLogOut() {
+    logOut();
+    goto('/admin/login');
+  }
 </script>
 
 {#if $isLoggedIn && $user}
@@ -19,7 +25,7 @@
       <p>{$user.email}</p>
     </div>
     <div class="mt-8 flex items-center justify-center">
-      <Button type="button" primary on:click={logOut}>
+      <Button type="button" primary on:click={handleLogOut}>
         <SignOutIcon />
         <span>Log out</span>
       </Button>
