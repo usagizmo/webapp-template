@@ -4,13 +4,14 @@
   import { getContext } from 'svelte';
   import { Input } from 'ui';
   import { key, type UserInputs } from './inputs';
+  import { ROUTE } from '$lib/routes';
 
   const { getInputs } = getContext<{
     getInputs: () => UserInputs;
   }>(key);
   const inputs = getInputs();
 
-  $: isSignUpPage = $page.url.pathname === '/admin/signup';
+  $: isSignUpPage = $page.url.pathname === ROUTE.ADMIN_SIGNUP;
 </script>
 
 <div class="[&>*]:mb-3">

@@ -7,6 +7,7 @@
   import MessageForGuest from '../MessageForGuest.svelte';
   import { isLoggedIn } from '$lib/nhost';
   import AdminForm from './AdminForm.svelte';
+  import { ROUTE } from '$lib/routes';
 
   let inputs = {
     displayName: 'Guest',
@@ -20,7 +21,7 @@
 
   const unsubscribe = isLoggedIn.subscribe((value) => {
     if (!value) return;
-    goto('/admin', {
+    goto(ROUTE.ADMIN, {
       replaceState: true,
     });
   });

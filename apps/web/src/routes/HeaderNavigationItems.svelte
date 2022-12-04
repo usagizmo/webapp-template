@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { myCrossfade } from '$lib/easing';
+  import { ROUTE } from '$lib/routes';
 
   export let navItems: { label: string; href: string }[] = [];
 
@@ -12,7 +13,9 @@
 <ul class="flex h-full items-center gap-5">
   {#each navItems as { label, href }}
     {@const isActive =
-      href === '/' ? href === $page.url.pathname : getScope($page.url.pathname) === getScope(href)}
+      href === ROUTE.HOME
+        ? href === $page.url.pathname
+        : getScope($page.url.pathname) === getScope(href)}
     <li class="relative flex h-full items-center justify-center">
       {#if isActive}
         <span class="font-bold">{label}</span>

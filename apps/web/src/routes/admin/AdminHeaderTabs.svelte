@@ -1,15 +1,16 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { myCrossfade } from '$lib/easing';
+  import { ROUTE } from '$lib/routes';
 
   const tabs = [
     {
       name: 'Log in',
-      href: '/admin/login',
+      href: ROUTE.ADMIN_LOGIN,
     },
     {
       name: 'Sign up',
-      href: '/admin/signup',
+      href: ROUTE.ADMIN_SIGNUP,
     },
   ];
 

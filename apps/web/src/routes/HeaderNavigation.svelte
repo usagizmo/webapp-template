@@ -3,17 +3,18 @@
   import { adminPath } from '$lib/store';
   import { isLoggedIn } from '$lib/nhost';
   import HeaderNavigationItems from './HeaderNavigationItems.svelte';
+  import { ROUTE } from '$lib/routes';
 
   $: navItems = [
     {
       label: 'Home',
-      href: '/',
+      href: ROUTE.HOME,
     },
     {
       label: 'Admin',
       href: $adminPath,
     },
-  ].concat($isLoggedIn ? [{ label: 'Secret', href: '/secret' }] : []);
+  ].concat($isLoggedIn ? [{ label: 'Secret', href: ROUTE.SECRET }] : []);
 </script>
 
 <header class="border-b border-slate-200 bg-slate-50 px-4 md:sticky md:top-0 md:z-20">
