@@ -2,10 +2,11 @@
   import { goto } from '$app/navigation';
   import { setContext, onDestroy } from 'svelte';
   import { SectionFrame } from 'ui';
-  import { key } from '../inputs';
+  import { key } from './inputs';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import MessageForGuest from '../MessageForGuest.svelte';
   import { isLoggedIn } from '$lib/nhost';
+  import AdminForm from './AdminForm.svelte';
 
   let inputs = {
     displayName: 'Guest',
@@ -30,6 +31,7 @@
   <SectionFrame noPad="top">
     <AdminHeaderTabs />
     <MessageForGuest />
+    <AdminForm />
     <slot />
   </SectionFrame>
 </div>

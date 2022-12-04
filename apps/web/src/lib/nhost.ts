@@ -1,6 +1,6 @@
 import { PUBLIC_NHOST_SUBDOMAIN, PUBLIC_NHOST_REGION } from '$env/static/public';
 import { NhostClient } from '@nhost/nhost-js';
-import type { UserInputs } from 'src/routes/admin/inputs';
+import type { UserInputs } from 'src/routes/admin/(isNotLoggedIn)/inputs';
 import { writable } from 'svelte/store';
 
 export const nhost = new NhostClient({
