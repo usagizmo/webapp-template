@@ -39,7 +39,7 @@
     "@babel/core": "7.19.6",
     "@nhost/core": "0.8.0",
     "@nhost/react": "0.13.0",
-    "@storybook/react": "6.5.13",
+    "@storybook/react": "6.5.14",
     "@types/gtag.js": "0.0.12",
     "@types/jsonwebtoken": "8.5.9",
     "@types/node": "18.8.1",
