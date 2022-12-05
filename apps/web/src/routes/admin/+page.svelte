@@ -5,10 +5,10 @@
   import { Button, SectionFrame, CircleEditIcon, SignOutIcon } from 'ui';
   import LoginMessage from '../LoginMessage.svelte';
 
-  function handleLogOut() {
-    logOut();
+  const handleLogOut = async () => {
+    await logOut();
     goto(ROUTE.ADMIN_LOGIN);
-  }
+  };
 </script>
 
 {#if $isLoggedIn && $user}

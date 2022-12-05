@@ -4,9 +4,9 @@
   export let value = '';
   export let error = '';
 
-  function typeAction(node: HTMLInputElement) {
+  const typeAction = (node: HTMLInputElement) => {
     node.type = type;
-  }
+  };
 </script>
 
 <div>

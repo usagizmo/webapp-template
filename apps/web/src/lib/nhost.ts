@@ -33,14 +33,14 @@ nhost.auth.onAuthStateChanged((event, session) => {
   }
 });
 
-export async function signUp(inputs: UserInputs) {
+export const signUp = async (inputs: UserInputs) => {
   await nhost.auth.signUp(inputs);
-}
+};
 
-export async function logIn(inputs: UserInputs) {
+export const logIn = async (inputs: UserInputs) => {
   await nhost.auth.signIn(inputs);
-}
+};
 
-export async function logOut() {
+export const logOut = async () => {
   await nhost.auth.signOut();
-}
+};

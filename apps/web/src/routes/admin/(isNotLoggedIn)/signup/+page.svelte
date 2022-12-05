@@ -9,9 +9,9 @@
   }>(key);
   const inputs = getInputs();
 
-  async function handleSubmit() {
+  const handleSubmit = async () => {
     await signUp(inputs);
-  }
+  };
 </script>
 
 <form on:submit|preventDefault={handleSubmit}>

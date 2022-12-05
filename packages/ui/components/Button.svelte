@@ -19,11 +19,11 @@
         }
       : {};
 
-  function typeAction(node: HTMLButtonElement | HTMLAnchorElement) {
+  const typeAction = (node: HTMLButtonElement | HTMLAnchorElement) => {
     if (element !== 'button') return;
     if (!type) throw new Error('Button type is required when using a button element');
     node.type = type;
-  }
+  };
 </script>
 
 <svelte:element
