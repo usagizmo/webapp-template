@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@apollo/client": "3.7.0",
-    "@nhost/nextjs": "1.7.7",
+    "@nhost/nextjs": "1.9.3",
     "@nhost/react-apollo": "4.7.6",
     "clsx": "1.2.1",
     "date-fns": "2.29.3",
