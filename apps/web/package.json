@@ -38,7 +38,7 @@
   "devDependencies": {
     "@babel/core": "7.19.6",
     "@nhost/core": "0.8.0",
-    "@nhost/react": "0.13.0",
+    "@nhost/react": "0.15.2",
     "@storybook/react": "6.5.13",
     "@types/gtag.js": "0.0.12",
     "@types/jsonwebtoken": "8.5.9",
@@ -67,7 +67,7 @@
   "peerDependencies": {
     "@babel/core": "7.19.6",
     "@nhost/core": "0.7.6",
-    "@nhost/react": "0.12.3",
+    "@nhost/react": "0.15.2",
     "autoprefixer": "10.4.12",
     "graphql": "16.6.0",
     "postcss": "8.4.18",
