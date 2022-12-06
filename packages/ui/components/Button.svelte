@@ -4,6 +4,7 @@
   export let primary = false;
   export let blank = false;
   export let warn = false;
+  export let disabled = false;
 
   $: element = href ? 'a' : 'button';
   $: kindClass = primary
@@ -18,6 +19,7 @@
           rel: 'noopener noreferrer',
         }
       : {};
+  $: disabledAttr = disabled ? { disabled: true } : {};
 
   const typeAction = (node: HTMLButtonElement | HTMLAnchorElement) => {
     if (element !== 'button') return;
@@ -31,7 +33,8 @@
   use:typeAction
   {...hrefAttr}
   {...blankAttrs}
-  class="inline-flex items-center justify-center space-x-1 rounded-md px-5 py-2 text-sm duration-200 {kindClass} {warnClass}"
+  {...disabledAttr}
+  class="inline-flex items-center justify-center space-x-1 rounded-md px-5 py-2 text-sm duration-200 disabled:pointer-events-none disabled:opacity-40 {kindClass} {warnClass}"
   on:click
 >
   <slot />

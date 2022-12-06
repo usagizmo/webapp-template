@@ -1,6 +1,7 @@
 # `nhost` app
 
 > The Open Source Firebase Alternative with GraphQL
+> Make backend easy. Never manage infrastructure
 > Database / GraphQL API / Authentication / Storage / Serverless Functions
 
 ref: https://nhost.io/

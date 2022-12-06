@@ -18,3 +18,5 @@ yarn.lock
 /apps/mockup/public/styles.css
 !/apps/nhost/nhost/emails/
 /apps/nhost/nhost/*
+/apps/web/$houdini/
+/apps/web/schema.graphql

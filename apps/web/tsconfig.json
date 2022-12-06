@@ -8,6 +8,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "strict": true
+    "strict": true,
+    "rootDirs": [".", "./.svelte-kit/types", "./$houdini/types"]
   }
 }

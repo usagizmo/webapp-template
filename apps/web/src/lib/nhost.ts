@@ -14,20 +14,25 @@ export type User = NonNullable<
 >['user'];
 
 export const isLoggedIn = writable(false);
+export const accessToken = writable<string | null>(null);
 export const user = writable<User | null>(null);
 
 nhost.auth.onAuthStateChanged((event, session) => {
-  let _user;
+  let _accessToken, _user;
 
   switch (event) {
     case 'SIGNED_IN':
       isLoggedIn.set(true);
+      _accessToken = session?.accessToken;
       _user = session?.user;
-      if (!_user) throw new Error('User is not defined');
+      if (!_accessToken) throw new Error('accessToken is not defined');
+      if (!_user) throw new Error('user is not defined');
+      accessToken.set(_accessToken);
       user.set(_user);
       break;
     default:
       isLoggedIn.set(false);
+      accessToken.set(null);
       user.set(null);
       break;
   }

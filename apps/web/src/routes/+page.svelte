@@ -3,6 +3,11 @@
   import { SectionFrame } from 'ui';
   import LoginMessage from './LoginMessage.svelte';
   import MessageCards from './MessageCards.svelte';
+  import type { PageData } from './$houdini';
+
+  export let data: PageData;
+
+  $: ({ GetComments } = data);
 </script>
 
 <div class="mx-auto max-w-[792px] space-y-5">
@@ -18,7 +23,7 @@
       </div>
 
       <div>
-        <MessageCards />
+        <MessageCards comments={$GetComments.data?.comments ?? []} />
       </div>
     </div>
   </SectionFrame>
