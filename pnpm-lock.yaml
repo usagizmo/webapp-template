@@ -106,7 +106,7 @@ importers:
 
   apps/web:
     specifiers:
-      '@apollo/client': 3.7.0
+      '@apollo/client': 3.7.2
       '@babel/core': 7.19.6
       '@nhost/core': 0.8.0
       '@nhost/nextjs': 1.7.7
@@ -152,9 +152,9 @@ importers:
       ulid: 2.3.0
       utils: workspace:*
     dependencies:
-      '@apollo/client': 3.7.0_gdcq4dv6opitr3wbfwyjmanyra
+      '@apollo/client': 3.7.2_gdcq4dv6opitr3wbfwyjmanyra
       '@nhost/nextjs': 1.7.7_42oht6pmao43qg4wwjfpyllkv4
-      '@nhost/react-apollo': 4.7.6_a6ad24rgci22xrts6harjzzs4u
+      '@nhost/react-apollo': 4.7.6_wc45ofzedeo2enwz2ddli3e3xi
       clsx: 1.2.1
       date-fns: 2.29.3
       gsap: 3.11.3
@@ -231,7 +231,7 @@ importers:
 
   packages/generated:
     specifiers:
-      '@apollo/client': 3.7.0
+      '@apollo/client': 3.7.2
       '@graphql-codegen/add': 3.2.1
       '@graphql-codegen/cli': 2.13.11
       '@graphql-codegen/introspection': 2.2.1
@@ -248,7 +248,7 @@ importers:
       tslib: 2.4.1
       typescript: 4.7.4
     devDependencies:
-      '@apollo/client': 3.7.0_gdcq4dv6opitr3wbfwyjmanyra
+      '@apollo/client': 3.7.2_gdcq4dv6opitr3wbfwyjmanyra
       '@graphql-codegen/add': 3.2.1_graphql@16.6.0
       '@graphql-codegen/cli': 2.13.11_2um54livzhj2akt4l2mlrtf2lm
       '@graphql-codegen/introspection': 2.2.1_graphql@16.6.0
@@ -357,8 +357,8 @@ packages:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.17
 
-  /@apollo/client/3.7.0_gdcq4dv6opitr3wbfwyjmanyra:
-    resolution: {integrity: sha512-hp4OvrH1ZIQACRYcIrh/C0WFnY7IM7G6nlTpC8DSTEWxfZQ2kvpvDY0I/hYmCs0oAVrg26g3ANEdOzGWTcYbPg==}
+  /@apollo/client/3.7.2_gdcq4dv6opitr3wbfwyjmanyra:
+    resolution: {integrity: sha512-ohAIpXl3mTa1Fd3GT/K37VwQJfTIuuJRp4aOlJ4q/hlx0Wxh+RqDrbn0awtVCOdhGDQN+CQQmVzIqFKn6GziXQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
@@ -3368,12 +3368,12 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@nhost/apollo/0.5.30_goyf2at62ogolgsrs52jhjhomy:
+  /@nhost/apollo/0.5.30_ylg424g5yeycnya24m56n3z4g4:
     resolution: {integrity: sha512-oXocsOLiWqBBTrR4YdgQlDr6jskr+fKALdVXeWSmABofCUdRJfFGsBqszBKpRGtHF5iy8udJJeVBjpUxvhnYPA==}
     peerDependencies:
       '@apollo/client': ^3.6.2
     dependencies:
-      '@apollo/client': 3.7.0_gdcq4dv6opitr3wbfwyjmanyra
+      '@apollo/client': 3.7.2_gdcq4dv6opitr3wbfwyjmanyra
       '@nhost/nhost-js': 1.5.0_mwr4txeuohr24gyjjkb7jrfhka
       graphql: 16.6.0
       graphql-ws: 5.11.2_graphql@16.6.0
@@ -3451,7 +3451,7 @@ packages:
       - '@nhost/core'
       - debug
 
-  /@nhost/react-apollo/4.7.6_a6ad24rgci22xrts6harjzzs4u:
+  /@nhost/react-apollo/4.7.6_wc45ofzedeo2enwz2ddli3e3xi:
     resolution: {integrity: sha512-rOv4BWuO1bzJskUKoqn3uuPM0OIJ2iLutN5ynlmmF2ZpVO0uahavtulr4u2G5y99tlymKIuFYWRilzTdlhA7tw==}
     peerDependencies:
       '@apollo/client': ^3.6.2
@@ -3460,8 +3460,8 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@apollo/client': 3.7.0_gdcq4dv6opitr3wbfwyjmanyra
-      '@nhost/apollo': 0.5.30_goyf2at62ogolgsrs52jhjhomy
+      '@apollo/client': 3.7.2_gdcq4dv6opitr3wbfwyjmanyra
+      '@nhost/apollo': 0.5.30_ylg424g5yeycnya24m56n3z4g4
       '@nhost/react': 0.13.0_fekdsjdxvr6rryguukhsma4zsq
       graphql: 16.6.0
       react: 18.2.0
