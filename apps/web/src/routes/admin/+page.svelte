@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { isLoggedIn, logOut, user } from '$lib/nhost';
   import { ROUTE } from '$lib/routes';
-  import { Button, SectionFrame, CircleEditIcon, SignOutIcon } from 'ui';
+  import { Button, SectionFrame, SignOutIcon } from 'ui';
   import LoginMessage from '../LoginMessage.svelte';
 
   const handleLogOut = async () => {
@@ -14,15 +14,7 @@
 {#if $isLoggedIn && $user}
   <SectionFrame>
     <div class="flex flex-col items-center justify-center">
-      <div class="relative">
-        <p class="text-4xl font-bold">{$user.displayName}</p>
-        <button
-          type="button"
-          class="absolute left-[calc(100%+12px)] top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-zinc-900 text-teal-50 duration-200 hover:bg-zinc-700"
-        >
-          <CircleEditIcon />
-        </button>
-      </div>
+      <p class="text-4xl font-bold">{$user.displayName}</p>
       <p>{$user.email}</p>
     </div>
     <div class="mt-8 flex items-center justify-center">
