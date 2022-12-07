@@ -39,8 +39,14 @@ nhost.auth.onAuthStateChanged((event, session) => {
   }
 });
 
-export const signUp = async (inputs: UserInputs) => {
-  const res = await nhost.auth.signUp(inputs);
+export const signUp = async ({ email, password, displayName }: UserInputs) => {
+  const res = await nhost.auth.signUp({
+    email,
+    password,
+    options: {
+      displayName,
+    },
+  });
   tryErrorAlertOnNhostApi(res);
 };
 
