@@ -2,16 +2,17 @@
   import { fade } from 'svelte/transition';
   import { DateTime } from 'luxon';
   import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
-  import { GQL_DeleteComment } from '$houdini';
+  import { GQL_DeleteComment, GQL_UpdateComment } from '$houdini';
   import { slide } from 'svelte/transition';
-  import { user } from '$lib/nhost';
+  import { nhost, user } from '$lib/nhost';
   import { defaultDE } from '$lib/easing';
 
   type Comment = {
     id: string;
-    created_at: Date;
-    updated_at: Date;
+    createdAt: Date;
+    updatedAt: Date;
     text: string;
+    fileId: string | null;
     user: {
       id: string;
       displayName: string;
@@ -24,7 +25,7 @@
     name: string;
     date: Date;
     message: string;
-    image: string | null;
+    fileId: string | null;
   };
 
   let hoveredId = '';
@@ -32,25 +33,75 @@
   export let comments: Comment[] = [];
   let deletingCommentIdMap: { [id: string]: true } = {};
 
-  $: cards = comments.map((comment) => {
+  $: cards = comments.map(({ id, user: _user, createdAt, text, fileId }) => {
     return {
-      id: comment.id,
-      me: $user?.id === comment.user.id,
-      name: comment.user.displayName,
-      date: comment.created_at,
-      message: comment.text,
-      image: null, // TODO
+      id,
+      me: $user?.id === _user.id,
+      name: _user.displayName,
+      date: createdAt,
+      message: text,
+      fileId,
     };
   }) as Card[];
 
-  const handleDelete = async (id: string) => {
+  const exec = async (id: string, func: () => Promise<void>) => {
     deletingCommentIdMap = { ...deletingCommentIdMap, [id]: true };
-    await GQL_DeleteComment.mutate({ id });
+    await func();
+    const { [id]: _, ...filteredIdMap } = deletingCommentIdMap;
+    deletingCommentIdMap = filteredIdMap;
+  };
+
+  const handleDeleteImage = (id: string, fileId: string | null) => {
+    if (!fileId) {
+      throw Error('File ID not found');
+    }
+
+    exec(id, async () => {
+      const res = await nhost.storage.delete({ fileId });
+      const errorMessage = res.error?.message;
+      if (errorMessage) {
+        alert(errorMessage);
+        // continue update without the file
+        // return;
+      }
+
+      try {
+        await GQL_UpdateComment.mutate({ id, fileId: null });
+      } catch (err) {
+        const errorMessage = (err as { message?: string }[])[0]?.message;
+        alert(errorMessage);
+        window.location.reload();
+        return;
+      }
+    });
+  };
+
+  const handleDelete = (id: string, fileId?: string | null) => {
+    exec(id, async () => {
+      if (fileId) {
+        const res = await nhost.storage.delete({ fileId });
+        const errorMessage = res.error?.message;
+        if (errorMessage) {
+          alert(errorMessage);
+          // continue update without the file
+          // return;
+        }
+      }
+
+      try {
+        await GQL_DeleteComment.mutate({ id });
+      } catch (err) {
+        const errorMessage = (err as { message?: string }[])[0]?.message;
+        alert(errorMessage);
+        window.location.reload();
+        return;
+      }
+    });
   };
 </script>
 
 <div class="divide-y divide-slate-200">
-  {#each cards as { id, name, me, date, message, image } (id)}
+  {#each cards as { id, name, me, date, message, fileId } (id)}
     {@const isActionVisible = me && hoveredId === id}
     {@const isDeleting = deletingCommentIdMap[id]}
     {@const dt = DateTime.fromJSDate(date)}
@@ -75,14 +126,25 @@
           </time>
         </div>
         <div class="mt-0.5 flex">
-          <p>{message}</p>
-          {#if image}
+          <p class="flex-1">{message}</p>
+          {#if fileId}
             <div class="relative ml-2.5 flex-shrink-0">
               <figure class="h-[120px] w-[200px] overflow-hidden rounded-md bg-[#d9d9d9]">
-                <!-- <img /> -->
+                <img
+                  class="object-cover"
+                  src={nhost.storage.getPublicUrl({ fileId })}
+                  width="200"
+                  height="120"
+                  decoding="async"
+                  alt=""
+                />
               </figure>
               {#if isActionVisible}
-                <button class="absolute right-[-8px] top-[-8px]" transition:fade={{ duration: 75 }}>
+                <button
+                  class="absolute right-[-8px] top-[-8px]"
+                  transition:fade={{ duration: 75 }}
+                  on:click={() => handleDeleteImage(id, fileId)}
+                >
                   <CircleCloseIcon size={24} />
                 </button>
               {/if}
@@ -92,8 +154,11 @@
 
         {#if isActionVisible}
           <div class="absolute right-0 bottom-0" transition:fade={{ duration: 75 }}>
-            <Button type="button" warn on:click={() => handleDelete(id)} disabled={isDeleting}
-              >Delete</Button
+            <Button
+              type="button"
+              warn
+              on:click={() => handleDelete(id, fileId)}
+              disabled={isDeleting}>Delete</Button
             >
           </div>
         {/if}

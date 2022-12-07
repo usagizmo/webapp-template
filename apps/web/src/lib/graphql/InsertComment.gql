@@ -1,5 +1,5 @@
-mutation InsertComment($text: String) {
-  insert_comments(objects: { text: $text }) {
+mutation InsertComment($text: String!, $fileId: String) {
+  insert_comments(objects: { text: $text, fileId: $fileId }) {
     affected_rows
     returning {
       id

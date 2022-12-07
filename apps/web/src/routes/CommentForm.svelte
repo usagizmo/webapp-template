@@ -1,19 +1,59 @@
 <script lang="ts">
   import { GQL_InsertComment } from '$houdini';
+  import { nhost } from '$lib/nhost';
   import { tick } from 'svelte';
   import { Button, PaperPlaneIcon, SectionFrame } from 'ui';
 
   let textAreaEl: HTMLTextAreaElement;
   let isSending = false;
   let text = '';
+  let files: FileList | null = null;
+  $: file = files?.[0] ?? null;
 
-  const handleSend = async () => {
+  const exec = async (callback: () => Promise<void>) => {
     isSending = true;
-    await GQL_InsertComment.mutate({ text });
-    text = '';
+    await callback();
     isSending = false;
+
     await tick();
     textAreaEl.focus();
+  };
+
+  const handleSend = async () => {
+    if (!text) {
+      textAreaEl.focus();
+      return;
+    }
+
+    exec(async () => {
+      let fileId: string | null = null;
+
+      if (file) {
+        const res = await nhost.storage.upload({ file });
+        const errorMessage = res.error?.message;
+        if (errorMessage) {
+          alert(errorMessage);
+          return;
+        }
+
+        fileId = res.fileMetadata?.id ?? null;
+        if (!fileId) {
+          alert('File ID not found');
+          return;
+        }
+      }
+
+      try {
+        await GQL_InsertComment.mutate({ text, fileId });
+      } catch (err) {
+        const errorMessage = (err as { message?: string }[])[0]?.message;
+        alert(errorMessage);
+        window.location.reload();
+        return;
+      }
+      text = '';
+      files = null;
+    });
   };
 
   const handleKeyDown = (e: KeyboardEvent) => {
@@ -34,13 +74,32 @@
         on:keydown={handleKeyDown}
         disabled={isSending}
       />
-      <button
-        class="grid h-24 w-32 place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 hover:bg-gray-200 disabled:opacity-40"
-        disabled={isSending}>+Add</button
-      >
+      <label>
+        <input
+          type="file"
+          accept="image/png, image/jpeg"
+          bind:files
+          class="peer sr-only"
+          disabled={isSending}
+        />
+        {#if file}
+          {@const blobUrl = URL.createObjectURL(file)}
+          <img
+            class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 hover:brightness-90 peer-disabled:pointer-events-none peer-disabled:opacity-40"
+            src={blobUrl}
+            alt={file.name}
+            title={file.name}
+          />
+        {:else}
+          <span
+            class="grid h-24 w-32 cursor-pointer place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 hover:brightness-95 peer-disabled:pointer-events-none peer-disabled:opacity-40"
+            disabled={isSending}>+Add</span
+          >
+        {/if}
+      </label>
     </div>
     <div class="mt-2.5 text-right">
-      <Button type="button" primary on:click={handleSend} disabled={isSending}>
+      <Button type="button" primary on:click={handleSend} disabled={!text || isSending}>
         <PaperPlaneIcon />
         <span>Send</span>
       </Button>
