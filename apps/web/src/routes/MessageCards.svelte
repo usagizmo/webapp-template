@@ -1,9 +1,10 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import { DateTime } from 'luxon';
-  import { user } from '$lib/nhost';
   import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
-  import { graphql, type DeleteCommentStore } from '$houdini';
+  import { GQL_DeleteComment } from '$houdini';
+  import { slide } from 'svelte/transition';
+  import { user } from '$lib/nhost';
 
   type Comment = {
     id: string;
@@ -40,30 +41,22 @@
     };
   }) as Card[];
 
-  const deleteComment: DeleteCommentStore = graphql`
-    mutation DeleteComment($id: uuid!) {
-      delete_comments_by_pk(id: $id) {
-        id
-      }
-    }
-  `;
-
   const handleDelete = async (id: string, message: string) => {
     if (confirm('Are you sure you want to delete this comment?\n\n' + message)) {
-      await deleteComment.mutate({ id });
-      alert('deleted');
+      await GQL_DeleteComment.mutate({ id });
     }
   };
 </script>
 
 <div class="divide-y divide-slate-200">
-  {#each cards as { id, name, me, date, message, image }}
+  {#each cards as { id, name, me, date, message, image } (id)}
     {@const isActionVisible = me && hoveredId === id}
     {@const dt = DateTime.fromJSDate(date)}
     <div
       class="py-2.5"
       on:mouseenter={() => (hoveredId = id)}
       on:mouseleave={() => (hoveredId = '')}
+      transition:slide|local
     >
       <div class="relative">
         <div class="flex items-center">

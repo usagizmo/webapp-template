@@ -57,6 +57,7 @@ importers:
       autoprefixer: ^10.4.13
       eslint-config-custom: workspace:*
       graphql: ^16.6.0
+      graphql-ws: ^5.11.2
       graphqurl: ^1.0.1
       houdini: ^0.17.14
       houdini-svelte: ^0.17.14
@@ -74,6 +75,7 @@ importers:
     dependencies:
       '@nhost/nhost-js': 1.6.2_7ujlvocdtgmrlsvsqqf3wtmacq
       graphql: 16.6.0
+      graphql-ws: 5.11.2_graphql@16.6.0
       luxon: 3.1.1
       ui: link:../../packages/ui
     devDependencies:
@@ -3715,6 +3717,15 @@ packages:
     dependencies:
       graphql: 15.4.0
     dev: true
+
+  /graphql-ws/5.11.2_graphql@16.6.0:
+    resolution: {integrity: sha512-4EiZ3/UXYcjm+xFGP544/yW1+DVI8ZpKASFbzrV5EDTFWJp0ZvLl4Dy2fSZAzz9imKp5pZMIcjB0x/H69Pv/6w==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      graphql: '>=0.11 <=16'
+    dependencies:
+      graphql: 16.6.0
+    dev: false
 
   /graphql/15.4.0:
     resolution: {integrity: sha512-EB3zgGchcabbsU9cFe1j+yxdzKQKAbGUWRb13DsrsMN1yyfmmIq+2+L5MqVWcDCE4V89R5AyUOi7sMOGxdsYtA==}

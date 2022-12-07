@@ -1,0 +1,8 @@
+mutation InsertComment($text: String) {
+  insert_comments(objects: { text: $text }) {
+    affected_rows
+    returning {
+      id
+    }
+  }
+}

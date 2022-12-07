@@ -3,16 +3,17 @@
   import { SectionFrame } from 'ui';
   import LoginMessage from './LoginMessage.svelte';
   import MessageCards from './MessageCards.svelte';
-  import type { PageData } from './$houdini';
+  import CommentForm from './CommentForm.svelte';
+  import { GQL_GetCommentsSubscription } from '$houdini';
 
-  export let data: PageData;
-
-  $: ({ GetComments } = data);
+  GQL_GetCommentsSubscription.listen();
 </script>
 
 <div class="mx-auto max-w-[792px] space-y-5">
   {#if !$isLoggedIn}
     <LoginMessage />
+  {:else}
+    <CommentForm />
   {/if}
 
   <SectionFrame noPad="y">
@@ -23,7 +24,7 @@
       </div>
 
       <div>
-        <MessageCards comments={$GetComments.data?.comments ?? []} />
+        <MessageCards comments={$GQL_GetCommentsSubscription?.comments ?? []} />
       </div>
     </div>
   </SectionFrame>

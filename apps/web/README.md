@@ -10,6 +10,7 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 ## Commands
 
 ```bash
+pnpm generate  # Output `schema.graphql`
 pnpm build     # Output `.svelte-kit/output/`
 pnpm preview   # Preview the production build (after `pnpm build`)
 

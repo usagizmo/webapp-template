@@ -53,10 +53,10 @@ jobs:
       - name: Run build 🐣
         run: pnpm build
         env:
-          NEXT_PUBLIC_NHOST_SUBDOMAIN: ${{ secrets.NEXT_PUBLIC_NHOST_SUBDOMAIN }}
-          NEXT_PUBLIC_NHOST_REGION: ${{ secrets.NEXT_PUBLIC_NHOST_REGION }}
-          HASURA_GRAPHQL_ENDPOINT: ${{ secrets.HASURA_GRAPHQL_ENDPOINT }}
-          HASURA_GRAPHQL_ADMIN_SECRET: ${{ secrets.HASURA_GRAPHQL_ADMIN_SECRET }}
+          PUBLIC_NHOST_SUBDOMAIN: ${{ secrets.PUBLIC_NHOST_SUBDOMAIN }}
+          PUBLIC_NHOST_REGION: ${{ secrets.PUBLIC_NHOST_REGION }}
+          PUBLIC_GRAPHQL_ENDPOINT: ${{ secrets.PUBLIC_GRAPHQL_ENDPOINT }}
+          HASURA_ADMIN_SECRET: ${{ secrets.HASURA_ADMIN_SECRET }}
 
       - name: Run lint 👀
         run: pnpm lint

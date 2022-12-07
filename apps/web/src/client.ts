@@ -2,6 +2,8 @@ import { get } from 'svelte/store';
 import { accessToken } from '$lib/nhost';
 import { PUBLIC_GRAPHQL_ENDPOINT } from '$env/static/public';
 import { HoudiniClient, type RequestHandlerArgs } from '$houdini';
+import { createClient } from 'graphql-ws';
+import { browser } from '$app/environment';
 
 const fetchQuery = async ({ fetch, text = '', variables = {} }: RequestHandlerArgs) => {
   const url = PUBLIC_GRAPHQL_ENDPOINT;
@@ -20,4 +22,11 @@ const fetchQuery = async ({ fetch, text = '', variables = {} }: RequestHandlerAr
   return await result.json();
 };
 
-export default new HoudiniClient(fetchQuery);
+const socketClient = browser
+  ? // @ts-expect-error - for using new
+    new createClient({
+      url: PUBLIC_GRAPHQL_ENDPOINT.replace('https', 'ws'),
+    })
+  : null;
+
+export default new HoudiniClient(fetchQuery, socketClient);
