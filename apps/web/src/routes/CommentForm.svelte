@@ -1,6 +1,7 @@
 <script lang="ts">
   import { GQL_InsertComment } from '$houdini';
   import { nhost } from '$lib/nhost';
+  import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import { tick } from 'svelte';
   import { Button, PaperPlaneIcon, SectionFrame } from 'ui';
 
@@ -25,35 +26,37 @@
       return;
     }
 
-    exec(async () => {
-      let fileId: string | null = null;
+    // before
+    isSending = true;
 
-      if (file) {
-        const res = await nhost.storage.upload({ file });
-        const errorMessage = res.error?.message;
-        if (errorMessage) {
-          alert(errorMessage);
-          return;
-        }
+    // ...
+    let fileId: string | null = null;
 
-        fileId = res.fileMetadata?.id ?? null;
-        if (!fileId) {
-          alert('File ID not found');
-          return;
-        }
-      }
+    if (file) {
+      const res = await nhost.storage.upload({ file });
+      if (tryErrorAlertOnNhostApi(res)) return;
 
-      try {
-        await GQL_InsertComment.mutate({ text, fileId });
-      } catch (err) {
-        const errorMessage = (err as { message?: string }[])[0]?.message;
-        alert(errorMessage);
-        window.location.reload();
+      fileId = res.fileMetadata?.id ?? null;
+      if (!fileId) {
+        alert('File ID not found');
         return;
       }
-      text = '';
-      files = null;
-    });
+    }
+
+    try {
+      await GQL_InsertComment.mutate({ text, fileId });
+    } catch (err) {
+      tryErrorAlertOnHoudiniApi(err);
+      window.location.reload();
+      return;
+    }
+    text = '';
+    files = null;
+
+    // after
+    isSending = false;
+    await tick();
+    textAreaEl.focus();
   };
 
   const handleKeyDown = (e: KeyboardEvent) => {

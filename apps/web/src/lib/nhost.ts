@@ -2,6 +2,7 @@ import { PUBLIC_NHOST_SUBDOMAIN, PUBLIC_NHOST_REGION } from '$env/static/public'
 import { NhostClient } from '@nhost/nhost-js';
 import type { UserInputs } from 'src/routes/admin/(isNotLoggedIn)/inputs';
 import { writable } from 'svelte/store';
+import { tryErrorAlertOnNhostApi } from './utils';
 
 export const nhost = new NhostClient({
   subdomain: PUBLIC_NHOST_SUBDOMAIN,
@@ -39,13 +40,16 @@ nhost.auth.onAuthStateChanged((event, session) => {
 });
 
 export const signUp = async (inputs: UserInputs) => {
-  await nhost.auth.signUp(inputs);
+  const res = await nhost.auth.signUp(inputs);
+  tryErrorAlertOnNhostApi(res);
 };
 
 export const logIn = async (inputs: UserInputs) => {
-  await nhost.auth.signIn(inputs);
+  const res = await nhost.auth.signIn(inputs);
+  tryErrorAlertOnNhostApi(res);
 };
 
 export const logOut = async () => {
-  await nhost.auth.signOut();
+  const res = await nhost.auth.signOut();
+  tryErrorAlertOnNhostApi(res);
 };

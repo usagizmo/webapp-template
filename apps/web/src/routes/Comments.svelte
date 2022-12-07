@@ -3,9 +3,10 @@
   import { flip } from 'svelte/animate';
   import { DateTime } from 'luxon';
   import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
-  import { GQL_DeleteComment, GQL_UpdateComment } from '$houdini';
+  import { GQL_DeleteComment, GQL_UpdateCommentFileId } from '$houdini';
   import { nhost, user } from '$lib/nhost';
   import { defaultDE } from '$lib/easing';
+  import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
 
   type Comment = {
     id: string;
@@ -44,61 +45,57 @@
     };
   }) as Card[];
 
-  const exec = async (id: string, func: () => Promise<void>) => {
-    deletingCommentIdMap = { ...deletingCommentIdMap, [id]: true };
-    await func();
-
-    // No execution here.
-    // const { [id]: _, ...filteredIdMap } = deletingCommentIdMap;
-    // deletingCommentIdMap = filteredIdMap;
-  };
-
-  const handleDeleteImage = (id: string, fileId: string | null) => {
+  const handleDeleteImage = async (id: string, fileId: string | null) => {
     if (!fileId) {
       throw Error('File ID not found');
     }
 
-    exec(id, async () => {
+    // before
+    deletingCommentIdMap = { ...deletingCommentIdMap, [id]: true };
+
+    // ...
+    const res = await nhost.storage.delete({ fileId });
+    if (tryErrorAlertOnNhostApi(res)) {
+      // Continue update without the file
+      // return;
+    }
+
+    try {
+      await GQL_UpdateCommentFileId.mutate({ id, fileId: null });
+    } catch (err) {
+      tryErrorAlertOnHoudiniApi(err);
+      window.location.reload();
+      return;
+    }
+
+    // after
+    const { [id]: _, ...filteredIdMap } = deletingCommentIdMap;
+    deletingCommentIdMap = filteredIdMap;
+  };
+
+  const handleDelete = async (id: string, fileId?: string | null) => {
+    // before
+    deletingCommentIdMap = { ...deletingCommentIdMap, [id]: true };
+
+    // ...
+    if (fileId) {
       const res = await nhost.storage.delete({ fileId });
-      const errorMessage = res.error?.message;
-      if (errorMessage) {
-        alert(errorMessage);
+      if (tryErrorAlertOnNhostApi(res)) {
         // Continue update without the file
         // return;
       }
+    }
 
-      try {
-        await GQL_UpdateComment.mutate({ id, fileId: null });
-      } catch (err) {
-        const errorMessage = (err as { message?: string }[])[0]?.message;
-        alert(errorMessage);
-        window.location.reload();
-        return;
-      }
-    });
-  };
+    try {
+      await GQL_DeleteComment.mutate({ id });
+    } catch (err) {
+      tryErrorAlertOnHoudiniApi(err);
+      window.location.reload();
+      return;
+    }
 
-  const handleDelete = (id: string, fileId?: string | null) => {
-    exec(id, async () => {
-      if (fileId) {
-        const res = await nhost.storage.delete({ fileId });
-        const errorMessage = res.error?.message;
-        if (errorMessage) {
-          alert(errorMessage);
-          // Continue update without the file
-          // return;
-        }
-      }
-
-      try {
-        await GQL_DeleteComment.mutate({ id });
-      } catch (err) {
-        const errorMessage = (err as { message?: string }[])[0]?.message;
-        alert(errorMessage);
-        window.location.reload();
-        return;
-      }
-    });
+    // after
+    // No need to reset as comments disappear.
   };
 </script>
 
