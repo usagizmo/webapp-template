@@ -1,11 +1,12 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { myCrossfade } from '$lib/easing';
+  import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
+  import { crossfade } from 'svelte/transition';
 
   export let navItems: { label: string; href: string }[] = [];
 
-  const [send, receive] = myCrossfade();
+  const [send, receive] = crossfade(defaultDE);
 
   $: getScope = (href: string) => href.split('/')[1];
 </script>

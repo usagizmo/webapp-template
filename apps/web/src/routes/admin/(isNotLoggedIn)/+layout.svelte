@@ -21,7 +21,7 @@
 
   const unsubscribe = isLoggedIn.subscribe((value) => {
     if (!value) return;
-    goto(ROUTE.ADMIN, {
+    goto(ROUTE.HOME, {
       replaceState: true,
     });
   });

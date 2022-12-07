@@ -5,6 +5,7 @@
   import { Input } from 'ui';
   import { key, type UserInputs } from './inputs';
   import { ROUTE } from '$lib/routes';
+  import { defaultDE } from '$lib/easing';
 
   const { getInputs } = getContext<{
     getInputs: () => UserInputs;
@@ -16,7 +17,7 @@
 
 <div class="[&>*]:mb-3">
   {#if isSignUpPage}
-    <div transition:slide|local>
+    <div transition:slide|local={defaultDE}>
       <Input
         label="Display Name"
         type="text"

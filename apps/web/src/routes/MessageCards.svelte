@@ -5,6 +5,7 @@
   import { GQL_DeleteComment } from '$houdini';
   import { slide } from 'svelte/transition';
   import { user } from '$lib/nhost';
+  import { defaultDE } from '$lib/easing';
 
   type Comment = {
     id: string;
@@ -29,6 +30,7 @@
   let hoveredId = '';
 
   export let comments: Comment[] = [];
+  let deletingCommentIdMap: { [id: string]: true } = {};
 
   $: cards = comments.map((comment) => {
     return {
@@ -41,22 +43,24 @@
     };
   }) as Card[];
 
-  const handleDelete = async (id: string, message: string) => {
-    if (confirm('Are you sure you want to delete this comment?\n\n' + message)) {
-      await GQL_DeleteComment.mutate({ id });
-    }
+  const handleDelete = async (id: string) => {
+    deletingCommentIdMap = { ...deletingCommentIdMap, [id]: true };
+    await GQL_DeleteComment.mutate({ id });
   };
 </script>
 
 <div class="divide-y divide-slate-200">
   {#each cards as { id, name, me, date, message, image } (id)}
     {@const isActionVisible = me && hoveredId === id}
+    {@const isDeleting = deletingCommentIdMap[id]}
     {@const dt = DateTime.fromJSDate(date)}
     <div
-      class="py-2.5"
+      class="py-2.5 duration-200"
+      class:bg-slate-100={isDeleting}
       on:mouseenter={() => (hoveredId = id)}
       on:mouseleave={() => (hoveredId = '')}
-      transition:slide|local
+      in:fade
+      out:slide|local={defaultDE}
     >
       <div class="relative">
         <div class="flex items-center">
@@ -88,8 +92,9 @@
 
         {#if isActionVisible}
           <div class="absolute right-0 bottom-0" transition:fade={{ duration: 75 }}>
-            <Button type="button" warn on:click={() => handleDelete(id, message)}>Delete</Button>
-            <Button type="button">Edit</Button>
+            <Button type="button" warn on:click={() => handleDelete(id)} disabled={isDeleting}
+              >Delete</Button
+            >
           </div>
         {/if}
       </div>

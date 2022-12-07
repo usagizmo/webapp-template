@@ -1,7 +1,8 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { myCrossfade } from '$lib/easing';
+  import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
+  import { crossfade } from 'svelte/transition';
 
   const tabs = [
     {
@@ -14,7 +15,7 @@
     },
   ];
 
-  const [send, receive] = myCrossfade();
+  const [send, receive] = crossfade(defaultDE);
 </script>
 
 <header class="flex items-center justify-center border-b border-slate-200 pt-0.5">
