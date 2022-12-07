@@ -2,7 +2,7 @@
   import { isLoggedIn } from '$lib/nhost';
   import { SectionFrame } from 'ui';
   import LoginMessage from './LoginMessage.svelte';
-  import MessageCards from './MessageCards.svelte';
+  import Comments from './Comments.svelte';
   import CommentForm from './CommentForm.svelte';
   import { GQL_GetCommentsSubscription } from '$houdini';
 
@@ -24,7 +24,7 @@
       </div>
 
       <div>
-        <MessageCards comments={$GQL_GetCommentsSubscription?.comments ?? []} />
+        <Comments data={$GQL_GetCommentsSubscription?.comments ?? []} />
       </div>
     </div>
   </SectionFrame>

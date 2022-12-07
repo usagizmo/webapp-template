@@ -1,9 +1,9 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
+  import { flip } from 'svelte/animate';
   import { DateTime } from 'luxon';
   import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
   import { GQL_DeleteComment, GQL_UpdateComment } from '$houdini';
-  import { slide } from 'svelte/transition';
   import { nhost, user } from '$lib/nhost';
   import { defaultDE } from '$lib/easing';
 
@@ -30,10 +30,10 @@
 
   let hoveredId = '';
 
-  export let comments: Comment[] = [];
+  export let data: Comment[] = [];
   let deletingCommentIdMap: { [id: string]: true } = {};
 
-  $: cards = comments.map(({ id, user: _user, createdAt, text, fileId }) => {
+  $: cards = data.map(({ id, user: _user, createdAt, text, fileId }) => {
     return {
       id,
       me: $user?.id === _user.id,
@@ -47,8 +47,10 @@
   const exec = async (id: string, func: () => Promise<void>) => {
     deletingCommentIdMap = { ...deletingCommentIdMap, [id]: true };
     await func();
-    const { [id]: _, ...filteredIdMap } = deletingCommentIdMap;
-    deletingCommentIdMap = filteredIdMap;
+
+    // No execution here.
+    // const { [id]: _, ...filteredIdMap } = deletingCommentIdMap;
+    // deletingCommentIdMap = filteredIdMap;
   };
 
   const handleDeleteImage = (id: string, fileId: string | null) => {
@@ -61,7 +63,7 @@
       const errorMessage = res.error?.message;
       if (errorMessage) {
         alert(errorMessage);
-        // continue update without the file
+        // Continue update without the file
         // return;
       }
 
@@ -83,7 +85,7 @@
         const errorMessage = res.error?.message;
         if (errorMessage) {
           alert(errorMessage);
-          // continue update without the file
+          // Continue update without the file
           // return;
         }
       }
@@ -110,8 +112,8 @@
       class:bg-slate-100={isDeleting}
       on:mouseenter={() => (hoveredId = id)}
       on:mouseleave={() => (hoveredId = '')}
-      in:fade
-      out:slide|local={defaultDE}
+      transition:fade|local={defaultDE}
+      animate:flip={defaultDE}
     >
       <div class="relative">
         <div class="flex items-center">

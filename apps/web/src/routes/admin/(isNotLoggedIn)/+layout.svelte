@@ -4,7 +4,7 @@
   import { SectionFrame } from 'ui';
   import { key } from './inputs';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
-  import MessageForGuest from '../MessageForGuest.svelte';
+  import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import { isLoggedIn } from '$lib/nhost';
   import AdminForm from './AdminForm.svelte';
   import { ROUTE } from '$lib/routes';
@@ -31,7 +31,7 @@
 <div class="mx-auto max-w-[488px]">
   <SectionFrame noPad="top">
     <AdminHeaderTabs />
-    <MessageForGuest />
+    <AdminHeaderMessage />
     <AdminForm />
     <slot />
   </SectionFrame>
