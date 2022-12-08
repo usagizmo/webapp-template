@@ -41,6 +41,19 @@ Monorepo template for creating a web application.
 - [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
+## Breaking changes
+
+### v1.0.0
+
+- Change frontend framework (`apps/web`): [Next.js](https://nextjs.org/) → [SvelteKit](https://kit.svelte.jp/)
+- Change repository name: `nextjs-template` → `webapp-template`
+- [ ] `apps/storybook`: in progress
+- [ ] `apps/mockup`: in progress
+
+### v0.23.0
+
+- Replace [Firebase](https://firebase.google.com/) (`apps/firebase`) and [Hasura](https://hasura.io/) (`apps/hasura`) apps with [Nhost](https://nhost.io/) (`apps/nhost`)
+
 ## Commands
 
 ```bash
