@@ -24,3 +24,9 @@ pnpm check[:watch]
 ```
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Deploy to Vercel (apps/web)
+
+- Framework Preset: `SvelteKit`
+- Root Directory: `apps/web`
+- Environment Variables: Set 5 environment variables in `env`

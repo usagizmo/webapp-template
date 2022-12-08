@@ -17,6 +17,12 @@ pnpm clean-image  # Remove unused image files in `public/images/*`
 pnpm deploy       # When deploying to a VPS such as DigitalOcean using `rsync`
 ```
 
+## Deploy to Vercel (apps/mockup)
+
+- Framework Preset: `Other`
+- Root Directory: `apps/mockup`
+- Build Command: `cd ../.. && npx turbo run build --filter=mockup`
+
 ### With Basic Authentication
 
 ```bash
@@ -70,15 +76,3 @@ app.listen(port, () => {
 module.exports = app
 " > index.cjs
 ```
-
-Add the `vercel-build` command to `package.json`.
-
-```diff
-"build": "turbo run build",
-+ "vercel-build": "npm run build",
-```
-
-Make the following settings in Vercel's `Project Settings`.
-
-- `General` > `Root Directory`: `apps/mockup`
-  - [x] Include source files outside of the Root Directory in the Build Step.

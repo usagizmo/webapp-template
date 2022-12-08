@@ -18,7 +18,7 @@ Monorepo template for creating a web application.
 
 #### `apps/`
 
-- [`nhost`](./apps/nhost/README.md): [[Demo](https://webapp-template.usagizmo.com/)]  
+- [`nhost`](./apps/nhost/README.md)
   Local environment test server and production [Nhost](https://nhost.io/) migration.
 - [`mockup`](./apps/mockup/README.md): [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
   A starting point for building a static site.  
@@ -49,6 +49,7 @@ Monorepo template for creating a web application.
 - Change repository name: `nextjs-template` → `webapp-template`
 - [ ] `apps/storybook`: in progress
 - [ ] `apps/mockup`: in progress
+- [ ] `apps/mockup`/`apps/web`: add meta information
 
 ### v0.23.0
 
@@ -80,32 +81,7 @@ pnpm format  # eslint --fix + prettier --write
 
 ## Registering environment variables for GitHub / Vercel
 
-If you need to prepare GitHub / Vercel environment, you need to set environment variables (`.env` items) in each service.
-
-## Deploy to Vercel
-
-ref: https://vercel.com/docs/concepts/git/monorepos#setup-turborepo
-
-Make the following settings in Vercel's `Project Settings`.
-※Change the <mockup/storybook/web> parts below
-
-- `General` > `Build` & `Development Settings`
-  - `BUILD COMMAND`: `cd ../.. && pnpm exec turbo run build --scope=<mockup/web> --include-dependencies --no-deps`
-  - `OUTPUT DIRECTORY`:
-    - for `mockup`: `public`
-- `General` > `Root Directory`: `apps/<mockup/web>`
-  - [x] Include source files outside of the Root Directory in the Build Step.
-
-## How to check for dependent packages
-
-```bash
-# If graphviz is not installed
-# ref: https://graphviz.org/download/
-brew install graphviz
-
-# Output a graph to check dependencies
-pnpm build -- --graph
-```
+If you need to prepare GitHub / Vercel environment, you need to set all environment variables (`.env` items) in each service.
 
 ## Use renovate on GitHub
 
