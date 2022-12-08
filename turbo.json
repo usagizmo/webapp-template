@@ -3,7 +3,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".svelte-kit/**", ".vercel/**"]
+      "outputs": [".svelte-kit/**", ".vercel/**", "$houdini/**", "schema.graphql"]
     },
     "mockup#build": {
       "dependsOn": ["^build"],

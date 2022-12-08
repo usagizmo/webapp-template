@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "generate": "houdini generate",
+    "generate:svelte": "svelte-kit sync",
+    "generate:pull-schema": "node --require=dotenv/config ./commands/pull-schema.js",
+    "generate": "concurrently pnpm:generate:*",
     "dev": "vite dev --port 3000 --open",
-    "build": "vite build",
+    "build": "pnpm generate && vite build",
     "package": "vite package",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
