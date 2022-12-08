@@ -8,7 +8,7 @@ Monorepo template for creating a web application.
 
 - [Turborepo](https://turborepo.org/) x [pnpm](https://pnpm.io/)
 - [Prettier](https://prettier.io/) (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss))
-- [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import))
+- [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)) / [cspell](https://cspell.org/)
 - [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
 - [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
 - GitHub Actions (Linting)
