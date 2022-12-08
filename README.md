@@ -18,7 +18,7 @@ Monorepo template for creating a web application.
 
 #### `apps/`
 
-- [`nhost`](./apps/nhost/README.md): [[Demo](https://webapp-template.usagizmo.com/)]  
+- [`nhost`](./apps/nhost/README.md)
   Local environment test server and production [Nhost](https://nhost.io/) migration.
 - [`mockup`](./apps/mockup/README.md): [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
   A starting point for building a static site.  
