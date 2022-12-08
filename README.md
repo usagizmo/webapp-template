@@ -18,20 +18,24 @@ Monorepo template for creating a web application.
 
 #### `apps/`
 
-- [`nhost`](./apps/nhost/README.md)
+- [`nhost`](./apps/nhost/README.md)  
   Local environment test server and production [Nhost](https://nhost.io/) migration.
-- [`mockup`](./apps/mockup/README.md): [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
+- [`mockup`](./apps/mockup/README.md) [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
   A starting point for building a static site.  
   [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS
-- [`web`](./apps/web/README.md): [[Demo](https://webapp-template.usagizmo.com/)]  
+- [`web`](./apps/web/README.md) [[Demo](https://webapp-template.usagizmo.com/)]  
   A starting point for building Svelte application.  
   [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/))  
   [Nhost](https://nhost.io/) (w/ [Houdini](https://www.houdinigraphql.com/))
 
 #### `packages/`
 
-- `ui`: A stub Svelte component library
-- `eslint-config-custom`: `eslint` configurations (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) and [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)|[turbo](https://www.npmjs.com/package/eslint-config-turbo)])
+- `ui`  
+  A stub Svelte component library.
+- `tailwind-preset-base`  
+  A preset for use with `tailwind.config.cjs`.
+- `eslint-config-custom`  
+  `eslint` configurations. (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) and eslint-config-[[prettier](https://github.com/prettier/eslint-config-prettier)|[turbo](https://www.npmjs.com/package/eslint-config-turbo)])
 
 ### VS Code Extensions (Recommend)
 
