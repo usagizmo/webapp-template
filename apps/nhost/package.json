@@ -3,12 +3,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nhost dev",
+    "dev": "nhost up",
     "lint:markup": "markuplint \"**/*.html\"",
     "lint": "prettier --check --ignore-path=../../.prettierignore . && concurrently pnpm:lint:*",
     "format": "prettier --write --ignore-path=../../.prettierignore ."
-  },
-  "devDependencies": {
-    "eslint-config-custom": "workspace:*"
   }
 }

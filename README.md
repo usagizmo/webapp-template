@@ -56,8 +56,11 @@ pnpm format  # eslint --fix + prettier --write
 ## List of listening port numbers
 
 - `1337`: `apps/nhost/` - Hasura
-  - `* (auto)`: GraphQL Endpoint
-  - `* (auto)`: MailHog
+  - `3030`: Nhost Dashboard
+  - `5432`: Postgres
+  - `8080`: GraphQL Endpoint
+  - `8025`: MailHog
+  - `9695`: Hasura Console
 - `3000`: `apps/web/` - SvelteKit application
 - `8000`: `apps/mockup/` - Static site
 - `49160`: `apps/mockup/` - Express server

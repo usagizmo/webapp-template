@@ -13,3 +13,8 @@ pnpm dev     # Launch Nhost dev server
 pnpm lint    # markuplint the contents of email
 pnpm format  # Format with `prettier`
 ```
+
+## Local **sign up** process
+
+Once you have signed up, check your email to MailHog.  
+http://localhost:8025/
