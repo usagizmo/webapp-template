@@ -1,40 +1,19 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
+  "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "outputs": [".svelte-kit/**", ".vercel/**", "$houdini/**", "schema.graphql"]
     },
     "mockup#build": {
       "dependsOn": ["^build"],
-      "outputs": ["public/script.js", "public/styles.css"]
-    },
-    "storybook#build": {
-      "dependsOn": ["^build"],
-      "outputs": ["storybook-static/**"]
-    },
-    "web#build": {
-      "dependsOn": ["^build"],
-      "outputs": ["out/**", ".next/**", "src/lib/$path.ts"]
+      "outputs": ["public/styles.css"]
     },
     "dev": {
       "cache": false
     },
     "lint": {
-      "dependsOn": ["^build"],
       "outputs": []
-    },
-    "lint:fix": {
-      "dependsOn": ["^build"],
-      "outputs": []
-    },
-    "test": {},
-    "mockup#test": {
-      "dependsOn": ["mockup#build"],
-      "outputs": []
-    },
-    "clean": {
-      "cache": false
     }
   }
 }

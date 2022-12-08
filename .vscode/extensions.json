@@ -1,10 +1,9 @@
 {
   "recommendations": [
     "bradlc.vscode-tailwindcss",
-    "mkaufman.HTMLHint",
     "dbaeumer.vscode-eslint",
-    "webhint.vscode-webhint",
     "EditorConfig.EditorConfig",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "svelte.svelte-vscode"
   ]
 }

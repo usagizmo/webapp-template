@@ -2,32 +2,20 @@
 
 A starting point for building a static site.
 
-[[Demo](https://nextjs-template-mockup.usagizmo.com/)]
+[[Demo](https://webapp-template-mockup.usagizmo.com/)]
 
 ## Commands
 
 ```bash
-pnpm build     # Build and then output to `public/*`
-pnpm dev       # Watch build files and launch browser-sync server on port 8000
-pnpm lint      # Linting
-pnpm list:fix  # Format with `eslint --fix`
-pnpm test      # Testing
-pnpm clean     # Delete `node_modules` etc.
+pnpm build   # Output `public/styles.css`
+pnpm dev     # Watch input.css and launch browser-sync server on port 8000
+pnpm lint    # markuplint + cspell
+pnpm format  # Format with `prettier`
 
 # `commands/*`
 pnpm clean-image  # Remove unused image files in `public/images/*`
 pnpm deploy       # When deploying to a VPS such as DigitalOcean using `rsync`
 ```
-
-## Subresource Integrity
-
-You can use the openssl command to generate an SRI hash.
-
-```bash
-curl "<url>" | openssl dgst -sha384 -binary | openssl base64 -A
-```
-
-Ref: [Subresource Integrity - Web security | MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
 
 ### With Basic Authentication
 

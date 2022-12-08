@@ -1,11 +1,14 @@
 {
-  "extends": "tsconfig/nextjs.json",
+  "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  },
-  "include": ["next-env.d.ts", "next.config.js", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "rootDirs": [".", "./.svelte-kit/types", "./$houdini/types"]
+  }
 }

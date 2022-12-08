@@ -2,6 +2,14 @@
 
 # dependencies
 node_modules
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# svelte
+.svelte-kit
 
 # misc
 .DS_Store
@@ -11,11 +19,9 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
 # turbo
 .turbo
 
-# customize
+# custom
 .env
-/graph-*.jpg

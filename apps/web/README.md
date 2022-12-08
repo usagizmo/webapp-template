@@ -1,17 +1,26 @@
 # `web` app
 
-A starting point for building a Next.js application.
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-[[Demo](https://nextjs-template.usagizmo.com/)]
+## A few words
+
+- We need to change houdini.config.js (config.apiUrl)
+- When GraphQL errors occur, it is usually due to Hasura's Permissions.
 
 ## Commands
 
 ```bash
-pnpm generate  # Generate `src/lib/$path.ts`
-pnpm build     # pnpm generate && next build
-pnpm dev       # pathpida --watch + next dev on port 3000
-pnpm start     # next start
-pnpm lint      # next lint
-pnpm lint:fix  # next lint --fix
-pnpm clean     # Delete `node_modules` etc.
+pnpm generate  # Output `schema.graphql`
+pnpm build     # Output `.svelte-kit/output/`
+pnpm preview   # Preview the production build (after `pnpm build`)
+
+pnpm dev       # start the server and open the app in a new browser tab on port 3000
+pnpm lint      # markuplint + cspell + eslint
+pnpm format    # Format with `prettier`
+
+# Others
+pnpm package
+pnpm check[:watch]
 ```
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

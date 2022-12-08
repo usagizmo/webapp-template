@@ -1,18 +1,23 @@
-# next.js
-.next/
-out/
+.DS_Store
+.svelte-kit
+node_modules
+/build
+/package
+.env
+.env.*
+!.env.example
+vite.config.js*
 
-*-lock.yaml
-*.log
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+pnpm-workspace.yaml
+package-lock.json
+yarn.lock
 
-# Custom
-.turbo
-.vercel
-/apps/mockup/public/script.js
+# custom
 /apps/mockup/public/styles.css
-/apps/nhost/.nhost
-/apps/nhost/nhost/config.yaml
-/apps/nhost/nhost/metadata
-/apps/storybook/storybook-static
-/apps/web/src/lib/$path.ts
-/packages/generated/dist
+!/apps/nhost/nhost/emails/
+/apps/nhost/.nhost/
+/apps/nhost/nhost/
+/apps/web/$houdini/
+/apps/web/schema.graphql

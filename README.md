@@ -1,52 +1,58 @@
-# Next.js Template
+# WebApp Template
 
-Monorepo template for creating a web service with Next.js.
+Monorepo template for creating a web application.
 
-## Uses
+## What's inside?
+
+### Uses
 
 - [Turborepo](https://turborepo.org/) x [pnpm](https://pnpm.io/)
-- [Prettier](https://prettier.io/) / [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import))
+- [Prettier](https://prettier.io/) (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss))
+- [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import))
 - [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
 - [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
-- GitHub Actions (Linting + Formatting)
+- GitHub Actions (Linting)
 - Execute `eslint --fix` and `prettier` when saving with VS Code
 
 ### Apps and Packages
 
-- **Apps**
+#### `apps/`
 
-  - [`nhost`](./apps/nhost/README.md):  
-    [Nhost](https://nhost.io/) dev server for prod/test server migration
-  - [`mockup`](./apps/mockup/README.md): [[Demo](https://nextjs-template-mockup.usagizmo.com/)]  
-    A starting point for building a static site.
-  - [`storybook`](./apps/storybook/README.md): [[Demo](https://nextjs-template-storybook.usagizmo.com/)]  
-    [Storybook](https://storybook.js.org/) for `apps/web`.
-  - [`web`](./apps/web/README.md): [[Demo](https://nextjs-template.usagizmo.com/)]  
-    A starting point for building a Next.js application.  
-    [Next.js](https://nextjs.org/) x [Tailwind CSS](https://tailwindcss.com/) (w/ [TypeScript](https://www.typescriptlang.org/))  
-    Page Transition ([react-transition-group](https://reactcommunity.org/react-transition-group/) x [GSAP](https://greensock.com/gsap/))  
-    [pathpida](https://github.com/aspida/pathpida) / [Jotai](https://jotai.org/)  
-    [Nhost](https://nhost.io/) (w/ [Apollo Client](https://www.apollographql.com/apollo-client) x [GraphQL Code Generator](https://www.graphql-code-generator.com/))
+- [`nhost`](./apps/nhost/README.md): [[Demo](https://webapp-template.usagizmo.com/)]  
+  Local environment test server and production [Nhost](https://nhost.io/) migration.
+- [`mockup`](./apps/mockup/README.md): [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
+  A starting point for building a static site.  
+  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS
+- [`web`](./apps/web/README.md): [[Demo](https://webapp-template.usagizmo.com/)]  
+  A starting point for building Svelte application.  
+  [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/))  
+  [Nhost](https://nhost.io/) (w/ [Houdini](https://www.houdinigraphql.com/))
 
-- **Packages**
+#### `packages/`
 
-  - `eslint-preset`: The base preset for [ESLint](https://eslint.org/)  
-    inc. `eslint-config-next` / `eslint-config-prettier` / `eslint-plugin-import`
-  - `generated`: The files output from graphql-codegen
-  - `lintstagedrc`: The settings for applying [husky](https://github.com/typicode/husky) x [lint-staged](https://github.com/okonet/lint-staged) in each JS/TS file
-  - `pathtest-utils`: The utilities used in `apps/mockup` for URL checking
-  - `script-modules`: static site script used in `apps/mockup`
-  - `tailwind-preset`: The base preset for Tailwind CSS  
-    inc. `postcss.config.cjs` / `@tailwindcss/typography`
-  - `tsconfig`: The base `tsconfig.json`
-  - `types`: Various types
-  - `utils`: Simple utilities
+- `ui`: A stub Svelte component library
+- `eslint-config-custom`: `eslint` configurations (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) and [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)|[turbo](https://www.npmjs.com/package/eslint-config-turbo)])
 
 ### VS Code Extensions (Recommend)
 
+- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-- [HTMLHint](https://marketplace.visualstudio.com/items?itemName=mkaufman.HTMLHint) / [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) / [webhint](https://marketplace.visualstudio.com/items?itemName=webhint.vscode-webhint)
-- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) / [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+## Breaking changes
+
+### v1.0.0
+
+- Change frontend framework (`apps/web`): [Next.js](https://nextjs.org/) → [SvelteKit](https://kit.svelte.jp/)
+- Change repository name: `nextjs-template` → `webapp-template`
+- [ ] `apps/storybook`: in progress
+- [ ] `apps/mockup`: in progress
+
+### v0.23.0
+
+- Replace [Firebase](https://firebase.google.com/) (`apps/firebase`) and [Hasura](https://hasura.io/) (`apps/hasura`) apps with [Nhost](https://nhost.io/) (`apps/nhost`)
 
 ## Commands
 
@@ -56,18 +62,19 @@ pnpm i  # Resolve dependency packages and prepare .env files
 
 pnpm build   # Build all apps and packages
 pnpm dev     # Set up file monitoring builds and local servers for development
-pnpm lint    # eslint + prettier --check
+pnpm lint    # eslint + markuplint | prettier --check
 pnpm format  # eslint --fix + prettier --write
-pnpm clean   # rm .turbo, node_module and generated files
 ```
 
 ## List of listening port numbers
 
 - `1337`: `apps/nhost/` - Hasura
-  - `* (auto)`: GraphQL Endpoint
-  - `* (auto)`: MailHog
-- `3000`: `apps/web/` - Next.js application
-- `6006`: `apps/storybook/` - Storybook
+  - `3030`: Nhost Dashboard
+  - `5432`: Postgres
+  - `8080`: GraphQL Endpoint
+  - `8025`: MailHog
+  - `9695`: Hasura Console
+- `3000`: `apps/web/` - SvelteKit application
 - `8000`: `apps/mockup/` - Static site
 - `49160`: `apps/mockup/` - Express server
 
@@ -83,11 +90,10 @@ Make the following settings in Vercel's `Project Settings`.
 ※Change the <mockup/storybook/web> parts below
 
 - `General` > `Build` & `Development Settings`
-  - `BUILD COMMAND`: `cd ../.. && pnpm exec turbo run build --scope=<mockup/storybook/web> --include-dependencies --no-deps`
+  - `BUILD COMMAND`: `cd ../.. && pnpm exec turbo run build --scope=<mockup/web> --include-dependencies --no-deps`
   - `OUTPUT DIRECTORY`:
     - for `mockup`: `public`
-    - for `storybook`: `storybook-static`
-- `General` > `Root Directory`: `apps/<mockup/storybook/web>`
+- `General` > `Root Directory`: `apps/<mockup/web>`
   - [x] Include source files outside of the Root Directory in the Build Step.
 
 ## How to check for dependent packages

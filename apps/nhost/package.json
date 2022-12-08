@@ -1,17 +1,11 @@
 {
   "name": "nhost",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nhost dev",
-    "lint:html": "htmlhint \"nhost/**/*.html\"",
-    "lint": "concurrently pnpm:lint:*",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .nhost && rm .env"
-  },
-  "devDependencies": {
-    "eslint-preset": "workspace:*",
-    "htmlhint": "1.1.4",
-    "lintstagedrc": "workspace:*"
+    "dev": "nhost up",
+    "lint:markup": "markuplint \"**/*.html\"",
+    "lint": "prettier --check --ignore-path=../../.prettierignore . && concurrently pnpm:lint:*",
+    "format": "prettier --write --ignore-path=../../.prettierignore ."
   }
 }

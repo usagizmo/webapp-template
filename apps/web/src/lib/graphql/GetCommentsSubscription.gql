@@ -1,0 +1,13 @@
+subscription GetCommentsSubscription {
+  comments(order_by: { createdAt: desc }) {
+    id
+    createdAt
+    updatedAt
+    text
+    fileId
+    user {
+      id
+      displayName
+    }
+  }
+}

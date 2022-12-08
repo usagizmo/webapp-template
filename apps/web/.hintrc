@@ -1,6 +1,0 @@
-{
-  "extends": ["web-recommended"],
-  "hints": {
-    "apple-touch-icons": "off"
-  }
-}

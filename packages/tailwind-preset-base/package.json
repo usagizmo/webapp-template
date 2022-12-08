@@ -1,0 +1,10 @@
+{
+  "name": "tailwind-preset-base",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint:cspell": "cspell \"**\"",
+    "lint": "prettier --check --ignore-path=../../.prettierignore . && concurrently pnpm:lint:*",
+    "format": "prettier --write --ignore-path=../../.prettierignore ."
+  }
+}
