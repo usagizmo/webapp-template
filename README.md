@@ -11,27 +11,27 @@ Monorepo template for creating a web application.
 - [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import))
 - [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
 - [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
-- GitHub Actions (Linting + Testing)
+- GitHub Actions (Linting)
 - Execute `eslint --fix` and `prettier` when saving with VS Code
 
 ### Apps and Packages
 
 #### `apps/`
 
-- [`nhost`](./apps/nhost/README.md):  
-  [Nhost](https://nhost.io/) a prod/test server for migration to Nhost
+- [`nhost`](./apps/nhost/README.md): [[Demo](https://webapp-template.usagizmo.com/)]  
+  Local environment test server and production [Nhost](https://nhost.io/) migration.
 - [`mockup`](./apps/mockup/README.md): [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
-  a starting point for building a static site.  
-  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS (w/ [GSAP](https://greensock.com/gsap/))
+  A starting point for building a static site.  
+  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS
 - [`web`](./apps/web/README.md): [[Demo](https://webapp-template.usagizmo.com/)]  
-  a starting point for building a svelte application.  
+  A starting point for building Svelte application.  
   [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/))  
-  [Nhost](https://nhost.io/) (w/ [Apollo Client](https://www.apollographql.com/apollo-client) x [GraphQL Code Generator](https://www.graphql-code-generator.com/))
+  [Nhost](https://nhost.io/) (w/ [Houdini](https://www.houdinigraphql.com/))
 
 #### `packages/`
 
-- `ui`: a stub Svelte component library
-- `eslint-config-custom`: `eslint` configurations (w/ `eslint-plugin-svelte` and `eslint-config-prettier`)
+- `ui`: A stub Svelte component library
+- `eslint-config-custom`: `eslint` configurations (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) and [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)|[turbo](https://www.npmjs.com/package/eslint-config-turbo)])
 
 ### VS Code Extensions (Recommend)
 
