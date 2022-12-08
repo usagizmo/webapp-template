@@ -1,5 +1,10 @@
 {
-  "ignorePaths": ["/.vscode/", "/apps/nhost/nhost/", "/pnpm-lock.yaml"],
+  "ignorePaths": [
+    "/.vscode/",
+    "/apps/nhost/nhost/",
+    "/apps/mockup/public/styles.css",
+    "/pnpm-lock.yaml"
+  ],
   "words": [
     "automerge",
     "citext",

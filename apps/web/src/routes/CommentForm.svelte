@@ -11,15 +11,6 @@
   let files: FileList | null = null;
   $: file = files?.[0] ?? null;
 
-  const exec = async (callback: () => Promise<void>) => {
-    isSending = true;
-    await callback();
-    isSending = false;
-
-    await tick();
-    textAreaEl.focus();
-  };
-
   const handleSend = async () => {
     if (!text) {
       textAreaEl.focus();
