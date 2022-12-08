@@ -18,3 +18,8 @@ pnpm format  # Format with `prettier`
 
 Once you have signed up, check your email to MailHog.  
 http://localhost:8025/
+
+## (Nhost) Production settings
+
+- Deployment Branch: `main`
+- Base Directory: `./nhost/`
