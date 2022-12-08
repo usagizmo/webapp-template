@@ -2,15 +2,16 @@
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
+[[Demo](https://webapp-template.usagizmo.com/)]
+
 ## A few words
 
-- We need to change houdini.config.js (config.apiUrl)
 - When GraphQL errors occur, it is usually due to Hasura's Permissions.
 
 ## Commands
 
 ```bash
-pnpm generate  # Output `schema.graphql`
+pnpm generate  # Output `.svelte-kit` and `schema.graphql`
 pnpm build     # Output `.svelte-kit/output/`
 pnpm preview   # Preview the production build (after `pnpm build`)
 
