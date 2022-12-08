@@ -52,6 +52,7 @@ importers:
       '@sveltejs/kit': 1.0.0-next.570
       '@types/luxon': ^3.1.0
       autoprefixer: ^10.4.13
+      dotenv: ^16.0.3
       eslint-config-custom: workspace:*
       graphql: ^16.6.0
       graphql-ws: ^5.11.2
@@ -80,6 +81,7 @@ importers:
       '@sveltejs/kit': 1.0.0-next.570_svelte@3.53.1+vite@3.2.4
       '@types/luxon': 3.1.0
       autoprefixer: 10.4.13_postcss@8.4.19
+      dotenv: 16.0.3
       eslint-config-custom: link:../../packages/eslint-config-custom
       graphqurl: 1.0.1_eoe7put6ewfbqpy6gs36tihw6y
       houdini: 0.17.14
@@ -2579,6 +2581,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-obj: 2.0.0
+    dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /dset/3.1.2:
