@@ -22,7 +22,7 @@ Monorepo template for creating a web application.
   Local environment test server and production [Nhost](https://nhost.io/) migration.
 - [`mockup`](./apps/mockup/README.md) [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
   A starting point for building a static site.  
-  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS + [vitest](https://vitest.dev/) (Check links + file names)
+  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS + [Vitest](https://vitest.dev/) (Check links + file names)
 - [`web`](./apps/web/README.md) [[Demo](https://webapp-template.usagizmo.com/)]  
   A starting point for building Svelte application.  
   [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/))  
