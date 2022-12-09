@@ -7,15 +7,22 @@ A starting point for building a static site.
 ## Commands
 
 ```bash
-pnpm build   # Output `public/styles.css`
-pnpm dev     # Watch input.css and launch browser-sync server on port 8000
-pnpm lint    # markuplint + cspell
-pnpm format  # Format with `prettier`
+pnpm build       # Output `public/styles.css`
+pnpm dev         # Watch input.css and launch browser-sync server on port 8000
+pnpm lint        # markuplint + cspell
+pnpm test        # Check links (href/src) + image file names
+pnpm format      # Format with `prettier`
 
 # `commands/*`
 pnpm clean-image  # Remove unused image files in `public/images/*`
 pnpm deploy       # When deploying to a VPS such as DigitalOcean using `rsync`
 ```
+
+## tests/external-links.txt
+
+This is a list of external URLs or non-existent file paths specified by links (`href/src`) in HTML files.
+If this file does not exist, it is output by `pnpm test`.
+If present, test for any changes to the content.
 
 ## Deploy to Vercel (apps/mockup)
 

@@ -11,7 +11,7 @@ Monorepo template for creating a web application.
 - [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)) / [cspell](https://cspell.org/)
 - [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
 - [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
-- GitHub Actions (Linting)
+- GitHub Actions (Linting + Testing)
 - Execute `eslint --fix` and `prettier` when saving with VS Code
 
 ### Apps and Packages
@@ -22,7 +22,7 @@ Monorepo template for creating a web application.
   Local environment test server and production [Nhost](https://nhost.io/) migration.
 - [`mockup`](./apps/mockup/README.md) [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
   A starting point for building a static site.  
-  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS
+  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS + [vitest](https://vitest.dev/) (Check links + file names)
 - [`web`](./apps/web/README.md) [[Demo](https://webapp-template.usagizmo.com/)]  
   A starting point for building Svelte application.  
   [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/))  
@@ -68,6 +68,7 @@ pnpm i  # Resolve dependency packages and prepare .env files
 pnpm build   # Build all apps and packages
 pnpm dev     # Set up file monitoring builds and local servers for development
 pnpm lint    # eslint + markuplint | prettier --check
+pnpm test    # Testing
 pnpm format  # eslint --fix + prettier --write
 ```
 
