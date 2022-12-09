@@ -14,6 +14,12 @@
     },
     "lint": {
       "outputs": []
+    },
+    "test": {
+      "outputs": []
+    },
+    "mockup#test": {
+      "outputs": ["tests/external-links.txt"]
     }
   }
 }
