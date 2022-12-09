@@ -16,7 +16,7 @@
     "deploy": "./commands/deploy.sh"
   },
   "devDependencies": {
-    "browser-sync": "2.27.10",
+    "browser-sync": "^2.27.10",
     "eslint-config-custom": "workspace:*",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.2.4"
