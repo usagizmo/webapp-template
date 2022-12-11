@@ -103,13 +103,13 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.45.0
       '@typescript-eslint/parser': ^5.45.0
       eslint-config-prettier: ^8.5.0
-      eslint-config-turbo: ^0.0.6
+      eslint-config-turbo: ^0.0.7
       eslint-plugin-svelte3: ^4.0.0
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.45.0_czs5uoqkd3podpy6vgtsxfc7au
       '@typescript-eslint/parser': 5.45.0_hsf322ms6xhhd4b5ne6lb74y4a
       eslint-config-prettier: 8.5.0_eslint@8.28.0
-      eslint-config-turbo: 0.0.6_eslint@8.28.0
+      eslint-config-turbo: 0.0.7_eslint@8.28.0
       eslint-plugin-svelte3: 4.0.0_xgu65rlhscpnxffotiaicv6m5i
 
   packages/tailwind-preset-base:
@@ -2997,13 +2997,13 @@ packages:
       eslint: 8.28.0
     dev: false
 
-  /eslint-config-turbo/0.0.6_eslint@8.28.0:
-    resolution: {integrity: sha512-Cx0yRJvAvPh0lJI1jVJMDRdJiF3w/Q7fA7Lgak568uBVYU0vetaak3yVHJtCLik2Z88emkSyOj2pAUPwqOEg9g==}
+  /eslint-config-turbo/0.0.7_eslint@8.28.0:
+    resolution: {integrity: sha512-WbrGlyfs94rOXrhombi1wjIAYGdV2iosgJRndOZtmDQeq5GLTzYmBUCJQZWtLBEBUPCj96RxZ2OL7Cn+xv/Azg==}
     peerDependencies:
-      eslint: ^6.6.0 || ^8.0.0
+      eslint: '>6.6.0'
     dependencies:
       eslint: 8.28.0
-      eslint-plugin-turbo: 0.0.6_eslint@8.28.0
+      eslint-plugin-turbo: 0.0.7_eslint@8.28.0
     dev: false
 
   /eslint-plugin-svelte3/4.0.0_xgu65rlhscpnxffotiaicv6m5i:
@@ -3016,10 +3016,10 @@ packages:
       svelte: 3.53.1
     dev: false
 
-  /eslint-plugin-turbo/0.0.6_eslint@8.28.0:
-    resolution: {integrity: sha512-GgisxIg4saIUlwUbiXPec00dkp2D8iar717g8TuIgCzStO4P24Ob2920CVFNftC5Rm4NFx19E9dLa4P1SwCniA==}
+  /eslint-plugin-turbo/0.0.7_eslint@8.28.0:
+    resolution: {integrity: sha512-iajOH8eD4jha3duztGVBD1BEmvNrQBaA/y3HFHf91vMDRYRwH7BpHSDFtxydDpk5ghlhRxG299SFxz7D6z4MBQ==}
     peerDependencies:
-      eslint: ^6.6.0 || ^8.0.0
+      eslint: '>6.6.0'
     dependencies:
       eslint: 8.28.0
     dev: false
