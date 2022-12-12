@@ -53,33 +53,35 @@ printf "{
 " > vercel.json
 
 # index.cjs
-printf "const path = require('path')
-const cors = require('cors')
-const express = require('express')
-const basicAuth = require('express-basic-auth')
-const app = express()
+printf "const path = require('path');
+const cors = require('cors');
+const express = require('express');
+const basicAuth = require('express-basic-auth');
+const app = express();
 
 // Local runtime port number
 // Any number will be ignored by Vercel and will work
-const port = 49160
+const port = 49160;
 
-app.use(cors())
+app.use(cors());
 
 app.use(
   basicAuth({
     users: {
-      <username>: '<password>'
+      <username>: '<password>',
     },
     challenge: true,
   })
-)
+);
 
-app.use(express.static(path.join(__dirname, '/public')))
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.listen(port, () => {
-  console.log(\`Listening on port \${port}\`)
-})
+  console.log(\`Listening on http://localhost:\${port}\`);
+});
 
-module.exports = app
+module.exports = app;
 " > index.cjs
 ```
+
+You can verify basic authentication by running `node index.cjs`.
