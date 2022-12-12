@@ -2,11 +2,6 @@
 
 /** @type {import('houdini').ConfigFile} */
 const config = {
-  // NOTE: I want to use PUBLIC_GRAPHQL_ENDPOINT
-  apiUrl: 'http://localhost:####/v1/graphql',
-  schemaPollHeaders: {
-    'x-hasura-admin-secret': 'env:GRAPHQL_ADMIN_SECRET',
-  },
   plugins: {
     'houdini-svelte': {
       client: './src/client',
