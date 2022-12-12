@@ -2,6 +2,10 @@
   "name": "tailwind-preset-base",
   "version": "0.0.0",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./global.css": "./global.css"
+  },
   "scripts": {
     "lint:cspell": "cspell \"**\"",
     "lint": "prettier --check --ignore-path=../../.prettierignore . && concurrently pnpm:lint:*",

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '../app.css';
+  import 'tailwind-preset-base/global.css';
   import '$lib/nhost'; // initialize nhost
 
   import Footer from './Footer.svelte';

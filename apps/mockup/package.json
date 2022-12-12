@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./public/styles.css --minify",
-    "dev:tailwind": "tailwindcss -i ./src/input.css -o ./public/styles.css --watch",
+    "build": "tailwindcss -i ../../packages/tailwind-preset-base/global.css -o ./public/styles.css --minify",
+    "dev:tailwind": "tailwindcss ../../packages/tailwind-preset-base/global.css -o ./public/styles.css --watch",
     "dev:server": "browser-sync ./public/ -w --port 8000",
     "dev": "concurrently pnpm:dev:*",
     "lint:markup": "markuplint \"public/**/*.html\"",
