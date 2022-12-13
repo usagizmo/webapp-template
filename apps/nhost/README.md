@@ -22,4 +22,4 @@ http://localhost:8025/
 ## (Nhost) Production settings
 
 - Deployment Branch: `main`
-- Base Directory: `./nhost/`
+- Base Directory: `./apps/nhost/`
