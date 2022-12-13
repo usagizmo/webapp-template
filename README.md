@@ -53,7 +53,6 @@ Monorepo template for creating a web application.
 - Change repository name: `nextjs-template` → `webapp-template`
 - [ ] `apps/storybook`: in progress
 - [ ] `apps/mockup`: in progress
-- [ ] `apps/mockup`/`apps/web`: add meta information
 
 ### v0.23.0
 
