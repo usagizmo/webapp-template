@@ -14,5 +14,5 @@ https://prettier.io/
 https://tailwindcss.com
 https://turborepo.org/
 https://usagizmo.com
-https://webapp-template.usagizmo.com
+https://webapp-template-mockup.usagizmo.com
 https://www.whitesourcesoftware.com/free-developer-tools/renovate/
