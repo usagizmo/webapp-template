@@ -6,6 +6,7 @@
   "module": "index.ts",
   "svelte": "index.ts",
   "scripts": {
+    "lint:markup": "markuplint \"components/**/*.svelte\"",
     "lint:js": "eslint \".\"",
     "lint:cspell": "cspell \"**\"",
     "lint": "prettier --check --ignore-path=../../.prettierignore . && concurrently pnpm:lint:*",
