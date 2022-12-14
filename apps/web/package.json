@@ -19,32 +19,32 @@
     "format": "prettier --write --ignore-path=../../.prettierignore ."
   },
   "dependencies": {
-    "@nhost/nhost-js": "^1.6.2",
+    "@nhost/nhost-js": "^1.7.0",
     "graphql": "^16.6.0",
     "graphql-ws": "^5.11.2",
     "luxon": "^3.1.1",
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "1.0.0-next.90",
-    "@sveltejs/kit": "1.0.0-next.570",
+    "@sveltejs/adapter-auto": "^1.0.0",
+    "@sveltejs/kit": "^1.0.0",
     "@types/luxon": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "dotenv": "^16.0.3",
     "eslint-config-custom": "workspace:*",
     "graphql": "^16.0.0",
     "graphqurl": "^1.0.1",
-    "houdini": "^0.17.14",
-    "houdini-svelte": "^0.17.14",
-    "postcss": "^8.4.19",
-    "svelte": "^3.53.1",
-    "svelte-check": "^2.10.0",
+    "houdini": "^0.18.1",
+    "houdini-svelte": "^0.18.1",
+    "postcss": "^8.4.20",
+    "svelte": "^3.55.0",
+    "svelte-check": "^2.10.2",
     "svelte-preprocess": "^5.0.0",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.2.4",
     "tslib": "^2.4.1",
-    "typescript": "^4.9.3",
+    "typescript": "^4.9.4",
     "ui": "workspace:*",
-    "vite": "^3.2.4"
+    "vite": "^4.0.1"
   }
 }
