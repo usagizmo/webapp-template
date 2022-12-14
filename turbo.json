@@ -6,7 +6,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": []
+      "outputs": [".svelte-kit/**", ".vercel/**"]
     },
     "mockup#build": {
       "dependsOn": ["^build"],
@@ -14,7 +14,7 @@
     },
     "web#build": {
       "dependsOn": ["^build", "generate"],
-      "outputs": [".svelte-kit/**", "$houdini/**", "schema.graphql"]
+      "outputs": [".svelte-kit/**", ".vercel/**", "$houdini/**", "schema.graphql"]
     },
     "dev": {
       "cache": false
