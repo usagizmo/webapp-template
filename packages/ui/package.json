@@ -7,7 +7,7 @@
   "svelte": "index.ts",
   "scripts": {
     "lint:markup": "markuplint \"components/**/*.svelte\"",
-    "lint:js": "eslint \".\"",
+    "lint:js": "TIMING=1 eslint \".\"",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
