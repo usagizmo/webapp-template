@@ -8,10 +8,10 @@ Monorepo template for creating a web application.
 
 - [Turborepo](https://turborepo.org/) x [pnpm](https://pnpm.io/)
 - [Prettier](https://prettier.io/) (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss))
-- [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)) / [cspell](https://cspell.org/)
+- [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)) / [CSpell](https://cspell.org/)
 - [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
-- [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
-- GitHub Actions (Linting + Testing)
+- [Renovate](https://www.mend.io/free-developer-tools/renovate/) (w/ [renovate-approve](https://github.com/apps/renovate-approve))
+- GitHub Actions (Linting + Testing (Validate `href` and `src` paths))
 - Execute `eslint --fix` and `prettier` when saving with VS Code
 
 ### Apps and Packages
@@ -33,9 +33,9 @@ Monorepo template for creating a web application.
 - `ui`  
   A stub Svelte component library.
 - `tailwind-preset-base`  
-  A preset for use with `tailwind.config.cjs`.
+  A preset for use with `tailwind.config.cjs` and `global.css`.
 - `eslint-config-custom`  
-  `eslint` configurations. (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) and eslint-config-[[prettier](https://github.com/prettier/eslint-config-prettier)|[turbo](https://www.npmjs.com/package/eslint-config-turbo)])
+  `eslint` configurations. (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + eslint-config-[[prettier](https://github.com/prettier/eslint-config-prettier)|[turbo](https://www.npmjs.com/package/eslint-config-turbo)])
 
 ### VS Code Extensions (Recommend)
 
@@ -89,7 +89,7 @@ If you need to prepare GitHub / Vercel environment, you need to set all environm
 
 ## Use renovate on GitHub
 
-Give [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) and [renovate-approve](https://github.com/apps/renovate-approve) permission to operate the repository.
+Give [Renovate](https://www.mend.io/free-developer-tools/renovate/) and [renovate-approve](https://github.com/apps/renovate-approve) permission to operate the repository.
 
 Then change your GitHub settings as follows.
 
