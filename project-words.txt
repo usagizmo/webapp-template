@@ -1,0 +1,15 @@
+graphqurl
+hiragino
+kaku
+lucida
+luxon
+markuplint
+meiryo
+nhost
+noto
+pathtest
+sveltekit
+tailwindcss
+turborepo
+usagizmo
+yakuhanjp
