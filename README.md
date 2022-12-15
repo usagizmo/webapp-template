@@ -68,7 +68,7 @@ pnpm build   # Build all apps and packages
 pnpm dev     # Set up file monitoring builds and local servers for development
 pnpm lint    # eslint + markuplint | prettier --check
 pnpm test    # Testing
-pnpm format  # eslint --fix + prettier --write
+pnpm format  # eslint --fix + prettier --write + format project-words.txt
 ```
 
 ## List of listening port numbers
