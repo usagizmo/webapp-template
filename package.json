@@ -9,7 +9,9 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "format": "prettier --write ."
+    "format:cspell": "./commands/format-project-words.sh",
+    "format:prettier": "prettier --write .",
+    "format": "concurrently pnpm:format:*"
   },
   "devDependencies": {
     "@markuplint/svelte-parser": "^2.2.7",
