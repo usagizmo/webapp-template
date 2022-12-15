@@ -7,6 +7,7 @@
   export let disabled = false;
 
   $: element = href ? 'a' : 'button';
+  $: typeAttr = type ? { type } : href ? {} : { type: 'button' };
   $: kindClass = primary
     ? 'bg-zinc-900 text-white hover:bg-zinc-700'
     : 'border border-zinc-300 bg-slate-50 hover:border-zinc-400 hover:bg-slate-100';
@@ -20,17 +21,11 @@
         }
       : {};
   $: disabledAttr = disabled ? { disabled: true } : {};
-
-  const typeAction = (node: HTMLButtonElement | HTMLAnchorElement) => {
-    if (element !== 'button') return;
-    if (!type) throw new Error('Button type is required when using a button element');
-    node.type = type;
-  };
 </script>
 
 <svelte:element
   this={element}
-  use:typeAction
+  {...typeAttr}
   {...hrefAttr}
   {...blankAttrs}
   {...disabledAttr}
