@@ -1,10 +1,12 @@
 graphqurl
+hasura
 hiragino
 kaku
 lucida
 luxon
 markuplint
 meiryo
+nextjs
 nhost
 noto
 pathtest
