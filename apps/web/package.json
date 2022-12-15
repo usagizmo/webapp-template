@@ -15,7 +15,8 @@
     "lint:markup": "markuplint \"src/**/*.svelte\"",
     "lint:js": "TIMING=1 eslint \"src\"",
     "lint:cspell": "cspell \"src/**\"",
-    "lint": "prettier --check --ignore-path=../../.prettierignore . && concurrently pnpm:lint:*",
+    "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
+    "lint": "concurrently pnpm:lint:*",
     "format": "prettier --write --ignore-path=../../.prettierignore ."
   },
   "dependencies": {
