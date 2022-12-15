@@ -18,7 +18,7 @@
       <p>{$user.email}</p>
     </div>
     <div class="mt-8 flex items-center justify-center">
-      <Button type="button" primary on:click={handleLogOut}>
+      <Button primary on:click={handleLogOut}>
         <SignOutIcon />
         <span>Log out</span>
       </Button>
