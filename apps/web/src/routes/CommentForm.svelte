@@ -93,7 +93,7 @@
       </label>
     </div>
     <div class="mt-2.5 text-right">
-      <Button type="button" primary on:click={handleSend} disabled={!text || isSending}>
+      <Button primary on:click={handleSend} disabled={!text || isSending}>
         <PaperPlaneIcon />
         <span>Send</span>
       </Button>
