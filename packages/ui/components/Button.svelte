@@ -11,7 +11,7 @@
   $: kindClass = primary
     ? 'bg-zinc-900 text-white hover:bg-zinc-700'
     : 'border border-zinc-300 bg-slate-50 hover:border-zinc-400 hover:bg-slate-100';
-  $: warnClass = warn ? 'text-red-600 hover:bg-red-50 hover:border-red-400' : '';
+  $: warnClass = warn && !primary ? 'text-red-600 hover:bg-red-50 hover:border-red-400' : '';
   $: hrefAttr = href ? { href } : {};
   $: blankAttrs =
     href && blank

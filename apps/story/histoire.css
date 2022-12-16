@@ -1,0 +1,4 @@
+.histoire-story-variant-grid-item .dark\:htw-bg-gray-700 {
+  /* Overwrite body styles */
+  @apply text-zinc-900;
+}
