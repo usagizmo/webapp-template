@@ -23,6 +23,9 @@ Monorepo template for creating a web application.
 - [`mockup`](./apps/mockup/) [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
   A starting point for building a static site.  
   [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS + [Vitest](https://vitest.dev/) (Check links + file names)
+- [`story`](./apps/story/)  
+  Stories for the Svelte Components.  
+  [Histoire](https://histoire.dev/) (w/ [Svelte](https://svelte.jp/) + [Tailwind CSS](https://tailwindcss.com/))
 - [`web`](./apps/web/) [[Demo](https://webapp-template.usagizmo.com/)]  
   A starting point for building Svelte application.  
   [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/))  
@@ -51,8 +54,6 @@ Monorepo template for creating a web application.
 
 - Change frontend framework (`apps/web`): [Next.js](https://nextjs.org/) → [SvelteKit](https://kit.svelte.jp/)
 - Change repository name: `nextjs-template` → `webapp-template`
-- [ ] `apps/storybook`: in progress
-- [ ] `apps/mockup`: in progress
 
 ### v0.23.0
 
@@ -80,6 +81,7 @@ pnpm format  # eslint --fix + prettier --write + format project-words.txt
   - `8025`: MailHog
   - `9695`: Hasura Console
 - `3000`: `apps/web/` - SvelteKit application
+- `6006`: `apps/story/` - Histoire
 - `8000`: `apps/mockup/` - Static site
 - `49160`: `apps/mockup/` - Express server
 

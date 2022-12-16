@@ -13,10 +13,12 @@ https://github.com/sveltejs/prettier-plugin-svelte
 https://github.com/tailwindlabs/prettier-plugin-tailwindcss
 https://github.com/typicode/husky
 https://github.com/usagizmo/webapp-template
+https://histoire.dev/
 https://kit.svelte.dev/
 https://nhost.io/
 https://pnpm.io/
 https://prettier.io/
+https://svelte.jp/
 https://tailwindcss.com
 https://tailwindcss.com/
 https://turborepo.org/
