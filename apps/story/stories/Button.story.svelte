@@ -9,6 +9,21 @@
   let primary = false;
   let disabled = false;
   let warn = false;
+  let source: string;
+
+  $: {
+    source = `<Button`;
+    if (primary) {
+      source += ` primary`;
+    }
+    if (disabled) {
+      source += ` disabled`;
+    }
+    if (warn) {
+      source += ` warn`;
+    }
+    source += `>${text}</Button>`;
+  }
 </script>
 
 <Hst.Story layout={{ type: 'grid' }}>
@@ -19,7 +34,7 @@
     <Hst.Checkbox bind:value={warn} title="Warn" />
   </svelte:fragment>
 
-  <Hst.Variant title="default">
+  <Hst.Variant title="default" {source}>
     <Button {primary} {disabled} {warn} on:click={(event) => logEvent('click', event)}
       >{text}</Button
     >

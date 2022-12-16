@@ -18,7 +18,7 @@
 </script>
 
 <Hst.Story layout={{ type: 'grid', width: 400 }}>
-  <Hst.Variant {source} title="default">
+  <Hst.Variant title="default" {source}>
     <svelte:fragment slot="controls">
       <Hst.Text bind:value={text} title="Text" />
       <Hst.Radio
