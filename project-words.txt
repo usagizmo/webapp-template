@@ -1,6 +1,7 @@
 graphqurl
 hasura
 hiragino
+histoire
 kaku
 lucida
 luxon
@@ -10,6 +11,7 @@ nextjs
 nhost
 noto
 pathtest
+pnpm
 sveltekit
 tailwindcss
 turborepo
