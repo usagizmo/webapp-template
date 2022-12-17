@@ -15,6 +15,9 @@ const config: UserConfigExport = defineConfig(({ mode }) => {
       }),
       sveltekit(),
     ],
+    test: {
+      include: ['src/**/*.{test,spec}.{js,ts}'],
+    },
   };
 });
 
