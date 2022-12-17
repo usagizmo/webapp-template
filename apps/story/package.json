@@ -6,7 +6,7 @@
     "dev": "histoire dev",
     "build": "histoire build",
     "preview": "histoire preview",
-    "lint:cspell": "cspell \"stories/**\"",
+    "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
     "format": "prettier --write --ignore-path=../../.prettierignore ."

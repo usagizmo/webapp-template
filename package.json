@@ -8,7 +8,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint:turbo": "turbo run lint",
-    "lint:cspell": "cspell \"README.md\"",
+    "lint:cspell": "cspell \"**\"",
     "lint": "concurrently pnpm:lint:*",
     "test": "turbo run test",
     "format:cspell": "./commands/format-project-words.sh",
