@@ -9,7 +9,7 @@
     "dev": "concurrently pnpm:dev:*",
     "lint:markup": "markuplint \"public/**/*.html\"",
     "lint:js": "TIMING=1 eslint \"public\"",
-    "lint:cspell": "cspell \"public/**\"",
+    "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
     "test:watch": "vitest",
