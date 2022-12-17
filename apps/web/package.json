@@ -17,6 +17,8 @@
     "lint:cspell": "cspell \"src/**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
+    "test:watch": "vitest",
+    "test": "vitest run",
     "format": "prettier --write --ignore-path=../../.prettierignore ."
   },
   "dependencies": {
@@ -46,6 +48,7 @@
     "tslib": "^2.4.1",
     "typescript": "^4.9.4",
     "ui": "workspace:*",
-    "vite": "^4.0.1"
+    "vite": "^4.0.1",
+    "vitest": "^0.25.8"
   }
 }
