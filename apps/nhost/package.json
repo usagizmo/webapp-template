@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "nhost up",
-    "lint:markup": "markuplint \"**/*.html\"",
+    "lint:markup": "markuplint --config ../../.markuplintrc \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
     "format": "prettier --write --ignore-path=../../.prettierignore ."
