@@ -15,9 +15,9 @@ yarn.lock
 
 # custom
 /apps/mockup/public/styles.css
-!/apps/nhost/nhost/emails/
 /apps/nhost/.nhost/
-/apps/nhost/nhost/
+/apps/nhost/nhost/*
+!/apps/nhost/nhost/emails/
 /apps/story/.histoire/
 /apps/web/$houdini/
 /apps/web/schema.graphql
