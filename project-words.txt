@@ -9,6 +9,7 @@ kaku
 lucida
 luxon
 markuplint
+markuplintrc
 meiryo
 nextjs
 nhost
