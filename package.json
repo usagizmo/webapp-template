@@ -19,7 +19,7 @@
     "@markuplint/svelte-parser": "^2.2.7",
     "concurrently": "^7.6.0",
     "cspell": "^6.17.0",
-    "eslint": "^8.29.0",
+    "eslint": "^8.30.0",
     "eslint-config-custom": "workspace:*",
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
