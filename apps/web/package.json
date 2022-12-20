@@ -30,15 +30,15 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^1.0.0",
-    "@sveltejs/kit": "^1.0.0",
+    "@sveltejs/kit": "^1.0.1",
     "@types/luxon": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "dotenv": "^16.0.3",
     "eslint-config-custom": "workspace:*",
     "graphql": "^16.0.0",
     "graphqurl": "^1.0.1",
-    "houdini": "^0.18.1",
-    "houdini-svelte": "^0.18.1",
+    "houdini": "^0.18.3",
+    "houdini-svelte": "^0.18.3",
     "postcss": "^8.4.20",
     "svelte": "^3.55.0",
     "svelte-check": "^2.10.2",
@@ -48,7 +48,7 @@
     "tslib": "^2.4.1",
     "typescript": "^4.9.4",
     "ui": "workspace:*",
-    "vite": "^4.0.1",
-    "vitest": "^0.25.8"
+    "vite": "^4.0.2",
+    "vitest": "^0.26.0"
   }
 }
