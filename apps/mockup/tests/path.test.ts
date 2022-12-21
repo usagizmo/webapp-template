@@ -22,24 +22,56 @@ describe.concurrent('The tests (will be run in parallel)', () => {
     const res = execSync(`find ${publicDir} -type f -name "*.html"`);
     const filePaths = res.toString().trim().split('\n');
 
-    let set = new Set<string>();
+    const externalLinks = new Set<string>();
+
+    const addToExternalLinks = {
+      external: (path: string) => {
+        externalLinks.add(path);
+      },
+      rootRelative: async (path: string) => {
+        try {
+          await access(join(publicDir, path));
+        } catch {
+          externalLinks.add(path);
+        }
+      },
+      hash: (path: string, text: string) => {
+        const id = path.slice(1);
+        const index = text.indexOf(id);
+        if (index === -1) {
+          externalLinks.add(path);
+        }
+      },
+      relative: async (path: string, filePath: string) => {
+        try {
+          await access(join(dirname(filePath), path));
+        } catch {
+          externalLinks.add(path);
+        }
+      },
+    };
+
     for (const filePath of filePaths) {
       const text = await readFile(filePath, 'utf8');
-      const paths = [...text.matchAll(linkRegex)].map((match) => match[1]);
-      set = new Set([...set, ...paths]);
+      await Promise.all(
+        [...text.matchAll(linkRegex)].map((match) => {
+          const path = match[1];
+
+          if (path.startsWith('http') || path.startsWith('//')) {
+            return addToExternalLinks.external(path);
+          }
+          if (path.startsWith('/')) {
+            return addToExternalLinks.rootRelative(path);
+          }
+          if (path.startsWith('#')) {
+            return addToExternalLinks.hash(path, text);
+          }
+          return addToExternalLinks.relative(path, filePath);
+        })
+      );
     }
 
-    const linkPaths = [...set].sort();
-
-    const externalLinks: string[] = [];
-    for (const linkPath of linkPaths) {
-      try {
-        await access(join(publicDir, linkPath));
-      } catch {
-        externalLinks.push(linkPath);
-      }
-    }
-    const data = externalLinks.join('\n');
+    const data = [...externalLinks].sort().join('\n');
 
     let externalLinksText = '';
     try {
