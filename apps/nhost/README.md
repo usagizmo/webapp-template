@@ -19,6 +19,10 @@ pnpm format  # Format with `prettier`
 Once you have signed up, check your email to MailHog.  
 http://localhost:8025/
 
+## Reset local database
+
+Delete `apps/nhost/.nhost` and start the dev server again with `pnpm dev`.
+
 ## (Nhost) Production settings
 
 - Deployment Branch: `main`
