@@ -1,5 +1,5 @@
 import { execSync } from 'child_process';
-import { readFile, access, writeFile } from 'fs/promises';
+import { readFile, access, writeFile } from 'node:fs/promises';
 import { dirname, join, basename } from 'path';
 import { fileURLToPath } from 'url';
 import { describe, expect, it } from 'vitest';
