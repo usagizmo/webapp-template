@@ -12,7 +12,8 @@
     "format": "prettier --write --ignore-path=../../.prettierignore ."
   },
   "dependencies": {
-    "svelte": "^3.55.0"
+    "svelte": "^3.55.0",
+    "ui": "workspace:*"
   },
   "devDependencies": {
     "@histoire/controls": "^0.12.0",
@@ -22,7 +23,6 @@
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.9.4",
-    "ui": "workspace:*",
     "vite": "^4.0.2"
   }
 }

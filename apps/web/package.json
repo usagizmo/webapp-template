@@ -47,7 +47,6 @@
     "tailwindcss": "^3.2.4",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4",
-    "ui": "workspace:*",
     "vite": "^4.0.2",
     "vitest": "^0.26.0"
   }
