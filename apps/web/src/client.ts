@@ -25,7 +25,7 @@ const fetchQuery = async ({ fetch, text = '', variables = {} }: RequestHandlerAr
 const socketClient = browser
   ? // @ts-expect-error - for using new
     new createClient({
-      url: PUBLIC_GRAPHQL_ENDPOINT.replace(/^https?/, 'wss'),
+      url: PUBLIC_GRAPHQL_ENDPOINT.replace(/^http(s?):/, 'ws$1:'),
     })
   : null;
 

@@ -10,3 +10,10 @@ export const tryErrorAlertOnHoudiniApi = (err: unknown): boolean => {
   errorMessage && alert(errorMessage);
   return !!errorMessage;
 };
+
+// for using *.id as a key in #each
+export const hasId = <T extends { id?: unknown }>(obj: T): obj is T & { id: unknown } => !!obj.id;
+export const toWithId = <T extends object>(obj: T): T & { id: unknown } => {
+  if (hasId(obj)) return obj;
+  throw new Error('.id is required');
+};
