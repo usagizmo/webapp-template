@@ -10,6 +10,8 @@
   ],
   "rules": {
     "character-reference": false,
-    "ineffective-attr": false
+    "ineffective-attr": false,
+    "label-has-control": false,
+    "require-accessible-name": false
   }
 }

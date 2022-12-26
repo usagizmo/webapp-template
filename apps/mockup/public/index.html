@@ -70,7 +70,7 @@
             <div>
               <ul class="space-y-0.5">
                 <li
-                  class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                 >
                   <a
                     target="_blank"
@@ -89,7 +89,7 @@
                   >
                 </li>
                 <li
-                  class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                 >
                   <a
                     target="_blank"
@@ -98,25 +98,31 @@
                     class="font-semibold text-blue-500"
                     >Prettier</a
                   >
-                  / (w/
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/sveltejs/prettier-plugin-svelte"
-                    class="font-semibold text-blue-500"
-                    >prettier-plugin-svelte</a
-                  >
-                  +
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss"
-                    class="font-semibold text-blue-500"
-                    >prettier-plugin-tailwindcss</a
-                  >)
+                  (w/
+                  <ul class="inline">
+                    <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/sveltejs/prettier-plugin-svelte"
+                        class="font-semibold text-blue-500"
+                        >prettier-plugin-svelte</a
+                      >
+                    </li>
+                    <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss"
+                        class="font-semibold text-blue-500"
+                        >prettier-plugin-tailwindcss</a
+                      >
+                    </li>
+                  </ul>
+                  )
                 </li>
                 <li
-                  class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                 >
                   <a
                     target="_blank"
@@ -126,13 +132,18 @@
                     >ESLint</a
                   >
                   (w/
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/import-js/eslint-plugin-import"
-                    class="font-semibold text-blue-500"
-                    >eslint-plugin-import</a
-                  >) /
+                  <ul class="inline">
+                    <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/import-js/eslint-plugin-import"
+                        class="font-semibold text-blue-500"
+                        >eslint-plugin-import</a
+                      >
+                    </li>
+                  </ul>
+                  ) /
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -142,7 +153,7 @@
                   >
                 </li>
                 <li
-                  class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                 >
                   <a
                     target="_blank"
@@ -161,7 +172,7 @@
                   >
                 </li>
                 <li
-                  class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                 >
                   <a
                     target="_blank"
@@ -171,23 +182,35 @@
                     >Renovate</a
                   >
                   (w/
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/apps/renovate-approve"
-                    class="font-semibold text-blue-500"
-                    >renovate-approve</a
-                  >)
+                  <ul class="inline">
+                    <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/apps/renovate-approve"
+                        class="font-semibold text-blue-500"
+                        >renovate-approve</a
+                      >
+                    </li>
+                  </ul>
+                  )
                 </li>
                 <li
-                  class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                 >
-                  GitHub Actions (Linting + Testing (Validate
-                  <code class="font-mono font-bold text-black">`href`</code> and
-                  <code class="font-mono font-bold text-black">`src`</code> paths))
+                  GitHub Actions (
+                  <ul class="inline">
+                    <li class="inline [&:not(:first-child):before]:content-['_+_']">Linting</li>
+                    <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                      Testing (Validate
+                      <code class="font-mono font-bold text-black">`href`</code> and
+                      <code class="font-mono font-bold text-black">`src`</code> paths)
+                    </li>
+                  </ul>
+                  )
                 </li>
                 <li
-                  class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                 >
                   Execute <code class="font-mono font-bold text-black">`eslint --fix`</code> and
                   <code class="font-mono font-bold text-black">`prettier`</code> when saving with VS
@@ -210,7 +233,7 @@
               <div>
                 <ul class="space-y-0.5">
                   <li
-                    class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-semibold">nhost</strong><br />
                     Local environment test server and production
@@ -224,29 +247,46 @@
                     migration.
                   </li>
                   <li
-                    class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-semibold">mockup</strong><br />
                     A starting point for building a static site.<br />
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://tailwindcss.com"
-                      class="font-semibold text-blue-500"
-                      >Tailwind CSS</a
-                    >
-                    + Vanilla JS +
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://vitest.dev/"
-                      class="font-semibold text-blue-500"
-                      >Vitest</a
-                    >
-                    (Check links + file names)
+                    <ul class="inline">
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://tailwindcss.com"
+                          class="font-semibold text-blue-500"
+                          >Tailwind CSS</a
+                        >
+                      </li>
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        Vanilla JS
+                      </li>
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://vitest.dev/"
+                          class="font-semibold text-blue-500"
+                          >Vitest</a
+                        >
+                        (
+                        <ul class="inline">
+                          <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                            Check links
+                          </li>
+                          <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                            file names
+                          </li>
+                        </ul>
+                        )
+                      </li>
+                    </ul>
                   </li>
                   <li
-                    class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-semibold">story</strong><br />
                     Stories for the Svelte Components.<br />
@@ -258,24 +298,30 @@
                       >Histoire</a
                     >
                     (w/
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://svelte.jp/"
-                      class="font-semibold text-blue-500"
-                      >Svelte</a
-                    >
-                    +
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://tailwindcss.com"
-                      class="font-semibold text-blue-500"
-                      >Tailwind CSS</a
-                    >)
+                    <ul class="inline">
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://svelte.jp/"
+                          class="font-semibold text-blue-500"
+                          >Svelte</a
+                        >
+                      </li>
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://tailwindcss.com"
+                          class="font-semibold text-blue-500"
+                          >Tailwind CSS</a
+                        >
+                      </li>
+                    </ul>
+                    )
                   </li>
                   <li
-                    class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-semibold">web</strong><br />
                     A starting point for building Svelte application.<br />
@@ -287,21 +333,27 @@
                       >SvelteKit</a
                     >
                     (w/
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://tailwindcss.com/"
-                      class="font-semibold text-blue-500"
-                      >Tailwind CSS</a
-                    >
-                    +
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://www.typescriptlang.org/"
-                      class="font-semibold text-blue-500"
-                      >TypeScript</a
-                    >)<br />
+                    <ul class="inline">
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://tailwindcss.com/"
+                          class="font-semibold text-blue-500"
+                          >Tailwind CSS</a
+                        >
+                      </li>
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://www.typescriptlang.org/"
+                          class="font-semibold text-blue-500"
+                          >TypeScript</a
+                        >
+                      </li>
+                    </ul>
+                    )<br />
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
@@ -310,13 +362,18 @@
                       >Nhost</a
                     >
                     (w/
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://www.houdinigraphql.com/"
-                      class="font-semibold text-blue-500"
-                      >Houdini</a
-                    >) /
+                    <ul class="inline">
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://www.houdinigraphql.com/"
+                          class="font-semibold text-blue-500"
+                          >Houdini</a
+                        >
+                      </li>
+                    </ul>
+                    ) /
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
@@ -337,13 +394,13 @@
               <div>
                 <ul class="space-y-0.5">
                   <li
-                    class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-semibold">ui</strong><br />
                     A stub Svelte component library.
                   </li>
                   <li
-                    class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-semibold">tailwind-preset-base</strong><br />
                     A preset for use with
@@ -351,32 +408,39 @@
                     <code class="font-mono font-bold text-black">`global.css`</code>.
                   </li>
                   <li
-                    class="before:context-[''] relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
+                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-semibold">eslint-config-custom</strong><br />
                     <code class="font-mono font-bold text-black">`eslint`</code>
                     configurations.<br />
                     (w/
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://github.com/sveltejs/prettier-plugin-svelte"
-                      class="font-semibold text-blue-500"
-                      >prettier-plugin-svelte</a
-                    >
-                    + eslint-config-[<a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://github.com/prettier/eslint-config-prettier"
-                      class="font-semibold text-blue-500"
-                      >prettier</a
-                    >|<a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://www.npmjs.com/package/eslint-config-turbo"
-                      class="font-semibold text-blue-500"
-                      >turbo</a
-                    >])
+                    <ul class="inline">
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://github.com/sveltejs/prettier-plugin-svelte"
+                          class="font-semibold text-blue-500"
+                          >prettier-plugin-svelte</a
+                        >
+                      </li>
+                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
+                        eslint-config-[<a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://github.com/prettier/eslint-config-prettier"
+                          class="font-semibold text-blue-500"
+                          >prettier</a
+                        >|<a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://www.npmjs.com/package/eslint-config-turbo"
+                          class="font-semibold text-blue-500"
+                          >turbo</a
+                        >]
+                      </li>
+                    </ul>
+                    )
                   </li>
                 </ul>
               </div>

@@ -27,7 +27,7 @@
           <span
             in:receive|local={{ key: 'admin-header-tabs-background' }}
             out:send|local={{ key: 'admin-header-tabs-background' }}
-            class="context-[''] absolute inset-0 block rounded-md bg-gray-100"
+            class="absolute inset-0 block rounded-md bg-gray-100"
           />
         {/if}
         <a

@@ -23,6 +23,6 @@
     "eslint-config-custom": "workspace:*",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.2.4",
-    "vitest": "^0.26.0"
+    "vitest": "^0.26.2"
   }
 }

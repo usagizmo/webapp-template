@@ -37,17 +37,17 @@
     "eslint-config-custom": "workspace:*",
     "graphql": "^16.0.0",
     "graphqurl": "^1.0.1",
-    "houdini": "^0.19.0",
-    "houdini-svelte": "^0.19.0",
+    "houdini": "^0.19.2",
+    "houdini-svelte": "^0.19.2",
     "postcss": "^8.4.20",
     "svelte": "^3.55.0",
-    "svelte-check": "^2.10.2",
+    "svelte-check": "^3.0.1",
     "svelte-preprocess": "^5.0.0",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.2.4",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4",
-    "vite": "^4.0.2",
-    "vitest": "^0.26.0"
+    "vite": "^4.0.3",
+    "vitest": "^0.26.2"
   }
 }
