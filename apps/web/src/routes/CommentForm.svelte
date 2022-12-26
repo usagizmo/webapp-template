@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { GQL_InsertComment } from '$houdini';
+  import { graphql } from '$houdini';
   import { nhost } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import { tick } from 'svelte';
@@ -10,6 +10,17 @@
   let text = '';
   let files: FileList | null = null;
   $: file = files?.[0] ?? null;
+
+  const insertComment = graphql(`
+    mutation InsertComment($text: String!, $fileId: String) {
+      insert_comments(objects: { text: $text, fileId: $fileId }) {
+        affected_rows
+        returning {
+          id
+        }
+      }
+    }
+  `);
 
   const handleSend = async () => {
     if (!text) {
@@ -35,7 +46,7 @@
     }
 
     try {
-      await GQL_InsertComment.mutate({ text, fileId });
+      await insertComment.mutate({ text, fileId });
     } catch (err) {
       tryErrorAlertOnHoudiniApi(err);
       window.location.reload();
