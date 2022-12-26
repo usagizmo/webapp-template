@@ -31,7 +31,7 @@
         <span
           in:receive={{ key: 'header-navigation-items-bar' }}
           out:send={{ key: 'header-navigation-items-bar' }}
-          class="context-[''] absolute inset-x-0 bottom-0 block h-0.5 bg-zinc-900"
+          class="absolute inset-x-0 bottom-0 block h-0.5 bg-zinc-900"
         />
       {/if}
     </li>
