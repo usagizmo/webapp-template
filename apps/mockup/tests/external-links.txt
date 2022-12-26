@@ -1,5 +1,5 @@
 https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css
-https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js
+https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js
 https://cspell.org/
 https://eslint.org
 https://fonts.googleapis.com
