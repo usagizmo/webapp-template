@@ -1,12 +1,29 @@
 <script lang="ts">
   import { isLoggedIn } from '$lib/nhost';
+  import { graphql } from '$houdini';
   import { SectionFrame } from 'ui';
   import LoginMessage from './LoginMessage.svelte';
   import Comments from './Comments.svelte';
   import CommentForm from './CommentForm.svelte';
-  import { GQL_GetCommentsSubscription } from '$houdini';
 
-  GQL_GetCommentsSubscription.listen();
+  const comments = graphql(`
+    subscription Comments {
+      comments(order_by: { createdAt: desc }) {
+        id
+        createdAt
+        createdAt
+        updatedAt
+        text
+        fileId
+        user {
+          id
+          displayName
+        }
+      }
+    }
+  `);
+
+  $: comments.listen();
 </script>
 
 <div class="mx-auto max-w-[792px] space-y-5">
@@ -24,7 +41,7 @@
       </div>
 
       <div>
-        <Comments data={$GQL_GetCommentsSubscription?.comments ?? []} />
+        <Comments data={$comments?.comments ?? []} />
       </div>
     </div>
   </SectionFrame>

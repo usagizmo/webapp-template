@@ -3,7 +3,7 @@
   import { flip } from 'svelte/animate';
   import { DateTime } from 'luxon';
   import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
-  import { GQL_DeleteComment, GQL_UpdateCommentFileId } from '$houdini';
+  import { graphql } from '$houdini';
   import { nhost, user } from '$lib/nhost';
   import { defaultDE } from '$lib/easing';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
@@ -45,6 +45,22 @@
     };
   }) as Card[];
 
+  const updateCommentFileId = graphql(`
+    mutation UpdateCommentFileId($id: uuid!, $fileId: String) {
+      update_comments_by_pk(pk_columns: { id: $id }, _set: { fileId: $fileId }) {
+        id
+      }
+    }
+  `);
+
+  const deleteComment = graphql(`
+    mutation DeleteComment($id: uuid!) {
+      delete_comments_by_pk(id: $id) {
+        id
+      }
+    }
+  `);
+
   const handleDeleteImage = async (id: string, fileId: string | null) => {
     if (!fileId) {
       throw Error('File ID not found');
@@ -61,7 +77,7 @@
     }
 
     try {
-      await GQL_UpdateCommentFileId.mutate({ id, fileId: null });
+      await updateCommentFileId.mutate({ id, fileId: null });
     } catch (err) {
       tryErrorAlertOnHoudiniApi(err);
       window.location.reload();
@@ -87,7 +103,7 @@
     }
 
     try {
-      await GQL_DeleteComment.mutate({ id });
+      await deleteComment.mutate({ id });
     } catch (err) {
       tryErrorAlertOnHoudiniApi(err);
       window.location.reload();
