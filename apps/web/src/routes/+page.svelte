@@ -9,16 +9,7 @@
   const comments = graphql(`
     subscription Comments {
       comments(order_by: { createdAt: desc }) {
-        id
-        createdAt
-        createdAt
-        updatedAt
-        text
-        fileId
-        user {
-          id
-          displayName
-        }
+        ...Comment
       }
     }
   `);
@@ -41,7 +32,7 @@
       </div>
 
       <div>
-        <Comments data={$comments?.comments ?? []} />
+        <Comments comments={$comments?.comments ?? []} />
       </div>
     </div>
   </SectionFrame>
