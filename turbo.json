@@ -27,6 +27,7 @@
       "outputs": []
     },
     "mockup#test": {
+      "dependsOn": ["build"],
       "outputs": ["tests/external-links.txt"]
     }
   }
