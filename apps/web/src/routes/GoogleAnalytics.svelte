@@ -24,7 +24,6 @@
 
 <svelte:head>
   {#if PUBLIC_GOOGLE_ANALYTICS_ID}
-    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id={PUBLIC_GOOGLE_ANALYTICS_ID}"
