@@ -2,9 +2,12 @@
   import 'tailwind-preset-base/global.css';
   import '$lib/nhost'; // initialize nhost
 
+  import GoogleAnalytics from './GoogleAnalytics.svelte';
   import Footer from './Footer.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
 </script>
+
+<GoogleAnalytics />
 
 <div class="flex h-full flex-col">
   <HeaderNavigation />
