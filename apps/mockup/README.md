@@ -14,8 +14,9 @@ pnpm test        # Check links (href/src) + image file names
 pnpm format      # Format with `prettier`
 
 # `commands/*`
-pnpm clean-image  # Remove unused image files in `public/images/*`
-pnpm deploy       # When deploying to a VPS such as DigitalOcean using `rsync`
+pnpm add-size-to-img  # Add width, height attributes to <img /> based on actual image size
+pnpm clean-image      # Remove unused image files in `public/images/*`
+pnpm deploy           # When deploying to a VPS such as DigitalOcean using `rsync`
 ```
 
 ## tests/external-links.txt

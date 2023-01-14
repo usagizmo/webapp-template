@@ -15,12 +15,14 @@
     "test:watch": "vitest",
     "test": "vitest run",
     "format": "prettier --write --ignore-path=../../.prettierignore .",
+    "add-size-to-img": "node ./commands/add-size-to-img.js",
     "clean-image": "./commands/clean-image.sh",
     "deploy": "./commands/deploy.sh"
   },
   "devDependencies": {
     "browser-sync": "^2.27.11",
     "eslint-config-custom": "workspace:*",
+    "image-size": "^1.0.2",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.2.4",
     "vitest": "^0.26.2"

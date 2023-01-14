@@ -1,0 +1,76 @@
+<img src="images/sample.svg" width="200" height="120" />
+<img src="images/sample.svg" width="200" height="120" alt="" />
+<img src="./images/sample.svg" width="200" height="120" alt="" />
+
+<img
+  src="images/sample.svg" width="200" height="120"
+/>
+<img
+  src="images/sample.svg" width="200" height="120"
+  alt=""
+/>
+<img
+  src="./images/sample.svg" width="200" height="120"
+  alt=""
+/>
+
+<!-- ignored -->
+<img src="../images/sample.svg" alt="" />
+
+<img src="images/sample.svg" width="200" alt="" />
+<img width="200" src="images/sample.svg" alt="" />
+<img src="images/sample.svg" height="120" alt="" />
+<img height="120" src="images/sample.svg" alt="" />
+<img src="images/sample.svg" width="200" height="120" alt="" />
+<img width="200" height="120" src="images/sample.svg" alt="" />
+<img src="images/sample.svg" height="120" width="200" alt="" />
+<img height="120" width="200" src="images/sample.svg" alt="" />
+
+<img
+  src="images/sample.svg"
+  width="200"
+  alt=""
+/>
+<img
+  width="200"
+  src="images/sample.svg"
+  alt=""
+/>
+<img
+  src="images/sample.svg"
+  height="120"
+  alt=""
+/>
+<img
+  height="120"
+  src="images/sample.svg"
+  alt=""
+/>
+<img
+  src="images/sample.svg"
+  width="200"
+  height="120"
+  alt=""
+/>
+<img
+  width="200"
+  height="120"
+  src="images/sample.svg"
+  alt=""
+/>
+<img
+  src="images/sample.svg"
+  height="120"
+  width="200"
+  alt=""
+/>
+<img
+  height="120"
+  width="200"
+  src="images/sample.svg"
+  alt=""
+/>
+
+<img src="//.../sample.svg" alt="" />
+<img src="http://.../sample.svg" alt="" />
+<img src="https://.../sample.svg" alt="" />
