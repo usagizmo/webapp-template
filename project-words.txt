@@ -1,6 +1,7 @@
 ahvu
 automerge
 citext
+dirents
 graphqurl
 hasura
 hiragino

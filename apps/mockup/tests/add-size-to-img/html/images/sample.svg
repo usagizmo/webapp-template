@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="200" height="120" style="fill: rgb(220, 20, 60);"/>
+  <text style="white-space: pre; fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 16px; text-anchor: middle; dominant-baseline: central;" x="100" y="60">200 x 120</text>
+</svg>
