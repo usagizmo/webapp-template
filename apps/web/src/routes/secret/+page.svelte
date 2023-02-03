@@ -1,6 +1,13 @@
 <script lang="ts">
-  import { SectionFrame } from 'ui';
+  import { Meta, SectionFrame } from 'ui';
+
+  $: meta = {
+    title: `Secret | WebApp Template (web)`,
+    canonical: 'https://webapp-template.usagizmo.com/secret',
+  } as const;
 </script>
+
+<Meta {...meta} />
 
 <div class="mx-auto max-w-[792px]">
   <SectionFrame>

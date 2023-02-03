@@ -1,7 +1,7 @@
 <script lang="ts">
   import { isLoggedIn } from '$lib/nhost';
   import { graphql } from '$houdini';
-  import { SectionFrame } from 'ui';
+  import { Meta, SectionFrame } from 'ui';
   import LoginMessage from './LoginMessage.svelte';
   import Comments from './Comments.svelte';
   import CommentForm from './CommentForm.svelte';
@@ -15,7 +15,15 @@
   `);
 
   $: comments.listen();
+
+  $: meta = {
+    type: 'website',
+    title: `WebApp Template (web)`,
+    canonical: 'https://webapp-template.usagizmo.com',
+  } as const;
 </script>
+
+<Meta {...meta} />
 
 <div class="mx-auto max-w-[792px] space-y-5">
   {#if !$isLoggedIn}
