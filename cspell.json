@@ -13,6 +13,7 @@
     "node_modules",
     "/project-words.txt",
     // custom
+    "*.svg",
     "/.vscode/",
     "/apps/mockup/public/styles.css",
     "/apps/nhost/nhost/",
