@@ -2,14 +2,21 @@
   import { goto } from '$app/navigation';
   import { isLoggedIn, logOut, user } from '$lib/nhost';
   import { ROUTE } from '$lib/routes';
-  import { Button, SectionFrame, SignOutIcon } from 'ui';
+  import { Button, Meta, SectionFrame, SignOutIcon } from 'ui';
   import LoginMessage from '../LoginMessage.svelte';
 
   const handleLogOut = async () => {
     await logOut();
     goto(ROUTE.ADMIN_LOGIN);
   };
+
+  $: meta = {
+    title: `Admin | WebApp Template (web)`,
+    canonical: 'https://webapp-template.usagizmo.com/admin',
+  } as const;
 </script>
+
+<Meta {...meta} />
 
 {#if $isLoggedIn && $user}
   <SectionFrame>
