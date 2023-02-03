@@ -7,9 +7,18 @@
     "./global.css": "./global.css"
   },
   "scripts": {
+    "lint:js": "TIMING=1 eslint .",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
     "format": "prettier --write --ignore-path=../../.prettierignore ."
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "eslint-config-custom": "workspace:*",
+    "tailwindcss": "^3.2.4"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
