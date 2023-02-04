@@ -1,3 +1,5 @@
+import type { NhostSession } from './nhost';
+
 export const tryErrorAlertOnNhostApi = (res: { error?: { message: string } | null }): boolean => {
   const errorMessage = res.error?.message;
   errorMessage && alert(errorMessage);
@@ -9,6 +11,10 @@ export const tryErrorAlertOnHoudiniApi = (err: unknown): boolean => {
   const errorMessage = err[0].message;
   errorMessage && alert(errorMessage);
   return !!errorMessage;
+};
+
+export const parseSession = (cookiesSession: string | undefined): NhostSession | null => {
+  return cookiesSession ? JSON.parse(cookiesSession) : null;
 };
 
 // for using *.id as a key in #each
