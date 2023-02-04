@@ -1,13 +1,11 @@
-import { get } from 'svelte/store';
-import { accessToken } from '$lib/nhost';
 import { PUBLIC_GRAPHQL_ENDPOINT } from '$env/static/public';
 import { HoudiniClient, type RequestHandlerArgs } from '$houdini';
 import { createClient } from 'graphql-ws';
 import { browser } from '$app/environment';
 
-const fetchQuery = async ({ fetch, text = '', variables = {} }: RequestHandlerArgs) => {
+const fetchQuery = async ({ fetch, text = '', variables = {}, session }: RequestHandlerArgs) => {
   const url = PUBLIC_GRAPHQL_ENDPOINT;
-  const token = get(accessToken);
+  const token = session.token as string | null;
   const result = await fetch(url, {
     method: 'POST',
     headers: {
