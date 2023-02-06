@@ -8,4 +8,4 @@ export const ROUTE = {
   [key in string]: `/${string}`;
 };
 
-export type RouteValue = typeof ROUTE[keyof typeof ROUTE];
+export type RouteValue = (typeof ROUTE)[keyof typeof ROUTE];
