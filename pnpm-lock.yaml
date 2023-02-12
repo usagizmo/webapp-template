@@ -51,7 +51,7 @@ importers:
 
   apps/story:
     specifiers:
-      '@histoire/controls': ^0.13.0
+      '@histoire/controls': ^0.14.0
       '@histoire/plugin-svelte': ^0.13.0
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       histoire: ^0.13.0
@@ -65,7 +65,7 @@ importers:
       svelte: 3.55.1
       ui: link:../../packages/ui
     devDependencies:
-      '@histoire/controls': 0.13.0
+      '@histoire/controls': 0.14.2
       '@histoire/plugin-svelte': 0.13.0_wozrsekbrerbxrfjzpn6qlabga
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.1.1
       histoire: 0.13.0_vite@4.1.1
@@ -1041,6 +1041,19 @@ packages:
       '@histoire/vendors': 0.13.0
     dev: true
 
+  /@histoire/controls/0.14.2:
+    resolution: {integrity: sha512-6pVyjwVxFLqsUb4stvXJ6BmXjr82tfWA4Gv0oipZcDB8zDxDhhx6ckuy+9l94W3BsQfH2ZaRruCv6dJUtqiFZQ==}
+    dependencies:
+      '@codemirror/commands': 6.2.0
+      '@codemirror/lang-json': 6.0.1
+      '@codemirror/language': 6.4.0
+      '@codemirror/lint': 6.1.0
+      '@codemirror/state': 6.2.0
+      '@codemirror/theme-one-dark': 6.1.0
+      '@codemirror/view': 6.7.3
+      '@histoire/vendors': 0.14.2
+    dev: true
+
   /@histoire/plugin-svelte/0.13.0_wozrsekbrerbxrfjzpn6qlabga:
     resolution: {integrity: sha512-hXq6XAxY8YSddp6bA2Og87htHVU0lTxL2BJjIXk0gptRnfmmpKR21k0+qbY0dcFQuOehLZSCgRCZHghSCYFSww==}
     peerDependencies:
@@ -1071,6 +1084,10 @@ packages:
 
   /@histoire/vendors/0.13.0:
     resolution: {integrity: sha512-zJnXmrnfqKuinNktAYLjdxaM+ppMmOWf4xFA7zeTRzH/vkA34LWQxaCefGuGM5rV0cPQ+Z4llq9X3d6196WqrQ==}
+    dev: true
+
+  /@histoire/vendors/0.14.2:
+    resolution: {integrity: sha512-x8B8KxHXSC8YdMAHJtJBBGQYXHP0jcxDxnytwrZOxoCtzwOYghHJNJ8wPfwboKNE0E3ot6vJSilZahwGVLX+nw==}
     dev: true
 
   /@humanwhocodes/config-array/0.11.8:
