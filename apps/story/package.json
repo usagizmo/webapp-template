@@ -16,7 +16,7 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@histoire/controls": "^0.13.0",
+    "@histoire/controls": "^0.14.0",
     "@histoire/plugin-svelte": "^0.13.0",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "histoire": "^0.13.0",
