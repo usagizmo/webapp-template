@@ -54,7 +54,7 @@ importers:
       '@histoire/controls': ^0.15.0
       '@histoire/plugin-svelte': ^0.15.0
       '@sveltejs/vite-plugin-svelte': ^2.0.2
-      histoire: ^0.13.0
+      histoire: ^0.15.0
       svelte: ^3.55.1
       tailwind-preset-base: workspace:*
       tailwindcss: ^3.2.4
@@ -66,9 +66,9 @@ importers:
       ui: link:../../packages/ui
     devDependencies:
       '@histoire/controls': 0.15.8_vite@4.1.1
-      '@histoire/plugin-svelte': 0.15.8_wozrsekbrerbxrfjzpn6qlabga
+      '@histoire/plugin-svelte': 0.15.8_tqj324opsv35rbdcthvnwzpohe
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.1.1
-      histoire: 0.13.0_vite@4.1.1
+      histoire: 0.15.8_vite@4.1.1
       tailwind-preset-base: link:../../packages/tailwind-preset-base
       tailwindcss: 3.2.4_postcss@8.4.21
       typescript: 4.9.5
@@ -164,6 +164,11 @@ importers:
       svelte: 3.55.1
 
 packages:
+
+  /@akryum/tinypool/0.3.1:
+    resolution: {integrity: sha512-nznEC1ZA/m3hQDEnrGQ4c5gkaa9pcaVnw4LFJyzBAaR7E3nfiAPEHS3otnSafpZouVnoKeITl5D+2LsnwlnK8g==}
+    engines: {node: '>=14.0.0'}
+    dev: true
 
   /@ardatan/sync-fetch/0.0.1:
     resolution: {integrity: sha512-xhlTqH0m31mnsG0tIP4ETgfSB6gXDaYYsUWTrlUV93fFQPI9dd8hE0Ot6MHLCtqgB32hwJAC3YZMWlXZw7AleA==}
@@ -1015,30 +1020,17 @@ packages:
       graphql: 15.8.0
     dev: true
 
-  /@histoire/app/0.13.0_vite@4.1.1:
-    resolution: {integrity: sha512-ldpBxjb4LM/VcTa6100jj8SogX1bTJb7feDj2sYBxFSHZGmaK03s5Bom40KEhgaMMSCZ3EQZJszwD3LbFkyGCA==}
+  /@histoire/app/0.15.8_vite@4.1.1:
+    resolution: {integrity: sha512-kVMqd07PS7RyI+XGQ2pMxXcj/UtsuHZc3nwNV8CfislUir9eK+itQBI3K8okqFt513tX85zUe82Dob2knrJ9NQ==}
     dependencies:
-      '@histoire/controls': 0.13.0
-      '@histoire/shared': 0.13.0_vite@4.1.1
-      '@histoire/vendors': 0.13.0
+      '@histoire/controls': 0.15.8_vite@4.1.1
+      '@histoire/shared': 0.15.8_vite@4.1.1
+      '@histoire/vendors': 0.15.8
       '@types/flexsearch': 0.7.3
       flexsearch: 0.7.21
-      shiki-es: 0.1.2
+      shiki-es: 0.2.0
     transitivePeerDependencies:
       - vite
-    dev: true
-
-  /@histoire/controls/0.13.0:
-    resolution: {integrity: sha512-9JhP3rrl97ffmRt1U0z7LgKKDrctsH/NgKTP/WaGF2WZxxT8jPgxlq0tPrJnyjj6skVgH819xVB7Lk75l9+VHg==}
-    dependencies:
-      '@codemirror/commands': 6.2.0
-      '@codemirror/lang-json': 6.0.1
-      '@codemirror/language': 6.4.0
-      '@codemirror/lint': 6.1.0
-      '@codemirror/state': 6.2.0
-      '@codemirror/theme-one-dark': 6.1.0
-      '@codemirror/view': 6.7.3
-      '@histoire/vendors': 0.13.0
     dev: true
 
   /@histoire/controls/0.15.8_vite@4.1.1:
@@ -1057,7 +1049,7 @@ packages:
       - vite
     dev: true
 
-  /@histoire/plugin-svelte/0.15.8_wozrsekbrerbxrfjzpn6qlabga:
+  /@histoire/plugin-svelte/0.15.8_tqj324opsv35rbdcthvnwzpohe:
     resolution: {integrity: sha512-9W/I+W0u90lrhZu5yre8Jsb2S3/a8009HztXC890LAMVp9MJ285aQY09cVJBUso+q9h5tXVjz5sbZxfKFZ0Aqg==}
     peerDependencies:
       histoire: ^0.15.8
@@ -1067,25 +1059,12 @@ packages:
       '@histoire/shared': 0.15.8_vite@4.1.1
       '@histoire/vendors': 0.15.8
       change-case: 4.1.2
-      histoire: 0.13.0_vite@4.1.1
+      histoire: 0.15.8_vite@4.1.1
       launch-editor: 2.6.0
       pathe: 0.2.0
       svelte: 3.55.1
     transitivePeerDependencies:
       - vite
-    dev: true
-
-  /@histoire/shared/0.13.0_vite@4.1.1:
-    resolution: {integrity: sha512-J/4yVFQxSx/I00YzWXwFDqd1wY4uZIu6OF7HLBUrzTmSJrzWI3tEHsNj0xgiw0Wu1Wx8wqhN2RKoAQLah6VKeA==}
-    peerDependencies:
-      vite: ^2.9.0 || ^3.0.0 || ^4.0.0
-    dependencies:
-      '@types/fs-extra': 9.0.13
-      '@types/markdown-it': 12.2.3
-      chokidar: 3.5.3
-      pathe: 0.2.0
-      picocolors: 1.0.0
-      vite: 4.1.1
     dev: true
 
   /@histoire/shared/0.15.8_vite@4.1.1:
@@ -1100,10 +1079,6 @@ packages:
       pathe: 0.2.0
       picocolors: 1.0.0
       vite: 4.1.1
-    dev: true
-
-  /@histoire/vendors/0.13.0:
-    resolution: {integrity: sha512-zJnXmrnfqKuinNktAYLjdxaM+ppMmOWf4xFA7zeTRzH/vkA34LWQxaCefGuGM5rV0cPQ+Z4llq9X3d6196WqrQ==}
     dev: true
 
   /@histoire/vendors/0.15.8:
@@ -4333,16 +4308,17 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /histoire/0.13.0_vite@4.1.1:
-    resolution: {integrity: sha512-5CZJVz89/lk1eh3GPI7VX7B9o4izf9xMgi4eGkeGCwpGn/zxLqCFhHJtUkpsDKnzmipeh4opp+PdEorecWBDbQ==}
+  /histoire/0.15.8_vite@4.1.1:
+    resolution: {integrity: sha512-weDuhDeguNy+9MNTm04OCk2tyJCKndzxp9pcOivxrIeuwmxA1nv7L5bye1YG7gjKWEOuifxRt9VWYAHo2Nc8VA==}
     hasBin: true
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0 || ^4.0.0
     dependencies:
-      '@histoire/app': 0.13.0_vite@4.1.1
-      '@histoire/controls': 0.13.0
-      '@histoire/shared': 0.13.0_vite@4.1.1
-      '@histoire/vendors': 0.13.0
+      '@akryum/tinypool': 0.3.1
+      '@histoire/app': 0.15.8_vite@4.1.1
+      '@histoire/controls': 0.15.8_vite@4.1.1
+      '@histoire/shared': 0.15.8_vite@4.1.1
+      '@histoire/vendors': 0.15.8
       '@types/flexsearch': 0.7.3
       '@types/markdown-it': 12.2.3
       birpc: 0.1.1
@@ -4366,9 +4342,8 @@ packages:
       pathe: 0.2.0
       picocolors: 1.0.0
       sade: 1.8.1
-      shiki-es: 0.1.2
+      shiki-es: 0.2.0
       sirv: 2.0.2
-      tinypool: 0.1.3
       vite: 4.1.1
       vite-node: 0.28.4
     transitivePeerDependencies:
@@ -4471,7 +4446,7 @@ packages:
       depd: 1.1.1
       inherits: 2.0.3
       setprototypeof: 1.0.3
-      statuses: 1.4.0
+      statuses: 1.5.0
     dev: true
 
   /http-errors/1.6.3:
@@ -4481,7 +4456,7 @@ packages:
       depd: 1.1.2
       inherits: 2.0.3
       setprototypeof: 1.1.0
-      statuses: 1.4.0
+      statuses: 1.5.0
     dev: true
 
   /http-errors/2.0.0:
@@ -6620,8 +6595,8 @@ packages:
     resolution: {integrity: sha512-QHsz8GgQIGKlRi24yFc6a6lN69Idnx634w49ay6+jA5yFh7a1UY+4Rp6HPx/L/1zcEDPEij8cIsiqR6bQsE5VQ==}
     dev: true
 
-  /shiki-es/0.1.2:
-    resolution: {integrity: sha512-eqtfk8idlYlSLAn0gp0Ly2+FbKc2d78IddigHSS4iHAnpXoY2kdRzyFGZOdi6TvemYMnRhZBi1HsSqZc5eNKqg==}
+  /shiki-es/0.2.0:
+    resolution: {integrity: sha512-RbRMD+IuJJseSZljDdne9ThrUYrwBwJR04FvN4VXpfsU3MNID5VJGHLAD5je/HGThCyEKNgH+nEkSFEWKD7C3Q==}
     dev: true
 
   /side-channel/1.0.4:
@@ -7195,11 +7170,6 @@ packages:
 
   /tinybench/2.3.1:
     resolution: {integrity: sha512-hGYWYBMPr7p4g5IarQE7XhlyWveh1EKhy4wUBS1LrHXCKYgvz+4/jCqgmJqZxxldesn05vccrtME2RLLZNW7iA==}
-    dev: true
-
-  /tinypool/0.1.3:
-    resolution: {integrity: sha512-2IfcQh7CP46XGWGGbdyO4pjcKqsmVqFAPcXfPxcPXmOWt9cYkTP9HcDmGgsfijYoAEc4z9qcpM/BaBz46Y9/CQ==}
-    engines: {node: '>=14.0.0'}
     dev: true
 
   /tinypool/0.3.1:
