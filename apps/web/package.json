@@ -39,7 +39,7 @@
     "eslint-config-custom": "workspace:*",
     "graphql": "^16.0.0",
     "graphqurl": "^1.0.1",
-    "houdini": "^0.20.4",
+    "houdini": "^1.0.0",
     "houdini-svelte": "^0.20.4",
     "postcss": "^8.4.21",
     "svelte": "^3.55.1",

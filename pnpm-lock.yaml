@@ -87,7 +87,7 @@ importers:
       graphql: ^16.6.0
       graphql-ws: ^5.11.3
       graphqurl: ^1.0.1
-      houdini: ^0.20.4
+      houdini: ^1.0.0
       houdini-svelte: ^0.20.4
       js-cookie: ^3.0.1
       luxon: ^3.2.1
@@ -118,7 +118,7 @@ importers:
       dotenv: 16.0.3
       eslint-config-custom: link:../../packages/eslint-config-custom
       graphqurl: 1.0.1_@types+node@18.11.19
-      houdini: 0.20.4
+      houdini: 1.0.9
       houdini-svelte: 0.20.4_fpwzejcmfqpdneobdih363qpvq
       postcss: 8.4.21
       svelte: 3.55.1
@@ -4414,6 +4414,34 @@ packages:
       '@types/prompts': 2.4.2
       ast-types: 0.16.1
       commander: 9.5.0
+      estree-walker: 3.0.3
+      fs-extra: 10.1.0
+      glob: 8.1.0
+      graphql: 15.8.0
+      memfs: 3.4.13
+      micromatch: 4.0.5
+      minimatch: 5.1.6
+      node-fetch: 3.3.0
+      npx-import: 1.1.4
+      prompts: 2.4.2
+      recast: 0.23.1
+      vite-plugin-watch-and-run: 1.1.1
+    dev: true
+
+  /houdini/1.0.9:
+    resolution: {integrity: sha512-pDMyFB81fAlHOTElySGKJTz5LHN2rHwqYX83Scojqvdw5Y1p8yYdSHG0/pWUAi+LsbMONfZnIffIRyJSnzC9qQ==}
+    hasBin: true
+    dependencies:
+      '@babel/parser': 7.20.15
+      '@graphql-tools/schema': 9.0.16_graphql@15.8.0
+      '@kitql/helper': 0.5.0
+      '@types/estree': 1.0.0
+      '@types/fs-extra': 9.0.13
+      '@types/micromatch': 4.0.2
+      '@types/prompts': 2.4.2
+      ast-types: 0.16.1
+      commander: 9.5.0
+      deepmerge: 4.3.0
       estree-walker: 3.0.3
       fs-extra: 10.1.0
       glob: 8.1.0
