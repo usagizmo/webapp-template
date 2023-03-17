@@ -6,6 +6,7 @@ graphqurl
 hasura
 hiragino
 histoire
+icns
 kaku
 lucida
 luxon
