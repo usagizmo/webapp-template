@@ -1,13 +1,10 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
-  import { isLoggedIn, logOut, user } from '$lib/nhost';
-  import { ROUTE } from '$lib/routes';
+  import { user, logOut } from '$lib/nhost';
   import { Button, Meta, SectionFrame, SignOutIcon } from 'ui';
   import LoginMessage from '../LoginMessage.svelte';
 
   const handleLogOut = async () => {
     await logOut();
-    goto(ROUTE.ADMIN_LOGIN);
   };
 
   $: meta = {
@@ -18,7 +15,7 @@
 
 <Meta {...meta} />
 
-{#if $isLoggedIn && $user}
+{#if $user}
   <SectionFrame>
     <div class="flex flex-col items-center justify-center">
       <p class="text-4xl font-bold">{$user.displayName}</p>

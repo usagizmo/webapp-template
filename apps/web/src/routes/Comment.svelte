@@ -81,10 +81,10 @@
       // return;
     }
 
-    try {
-      await updateCommentFileId.mutate({ id, fileId: null });
-    } catch (err) {
-      tryErrorAlertOnHoudiniApi(err);
+    const { errors } = await updateCommentFileId.mutate({ id, fileId: null });
+
+    if (errors?.length) {
+      tryErrorAlertOnHoudiniApi(errors);
       window.location.reload();
       return;
     }
@@ -107,10 +107,10 @@
       }
     }
 
-    try {
-      await deleteComment.mutate({ id });
-    } catch (err) {
-      tryErrorAlertOnHoudiniApi(err);
+    const { errors } = await deleteComment.mutate({ id });
+
+    if (errors?.length) {
+      tryErrorAlertOnHoudiniApi(errors);
       window.location.reload();
       return;
     }
@@ -166,7 +166,7 @@
     </div>
 
     {#if isActionVisible}
-      <div class="absolute right-0 bottom-0" transition:fade={{ duration: 75 }}>
+      <div class="absolute bottom-0 right-0" transition:fade={{ duration: 75 }}>
         <Button warn on:click={handleDelete} disabled={isDeleting}>Delete</Button>
       </div>
     {/if}

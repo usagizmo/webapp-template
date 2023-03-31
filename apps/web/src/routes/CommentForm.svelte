@@ -45,13 +45,14 @@
       }
     }
 
-    try {
-      await insertComment.mutate({ text, fileId });
-    } catch (err) {
-      tryErrorAlertOnHoudiniApi(err);
+    const { errors } = await insertComment.mutate({ text, fileId });
+
+    if (errors?.length) {
+      tryErrorAlertOnHoudiniApi(errors);
       window.location.reload();
       return;
     }
+
     text = '';
     files = null;
 
@@ -73,7 +74,7 @@
     <div class="gap flex gap-1.5">
       <textarea
         bind:this={textAreaEl}
-        class="h-24 flex-1 rounded-md border border-zinc-300 bg-slate-50 py-2 px-2.5 placeholder:text-zinc-300 disabled:bg-slate-100"
+        class="h-24 flex-1 rounded-md border border-zinc-300 bg-slate-50 px-2.5 py-2 placeholder:text-zinc-300 disabled:bg-slate-100"
         placeholder="Write a comment..."
         bind:value={text}
         on:keydown={handleKeyDown}

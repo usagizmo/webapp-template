@@ -9,12 +9,15 @@ configuration:
       custom_name: expiresAt
     refresh_token:
       custom_name: refreshToken
+    refresh_token_hash:
+      custom_name: refreshTokenHash
     user_id:
       custom_name: userId
   custom_column_names:
     created_at: createdAt
     expires_at: expiresAt
     refresh_token: refreshToken
+    refresh_token_hash: refreshTokenHash
     user_id: userId
   custom_name: authRefreshTokens
   custom_root_fields:

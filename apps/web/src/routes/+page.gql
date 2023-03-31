@@ -1,0 +1,5 @@
+query Comments {
+  comments(order_by: { createdAt: desc }) {
+    ...Comment
+  }
+}

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "generate:svelte": "svelte-kit sync",
-    "generate:pull-schema": "node --require=dotenv/config ./commands/pull-schema.js",
+    "generate:pull-schema": "houdini pull-schema",
     "generate": "concurrently pnpm:generate:*",
     "dev": "vite dev --port 3000 --open",
     "build": "pnpm generate && vite build",

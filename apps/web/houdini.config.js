@@ -2,6 +2,12 @@
 
 /** @type {import('houdini').ConfigFile} */
 const config = {
+  watchSchema: {
+    url: 'env:PUBLIC_GRAPHQL_ENDPOINT',
+    headers: {
+      'X-Hasura-Admin-Secret': (env) => env.HASURA_ADMIN_SECRET,
+    },
+  },
   plugins: {
     'houdini-svelte': {
       client: './src/client',
