@@ -2,7 +2,13 @@
   import { fade } from 'svelte/transition';
   import { DateTime } from 'luxon';
   import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
-  import { fragment, graphql, type Comment } from '$houdini';
+  import {
+    DeleteCommentStore,
+    fragment,
+    graphql,
+    UpdateCommentFileIdStore,
+    type Comment,
+  } from '$houdini';
   import { nhost, user } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
 
@@ -48,21 +54,8 @@
 
   $: createdAt = DateTime.fromJSDate(card.createdAt);
 
-  const updateCommentFileId = graphql(`
-    mutation UpdateCommentFileId($id: uuid!, $fileId: String) {
-      update_comments_by_pk(pk_columns: { id: $id }, _set: { fileId: $fileId }) {
-        id
-      }
-    }
-  `);
-
-  const deleteComment = graphql(`
-    mutation DeleteComment($id: uuid!) {
-      delete_comments_by_pk(id: $id) {
-        id
-      }
-    }
-  `);
+  const updateCommentFileId = new UpdateCommentFileIdStore();
+  const deleteComment = new DeleteCommentStore();
 
   const handleDeleteImage = async () => {
     const { id, fileId } = card;
