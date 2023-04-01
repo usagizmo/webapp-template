@@ -8,7 +8,11 @@
 
   export let comments: Comment[] = [];
 
-  $: commentsWithId = comments.map(toWithId);
+  function reverse<T>(arr: T[]): T[] {
+    return arr.slice().reverse();
+  }
+
+  $: commentsWithId = reverse(comments.map(toWithId));
 </script>
 
 <div class="divide-y divide-slate-200">

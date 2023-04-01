@@ -1,0 +1,6 @@
+query Comments {
+  # I want to add it on top with InsertComment, so `createdAt: asc`.
+  comments(order_by: { createdAt: asc }) @list(name: "Comments") {
+    ...Comment
+  }
+}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { graphql } from '$houdini';
+  import { InsertCommentStore } from '$houdini';
   import { nhost } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import { tick } from 'svelte';
@@ -11,16 +11,7 @@
   let files: FileList | null = null;
   $: file = files?.[0] ?? null;
 
-  const insertComment = graphql(`
-    mutation InsertComment($text: String!, $fileId: String) {
-      insert_comments(objects: { text: $text, fileId: $fileId }) {
-        affected_rows
-        returning {
-          id
-        }
-      }
-    }
-  `);
+  const insertComment = new InsertCommentStore();
 
   const handleSend = async () => {
     if (!text) {
@@ -45,13 +36,14 @@
       }
     }
 
-    try {
-      await insertComment.mutate({ text, fileId });
-    } catch (err) {
-      tryErrorAlertOnHoudiniApi(err);
+    const { errors } = await insertComment.mutate({ text, fileId });
+
+    if (errors?.length) {
+      tryErrorAlertOnHoudiniApi(errors);
       window.location.reload();
       return;
     }
+
     text = '';
     files = null;
 
@@ -73,7 +65,7 @@
     <div class="gap flex gap-1.5">
       <textarea
         bind:this={textAreaEl}
-        class="h-24 flex-1 rounded-md border border-zinc-300 bg-slate-50 py-2 px-2.5 placeholder:text-zinc-300 disabled:bg-slate-100"
+        class="h-24 flex-1 rounded-md border border-zinc-300 bg-slate-50 px-2.5 py-2 placeholder:text-zinc-300 disabled:bg-slate-100"
         placeholder="Write a comment..."
         bind:value={text}
         on:keydown={handleKeyDown}
@@ -98,7 +90,7 @@
         {:else}
           <span
             class="grid h-24 w-32 cursor-pointer place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 hover:brightness-95 peer-disabled:pointer-events-none peer-disabled:opacity-40"
-            disabled={isSending}>+Add</span
+            >+Add</span
           >
         {/if}
       </label>

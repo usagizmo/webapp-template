@@ -1,0 +1,7 @@
+mutation InsertComment($text: String!, $fileId: String) {
+  insert_comments(objects: { text: $text, fileId: $fileId }) {
+    returning {
+      ...Comments_insert
+    }
+  }
+}

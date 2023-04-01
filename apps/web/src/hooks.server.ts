@@ -7,7 +7,5 @@ export const handle: Handle = async ({ event, resolve }) => {
   const session = parseSession(event.cookies.get(NHOST_SESSION_KEY));
   const token = session?.accessToken ?? null;
   setSession(event, { token });
-
-  const response = await resolve(event);
-  return response;
+  return await resolve(event);
 };

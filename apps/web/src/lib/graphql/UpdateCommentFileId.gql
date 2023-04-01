@@ -1,0 +1,6 @@
+mutation UpdateCommentFileId($id: uuid!, $fileId: String) {
+  update_comments_by_pk(pk_columns: { id: $id }, _set: { fileId: $fileId }) {
+    id
+    fileId
+  }
+}
