@@ -9,6 +9,7 @@
   export let data: PageData;
 
   $: ({ Comments: CommentsData } = data);
+  $: comments = $CommentsData.data?.comments ?? [];
 
   $: meta = {
     type: 'website',
@@ -20,10 +21,10 @@
 <Meta {...meta} />
 
 <div class="mx-auto max-w-[792px] space-y-5">
-  {#if !$user}
-    <LoginMessage />
-  {:else}
+  {#if $user}
     <CommentForm />
+  {:else}
+    <LoginMessage />
   {/if}
 
   <SectionFrame noPad="y">
@@ -34,7 +35,7 @@
       </div>
 
       <div>
-        <Comments comments={$CommentsData.data?.comments ?? []} />
+        <Comments {comments} />
       </div>
     </div>
   </SectionFrame>
