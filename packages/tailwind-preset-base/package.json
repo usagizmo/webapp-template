@@ -1,6 +1,7 @@
 {
   "name": "tailwind-preset-base",
   "version": "0.0.0",
+  "type": "module",
   "main": "index.js",
   "exports": {
     ".": "./index.js",
@@ -17,8 +18,5 @@
     "@tailwindcss/typography": "^0.5.9",
     "eslint-config-custom": "workspace:*",
     "tailwindcss": "^3.3.1"
-  },
-  "peerDependencies": {
-    "tailwindcss": "^3.2.4"
   }
 }
