@@ -1,6 +1,8 @@
+import base from 'tailwind-preset-base';
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  presets: [require('tailwind-preset-base')],
+export default {
+  presets: [base],
   content: [
     './stories/**/*.svelte',
     '../../apps/web/lib/**/*.svelte', // for using 'apps/web'

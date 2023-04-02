@@ -1,5 +1,7 @@
+import base from 'tailwind-preset-base';
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  presets: [require('tailwind-preset-base')],
+export default {
+  presets: [base],
   content: ['./public/**/*.{html,js}'],
 };
