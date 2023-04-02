@@ -1,4 +1,5 @@
 ahvu
+autodocs
 automerge
 citext
 dirents
