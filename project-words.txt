@@ -1,11 +1,11 @@
 ahvu
+autodocs
 automerge
 citext
 dirents
 graphqurl
 hasura
 hiragino
-histoire
 icns
 kaku
 lucida

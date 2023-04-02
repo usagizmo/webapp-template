@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let noPad: boolean | string = false;
+  export let noPad: 'y' | 'top' | '' = '';
 
   $: padClass = (() => {
     switch (noPad) {
@@ -7,8 +7,6 @@
         return 'px-6';
       case 'top':
         return 'px-6 pb-6';
-      case true:
-        return '';
       default:
         return 'p-6';
     }

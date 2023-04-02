@@ -18,6 +18,7 @@
     "/.vscode/",
     "/apps/mockup/public/styles.css",
     "/apps/nhost/nhost/",
+    "/apps/story/storybook-static/",
     "/apps/web/$houdini/",
     "/apps/web/schema.graphql",
     "/pnpm-lock.yaml"
