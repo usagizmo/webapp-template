@@ -18,6 +18,6 @@ yarn.lock
 /apps/nhost/.nhost/
 /apps/nhost/nhost/*
 !/apps/nhost/nhost/emails/
-/apps/story/.histoire/
+/apps/story/storybook-static/
 /apps/web/$houdini/
 /apps/web/schema.graphql
