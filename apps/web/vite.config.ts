@@ -1,8 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import houdini from 'houdini/vite';
-import { defineConfig, loadEnv, type UserConfigExport } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 
-const config: UserConfigExport = defineConfig(({ mode }) => {
+export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
@@ -12,7 +12,7 @@ const config: UserConfigExport = defineConfig(({ mode }) => {
         schemaPollHeaders: {
           'x-hasura-admin-secret': env.HASURA_ADMIN_SECRET,
         },
-      }),
+      } as any),
       sveltekit(),
     ],
     test: {
@@ -20,5 +20,3 @@ const config: UserConfigExport = defineConfig(({ mode }) => {
     },
   };
 });
-
-export default config;
