@@ -160,7 +160,7 @@
 
     {#if isActionVisible}
       <div class="absolute bottom-0 right-0" transition:fade={{ duration: 75 }}>
-        <Button warn on:click={handleDelete} disabled={isDeleting}>Delete</Button>
+        <Button on:click={handleDelete} disabled={isDeleting}>Delete</Button>
       </div>
     {/if}
   </div>
