@@ -1,9 +1,9 @@
-import { PUBLIC_NHOST_SUBDOMAIN, PUBLIC_NHOST_REGION } from '$env/static/public';
 import { NhostClient } from '@nhost/nhost-js';
-import { writable } from 'svelte/store';
 import Cookies from 'js-cookie';
-import { parseSession, tryErrorAlertOnNhostApi } from './utils';
+import { writable } from 'svelte/store';
+import { PUBLIC_NHOST_SUBDOMAIN, PUBLIC_NHOST_REGION } from '$env/static/public';
 import { NHOST_SESSION_KEY } from './const';
+import { parseSession, tryErrorAlertOnNhostApi } from './utils';
 import type { UserInputs } from '../routes/admin/(isNotLoggedIn)/inputs';
 
 export const nhost = new NhostClient({

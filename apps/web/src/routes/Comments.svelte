@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
   import { flip } from 'svelte/animate';
+  import { fade } from 'svelte/transition';
   import { defaultDE } from '$lib/easing';
+  import { toWithId } from '$lib/utils';
   import type { Comment } from '$houdini';
   import CommentItem from './Comment.svelte';
-  import { toWithId } from '$lib/utils';
 
   export let comments: Comment[] = [];
 

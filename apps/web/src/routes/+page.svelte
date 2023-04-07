@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { user } from '$lib/nhost';
   import { Meta, SectionFrame } from 'ui';
-  import LoginMessage from './LoginMessage.svelte';
-  import Comments from './Comments.svelte';
+  import { user } from '$lib/nhost';
   import CommentForm from './CommentForm.svelte';
+  import Comments from './Comments.svelte';
+  import LoginMessage from './LoginMessage.svelte';
   import type { PageData } from './$houdini';
 
   export let data: PageData;

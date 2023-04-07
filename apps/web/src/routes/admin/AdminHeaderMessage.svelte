@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import { fade } from 'svelte/transition';
-  import { ROUTE } from '$lib/routes';
+  import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
+  import { ROUTE } from '$lib/routes';
 
   let el: HTMLElement;
   let height = 0;
@@ -18,7 +18,7 @@
 
 <svelte:window bind:innerWidth />
 
-<div class="pt-3 pb-2.5">
+<div class="pb-2.5 pt-3">
   <div class="relative" style:height={`${height}px`}>
     {#if $page.url.pathname === ROUTE.ADMIN_LOGIN}
       <div

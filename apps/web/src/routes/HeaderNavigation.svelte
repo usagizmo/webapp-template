@@ -1,9 +1,9 @@
 <script lang="ts">
   import { Button } from 'ui';
-  import { adminPath } from '$lib/store';
   import { user } from '$lib/nhost';
-  import HeaderNavigationItems from './HeaderNavigationItems.svelte';
   import { ROUTE } from '$lib/routes';
+  import { adminPath } from '$lib/store';
+  import HeaderNavigationItems from './HeaderNavigationItems.svelte';
 
   $: navItems = [
     {

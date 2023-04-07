@@ -1,8 +1,8 @@
 <script lang="ts">
+  import { crossfade } from 'svelte/transition';
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
-  import { crossfade } from 'svelte/transition';
 
   const tabs = [
     {

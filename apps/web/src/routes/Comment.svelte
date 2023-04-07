@@ -1,16 +1,11 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
   import { DateTime } from 'luxon';
+  import { fade } from 'svelte/transition';
   import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
-  import {
-    DeleteCommentStore,
-    fragment,
-    graphql,
-    UpdateCommentFileIdStore,
-    type Comment,
-  } from '$houdini';
   import { nhost, user } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
+  import { DeleteCommentStore, fragment, graphql, UpdateCommentFileIdStore } from '$houdini';
+  import type { Comment } from '$houdini';
 
   type Card = {
     id: string;

@@ -1,7 +1,7 @@
-import { PUBLIC_GRAPHQL_ENDPOINT } from '$env/static/public';
-import { HoudiniClient } from '$houdini';
 import { createClient } from 'graphql-ws';
+import { PUBLIC_GRAPHQL_ENDPOINT } from '$env/static/public';
 import { subscription } from '$houdini/plugins';
+import { HoudiniClient } from '$houdini';
 
 const url = PUBLIC_GRAPHQL_ENDPOINT;
 const wsUrl = PUBLIC_GRAPHQL_ENDPOINT.replace(/^http(s?):/, 'ws$1:');
