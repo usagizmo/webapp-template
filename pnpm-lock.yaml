@@ -221,6 +221,9 @@ importers:
       eslint-plugin-unused-imports:
         specifier: ^2.0.0
         version: 2.0.0(@typescript-eslint/eslint-plugin@5.57.0)(eslint@8.37.0)
+      typescript:
+        specifier: ^5.0.3
+        version: 5.0.3
 
   packages/tailwind-preset-base:
     devDependencies:
