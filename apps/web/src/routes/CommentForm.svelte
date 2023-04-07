@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { InsertCommentStore } from '$houdini';
-  import { nhost } from '$lib/nhost';
-  import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import { tick } from 'svelte';
   import { Button, PaperPlaneIcon, SectionFrame } from 'ui';
+  import { nhost } from '$lib/nhost';
+  import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
+  import { InsertCommentStore } from '$houdini';
 
   let textAreaEl: HTMLTextAreaElement;
   let isSending = false;

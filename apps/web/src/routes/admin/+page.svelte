@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { user, logOut } from '$lib/nhost';
   import { Button, Meta, SectionFrame, SignOutIcon } from 'ui';
+  import { user, logOut } from '$lib/nhost';
   import LoginMessage from '../LoginMessage.svelte';
 
   const handleLogOut = async () => {

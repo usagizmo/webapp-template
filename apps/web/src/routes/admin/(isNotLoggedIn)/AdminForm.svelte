@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { slide } from 'svelte/transition';
   import { getContext } from 'svelte';
+  import { slide } from 'svelte/transition';
   import { Input } from 'ui';
-  import { key, type UserInputs } from './inputs';
-  import { ROUTE } from '$lib/routes';
+  import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
+  import { ROUTE } from '$lib/routes';
+  import { key, type UserInputs } from './inputs';
 
   const { getInputs } = getContext<{
     getInputs: () => UserInputs;

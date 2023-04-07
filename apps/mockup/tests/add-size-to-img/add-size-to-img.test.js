@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
-import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 import { describe, it, expect } from 'vitest';
 import { deepReaddir, convert } from '../../commands/utils';
 

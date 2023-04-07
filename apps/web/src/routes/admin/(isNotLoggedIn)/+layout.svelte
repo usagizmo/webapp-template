@@ -1,13 +1,13 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import { SectionFrame } from 'ui';
-  import { key } from './inputs';
-  import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
-  import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
-  import AdminForm from './AdminForm.svelte';
+  import { goto } from '$app/navigation';
   import { user } from '$lib/nhost';
   import { ROUTE } from '$lib/routes';
-  import { goto } from '$app/navigation';
+  import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
+  import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
+  import AdminForm from './AdminForm.svelte';
+  import { key } from './inputs';
 
   let inputs = {
     displayName: 'Guest',
