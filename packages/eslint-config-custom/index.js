@@ -51,5 +51,6 @@ module.exports = {
         ],
       },
     ],
+    'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
   },
 };

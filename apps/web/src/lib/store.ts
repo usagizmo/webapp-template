@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
 import { user } from './nhost';
-import { ROUTE, type RouteValue } from './routes';
+import { ROUTE } from './routes';
+import type { RouteValue } from './routes';
 
 export const adminPath = writable<RouteValue>(ROUTE.ADMIN);
 

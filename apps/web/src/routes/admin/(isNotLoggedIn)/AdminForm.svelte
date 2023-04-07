@@ -5,7 +5,8 @@
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
-  import { key, type UserInputs } from './inputs';
+  import { key } from './inputs';
+  import type { UserInputs } from './inputs';
 
   const { getInputs } = getContext<{
     getInputs: () => UserInputs;
