@@ -21,7 +21,7 @@
     "@storybook/blocks": "^7.0.0",
     "@storybook/svelte": "^7.0.0",
     "@storybook/svelte-vite": "^7.0.0",
-    "@storybook/testing-library": "^0.0.14-next.2",
+    "@storybook/testing-library": "^0.1.0",
     "@sveltejs/vite-plugin-svelte": "^2.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
