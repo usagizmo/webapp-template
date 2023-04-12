@@ -2,28 +2,23 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "web#generate": {
-      "outputs": ["schema.graphql"]
-    },
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".svelte-kit/**", ".vercel/**"]
+      "outputs": [".svelte-kit/**", "schema.graphql"]
     },
     "mockup#build": {
-      "dependsOn": ["^build"],
       "outputs": ["public/styles.css"]
     },
+    "story#build": {
+      "outputs": ["storybook-static/**"]
+    },
     "web#build": {
-      "dependsOn": ["^build", "generate"],
+      "dependsOn": ["web#generate"],
       "outputs": [".svelte-kit/**", ".vercel/**", "$houdini/**", "schema.graphql"]
     },
     "dev": {
       "cache": false
     },
-    "lint": {
-      "outputs": []
-    },
-    "test": {
-      "dependsOn": ["build"],
+    "web#lint": {
+      "dependsOn": ["web#generate"],
       "outputs": []
     },
     "mockup#test": {
