@@ -22,7 +22,7 @@
       "outputs": []
     },
     "mockup#test": {
-      "dependsOn": ["build"],
+      "dependsOn": ["mockup#build"],
       "outputs": ["tests/external-links.txt"]
     }
   }
