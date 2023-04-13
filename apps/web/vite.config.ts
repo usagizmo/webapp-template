@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => {
         schemaPollHeaders: {
           'x-hasura-admin-secret': env.HASURA_ADMIN_SECRET,
         },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any),
       sveltekit(),
     ],
