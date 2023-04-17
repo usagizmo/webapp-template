@@ -27,6 +27,8 @@ module.exports = {
       'error',
       {
         argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
       },
     ],
     'unused-imports/no-unused-imports': 'error',
