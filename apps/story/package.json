@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
+    "lint:js": "TIMING=1 eslint .",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
-    "format": "prettier --write --ignore-path=../../.prettierignore ."
+    "format": "eslint . --fix && prettier --write --ignore-path=../../.prettierignore ."
   },
   "dependencies": {
     "svelte": "^3.58.0",
