@@ -25,6 +25,6 @@
     "image-size": "^1.0.2",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.3.1",
-    "vitest": "^0.30.0"
+    "vitest": "^0.30.1"
   }
 }
