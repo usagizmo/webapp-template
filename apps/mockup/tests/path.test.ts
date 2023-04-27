@@ -44,7 +44,8 @@ describe.concurrent('The tests (will be run in parallel)', () => {
       },
       relative: async (path: string, filePath: string) => {
         try {
-          await access(join(dirname(filePath), path));
+          const pathWithoutQuery = path.split('?')[0];
+          await access(join(dirname(filePath), pathWithoutQuery));
         } catch {
           externalLinks.add(path);
         }
