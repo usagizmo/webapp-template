@@ -8,7 +8,7 @@
     "./global.css": "./global.css"
   },
   "scripts": {
-    "lint:js": "TIMING=1 eslint .",
+    "lint:js": "eslint .",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
