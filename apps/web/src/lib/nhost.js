@@ -4,25 +4,26 @@ import { writable } from 'svelte/store';
 import { PUBLIC_NHOST_SUBDOMAIN, PUBLIC_NHOST_REGION } from '$env/static/public';
 import { NHOST_SESSION_KEY } from './const';
 import { parseSession, tryErrorAlertOnNhostApi } from './utils';
-import type { UserInputs } from '../routes/admin/(isNotLoggedIn)/inputs';
+
+/**
+ * @typedef {import('@nhost/nhost-js').NhostSession} NhostSession
+ */
 
 export const nhost = new NhostClient({
   subdomain: PUBLIC_NHOST_SUBDOMAIN,
   region: PUBLIC_NHOST_REGION,
 });
 
-export type NhostSession = NonNullable<
-  Parameters<Parameters<typeof nhost.auth.onAuthStateChanged>[0]>[1]
->;
-export type User = NhostSession['user'];
-
 const session = parseSession(Cookies.get(NHOST_SESSION_KEY));
-export const user = writable<User | null>(session?.user ?? null);
+export const user = writable(session?.user ?? null);
 
-// Reload the page to apply the session when the login state changes
 let hasAlreadyAuthStateChanged = false;
 
-const setNhostSessionInCookie = (session: NhostSession) => {
+/**
+ * @param {NhostSession} session
+ * @returns {void}
+ */
+const setNhostSessionInCookie = (session) => {
   const expires = new Date();
   // Expire the cookie 60 seconds before the token expires
   expires.setSeconds(expires.getSeconds() + session.accessTokenExpiresIn - 60);
@@ -48,7 +49,11 @@ nhost.auth.onAuthStateChanged((_, session) => {
   hasAlreadyAuthStateChanged = true;
 });
 
-export const signUp = async ({ email, password, displayName }: UserInputs) => {
+/**
+ * @param {import('./userInputs').UserInputs} userInputs
+ * @returns {Promise<void>}
+ */
+export const signUp = async ({ email, password, displayName }) => {
   const res = await nhost.auth.signUp({
     email,
     password,
@@ -59,13 +64,20 @@ export const signUp = async ({ email, password, displayName }: UserInputs) => {
   tryErrorAlertOnNhostApi(res);
 };
 
-export const logIn = async (inputs: UserInputs): Promise<boolean> => {
-  const res = await nhost.auth.signIn(inputs);
+/**
+ * @param {import('./userInputs').UserInputs} userInputs
+ * @returns {Promise<boolean>}
+ */
+export const logIn = async (userInputs) => {
+  const res = await nhost.auth.signIn(userInputs);
   const hasError = tryErrorAlertOnNhostApi(res);
   return !hasError;
 };
 
-export const logOut = async (): Promise<boolean> => {
+/**
+ * @returns {Promise<boolean>}
+ */
+export const logOut = async () => {
   const res = await nhost.auth.signOut();
   const hasError = tryErrorAlertOnNhostApi(res);
   return !hasError;

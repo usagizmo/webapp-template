@@ -50,6 +50,10 @@ Monorepo template for creating a web application.
 
 ## Breaking changes
 
+### v1.6.0
+
+- Change from TypeScript to JavaScript + JSDoc
+
 ### v1.0.0
 
 - Change frontend framework (`apps/web`): [Next.js](https://nextjs.org/) → [SvelteKit](https://kit.svelte.jp/)

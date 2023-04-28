@@ -1,14 +1,20 @@
-<script lang="ts">
+<script>
   import { tick } from 'svelte';
   import { Button, PaperPlaneIcon, SectionFrame } from 'ui';
   import { nhost } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import { InsertCommentStore } from '$houdini';
 
-  let textAreaEl: HTMLTextAreaElement;
+  /** @type {HTMLTextAreaElement} */
+  let textAreaEl;
+
   let isSending = false;
   let text = '';
-  let files: FileList | null = null;
+
+  /** @type {FileList | null} */
+  let files = null;
+
+  /** @type {File | null} */
   $: file = files?.[0] ?? null;
 
   const insertComment = new InsertCommentStore();
@@ -22,8 +28,8 @@
     // before
     isSending = true;
 
-    // ...
-    let fileId: string | null = null;
+    /** @type {string | null} */
+    let fileId = null;
 
     if (file) {
       const res = await nhost.storage.upload({ file });
@@ -53,7 +59,8 @@
     textAreaEl.focus();
   };
 
-  const handleKeyDown = (e: KeyboardEvent) => {
+  /** @type {(e: KeyboardEvent) => void} */
+  const handleKeyDown = (e) => {
     if (e.metaKey && e.key === 'Enter') {
       handleSend();
     }

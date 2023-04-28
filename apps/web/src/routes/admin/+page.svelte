@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { Button, Meta, SectionFrame, SignOutIcon } from 'ui';
   import { user, logOut } from '$lib/nhost';
   import LoginMessage from '../LoginMessage.svelte';
@@ -10,7 +10,7 @@
   $: meta = {
     title: `Admin | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/admin',
-  } as const;
+  };
 </script>
 
 <Meta {...meta} />

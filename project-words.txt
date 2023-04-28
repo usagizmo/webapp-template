@@ -24,4 +24,5 @@ timestamptz
 turborepo
 unmarshal
 usagizmo
+vite
 yakuhanjp

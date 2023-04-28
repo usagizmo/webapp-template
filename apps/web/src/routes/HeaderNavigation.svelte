@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { Button } from 'ui';
   import { user } from '$lib/nhost';
   import { ROUTE } from '$lib/routes';

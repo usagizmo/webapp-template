@@ -1,10 +1,11 @@
-<script lang="ts">
+<script>
   import { fade } from 'svelte/transition';
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  let el: HTMLElement;
+  /** @type {HTMLElement} */
+  let el;
   let height = 0;
   let innerWidth = 0;
 

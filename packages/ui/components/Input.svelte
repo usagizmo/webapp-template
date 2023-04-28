@@ -1,8 +1,10 @@
-<script lang="ts">
+<script>
   export let label = '';
   export let type = 'text';
   export let value = '';
-  export let error: { required?: string } = {};
+
+  /** @type {{ required?: string }} */
+  export let error = {};
 
   let classes = 'w-full rounded-md border border-zinc-300 bg-slate-50 py-2 px-2.5';
   let isDirty = false;

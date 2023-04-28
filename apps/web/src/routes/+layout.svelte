@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import 'tailwind-preset-base/global.css';
   import '$lib/nhost'; // initialize nhost
 

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { setContext } from 'svelte';
   import { SectionFrame } from 'ui';
   import { goto } from '$app/navigation';
@@ -7,16 +7,17 @@
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import AdminForm from './AdminForm.svelte';
-  import { key } from './inputs';
+  import { userInputsKey } from '$lib/userInputs';
 
-  let inputs = {
+  /** @type {import('$lib/userInputs').UserInputs} */
+  let userInputs = {
     displayName: 'Guest',
     email: 'email@add.com',
     password: 'password',
   };
 
-  setContext(key, {
-    getInputs: () => inputs,
+  setContext(userInputsKey, {
+    getInputs: () => userInputs,
   });
 
   $: if ($user) {

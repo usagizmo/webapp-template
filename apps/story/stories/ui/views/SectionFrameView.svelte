@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { SectionFrame } from 'ui';
 </script>
 
