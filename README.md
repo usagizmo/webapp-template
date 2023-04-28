@@ -28,7 +28,7 @@ Monorepo template for creating a web application.
   [Storybook](https://storybook.js.org/) (w/ [Svelte](https://svelte.jp/) + [Tailwind CSS](https://tailwindcss.com/))
 - [`web`](./apps/web/) [[Demo](https://webapp-template.usagizmo.com/)]  
   A starting point for building Svelte application.  
-  [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/))  
+  [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/))  
   [Nhost](https://nhost.io/) (w/ [Houdini](https://www.houdinigraphql.com/)) / [Vitest](https://vitest.dev/)
 
 #### `packages/`

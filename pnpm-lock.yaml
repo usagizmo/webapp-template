@@ -90,7 +90,7 @@ importers:
         version: 7.0.6(svelte@3.58.0)
       '@storybook/svelte-vite':
         specifier: ^7.0.6
-        version: 7.0.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)(vite@4.3.1)
+        version: 7.0.6(react-dom@18.2.0)(react@18.2.0)(vite@4.3.1)
       '@storybook/testing-library':
         specifier: ^0.1.0
         version: 0.1.0
@@ -112,9 +112,6 @@ importers:
       tailwindcss:
         specifier: ^3.3.1
         version: 3.3.1(postcss@8.4.23)
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
       vite:
         specifier: ^4.3.1
         version: 4.3.1(@types/node@18.16.0)
@@ -185,9 +182,6 @@ importers:
       tailwindcss:
         specifier: ^3.3.1
         version: 3.3.1(postcss@8.4.23)
-      typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
       vite:
         specifier: ^4.3.1
         version: 4.3.1(@types/node@18.16.0)
@@ -3221,7 +3215,7 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/builder-vite@7.0.6(typescript@5.0.4)(vite@4.3.1):
+  /@storybook/builder-vite@7.0.6(vite@4.3.1):
     resolution: {integrity: sha512-sXthWQFMKxXS8nqihB5sSyRewLpBJDL3EjwzZxz5/4zQ9XCsuGHMW7DEepX9FMWUNPDIIw3KITs4vMrCNDkXhg==}
     peerDependencies:
       '@preact/preset-vite': '*'
@@ -3256,7 +3250,6 @@ packages:
       remark-external-links: 8.0.0
       remark-slug: 6.1.0
       rollup: 3.20.7
-      typescript: 5.0.4
       vite: 4.3.1(@types/node@18.16.0)
     transitivePeerDependencies:
       - supports-color
@@ -3624,7 +3617,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /@storybook/svelte-vite@7.0.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)(vite@4.3.1):
+  /@storybook/svelte-vite@7.0.6(react-dom@18.2.0)(react@18.2.0)(vite@4.3.1):
     resolution: {integrity: sha512-P1h0c0ohJ2qo/q6CojLBUDim1MhAmqaCfZZ22oV2LMt57eledqWwTyfmjwY6Zvp4mYkZn+pTbN3779tbjyNIEQ==}
     engines: {node: ^14.18 || >=16}
     peerDependencies:
@@ -3632,7 +3625,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
       vite: ^3.0.0 || ^4.0.0
     dependencies:
-      '@storybook/builder-vite': 7.0.6(typescript@5.0.4)(vite@4.3.1)
+      '@storybook/builder-vite': 7.0.6(vite@4.3.1)
       '@storybook/node-logger': 7.0.6
       '@storybook/svelte': 7.0.6(svelte@3.58.0)
       '@sveltejs/vite-plugin-svelte': 2.0.4(svelte@3.58.0)(vite@4.3.1)

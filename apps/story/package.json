@@ -29,7 +29,6 @@
     "storybook": "^7.0.6",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.3.1",
-    "typescript": "^5.0.4",
     "vite": "^4.3.1"
   }
 }

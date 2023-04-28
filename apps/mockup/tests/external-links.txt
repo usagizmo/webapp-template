@@ -27,4 +27,3 @@ https://webapp-template-mockup.usagizmo.com
 https://www.houdinigraphql.com/
 https://www.mend.io/free-developer-tools/renovate/
 https://www.npmjs.com/package/eslint-config-turbo
-https://www.typescriptlang.org/
