@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "Styles and components for use in svelte websites",
   "type": "module",
-  "module": "index.ts",
-  "svelte": "index.ts",
+  "module": "index.js",
+  "svelte": "index.js",
   "scripts": {
     "lint:markup": "markuplint --config ../../.markuplintrc \"**\"",
     "lint:js": "eslint .",
