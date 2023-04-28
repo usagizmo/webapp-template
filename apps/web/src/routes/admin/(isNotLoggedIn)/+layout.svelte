@@ -4,10 +4,10 @@
   import { goto } from '$app/navigation';
   import { user } from '$lib/nhost';
   import { ROUTE } from '$lib/routes';
+  import { userInputsKey } from '$lib/userInputs';
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import AdminForm from './AdminForm.svelte';
-  import { userInputsKey } from '$lib/userInputs';
 
   /** @type {import('$lib/userInputs').UserInputs} */
   let userInputs = {
