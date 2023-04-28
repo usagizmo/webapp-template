@@ -1,22 +1,23 @@
-<script lang="ts">
+<script>
   import { setContext } from 'svelte';
   import { SectionFrame } from 'ui';
   import { goto } from '$app/navigation';
   import { user } from '$lib/nhost';
   import { ROUTE } from '$lib/routes';
+  import { userInputsKey } from '$lib/userInputs';
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import AdminForm from './AdminForm.svelte';
-  import { key } from './inputs';
 
-  let inputs = {
+  /** @type {import('$lib/userInputs').UserInputs} */
+  let userInputs = {
     displayName: 'Guest',
     email: 'email@add.com',
     password: 'password',
   };
 
-  setContext(key, {
-    getInputs: () => inputs,
+  setContext(userInputsKey, {
+    getInputs: () => userInputs,
   });
 
   $: if ($user) {

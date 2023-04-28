@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { crossfade } from 'svelte/transition';
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';

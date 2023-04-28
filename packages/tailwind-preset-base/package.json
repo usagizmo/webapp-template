@@ -2,13 +2,13 @@
   "name": "tailwind-preset-base",
   "version": "0.0.0",
   "type": "module",
-  "main": "index.js",
+  "module": "index.js",
   "exports": {
     ".": "./index.js",
     "./global.css": "./global.css"
   },
   "scripts": {
-    "lint:js": "TIMING=1 eslint .",
+    "lint:js": "eslint .",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",

@@ -1,13 +1,11 @@
-<script lang="ts">
+<script>
   import { getContext } from 'svelte';
   import { Button, Meta, SignInIcon } from 'ui';
   import { logIn } from '$lib/nhost';
-  import { key } from '../inputs';
-  import type { UserInputs } from '../inputs';
+  import { userInputsKey } from '$lib/userInputs';
 
-  const { getInputs } = getContext<{
-    getInputs: () => UserInputs;
-  }>(key);
+  /** @type {{ getInputs: () => import('$lib/userInputs').UserInputs}} */
+  const { getInputs } = getContext(userInputsKey);
   const inputs = getInputs();
 
   async function handleSubmit() {
@@ -17,7 +15,7 @@
   $: meta = {
     title: `Admin (Login) | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/admin/login',
-  } as const;
+  };
 </script>
 
 <Meta {...meta} />

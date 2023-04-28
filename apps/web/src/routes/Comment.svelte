@@ -1,25 +1,26 @@
-<script lang="ts">
+<script>
   import { DateTime } from 'luxon';
   import { fade } from 'svelte/transition';
   import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
   import { nhost, user } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import { DeleteCommentStore, fragment, graphql, UpdateCommentFileIdStore } from '$houdini';
-  import type { Comment } from '$houdini';
 
-  type Card = {
-    id: string;
-    me: boolean;
-    name: string;
-    createdAt: Date;
-    message: string;
-    fileId: string | null;
-  };
+  /**
+   * @typedef {Object} Card
+   * @property {string} id
+   * @property {boolean} me
+   * @property {string} name
+   * @property {Date} createdAt
+   * @property {string} message
+   * @property {string | null} fileId
+   */
 
   let isActionVisible = false;
   let isDeleting = false;
 
-  export let comment: Comment;
+  /** @type {import('$houdini').Comment} */
+  export let comment;
 
   $: data = fragment(
     comment,
@@ -38,6 +39,7 @@
     `
   );
 
+  /** @type {Card} */
   $: card = {
     id: $data.id,
     me: $user?.id === $data.user.id,
@@ -45,7 +47,7 @@
     createdAt: $data.createdAt,
     message: $data.text,
     fileId: $data.fileId,
-  } as Card;
+  };
 
   $: createdAt = DateTime.fromJSDate(card.createdAt);
 

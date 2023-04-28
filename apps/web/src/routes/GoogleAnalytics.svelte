@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { page } from '$app/stores';
   import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
 

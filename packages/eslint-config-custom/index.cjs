@@ -1,34 +1,29 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:svelte/recommended',
     'plugin:import/recommended',
     'turbo',
     'prettier',
   ],
-  plugins: ['svelte3', '@typescript-eslint', 'unused-imports'],
-  ignorePatterns: ['*.cjs'],
-  overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
-  settings: {
-    'svelte3/typescript': () => require('typescript'),
-  },
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2020,
+    extraFileExtensions: ['.svelte'],
   },
   env: {
     browser: true,
     es2017: true,
     node: true,
   },
+
+  plugins: ['unused-imports'],
   rules: {
-    '@typescript-eslint/no-unused-vars': [
+    'no-unused-vars': [
       'error',
       {
         argsIgnorePattern: '^_',
         varsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_',
       },
     ],
     'unused-imports/no-unused-imports': 'error',
@@ -53,6 +48,5 @@ module.exports = {
         ],
       },
     ],
-    'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
   },
 };

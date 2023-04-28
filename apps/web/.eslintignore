@@ -13,5 +13,4 @@ package-lock.json
 yarn.lock
 
 # custom
-/.svelte-kit
 /$houdini

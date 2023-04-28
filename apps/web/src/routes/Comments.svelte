@@ -1,14 +1,19 @@
-<script lang="ts">
+<script>
   import { flip } from 'svelte/animate';
   import { fade } from 'svelte/transition';
   import { defaultDE } from '$lib/easing';
   import { toWithId } from '$lib/utils';
-  import type { Comment } from '$houdini';
   import CommentItem from './Comment.svelte';
 
-  export let comments: Comment[] = [];
+  /** @type {import('$houdini').Comment[]} */
+  export let comments = [];
 
-  function reverse<T>(arr: T[]): T[] {
+  /**
+   * Reverse the order of the array
+   * @param {any[]} arr
+   * @returns {any[]}
+   */
+  function reverse(arr) {
     return arr.slice().reverse();
   }
 

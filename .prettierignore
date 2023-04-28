@@ -1,7 +1,7 @@
 .DS_Store
-.svelte-kit
 node_modules
 /build
+/.svelte-kit
 /package
 .env
 .env.*
@@ -19,5 +19,6 @@ yarn.lock
 /apps/nhost/nhost/*
 !/apps/nhost/nhost/emails/
 /apps/story/storybook-static/
+/apps/web/.svelte-kit
 /apps/web/$houdini/
 /apps/web/schema.graphql

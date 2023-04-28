@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   export let href = '';
   export let type = '';
   export let primary = false;

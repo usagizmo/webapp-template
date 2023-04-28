@@ -1,10 +1,10 @@
-<script lang="ts">
+<script>
   import { Meta, SectionFrame } from 'ui';
 
   $: meta = {
     title: `Secret | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/secret',
-  } as const;
+  };
 </script>
 
 <Meta {...meta} />

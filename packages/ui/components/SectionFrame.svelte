@@ -1,5 +1,6 @@
-<script lang="ts">
-  export let noPad: 'y' | 'top' | '' = '';
+<script>
+  /** @type {'y' | 'top' | ''} */
+  export let noPad = '';
 
   $: padClass = (() => {
     switch (noPad) {
