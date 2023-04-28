@@ -24,6 +24,7 @@
     "@storybook/svelte": "^7.0.7",
     "@storybook/svelte-vite": "^7.0.7",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "eslint-config-custom": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.0.7",

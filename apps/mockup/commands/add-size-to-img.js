@@ -9,16 +9,21 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const rootDir = join(__dirname, '..');
-const htmlPaths = await deepReaddir(join(rootDir, PUBLIC_DIR), { ext: '.html' });
 
-await Promise.all(
-  htmlPaths.map(async (htmlPath) => {
-    const nextHtml = await convert(htmlPath);
+async function processHtmlFiles() {
+  const htmlPaths = await deepReaddir(join(rootDir, PUBLIC_DIR), { ext: '.html' });
 
-    try {
-      await writeFile(htmlPath, nextHtml, 'utf8');
-    } catch (err) {
-      console.error(err);
-    }
-  })
-);
+  await Promise.all(
+    htmlPaths.map(async (htmlPath) => {
+      const nextHtml = await convert(htmlPath);
+
+      try {
+        await writeFile(htmlPath, nextHtml, 'utf8');
+      } catch (err) {
+        console.error(err);
+      }
+    })
+  );
+}
+
+processHtmlFiles();
