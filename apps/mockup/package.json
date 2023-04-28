@@ -14,7 +14,9 @@
     "lint": "concurrently pnpm:lint:*",
     "test:watch": "vitest",
     "test": "vitest run",
-    "format": "prettier --write --ignore-path=../../.prettierignore .",
+    "format:js": "eslint --fix .",
+    "format:prettier": "prettier --write --ignore-path=../../.prettierignore .",
+    "format": "concurrently pnpm:format:*",
     "add-size-to-img": "node ./commands/add-size-to-img.js",
     "clean-image": "./commands/clean-image.sh",
     "deploy": "./commands/deploy.sh"

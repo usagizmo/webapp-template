@@ -9,7 +9,9 @@
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
-    "format": "eslint . --fix && prettier --write --ignore-path=../../.prettierignore ."
+    "format:js": "eslint --fix .",
+    "format:prettier": "prettier --write --ignore-path=../../.prettierignore .",
+    "format": "concurrently pnpm:format:*"
   },
   "dependencies": {
     "ui": "workspace:*"
