@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "husky install && ./commands/init.sh",
     "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "dev": "turbo run dev",
     "lint:turbo": "turbo run lint",
     "lint:cspell": "cspell \"**\"",
     "lint": "concurrently pnpm:lint:*",

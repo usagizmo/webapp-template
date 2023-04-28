@@ -15,7 +15,8 @@
       "outputs": [".svelte-kit/**", ".vercel/**", "$houdini/**", "schema.graphql"]
     },
     "dev": {
-      "cache": false
+      "cache": false,
+      "persistent": true
     },
     "web#lint": {
       "dependsOn": ["web#generate"],
