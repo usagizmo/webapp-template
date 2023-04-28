@@ -84,7 +84,7 @@ pnpm format  # eslint --fix + prettier --write + format project-words.txt
   - `8080`: GraphQL Endpoint
   - `8025`: MailHog
   - `9695`: Hasura Console
-- `3000`: `apps/web/` - SvelteKit application
+- `5173`: `apps/web/` - SvelteKit application
 - `6006`: `apps/story/` - Storybook
 - `8000`: `apps/mockup/` - Static site
 - `49160`: `apps/mockup/` - Express server

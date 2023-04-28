@@ -6,7 +6,7 @@
     "generate:svelte": "svelte-kit sync",
     "generate:pull-schema": "houdini pull-schema",
     "generate": "concurrently pnpm:generate:*",
-    "dev": "vite dev --port 3000 --open",
+    "dev": "vite dev --open",
     "build": "pnpm generate && vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
