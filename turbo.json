@@ -18,10 +18,12 @@
       "cache": false,
       "persistent": true
     },
+    "lint": {},
     "web#lint": {
       "dependsOn": ["web#generate"],
       "outputs": []
     },
+    "test": {},
     "mockup#test": {
       "dependsOn": ["mockup#build"],
       "outputs": ["tests/external-links.txt"]
