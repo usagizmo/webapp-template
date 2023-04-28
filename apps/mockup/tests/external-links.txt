@@ -4,7 +4,6 @@ https://eslint.org
 https://fonts.googleapis.com
 https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Source+Code+Pro:wght@400;500;600;700&amp;display=swap
 https://fonts.gstatic.com
-https://github.com/apps/renovate-approve
 https://github.com/import-js/eslint-plugin-import
 https://github.com/okonet/lint-staged
 https://github.com/prettier/eslint-config-prettier
@@ -25,5 +24,4 @@ https://usagizmo.com
 https://vitest.dev/
 https://webapp-template-mockup.usagizmo.com
 https://www.houdinigraphql.com/
-https://www.mend.io/free-developer-tools/renovate/
 https://www.npmjs.com/package/eslint-config-turbo

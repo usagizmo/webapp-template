@@ -10,7 +10,6 @@ Monorepo template for creating a web application.
 - [Prettier](https://prettier.io/) (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss))
 - [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)) / [CSpell](https://cspell.org/)
 - [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
-- [Renovate](https://www.mend.io/free-developer-tools/renovate/)
 - GitHub Actions (Linting + Testing (Validate `href` and `src` paths))
 - Execute `eslint --fix` and `prettier` when saving with VS Code
 
@@ -92,19 +91,3 @@ pnpm format  # eslint --fix + prettier --write + format project-words.txt
 ## Registering environment variables for GitHub / Vercel
 
 If you need to prepare GitHub / Vercel environment, you need to set all environment variables (`.env` items) in each service.
-
-## Use renovate on GitHub
-
-Give [Renovate](https://www.mend.io/free-developer-tools/renovate/) and [renovate-approve](https://github.com/apps/renovate-approve) permission to operate the repository.
-
-Then change your GitHub settings as follows.
-
-`Settings` > `Branches` > `Branch protection rule`
-
-- Branch name pattern: `main`
-- Protect matching branches:
-  - [x] Require status checks to pass before merging
-    - Status checks that are required:
-      - `Build (Node 16 on ubuntu-latest)`
-      - `Vercel – <project-name-on-vercel>`
-      - ...
