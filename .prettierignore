@@ -19,5 +19,6 @@ yarn.lock
 /apps/nhost/nhost/*
 !/apps/nhost/nhost/emails/
 /apps/story/storybook-static/
+/apps/web/.svelte-kit
 /apps/web/$houdini/
 /apps/web/schema.graphql
