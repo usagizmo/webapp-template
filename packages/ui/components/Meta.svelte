@@ -1,8 +1,4 @@
 <script>
-  /**
-   * @typedef {{ type: 'website' | 'article'; title: string; siteName: string; description: string; card: 'summary' | 'summary_large_image'; image: string; canonical: string; }} MetaProps
-   */
-
   /** @type {'website' | 'article'} */
   export let type = 'article';
 

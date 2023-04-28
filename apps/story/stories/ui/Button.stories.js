@@ -1,8 +1,7 @@
 import ButtonView from './views/ButtonView.svelte';
-import type { Meta, StoryObj } from '@storybook/svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/svelte/writing-stories/introduction
-const meta = {
+export default {
   title: 'ui/Button',
   component: ButtonView,
   tags: ['autodocs'],
@@ -53,18 +52,15 @@ const meta = {
       },
     },
   },
-} satisfies Meta<ButtonView>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
+};
 
 // More on writing stories with args: https://storybook.js.org/docs/7.0/svelte/writing-stories/args
-export const Primary: Story = {
+export const Primary = {
   args: {
     primary: true,
   },
 };
 
-export const Secondary: Story = {
+export const Secondary = {
   args: {},
 };

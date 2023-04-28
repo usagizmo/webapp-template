@@ -1,5 +1,5 @@
-import type { StorybookConfig } from '@storybook/svelte-vite';
-const config: StorybookConfig = {
+/** @type {import('@storybook/svelte-vite').StorybookConfig)} */
+const config = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx|svelte)'],
   addons: [
     '@storybook/addon-links',
