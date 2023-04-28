@@ -22,27 +22,44 @@ describe.concurrent('The tests (will be run in parallel)', () => {
     const res = execSync(`find ${publicDir} -type f -name "*.html"`);
     const filePaths = res.toString().trim().split('\n');
 
-    const externalLinks = new Set<string>();
+    /** @type {Set<string>} */
+    const externalLinks = new Set();
 
     const addToExternalLinks = {
-      external: (path: string) => {
+      /**
+       * @param {string} path
+       * @returns {Promise<void>}
+       */
+      external: (path) => {
         externalLinks.add(path);
       },
-      rootRelative: async (path: string) => {
+      /**
+       * @param {string} path
+       * @returns {Promise<void>}
+       */
+      rootRelative: async (path) => {
         try {
           await access(join(publicDir, path));
         } catch {
           externalLinks.add(path);
         }
       },
-      hash: (path: string, text: string) => {
+      /**
+       * @param {string} path
+       * @param {string} text
+       */
+      hash: (path, text) => {
         const id = path.slice(1);
         const index = text.indexOf(id);
         if (index === -1) {
           externalLinks.add(path);
         }
       },
-      relative: async (path: string, filePath: string) => {
+      /**
+       * @param {string} path
+       * @param {string} filePath
+       */
+      relative: async (path, filePath) => {
         try {
           const pathWithoutQuery = path.split('?')[0];
           await access(join(dirname(filePath), pathWithoutQuery));
