@@ -1,4 +1,4 @@
-/** @type {import('@storybook/svelte-vite').StorybookConfig)} */
+/** @type { import('@storybook/svelte-vite').StorybookConfig } */
 const config = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx|svelte)'],
   addons: [
@@ -14,4 +14,5 @@ const config = {
     autodocs: 'tag',
   },
 };
+
 export default config;
