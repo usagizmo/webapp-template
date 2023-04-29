@@ -5,4 +5,5 @@ projects:
       - ./$houdini/graphql/schema.graphql
     documents:
       - '**/*.gql'
+      - '**/*.svelte'
       - ./$houdini/graphql/documents.gql
