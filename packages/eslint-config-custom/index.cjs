@@ -3,6 +3,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:svelte/recommended',
     'plugin:import/recommended',
+    'plugin:jsdoc/recommended-error',
     'turbo',
     'prettier',
   ],
@@ -17,7 +18,7 @@ module.exports = {
     node: true,
   },
 
-  plugins: ['unused-imports'],
+  plugins: ['unused-imports', 'jsdoc'],
   rules: {
     'no-unused-vars': [
       'error',
@@ -48,5 +49,9 @@ module.exports = {
         ],
       },
     ],
+    // It's hard to solve...
+    'jsdoc/valid-types': 0,
+    'jsdoc/no-undefined-types': 0,
+    'jsdoc/check-tag-names': 0,
   },
 };

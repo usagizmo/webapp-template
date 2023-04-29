@@ -5,7 +5,7 @@
   import Comments from './Comments.svelte';
   import LoginMessage from './LoginMessage.svelte';
 
-  /* @type { import('./$houdini').PageData } */
+  /** @type { import('./$houdini').PageData } */
   export let data;
 
   $: ({ Comments: CommentsData } = data);

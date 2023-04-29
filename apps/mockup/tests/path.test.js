@@ -25,19 +25,23 @@ describe.concurrent('The tests (will be run in parallel)', () => {
     /** @type {Set<string>} */
     const externalLinks = new Set();
 
+    /**
+     * Add the path of the external link depending on the type
+     */
     const addToExternalLinks = {
       /**
-       * @param {string} path
-       * @returns {Promise<void>}
+       * Add the path of the external link
+       * @param {string} path - The path of the external link
        */
-      external: (path) => {
+      external(path) {
         externalLinks.add(path);
       },
       /**
-       * @param {string} path
+       * Add the path of the external link if the file does not exist
+       * @param {string} path - The path of the external link to check
        * @returns {Promise<void>}
        */
-      rootRelative: async (path) => {
+      async rootRelative(path) {
         try {
           await access(join(publicDir, path));
         } catch {
@@ -45,21 +49,24 @@ describe.concurrent('The tests (will be run in parallel)', () => {
         }
       },
       /**
-       * @param {string} path
-       * @param {string} text
+       * Add the path of the external link if the id does not exist
+       * @param {string} path - The path of the external link to check
+       * @param {string} text - The text of the html file
        */
-      hash: (path, text) => {
+      hash(path, text) {
         const id = path.slice(1);
-        const index = text.indexOf(id);
+        const index = text.indexOf(`id="${id}"`);
         if (index === -1) {
           externalLinks.add(path);
         }
       },
       /**
-       * @param {string} path
-       * @param {string} filePath
+       * Add the path of the external link if the file does not exist
+       * @param {string} path - The path of the external link to check
+       * @param {string} filePath - The path of the html file
+       * @returns {Promise<void>}
        */
-      relative: async (path, filePath) => {
+      async relative(path, filePath) {
         try {
           const pathWithoutQuery = path.split('?')[0];
           await access(join(dirname(filePath), pathWithoutQuery));

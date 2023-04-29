@@ -19,7 +19,11 @@
 
   const insertComment = new InsertCommentStore();
 
-  const handleSend = async () => {
+  /**
+   * Send the comment
+   * @returns {Promise<void>}
+   */
+  async function handleSend() {
     if (!text) {
       textAreaEl.focus();
       return;
@@ -57,7 +61,7 @@
     isSending = false;
     await tick();
     textAreaEl.focus();
-  };
+  }
 
   /** @type {(e: KeyboardEvent) => void} */
   const handleKeyDown = (e) => {

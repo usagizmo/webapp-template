@@ -10,8 +10,8 @@
 
   /**
    * Reverse the order of the array
-   * @param {any[]} arr
-   * @returns {any[]}
+   * @param {any[]} arr - The array to reverse
+   * @returns {any[]} - The reversed array
    */
   function reverse(arr) {
     return arr.slice().reverse();

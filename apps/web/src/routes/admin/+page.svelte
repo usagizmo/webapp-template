@@ -3,9 +3,13 @@
   import { user, logOut } from '$lib/nhost';
   import LoginMessage from '../LoginMessage.svelte';
 
-  const handleLogOut = async () => {
+  /**
+   * Log out the user
+   * @returns {Promise<void>}
+   */
+  async function handleLogOut() {
     await logOut();
-  };
+  }
 
   $: meta = {
     title: `Admin | WebApp Template (web)`,
