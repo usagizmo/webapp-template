@@ -12,6 +12,7 @@
   $: comments = $CommentsData.data?.comments ?? [];
 
   $: meta = {
+    /** @type {'website'} */
     type: 'website',
     title: `WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com',
