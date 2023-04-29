@@ -1,5 +1,10 @@
 <script>
-  /** @type {'website' | 'article'} */
+  /**
+   * @typedef {'website' | 'article'} OpenGraphType
+   * @typedef {'summary' | 'summary_large_image'} TwitterCardType
+   */
+
+  /** @type {OpenGraphType} */
   export let type = 'article';
 
   export let title = 'WebApp Template (web)';
@@ -8,7 +13,7 @@
 
   export let description = 'SvelteKit (w/ Houdini) x Tailwind CSS x Nhost x Turborepo (pnpm)';
 
-  /** @type {'summary' | 'summary_large_image'} */
+  /** @type {TwitterCardType} */
   export let card = 'summary_large_image';
 
   export let image = 'https://webapp-template.usagizmo.com/images/ogp.png';
