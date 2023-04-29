@@ -22,9 +22,8 @@ let hasAlreadyAuthStateChanged = false;
 /**
  * Set the Nhost session in a cookie
  * @param {NhostSession} session - The session to set in the cookie
- * @returns {void}
  */
-const setNhostSessionInCookie = (session) => {
+function setNhostSessionInCookie(session) {
   const expires = new Date();
   // Expire the cookie 60 seconds before the token expires
   expires.setSeconds(expires.getSeconds() + session.accessTokenExpiresIn - 60);
@@ -32,7 +31,7 @@ const setNhostSessionInCookie = (session) => {
     sameSite: 'strict',
     expires,
   });
-};
+}
 
 nhost.auth.onAuthStateChanged((_, session) => {
   if (session) {
@@ -55,7 +54,7 @@ nhost.auth.onAuthStateChanged((_, session) => {
  * @param {import('./userInputs').UserInputs} userInputs - The user inputs
  * @returns {Promise<void>}
  */
-export const signUp = async ({ email, password, displayName }) => {
+export async function signUp({ email, password, displayName }) {
   const res = await nhost.auth.signUp({
     email,
     password,
@@ -64,25 +63,25 @@ export const signUp = async ({ email, password, displayName }) => {
     },
   });
   tryErrorAlertOnNhostApi(res);
-};
+}
 
 /**
  * Log in a user
  * @param {import('./userInputs').UserInputs} userInputs - The user inputs
  * @returns {Promise<boolean>} - Whether the login was successful
  */
-export const logIn = async (userInputs) => {
+export async function logIn(userInputs) {
   const res = await nhost.auth.signIn(userInputs);
   const hasError = tryErrorAlertOnNhostApi(res);
   return !hasError;
-};
+}
 
 /**
  * Log out a user
  * @returns {Promise<boolean>} - Whether the logout was successful
  */
-export const logOut = async () => {
+export async function logOut() {
   const res = await nhost.auth.signOut();
   const hasError = tryErrorAlertOnNhostApi(res);
   return !hasError;
-};
+}

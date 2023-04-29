@@ -10,11 +10,16 @@ const __dirname = dirname(__filename);
 
 const rootDir = join(__dirname, '..');
 
+/**
+ * Process all the html files in the public directory
+ * @returns {Promise<void>}
+ */
 async function processHtmlFiles() {
   const htmlPaths = await deepReaddir(join(rootDir, PUBLIC_DIR), { ext: '.html' });
 
   await Promise.all(
     htmlPaths.map(async (htmlPath) => {
+      // convert the width and height of the images in the html file
       const nextHtml = await convert(htmlPath);
 
       try {
