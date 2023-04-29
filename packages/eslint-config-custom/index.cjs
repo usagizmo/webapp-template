@@ -3,6 +3,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:svelte/recommended',
     'plugin:import/recommended',
+    'plugin:jsdoc/recommended-error',
     'turbo',
     'prettier',
   ],
@@ -17,7 +18,7 @@ module.exports = {
     node: true,
   },
 
-  plugins: ['unused-imports'],
+  plugins: ['unused-imports', 'jsdoc'],
   rules: {
     'no-unused-vars': [
       'error',
