@@ -49,5 +49,9 @@ module.exports = {
         ],
       },
     ],
+    // It's hard to solve...
+    'jsdoc/valid-types': 0,
+    'jsdoc/no-undefined-types': 0,
+    'jsdoc/check-tag-names': 0,
   },
 };

@@ -20,7 +20,8 @@ export const user = writable(session?.user ?? null);
 let hasAlreadyAuthStateChanged = false;
 
 /**
- * @param {NhostSession} session
+ * Set the Nhost session in a cookie
+ * @param {NhostSession} session - The session to set in the cookie
  * @returns {void}
  */
 const setNhostSessionInCookie = (session) => {
@@ -50,7 +51,8 @@ nhost.auth.onAuthStateChanged((_, session) => {
 });
 
 /**
- * @param {import('./userInputs').UserInputs} userInputs
+ * Sign up and log in
+ * @param {import('./userInputs').UserInputs} userInputs - The user inputs
  * @returns {Promise<void>}
  */
 export const signUp = async ({ email, password, displayName }) => {
@@ -65,8 +67,9 @@ export const signUp = async ({ email, password, displayName }) => {
 };
 
 /**
- * @param {import('./userInputs').UserInputs} userInputs
- * @returns {Promise<boolean>}
+ * Log in a user
+ * @param {import('./userInputs').UserInputs} userInputs - The user inputs
+ * @returns {Promise<boolean>} - Whether the login was successful
  */
 export const logIn = async (userInputs) => {
   const res = await nhost.auth.signIn(userInputs);
@@ -75,7 +78,8 @@ export const logIn = async (userInputs) => {
 };
 
 /**
- * @returns {Promise<boolean>}
+ * Log out a user
+ * @returns {Promise<boolean>} - Whether the logout was successful
  */
 export const logOut = async () => {
   const res = await nhost.auth.signOut();

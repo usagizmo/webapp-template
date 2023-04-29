@@ -3,8 +3,9 @@
  */
 
 /**
- * @param {{ error?: { message: string } | null }} res
- * @returns {boolean}
+ * Set the Nhost session in a cookie
+ * @param {{ error?: { message: string } | null }} res - The response from an Nhost API call
+ * @returns {boolean} - True if there was an error, false otherwise
  */
 export const tryErrorAlertOnNhostApi = (res) => {
   const errorMessage = res.error?.message;
@@ -13,19 +14,22 @@ export const tryErrorAlertOnNhostApi = (res) => {
 };
 
 /**
- * @param {unknown} err
- * @returns {boolean}
+ * Tries to show an error alert based on Houdini API errors if available
+ * @function
+ * @param {{ message: string }[] | null} errors - An array of error objects with a 'message' property, or null
+ * @returns {boolean} - Returns true if an error message was shown, otherwise false
  */
-export const tryErrorAlertOnHoudiniApi = (err) => {
-  if (!Array.isArray(err) || typeof err[0] !== 'object' || !err[0]) return false;
-  const errorMessage = err[0].message;
+export const tryErrorAlertOnHoudiniApi = (errors) => {
+  if (!Array.isArray(errors) || typeof errors[0] !== 'object' || !errors[0]) return false;
+  const errorMessage = errors[0].message;
   errorMessage && alert(errorMessage);
   return !!errorMessage;
 };
 
 /**
- * @param {string | undefined} cookiesSession
- * @returns {NhostSession | null}
+ * Parse the session from a cookie
+ * @param {string | undefined} cookiesSession - The session from a cookie
+ * @returns {NhostSession | null} - The parsed session
  */
 export const parseSession = (cookiesSession) => {
   return cookiesSession ? JSON.parse(cookiesSession) : null;
@@ -43,7 +47,7 @@ export function hasId(obj) {
 }
 
 /**
- * Returns the same object with an added 'id' property if it doesn't already have one
+ * Ensures that the object has an 'id' property
  * Throws an error if the object doesn't have an 'id' property
  * @template {object} T
  * @param {T} obj - Object to ensure has an 'id' property

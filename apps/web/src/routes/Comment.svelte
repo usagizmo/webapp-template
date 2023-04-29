@@ -7,13 +7,14 @@
   import { DeleteCommentStore, fragment, graphql, UpdateCommentFileIdStore } from '$houdini';
 
   /**
-   * @typedef {Object} Card
-   * @property {string} id
-   * @property {boolean} me
-   * @property {string} name
-   * @property {Date} createdAt
-   * @property {string} message
-   * @property {string | null} fileId
+   * The comment card
+   * @typedef {object} Card
+   * @property {string} id - The comment ID
+   * @property {boolean} me - Whether the comment belongs to the current user
+   * @property {string} name - The name of the user who made the comment
+   * @property {Date} createdAt - The date the comment was created
+   * @property {string} message - The comment message
+   * @property {string | null} fileId - The file ID of the comment image
    */
 
   let isActionVisible = false;

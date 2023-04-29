@@ -8,6 +8,7 @@
   const { getInputs } = getContext(userInputsKey);
   const inputs = getInputs();
 
+  /** @returns {Promise<void>} */
   async function handleSubmit() {
     await logIn(inputs);
   }
