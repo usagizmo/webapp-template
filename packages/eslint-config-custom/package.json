@@ -10,7 +10,7 @@
     "format:prettier": "prettier --write --ignore-path=../../.prettierignore .",
     "format": "concurrently pnpm:format:*"
   },
-  "dependencies": {
+  "devDependencies": {
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-turbo": "^1.9.3",
     "eslint-plugin-import": "^2.27.5",
