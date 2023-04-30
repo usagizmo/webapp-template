@@ -49,6 +49,7 @@ module.exports = {
         ],
       },
     ],
+    'jsdoc/require-hyphen-before-param-description': 1,
     // It's hard to solve...
     'jsdoc/valid-types': 0,
     'jsdoc/no-undefined-types': 0,
