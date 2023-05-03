@@ -24,6 +24,7 @@ module.exports = {
         varsIgnorePattern: '^_',
       },
     ],
+    '@typescript-eslint/explicit-function-return-type': 'error',
     'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
   },
 };
