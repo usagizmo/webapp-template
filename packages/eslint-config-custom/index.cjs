@@ -32,18 +32,15 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-        pathGroupsExcludedImportTypes: ['builtin'],
-        alphabetize: { order: 'asc', caseInsensitive: true },
         pathGroups: [
           {
             pattern: '$*/**',
-            group: 'internal',
+            group: 'parent',
             position: 'before',
           },
           {
             pattern: '$houdini',
-            group: 'internal',
+            group: 'parent',
             position: 'before',
           },
         ],
