@@ -9,12 +9,12 @@ module.exports = {
   ],
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 2020,
+    ecmaVersion: 2022,
     extraFileExtensions: ['.svelte'],
   },
   env: {
     browser: true,
-    es2017: true,
+    es2022: true,
     node: true,
   },
 
@@ -44,6 +44,14 @@ module.exports = {
             position: 'before',
           },
         ],
+      },
+    ],
+    'jsdoc/require-jsdoc': [
+      'error',
+      {
+        require: {
+          MethodDefinition: true,
+        },
       },
     ],
     'jsdoc/require-hyphen-before-param-description': 1,
