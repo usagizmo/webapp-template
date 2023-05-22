@@ -46,6 +46,14 @@ module.exports = {
         ],
       },
     ],
+    'jsdoc/require-jsdoc': [
+      'error',
+      {
+        require: {
+          MethodDefinition: true,
+        },
+      },
+    ],
     'jsdoc/require-hyphen-before-param-description': 1,
     // It's hard to solve...
     'jsdoc/valid-types': 0,
