@@ -23,30 +23,30 @@
     "format": "concurrently pnpm:format:*"
   },
   "dependencies": {
-    "@nhost/nhost-js": "^2.2.1",
+    "@nhost/nhost-js": "^2.2.4",
     "graphql": "^16.6.0",
-    "graphql-ws": "^5.12.1",
+    "graphql-ws": "^5.13.1",
     "js-cookie": "^3.0.5",
     "luxon": "^3.3.0",
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.0.1",
-    "@sveltejs/kit": "^1.15.9",
+    "@sveltejs/adapter-auto": "^2.1.0",
+    "@sveltejs/kit": "^1.18.0",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.39.0",
+    "eslint": "^8.41.0",
     "eslint-config-custom": "workspace:*",
     "graphqurl": "^1.0.1",
-    "houdini": "^1.2.2",
-    "houdini-svelte": "^1.2.2",
+    "houdini": "^1.2.3",
+    "houdini-svelte": "^1.2.3",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.0",
-    "svelte": "^3.58.0",
-    "svelte-check": "^3.2.0",
+    "svelte": "^3.59.1",
+    "svelte-check": "^3.3.2",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.3.2",
-    "vite": "^4.3.3",
-    "vitest": "^0.30.1"
+    "vite": "^4.3.8",
+    "vitest": "^0.31.1"
   }
 }

@@ -22,11 +22,11 @@
     "deploy": "./commands/deploy.sh"
   },
   "devDependencies": {
-    "browser-sync": "^2.29.1",
+    "browser-sync": "^2.29.3",
     "eslint-config-custom": "workspace:*",
     "image-size": "^1.0.2",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.3.2",
-    "vitest": "^0.30.1"
+    "vitest": "^0.31.1"
   }
 }
