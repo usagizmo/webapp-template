@@ -17,18 +17,18 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.7",
-    "@storybook/addon-interactions": "^7.0.7",
-    "@storybook/addon-links": "^7.0.7",
-    "@storybook/blocks": "^7.0.7",
-    "@storybook/svelte": "^7.0.7",
-    "@storybook/svelte-vite": "^7.0.7",
+    "@storybook/addon-essentials": "^7.0.12",
+    "@storybook/addon-interactions": "^7.0.12",
+    "@storybook/addon-links": "^7.0.12",
+    "@storybook/blocks": "^7.0.12",
+    "@storybook/svelte": "^7.0.12",
+    "@storybook/svelte-vite": "^7.0.12",
     "@storybook/testing-library": "^0.1.0",
     "eslint-config-custom": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.0.7",
-    "svelte": "^3.58.0",
+    "storybook": "^7.0.12",
+    "svelte": "^3.59.1",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.3.2"
   }
