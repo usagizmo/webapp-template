@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@nhost/nhost-js": "^2.2.4",
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "graphql-ws": "^5.13.1",
     "js-cookie": "^3.0.5",
     "luxon": "^3.3.0",

@@ -117,13 +117,13 @@ importers:
     dependencies:
       '@nhost/nhost-js':
         specifier: ^2.2.4
-        version: 2.2.4(graphql@16.6.0)
+        version: 2.2.4(graphql@16.8.1)
       graphql:
-        specifier: ^16.6.0
-        version: 16.6.0
+        specifier: ^16.8.1
+        version: 16.8.1
       graphql-ws:
         specifier: ^5.13.1
-        version: 5.13.1(graphql@16.6.0)
+        version: 5.13.1(graphql@16.8.1)
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
@@ -2358,12 +2358,12 @@ packages:
       graphql: 15.8.0
     dev: true
 
-  /@graphql-typed-document-node/core@3.2.0(graphql@16.6.0):
+  /@graphql-typed-document-node/core@3.2.0(graphql@16.8.1):
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      graphql: 16.6.0
+      graphql: 16.8.1
     dev: false
 
   /@humanwhocodes/config-array@0.11.8:
@@ -2761,13 +2761,13 @@ packages:
       tar-fs: 2.1.1
     dev: true
 
-  /@nhost/graphql-js@0.1.2(graphql@16.6.0):
+  /@nhost/graphql-js@0.1.2(graphql@16.8.1):
     resolution: {integrity: sha512-thzQom5BZF0SYGYA7ymZMaHyFueNe7uo4uakT2a8LveAnChPyFE8aDMrOOwnMx+9DkNXlgtLQQg//9mErIsxbw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
-      graphql: 16.6.0
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.1)
+      graphql: 16.8.1
       isomorphic-unfetch: 3.1.0
     transitivePeerDependencies:
       - encoding
@@ -2795,15 +2795,15 @@ packages:
       - encoding
     dev: false
 
-  /@nhost/nhost-js@2.2.4(graphql@16.6.0):
+  /@nhost/nhost-js@2.2.4(graphql@16.8.1):
     resolution: {integrity: sha512-0L80/NvyMM7SIen4d7Z6hYxkueBXguNmrFOo4/TaShY+3UqMRfop5fRAZwN1fWCJMZOldO0/D4LD5b7WbTjUgw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@nhost/graphql-js': 0.1.2(graphql@16.6.0)
+      '@nhost/graphql-js': 0.1.2(graphql@16.8.1)
       '@nhost/hasura-auth-js': 2.1.3
       '@nhost/hasura-storage-js': 2.1.2
-      graphql: 16.6.0
+      graphql: 16.8.1
       isomorphic-unfetch: 3.1.0
     transitivePeerDependencies:
       - encoding
@@ -7821,13 +7821,13 @@ packages:
       graphql: 15.4.0
     dev: true
 
-  /graphql-ws@5.13.1(graphql@16.6.0):
+  /graphql-ws@5.13.1(graphql@16.8.1):
     resolution: {integrity: sha512-eiX7ES/ZQr0q7hSM5UBOEIFfaAUmAY9/CSDyAnsETuybByU7l/v46drRg9DQoTvVABEHp3QnrvwgTRMhqy7zxQ==}
     engines: {node: '>=10'}
     peerDependencies:
       graphql: '>=0.11 <=16'
     dependencies:
-      graphql: 16.6.0
+      graphql: 16.8.1
     dev: false
 
   /graphql@15.4.0:
@@ -7840,8 +7840,8 @@ packages:
     engines: {node: '>= 10.x'}
     dev: true
 
-  /graphql@16.6.0:
-    resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
+  /graphql@16.8.1:
+    resolution: {integrity: sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: false
 
