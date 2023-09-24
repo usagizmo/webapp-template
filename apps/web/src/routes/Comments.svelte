@@ -22,7 +22,7 @@
 
 <div class="divide-y divide-slate-200">
   {#each commentsWithId as comment (comment.id)}
-    <div transition:fade|local={defaultDE} animate:flip={defaultDE}>
+    <div transition:fade={defaultDE} animate:flip={defaultDE}>
       <CommentItem {comment} />
     </div>
   {/each}

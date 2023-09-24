@@ -37,7 +37,7 @@
           displayName
         }
       }
-    `
+    `,
   );
 
   /** @type {Card} */
@@ -114,6 +114,7 @@
 <div
   class="py-2.5 duration-200"
   class:bg-slate-100={isDeleting}
+  role="listitem"
   on:mouseenter={() => (isActionVisible = card.me ? true : false)}
   on:mouseleave={() => (isActionVisible = false)}
 >
