@@ -92,7 +92,7 @@ describe.concurrent('The tests (will be run in parallel)', () => {
             return addToExternalLinks.hash(path, text);
           }
           return addToExternalLinks.relative(path, filePath);
-        })
+        }),
       );
     }
 

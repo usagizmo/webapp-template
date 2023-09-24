@@ -27,7 +27,7 @@ async function processHtmlFiles() {
       } catch (err) {
         console.error(err);
       }
-    })
+    }),
   );
 }
 

@@ -22,11 +22,7 @@
 <div class="pb-2.5 pt-3">
   <div class="relative" style:height={`${height}px`}>
     {#if $page.url.pathname === ROUTE.ADMIN_LOGIN}
-      <div
-        bind:this={el}
-        class="absolute w-full text-sm text-zinc-500"
-        transition:fade|local={defaultDE}
-      >
+      <div bind:this={el} class="absolute w-full text-sm text-zinc-500" transition:fade={defaultDE}>
         <p class="text-center">Guest account</p>
         <dl>
           <div class="flex justify-center space-x-1">
@@ -40,11 +36,7 @@
         </dl>
       </div>
     {:else}
-      <div
-        bind:this={el}
-        class="absolute w-full text-sm text-zinc-500"
-        transition:fade|local={defaultDE}
-      >
+      <div bind:this={el} class="absolute w-full text-sm text-zinc-500" transition:fade={defaultDE}>
         <p class="text-center">
           You can register as a member<br />
           with an irresponsible email and password.

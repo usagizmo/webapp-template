@@ -19,7 +19,7 @@ export async function deepReaddir(dirPath, options) {
       dirents.map(async (dirent) => {
         const path = join(dirPath, dirent.name);
         return dirent.isDirectory() ? await deepReaddir(path, options) : filteredPath(path);
-      })
+      }),
     )
   ).filter(Boolean);
 
@@ -45,7 +45,7 @@ export async function convert(filePath) {
       } catch {
         return prefix + imgSrcPath + suffix;
       }
-    }
+    },
   );
 
   return res;

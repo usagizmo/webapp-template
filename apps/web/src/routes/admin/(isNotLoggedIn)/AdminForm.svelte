@@ -16,7 +16,7 @@
 
 <div class="[&>*]:mb-3">
   {#if isSignUpPage}
-    <div transition:slide|local={defaultDE}>
+    <div transition:slide={defaultDE}>
       <Input
         label="Display Name"
         type="text"
