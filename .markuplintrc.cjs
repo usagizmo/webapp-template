@@ -9,22 +9,12 @@ module.exports = {
     'label-has-control': false,
     'require-accessible-name': false,
   },
-  overrides: {
-    './apps/web/src/routes/CommentForm.svelte': {
-      nodeRules: [
-        {
-          selector: 'img',
-          rules: {
-            'invalid-attr': {
-              options: {
-                allowAttrs: ['src', 'alt'], // Without `width` and `height`
-              },
-            },
-          },
-        },
-      ],
-    },
-  },
+  excludeFiles: [
+    // TODO: Once the overrides option is fixed, remove these lines
+    // ref: https://github.com/markuplint/markuplint/issues/1119
+    './apps/web/src/app.html',
+    './apps/web/src/routes/CommentForm.svelte',
+  ],
   nodeRules: [
     // For Svelte
     {
