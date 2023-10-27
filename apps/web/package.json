@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
     "lint:check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-    "lint:markup": "markuplint --config ../../.markuplintrc \"**\"",
+    "lint:markup": "markuplint --config ../../.markuplintrc.cjs \"**\"",
     "lint:js": "eslint .",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",

@@ -6,7 +6,7 @@
   "module": "index.js",
   "svelte": "index.js",
   "scripts": {
-    "lint:markup": "markuplint --config ../../.markuplintrc \"**\"",
+    "lint:markup": "markuplint --config ../../.markuplintrc.cjs \"**\"",
     "lint:js": "eslint .",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
