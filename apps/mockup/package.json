@@ -7,7 +7,7 @@
     "dev:tailwind": "tailwindcss ../../packages/tailwind-preset-base/global.css -o ./public/styles.css --watch",
     "dev:server": "browser-sync ./public/ -w --port 8000",
     "dev": "concurrently pnpm:dev:*",
-    "lint:markup": "markuplint --config ../../.markuplintrc \"**\"",
+    "lint:markup": "markuplint --config ../../.markuplintrc.cjs \"**\"",
     "lint:js": "eslint .",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
