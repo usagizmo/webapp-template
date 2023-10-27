@@ -39,7 +39,7 @@
     "graphqurl": "^1.0.1",
     "houdini": "^1.2.11",
     "houdini-svelte": "^1.2.11",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
     "svelte": "^4.2.0",
