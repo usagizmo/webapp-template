@@ -17,6 +17,6 @@
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
-    "svelte": "^4.2.0"
+    "svelte": "4.2.8"
   }
 }

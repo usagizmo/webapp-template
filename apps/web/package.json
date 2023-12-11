@@ -23,30 +23,30 @@
     "format": "concurrently pnpm:format:*"
   },
   "dependencies": {
-    "@nhost/nhost-js": "^2.2.16",
-    "graphql": "^16.8.0",
-    "graphql-ws": "^5.14.0",
+    "@nhost/nhost-js": "^2.2.18",
+    "graphql": "^16.8.1",
+    "graphql-ws": "^5.14.2",
     "js-cookie": "^3.0.5",
-    "luxon": "^3.4.3",
+    "luxon": "^3.4.4",
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.1.0",
-    "@sveltejs/kit": "^1.25.0",
-    "autoprefixer": "^10.4.15",
-    "eslint": "^8.49.0",
+    "@sveltejs/adapter-auto": "^2.1.1",
+    "@sveltejs/kit": "^1.28.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
     "eslint-config-custom": "workspace:*",
     "graphqurl": "^1.0.1",
-    "houdini": "^1.2.11",
-    "houdini-svelte": "^1.2.11",
-    "postcss": "^8.4.29",
-    "prettier": "^3.0.3",
-    "prettier-plugin-svelte": "^3.0.3",
-    "svelte": "^4.2.0",
-    "svelte-check": "^3.5.1",
+    "houdini": "^1.2.34",
+    "houdini-svelte": "^1.2.34",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "svelte": "4.2.8",
+    "svelte-check": "^3.6.2",
     "tailwind-preset-base": "workspace:*",
-    "tailwindcss": "^3.3.3",
-    "vite": "^4.4.9",
-    "vitest": "^0.34.4"
+    "tailwindcss": "^3.3.6",
+    "vite": "^5.0.7",
+    "vitest": "^1.0.4"
   }
 }
