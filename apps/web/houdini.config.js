@@ -3,7 +3,7 @@ const config = {
   watchSchema: {
     url: 'env:PUBLIC_GRAPHQL_ENDPOINT',
     headers: {
-      'X-Hasura-Admin-Secret': (env) => env.HASURA_ADMIN_SECRET,
+      'X-Hasura-Admin-Secret': 'env:HASURA_ADMIN_SECRET',
     },
   },
   plugins: {
