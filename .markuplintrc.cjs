@@ -5,7 +5,7 @@ module.exports = {
   extends: ['markuplint:recommended'],
   excludeFiles: [
     // TODO: Once the overrides option is fixed, remove these lines
-    // ref: https://github.com/markuplint/markuplint/issues/1119
+    // ref. https://github.com/markuplint/markuplint/issues/1119
     './apps/web/src/app.html',
     './apps/web/src/routes/CommentForm.svelte',
   ],

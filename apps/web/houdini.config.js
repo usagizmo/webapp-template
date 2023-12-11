@@ -12,7 +12,7 @@ const config = {
     },
   },
   scalars: {
-    // ref: https://www.houdinigraphql.com/api/config#custom-scalars
+    // ref. https://www.houdinigraphql.com/api/config#custom-scalars
     uuid: {
       type: 'string',
       unmarshal: (val) => val,

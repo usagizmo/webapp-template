@@ -17,7 +17,6 @@ module.exports = {
     es2022: true,
     node: true,
   },
-
   plugins: ['unused-imports', 'jsdoc'],
   rules: {
     'no-unused-vars': [
