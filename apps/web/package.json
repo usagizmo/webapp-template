@@ -42,7 +42,7 @@
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",
-    "svelte": "4.2.8",
+    "svelte": "^4.2.8",
     "svelte-check": "^3.6.2",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.3.6",
