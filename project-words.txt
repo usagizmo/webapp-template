@@ -26,4 +26,4 @@ turborepo
 unmarshal
 usagizmo
 vite
-yakuhanjp
+yakuhan
