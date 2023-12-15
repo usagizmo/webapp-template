@@ -1,4 +1,4 @@
-https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-noto.min.css
+https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.0/dist/css/yakuhanjp.css
 https://cspell.org/
 https://eslint.org
 https://fonts.googleapis.com
