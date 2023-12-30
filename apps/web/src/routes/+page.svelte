@@ -1,5 +1,5 @@
 <script>
-  import { Meta, SectionFrame } from 'ui';
+  import { Meta, SectionFrame } from '@repo/ui';
   import { user } from '$lib/nhost';
   import CommentForm from './CommentForm.svelte';
   import Comments from './Comments.svelte';

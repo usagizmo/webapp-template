@@ -1,5 +1,5 @@
 <script>
-  import { Meta, SectionFrame } from 'ui';
+  import { Meta, SectionFrame } from '@repo/ui';
 
   $: meta = {
     title: `Secret | WebApp Template (web)`,

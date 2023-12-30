@@ -1,7 +1,7 @@
 <script>
   import { DateTime } from 'luxon';
   import { fade } from 'svelte/transition';
-  import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
+  import { Button, CircleCheckIcon, CircleCloseIcon } from '@repo/ui';
   import { nhost, user } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import { DeleteCommentStore, fragment, graphql, UpdateCommentFileIdStore } from '$houdini';

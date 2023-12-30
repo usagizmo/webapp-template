@@ -1,8 +1,11 @@
 {
-  "name": "eslint-config-custom-typescript",
+  "name": "@repo/eslint-config",
   "version": "0.0.0",
   "type": "module",
-  "main": "index.cjs",
+  "files": [
+    "javascript.cjs",
+    "typescript.cjs"
+  ],
   "scripts": {
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
@@ -13,7 +16,12 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
-    "eslint-config-custom": "workspace:*"
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-turbo": "^1.11.2",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^46.9.1",
+    "eslint-plugin-svelte": "^2.35.1",
+    "eslint-plugin-unused-imports": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"

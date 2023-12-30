@@ -1,4 +1,4 @@
-import 'tailwind-preset-base/global.css';
+import '@repo/tailwind-preset-base/global.css';
 
 /** @type {import('@storybook/svelte').Preview} */
 const preview = {

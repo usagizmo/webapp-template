@@ -36,7 +36,7 @@ Monorepo template for creating a web application.
   A stub Svelte component library.
 - `tailwind-preset-base`  
   A preset for use with `tailwind.config.js` and `global.css`.
-- `eslint-config-custom`  
+- `eslint-config`  
   `eslint` configurations. (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + eslint-config-[[prettier](https://github.com/prettier/eslint-config-prettier)|[turbo](https://www.npmjs.com/package/eslint-config-turbo)])
 
 ### VS Code Extensions (Recommend)

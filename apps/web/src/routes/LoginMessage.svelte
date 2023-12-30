@@ -1,5 +1,5 @@
 <script>
-  import { Button, SectionFrame } from 'ui';
+  import { Button, SectionFrame } from '@repo/ui';
 </script>
 
 <SectionFrame noPad="y">

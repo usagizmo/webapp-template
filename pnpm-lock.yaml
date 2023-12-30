@@ -11,6 +11,9 @@ importers:
       '@markuplint/svelte-parser':
         specifier: ^3.12.0
         version: 3.12.0
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:packages/eslint-config
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -20,9 +23,6 @@ importers:
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:packages/eslint-config-custom
       husky:
         specifier: ^8.0.3
         version: 8.0.3
@@ -31,7 +31,7 @@ importers:
         version: 15.2.0
       markuplint:
         specifier: ^3.15.0
-        version: 3.15.0(@types/node@20.10.5)(typescript@5.3.3)
+        version: 3.15.0(@types/node@20.10.6)(typescript@5.3.3)
       prettier:
         specifier: ^3.1.1
         version: 3.1.1
@@ -47,33 +47,39 @@ importers:
 
   apps/mockup:
     devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@repo/tailwind-preset-base':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-preset-base
       browser-sync:
         specifier: ^3.0.2
         version: 3.0.2
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../../packages/eslint-config-custom
       image-size:
         specifier: ^1.1.0
         version: 1.1.0
-      tailwind-preset-base:
-        specifier: workspace:*
-        version: link:../../packages/tailwind-preset-base
       tailwindcss:
         specifier: ^3.4.0
         version: 3.4.0
       vitest:
         specifier: ^1.1.0
-        version: 1.1.0(@types/node@20.10.5)
+        version: 1.1.0(@types/node@20.10.6)
 
   apps/nhost: {}
 
   apps/story:
     dependencies:
-      ui:
+      '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
     devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@repo/tailwind-preset-base':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-preset-base
       '@storybook/addon-essentials':
         specifier: ^7.6.6
         version: 7.6.6(react-dom@18.2.0)(react@18.2.0)
@@ -95,9 +101,6 @@ importers:
       '@storybook/testing-library':
         specifier: ^0.2.2
         version: 0.2.2
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../../packages/eslint-config-custom
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -110,9 +113,6 @@ importers:
       svelte:
         specifier: ^4.2.8
         version: 4.2.8
-      tailwind-preset-base:
-        specifier: workspace:*
-        version: link:../../packages/tailwind-preset-base
       tailwindcss:
         specifier: ^3.4.0
         version: 3.4.0
@@ -122,6 +122,9 @@ importers:
       '@nhost/nhost-js':
         specifier: ^3.0.1
         version: 3.0.1(graphql@16.8.1)
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       graphql:
         specifier: ^16.8.1
         version: 16.8.1
@@ -134,10 +137,13 @@ importers:
       luxon:
         specifier: ^3.4.4
         version: 3.4.4
-      ui:
-        specifier: workspace:*
-        version: link:../../packages/ui
     devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@repo/tailwind-preset-base':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-preset-base
       '@sveltejs/adapter-auto':
         specifier: ^3.0.1
         version: 3.0.1(@sveltejs/kit@2.0.6)
@@ -150,18 +156,15 @@ importers:
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../../packages/eslint-config-custom
       graphqurl:
         specifier: ^1.0.1
-        version: 1.0.1(@types/node@20.10.5)
+        version: 1.0.1(@types/node@20.10.6)
       houdini:
         specifier: ^1.2.35
         version: 1.2.35
       houdini-svelte:
         specifier: ^1.2.35
-        version: 1.2.35(@types/node@20.10.5)
+        version: 1.2.35(@types/node@20.10.6)
       postcss:
         specifier: ^8.4.32
         version: 8.4.32
@@ -177,21 +180,24 @@ importers:
       svelte-check:
         specifier: ^3.6.2
         version: 3.6.2(postcss@8.4.32)(svelte@4.2.8)
-      tailwind-preset-base:
-        specifier: workspace:*
-        version: link:../../packages/tailwind-preset-base
       tailwindcss:
         specifier: ^3.4.0
         version: 3.4.0
       vite:
         specifier: ^5.0.10
-        version: 5.0.10(@types/node@20.10.5)
+        version: 5.0.10(@types/node@20.10.6)
       vitest:
         specifier: ^1.1.0
-        version: 1.1.0(@types/node@20.10.5)
+        version: 1.1.0(@types/node@20.10.6)
 
-  packages/eslint-config-custom:
+  packages/eslint-config:
     devDependencies:
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^6.16.0
+        version: 6.16.0(@typescript-eslint/parser@6.16.0)(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/parser':
+        specifier: ^6.16.0
+        version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.56.0)
@@ -200,7 +206,7 @@ importers:
         version: 1.11.2(eslint@8.56.0)
       eslint-plugin-import:
         specifier: ^2.29.1
-        version: 2.29.1(eslint@8.56.0)
+        version: 2.29.1(@typescript-eslint/parser@6.16.0)(eslint@8.56.0)
       eslint-plugin-jsdoc:
         specifier: ^46.9.1
         version: 46.9.1(eslint@8.56.0)
@@ -209,37 +215,25 @@ importers:
         version: 2.35.1(eslint@8.56.0)(svelte@4.2.8)
       eslint-plugin-unused-imports:
         specifier: ^3.0.0
-        version: 3.0.0(eslint@8.56.0)
-
-  packages/eslint-config-custom-typescript:
-    devDependencies:
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^6.16.0
-        version: 6.16.0(@typescript-eslint/parser@6.16.0)(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/parser':
-        specifier: ^6.16.0
-        version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../eslint-config-custom
+        version: 3.0.0(@typescript-eslint/eslint-plugin@6.16.0)(eslint@8.56.0)
 
   packages/tailwind-preset-base:
     devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
       '@tailwindcss/typography':
         specifier: ^0.5.10
         version: 0.5.10(tailwindcss@3.4.0)
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../eslint-config-custom
       tailwindcss:
         specifier: ^3.4.0
         version: 3.4.0
 
   packages/ui:
     devDependencies:
-      eslint-config-custom:
+      '@repo/eslint-config':
         specifier: workspace:*
-        version: link:../eslint-config-custom
+        version: link:../eslint-config
       svelte:
         specifier: ^4.2.8
         version: 4.2.8
@@ -2453,7 +2447,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@graphql-tools/executor-http@0.1.10(@types/node@20.10.5)(graphql@15.4.0):
+  /@graphql-tools/executor-http@0.1.10(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-hnAfbKv0/lb9s31LhWzawQ5hghBfHS+gYWtqxME6Rl0Aufq9GltiiLBcl7OVVOnkLF0KhwgbYP1mB5VKmgTGpg==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -2464,7 +2458,7 @@ packages:
       dset: 3.1.3
       extract-files: 11.0.0
       graphql: 15.4.0
-      meros: 1.3.0(@types/node@20.10.5)
+      meros: 1.3.0(@types/node@20.10.6)
       tslib: 2.6.2
       value-or-promise: 1.0.12
     transitivePeerDependencies:
@@ -2630,7 +2624,7 @@ packages:
       value-or-promise: 1.0.12
     dev: true
 
-  /@graphql-tools/url-loader@7.17.18(@types/node@20.10.5)(graphql@15.4.0):
+  /@graphql-tools/url-loader@7.17.18(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-ear0CiyTj04jCVAxi7TvgbnGDIN2HgqzXzwsfcqiVg9cvjT40NcMlZ2P1lZDgqMkZ9oyLTV8Bw6j+SyG6A+xPw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -2638,7 +2632,7 @@ packages:
       '@ardatan/sync-fetch': 0.0.1
       '@graphql-tools/delegate': 9.0.35(graphql@15.4.0)
       '@graphql-tools/executor-graphql-ws': 0.0.14(graphql@15.4.0)
-      '@graphql-tools/executor-http': 0.1.10(@types/node@20.10.5)(graphql@15.4.0)
+      '@graphql-tools/executor-http': 0.1.10(@types/node@20.10.6)(graphql@15.4.0)
       '@graphql-tools/executor-legacy-ws': 0.0.11(graphql@15.4.0)
       '@graphql-tools/utils': 9.2.1(graphql@15.4.0)
       '@graphql-tools/wrap': 9.4.2(graphql@15.4.0)
@@ -2921,13 +2915,13 @@ packages:
     resolution: {integrity: sha512-tZ4hwilGWec+EzUs0W1Hr4VyNMR10vH2lorPKuWvQVLntjZ6BKsL9fF2AYb/XnoQWc3Xbt8/nhhgxgOlVNasGA==}
     dev: true
 
-  /@markuplint/create-rule-helper@3.15.0(@types/node@20.10.5):
+  /@markuplint/create-rule-helper@3.15.0(@types/node@20.10.6):
     resolution: {integrity: sha512-p1APXz5fMRxPZQKPy/Ht2jiIYzrnb+Pp/k1JU6TsbdcAPg9MlQ+mq676c+R8sYhSzPZ30YBqAPaD4eSWxyhjsg==}
     dependencies:
       '@markuplint/ml-core': 3.15.0
       glob: 10.3.10
       prettier: 2.8.8
-      ts-node: 10.9.2(@types/node@20.10.5)(typescript@5.3.3)
+      ts-node: 10.9.2(@types/node@20.10.6)(typescript@5.3.3)
       tslib: 2.6.2
       typescript: 5.3.3
     transitivePeerDependencies:
@@ -2937,7 +2931,7 @@ packages:
       - supports-color
     dev: true
 
-  /@markuplint/file-resolver@3.15.0(@types/node@20.10.5)(typescript@5.3.3):
+  /@markuplint/file-resolver@3.15.0(@types/node@20.10.6)(typescript@5.3.3):
     resolution: {integrity: sha512-WCHZuLoZIvJz7+X3Hq4De8VcXeZtJL9PYwvplr+4uZDxChE6gj9/TyQIYVkWyfYC5d3YSvPWGPHYXfLfrGLxSg==}
     dependencies:
       '@markuplint/html-parser': 3.13.0
@@ -2949,7 +2943,7 @@ packages:
       '@markuplint/selector': 3.14.0
       '@markuplint/shared': 3.8.0
       cosmiconfig: 8.3.6(typescript@5.3.3)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.10.5)(cosmiconfig@8.3.6)(typescript@5.3.3)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.10.6)(cosmiconfig@8.3.6)(typescript@5.3.3)
       glob: 10.3.10
       ignore: 5.3.0
       jsonc: 2.0.0
@@ -4226,7 +4220,7 @@ packages:
       magic-string: 0.30.5
       rollup: 3.29.4
       typescript: 5.3.3
-      vite: 4.5.1(@types/node@20.10.5)
+      vite: 4.5.1(@types/node@20.10.6)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4590,7 +4584,7 @@ packages:
       svelte-preprocess: 5.1.3(@babel/core@7.23.6)(postcss@8.4.32)(svelte@4.2.8)(typescript@5.3.3)
       sveltedoc-parser: 4.2.1
       ts-dedent: 2.2.0
-      vite: 4.5.1(@types/node@20.10.5)
+      vite: 4.5.1(@types/node@20.10.6)
     transitivePeerDependencies:
       - '@babel/core'
       - '@preact/preset-vite'
@@ -4709,7 +4703,7 @@ packages:
       svelte: 3.59.2
       tiny-glob: 0.2.9
       undici: 5.26.5
-      vite: 4.5.1(@types/node@20.10.5)
+      vite: 4.5.1(@types/node@20.10.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4737,7 +4731,7 @@ packages:
       sirv: 2.0.4
       svelte: 4.2.8
       tiny-glob: 0.2.9
-      vite: 5.0.10(@types/node@20.10.5)
+      vite: 5.0.10(@types/node@20.10.6)
     dev: true
 
   /@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.5.3)(svelte@3.59.2)(vite@4.5.1):
@@ -4751,7 +4745,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@3.59.2)(vite@4.5.1)
       debug: 4.3.4
       svelte: 3.59.2
-      vite: 4.5.1(@types/node@20.10.5)
+      vite: 4.5.1(@types/node@20.10.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4767,7 +4761,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@4.2.8)(vite@4.5.1)
       debug: 4.3.4
       svelte: 4.2.8
-      vite: 4.5.1(@types/node@20.10.5)
+      vite: 4.5.1(@types/node@20.10.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4783,7 +4777,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.0.1(svelte@4.2.8)(vite@5.0.10)
       debug: 4.3.4
       svelte: 4.2.8
-      vite: 5.0.10(@types/node@20.10.5)
+      vite: 5.0.10(@types/node@20.10.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4802,7 +4796,7 @@ packages:
       magic-string: 0.30.5
       svelte: 3.59.2
       svelte-hmr: 0.15.3(svelte@3.59.2)
-      vite: 4.5.1(@types/node@20.10.5)
+      vite: 4.5.1(@types/node@20.10.6)
       vitefu: 0.2.5(vite@4.5.1)
     transitivePeerDependencies:
       - supports-color
@@ -4822,7 +4816,7 @@ packages:
       magic-string: 0.30.5
       svelte: 4.2.8
       svelte-hmr: 0.15.3(svelte@4.2.8)
-      vite: 4.5.1(@types/node@20.10.5)
+      vite: 4.5.1(@types/node@20.10.6)
       vitefu: 0.2.5(vite@4.5.1)
     transitivePeerDependencies:
       - supports-color
@@ -4842,7 +4836,7 @@ packages:
       magic-string: 0.30.5
       svelte: 4.2.8
       svelte-hmr: 0.15.3(svelte@4.2.8)
-      vite: 5.0.10(@types/node@20.10.5)
+      vite: 5.0.10(@types/node@20.10.6)
       vitefu: 0.2.5(vite@5.0.10)
     transitivePeerDependencies:
       - supports-color
@@ -5144,6 +5138,12 @@ packages:
 
   /@types/node@20.10.5:
     resolution: {integrity: sha512-nNPsNE65wjMxEKI93yOP+NPGGBJz/PoN3kZsVLee0XMiJolxSekEVD8wRwBUBqkwc7UWop0edW50yrCQW4CyRw==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
+
+  /@types/node@20.10.6:
+    resolution: {integrity: sha512-Vac8H+NlRNNlAmDfGUP7b5h/KA+AtWIzuXy0E6OyP8f1tCLYAtPvKRRDJjAPqhpCb0t6U2j7/xqAuLEebW2kiw==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -5516,6 +5516,12 @@ packages:
 
   /acorn@8.11.2:
     resolution: {integrity: sha512-nc0Axzp/0FILLEVsm4fNwLCwMttvhEI263QtVPQcbpfZZ3ts0hLsZGOpE6czNlid7CJ9MlyH8reXkpsf3YUY4w==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+    dev: true
+
+  /acorn@8.11.3:
+    resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
@@ -6645,7 +6651,7 @@ packages:
       vary: 1.1.2
     dev: true
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.10.5)(cosmiconfig@8.3.6)(typescript@5.3.3):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.10.6)(cosmiconfig@8.3.6)(typescript@5.3.3):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
     peerDependencies:
@@ -6653,7 +6659,7 @@ packages:
       cosmiconfig: '>=8.2'
       typescript: '>=4'
     dependencies:
-      '@types/node': 20.10.5
+      '@types/node': 20.10.6
       cosmiconfig: 8.3.6(typescript@5.3.3)
       jiti: 1.21.0
       typescript: 5.3.3
@@ -7598,7 +7604,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils@2.8.0(eslint-import-resolver-node@0.3.9)(eslint@8.56.0):
+  /eslint-module-utils@2.8.0(@typescript-eslint/parser@6.16.0)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0):
     resolution: {integrity: sha512-aWajIYfsqCKRDgUfjEXNN/JlrzauMuSEy5sbd7WXbtW3EH6A6MpwEh42c7qD+MqQo9QMJ6fWLAeIJynx0g6OAw==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -7619,6 +7625,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
+      '@typescript-eslint/parser': 6.16.0(eslint@8.56.0)(typescript@5.3.3)
       debug: 3.2.7
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
@@ -7626,7 +7633,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-import@2.29.1(eslint@8.56.0):
+  /eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.16.0)(eslint@8.56.0):
     resolution: {integrity: sha512-BbPC0cuExzhiMo4Ff1BTVwHpjjv28C5R+btTOGaCRC7UEz801up0JadwkeSk5Ued6TG34uaczuVuH6qyy5YUxw==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -7636,6 +7643,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
+      '@typescript-eslint/parser': 6.16.0(eslint@8.56.0)(typescript@5.3.3)
       array-includes: 3.1.7
       array.prototype.findlastindex: 1.2.3
       array.prototype.flat: 1.3.2
@@ -7644,7 +7652,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(eslint-import-resolver-node@0.3.9)(eslint@8.56.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.16.0)(eslint-import-resolver-node@0.3.9)(eslint@8.56.0)
       hasown: 2.0.0
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -7718,7 +7726,7 @@ packages:
       eslint: 8.56.0
     dev: true
 
-  /eslint-plugin-unused-imports@3.0.0(eslint@8.56.0):
+  /eslint-plugin-unused-imports@3.0.0(@typescript-eslint/eslint-plugin@6.16.0)(eslint@8.56.0):
     resolution: {integrity: sha512-sduiswLJfZHeeBJ+MQaG+xYzSWdRXoSw61DpU13mzWumCkR0ufD0HmO4kdNokjrkluMHpj/7PJeN35pgbhW3kw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -7728,6 +7736,7 @@ packages:
       '@typescript-eslint/eslint-plugin':
         optional: true
     dependencies:
+      '@typescript-eslint/eslint-plugin': 6.16.0(@typescript-eslint/parser@6.16.0)(eslint@8.56.0)(typescript@5.3.3)
       eslint: 8.56.0
       eslint-rule-composer: 0.3.0
     dev: true
@@ -8761,7 +8770,7 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /graphql-config@4.5.0(@types/node@20.10.5)(graphql@15.4.0):
+  /graphql-config@4.5.0(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-x6D0/cftpLUJ0Ch1e5sj1TZn6Wcxx4oMfmhaG9shM0DKajA9iR+j1z86GSTQ19fShbGvrSSvbIQsHku6aQ6BBw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -8775,7 +8784,7 @@ packages:
       '@graphql-tools/json-file-loader': 7.4.18(graphql@15.4.0)
       '@graphql-tools/load': 7.8.14(graphql@15.4.0)
       '@graphql-tools/merge': 8.4.2(graphql@15.4.0)
-      '@graphql-tools/url-loader': 7.17.18(@types/node@20.10.5)(graphql@15.4.0)
+      '@graphql-tools/url-loader': 7.17.18(@types/node@20.10.6)(graphql@15.4.0)
       '@graphql-tools/utils': 9.2.1(graphql@15.4.0)
       cosmiconfig: 8.0.0
       graphql: 15.4.0
@@ -8790,17 +8799,17 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-interface@2.10.2(@types/node@20.10.5)(graphql@15.4.0):
+  /graphql-language-service-interface@2.10.2(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-RKIEBPhRMWdXY3fxRs99XysTDnEgAvNbu8ov/5iOlnkZsWQNzitjtd0O0l1CutQOQt3iXoHde7w8uhCnKL4tcg==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0
     dependencies:
       graphql: 15.4.0
-      graphql-config: 4.5.0(@types/node@20.10.5)(graphql@15.4.0)
-      graphql-language-service-parser: 1.10.4(@types/node@20.10.5)(graphql@15.4.0)
-      graphql-language-service-types: 1.8.7(@types/node@20.10.5)(graphql@15.4.0)
-      graphql-language-service-utils: 2.7.1(@types/node@20.10.5)(graphql@15.4.0)
+      graphql-config: 4.5.0(@types/node@20.10.6)(graphql@15.4.0)
+      graphql-language-service-parser: 1.10.4(@types/node@20.10.6)(graphql@15.4.0)
+      graphql-language-service-types: 1.8.7(@types/node@20.10.6)(graphql@15.4.0)
+      graphql-language-service-utils: 2.7.1(@types/node@20.10.6)(graphql@15.4.0)
       vscode-languageserver-types: 3.17.5
     transitivePeerDependencies:
       - '@types/node'
@@ -8810,14 +8819,14 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-parser@1.10.4(@types/node@20.10.5)(graphql@15.4.0):
+  /graphql-language-service-parser@1.10.4(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-duDE+0aeKLFVrb9Kf28U84ZEHhHcvTjWIT6dJbIAQJWBaDoht0D4BK9EIhd94I3DtKRc1JCJb2+70y1lvP/hiA==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0
     dependencies:
       graphql: 15.4.0
-      graphql-language-service-types: 1.8.7(@types/node@20.10.5)(graphql@15.4.0)
+      graphql-language-service-types: 1.8.7(@types/node@20.10.6)(graphql@15.4.0)
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
@@ -8826,14 +8835,14 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-types@1.8.7(@types/node@20.10.5)(graphql@15.4.0):
+  /graphql-language-service-types@1.8.7(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-LP/Mx0nFBshYEyD0Ny6EVGfacJAGVx+qXtlJP4hLzUdBNOGimfDNtMVIdZANBXHXcM41MDgMHTnyEx2g6/Ttbw==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0
     dependencies:
       graphql: 15.4.0
-      graphql-config: 4.5.0(@types/node@20.10.5)(graphql@15.4.0)
+      graphql-config: 4.5.0(@types/node@20.10.6)(graphql@15.4.0)
       vscode-languageserver-types: 3.17.5
     transitivePeerDependencies:
       - '@types/node'
@@ -8843,14 +8852,14 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-utils@2.5.1(@types/node@20.10.5)(graphql@15.4.0):
+  /graphql-language-service-utils@2.5.1(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-Lzz723cYrYlVN4WVzIyFGg3ogoe+QYAIBfdtDboiIILoy0FTmqbyC2TOErqbmWKqO4NK9xDA95cSRFbWiHYj0g==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0
     dependencies:
       graphql: 15.4.0
-      graphql-language-service-types: 1.8.7(@types/node@20.10.5)(graphql@15.4.0)
+      graphql-language-service-types: 1.8.7(@types/node@20.10.6)(graphql@15.4.0)
       nullthrows: 1.1.1
     transitivePeerDependencies:
       - '@types/node'
@@ -8860,7 +8869,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-utils@2.7.1(@types/node@20.10.5)(graphql@15.4.0):
+  /graphql-language-service-utils@2.7.1(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-Wci5MbrQj+6d7rfvbORrA9uDlfMysBWYaG49ST5TKylNaXYFf3ixFOa74iM1KtM9eidosUbI3E1JlWi0JaidJA==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
@@ -8868,7 +8877,7 @@ packages:
     dependencies:
       '@types/json-schema': 7.0.9
       graphql: 15.4.0
-      graphql-language-service-types: 1.8.7(@types/node@20.10.5)(graphql@15.4.0)
+      graphql-language-service-types: 1.8.7(@types/node@20.10.6)(graphql@15.4.0)
       nullthrows: 1.1.1
     transitivePeerDependencies:
       - '@types/node'
@@ -8931,7 +8940,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: false
 
-  /graphqurl@1.0.1(@types/node@20.10.5):
+  /graphqurl@1.0.1(@types/node@20.10.6):
     resolution: {integrity: sha512-97Chda90OBIHCpH6iQHNYc9qTTADN0LOFbiMcRws3V5SottC/0yTDIQDgBzncZYVCkttyjAnT6YmVuNId7ymQA==}
     engines: {node: '>=8.0.0'}
     hasBin: true
@@ -8943,8 +8952,8 @@ packages:
       cli-ux: 4.9.3
       express: 4.16.3
       graphql: 15.4.0
-      graphql-language-service-interface: 2.10.2(@types/node@20.10.5)(graphql@15.4.0)
-      graphql-language-service-utils: 2.5.1(@types/node@20.10.5)(graphql@15.4.0)
+      graphql-language-service-interface: 2.10.2(@types/node@20.10.6)(graphql@15.4.0)
+      graphql-language-service-utils: 2.5.1(@types/node@20.10.6)(graphql@15.4.0)
       isomorphic-fetch: 3.0.0
       isomorphic-ws: 4.0.1(ws@7.4.2)
       open: 7.3.1
@@ -9077,7 +9086,7 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
-  /houdini-svelte@1.2.35(@types/node@20.10.5):
+  /houdini-svelte@1.2.35(@types/node@20.10.6):
     resolution: {integrity: sha512-6BmvQO08sov7jqeCPybdvpbVl/baXG31vnhUK4lGcD+GY4tf52j3/Sky3eNyf9k3jbRQV80V6TBpFaTetS0gXg==}
     dependencies:
       '@kitql/helpers': 0.8.7
@@ -9089,7 +9098,7 @@ packages:
       recast: 0.23.4
       rollup: 3.29.4
       svelte: 3.59.2
-      vite: 4.5.1(@types/node@20.10.5)
+      vite: 4.5.1(@types/node@20.10.6)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -10303,12 +10312,12 @@ packages:
       react: 18.2.0
     dev: true
 
-  /markuplint@3.15.0(@types/node@20.10.5)(typescript@5.3.3):
+  /markuplint@3.15.0(@types/node@20.10.6)(typescript@5.3.3):
     resolution: {integrity: sha512-id1RZeZVhVcJCrANtFaEmgbAvJOtHSj9wE9qVB3utP6Sf7u7KGYGLphvGSqdwCcWYbnlvZ0WmJnccJlrH8S6FQ==}
     hasBin: true
     dependencies:
-      '@markuplint/create-rule-helper': 3.15.0(@types/node@20.10.5)
-      '@markuplint/file-resolver': 3.15.0(@types/node@20.10.5)(typescript@5.3.3)
+      '@markuplint/create-rule-helper': 3.15.0(@types/node@20.10.6)
+      '@markuplint/file-resolver': 3.15.0(@types/node@20.10.6)(typescript@5.3.3)
       '@markuplint/html-parser': 3.13.0
       '@markuplint/html-spec': 3.14.0
       '@markuplint/i18n': 3.12.0
@@ -10434,7 +10443,7 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /meros@1.3.0(@types/node@20.10.5):
+  /meros@1.3.0(@types/node@20.10.6):
     resolution: {integrity: sha512-2BNGOimxEz5hmjUG2FwoxCt5HN7BXdaWyFqEwxPTrJzVdABtrL4TiHTcsWSFAxPQ/tOnEaQEJh3qWq71QRMY+w==}
     engines: {node: '>=13'}
     peerDependencies:
@@ -10443,7 +10452,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 20.10.5
+      '@types/node': 20.10.6
     dev: true
 
   /methods@1.1.2:
@@ -12866,7 +12875,7 @@ packages:
       '@ampproject/remapping': 2.2.1
       '@jridgewell/sourcemap-codec': 1.4.15
       '@jridgewell/trace-mapping': 0.3.20
-      acorn: 8.11.2
+      acorn: 8.11.3
       aria-query: 5.3.0
       axobject-query: 3.2.1
       code-red: 1.0.4
@@ -13139,7 +13148,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-node@10.9.2(@types/node@20.10.5)(typescript@5.3.3):
+  /ts-node@10.9.2(@types/node@20.10.6)(typescript@5.3.3):
     resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
@@ -13158,7 +13167,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.10.5
+      '@types/node': 20.10.6
       acorn: 8.11.2
       acorn-walk: 8.3.1
       arg: 4.1.3
@@ -13636,7 +13645,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-node@1.1.0(@types/node@20.10.5):
+  /vite-node@1.1.0(@types/node@20.10.6):
     resolution: {integrity: sha512-jV48DDUxGLEBdHCQvxL1mEh7+naVy+nhUUUaPAZLd3FJgXuxQiewHcfeZebbJ6onDqNGkP4r3MhQ342PRlG81Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -13645,7 +13654,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.0.10(@types/node@20.10.5)
+      vite: 5.0.10(@types/node@20.10.6)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -13665,7 +13674,7 @@ packages:
       micromatch: 4.0.5
     dev: true
 
-  /vite@4.5.1(@types/node@20.10.5):
+  /vite@4.5.1(@types/node@20.10.6):
     resolution: {integrity: sha512-AXXFaAJ8yebyqzoNB9fu2pHoo/nWX+xZlaRwoeYUxEqBO+Zj4msE5G+BhGBll9lYEKv9Hfks52PAF2X7qDYXQA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -13693,7 +13702,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.10.5
+      '@types/node': 20.10.6
       esbuild: 0.18.20
       postcss: 8.4.32
       rollup: 3.29.4
@@ -13701,7 +13710,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.0.10(@types/node@20.10.5):
+  /vite@5.0.10(@types/node@20.10.6):
     resolution: {integrity: sha512-2P8J7WWgmc355HUMlFrwofacvr98DAjoE52BfdbwQtyLH06XKwaL/FMnmKM2crF0iX4MpmMKoDlNCB1ok7zHCw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -13729,7 +13738,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.10.5
+      '@types/node': 20.10.6
       esbuild: 0.19.10
       postcss: 8.4.32
       rollup: 4.9.1
@@ -13745,7 +13754,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.1(@types/node@20.10.5)
+      vite: 4.5.1(@types/node@20.10.6)
     dev: true
 
   /vitefu@0.2.5(vite@5.0.10):
@@ -13756,10 +13765,10 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.0.10(@types/node@20.10.5)
+      vite: 5.0.10(@types/node@20.10.6)
     dev: true
 
-  /vitest@1.1.0(@types/node@20.10.5):
+  /vitest@1.1.0(@types/node@20.10.6):
     resolution: {integrity: sha512-oDFiCrw7dd3Jf06HoMtSRARivvyjHJaTxikFxuqJjO76U436PqlVw1uLn7a8OSPrhSfMGVaRakKpA2lePdw79A==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -13784,7 +13793,7 @@ packages:
       jsdom:
         optional: true
     dependencies:
-      '@types/node': 20.10.5
+      '@types/node': 20.10.6
       '@vitest/expect': 1.1.0
       '@vitest/runner': 1.1.0
       '@vitest/snapshot': 1.1.0
@@ -13803,8 +13812,8 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.8.1
-      vite: 5.0.10(@types/node@20.10.5)
-      vite-node: 1.1.0(@types/node@20.10.5)
+      vite: 5.0.10(@types/node@20.10.6)
+      vite-node: 1.1.0(@types/node@20.10.6)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less

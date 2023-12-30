@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    'custom',
+    './javascript.cjs',
     'plugin:@typescript-eslint/recommended',
     'plugin:jsdoc/recommended-typescript-error',
   ],

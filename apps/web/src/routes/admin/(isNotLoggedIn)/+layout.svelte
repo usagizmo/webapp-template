@@ -1,6 +1,6 @@
 <script>
   import { setContext } from 'svelte';
-  import { SectionFrame } from 'ui';
+  import { SectionFrame } from '@repo/ui';
   import { goto } from '$app/navigation';
   import { user } from '$lib/nhost';
   import { ROUTE } from '$lib/routes';

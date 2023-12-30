@@ -14,9 +14,11 @@
     "format": "concurrently pnpm:format:*"
   },
   "dependencies": {
-    "ui": "workspace:*"
+    "@repo/ui": "workspace:*"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tailwind-preset-base": "workspace:*",
     "@storybook/addon-essentials": "^7.6.6",
     "@storybook/addon-interactions": "^7.6.6",
     "@storybook/addon-links": "^7.6.6",
@@ -24,12 +26,10 @@
     "@storybook/svelte": "^7.6.6",
     "@storybook/svelte-vite": "^7.6.6",
     "@storybook/testing-library": "^0.2.2",
-    "eslint-config-custom": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.6",
     "svelte": "^4.2.8",
-    "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.4.0"
   }
 }

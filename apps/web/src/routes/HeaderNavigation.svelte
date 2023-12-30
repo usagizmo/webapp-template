@@ -1,5 +1,5 @@
 <script>
-  import { Button } from 'ui';
+  import { Button } from '@repo/ui';
   import { user } from '$lib/nhost';
   import { ROUTE } from '$lib/routes';
   import { adminPath } from '$lib/store';

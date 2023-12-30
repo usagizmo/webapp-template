@@ -1,6 +1,6 @@
 <script>
   import { getContext } from 'svelte';
-  import { Button, Meta, SignInIcon } from 'ui';
+  import { Button, Meta, SignInIcon } from '@repo/ui';
   import { signUp } from '$lib/nhost';
   import { userInputsKey } from '$lib/userInputs';
 

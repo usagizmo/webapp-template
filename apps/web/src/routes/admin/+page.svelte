@@ -1,5 +1,5 @@
 <script>
-  import { Button, Meta, SectionFrame, SignOutIcon } from 'ui';
+  import { Button, Meta, SectionFrame, SignOutIcon } from '@repo/ui';
   import { user, logOut } from '$lib/nhost';
   import LoginMessage from '../LoginMessage.svelte';
 

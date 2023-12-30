@@ -1,5 +1,5 @@
 <script>
-  import { SectionFrame } from 'ui';
+  import { SectionFrame } from '@repo/ui';
 </script>
 
 <SectionFrame {...$$props}>SectionFrame</SectionFrame>

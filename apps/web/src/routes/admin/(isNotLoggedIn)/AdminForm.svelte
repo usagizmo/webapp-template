@@ -1,7 +1,7 @@
 <script>
   import { getContext } from 'svelte';
   import { slide } from 'svelte/transition';
-  import { Input } from 'ui';
+  import { Input } from '@repo/ui';
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';

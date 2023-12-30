@@ -22,7 +22,7 @@
     "concurrently": "^8.2.2",
     "cspell": "^8.2.4",
     "eslint": "^8.56.0",
-    "eslint-config-custom": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "markuplint": "^3.15.0",

@@ -1,6 +1,6 @@
 <script>
   import { tick } from 'svelte';
-  import { Button, PaperPlaneIcon, SectionFrame } from 'ui';
+  import { Button, PaperPlaneIcon, SectionFrame } from '@repo/ui';
   import { nhost } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import { InsertCommentStore } from '$houdini';

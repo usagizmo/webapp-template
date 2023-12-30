@@ -1,5 +1,5 @@
 <script>
-  import { Button, PaperPlaneIcon } from 'ui';
+  import { Button, PaperPlaneIcon } from '@repo/ui';
 </script>
 
 <div class="flex gap-1">
