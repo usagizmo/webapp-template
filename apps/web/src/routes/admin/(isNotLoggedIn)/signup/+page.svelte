@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte';
   import { Button, Meta, SignInIcon } from '@repo/ui';
   import { signUp } from '$lib/nhost';
   import { userInputsKey } from '$lib/userInputs';
+  import type { UserInputs } from '$lib/userInputs';
 
-  /** @type {{ getInputs: () => import('$lib/userInputs').UserInputs}} */
-  const { getInputs } = getContext(userInputsKey);
+  const { getInputs } = getContext<{ getInputs: () => UserInputs }>(userInputsKey);
   const inputs = getInputs();
 
   const handleSubmit = async () => {

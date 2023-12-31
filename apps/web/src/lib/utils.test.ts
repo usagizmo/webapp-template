@@ -29,16 +29,11 @@ describe('@tryErrorAlertOnHoudiniApi', () => {
     vi.stubGlobal('alert', mock);
 
     expect(tryErrorAlertOnHoudiniApi(null)).toBe(false);
-    // @ts-ignore
     expect(tryErrorAlertOnHoudiniApi('')).toBe(false);
-    // @ts-ignore
     expect(tryErrorAlertOnHoudiniApi('test')).toBe(false);
-    // @ts-ignore
     expect(tryErrorAlertOnHoudiniApi(1)).toBe(false);
-    // @ts-ignore
     expect(tryErrorAlertOnHoudiniApi({})).toBe(false);
     expect(tryErrorAlertOnHoudiniApi([])).toBe(false);
-    // @ts-ignore
     expect(tryErrorAlertOnHoudiniApi([{}])).toBe(false);
     expect(tryErrorAlertOnHoudiniApi([{ message: '' }])).toBe(false);
 
