@@ -35,6 +35,7 @@
     "@repo/tailwind-preset-base": "workspace:*",
     "@sveltejs/adapter-auto": "^3.0.1",
     "@sveltejs/kit": "^2.0.6",
+    "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
     "graphqurl": "^1.0.1",
@@ -46,6 +47,8 @@
     "svelte": "5.0.0-next.27",
     "svelte-check": "^3.6.2",
     "tailwindcss": "^3.4.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3",
     "vite": "^5.0.10",
     "vitest": "^1.1.0"
   }

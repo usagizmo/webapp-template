@@ -1,15 +1,10 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vitest/config';
 import houdini from 'houdini/vite';
 
-/** @type {import('vite').UserConfig} */
-export default {
+export default defineConfig({
   plugins: [houdini(), sveltekit()],
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}'],
   },
-  // TODO: To use Vite 5 for now
-  // ref. https://github.com/vitejs/vite/issues/15274
-  resolve: {
-    mainFields: ['browser', 'module', 'jsnext:main', 'jsnext'],
-  },
-};
+});
