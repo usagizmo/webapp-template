@@ -1,6 +1,6 @@
 # `web` app
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
 [[Demo](https://webapp-template.usagizmo.com/)]
 
@@ -23,6 +23,8 @@ pnpm format    # Format with `prettier`
 pnpm package
 pnpm check[:watch]
 ```
+
+You can preview the production build with `pnpm preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
