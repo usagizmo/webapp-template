@@ -1,19 +1,15 @@
-<script>
+<script lang="ts">
   import { Meta, SectionFrame } from '@repo/ui';
   import { user } from '$lib/nhost';
   import CommentForm from './CommentForm.svelte';
   import Comments from './Comments.svelte';
   import LoginMessage from './LoginMessage.svelte';
+  import type { PageData } from './$types';
 
-  /** @type { import('./$houdini').PageData } */
-  export let data;
-
-  $: ({ Comments: CommentsData } = data);
-  $: comments = $CommentsData.data?.comments ?? [];
+  export let data: PageData;
 
   $: meta = {
-    /** @type {'website'} */
-    type: 'website',
+    type: 'website' as const,
     title: `WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com',
   };
@@ -36,7 +32,7 @@
       </div>
 
       <div>
-        <Comments {comments} />
+        <Comments comments={data.comments} />
       </div>
     </div>
   </SectionFrame>

@@ -1,29 +1,32 @@
-<script>
+<script lang="ts">
   import { tick } from 'svelte';
   import { Button, PaperPlaneIcon, SectionFrame } from '@repo/ui';
   import { nhost } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
-  import { InsertCommentStore } from '$houdini';
 
-  /** @type {HTMLTextAreaElement} */
-  let textAreaEl;
+  let textAreaEl: HTMLTextAreaElement;
 
   let isSending = false;
   let text = '';
 
-  /** @type {FileList | null} */
-  let files = null;
+  let files: FileList | null = null;
 
-  /** @type {File | null} */
-  $: file = files?.[0] ?? null;
+  $: file = (files?.[0] ?? null) as File | null;
 
-  const insertComment = new InsertCommentStore();
+  const insertComment = `
+    mutation ($text: String!, $fileId: String) {
+      insert_comments(objects: {text: $text, fileId: $fileId}) {
+        returning {
+          id
+        }
+      }
+    }
+  `;
 
   /**
    * Send the comment
-   * @returns {Promise<void>}
    */
-  async function handleSend() {
+  async function handleSend(): Promise<void> {
     if (!text) {
       textAreaEl.focus();
       return;
@@ -32,8 +35,7 @@
     // before
     isSending = true;
 
-    /** @type {string | null} */
-    let fileId = null;
+    let fileId: string | null = null;
 
     if (file) {
       const res = await nhost.storage.upload({ file });
@@ -46,7 +48,7 @@
       }
     }
 
-    const { errors } = await insertComment.mutate({ text, fileId });
+    const { errors } = await nhost.graphql.request(insertComment, { text, fileId });
 
     if (errors?.length) {
       tryErrorAlertOnHoudiniApi(errors);
@@ -63,8 +65,7 @@
     textAreaEl.focus();
   }
 
-  /** @type {(e: KeyboardEvent) => void} */
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: KeyboardEvent): void => {
     if (e.metaKey && e.key === 'Enter') {
       handleSend();
     }

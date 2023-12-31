@@ -1,59 +1,44 @@
-<script>
+<script lang="ts">
   import { DateTime } from 'luxon';
   import { fade } from 'svelte/transition';
   import { Button, CircleCheckIcon, CircleCloseIcon } from '@repo/ui';
   import { nhost, user } from '$lib/nhost';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
-  import { DeleteCommentStore, fragment, graphql, UpdateCommentFileIdStore } from '$houdini';
+  import type { PageData } from './$types';
 
-  /**
-   * The comment card
-   * @typedef {object} Card
-   * @property {string} id - The comment ID
-   * @property {boolean} me - Whether the comment belongs to the current user
-   * @property {string} name - The name of the user who made the comment
-   * @property {Date} createdAt - The date the comment was created
-   * @property {string} message - The comment message
-   * @property {string | null} fileId - The file ID of the comment image
-   */
+  interface Card {
+    id: string;
+    me: boolean;
+    name: string;
+    createdAt: Date;
+    message: string;
+    fileId: string | null;
+  }
 
   let isActionVisible = false;
   let isDeleting = false;
 
-  /** @type {import('$houdini').Comment} */
-  export let comment;
+  export let comment: PageData['comments'][0];
 
-  $: data = fragment(
-    comment,
-    graphql`
-      fragment Comment on comments {
-        id
-        createdAt
-        updatedAt
-        text
-        fileId
-        user {
-          id
-          displayName
-        }
-      }
-    `,
-  );
-
-  /** @type {Card} */
   $: card = {
-    id: $data.id,
-    me: $user?.id === $data.user.id,
-    name: $data.user.displayName,
-    createdAt: $data.createdAt,
-    message: $data.text,
-    fileId: $data.fileId,
-  };
+    id: comment.id,
+    me: $user?.id === comment.user.id,
+    name: comment.user.displayName,
+    createdAt: new Date(comment.createdAt),
+    message: comment.text,
+    fileId: comment.fileId,
+  } satisfies Card;
 
   $: createdAt = DateTime.fromJSDate(card.createdAt);
 
-  const updateCommentFileId = new UpdateCommentFileIdStore();
-  const deleteComment = new DeleteCommentStore();
+  const updateCommentFileId = `
+    mutation ($id: uuid!, $fileId: String) {
+      update_comments_by_pk(pk_columns: {id: $id}, _set: {fileId: $fileId}) {
+        id
+        fileId
+      }
+    }
+  `;
 
   const handleDeleteImage = async () => {
     const { id, fileId } = card;
@@ -72,7 +57,7 @@
       // return;
     }
 
-    const { errors } = await updateCommentFileId.mutate({ id, fileId: null });
+    const { errors } = await nhost.graphql.request(updateCommentFileId, { id, fileId: null });
 
     if (errors?.length) {
       tryErrorAlertOnHoudiniApi(errors);
@@ -83,6 +68,14 @@
     // after
     isDeleting = false;
   };
+
+  const deleteComment = `
+    mutation ($id: uuid!) {
+      delete_comments_by_pk(id: $id) {
+        id
+      }
+    }
+  `;
 
   const handleDelete = async () => {
     const { id, fileId } = card;
@@ -98,7 +91,7 @@
       }
     }
 
-    const { errors } = await deleteComment.mutate({ id });
+    const { errors } = await nhost.graphql.request(deleteComment, { id });
 
     if (errors?.length) {
       tryErrorAlertOnHoudiniApi(errors);
