@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Meta, SectionFrame } from '@repo/ui';
 
   $: meta = {

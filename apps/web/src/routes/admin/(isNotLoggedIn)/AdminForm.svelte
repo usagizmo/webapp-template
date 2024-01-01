@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte';
   import { slide } from 'svelte/transition';
   import { Input } from '@repo/ui';
@@ -6,9 +6,9 @@
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
   import { userInputsKey } from '$lib/userInputs';
+  import type { UserInputs } from '$lib/userInputs';
 
-  /** @type {{ getInputs: () => import('$lib/userInputs').UserInputs}} */
-  const { getInputs } = getContext(userInputsKey);
+  const { getInputs } = getContext<{ getInputs: () => UserInputs }>(userInputsKey);
   const inputs = getInputs();
 
   $: isSignUpPage = $page.url.pathname === ROUTE.ADMIN_SIGNUP;

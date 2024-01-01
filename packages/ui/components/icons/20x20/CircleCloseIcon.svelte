@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let size = 20;
 
   $: style = `width: ${size}px; height: ${size}px;`;

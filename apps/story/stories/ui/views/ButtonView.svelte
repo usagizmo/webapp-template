@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, PaperPlaneIcon } from '@repo/ui';
 </script>
 

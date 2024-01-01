@@ -1,8 +1,7 @@
-<script>
+<script lang="ts">
   export let href = '';
 
-  /** @type {'button' | 'reset' | 'submit'} */
-  export let type = 'button';
+  export let type: 'button' | 'reset' | 'submit' = 'button';
   export let primary = false;
   export let blank = false;
   export let disabled = false;

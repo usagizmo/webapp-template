@@ -1,16 +1,14 @@
-<script>
+<script lang="ts">
   import { crossfade } from 'svelte/transition';
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  /** @type {{label: string, href: string}[]} */
-  export let navItems = [];
+  export let navItems: { label: string; href: string }[] = [];
 
   const [send, receive] = crossfade(defaultDE);
 
-  /** @type {(href: string) => string} */
-  $: getScope = (href) => href.split('/')[1];
+  $: getScope = (href: string) => href.split('/')[1];
 </script>
 
 <ul class="flex h-full items-center gap-5">
