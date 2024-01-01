@@ -1,26 +1,26 @@
-<script>
+<script lang="ts">
   import { setContext } from 'svelte';
   import { SectionFrame } from '@repo/ui';
   import { goto } from '$app/navigation';
-  import { user } from '$lib/nhost';
+  import { store } from '$lib/store.svelte';
   import { ROUTE } from '$lib/routes';
   import { userInputsKey } from '$lib/userInputs';
+  import type { UserInputs } from '$lib/userInputs';
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import AdminForm from './AdminForm.svelte';
 
-  /** @type {import('$lib/userInputs').UserInputs} */
   let userInputs = {
     displayName: 'Guest',
     email: 'email@add.com',
     password: 'password',
-  };
+  } satisfies UserInputs;
 
   setContext(userInputsKey, {
     getInputs: () => userInputs,
   });
 
-  $: if ($user) {
+  $: if (store.user) {
     goto(ROUTE.HOME, { replaceState: true });
   }
 </script>

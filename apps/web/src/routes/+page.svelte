@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Meta, SectionFrame } from '@repo/ui';
-  import { user } from '$lib/nhost';
+  import { store } from '$lib/store.svelte';
   import CommentForm from './CommentForm.svelte';
   import Comments from './Comments.svelte';
   import LoginMessage from './LoginMessage.svelte';
@@ -18,7 +18,7 @@
 <Meta {...meta} />
 
 <div class="mx-auto max-w-[792px] space-y-5">
-  {#if $user}
+  {#if store.user}
     <CommentForm />
   {:else}
     <LoginMessage />

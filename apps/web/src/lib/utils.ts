@@ -35,6 +35,6 @@ export function tryErrorAlertOnHoudiniApi(errors: unknown): boolean {
  * @param cookiesSession - The session from a cookie
  * @returns - The parsed session
  */
-export function parseSession(cookiesSession: string): NhostSession | null {
+export function parseSession(cookiesSession?: string): NhostSession | null {
   return cookiesSession ? JSON.parse(cookiesSession) : null;
 }

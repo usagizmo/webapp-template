@@ -2,7 +2,8 @@
   import { cdate } from 'cdate';
   import { fade } from 'svelte/transition';
   import { Button, CircleCheckIcon, CircleCloseIcon } from '@repo/ui';
-  import { nhost, user } from '$lib/nhost';
+  import { nhost } from '$lib/nhost';
+  import { store } from '$lib/store.svelte';
   import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import type { PageData } from './$types';
 
@@ -22,7 +23,7 @@
 
   $: card = {
     id: comment.id,
-    me: $user?.id === comment.user.id,
+    me: store.user?.id === comment.user.id,
     name: comment.user.displayName,
     createdAt: new Date(comment.createdAt),
     message: comment.text,

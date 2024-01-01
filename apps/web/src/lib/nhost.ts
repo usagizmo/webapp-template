@@ -1,19 +1,16 @@
 import { NhostClient } from '@nhost/nhost-js';
 import type { NhostSession } from '@nhost/nhost-js';
 import Cookies from 'js-cookie';
-import { writable } from 'svelte/store';
 import { PUBLIC_NHOST_SUBDOMAIN, PUBLIC_NHOST_REGION } from '$env/static/public';
 import { NHOST_SESSION_KEY } from './const';
-import { parseSession, tryErrorAlertOnNhostApi } from './utils';
+import { tryErrorAlertOnNhostApi } from './utils';
 import type { UserInputs } from './userInputs';
+import { store } from './store.svelte';
 
 export const nhost = new NhostClient({
   subdomain: PUBLIC_NHOST_SUBDOMAIN,
   region: PUBLIC_NHOST_REGION,
 });
-
-const session = parseSession(Cookies.get(NHOST_SESSION_KEY));
-export const user = writable(session?.user ?? null);
 
 let hasAlreadyAuthStateChanged = false;
 
@@ -43,7 +40,7 @@ nhost.auth.onAuthStateChanged((_, session) => {
     return;
   }
 
-  user.set(session?.user ?? null);
+  store.setUser(session?.user ?? null);
   hasAlreadyAuthStateChanged = true;
 });
 
