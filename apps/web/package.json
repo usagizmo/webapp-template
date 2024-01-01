@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "generate:svelte": "svelte-kit sync",
-    "generate:pull-schema": "houdini pull-schema",
     "generate": "concurrently pnpm:generate:*",
     "dev": "vite dev --open",
     "build": "pnpm generate && vite build",
@@ -26,8 +25,6 @@
     "@nhost/nhost-js": "^3.0.1",
     "@repo/ui": "workspace:*",
     "cdate": "^0.0.7",
-    "graphql": "^16.8.1",
-    "graphql-ws": "^5.14.3",
     "js-cookie": "^3.0.5"
   },
   "devDependencies": {
@@ -39,8 +36,6 @@
     "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
     "graphqurl": "^1.0.1",
-    "houdini": "^1.2.35",
-    "houdini-svelte": "^1.2.35",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",

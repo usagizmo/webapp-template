@@ -28,7 +28,7 @@ Monorepo template for creating a web application.
 - [`web`](./apps/web/) [[Demo](https://webapp-template.usagizmo.com/)]  
   A starting point for building Svelte application.  
   [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/))  
-  [Nhost](https://nhost.io/) (w/ [Houdini](https://www.houdinigraphql.com/)) / [Vitest](https://vitest.dev/)
+  [Nhost](https://nhost.io/) / [Vitest](https://vitest.dev/)
 
 #### `packages/`
 

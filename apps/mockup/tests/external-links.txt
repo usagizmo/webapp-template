@@ -23,5 +23,4 @@ https://turborepo.org/
 https://usagizmo.com
 https://vitest.dev/
 https://webapp-template-mockup.usagizmo.com
-https://www.houdinigraphql.com/
 https://www.npmjs.com/package/eslint-config-turbo

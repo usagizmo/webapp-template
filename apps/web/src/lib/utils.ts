@@ -23,7 +23,7 @@ export function tryErrorAlertOnNhostApi(res: unknown): boolean {
 export function tryErrorAlertOnHoudiniApi(errors: unknown): boolean {
   if (!Array.isArray(errors)) return false;
 
-  const error = errors.find((e) => e && typeof e === 'object' && 'message' in e);
+  const error = errors.find((e) => e && typeof e === 'object' && 'message' in e && e.message);
   if (!error) return false;
 
   alert(error.message);

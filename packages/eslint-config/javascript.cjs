@@ -37,11 +37,6 @@ module.exports = {
             group: 'parent',
             position: 'before',
           },
-          {
-            pattern: '$houdini',
-            group: 'parent',
-            position: 'before',
-          },
         ],
       },
     ],

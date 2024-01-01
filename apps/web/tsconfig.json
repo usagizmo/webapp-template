@@ -12,8 +12,6 @@
     "moduleResolution": "bundler",
     // custom
     "paths": {
-      "$houdini": ["./$houdini"],
-      "$houdini/*": ["./$houdini/*"],
       "$lib": ["./src/lib"],
       "$lib/*": ["./src/lib/*"],
       "@repo/*": ["../../packages/*"]
