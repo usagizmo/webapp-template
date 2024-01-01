@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { DateTime } from 'luxon';
+  import { cdate } from 'cdate';
   import { fade } from 'svelte/transition';
   import { Button, CircleCheckIcon, CircleCloseIcon } from '@repo/ui';
   import { nhost, user } from '$lib/nhost';
@@ -29,7 +29,7 @@
     fileId: comment.fileId,
   } satisfies Card;
 
-  $: createdAt = DateTime.fromJSDate(card.createdAt);
+  $: createdAt = cdate(card.createdAt);
 
   const updateCommentFileId = `
     mutation ($id: uuid!, $fileId: String) {
@@ -119,8 +119,11 @@
           <CircleCheckIcon />
         </figure>
       {/if}
-      <time class="ml-2 text-sm font-medium text-zinc-500" title={createdAt.toISO()}>
-        {createdAt.toFormat('MM/dd/yyyy')}
+      <time
+        class="ml-2 text-sm font-medium text-zinc-500"
+        title={createdAt.format('YYYY-MM-DD HH:mm:ss.SSSZ')}
+      >
+        {createdAt.format('MM/DD/YYYY')}
       </time>
     </div>
     <div class="mt-0.5 flex">

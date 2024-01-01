@@ -25,10 +25,10 @@
   "dependencies": {
     "@nhost/nhost-js": "^3.0.1",
     "@repo/ui": "workspace:*",
+    "cdate": "^0.0.7",
     "graphql": "^16.8.1",
     "graphql-ws": "^5.14.3",
-    "js-cookie": "^3.0.5",
-    "luxon": "^3.4.4"
+    "js-cookie": "^3.0.5"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

@@ -1,6 +1,7 @@
 ahvu
 autodocs
 automerge
+cdate
 citext
 dirents
 graphqurl
@@ -10,7 +11,6 @@ icns
 jsnext
 kaku
 lucida
-luxon
 markuplint
 markuplintrc
 meiryo
@@ -19,6 +19,7 @@ nhost
 noto
 pathtest
 pnpm
+sssz
 sveltekit
 tailwindcss
 timestamptz
