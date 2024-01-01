@@ -128,6 +128,9 @@ importers:
       cdate:
         specifier: ^0.0.7
         version: 0.0.7
+      graphql:
+        specifier: ^16.8.1
+        version: 16.8.1
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5

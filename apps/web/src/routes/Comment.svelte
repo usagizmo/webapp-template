@@ -4,7 +4,6 @@
   import { Button, CircleCheckIcon, CircleCloseIcon } from '@repo/ui';
   import { nhost } from '$lib/nhost';
   import { store } from '$lib/store.svelte';
-  import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
   import type { PageData } from './$types';
 
   interface Card {
@@ -53,15 +52,16 @@
 
     // ...
     const res = await nhost.storage.delete({ fileId });
-    if (tryErrorAlertOnNhostApi(res)) {
+    if (res.error) {
+      console.error(res.error.message);
       // Continue update without the file
       // return;
     }
 
-    const { errors } = await nhost.graphql.request(updateCommentFileId, { id, fileId: null });
+    const { error } = await nhost.graphql.request(updateCommentFileId, { id, fileId: null });
 
-    if (errors?.length) {
-      tryErrorAlertOnHoudiniApi(errors);
+    if (error) {
+      alert(Array.isArray(error) ? error.map((e) => e.message).join(', ') : error.message);
       window.location.reload();
       return;
     }
@@ -86,16 +86,18 @@
     // ...
     if (fileId) {
       const res = await nhost.storage.delete({ fileId });
-      if (tryErrorAlertOnNhostApi(res)) {
+
+      if (res.error) {
+        console.error(res.error.message);
         // Continue update without the file
         // return;
       }
     }
 
-    const { errors } = await nhost.graphql.request(deleteComment, { id });
+    const { error } = await nhost.graphql.request(deleteComment, { id });
 
-    if (errors?.length) {
-      tryErrorAlertOnHoudiniApi(errors);
+    if (error) {
+      alert(Array.isArray(error) ? error.map((e) => e.message).join(', ') : error.message);
       window.location.reload();
       return;
     }

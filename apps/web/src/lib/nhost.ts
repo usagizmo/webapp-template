@@ -1,6 +1,5 @@
 import { NhostClient } from '@nhost/nhost-js';
 import { PUBLIC_NHOST_SUBDOMAIN, PUBLIC_NHOST_REGION } from '$env/static/public';
-import { tryErrorAlertOnNhostApi } from './utils';
 import type { UserInputs } from './userInputs';
 import { store } from './store.svelte';
 
@@ -20,14 +19,14 @@ nhost.auth.onAuthStateChanged((_, session) => {
  */
 export async function signUp(userInputs: UserInputs): Promise<void> {
   const { email, password, displayName } = userInputs;
-  const res = await nhost.auth.signUp({
+  const { error } = await nhost.auth.signUp({
     email,
     password,
     options: {
       displayName,
     },
   });
-  tryErrorAlertOnNhostApi(res);
+  error && alert(error.message);
 }
 
 /**
@@ -35,18 +34,16 @@ export async function signUp(userInputs: UserInputs): Promise<void> {
  * @param userInputs - The user inputs
  * @returns - Whether the login was successful
  */
-export async function logIn(userInputs: UserInputs): Promise<boolean> {
-  const res = await nhost.auth.signIn(userInputs);
-  const hasError = tryErrorAlertOnNhostApi(res);
-  return !hasError;
+export async function logIn(userInputs: UserInputs): Promise<void> {
+  const { error } = await nhost.auth.signIn(userInputs);
+  error && alert(error.message);
 }
 
 /**
  * Log out a user
  * @returns - Whether the logout was successful
  */
-export async function logOut(): Promise<boolean> {
-  const res = await nhost.auth.signOut();
-  const hasError = tryErrorAlertOnNhostApi(res);
-  return !hasError;
+export async function logOut(): Promise<void> {
+  const { error } = await nhost.auth.signOut();
+  error && alert(error.message);
 }

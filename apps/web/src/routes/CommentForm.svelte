@@ -2,7 +2,6 @@
   import { tick } from 'svelte';
   import { Button, PaperPlaneIcon, SectionFrame } from '@repo/ui';
   import { nhost } from '$lib/nhost';
-  import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
 
   let textAreaEl: HTMLTextAreaElement;
 
@@ -38,20 +37,23 @@
     let fileId: string | null = null;
 
     if (file) {
-      const res = await nhost.storage.upload({ file });
-      if (tryErrorAlertOnNhostApi(res)) return;
+      const { fileMetadata, error } = await nhost.storage.upload({ file });
+      if (error) {
+        alert(error.message);
+        return;
+      }
 
-      fileId = res.fileMetadata?.id ?? null;
+      fileId = fileMetadata.id ?? null;
       if (!fileId) {
         alert('File ID not found');
         return;
       }
     }
 
-    const { errors } = await nhost.graphql.request(insertComment, { text, fileId });
+    const { error } = await nhost.graphql.request(insertComment, { text, fileId });
 
-    if (errors?.length) {
-      tryErrorAlertOnHoudiniApi(errors);
+    if (error) {
+      alert(Array.isArray(error) ? error.map((e) => e.message).join(', ') : error.message);
       window.location.reload();
       return;
     }
