@@ -3,11 +3,8 @@
   import '$lib/nhost'; // initialize nhost
 
   import Footer from './Footer.svelte';
-  import GoogleAnalytics from './GoogleAnalytics.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
 </script>
-
-<GoogleAnalytics />
 
 <div class="flex h-full flex-col">
   <HeaderNavigation />
