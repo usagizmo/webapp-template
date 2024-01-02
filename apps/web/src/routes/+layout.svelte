@@ -2,7 +2,10 @@
   import '@repo/tailwind-preset-base/global.css';
   import '$lib/nhost'; // initialize nhost
 
+  // import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
+
   import Footer from './Footer.svelte';
+  // import GoogleAnalytics from './GoogleAnalytics.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
   import type { Snippet } from 'svelte';
 
@@ -10,6 +13,11 @@
     children: Snippet;
   }>();
 </script>
+
+<!-- TODO: Comment out until hydration is fixed -->
+<!-- {#if PUBLIC_GOOGLE_ANALYTICS_ID}
+  <GoogleAnalytics id={PUBLIC_GOOGLE_ANALYTICS_ID} />
+{/if} -->
 
 <div class="flex h-full flex-col">
   <HeaderNavigation />
