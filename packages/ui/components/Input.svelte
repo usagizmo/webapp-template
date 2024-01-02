@@ -1,12 +1,20 @@
 <script lang="ts">
-  export let label = '';
-  export let type = 'text';
-  export let value = '';
+  import type { HTMLInputAttributes } from 'svelte/elements';
 
-  export let error: { required?: string } = {};
+  let {
+    label = '',
+    type = 'text',
+    value = '',
+    error = {},
+  } = $props<{
+    label?: string;
+    type?: HTMLInputAttributes['type'];
+    value?: string;
+    error?: { required?: string };
+  }>();
 
-  let classes = 'w-full rounded-md border border-zinc-300 bg-slate-50 py-2 px-2.5';
-  let isDirty = false;
+  const classes = 'w-full rounded-md border border-zinc-300 bg-slate-50 py-2 px-2.5';
+  let isDirty = $state(false);
 
   /**
    * Set the isDirty flag for the input

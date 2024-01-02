@@ -4,16 +4,16 @@
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  let el: HTMLElement;
-  let height = 0;
-  let innerWidth = 0;
+  let el: HTMLElement | null = $state(null);
+  let height = $state(0);
+  let innerWidth = $state(0);
 
-  $: {
+  $effect(() => {
     if (el && innerWidth) {
       const size = el.getBoundingClientRect();
       height = size.height;
     }
-  }
+  });
 </script>
 
 <svelte:window bind:innerWidth />

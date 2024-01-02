@@ -4,11 +4,20 @@
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  export let navItems: { label: string; href: string }[] = [];
+  let { navItems = [] } = $props<{
+    navItems: { label: string; href: string }[];
+  }>();
 
   const [send, receive] = crossfade(defaultDE);
 
-  $: getScope = (href: string) => href.split('/')[1];
+  /**
+   * Get the scope of the page
+   * @param href - The href of the page
+   * @returns The scope of the page
+   */
+  function getScope(href: string): string {
+    return href.split('/')[1];
+  }
 </script>
 
 <ul class="flex h-full items-center gap-5">

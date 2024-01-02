@@ -1,7 +1,12 @@
 <script lang="ts">
-  export let noPad: 'y' | 'top' | '' = '';
+  import type { Snippet } from 'svelte';
 
-  $: padClass = (() => {
+  let { children, noPad = '' } = $props<{
+    children: Snippet;
+    noPad?: 'y' | 'top' | '';
+  }>();
+
+  function getPadClass() {
     switch (noPad) {
       case 'y':
         return 'px-6';
@@ -10,7 +15,11 @@
       default:
         return 'p-6';
     }
-  })();
+  }
+
+  const padClass = $derived(getPadClass());
 </script>
 
-<section class="rounded-lg bg-slate-50 {padClass}"><slot /></section>
+<section class="rounded-lg bg-slate-50 {padClass}">
+  {@render children()}
+</section>

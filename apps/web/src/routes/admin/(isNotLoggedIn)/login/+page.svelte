@@ -15,7 +15,7 @@
     await logIn(inputs);
   }
 
-  $: meta = {
+  const meta = {
     title: `Admin (Login) | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/admin/login',
   };

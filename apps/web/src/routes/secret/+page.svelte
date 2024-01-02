@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Meta, SectionFrame } from '@repo/ui';
 
-  $: meta = {
+  const meta = {
     title: `Secret | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/secret',
   };

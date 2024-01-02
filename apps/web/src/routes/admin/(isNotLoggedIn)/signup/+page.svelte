@@ -12,7 +12,7 @@
     await signUp(inputs);
   };
 
-  $: meta = {
+  const meta = {
     title: `Admin (Sign up) | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/admin/signup',
   };

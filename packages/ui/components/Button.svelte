@@ -1,31 +1,48 @@
 <script lang="ts">
-  export let href = '';
+  import type { Snippet } from 'svelte';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
 
-  export let type: 'button' | 'reset' | 'submit' = 'button';
-  export let primary = false;
-  export let blank = false;
-  export let disabled = false;
+  let {
+    children,
+    href = '',
+    type = 'button',
+    primary = false,
+    blank = false,
+    disabled = false,
+  } = $props<{
+    children: Snippet;
+    href?: string;
+    type?: HTMLButtonAttributes['type'];
+    primary?: boolean;
+    blank?: boolean;
+    disabled?: boolean;
+  }>();
 
-  $: element = href ? 'a' : 'button';
-  $: kindClass = primary
-    ? 'border-zinc-900 bg-zinc-900 text-white hover:bg-zinc-700'
-    : 'border-zinc-300 bg-slate-50 hover:border-zinc-400 hover:bg-slate-100';
-  $: classAttrs = `inline-flex items-center justify-center space-x-1 rounded-md border px-5 py-2 text-sm duration-200 disabled:pointer-events-none disabled:opacity-40 ${kindClass}`;
-  $: blankAttrs =
+  const element = $derived(href ? 'a' : 'button');
+  const kindClass = $derived(
+    primary
+      ? 'border-zinc-900 bg-zinc-900 text-white hover:bg-zinc-700'
+      : 'border-zinc-300 bg-slate-50 hover:border-zinc-400 hover:bg-slate-100',
+  );
+  const classAttrs = $derived(
+    `inline-flex items-center justify-center space-x-1 rounded-md border px-5 py-2 text-sm duration-200 disabled:pointer-events-none disabled:opacity-40 ${kindClass}`,
+  );
+  const blankAttrs = $derived(
     href && blank
       ? {
           target: '_blank',
           rel: 'noopener noreferrer',
         }
-      : {};
+      : {},
+  );
 </script>
 
 {#if element === 'a'}
   <a {...blankAttrs} class={classAttrs} {href}>
-    <slot />
+    {@render children()}
   </a>
 {:else}
   <button {type} class={classAttrs} {disabled} on:click>
-    <slot />
+    {@render children()}
   </button>
 {/if}

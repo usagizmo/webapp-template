@@ -7432,7 +7432,7 @@ packages:
       postcss: 8.4.32
       postcss-load-config: 3.1.4(postcss@8.4.32)
       postcss-safe-parser: 6.0.0(postcss@8.4.32)
-      postcss-selector-parser: 6.0.14
+      postcss-selector-parser: 6.0.15
       semver: 7.5.4
       svelte: 5.0.0-next.27
       svelte-eslint-parser: 0.33.1(svelte@5.0.0-next.27)
@@ -10906,6 +10906,14 @@ packages:
 
   /postcss-selector-parser@6.0.14:
     resolution: {integrity: sha512-65xXYsT40i9GyWzlHQ5ShZoK7JZdySeOozi/tz2EezDo6c04q6+ckYMeoY7idaie1qp2dT5KoYQ2yky6JuoHnA==}
+    engines: {node: '>=4'}
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
+    dev: true
+
+  /postcss-selector-parser@6.0.15:
+    resolution: {integrity: sha512-rEYkQOMUCEMhsKbK66tbEU9QVIxbhN18YiniAwA7XQYTVBqrBy+P2p5JcdqsHgKM2zWylp8d7J6eszocfds5Sw==}
     engines: {node: '>=4'}
     dependencies:
       cssesc: 3.0.0

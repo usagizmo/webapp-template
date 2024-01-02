@@ -20,9 +20,11 @@
     getInputs: () => userInputs,
   });
 
-  $: if (store.user) {
-    goto(ROUTE.HOME, { replaceState: true });
-  }
+  $effect(() => {
+    if (store.user) {
+      goto(ROUTE.HOME, { replaceState: true });
+    }
+  });
 </script>
 
 <div class="mx-auto max-w-[488px]">

@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let size = 16;
+  let { size = 16 } = $props<{ size?: number }>();
 
-  $: style = `width: ${size}px; height: ${size}px;`;
+  const style = $derived(`width: ${size}px; height: ${size}px;`);
 </script>
 
 <svg

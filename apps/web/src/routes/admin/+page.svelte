@@ -11,7 +11,7 @@
     await logOut();
   }
 
-  $: meta = {
+  const meta = {
     title: `Admin | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/admin',
   };

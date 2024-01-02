@@ -10,26 +10,26 @@
     id: string;
     me: boolean;
     name: string;
-    createdAt: Date;
+    createdAt: cdate.CDate;
     message: string;
     fileId: string | null;
   }
 
-  let isActionVisible = false;
-  let isDeleting = false;
+  let { comment } = $props<{
+    comment: PageData['comments'][0];
+  }>();
 
-  export let comment: PageData['comments'][0];
+  let isActionVisible = $state(false);
+  let isDeleting = $state(false);
 
-  $: card = {
+  const card: Card = $derived({
     id: comment.id,
     me: store.user?.id === comment.user.id,
     name: comment.user.displayName,
-    createdAt: new Date(comment.createdAt),
+    createdAt: cdate(comment.createdAt),
     message: comment.text,
     fileId: comment.fileId,
-  } satisfies Card;
-
-  $: createdAt = cdate(card.createdAt);
+  });
 
   const updateCommentFileId = `
     mutation ($id: uuid!, $fileId: String) {
@@ -124,9 +124,9 @@
       {/if}
       <time
         class="ml-2 text-sm font-medium text-zinc-500"
-        title={createdAt.format('YYYY-MM-DD HH:mm:ss.SSSZ')}
+        title={card.createdAt.format('YYYY-MM-DD HH:mm:ss.SSSZ')}
       >
-        {createdAt.format('MM/DD/YYYY')}
+        {card.createdAt.format('MM/DD/YYYY')}
       </time>
     </div>
     <div class="mt-0.5 flex">

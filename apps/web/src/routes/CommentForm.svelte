@@ -3,14 +3,12 @@
   import { Button, PaperPlaneIcon, SectionFrame } from '@repo/ui';
   import { nhost } from '$lib/nhost';
 
-  let textAreaEl: HTMLTextAreaElement;
+  let textAreaEl: HTMLTextAreaElement | null = $state(null);
+  let isSending = $state(false);
+  let text = $state('');
+  let files: FileList | null = $state(null);
 
-  let isSending = false;
-  let text = '';
-
-  let files: FileList | null = null;
-
-  $: file = (files?.[0] ?? null) as File | null;
+  const file: File | null = $derived(files?.[0] ?? null);
 
   const insertComment = `
     mutation ($text: String!, $fileId: String) {
@@ -27,7 +25,7 @@
    */
   async function handleSend(): Promise<void> {
     if (!text) {
-      textAreaEl.focus();
+      textAreaEl?.focus();
       return;
     }
 
@@ -64,7 +62,7 @@
     // after
     isSending = false;
     await tick();
-    textAreaEl.focus();
+    textAreaEl?.focus();
   }
 
   const handleKeyDown = (e: KeyboardEvent): void => {
@@ -98,8 +96,7 @@
           <img
             class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 hover:brightness-90 peer-disabled:pointer-events-none peer-disabled:opacity-40"
             src={blobUrl}
-            alt={file.name}
-            title={file.name}
+            alt=""
           />
         {:else}
           <span

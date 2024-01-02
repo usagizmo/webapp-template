@@ -5,7 +5,9 @@
   import CommentItem from './Comment.svelte';
   import type { PageData } from './$types';
 
-  export let comments: PageData['comments'] = [];
+  let { comments = [] } = $props<{
+    comments: PageData['comments'];
+  }>();
 </script>
 
 <div class="divide-y divide-slate-200">

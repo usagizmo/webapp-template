@@ -11,7 +11,7 @@
   const { getInputs } = getContext<{ getInputs: () => UserInputs }>(userInputsKey);
   const inputs = getInputs();
 
-  $: isSignUpPage = $page.url.pathname === ROUTE.ADMIN_SIGNUP;
+  const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_SIGNUP);
 </script>
 
 <div class="[&>*]:mb-3">
@@ -20,7 +20,7 @@
       <Input
         label="Display Name"
         type="text"
-        bind:value={inputs.displayName}
+        value={inputs.displayName}
         error={{ required: 'Display Name is required.' }}
       />
     </div>
@@ -28,13 +28,13 @@
   <Input
     label="Email"
     type="email"
-    bind:value={inputs.email}
+    value={inputs.email}
     error={{ required: 'E-mail is required.' }}
   />
   <Input
     label="Password"
     type="password"
-    bind:value={inputs.password}
+    value={inputs.password}
     error={{ required: 'Password is required.' }}
   />
 </div>

@@ -6,9 +6,11 @@
   import LoginMessage from './LoginMessage.svelte';
   import type { PageData } from './$types';
 
-  export let data: PageData;
+  let { data } = $props<{
+    data: PageData;
+  }>();
 
-  $: meta = {
+  const meta = {
     type: 'website' as const,
     title: `WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com',
