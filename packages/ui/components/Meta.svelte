@@ -3,7 +3,7 @@
     type = 'article',
     title = 'WebApp Template (web)',
     siteName = 'WebApp Template (web)',
-    description = 'SvelteKit (w/ Houdini) x Tailwind CSS x Nhost x Turborepo (pnpm)',
+    description = 'SvelteKit x Tailwind CSS x Nhost x Turborepo (pnpm)',
     card = 'summary_large_image',
     image = 'https://webapp-template.usagizmo.com/images/ogp.png',
     canonical = '',
