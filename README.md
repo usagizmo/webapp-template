@@ -49,6 +49,13 @@ Monorepo template for creating a web application.
 
 ## Breaking changes
 
+### v1.9.0
+
+- Change from JavaScript to TypeScript
+- Svelte 4 → Svelte 5 (Rune)
+- Prepend `@repo/` to custom package names (`packages/*`)
+  - Merge `eslint-config-custom-typescript` into `eslint-config-custom`
+
 ### v1.6.0
 
 - Change from TypeScript to JavaScript + JSDoc
