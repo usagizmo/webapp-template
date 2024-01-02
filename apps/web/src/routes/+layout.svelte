@@ -4,6 +4,11 @@
 
   import Footer from './Footer.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
+  import type { Snippet } from 'svelte';
+
+  let { children } = $props<{
+    children: Snippet;
+  }>();
 </script>
 
 <div class="flex h-full flex-col">
@@ -11,7 +16,7 @@
 
   <div class="flex flex-1 flex-col">
     <main class="flex-1 px-4 pb-16 pt-[68px] md:pt-10">
-      <slot />
+      {@render children()}
     </main>
 
     <Footer />
