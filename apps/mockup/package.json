@@ -25,8 +25,8 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-preset-base": "workspace:*",
     "browser-sync": "^3.0.2",
-    "image-size": "^1.1.0",
+    "image-size": "^1.1.1",
     "tailwindcss": "^3.4.0",
-    "vitest": "^1.1.0"
+    "vitest": "^1.1.2"
   }
 }
