@@ -23,9 +23,9 @@
 <ul class="flex h-full items-center gap-5">
   {#each navItems as { label, href }}
     {@const isActive =
-      href === ROUTE.HOME
-        ? href === $page.url.pathname
-        : getScope($page.url.pathname) === getScope(href)}
+      // eslint-disable-next-line svelte/valid-compile
+      href === ROUTE.HOME ? href === $page.url.pathname : getScope($page.url.pathname) === getScope(href)
+    }
     <li class="relative flex h-full items-center justify-center">
       {#if isActive}
         <span class="font-bold">{label}</span>

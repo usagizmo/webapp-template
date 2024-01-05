@@ -8,6 +8,9 @@ module.exports = {
     // ref. https://github.com/markuplint/markuplint/issues/1119
     './apps/web/src/app.html',
     './apps/web/src/routes/CommentForm.svelte',
+    // TODO: for Svelte 5 (preview)
+    './apps/web/**/*.svelte',
+    './packages/ui/**/*.svelte',
   ],
   rules: {
     'character-reference': false,

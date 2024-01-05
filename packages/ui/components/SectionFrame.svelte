@@ -6,7 +6,11 @@
     noPad?: 'y' | 'top' | '';
   }>();
 
-  function getPadClass() {
+  /**
+   * Get the padding class based on the `noPad` prop
+   * @returns The padding class
+   */
+  function getPadClass(): string {
     switch (noPad) {
       case 'y':
         return 'px-6';

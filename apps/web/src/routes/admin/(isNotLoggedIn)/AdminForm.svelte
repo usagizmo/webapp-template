@@ -11,6 +11,7 @@
   const { getInputs } = getContext<{ getInputs: () => UserInputs }>(userInputsKey);
   const inputs = getInputs();
 
+  // eslint-disable-next-line svelte/valid-compile
   const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_SIGNUP);
 </script>
 

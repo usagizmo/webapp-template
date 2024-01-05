@@ -1,13 +1,13 @@
 <script lang="ts">
   import '@repo/tailwind-preset-base/global.css';
   import '$lib/nhost'; // initialize nhost
+  import type { Snippet } from 'svelte';
 
   // import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
 
   import Footer from './Footer.svelte';
   // import GoogleAnalytics from './GoogleAnalytics.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
-  import type { Snippet } from 'svelte';
 
   let { children } = $props<{
     children: Snippet;

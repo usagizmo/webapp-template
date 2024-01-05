@@ -20,3 +20,7 @@ yarn.lock
 !/apps/nhost/nhost/emails/
 /apps/story/storybook-static/
 /apps/web/.svelte-kit
+
+# TODO: for Svelte 5 (preview)
+/apps/web/**/*.svelte
+/packages/ui/**/*.svelte

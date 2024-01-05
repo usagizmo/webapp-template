@@ -19,6 +19,7 @@
       // eslint-disable-next-line no-undef
       gtag('config', id, {
         page_title: document.title,
+        // eslint-disable-next-line svelte/valid-compile
         page_path: $page.url.pathname,
       });
     }

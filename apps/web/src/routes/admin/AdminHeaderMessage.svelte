@@ -8,6 +8,9 @@
   let height = $state(0);
   let innerWidth = $state(0);
 
+  // eslint-disable-next-line svelte/valid-compile
+  let isAdminLoginPage = $derived($page.url.pathname === ROUTE.ADMIN_LOGIN);
+
   $effect(() => {
     if (el && innerWidth) {
       const size = el.getBoundingClientRect();
@@ -20,7 +23,7 @@
 
 <div class="pb-2.5 pt-3">
   <div class="relative" style:height={`${height}px`}>
-    {#if $page.url.pathname === ROUTE.ADMIN_LOGIN}
+    {#if isAdminLoginPage}
       <div bind:this={el} class="absolute w-full text-sm text-zinc-500" transition:fade={defaultDE}>
         <p class="text-center">Guest account</p>
         <dl>

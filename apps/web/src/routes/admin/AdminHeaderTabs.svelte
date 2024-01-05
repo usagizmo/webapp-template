@@ -21,7 +21,10 @@
 <header class="flex items-center justify-center border-b border-slate-200 pt-0.5">
   <ul class="flex space-x-3 py-2.5">
     {#each tabs as { name, href }}
-      {@const isActive = href === $page.url.pathname}
+      {@const isActive =
+        // eslint-disable-next-line svelte/valid-compile
+        href === $page.url.pathname
+      }
       <li class="relative rounded-md">
         {#if isActive}
           <span
