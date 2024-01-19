@@ -46,7 +46,7 @@
     "svelte-check": "^3.6.2",
     "tailwind-preset-base": "workspace:*",
     "tailwindcss": "^3.4.0",
-    "vite": "^5.0.10",
+    "vite": "^5.0.12",
     "vitest": "^1.1.0"
   }
 }
