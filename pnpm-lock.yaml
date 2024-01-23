@@ -37,7 +37,7 @@ importers:
         version: 3.1.1
       prettier-plugin-svelte:
         specifier: ^3.1.2
-        version: 3.1.2(prettier@3.1.1)(svelte@4.2.8)
+        version: 3.1.2(prettier@3.1.1)(svelte@5.0.0-next.28)
       prettier-plugin-tailwindcss:
         specifier: ^0.5.10
         version: 0.5.10(prettier-plugin-svelte@3.1.2)(prettier@3.1.1)
@@ -97,7 +97,7 @@ importers:
         version: 7.6.7(svelte@5.0.0-next.28)
       '@storybook/svelte-vite':
         specifier: ^7.6.7
-        version: 7.6.7(@babel/core@7.23.7)(postcss@8.4.33)(svelte@5.0.0-next.28)(vite@4.5.1)
+        version: 7.6.7(@babel/core@7.23.7)(postcss@8.4.33)(svelte@5.0.0-next.28)(typescript@5.3.3)(vite@4.5.1)
       '@storybook/testing-library':
         specifier: ^0.2.2
         version: 0.2.2
@@ -131,9 +131,6 @@ importers:
       graphql:
         specifier: ^16.8.1
         version: 16.8.1
-      js-cookie:
-        specifier: ^3.0.5
-        version: 3.0.5
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -150,9 +147,6 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.0.1
         version: 3.0.1(svelte@5.0.0-next.28)(vite@5.0.10)
-      '@types/js-cookie':
-        specifier: ^3.0.6
-        version: 3.0.6
       autoprefixer:
         specifier: ^10.4.16
         version: 10.4.16(postcss@8.4.33)
@@ -161,7 +155,7 @@ importers:
         version: 8.56.0
       graphqurl:
         specifier: ^1.0.1
-        version: 1.0.1
+        version: 1.0.1(@types/node@20.10.6)
       postcss:
         specifier: ^8.4.33
         version: 8.4.33
@@ -188,10 +182,10 @@ importers:
         version: 5.3.3
       vite:
         specifier: ^5.0.10
-        version: 5.0.10
+        version: 5.0.10(@types/node@20.10.6)
       vitest:
         specifier: ^1.1.2
-        version: 1.1.2
+        version: 1.1.2(@types/node@20.10.6)
 
   packages/eslint-config:
     devDependencies:
@@ -215,7 +209,7 @@ importers:
         version: 48.0.2(eslint@8.56.0)
       eslint-plugin-svelte:
         specifier: 2.36.0-next.3
-        version: 2.36.0-next.3(eslint@8.56.0)
+        version: 2.36.0-next.3(eslint@8.56.0)(svelte@5.0.0-next.28)
       eslint-plugin-unused-imports:
         specifier: ^3.0.0
         version: 3.0.0(@typescript-eslint/eslint-plugin@6.17.0)(eslint@8.56.0)
@@ -2413,7 +2407,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@graphql-tools/executor-http@0.1.10(graphql@15.4.0):
+  /@graphql-tools/executor-http@0.1.10(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-hnAfbKv0/lb9s31LhWzawQ5hghBfHS+gYWtqxME6Rl0Aufq9GltiiLBcl7OVVOnkLF0KhwgbYP1mB5VKmgTGpg==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -2424,7 +2418,7 @@ packages:
       dset: 3.1.3
       extract-files: 11.0.0
       graphql: 15.4.0
-      meros: 1.3.0
+      meros: 1.3.0(@types/node@20.10.6)
       tslib: 2.6.2
       value-or-promise: 1.0.12
     transitivePeerDependencies:
@@ -2530,7 +2524,7 @@ packages:
       value-or-promise: 1.0.12
     dev: true
 
-  /@graphql-tools/url-loader@7.17.18(graphql@15.4.0):
+  /@graphql-tools/url-loader@7.17.18(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-ear0CiyTj04jCVAxi7TvgbnGDIN2HgqzXzwsfcqiVg9cvjT40NcMlZ2P1lZDgqMkZ9oyLTV8Bw6j+SyG6A+xPw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -2538,7 +2532,7 @@ packages:
       '@ardatan/sync-fetch': 0.0.1
       '@graphql-tools/delegate': 9.0.35(graphql@15.4.0)
       '@graphql-tools/executor-graphql-ws': 0.0.14(graphql@15.4.0)
-      '@graphql-tools/executor-http': 0.1.10(graphql@15.4.0)
+      '@graphql-tools/executor-http': 0.1.10(@types/node@20.10.6)(graphql@15.4.0)
       '@graphql-tools/executor-legacy-ws': 0.0.11(graphql@15.4.0)
       '@graphql-tools/utils': 9.2.1(graphql@15.4.0)
       '@graphql-tools/wrap': 9.4.2(graphql@15.4.0)
@@ -4029,7 +4023,7 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/builder-vite@7.6.7(vite@4.5.1):
+  /@storybook/builder-vite@7.6.7(typescript@5.3.3)(vite@4.5.1):
     resolution: {integrity: sha512-Sv+0ROFU9k+mkvIPsPHC0lkKDzBeMpvfO9uFRl1RDSsXBfcPPZKNo5YK7U7fOhesH0BILzurGA+U/aaITMSZ9g==}
     peerDependencies:
       '@preact/preset-vite': '*'
@@ -4060,7 +4054,8 @@ packages:
       fs-extra: 11.2.0
       magic-string: 0.30.5
       rollup: 3.29.4
-      vite: 4.5.1
+      typescript: 5.3.3
+      vite: 4.5.1(@types/node@20.10.6)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4407,23 +4402,23 @@ packages:
       qs: 6.11.2
     dev: true
 
-  /@storybook/svelte-vite@7.6.7(@babel/core@7.23.7)(postcss@8.4.33)(svelte@5.0.0-next.28)(vite@4.5.1):
+  /@storybook/svelte-vite@7.6.7(@babel/core@7.23.7)(postcss@8.4.33)(svelte@5.0.0-next.28)(typescript@5.3.3)(vite@4.5.1):
     resolution: {integrity: sha512-Ku9Rk5SKwjPJW8x4cBIU9LoT8erEISTZTrzpPxF7Oy5KJ55vvr2rD3JyaSlcybf9a3FsDn9mChJS0rCyLY9DSA==}
     engines: {node: ^14.18 || >=16}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
     dependencies:
-      '@storybook/builder-vite': 7.6.7(vite@4.5.1)
+      '@storybook/builder-vite': 7.6.7(typescript@5.3.3)(vite@4.5.1)
       '@storybook/node-logger': 7.6.7
       '@storybook/svelte': 7.6.7(svelte@5.0.0-next.28)
       '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@5.0.0-next.28)(vite@4.5.1)
       magic-string: 0.30.5
       svelte: 5.0.0-next.28
-      svelte-preprocess: 5.1.3(@babel/core@7.23.7)(postcss@8.4.33)(svelte@5.0.0-next.28)
+      svelte-preprocess: 5.1.3(@babel/core@7.23.7)(postcss@8.4.33)(svelte@5.0.0-next.28)(typescript@5.3.3)
       sveltedoc-parser: 4.2.1
       ts-dedent: 2.2.0
-      vite: 4.5.1
+      vite: 4.5.1(@types/node@20.10.6)
     transitivePeerDependencies:
       - '@babel/core'
       - '@preact/preset-vite'
@@ -4542,7 +4537,7 @@ packages:
       sirv: 2.0.4
       svelte: 5.0.0-next.28
       tiny-glob: 0.2.9
-      vite: 5.0.10
+      vite: 5.0.10(@types/node@20.10.6)
     dev: true
 
   /@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.5.3)(svelte@5.0.0-next.28)(vite@4.5.1):
@@ -4556,7 +4551,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@5.0.0-next.28)(vite@4.5.1)
       debug: 4.3.4
       svelte: 5.0.0-next.28
-      vite: 4.5.1
+      vite: 4.5.1(@types/node@20.10.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4572,7 +4567,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.0.1(svelte@5.0.0-next.28)(vite@5.0.10)
       debug: 4.3.4
       svelte: 5.0.0-next.28
-      vite: 5.0.10
+      vite: 5.0.10(@types/node@20.10.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4591,7 +4586,7 @@ packages:
       magic-string: 0.30.5
       svelte: 5.0.0-next.28
       svelte-hmr: 0.15.3(svelte@5.0.0-next.28)
-      vite: 4.5.1
+      vite: 4.5.1(@types/node@20.10.6)
       vitefu: 0.2.5(vite@4.5.1)
     transitivePeerDependencies:
       - supports-color
@@ -4611,7 +4606,7 @@ packages:
       magic-string: 0.30.5
       svelte: 5.0.0-next.28
       svelte-hmr: 0.15.3(svelte@5.0.0-next.28)
-      vite: 5.0.10
+      vite: 5.0.10(@types/node@20.10.6)
       vitefu: 0.2.5(vite@5.0.10)
     transitivePeerDependencies:
       - supports-color
@@ -4825,10 +4820,6 @@ packages:
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
-    dev: true
-
-  /@types/js-cookie@3.0.6:
-    resolution: {integrity: sha512-wkw9yd1kEXOPnvEeEV1Go1MmxtBJL0RR79aOTAApecWFVu7w0NNXNqhcWgvw2YgZDYadliXkl14pa3WXw5jlCQ==}
     dev: true
 
   /@types/json-schema@7.0.15:
@@ -7399,7 +7390,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-svelte@2.36.0-next.3(eslint@8.56.0):
+  /eslint-plugin-svelte@2.36.0-next.3(eslint@8.56.0)(svelte@5.0.0-next.28):
     resolution: {integrity: sha512-YSgJ6nNI4fDeYEnZNAbPPJmUYaCt3pOrMFIiyqODRJnAq7lO0uhVlhizLKBTGdupZMeh3FGjlQUT61RmvTWL7A==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -7421,7 +7412,8 @@ packages:
       postcss-safe-parser: 6.0.0(postcss@8.4.33)
       postcss-selector-parser: 6.0.15
       semver: 7.5.4
-      svelte-eslint-parser: 0.34.0-next.6
+      svelte: 5.0.0-next.28
+      svelte-eslint-parser: 0.34.0-next.6(svelte@5.0.0-next.28)
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -8433,7 +8425,7 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /graphql-config@4.5.0(graphql@15.4.0):
+  /graphql-config@4.5.0(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-x6D0/cftpLUJ0Ch1e5sj1TZn6Wcxx4oMfmhaG9shM0DKajA9iR+j1z86GSTQ19fShbGvrSSvbIQsHku6aQ6BBw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -8447,7 +8439,7 @@ packages:
       '@graphql-tools/json-file-loader': 7.4.18(graphql@15.4.0)
       '@graphql-tools/load': 7.8.14(graphql@15.4.0)
       '@graphql-tools/merge': 8.4.2(graphql@15.4.0)
-      '@graphql-tools/url-loader': 7.17.18(graphql@15.4.0)
+      '@graphql-tools/url-loader': 7.17.18(@types/node@20.10.6)(graphql@15.4.0)
       '@graphql-tools/utils': 9.2.1(graphql@15.4.0)
       cosmiconfig: 8.0.0
       graphql: 15.4.0
@@ -8462,17 +8454,17 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-interface@2.10.2(graphql@15.4.0):
+  /graphql-language-service-interface@2.10.2(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-RKIEBPhRMWdXY3fxRs99XysTDnEgAvNbu8ov/5iOlnkZsWQNzitjtd0O0l1CutQOQt3iXoHde7w8uhCnKL4tcg==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0
     dependencies:
       graphql: 15.4.0
-      graphql-config: 4.5.0(graphql@15.4.0)
-      graphql-language-service-parser: 1.10.4(graphql@15.4.0)
-      graphql-language-service-types: 1.8.7(graphql@15.4.0)
-      graphql-language-service-utils: 2.7.1(graphql@15.4.0)
+      graphql-config: 4.5.0(@types/node@20.10.6)(graphql@15.4.0)
+      graphql-language-service-parser: 1.10.4(@types/node@20.10.6)(graphql@15.4.0)
+      graphql-language-service-types: 1.8.7(@types/node@20.10.6)(graphql@15.4.0)
+      graphql-language-service-utils: 2.7.1(@types/node@20.10.6)(graphql@15.4.0)
       vscode-languageserver-types: 3.17.5
     transitivePeerDependencies:
       - '@types/node'
@@ -8482,14 +8474,14 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-parser@1.10.4(graphql@15.4.0):
+  /graphql-language-service-parser@1.10.4(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-duDE+0aeKLFVrb9Kf28U84ZEHhHcvTjWIT6dJbIAQJWBaDoht0D4BK9EIhd94I3DtKRc1JCJb2+70y1lvP/hiA==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0
     dependencies:
       graphql: 15.4.0
-      graphql-language-service-types: 1.8.7(graphql@15.4.0)
+      graphql-language-service-types: 1.8.7(@types/node@20.10.6)(graphql@15.4.0)
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
@@ -8498,14 +8490,14 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-types@1.8.7(graphql@15.4.0):
+  /graphql-language-service-types@1.8.7(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-LP/Mx0nFBshYEyD0Ny6EVGfacJAGVx+qXtlJP4hLzUdBNOGimfDNtMVIdZANBXHXcM41MDgMHTnyEx2g6/Ttbw==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0
     dependencies:
       graphql: 15.4.0
-      graphql-config: 4.5.0(graphql@15.4.0)
+      graphql-config: 4.5.0(@types/node@20.10.6)(graphql@15.4.0)
       vscode-languageserver-types: 3.17.5
     transitivePeerDependencies:
       - '@types/node'
@@ -8515,14 +8507,14 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-utils@2.5.1(graphql@15.4.0):
+  /graphql-language-service-utils@2.5.1(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-Lzz723cYrYlVN4WVzIyFGg3ogoe+QYAIBfdtDboiIILoy0FTmqbyC2TOErqbmWKqO4NK9xDA95cSRFbWiHYj0g==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0
     dependencies:
       graphql: 15.4.0
-      graphql-language-service-types: 1.8.7(graphql@15.4.0)
+      graphql-language-service-types: 1.8.7(@types/node@20.10.6)(graphql@15.4.0)
       nullthrows: 1.1.1
     transitivePeerDependencies:
       - '@types/node'
@@ -8532,7 +8524,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-language-service-utils@2.7.1(graphql@15.4.0):
+  /graphql-language-service-utils@2.7.1(@types/node@20.10.6)(graphql@15.4.0):
     resolution: {integrity: sha512-Wci5MbrQj+6d7rfvbORrA9uDlfMysBWYaG49ST5TKylNaXYFf3ixFOa74iM1KtM9eidosUbI3E1JlWi0JaidJA==}
     deprecated: this package has been merged into graphql-language-service
     peerDependencies:
@@ -8540,7 +8532,7 @@ packages:
     dependencies:
       '@types/json-schema': 7.0.9
       graphql: 15.4.0
-      graphql-language-service-types: 1.8.7(graphql@15.4.0)
+      graphql-language-service-types: 1.8.7(@types/node@20.10.6)(graphql@15.4.0)
       nullthrows: 1.1.1
     transitivePeerDependencies:
       - '@types/node'
@@ -8569,7 +8561,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: false
 
-  /graphqurl@1.0.1:
+  /graphqurl@1.0.1(@types/node@20.10.6):
     resolution: {integrity: sha512-97Chda90OBIHCpH6iQHNYc9qTTADN0LOFbiMcRws3V5SottC/0yTDIQDgBzncZYVCkttyjAnT6YmVuNId7ymQA==}
     engines: {node: '>=8.0.0'}
     hasBin: true
@@ -8581,8 +8573,8 @@ packages:
       cli-ux: 4.9.3
       express: 4.16.3
       graphql: 15.4.0
-      graphql-language-service-interface: 2.10.2(graphql@15.4.0)
-      graphql-language-service-utils: 2.5.1(graphql@15.4.0)
+      graphql-language-service-interface: 2.10.2(@types/node@20.10.6)(graphql@15.4.0)
+      graphql-language-service-utils: 2.5.1(@types/node@20.10.6)(graphql@15.4.0)
       isomorphic-fetch: 3.0.0
       isomorphic-ws: 4.0.1(ws@7.4.2)
       open: 7.3.1
@@ -10000,7 +9992,7 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /meros@1.3.0:
+  /meros@1.3.0(@types/node@20.10.6):
     resolution: {integrity: sha512-2BNGOimxEz5hmjUG2FwoxCt5HN7BXdaWyFqEwxPTrJzVdABtrL4TiHTcsWSFAxPQ/tOnEaQEJh3qWq71QRMY+w==}
     engines: {node: '>=13'}
     peerDependencies:
@@ -10008,6 +10000,8 @@ packages:
     peerDependenciesMeta:
       '@types/node':
         optional: true
+    dependencies:
+      '@types/node': 20.10.6
     dev: true
 
   /methods@1.1.2:
@@ -10914,16 +10908,6 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte@3.1.2(prettier@3.1.1)(svelte@4.2.8):
-    resolution: {integrity: sha512-7xfMZtwgAWHMT0iZc8jN4o65zgbAQ3+O32V6W7pXrqNvKnHnkoyQCGCbKeUyXKZLbYE0YhFRnamfxfkEGxm8qA==}
-    peerDependencies:
-      prettier: ^3.0.0
-      svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
-    dependencies:
-      prettier: 3.1.1
-      svelte: 4.2.8
-    dev: true
-
   /prettier-plugin-svelte@3.1.2(prettier@3.1.1)(svelte@5.0.0-next.28):
     resolution: {integrity: sha512-7xfMZtwgAWHMT0iZc8jN4o65zgbAQ3+O32V6W7pXrqNvKnHnkoyQCGCbKeUyXKZLbYE0YhFRnamfxfkEGxm8qA==}
     peerDependencies:
@@ -10984,7 +10968,7 @@ packages:
         optional: true
     dependencies:
       prettier: 3.1.1
-      prettier-plugin-svelte: 3.1.2(prettier@3.1.1)(svelte@4.2.8)
+      prettier-plugin-svelte: 3.1.2(prettier@3.1.1)(svelte@5.0.0-next.28)
     dev: true
 
   /prettier@2.8.8:
@@ -12298,7 +12282,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 5.0.0-next.28
-      svelte-preprocess: 5.1.3(postcss@8.4.33)(svelte@5.0.0-next.28)(typescript@5.3.3)
+      svelte-preprocess: 5.1.3(@babel/core@7.23.7)(postcss@8.4.33)(svelte@5.0.0-next.28)(typescript@5.3.3)
       typescript: 5.3.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -12312,7 +12296,7 @@ packages:
       - sugarss
     dev: true
 
-  /svelte-eslint-parser@0.34.0-next.6:
+  /svelte-eslint-parser@0.34.0-next.6(svelte@5.0.0-next.28):
     resolution: {integrity: sha512-yhVqfBoPj2e8LRbyik1jPQ/b0oBmlTbZJzYpFHG9+vZT7RgIqQhGF9rcDWu80A9Ufh1BBcDF8NcmYM/TZFnihw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -12326,6 +12310,7 @@ packages:
       espree: 9.6.1
       postcss: 8.4.33
       postcss-scss: 4.0.9(postcss@8.4.33)
+      svelte: 5.0.0-next.28
     dev: true
 
   /svelte-hmr@0.15.3(svelte@5.0.0-next.28):
@@ -12337,7 +12322,7 @@ packages:
       svelte: 5.0.0-next.28
     dev: true
 
-  /svelte-preprocess@5.1.3(@babel/core@7.23.7)(postcss@8.4.33)(svelte@5.0.0-next.28):
+  /svelte-preprocess@5.1.3(@babel/core@7.23.7)(postcss@8.4.33)(svelte@5.0.0-next.28)(typescript@5.3.3):
     resolution: {integrity: sha512-xxAkmxGHT+J/GourS5mVJeOXZzne1FR5ljeOUAMXUkfEhkLEllRreXpbl3dIYJlcJRfL1LO1uIAPpBpBfiqGPw==}
     engines: {node: '>= 16.0.0', pnpm: ^8.0.0}
     requiresBuild: true
@@ -12376,53 +12361,6 @@ packages:
         optional: true
     dependencies:
       '@babel/core': 7.23.7
-      '@types/pug': 2.0.10
-      detect-indent: 6.1.0
-      magic-string: 0.30.5
-      postcss: 8.4.33
-      sorcery: 0.11.0
-      strip-indent: 3.0.0
-      svelte: 5.0.0-next.28
-    dev: true
-
-  /svelte-preprocess@5.1.3(postcss@8.4.33)(svelte@5.0.0-next.28)(typescript@5.3.3):
-    resolution: {integrity: sha512-xxAkmxGHT+J/GourS5mVJeOXZzne1FR5ljeOUAMXUkfEhkLEllRreXpbl3dIYJlcJRfL1LO1uIAPpBpBfiqGPw==}
-    engines: {node: '>= 16.0.0', pnpm: ^8.0.0}
-    requiresBuild: true
-    peerDependencies:
-      '@babel/core': ^7.10.2
-      coffeescript: ^2.5.1
-      less: ^3.11.3 || ^4.0.0
-      postcss: ^7 || ^8
-      postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
-      pug: ^3.0.0
-      sass: ^1.26.8
-      stylus: ^0.55.0
-      sugarss: ^2.0.0 || ^3.0.0 || ^4.0.0
-      svelte: ^3.23.0 || ^4.0.0-next.0 || ^4.0.0 || ^5.0.0-next.0
-      typescript: '>=3.9.5 || ^4.0.0 || ^5.0.0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      coffeescript:
-        optional: true
-      less:
-        optional: true
-      postcss:
-        optional: true
-      postcss-load-config:
-        optional: true
-      pug:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
       '@types/pug': 2.0.10
       detect-indent: 6.1.0
       magic-string: 0.30.5
@@ -13210,27 +13148,6 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-node@1.1.2:
-    resolution: {integrity: sha512-2S3Y7T68PMrBbFS2H9Oda2GeordkIU5gLx2toubxPUcFZ+LKZ9L6U69pLtofotwQUrb3NcUImP3fl9GfLplebA==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    dependencies:
-      cac: 6.7.14
-      debug: 4.3.4
-      pathe: 1.1.1
-      picocolors: 1.0.0
-      vite: 5.0.10
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    dev: true
-
   /vite-node@1.1.2(@types/node@20.10.6):
     resolution: {integrity: sha512-2S3Y7T68PMrBbFS2H9Oda2GeordkIU5gLx2toubxPUcFZ+LKZ9L6U69pLtofotwQUrb3NcUImP3fl9GfLplebA==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -13252,7 +13169,7 @@ packages:
       - terser
     dev: true
 
-  /vite@4.5.1:
+  /vite@4.5.1(@types/node@20.10.6):
     resolution: {integrity: sha512-AXXFaAJ8yebyqzoNB9fu2pHoo/nWX+xZlaRwoeYUxEqBO+Zj4msE5G+BhGBll9lYEKv9Hfks52PAF2X7qDYXQA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -13280,44 +13197,10 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.10.6
       esbuild: 0.18.20
       postcss: 8.4.33
       rollup: 3.29.4
-    optionalDependencies:
-      fsevents: 2.3.3
-    dev: true
-
-  /vite@5.0.10:
-    resolution: {integrity: sha512-2P8J7WWgmc355HUMlFrwofacvr98DAjoE52BfdbwQtyLH06XKwaL/FMnmKM2crF0iX4MpmMKoDlNCB1ok7zHCw==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^18.0.0 || >=20.0.0
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.19.11
-      postcss: 8.4.33
-      rollup: 4.9.2
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
@@ -13366,7 +13249,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.1
+      vite: 4.5.1(@types/node@20.10.6)
     dev: true
 
   /vitefu@0.2.5(vite@5.0.10):
@@ -13377,63 +13260,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.0.10
-    dev: true
-
-  /vitest@1.1.2:
-    resolution: {integrity: sha512-nEw58z0PFBARwo3hWx6aKmI0Rob2avL9Mt2IYW+5mH5dS4S39J+VLH9aG8x6KZIgyegdE1p7/3JjZ93FzVCsoQ==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    peerDependencies:
-      '@edge-runtime/vm': '*'
-      '@types/node': ^18.0.0 || >=20.0.0
-      '@vitest/browser': ^1.0.0
-      '@vitest/ui': ^1.0.0
-      happy-dom: '*'
-      jsdom: '*'
-    peerDependenciesMeta:
-      '@edge-runtime/vm':
-        optional: true
-      '@types/node':
-        optional: true
-      '@vitest/browser':
-        optional: true
-      '@vitest/ui':
-        optional: true
-      happy-dom:
-        optional: true
-      jsdom:
-        optional: true
-    dependencies:
-      '@vitest/expect': 1.1.2
-      '@vitest/runner': 1.1.2
-      '@vitest/snapshot': 1.1.2
-      '@vitest/spy': 1.1.2
-      '@vitest/utils': 1.1.2
-      acorn-walk: 8.3.1
-      cac: 6.7.14
-      chai: 4.3.10
-      debug: 4.3.4
-      execa: 8.0.1
-      local-pkg: 0.5.0
-      magic-string: 0.30.5
-      pathe: 1.1.1
-      picocolors: 1.0.0
-      std-env: 3.7.0
-      strip-literal: 1.3.0
-      tinybench: 2.5.1
-      tinypool: 0.8.1
-      vite: 5.0.10
-      vite-node: 1.1.2
-      why-is-node-running: 2.2.2
-    transitivePeerDependencies:
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
+      vite: 5.0.10(@types/node@20.10.6)
     dev: true
 
   /vitest@1.1.2(@types/node@20.10.6):

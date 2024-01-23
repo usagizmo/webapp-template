@@ -25,8 +25,7 @@
     "@nhost/nhost-js": "^3.0.1",
     "@repo/ui": "workspace:*",
     "cdate": "^0.0.7",
-    "graphql": "^16.8.1",
-    "js-cookie": "^3.0.5"
+    "graphql": "^16.8.1"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -34,7 +33,6 @@
     "@sveltejs/adapter-auto": "^3.1.0",
     "@sveltejs/kit": "^2.0.6",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
-    "@types/js-cookie": "^3.0.6",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
     "graphqurl": "^1.0.1",
