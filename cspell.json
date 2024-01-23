@@ -16,10 +16,10 @@
     "*.icns",
     "*.mp4",
     "*.svg",
+    "pnpm-lock.yaml",
     "/.vscode/",
     "/apps/mockup/public/styles.css",
     "/apps/nhost/nhost/",
-    "/apps/story/storybook-static/",
-    "/pnpm-lock.yaml"
+    "/apps/story/storybook-static/"
   ]
 }

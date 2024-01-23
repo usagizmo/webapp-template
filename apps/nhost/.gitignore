@@ -1,4 +1,5 @@
+.secrets
 .nhost
-web/node_modules
-node_modules
-functions/node_modules
+
+# custom
+/functions/_lib/$generated/graphql.ts

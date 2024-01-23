@@ -3,6 +3,7 @@ autodocs
 automerge
 cdate
 citext
+codegen
 dirents
 graphqurl
 hasura

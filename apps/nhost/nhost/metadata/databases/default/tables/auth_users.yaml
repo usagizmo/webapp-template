@@ -91,6 +91,15 @@ object_relationships:
   - name: defaultRoleByRole
     using:
       foreign_key_constraint_on: default_role
+  - name: profile
+    using:
+      manual_configuration:
+        column_mapping:
+          id: id
+        insertion_order: null
+        remote_table:
+          name: profiles
+          schema: public
 array_relationships:
   - name: refreshTokens
     using:
@@ -120,16 +129,17 @@ array_relationships:
         table:
           name: user_providers
           schema: auth
-select_permissions:
-  - role: public
-    permission:
-      columns:
-        - display_name
-        - id
-      filter: {}
-  - role: user
-    permission:
-      columns:
-        - display_name
-        - id
-      filter: {}
+event_triggers:
+  - name: insert-user-profile
+    definition:
+      enable_manual: false
+      insert:
+        columns: '*'
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: '{{NHOST_FUNCTIONS_URL}}/events/users/insert/profile'
+    headers:
+      - name: nhost-webhook-secret
+        value_from_env: NHOST_WEBHOOK_SECRET

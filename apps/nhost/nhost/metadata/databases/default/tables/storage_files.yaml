@@ -13,6 +13,8 @@ configuration:
       custom_name: id
     is_uploaded:
       custom_name: isUploaded
+    metadata:
+      custom_name: metadata
     mime_type:
       custom_name: mimeType
     name:
@@ -29,6 +31,7 @@ configuration:
     etag: etag
     id: id
     is_uploaded: isUploaded
+    metadata: metadata
     mime_type: mimeType
     name: name
     size: size
@@ -49,50 +52,3 @@ object_relationships:
   - name: bucket
     using:
       foreign_key_constraint_on: bucket_id
-insert_permissions:
-  - role: user
-    permission:
-      check: {}
-      set:
-        uploaded_by_user_id: x-hasura-user-id
-      columns:
-        - bucket_id
-        - id
-        - mime_type
-        - name
-        - size
-select_permissions:
-  - role: public
-    permission:
-      columns:
-        - bucket_id
-        - created_at
-        - etag
-        - id
-        - is_uploaded
-        - mime_type
-        - name
-        - size
-        - updated_at
-        - uploaded_by_user_id
-      filter: {}
-  - role: user
-    permission:
-      columns:
-        - is_uploaded
-        - size
-        - bucket_id
-        - etag
-        - mime_type
-        - name
-        - created_at
-        - updated_at
-        - id
-        - uploaded_by_user_id
-      filter: {}
-delete_permissions:
-  - role: user
-    permission:
-      filter:
-        uploaded_by_user_id:
-          _eq: X-Hasura-User-Id

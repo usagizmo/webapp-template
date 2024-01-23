@@ -1,0 +1,5 @@
+query GetUser($id: uuid!) {
+  user(id: $id) {
+    id
+  }
+}
