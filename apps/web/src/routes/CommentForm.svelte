@@ -2,6 +2,7 @@
   import { tick } from 'svelte';
   import { Button, PaperPlaneIcon, SectionFrame } from '@repo/ui';
   import { nhost } from '$lib/nhost';
+  import { InsertComment } from '$lib/$generated/graphql';
 
   let textAreaEl: HTMLTextAreaElement | null = $state(null);
   let isSending = $state(false);
@@ -9,16 +10,6 @@
   let files: FileList | null = $state(null);
 
   const file: File | null = $derived(files?.[0] ?? null);
-
-  const insertComment = `
-    mutation ($text: String!, $fileId: String) {
-      insert_comments(objects: {text: $text, fileId: $fileId}) {
-        returning {
-          id
-        }
-      }
-    }
-  `;
 
   /**
    * Send the comment
@@ -48,10 +39,10 @@
       }
     }
 
-    const { error } = await nhost.graphql.request(insertComment, { text, fileId });
+    const { errors } = await InsertComment({ variables: { text, fileId }});
 
-    if (error) {
-      alert(Array.isArray(error) ? error.map((e) => e.message).join(', ') : error.message);
+    if (errors) {
+      alert(errors.map((e) => e.message).join(', '));
       window.location.reload();
       return;
     }

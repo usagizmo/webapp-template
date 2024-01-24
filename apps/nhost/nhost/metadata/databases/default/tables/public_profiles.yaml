@@ -12,9 +12,17 @@ object_relationships:
     using:
       foreign_key_constraint_on: id
 select_permissions:
+  - role: public
+    permission:
+      columns:
+        - bio
+        - id
+      filter: {}
+    comment: ""
   - role: user
     permission:
       columns:
         - bio
+        - id
       filter: {}
     comment: ""

@@ -129,6 +129,26 @@ array_relationships:
         table:
           name: user_providers
           schema: auth
+select_permissions:
+  - role: public
+    permission:
+      columns:
+        - avatar_url
+        - created_at
+        - display_name
+        - id
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - avatar_url
+        - created_at
+        - display_name
+        - email
+        - id
+      filter: {}
+    comment: ""
 event_triggers:
   - name: insert-user-profile
     definition:

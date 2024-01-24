@@ -5,8 +5,8 @@
   import { goto } from '$app/navigation';
   import { store } from '$lib/store.svelte';
   import { ROUTE } from '$lib/routes';
-  import { userInputsKey } from '$lib/userInputs';
-  import type { UserInputs } from '$lib/userInputs';
+  import { userInputsKey } from '$lib/nhost';
+  import type { UserInputs } from '$lib/nhost';
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import AdminForm from './AdminForm.svelte';
@@ -18,7 +18,7 @@
   let userInputs = $state<UserInputs>({
     displayName: 'Guest',
     email: 'email@add.com',
-    password: 'password',
+    password: 'password0',
   });
 
   setContext(userInputsKey, {

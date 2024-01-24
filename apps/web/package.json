@@ -22,10 +22,12 @@
     "format": "concurrently pnpm:format:*"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.10",
     "@nhost/nhost-js": "^3.0.1",
     "@repo/ui": "workspace:*",
     "cdate": "^0.0.7",
-    "graphql": "^16.8.1"
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

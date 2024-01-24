@@ -1,9 +1,8 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import { Button, Meta, SignInIcon } from '@repo/ui';
-  import { logIn } from '$lib/nhost';
-  import { userInputsKey } from '$lib/userInputs';
-  import type { UserInputs } from '$lib/userInputs';
+  import { logIn, userInputsKey } from '$lib/nhost';
+  import type { UserInputs } from '$lib/nhost';
 
   const { getInputs } = getContext<{ getInputs: () => UserInputs }>(userInputsKey);
   const inputs = getInputs();

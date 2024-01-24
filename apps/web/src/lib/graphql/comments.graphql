@@ -1,0 +1,27 @@
+subscription GetAllComments {
+  comments(order_by: { createdAt: desc }) {
+    id
+    createdAt
+    text
+    user {
+      id
+      displayName
+      profile {
+        bio
+      }
+    }
+    fileId
+  }
+}
+
+mutation InsertComment($text: String!, $fileId: uuid) {
+  insertComment(object: { text: $text, fileId: $fileId }) {
+    id
+  }
+}
+
+mutation DeleteComment($id: uuid!) {
+  deleteCommentByPk(id: $id) {
+    id
+  }
+}

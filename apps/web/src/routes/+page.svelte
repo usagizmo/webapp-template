@@ -4,11 +4,6 @@
   import CommentForm from './CommentForm.svelte';
   import Comments from './Comments.svelte';
   import LoginMessage from './LoginMessage.svelte';
-  import type { PageData } from './$types';
-
-  let { data } = $props<{
-    data: PageData;
-  }>();
 
   const meta = {
     type: 'website' as const,
@@ -33,9 +28,7 @@
         <p class="text-sm text-zinc-500">Comments will be deleted as appropriate.</p>
       </div>
 
-      <div>
-        <Comments comments={data.comments} />
-      </div>
+      <Comments />
     </div>
   </SectionFrame>
 </div>

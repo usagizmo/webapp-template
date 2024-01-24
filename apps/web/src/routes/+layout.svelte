@@ -1,17 +1,29 @@
 <script lang="ts">
   import '@repo/tailwind-preset-base/global.css';
-  import '$lib/nhost'; // initialize nhost
+
   import type { Snippet } from 'svelte';
-
-  // import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
-
+  import { nhost } from '$lib/nhost';
+  import { store } from '$lib/store.svelte';
+  import { AsyncGetUser } from '$lib/$generated/graphql';
   import Footer from './Footer.svelte';
-  // import GoogleAnalytics from './GoogleAnalytics.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
+  // import GoogleAnalytics from './GoogleAnalytics.svelte';
+  // import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
 
   let { children } = $props<{
     children: Snippet;
   }>();
+
+  nhost.auth.onAuthStateChanged(async (_, session) => {
+    if (!session?.user) {
+      store.user = null;
+      return
+    }
+
+    console.log(session.user.id)
+    const { data } = await AsyncGetUser({ variables: { id: session.user.id } })
+    store.user = data ? data.user : null;
+  });
 </script>
 
 <!-- TODO: Comment out until hydration is fixed -->

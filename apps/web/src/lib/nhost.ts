@@ -1,15 +1,17 @@
 import { NhostClient } from '@nhost/nhost-js';
 import { PUBLIC_NHOST_SUBDOMAIN, PUBLIC_NHOST_REGION } from '$env/static/public';
-import type { UserInputs } from './userInputs';
-import { store } from './store.svelte';
+
+export interface UserInputs {
+  email: string;
+  password: string;
+  displayName?: string;
+}
+
+export const userInputsKey = Symbol();
 
 export const nhost = new NhostClient({
   subdomain: PUBLIC_NHOST_SUBDOMAIN,
   region: PUBLIC_NHOST_REGION,
-});
-
-nhost.auth.onAuthStateChanged((_, session) => {
-  store.setUser(session?.user ?? null);
 });
 
 /**

@@ -1,3 +1,67 @@
 table:
   name: comments
   schema: public
+configuration:
+  column_config:
+    created_at:
+      custom_name: createdAt
+    file_id:
+      custom_name: fileId
+    updated_at:
+      custom_name: updatedAt
+    user_id:
+      custom_name: userId
+  custom_column_names:
+    created_at: createdAt
+    file_id: fileId
+    updated_at: updatedAt
+    user_id: userId
+  custom_root_fields:
+    delete: deleteComments
+    delete_by_pk: deleteCommentByPk
+    insert: insertComments
+    insert_one: insertComment
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+insert_permissions:
+  - role: user
+    permission:
+      check: {}
+      set:
+        user_id: x-hasura-User-Id
+      columns:
+        - file_id
+        - text
+    comment: ""
+select_permissions:
+  - role: public
+    permission:
+      columns:
+        - created_at
+        - file_id
+        - id
+        - text
+        - updated_at
+        - user_id
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - file_id
+        - id
+        - text
+        - updated_at
+        - user_id
+      filter: {}
+    comment: ""
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+    comment: ""

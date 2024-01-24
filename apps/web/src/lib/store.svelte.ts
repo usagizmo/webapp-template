@@ -1,29 +1,32 @@
-import type { User } from '@nhost/nhost-js';
+import type { GetUserQuery } from './$generated/graphql';
 import { ROUTE } from './routes';
 
-interface Store {
-  user: User | null;
-  setUser: (user: User | null) => void;
-  adminPath: string;
+export type User = GetUserQuery['user'];
+
+export interface Store {
+  get user(): User | null;
+  set user(value: User | null);
+
+  get adminPath(): string;
 }
 
 /**
- * Create the store
- * @returns The store
+ * Create a store
+ * @returns Store
  */
 function createStore(): Store {
-  let _user = $state<User | null>(null);
-  const adminPath = $derived(_user ? ROUTE.ADMIN : ROUTE.ADMIN_LOGIN);
+  let user = $state<User | null>(null);
 
   return {
     get user(): User | null {
-      return _user;
+      return user;
     },
-    setUser(user: User | null): void {
-      _user = user ?? null;
+    set user(value) {
+      user = value;
     },
+
     get adminPath(): string {
-      return adminPath;
+      return user ? ROUTE.ADMIN : ROUTE.ADMIN_LOGIN;
     },
   };
 }

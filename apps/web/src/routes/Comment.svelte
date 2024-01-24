@@ -4,9 +4,10 @@
   import { Button, CircleCheckIcon, CircleCloseIcon } from '@repo/ui';
   import { nhost } from '$lib/nhost';
   import { store } from '$lib/store.svelte';
-  import type { PageData } from './$types';
+  import { DeleteComment } from '$lib/$generated/graphql';
+  import type { GetAllCommentsSubscription } from '$lib/$generated/graphql';
 
-  interface Card {
+interface Card {
     id: string;
     me: boolean;
     name: string;
@@ -16,7 +17,7 @@
   }
 
   let { comment } = $props<{
-    comment: PageData['comments'][0];
+    comment: GetAllCommentsSubscription['comments'][number];
   }>();
 
   let isActionVisible = $state(false);
@@ -31,17 +32,8 @@
     fileId: comment.fileId,
   });
 
-  const updateCommentFileId = `
-    mutation ($id: uuid!, $fileId: String) {
-      update_comments_by_pk(pk_columns: {id: $id}, _set: {fileId: $fileId}) {
-        id
-        fileId
-      }
-    }
-  `;
-
   const handleDeleteImage = async () => {
-    const { id, fileId } = card;
+    const { fileId } = card;
 
     if (!fileId) {
       throw Error('File ID not found');
@@ -54,14 +46,6 @@
     const res = await nhost.storage.delete({ fileId });
     if (res.error) {
       console.error(res.error.message);
-      // Continue update without the file
-      // return;
-    }
-
-    const { error } = await nhost.graphql.request(updateCommentFileId, { id, fileId: null });
-
-    if (error) {
-      alert(Array.isArray(error) ? error.map((e) => e.message).join(', ') : error.message);
       window.location.reload();
       return;
     }
@@ -69,14 +53,6 @@
     // after
     isDeleting = false;
   };
-
-  const deleteComment = `
-    mutation ($id: uuid!) {
-      delete_comments_by_pk(id: $id) {
-        id
-      }
-    }
-  `;
 
   const handleDelete = async () => {
     const { id, fileId } = card;
@@ -94,10 +70,10 @@
       }
     }
 
-    const { error } = await nhost.graphql.request(deleteComment, { id });
+    const { errors } = await DeleteComment({ variables: { id } })
 
-    if (error) {
-      alert(Array.isArray(error) ? error.map((e) => e.message).join(', ') : error.message);
+    if (errors) {
+      alert(errors.map((e) => e.message).join(', '));
       window.location.reload();
       return;
     }
