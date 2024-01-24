@@ -7,8 +7,6 @@ export interface UserInputs {
   displayName?: string;
 }
 
-export const userInputsKey = Symbol();
-
 export const nhost = new NhostClient({
   subdomain: PUBLIC_NHOST_SUBDOMAIN,
   region: PUBLIC_NHOST_REGION,

@@ -2,11 +2,13 @@
   import type { HTMLInputAttributes } from 'svelte/elements';
 
   let {
+    oninput,
     label = '',
     type = 'text',
     value = '',
     error = {},
   } = $props<{
+    oninput: (event: InputEvent) => void;
     label?: string;
     type?: HTMLInputAttributes['type'];
     value?: string;
@@ -28,9 +30,9 @@
   <label>
     <span class="mb-1 block font-semibold">{label}</span>
     {#if type === 'password'}
-      <input type="password" class={classes} bind:value on:blur={handleDirty} />
+      <input type="password" class={classes} on:blur={handleDirty} {oninput} {value} />
     {:else}
-      <input type="text" class={classes} bind:value on:blur={handleDirty} />
+      <input type="text" class={classes} on:blur={handleDirty} {oninput} {value} />
     {/if}
   </label>
   {#if error.required && isDirty && !value}

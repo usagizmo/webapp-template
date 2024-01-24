@@ -1,14 +1,10 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
   import { Button, Meta, SignInIcon } from '@repo/ui';
-  import { signUp, userInputsKey } from '$lib/nhost';
-  import type { UserInputs } from '$lib/nhost';
-
-  const { getInputs } = getContext<{ getInputs: () => UserInputs }>(userInputsKey);
-  const inputs = getInputs();
+  import { signUp } from '$lib/nhost';
+  import { store } from '$lib/store.svelte';
 
   const handleSubmit = async () => {
-    await signUp(inputs);
+    await signUp(store.userInputs);
   };
 
   const meta = {

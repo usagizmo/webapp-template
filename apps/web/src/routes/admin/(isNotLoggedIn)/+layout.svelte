@@ -1,29 +1,16 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
   import type { Snippet } from 'svelte';
   import { SectionFrame } from '@repo/ui';
   import { goto } from '$app/navigation';
   import { store } from '$lib/store.svelte';
   import { ROUTE } from '$lib/routes';
-  import { userInputsKey } from '$lib/nhost';
-  import type { UserInputs } from '$lib/nhost';
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
-  import AdminForm from './AdminForm.svelte';
+  import UserInputs from './UserInputs.svelte';
 
   let { children } = $props<{
     children: Snippet;
   }>();
-
-  let userInputs = $state<UserInputs>({
-    displayName: 'Guest',
-    email: 'email@add.com',
-    password: 'password0',
-  });
-
-  setContext(userInputsKey, {
-    getInputs: () => userInputs,
-  });
 
   $effect(() => {
     if (store.user) {
@@ -36,7 +23,7 @@
   <SectionFrame noPad="top">
     <AdminHeaderTabs />
     <AdminHeaderMessage />
-    <AdminForm />
+    <UserInputs />
     {@render children()}
   </SectionFrame>
 </div>

@@ -9,7 +9,7 @@
   let innerWidth = $state(0);
 
   // eslint-disable-next-line svelte/valid-compile
-  let isAdminLoginPage = $derived($page.url.pathname === ROUTE.ADMIN_LOGIN);
+  let isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_LOGIN);
 
   $effect(() => {
     if (el && innerWidth) {
@@ -23,7 +23,15 @@
 
 <div class="pb-2.5 pt-3">
   <div class="relative" style:height={`${height}px`}>
-    {#if isAdminLoginPage}
+    {#if isSignUpPage}
+      <div bind:this={el} class="absolute w-full text-sm text-zinc-500" transition:fade={defaultDE}>
+        <p class="text-center">
+          You can register as a member<br />
+          with an irresponsible email and password.
+        </p>
+        <p class="text-center">No email will be sent.</p>
+      </div>
+    {:else}
       <div bind:this={el} class="absolute w-full text-sm text-zinc-500" transition:fade={defaultDE}>
         <p class="text-center">Guest account</p>
         <dl>
@@ -36,14 +44,6 @@
             <dd>password0</dd>
           </div>
         </dl>
-      </div>
-    {:else}
-      <div bind:this={el} class="absolute w-full text-sm text-zinc-500" transition:fade={defaultDE}>
-        <p class="text-center">
-          You can register as a member<br />
-          with an irresponsible email and password.
-        </p>
-        <p class="text-center">No email will be sent.</p>
       </div>
     {/if}
   </div>

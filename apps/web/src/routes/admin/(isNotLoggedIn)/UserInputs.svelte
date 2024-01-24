@@ -1,15 +1,10 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
   import { slide } from 'svelte/transition';
   import { Input } from '@repo/ui';
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
-  import { userInputsKey } from '$lib/nhost';
-  import type { UserInputs } from '$lib/nhost';
-
-  const { getInputs } = getContext<{ getInputs: () => UserInputs }>(userInputsKey);
-  const inputs = getInputs();
+  import { store } from '$lib/store.svelte';
 
   // eslint-disable-next-line svelte/valid-compile
   const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_SIGNUP);
@@ -21,7 +16,8 @@
       <Input
         label="Display Name"
         type="text"
-        value={inputs.displayName}
+        value={store.userInputs.displayName}
+        oninput={(event) => store.setUserInputs({ displayName: (event.target as HTMLInputElement).value })}
         error={{ required: 'Display Name is required.' }}
       />
     </div>
@@ -29,13 +25,15 @@
   <Input
     label="Email"
     type="email"
-    value={inputs.email}
+    value={store.userInputs.email}
+        oninput={(event) => store.setUserInputs({ email: (event.target as HTMLInputElement).value })}
     error={{ required: 'E-mail is required.' }}
   />
   <Input
     label="Password"
     type="password"
-    value={inputs.password}
+    value={store.userInputs.password}
+    oninput={(event) => store.setUserInputs({ password: (event.target as HTMLInputElement).value })}
     error={{ required: 'Password is required.' }}
   />
 </div>

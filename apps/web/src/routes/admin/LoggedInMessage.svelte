@@ -19,15 +19,6 @@ import type {User} from '$lib/store.svelte';
   }
 
   /**
-   * Handle input event
-   * @param event - InputEvent
-   */
-  function oninput(event: InputEvent) {
-    const target = event.target as HTMLInputElement;
-    tempBio = target.value;
-  }
-
-  /**
    * Update the user's bio
    */
   async function handleUpdate() {
@@ -44,7 +35,7 @@ import type {User} from '$lib/store.svelte';
     const nextBio = data?.updateProfile?.bio ?? '';
 
     tempBio = nextBio;
-    store.userBio = nextBio;
+    store.setUserBio(nextBio);
   }
 </script>
 
@@ -53,7 +44,7 @@ import type {User} from '$lib/store.svelte';
     <p class="text-4xl font-bold">{user.displayName}</p>
     <p>{user.email}</p>
     <div class="mt-4 w-full">
-      <TextArea placeholder="bio" value={tempBio} {oninput} onblur={handleUpdate} />
+      <TextArea placeholder="bio" value={tempBio} oninput={(event) => tempBio = (event.target as HTMLInputElement).value} onblur={handleUpdate} />
     </div>
   </div>
   <div class="mt-8 flex items-center justify-center">
