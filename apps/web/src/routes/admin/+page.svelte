@@ -1,15 +1,8 @@
 <script lang="ts">
-  import { Button, Meta, SectionFrame, SignOutIcon } from '@repo/ui';
-  import { logOut } from '$lib/nhost';
+  import { Meta } from '@repo/ui';
   import { store } from '$lib/store.svelte';
   import LoginMessage from '../LoginMessage.svelte';
-
-  /**
-   * Log out the user
-   */
-  async function handleLogOut() {
-    await logOut();
-  }
+  import LoggedInMessage from './LoggedInMessage.svelte';
 
   const meta = {
     title: `Admin | WebApp Template (web)`,
@@ -20,18 +13,7 @@
 <Meta {...meta} />
 
 {#if store.user}
-  <SectionFrame>
-    <div class="flex flex-col items-center justify-center">
-      <p class="text-4xl font-bold">{store.user.displayName}</p>
-      <p>{store.user.email}</p>
-    </div>
-    <div class="mt-8 flex items-center justify-center">
-      <Button primary on:click={handleLogOut}>
-        <SignOutIcon />
-        <span>Log out</span>
-      </Button>
-    </div>
-  </SectionFrame>
+  <LoggedInMessage user={store.user} />
 {:else}
   <LoginMessage />
 {/if}

@@ -7,6 +7,7 @@ configuration:
   custom_root_fields:
     insert: insertProfiles
     insert_one: insertProfile
+    update_by_pk: updateProfile
 object_relationships:
   - name: user
     using:
@@ -25,4 +26,14 @@ select_permissions:
         - bio
         - id
       filter: {}
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - bio
+      filter:
+        id:
+          _eq: X-Hasura-User-Id
+      check: {}
     comment: ""

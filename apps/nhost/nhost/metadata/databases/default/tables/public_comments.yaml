@@ -17,8 +17,7 @@ configuration:
     updated_at: updatedAt
     user_id: userId
   custom_root_fields:
-    delete: deleteComments
-    delete_by_pk: deleteCommentByPk
+    delete_by_pk: deleteComment
     insert: insertComments
     insert_one: insertComment
 object_relationships:

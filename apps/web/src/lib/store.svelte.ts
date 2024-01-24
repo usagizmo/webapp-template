@@ -1,13 +1,16 @@
+import { produce } from 'immer';
 import type { GetUserQuery } from './$generated/graphql';
 import { ROUTE } from './routes';
 
-export type User = GetUserQuery['user'];
+export type User = NonNullable<GetUserQuery['user']>;
 
 export interface Store {
   get user(): User | null;
   set user(value: User | null);
 
   get adminPath(): string;
+
+  set userBio(value: string);
 }
 
 /**
@@ -27,6 +30,13 @@ function createStore(): Store {
 
     get adminPath(): string {
       return user ? ROUTE.ADMIN : ROUTE.ADMIN_LOGIN;
+    },
+
+    set userBio(value: string) {
+      if (!user?.profile) return;
+      user = produce(user, (draft) => {
+        draft.profile!.bio = value;
+      });
     },
   };
 }

@@ -21,7 +21,7 @@ mutation InsertComment($text: String!, $fileId: uuid) {
 }
 
 mutation DeleteComment($id: uuid!) {
-  deleteCommentByPk(id: $id) {
+  deleteComment(id: $id) {
     id
   }
 }

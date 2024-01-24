@@ -1,7 +1,8 @@
-export { default as Meta } from './components/Meta.svelte';
 export { default as Button } from './components/Button.svelte';
 export { default as Input } from './components/Input.svelte';
+export { default as Meta } from './components/Meta.svelte';
 export { default as SectionFrame } from './components/SectionFrame.svelte';
+export { default as TextArea } from './components/TextArea.svelte';
 
 // Icons
 // 16x16

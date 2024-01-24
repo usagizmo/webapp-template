@@ -27,7 +27,8 @@
     "@repo/ui": "workspace:*",
     "cdate": "^0.0.7",
     "graphql": "^16.8.1",
-    "graphql-tag": "^2.12.6"
+    "graphql-tag": "^2.12.6",
+    "immer": "^10.0.3"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
