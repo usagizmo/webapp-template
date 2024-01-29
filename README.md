@@ -32,8 +32,6 @@ Monorepo template for creating a web application.
 
 #### `packages/`
 
-- `ui`  
-  A stub Svelte component library.
 - `tailwind-preset-base`  
   A preset for use with `tailwind.config.js` and `global.css`.
 - `eslint-config`  

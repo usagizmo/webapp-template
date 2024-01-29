@@ -1,11 +1,13 @@
 <script lang="ts">
   import { cdate } from 'cdate';
   import { fade } from 'svelte/transition';
-  import { Button, CircleCheckIcon, CircleCloseIcon } from '@repo/ui';
   import { nhost } from '$lib/nhost';
   import { store } from '$lib/store.svelte';
   import { DeleteComment } from '$lib/$generated/graphql';
   import type { GetAllCommentsSubscription } from '$lib/$generated/graphql';
+  import CircleCloseIcon from '$lib/components/icons/20x20/CircleCloseIcon.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import CircleCheckIcon from '$lib/components/icons/20x20/CircleCheckIcon.svelte';
 
 interface Card {
     id: string;

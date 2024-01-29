@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { Button, Meta, SignInIcon } from '@repo/ui';
   import { logIn } from '$lib/nhost';
   import { store } from '$lib/store.svelte';
+  import Meta from '$lib/components/Meta.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import SignInIcon from '$lib/components/icons/16x16/SignInIcon.svelte';
 
   /**
    * Log in

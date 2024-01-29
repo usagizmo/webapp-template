@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from '@repo/ui';
+  import Button from '$lib/components/Button.svelte';
   import { ROUTE } from '$lib/routes';
   import { store } from '$lib/store.svelte';
   import HeaderNavigationItems from './HeaderNavigationItems.svelte';

@@ -1,9 +1,12 @@
 <script lang="ts">
-  import { Button, SectionFrame, SignOutIcon, TextArea } from '@repo/ui';
   import { logOut } from '$lib/nhost';
   import { store } from '$lib/store.svelte';
-import type {User} from '$lib/store.svelte';
+  import type { User } from '$lib/store.svelte';
   import { UpdateBio } from '$lib/$generated/graphql';
+  import Button from '$lib/components/Button.svelte';
+  import TextArea from '$lib/components/TextArea.svelte';
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
+  import SignOutIcon from '$lib/components/icons/16x16/SignOutIcon.svelte';
 
   const { user } = $props<{
     user: User

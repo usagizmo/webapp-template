@@ -2,7 +2,7 @@ import SectionFrameView from './views/SectionFrameView.svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 export default {
-  title: 'ui/SectionFrame',
+  title: 'components/SectionFrame',
   component: SectionFrameView,
   tags: ['autodocs'],
   argTypes: {

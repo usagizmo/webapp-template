@@ -1,6 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import type { ButtonProps } from './types';
 
   let {
     children,
@@ -9,14 +8,7 @@
     primary = false,
     blank = false,
     disabled = false,
-  } = $props<{
-    children: Snippet;
-    href?: string;
-    type?: HTMLButtonAttributes['type'];
-    primary?: boolean;
-    blank?: boolean;
-    disabled?: boolean;
-  }>();
+  } = $props<ButtonProps>();
 
   const element = $derived(href ? 'a' : 'button');
   const kindClass = $derived(

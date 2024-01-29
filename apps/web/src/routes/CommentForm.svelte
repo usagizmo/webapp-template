@@ -1,8 +1,10 @@
 <script lang="ts">
   import { tick } from 'svelte';
-  import { Button, PaperPlaneIcon, SectionFrame } from '@repo/ui';
   import { nhost } from '$lib/nhost';
   import { InsertComment } from '$lib/$generated/graphql';
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import PaperPlaneIcon from '$lib/components/icons/16x16/PaperPlaneIcon.svelte';
 
   let textAreaEl: HTMLTextAreaElement | null = $state(null);
   let isSending = $state(false);

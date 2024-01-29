@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import { SectionFrame } from '@repo/ui';
   import { goto } from '$app/navigation';
   import { store } from '$lib/store.svelte';
   import { ROUTE } from '$lib/routes';
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import UserInputs from './UserInputs.svelte';

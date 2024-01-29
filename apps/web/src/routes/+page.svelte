@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Meta, SectionFrame } from '@repo/ui';
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
+  import Meta from '$lib/components/Meta.svelte';
   import { store } from '$lib/store.svelte';
   import CommentForm from './CommentForm.svelte';
   import Comments from './Comments.svelte';

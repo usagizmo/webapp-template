@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Meta } from '@repo/ui';
   import { store } from '$lib/store.svelte';
+  import Meta from '$lib/components/Meta.svelte';
   import LoginMessage from '../LoginMessage.svelte';
   import LoggedInMessage from './LoggedInMessage.svelte';
 

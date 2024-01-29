@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Meta, SectionFrame } from '@repo/ui';
+  import Meta from '$lib/components/Meta.svelte';
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
 
   const meta = {
     title: `Secret | WebApp Template (web)`,

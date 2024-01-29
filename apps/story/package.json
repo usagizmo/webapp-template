@@ -13,9 +13,6 @@
     "format:prettier": "prettier --write --ignore-path=../../.prettierignore .",
     "format": "concurrently pnpm:format:*"
   },
-  "dependencies": {
-    "@repo/ui": "workspace:*"
-  },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-preset-base": "workspace:*",

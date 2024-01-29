@@ -11,7 +11,6 @@ module.exports = {
     './apps/web/src/routes/CommentForm.svelte',
     // TODO: for Svelte 5 (preview)
     './apps/web/**/*.svelte',
-    './packages/ui/**/*.svelte',
   ],
   rules: {
     'character-reference': false,

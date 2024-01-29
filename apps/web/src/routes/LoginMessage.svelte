@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Button, SectionFrame } from '@repo/ui';
+  import Button from "$lib/components/Button.svelte";
+  import SectionFrame from "$lib/components/SectionFrame.svelte";
 </script>
 
 <SectionFrame noPad="y">

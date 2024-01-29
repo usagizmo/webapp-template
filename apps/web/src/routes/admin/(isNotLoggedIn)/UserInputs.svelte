@@ -1,10 +1,10 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
-  import { Input } from '@repo/ui';
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
   import { store } from '$lib/store.svelte';
+  import Input from '$lib/components/Input.svelte';
 
   // eslint-disable-next-line svelte/valid-compile
   const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_SIGNUP);
