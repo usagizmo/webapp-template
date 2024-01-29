@@ -1,18 +1,18 @@
 <script lang="ts">
   let {
+    oninput,
     label = '',
     placeholder = '',
     value = '',
     error = {},
     onblur = () => {},
-    oninput = () => {},
   } = $props<{
+    oninput: HTMLTextAreaElement['oninput'];
     label?: string;
     placeholder?: string;
     value?: string;
     error?: { required?: string };
-    onblur?: (event: InputEvent) => void;
-    oninput?: (event: InputEvent) => void;
+    onblur?: HTMLTextAreaElement['onblur'];
   }>();
 
   let isDirty = $state(false);

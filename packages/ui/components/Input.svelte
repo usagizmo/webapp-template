@@ -8,7 +8,7 @@
     value = '',
     error = {},
   } = $props<{
-    oninput: (event: InputEvent) => void;
+    oninput: HTMLInputAttributes['oninput'];
     label?: string;
     type?: HTMLInputAttributes['type'];
     value?: string;
@@ -30,9 +30,9 @@
   <label>
     <span class="mb-1 block font-semibold">{label}</span>
     {#if type === 'password'}
-      <input type="password" class={classes} on:blur={handleDirty} {oninput} {value} />
+      <input type="password" class={classes} {oninput} onblur={handleDirty} value={value} />
     {:else}
-      <input type="text" class={classes} on:blur={handleDirty} {oninput} {value} />
+      <input type="text" class={classes} {oninput} onblur={handleDirty} value={value} />
     {/if}
   </label>
   {#if error.required && isDirty && !value}

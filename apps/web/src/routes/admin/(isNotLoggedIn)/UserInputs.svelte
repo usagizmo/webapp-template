@@ -26,7 +26,7 @@
     label="Email"
     type="email"
     value={store.userInputs.email}
-        oninput={(event) => store.setUserInputs({ email: (event.target as HTMLInputElement).value })}
+    oninput={(event) => store.setUserInputs({ email: (event.target as HTMLInputElement).value })}
     error={{ required: 'E-mail is required.' }}
   />
   <Input

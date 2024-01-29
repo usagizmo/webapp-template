@@ -44,7 +44,12 @@ import type {User} from '$lib/store.svelte';
     <p class="text-4xl font-bold">{user.displayName}</p>
     <p>{user.email}</p>
     <div class="mt-4 w-full">
-      <TextArea placeholder="bio" value={tempBio} oninput={(event) => tempBio = (event.target as HTMLInputElement).value} onblur={handleUpdate} />
+      <TextArea
+        placeholder="bio"
+        value={tempBio}
+        oninput={(event) => tempBio = (event.target as HTMLInputElement).value}
+        onblur={handleUpdate}
+      />
     </div>
   </div>
   <div class="mt-8 flex items-center justify-center">
