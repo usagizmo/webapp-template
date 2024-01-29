@@ -9,7 +9,6 @@ graphqurl
 hasura
 hiragino
 icns
-immer
 jsnext
 kaku
 lucida

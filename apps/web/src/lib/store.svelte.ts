@@ -1,4 +1,4 @@
-import { produce } from 'immer';
+import { create } from 'mutative';
 import type { GetUserQuery } from './$generated/graphql';
 import { ROUTE } from './routes';
 import type { UserInputs } from './nhost';
@@ -38,7 +38,7 @@ function createStore(): Store {
     },
     setUserBio(value: string): void {
       if (!user?.profile) return;
-      user = produce(user, (draft) => {
+      user = create(user, (draft) => {
         draft.profile!.bio = value;
       });
     },
@@ -47,10 +47,9 @@ function createStore(): Store {
       return userInputs;
     },
     setUserInputs(value: Partial<UserInputs>): void {
-      userInputs = {
-        ...userInputs,
-        ...value,
-      };
+      userInputs = create(userInputs, (draft) => {
+        Object.assign(draft, value);
+      });
     },
 
     get adminPath(): string {
