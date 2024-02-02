@@ -15,11 +15,13 @@ yarn.lock
 
 # custom
 /apps/mockup/public/styles.css
-/apps/nhost/.nhost/
+/apps/nhost/.nhost
 /apps/nhost/nhost/*
-!/apps/nhost/nhost/emails/
-/apps/story/storybook-static/
+!/apps/nhost/nhost/emails
+/apps/story/storybook-static
 /apps/web/.svelte-kit
+/apps/web/build
+/apps/web/src/lib/$generated
 
 # TODO: for Svelte 5 (preview)
 /apps/web/**/*.svelte
