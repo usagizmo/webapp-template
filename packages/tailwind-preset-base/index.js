@@ -7,6 +7,7 @@ export default {
         // When not using Web fonts
         // sans: '-apple-system, blinkMacSystemFont, Helvetica, "Yu Gothic", YuGothic, "BIZ UDPGothic", Meiryo, sans-serif',
         // sans: '-apple-system, blinkMacSystemFont, Helvetica, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", Meiryo, sans-serif',
+        // serif: '"Yu Mincho", YuMincho, "Hiragino Mincho ProN", serif',
         sans: 'Inter, YakuHanJP, Noto Sans JP, sans-serif',
         mono: 'Source Code Pro, Noto Sans JP, monospace',
         keycode: 'Lucida Grande',

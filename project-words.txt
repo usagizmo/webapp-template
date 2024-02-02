@@ -15,6 +15,7 @@ lucida
 markuplint
 markuplintrc
 meiryo
+mincho
 nextjs
 nhost
 noto
