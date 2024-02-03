@@ -4,19 +4,12 @@ import { WebSocketLink } from '@apollo/client/link/ws';
 import { getMainDefinition } from '@apollo/client/utilities';
 import { ApolloLink, concat, split } from '@apollo/client/link/core';
 import { PUBLIC_GRAPHQL_ENDPOINT } from '$env/static/public';
+import { browser } from '$app/environment';
 import { nhost } from './nhost';
-
-/**
- * Check if the code is running on the client side
- * @returns boolean
- */
-function isClientSide(): boolean {
-  return typeof window !== 'undefined';
-}
 
 const httpLink = new HttpLink({ uri: PUBLIC_GRAPHQL_ENDPOINT });
 
-const wsLink = isClientSide()
+const wsLink = browser
   ? new WebSocketLink({
       uri: PUBLIC_GRAPHQL_ENDPOINT.replace(/^http/, 'ws'),
     })
@@ -32,7 +25,7 @@ const authMiddleware = new ApolloLink((operation, forward) => {
   return forward(operation);
 });
 
-const link = isClientSide()
+const link = browser
   ? split(
       ({ query }) => {
         const definition = getMainDefinition(query);
