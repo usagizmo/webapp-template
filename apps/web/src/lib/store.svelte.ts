@@ -5,57 +5,65 @@ import type { UserInputs } from './nhost';
 
 export type User = NonNullable<GetUserQuery['user']>;
 
-export interface Store {
-  get user(): User | null;
-  set user(value: User | null);
-  setUserBio: (value: string) => void;
-
-  get userInputs(): UserInputs;
-  setUserInputs(value: Partial<UserInputs>): void;
-
-  get adminPath(): string;
-}
-
-/**
- * Create a store
- * @returns Store
- */
-function createStore(): Store {
-  let user = $state<User | null>(null);
-
-  let userInputs = $state<UserInputs>({
+export class Store {
+  #user: User | null = $state<User | null>(null);
+  #userInputs: UserInputs = $state<UserInputs>({
     displayName: 'Guest',
     email: 'email@add.com',
     password: 'password0',
   });
 
-  return {
-    get user(): User | null {
-      return user;
-    },
-    set user(value) {
-      user = value;
-    },
-    setUserBio(value: string): void {
-      if (!user?.profile) return;
-      user = create(user, (draft) => {
-        draft.profile!.bio = value;
-      });
-    },
+  /**
+   * Get the user
+   * @returns The user
+   */
+  get user(): User | null {
+    return this.#user;
+  }
 
-    get userInputs(): UserInputs {
-      return userInputs;
-    },
-    setUserInputs(value: Partial<UserInputs>): void {
-      userInputs = create(userInputs, (draft) => {
-        Object.assign(draft, value);
-      });
-    },
+  /**
+   * Set the user
+   */
+  set user(user: User | null) {
+    this.#user = user;
+  }
 
-    get adminPath(): string {
-      return user ? ROUTE.ADMIN : ROUTE.ADMIN_LOGIN;
-    },
-  };
+  /**
+   * Get the user display name
+   * @param userBio - The user display name
+   */
+  setUserBio(userBio: string): void {
+    if (!this.#user?.profile) return;
+    this.#user = create(this.#user, (draft) => {
+      draft.profile!.bio = userBio;
+    });
+  }
+
+  /**
+   * Get the user inputs
+   * @returns The user inputs
+   */
+  get userInputs(): UserInputs {
+    return this.#userInputs;
+  }
+
+  /**
+   * Set the user inputs
+   * @param userInputs - The user inputs
+   */
+  setUserInputs(userInputs: Partial<UserInputs>): void {
+    this.#userInputs = create(this.#userInputs, (draft) => {
+      Object.assign(draft, userInputs);
+    });
+  }
+
+  /**
+   * Get the admin path
+   * @returns The admin path
+   */
+  get adminPath(): string {
+    return this.#user ? ROUTE.ADMIN : ROUTE.ADMIN_LOGIN;
+  }
 }
 
-export const store = createStore();
+export const store = new Store();
