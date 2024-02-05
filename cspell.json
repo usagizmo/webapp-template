@@ -16,12 +16,13 @@
     "*.icns",
     "*.mp4",
     "*.svg",
-    "/.vscode/",
+    "pnpm-lock.yaml",
+    "/.vscode",
     "/apps/mockup/public/styles.css",
-    "/apps/nhost/nhost/",
-    "/apps/story/storybook-static/",
-    "/apps/web/$houdini/",
-    "/apps/web/schema.graphql",
-    "/pnpm-lock.yaml"
+    "/apps/nhost/nhost",
+    "/apps/nhost/functions/_lib/$generated",
+    "/apps/story/storybook-static",
+    "/apps/web/build",
+    "/apps/web/src/lib/$generated"
   ]
 }

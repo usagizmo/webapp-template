@@ -1,8 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["GRAPHQL_ENDPOINT", "HASURA_ADMIN_SECRET", "HASURA_GRAPHQL_ADMIN_SECRET"],
   "pipeline": {
     "web#generate": {
-      "outputs": [".svelte-kit/**", "schema.graphql"]
+      "outputs": [".svelte-kit/**"]
     },
     "mockup#build": {
       "outputs": ["public/styles.css"]
@@ -12,7 +13,7 @@
     },
     "web#build": {
       "dependsOn": ["web#generate"],
-      "outputs": [".svelte-kit/**", ".vercel/**", "$houdini/**", "schema.graphql"]
+      "outputs": [".svelte-kit/**", ".vercel/**"]
     },
     "dev": {
       "cache": false,

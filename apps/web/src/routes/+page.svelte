@@ -1,19 +1,13 @@
-<script>
-  import { Meta, SectionFrame } from 'ui';
-  import { user } from '$lib/nhost';
+<script lang="ts">
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
+  import Meta from '$lib/components/Meta.svelte';
+  import { store } from '$lib/store.svelte';
   import CommentForm from './CommentForm.svelte';
   import Comments from './Comments.svelte';
   import LoginMessage from './LoginMessage.svelte';
 
-  /** @type { import('./$houdini').PageData } */
-  export let data;
-
-  $: ({ Comments: CommentsData } = data);
-  $: comments = $CommentsData.data?.comments ?? [];
-
-  $: meta = {
-    /** @type {'website'} */
-    type: 'website',
+  const meta = {
+    type: 'website' as const,
     title: `WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com',
   };
@@ -22,7 +16,7 @@
 <Meta {...meta} />
 
 <div class="mx-auto max-w-[792px] space-y-5">
-  {#if $user}
+  {#if store.user}
     <CommentForm />
   {:else}
     <LoginMessage />
@@ -35,9 +29,7 @@
         <p class="text-sm text-zinc-500">Comments will be deleted as appropriate.</p>
       </div>
 
-      <div>
-        <Comments {comments} />
-      </div>
+      <Comments />
     </div>
   </SectionFrame>
 </div>

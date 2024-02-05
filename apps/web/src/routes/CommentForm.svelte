@@ -1,55 +1,50 @@
-<script>
+<script lang="ts">
   import { tick } from 'svelte';
-  import { Button, PaperPlaneIcon, SectionFrame } from 'ui';
   import { nhost } from '$lib/nhost';
-  import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
-  import { InsertCommentStore } from '$houdini';
+  import { InsertComment } from '$lib/$generated/graphql';
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import PaperPlaneIcon from '$lib/components/icons/16x16/PaperPlaneIcon.svelte';
 
-  /** @type {HTMLTextAreaElement} */
-  let textAreaEl;
+  let textAreaEl: HTMLTextAreaElement | null = $state(null);
+  let isSending = $state(false);
+  let text = $state('');
+  let files: FileList | null = $state(null);
 
-  let isSending = false;
-  let text = '';
-
-  /** @type {FileList | null} */
-  let files = null;
-
-  /** @type {File | null} */
-  $: file = files?.[0] ?? null;
-
-  const insertComment = new InsertCommentStore();
+  const file: File | null = $derived(files?.[0] ?? null);
 
   /**
    * Send the comment
-   * @returns {Promise<void>}
    */
-  async function handleSend() {
+  async function handleSend(): Promise<void> {
     if (!text) {
-      textAreaEl.focus();
+      textAreaEl?.focus();
       return;
     }
 
     // before
     isSending = true;
 
-    /** @type {string | null} */
-    let fileId = null;
+    let fileId: string | null = null;
 
     if (file) {
-      const res = await nhost.storage.upload({ file });
-      if (tryErrorAlertOnNhostApi(res)) return;
+      const { fileMetadata, error } = await nhost.storage.upload({ file });
+      if (error) {
+        alert(error.message);
+        return;
+      }
 
-      fileId = res.fileMetadata?.id ?? null;
+      fileId = fileMetadata.id ?? null;
       if (!fileId) {
         alert('File ID not found');
         return;
       }
     }
 
-    const { errors } = await insertComment.mutate({ text, fileId });
+    const { errors } = await InsertComment({ variables: { text, fileId }});
 
-    if (errors?.length) {
-      tryErrorAlertOnHoudiniApi(errors);
+    if (errors) {
+      alert(errors.map((e) => e.message).join(', '));
       window.location.reload();
       return;
     }
@@ -60,11 +55,10 @@
     // after
     isSending = false;
     await tick();
-    textAreaEl.focus();
+    textAreaEl?.focus();
   }
 
-  /** @type {(e: KeyboardEvent) => void} */
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: KeyboardEvent): void => {
     if (e.metaKey && e.key === 'Enter') {
       handleSend();
     }
@@ -95,8 +89,7 @@
           <img
             class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 hover:brightness-90 peer-disabled:pointer-events-none peer-disabled:opacity-40"
             src={blobUrl}
-            alt={file.name}
-            title={file.name}
+            alt=""
           />
         {:else}
           <span

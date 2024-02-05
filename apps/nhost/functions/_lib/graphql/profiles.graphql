@@ -1,0 +1,5 @@
+mutation InsertProfile($profile: profiles_insert_input!) {
+  insertProfile(object: $profile) {
+    id
+  }
+}

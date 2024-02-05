@@ -1,24 +1,31 @@
-<script>
+<script lang="ts">
   import { crossfade } from 'svelte/transition';
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  /** @type {{label: string, href: string}[]} */
-  export let navItems = [];
+  let { navItems = [] } = $props<{
+    navItems: { label: string; href: string }[];
+  }>();
 
   const [send, receive] = crossfade(defaultDE);
 
-  /** @type {(href: string) => string} */
-  $: getScope = (href) => href.split('/')[1];
+  /**
+   * Get the scope of the page
+   * @param href - The href of the page
+   * @returns The scope of the page
+   */
+  function getScope(href: string): string {
+    return href.split('/')[1];
+  }
 </script>
 
 <ul class="flex h-full items-center gap-5">
   {#each navItems as { label, href }}
     {@const isActive =
-      href === ROUTE.HOME
-        ? href === $page.url.pathname
-        : getScope($page.url.pathname) === getScope(href)}
+      // eslint-disable-next-line svelte/valid-compile
+      href === ROUTE.HOME ? href === $page.url.pathname : getScope($page.url.pathname) === getScope(href)
+    }
     <li class="relative flex h-full items-center justify-center">
       {#if isActive}
         <span class="font-bold">{label}</span>

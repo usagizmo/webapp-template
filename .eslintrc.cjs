@@ -1,4 +1,11 @@
+/** @type { import("eslint").Linter.Config } */
 module.exports = {
   root: true,
-  extends: ['custom'],
+  extends: ['@repo/eslint-config/javascript.cjs'],
+  overrides: [
+    {
+      files: ['*.ts', '*.svelte'],
+      extends: ['@repo/eslint-config/typescript.cjs'],
+    },
+  ],
 };

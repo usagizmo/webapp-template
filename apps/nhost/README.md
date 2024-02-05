@@ -1,27 +1,25 @@
 # `nhost` app
 
-> The Open Source Firebase Alternative with GraphQL
-> Make backend easy. Never manage infrastructure
-> Database / GraphQL API / Authentication / Storage / Serverless Functions
-
-ref: https://nhost.io/
+Local environment for backend using [Nhost CLI](https://docs.nhost.io/development/cli/getting-started) (`v1.12`).
 
 ## Commands
 
 ```bash
-pnpm dev     # Launch Nhost dev server
-pnpm lint    # markuplint the contents of email
-pnpm format  # Format with `prettier`
+nhost up             # Start the dev server
+nhost down           # Stop the dev server
+nhost logs --follow  # Show logs
+nhost help           # Show help
+nhost config show    # Show config
 ```
 
-## Local **sign up** process
+## Environment variables
 
-Once you have signed up, check your email to MailHog.  
-http://localhost:8025/
+Environment variables are specified in `[[global.environment]]` of nhost/nhost.toml.
+If you want to use different values for production and development environments, set the values in .secrets and specify them.
 
-## Reset local database
+## Secrets
 
-Delete `apps/nhost/.nhost` and start the dev server again with `pnpm dev`.
+Copy .secrets.example to .secrets
 
 ## (Nhost) Production settings
 

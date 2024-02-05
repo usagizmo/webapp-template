@@ -1,5 +1,5 @@
 {
-  "name": "tailwind-preset-base",
+  "name": "@repo/tailwind-preset-base",
   "version": "0.0.0",
   "type": "module",
   "module": "index.js",
@@ -17,8 +17,8 @@
     "format": "concurrently pnpm:format:*"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
     "@tailwindcss/typography": "^0.5.10",
-    "eslint-config-custom": "workspace:*",
     "tailwindcss": "^3.4.0"
   }
 }

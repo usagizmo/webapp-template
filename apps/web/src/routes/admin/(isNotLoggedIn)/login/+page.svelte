@@ -1,19 +1,18 @@
-<script>
-  import { getContext } from 'svelte';
-  import { Button, Meta, SignInIcon } from 'ui';
+<script lang="ts">
   import { logIn } from '$lib/nhost';
-  import { userInputsKey } from '$lib/userInputs';
+  import { store } from '$lib/store.svelte';
+  import Meta from '$lib/components/Meta.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import SignInIcon from '$lib/components/icons/16x16/SignInIcon.svelte';
 
-  /** @type {{ getInputs: () => import('$lib/userInputs').UserInputs}} */
-  const { getInputs } = getContext(userInputsKey);
-  const inputs = getInputs();
-
-  /** @returns {Promise<void>} */
-  async function handleSubmit() {
-    await logIn(inputs);
+  /**
+   * Log in
+   */
+  async function handleSubmit(): Promise<void> {
+    await logIn(store.userInputs);
   }
 
-  $: meta = {
+  const meta = {
     title: `Admin (Login) | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/admin/login',
   };

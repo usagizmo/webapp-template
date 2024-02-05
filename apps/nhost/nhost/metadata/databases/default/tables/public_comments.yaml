@@ -16,7 +16,10 @@ configuration:
     file_id: fileId
     updated_at: updatedAt
     user_id: userId
-  custom_root_fields: {}
+  custom_root_fields:
+    delete_by_pk: deleteComment
+    insert: insertComments
+    insert_one: insertComment
 object_relationships:
   - name: user
     using:
@@ -26,46 +29,38 @@ insert_permissions:
     permission:
       check: {}
       set:
-        user_id: x-hasura-user-id
+        user_id: x-hasura-User-Id
       columns:
         - file_id
         - text
+    comment: ""
 select_permissions:
   - role: public
     permission:
       columns:
         - created_at
-        - id
         - file_id
+        - id
         - text
         - updated_at
         - user_id
       filter: {}
-      limit: 100
+    comment: ""
   - role: user
     permission:
       columns:
         - created_at
-        - id
         - file_id
+        - id
         - text
         - updated_at
         - user_id
       filter: {}
-      limit: 100
-update_permissions:
-  - role: user
-    permission:
-      columns:
-        - file_id
-        - text
-      filter:
-        user_id:
-          _eq: X-Hasura-User-Id
-      check: {}
+    comment: ""
 delete_permissions:
   - role: user
     permission:
       filter:
         user_id:
           _eq: X-Hasura-User-Id
+    comment: ""

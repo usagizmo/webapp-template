@@ -1,62 +1,41 @@
-<script>
-  import { DateTime } from 'luxon';
+<script lang="ts">
+  import { cdate } from 'cdate';
   import { fade } from 'svelte/transition';
-  import { Button, CircleCheckIcon, CircleCloseIcon } from 'ui';
-  import { nhost, user } from '$lib/nhost';
-  import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
-  import { DeleteCommentStore, fragment, graphql, UpdateCommentFileIdStore } from '$houdini';
+  import { nhost } from '$lib/nhost';
+  import { store } from '$lib/store.svelte';
+  import { DeleteComment } from '$lib/$generated/graphql';
+  import type { GetAllCommentsSubscription } from '$lib/$generated/graphql';
+  import CircleCloseIcon from '$lib/components/icons/20x20/CircleCloseIcon.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import CircleCheckIcon from '$lib/components/icons/20x20/CircleCheckIcon.svelte';
 
-  /**
-   * The comment card
-   * @typedef {object} Card
-   * @property {string} id - The comment ID
-   * @property {boolean} me - Whether the comment belongs to the current user
-   * @property {string} name - The name of the user who made the comment
-   * @property {Date} createdAt - The date the comment was created
-   * @property {string} message - The comment message
-   * @property {string | null} fileId - The file ID of the comment image
-   */
+interface Card {
+    id: string;
+    me: boolean;
+    name: string;
+    createdAt: cdate.CDate;
+    message: string;
+    fileId: string | null;
+  }
 
-  let isActionVisible = false;
-  let isDeleting = false;
+  let { comment } = $props<{
+    comment: GetAllCommentsSubscription['comments'][number];
+  }>();
 
-  /** @type {import('$houdini').Comment} */
-  export let comment;
+  let isActionVisible = $state(false);
+  let isDeleting = $state(false);
 
-  $: data = fragment(
-    comment,
-    graphql`
-      fragment Comment on comments {
-        id
-        createdAt
-        updatedAt
-        text
-        fileId
-        user {
-          id
-          displayName
-        }
-      }
-    `,
-  );
-
-  /** @type {Card} */
-  $: card = {
-    id: $data.id,
-    me: $user?.id === $data.user.id,
-    name: $data.user.displayName,
-    createdAt: $data.createdAt,
-    message: $data.text,
-    fileId: $data.fileId,
-  };
-
-  $: createdAt = DateTime.fromJSDate(card.createdAt);
-
-  const updateCommentFileId = new UpdateCommentFileIdStore();
-  const deleteComment = new DeleteCommentStore();
+  const card: Card = $derived({
+    id: comment.id,
+    me: store.user?.id === comment.user.id,
+    name: comment.user.displayName,
+    createdAt: cdate(comment.createdAt),
+    message: comment.text,
+    fileId: comment.fileId,
+  });
 
   const handleDeleteImage = async () => {
-    const { id, fileId } = card;
+    const { fileId } = card;
 
     if (!fileId) {
       throw Error('File ID not found');
@@ -67,15 +46,8 @@
 
     // ...
     const res = await nhost.storage.delete({ fileId });
-    if (tryErrorAlertOnNhostApi(res)) {
-      // Continue update without the file
-      // return;
-    }
-
-    const { errors } = await updateCommentFileId.mutate({ id, fileId: null });
-
-    if (errors?.length) {
-      tryErrorAlertOnHoudiniApi(errors);
+    if (res.error) {
+      console.error(res.error.message);
       window.location.reload();
       return;
     }
@@ -92,16 +64,18 @@
     // ...
     if (fileId) {
       const res = await nhost.storage.delete({ fileId });
-      if (tryErrorAlertOnNhostApi(res)) {
+
+      if (res.error) {
+        console.error(res.error.message);
         // Continue update without the file
         // return;
       }
     }
 
-    const { errors } = await deleteComment.mutate({ id });
+    const { errors } = await DeleteComment({ variables: { id } })
 
-    if (errors?.length) {
-      tryErrorAlertOnHoudiniApi(errors);
+    if (errors) {
+      alert(errors.map((e) => e.message).join(', '));
       window.location.reload();
       return;
     }
@@ -126,8 +100,11 @@
           <CircleCheckIcon />
         </figure>
       {/if}
-      <time class="ml-2 text-sm font-medium text-zinc-500" title={createdAt.toISO()}>
-        {createdAt.toFormat('MM/dd/yyyy')}
+      <time
+        class="ml-2 text-sm font-medium text-zinc-500"
+        title={card.createdAt.format('YYYY-MM-DD HH:mm:ss.SSSZ')}
+      >
+        {card.createdAt.format('MM/DD/YYYY')}
       </time>
     </div>
     <div class="mt-0.5 flex">

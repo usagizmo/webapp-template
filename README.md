@@ -28,15 +28,13 @@ Monorepo template for creating a web application.
 - [`web`](./apps/web/) [[Demo](https://webapp-template.usagizmo.com/)]  
   A starting point for building Svelte application.  
   [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/))  
-  [Nhost](https://nhost.io/) (w/ [Houdini](https://www.houdinigraphql.com/)) / [Vitest](https://vitest.dev/)
+  [Nhost](https://nhost.io/) / [Vitest](https://vitest.dev/)
 
 #### `packages/`
 
-- `ui`  
-  A stub Svelte component library.
 - `tailwind-preset-base`  
   A preset for use with `tailwind.config.js` and `global.css`.
-- `eslint-config-custom`  
+- `eslint-config`  
   `eslint` configurations. (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + eslint-config-[[prettier](https://github.com/prettier/eslint-config-prettier)|[turbo](https://www.npmjs.com/package/eslint-config-turbo)])
 
 ### VS Code Extensions (Recommend)
@@ -48,6 +46,13 @@ Monorepo template for creating a web application.
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
 ## Breaking changes
+
+### v1.9.0
+
+- Change from JavaScript to TypeScript
+- Svelte 4 → Svelte 5 (Rune)
+- Prepend `@repo/` to custom package names (`packages/*`)
+  - Merge `eslint-config-custom-typescript` into `eslint-config-custom`
 
 ### v1.6.0
 
