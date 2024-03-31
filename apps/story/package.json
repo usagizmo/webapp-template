@@ -16,18 +16,18 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-preset-base": "workspace:*",
-    "@storybook/addon-essentials": "^7.6.7",
-    "@storybook/addon-interactions": "^7.6.7",
-    "@storybook/addon-links": "^7.6.7",
-    "@storybook/blocks": "^7.6.7",
-    "@storybook/svelte": "^7.6.7",
-    "@storybook/svelte-vite": "^7.6.7",
+    "@storybook/addon-essentials": "^8.0.5",
+    "@storybook/addon-interactions": "^8.0.5",
+    "@storybook/addon-links": "^8.0.5",
+    "@storybook/blocks": "^8.0.5",
+    "@storybook/svelte": "^8.0.5",
+    "@storybook/svelte-vite": "^8.0.5",
     "@storybook/testing-library": "^0.2.2",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.6.7",
-    "svelte": "5.0.0-next.28",
-    "tailwindcss": "^3.4.0"
+    "storybook": "^8.0.5",
+    "svelte": "5.0.0-next.90",
+    "tailwindcss": "^3.4.3"
   }
 }

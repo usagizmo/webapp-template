@@ -14,14 +14,14 @@
     "format": "concurrently pnpm:format:*"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.17.0",
-    "@typescript-eslint/parser": "^6.17.0",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-config-turbo": "^1.11.3",
+    "eslint-config-turbo": "^1.13.0",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^48.0.2",
-    "eslint-plugin-svelte": "2.36.0-next.3",
-    "eslint-plugin-unused-imports": "^3.0.0"
+    "eslint-plugin-jsdoc": "^48.2.2",
+    "eslint-plugin-svelte": "2.36.0-next.13",
+    "eslint-plugin-unused-imports": "^3.1.0"
   },
   "publishConfig": {
     "access": "public"
