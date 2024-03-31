@@ -8,9 +8,6 @@
     "mockup#build": {
       "outputs": ["public/styles.css"]
     },
-    "story#build": {
-      "outputs": ["storybook-static/**"]
-    },
     "web#build": {
       "dependsOn": ["web#generate"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
