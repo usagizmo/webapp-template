@@ -8,9 +8,9 @@
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import UserInputs from './UserInputs.svelte';
 
-  let { children } = $props<{
+  let { children }: {
     children: Snippet;
-  }>();
+  } = $props();
 
   $effect(() => {
     if (store.user) {

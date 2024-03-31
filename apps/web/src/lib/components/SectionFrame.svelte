@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
 
-  let { children, noPad = '' } = $props<{
+  let { children, noPad = '' }: {
     children: Snippet;
     noPad?: 'y' | 'top' | '';
-  }>();
+  } = $props();
 
   /**
    * Get the padding class based on the `noPad` prop

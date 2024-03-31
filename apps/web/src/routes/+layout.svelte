@@ -3,16 +3,17 @@
 
   import type { Snippet } from 'svelte';
   import { nhost } from '$lib/nhost';
-  import { store } from '$lib/store.svelte';
+  import { store  } from '$lib/store.svelte';
+  import type {User} from '$lib/store.svelte';
   import { AsyncGetUser } from '$lib/$generated/graphql';
   import Footer from './Footer.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
   // import GoogleAnalytics from './GoogleAnalytics.svelte';
   // import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
 
-  let { children } = $props<{
+  let { children }: {
     children: Snippet;
-  }>();
+  } = $props();
 
   nhost.auth.onAuthStateChanged(async (_, session) => {
     if (!session?.user) {
@@ -22,7 +23,7 @@
 
     console.log(session.user.id)
     const { data } = await AsyncGetUser({ variables: { id: session.user.id } })
-    store.user = data ? data.user : null;
+    store.user = data ? data.user as User : null;
   });
 </script>
 

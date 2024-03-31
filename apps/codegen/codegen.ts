@@ -14,7 +14,7 @@ const config: CodegenConfig = {
       documents: ['../web/src/lib/graphql/**/*.graphql'],
       plugins: ['typescript', 'typescript-operations', 'graphql-codegen-svelte-apollo'],
       config: {
-        clientPath: '../graphql-client.ts',
+        clientPath: '../graphql-client',
         asyncQuery: true,
       },
     },

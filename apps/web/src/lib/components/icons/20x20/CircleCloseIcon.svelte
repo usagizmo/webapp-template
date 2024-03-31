@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { size = 20 } = $props<{ size?: number }>();
+  let { size = 20 }: { size?: number } = $props();
 
   const style = $derived(`width: ${size}px; height: ${size}px;`);
 </script>

@@ -7,7 +7,7 @@
     card = 'summary_large_image',
     image = 'https://webapp-template.usagizmo.com/images/ogp.png',
     canonical = '',
-  } = $props<{
+  }: {
     type?: 'website' | 'article';
     title?: string;
     siteName?: string;
@@ -15,7 +15,7 @@
     card?: 'summary' | 'summary_large_image';
     image?: string;
     canonical?: string;
-  }>();
+  } = $props();
 </script>
 
 <svelte:head>

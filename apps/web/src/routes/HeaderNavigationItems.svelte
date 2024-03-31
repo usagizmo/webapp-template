@@ -4,9 +4,9 @@
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  let { navItems = [] } = $props<{
+  let { navItems = [] }: {
     navItems: { label: string; href: string }[];
-  }>();
+  } = $props();
 
   const [send, receive] = crossfade(defaultDE);
 

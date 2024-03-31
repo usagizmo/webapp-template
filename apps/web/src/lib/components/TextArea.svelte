@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { FocusEventHandler } from "svelte/elements";
+
   let {
     oninput,
     label = '',
@@ -6,22 +8,18 @@
     value = '',
     error = {},
     onblur = () => {},
-  } = $props<{
+  }: {
     oninput: HTMLTextAreaElement['oninput'];
     label?: string;
     placeholder?: string;
     value?: string;
     error?: { required?: string };
-    onblur?: HTMLTextAreaElement['onblur'];
-  }>();
+    onblur?: FocusEventHandler<HTMLTextAreaElement>;
+  } = $props();
 
   let isDirty = $state(false);
 
-  /**
-   * Set the isDirty flag for the input
-   * @param event - InputEvent
-   */
-  function handleBlur(event: InputEvent) {
+  const handleBlur: FocusEventHandler<HTMLTextAreaElement> = (event) => {
     isDirty = true;
     onblur(event)
   }

@@ -8,7 +8,7 @@
     primary = false,
     blank = false,
     disabled = false,
-  } = $props<ButtonProps>();
+  }: ButtonProps = $props();
 
   const element = $derived(href ? 'a' : 'button');
   const kindClass = $derived(

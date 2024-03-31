@@ -2,7 +2,7 @@
   import { browser } from '$app/environment';
   import { page } from '$app/stores';
 
-  let { id } = $props<{ id: string }>();
+  let { id }: { id: string } = $props();
 
   const content = `
     window.dataLayer = window.dataLayer || [];

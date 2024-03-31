@@ -18,9 +18,9 @@ interface Card {
     fileId: string | null;
   }
 
-  let { comment } = $props<{
+  let { comment }: {
     comment: GetAllCommentsSubscription['comments'][number];
-  }>();
+  } = $props();
 
   let isActionVisible = $state(false);
   let isDeleting = $state(false);
