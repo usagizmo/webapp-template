@@ -15,14 +15,13 @@
         comments = data!.comments;
         isLoading = false;
       },
-    })
+    });
 
     return () => {
       subscription.unsubscribe();
-    }
-  })
-
-  </script>
+    };
+  });
+</script>
 
 <div class="divide-y divide-slate-200">
   {#if isLoading}

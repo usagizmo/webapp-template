@@ -23,8 +23,7 @@
     {#each tabs as { name, href }}
       {@const isActive =
         // eslint-disable-next-line svelte/valid-compile
-        href === $page.url.pathname
-      }
+        href === $page.url.pathname}
       <li class="relative rounded-md">
         {#if isActive}
           <span

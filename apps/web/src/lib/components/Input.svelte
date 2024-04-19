@@ -30,9 +30,9 @@
   <label>
     <span class="mb-1 block font-semibold">{label}</span>
     {#if type === 'password'}
-      <input type="password" class={classes} {oninput} onblur={handleDirty} value={value} />
+      <input type="password" class={classes} {oninput} onblur={handleDirty} {value} />
     {:else}
-      <input type="text" class={classes} {oninput} onblur={handleDirty} value={value} />
+      <input type="text" class={classes} {oninput} onblur={handleDirty} {value} />
     {/if}
   </label>
   {#if error.required && isDirty && !value}

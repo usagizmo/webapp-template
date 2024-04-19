@@ -41,7 +41,7 @@
       }
     }
 
-    const { errors } = await InsertComment({ variables: { text, fileId }});
+    const { errors } = await InsertComment({ variables: { text, fileId } });
 
     if (errors) {
       alert(errors.map((e) => e.message).join(', '));

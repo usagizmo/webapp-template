@@ -8,8 +8,10 @@
   import SectionFrame from '$lib/components/SectionFrame.svelte';
   import SignOutIcon from '$lib/components/icons/16x16/SignOutIcon.svelte';
 
-  const { user }: {
-    user: User
+  const {
+    user,
+  }: {
+    user: User;
   } = $props();
 
   let tempBio = $state(user.profile!.bio);
@@ -32,8 +34,8 @@
       variables: {
         id: user.id,
         bio: tempBio,
-      }
-    })
+      },
+    });
 
     const nextBio = data?.updateProfile?.bio ?? '';
 

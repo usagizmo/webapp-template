@@ -1,7 +1,10 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
 
-  let { children, noPad = '' }: {
+  let {
+    children,
+    noPad = '',
+  }: {
     children: Snippet;
     noPad?: 'y' | 'top' | '';
   } = $props();

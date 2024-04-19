@@ -4,7 +4,9 @@
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  let { navItems = [] }: {
+  let {
+    navItems = [],
+  }: {
     navItems: { label: string; href: string }[];
   } = $props();
 
@@ -23,9 +25,10 @@
 <ul class="flex h-full items-center gap-5">
   {#each navItems as { label, href }}
     {@const isActive =
-      // eslint-disable-next-line svelte/valid-compile
-      href === ROUTE.HOME ? href === $page.url.pathname : getScope($page.url.pathname) === getScope(href)
-    }
+      href === ROUTE.HOME
+        ? // eslint-disable-next-line svelte/valid-compile
+          href === $page.url.pathname
+        : getScope($page.url.pathname) === getScope(href)}
     <li class="relative flex h-full items-center justify-center">
       {#if isActive}
         <span class="font-bold">{label}</span>

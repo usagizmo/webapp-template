@@ -9,7 +9,7 @@
   import Button from '$lib/components/Button.svelte';
   import CircleCheckIcon from '$lib/components/icons/20x20/CircleCheckIcon.svelte';
 
-interface Card {
+  interface Card {
     id: string;
     me: boolean;
     name: string;
@@ -18,7 +18,9 @@ interface Card {
     fileId: string | null;
   }
 
-  let { comment }: {
+  let {
+    comment,
+  }: {
     comment: GetAllCommentsSubscription['comments'][number];
   } = $props();
 
@@ -72,7 +74,7 @@ interface Card {
       }
     }
 
-    const { errors } = await DeleteComment({ variables: { id } })
+    const { errors } = await DeleteComment({ variables: { id } });
 
     if (errors) {
       alert(errors.map((e) => e.message).join(', '));

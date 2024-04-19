@@ -8,7 +8,9 @@
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import UserInputs from './UserInputs.svelte';
 
-  let { children }: {
+  let {
+    children,
+  }: {
     children: Snippet;
   } = $props();
 
