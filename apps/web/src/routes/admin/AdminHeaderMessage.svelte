@@ -8,7 +8,6 @@
   let height = $state(0);
   let innerWidth = $state(0);
 
-  // eslint-disable-next-line svelte/valid-compile
   let isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_LOGIN);
 
   $effect(() => {

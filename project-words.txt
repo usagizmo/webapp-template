@@ -25,6 +25,7 @@ sssz
 sveltekit
 tailwindcss
 timestamptz
+tseslint
 turborepo
 unmarshal
 usagizmo

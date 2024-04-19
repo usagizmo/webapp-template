@@ -26,8 +26,7 @@
   {#each navItems as { label, href }}
     {@const isActive =
       href === ROUTE.HOME
-        ? // eslint-disable-next-line svelte/valid-compile
-          href === $page.url.pathname
+        ? href === $page.url.pathname
         : getScope($page.url.pathname) === getScope(href)}
     <li class="relative flex h-full items-center justify-center">
       {#if isActive}
