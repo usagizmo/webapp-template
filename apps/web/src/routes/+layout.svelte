@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '@repo/tailwind-preset-base/global.css';
+  import '@repo/tailwind-preset/global.css';
 
   import type { Snippet } from 'svelte';
   import { nhost } from '$lib/nhost';

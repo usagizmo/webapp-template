@@ -1,23 +1,18 @@
 {
-  "name": "@repo/tailwind-preset-base",
+  "name": "@repo/tailwind-preset",
   "version": "0.0.0",
   "type": "module",
-  "module": "index.js",
   "exports": {
-    ".": "./index.js",
     "./global.css": "./global.css"
   },
   "scripts": {
-    "lint:js": "eslint .",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
     "lint": "concurrently pnpm:lint:*",
-    "format:js": "eslint --fix .",
     "format:prettier": "prettier --write --ignore-path=../../.prettierignore .",
     "format": "concurrently pnpm:format:*"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "4.0.0-alpha.14"
   }
 }

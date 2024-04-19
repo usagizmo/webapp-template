@@ -28,7 +28,7 @@
     "markuplint": "^4.4.0",
     "prettier": "^3.2.5",
     "prettier-plugin-svelte": "^3.2.2",
-    "prettier-plugin-tailwindcss": "^0.5.13",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "turbo": "^1.13.0"
   },
   "packageManager": "pnpm@9.0.2",
