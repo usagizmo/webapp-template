@@ -1,17 +1,12 @@
 .DS_Store
 node_modules
-/build
-/.svelte-kit
-/package
 .env
 .env.*
 !.env.example
 
-# Ignore files for PNPM, NPM and YARN
+# Ignore files for PNPM
 pnpm-lock.yaml
 pnpm-workspace.yaml
-package-lock.json
-yarn.lock
 
 # custom
 /apps/mockup/public/styles.css
@@ -19,8 +14,4 @@ yarn.lock
 /apps/nhost/nhost/*
 !/apps/nhost/nhost/emails
 /apps/web/.svelte-kit
-/apps/web/build
 /apps/web/src/lib/$generated
-
-# TODO: for Svelte 5 (preview)
-/apps/web/**/*.svelte
