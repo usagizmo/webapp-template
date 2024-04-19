@@ -10,12 +10,12 @@
     "lint:markup": "markuplint --config ../../.markuplintrc.cjs \"**\"",
     "lint:js": "eslint .",
     "lint:cspell": "cspell \"**\"",
-    "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
+    "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
     "lint": "concurrently pnpm:lint:*",
     "test:watch": "vitest",
     "test": "vitest run",
     "format:js": "eslint --fix .",
-    "format:prettier": "prettier --write --ignore-path=../../.prettierignore .",
+    "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
     "format": "concurrently pnpm:format:*",
     "add-size-to-img": "node ./commands/add-size-to-img.js",
     "clean-image": "./commands/clean-image.sh",
@@ -27,6 +27,7 @@
     "@tailwindcss/cli": "4.0.0-alpha.14",
     "browser-sync": "^3.0.2",
     "image-size": "^1.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "vitest": "^1.4.0"
   }
 }

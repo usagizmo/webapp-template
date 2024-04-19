@@ -8,9 +8,9 @@
   "scripts": {
     "lint:cspell": "cspell \"**\"",
     "lint:js": "eslint .",
-    "lint:prettier": "prettier --check --ignore-path=../../.prettierignore .",
+    "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
     "lint": "concurrently pnpm:lint:*",
-    "format:prettier": "prettier --write --ignore-path=../../.prettierignore .",
+    "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
     "format": "concurrently pnpm:format:*"
   },
   "peerDependencies": {
