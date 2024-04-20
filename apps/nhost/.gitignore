@@ -1,5 +1,0 @@
-.secrets
-.nhost
-
-# custom
-/functions/_lib/$generated/graphql.ts
