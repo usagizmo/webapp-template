@@ -22,6 +22,7 @@ noto
 pathtest
 pnpm
 sssz
+supabase
 sveltekit
 tailwindcss
 timestamptz

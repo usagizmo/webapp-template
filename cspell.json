@@ -18,10 +18,9 @@
     "*.svg",
     "pnpm-lock.yaml",
     "/.vscode",
+    "/apps/backend/#vscode",
+    "/apps/backend/supabase/config.toml",
     "/apps/mockup/public/styles.css",
-    "/apps/nhost/nhost",
-    "/apps/nhost/functions/_lib/$generated",
-    "/apps/web/build",
-    "/apps/web/src/lib/$generated"
+    "/apps/web/build"
   ]
 }

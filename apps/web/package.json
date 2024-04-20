@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.9",
-    "@nhost/nhost-js": "^3.0.10",
+    "@supabase/supabase-js": "^2.42.5",
     "cdate": "^0.0.7",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",

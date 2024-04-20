@@ -10,4 +10,4 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # custom
-/src/lib/$generated/graphql.ts
+/src/lib/$generated

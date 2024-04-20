@@ -57,10 +57,7 @@ jobs:
       - name: Run build 🐣
         run: pnpm build
         env:
-          PUBLIC_NHOST_SUBDOMAIN: ${{ secrets.PUBLIC_NHOST_SUBDOMAIN }}
-          PUBLIC_NHOST_REGION: ${{ secrets.PUBLIC_NHOST_REGION }}
-          PUBLIC_GRAPHQL_ENDPOINT: ${{ secrets.PUBLIC_GRAPHQL_ENDPOINT }}
-          HASURA_ADMIN_SECRET: ${{ secrets.HASURA_ADMIN_SECRET }}
+          PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.PUBLIC_GOOGLE_ANALYTICS_ID }}
 
       - name: Run lint 👀
         run: pnpm lint

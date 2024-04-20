@@ -10,8 +10,5 @@ pnpm-workspace.yaml
 
 # custom
 /apps/mockup/public/styles.css
-/apps/nhost/.nhost
-/apps/nhost/nhost/*
-!/apps/nhost/nhost/emails
 /apps/web/.svelte-kit
 /apps/web/src/lib/$generated
