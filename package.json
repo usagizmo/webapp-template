@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare": "husky install && ./commands/init.sh",
+    "prepare": "husky && ./commands/init.sh",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint:cspell": "cspell --exclude \"apps/**/*\" --exclude \"packages/**/*\" \"**/*\"",
