@@ -56,9 +56,6 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@repo/tailwind-preset':
-        specifier: workspace:*
-        version: link:../../packages/tailwind-preset
       '@tailwindcss/cli':
         specifier: 4.0.0-alpha.14
         version: 4.0.0-alpha.14
@@ -71,6 +68,9 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: ^0.5.14
         version: 0.5.14(prettier-plugin-svelte@3.2.2(prettier@3.2.5)(svelte@4.2.15))(prettier@3.2.5)
+      tailwindcss:
+        specifier: 4.0.0-alpha.14
+        version: 4.0.0-alpha.14
       vitest:
         specifier: ^1.4.0
         version: 1.4.0(@types/node@20.12.7)(lightningcss@1.24.1)
@@ -99,9 +99,6 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@repo/tailwind-preset':
-        specifier: workspace:*
-        version: link:../../packages/tailwind-preset
       '@sveltejs/adapter-auto':
         specifier: ^3.2.0
         version: 3.2.0(@sveltejs/kit@2.5.5(@sveltejs/vite-plugin-svelte@3.1.0(svelte@5.0.0-next.90)(vite@5.2.7(@types/node@20.12.7)(lightningcss@1.24.1)))(svelte@5.0.0-next.90)(vite@5.2.7(@types/node@20.12.7)(lightningcss@1.24.1)))
@@ -129,6 +126,9 @@ importers:
       svelte-check:
         specifier: ^3.6.9
         version: 3.6.9(@babel/core@7.24.4)(postcss-load-config@5.0.3(jiti@1.21.0)(postcss@8.4.38))(postcss@8.4.38)(svelte@5.0.0-next.90)
+      tailwindcss:
+        specifier: 4.0.0-alpha.14
+        version: 4.0.0-alpha.14
       tslib:
         specifier: ^2.6.2
         version: 2.6.2
@@ -168,12 +168,6 @@ importers:
       typescript-eslint:
         specifier: ^7.7.0
         version: 7.7.0(eslint@9.0.0)(typescript@5.4.5)
-
-  packages/tailwind-preset:
-    devDependencies:
-      tailwindcss:
-        specifier: 4.0.0-alpha.14
-        version: 4.0.0-alpha.14
 
 packages:
 
