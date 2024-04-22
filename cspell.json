@@ -21,6 +21,7 @@
     "/apps/backend/#vscode",
     "/apps/backend/supabase/config.toml",
     "/apps/mockup/public/styles.css",
-    "/apps/web/build"
+    "/apps/web/build",
+    "/apps/web/src/lib/$generated"
   ]
 }

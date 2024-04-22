@@ -21,6 +21,7 @@ nhost
 noto
 pathtest
 pnpm
+postgrest
 sssz
 supabase
 sveltekit

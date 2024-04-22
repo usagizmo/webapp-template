@@ -1,5 +1,0 @@
-mutation UpdateBio($id: uuid!, $bio: String!) {
-  updateProfile(pk_columns: { id: $id }, _set: { bio: $bio }) {
-    bio
-  }
-}

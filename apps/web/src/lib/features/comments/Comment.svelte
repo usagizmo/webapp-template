@@ -1,13 +1,14 @@
 <script lang="ts">
   import { cdate } from 'cdate';
   import { fade } from 'svelte/transition';
-  import { nhost } from '$lib/nhost';
+  import { supabase } from '$lib/supabase';
   import { store } from '$lib/store.svelte';
-  import { DeleteComment } from '$lib/$generated/graphql';
-  import type { GetAllCommentsSubscription } from '$lib/$generated/graphql';
+  // import { DeleteComment } from '$lib/$generated/graphql';
+  // import type { GetAllCommentsSubscription } from '$lib/$generated/graphql';
   import CircleCloseIcon from '$lib/components/icons/20x20/CircleCloseIcon.svelte';
   import Button from '$lib/components/Button.svelte';
   import CircleCheckIcon from '$lib/components/icons/20x20/CircleCheckIcon.svelte';
+  import type { Comment } from './types';
 
   interface Card {
     id: string;
@@ -15,13 +16,13 @@
     name: string;
     createdAt: cdate.CDate;
     message: string;
-    fileId: string | null;
+    filePath: string | null;
   }
 
   let {
     comment,
   }: {
-    comment: GetAllCommentsSubscription['comments'][number];
+    comment: Comment;
   } = $props();
 
   let isActionVisible = $state(false);
@@ -29,17 +30,21 @@
 
   const card: Card = $derived({
     id: comment.id,
-    me: store.user?.id === comment.user.id,
-    name: comment.user.displayName,
-    createdAt: cdate(comment.createdAt),
+    me: store.user?.id === comment.profiles.id,
+    name: comment.profiles.display_name,
+    createdAt: cdate(comment.created_at),
     message: comment.text,
-    fileId: comment.fileId,
+    filePath: comment.file_path,
+  });
+
+  $effect(() => {
+    console.log(comment, card);
   });
 
   const handleDeleteImage = async () => {
-    const { fileId } = card;
+    const { filePath } = card;
 
-    if (!fileId) {
+    if (!filePath) {
       throw Error('File ID not found');
     }
 
@@ -47,7 +52,7 @@
     isDeleting = true;
 
     // ...
-    const res = await nhost.storage.delete({ fileId });
+    const res = await supabase.storage.delete({ filePath });
     if (res.error) {
       console.error(res.error.message);
       window.location.reload();
@@ -59,13 +64,13 @@
   };
 
   const handleDelete = async () => {
-    const { id, fileId } = card;
+    const { id, filePath } = card;
     // before
     isDeleting = true;
 
     // ...
-    if (fileId) {
-      const res = await nhost.storage.delete({ fileId });
+    if (filePath) {
+      const res = await supabase.storage.delete({ filePath });
 
       if (res.error) {
         console.error(res.error.message);
@@ -111,12 +116,15 @@
     </div>
     <div class="mt-0.5 flex">
       <p class="flex-1">{card.message}</p>
-      {#if card.fileId}
+      {#if card.filePath}
+        {@const {
+          data: { publicUrl },
+        } = supabase.storage.from('comments').getPublicUrl(card.filePath)}
         <div class="relative ml-2.5 flex-shrink-0">
           <figure class="h-[120px] w-[200px] overflow-hidden rounded-md bg-[#d9d9d9]">
             <img
               class="object-cover"
-              src={nhost.storage.getPublicUrl({ fileId: card.fileId })}
+              src={publicUrl}
               width="200"
               height="120"
               decoding="async"

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { logIn } from '$lib/nhost';
+  import { logIn } from '$lib/supabase';
   import { store } from '$lib/store.svelte';
   import Meta from '$lib/components/Meta.svelte';
   import Button from '$lib/components/Button.svelte';

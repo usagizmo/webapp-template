@@ -1,11 +1,10 @@
 <script lang="ts">
   import '../app.css';
 
+  import { onMount } from 'svelte';
   import type { Snippet } from 'svelte';
-  import { nhost } from '$lib/nhost';
+  import { getUser, supabase } from '$lib/supabase';
   import { store } from '$lib/store.svelte';
-  import type { User } from '$lib/store.svelte';
-  import { AsyncGetUser } from '$lib/$generated/graphql';
   import Footer from './Footer.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
   // import GoogleAnalytics from './GoogleAnalytics.svelte';
@@ -17,15 +16,30 @@
     children: Snippet;
   } = $props();
 
-  nhost.auth.onAuthStateChanged(async (_, session) => {
-    if (!session?.user) {
-      store.user = null;
-      return;
-    }
+  onMount(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(async (_, session) => {
+      if (!session?.user) {
+        store.user = null;
+        return;
+      }
 
-    console.log(session.user.id);
-    const { data } = await AsyncGetUser({ variables: { id: session.user.id } });
-    store.user = data ? (data.user as User) : null;
+      if (!session.user.email) {
+        throw new Error('No email found in session');
+      }
+
+      if (!session.user.user_metadata.display_name) {
+        throw new Error('No display name found in session');
+      }
+
+      const { user } = await getUser(session.user.id);
+      store.user = user;
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
   });
 </script>
 

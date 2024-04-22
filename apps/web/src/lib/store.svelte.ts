@@ -1,9 +1,13 @@
 import { create } from 'mutative';
-import type { GetUserQuery } from './$generated/graphql';
 import { ROUTE } from './routes';
-import type { UserInputs } from './nhost';
+import type { UserInputs } from './supabase';
 
-export type User = NonNullable<GetUserQuery['user']>;
+export interface User {
+  id: string;
+  email: string;
+  displayName: string;
+  bio: string;
+}
 
 export class Store {
   #user: User | null = $state<User | null>(null);
@@ -29,13 +33,13 @@ export class Store {
   }
 
   /**
-   * Get the user display name
-   * @param userBio - The user display name
+   * Set the user bio
+   * @param bio - The bio
    */
-  setUserBio(userBio: string): void {
-    if (!this.#user?.profile) return;
+  setUserBio(bio: string): void {
+    if (!this.#user) return;
     this.#user = create(this.#user, (draft) => {
-      draft.profile!.bio = userBio;
+      draft.bio = bio;
     });
   }
 

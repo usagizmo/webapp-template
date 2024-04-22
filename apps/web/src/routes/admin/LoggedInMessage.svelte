@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { logOut } from '$lib/nhost';
+  import { logOut, updateUserBio } from '$lib/supabase';
   import { store } from '$lib/store.svelte';
   import type { User } from '$lib/store.svelte';
-  import { UpdateBio } from '$lib/$generated/graphql';
   import Button from '$lib/components/Button.svelte';
   import TextArea from '$lib/components/TextArea.svelte';
   import SectionFrame from '$lib/components/SectionFrame.svelte';
@@ -14,7 +13,7 @@
     user: User;
   } = $props();
 
-  let tempBio = $state(user.profile!.bio);
+  let tempBio = $state(user.bio);
 
   /**
    * Log out the user
@@ -27,20 +26,12 @@
    * Update the user's bio
    */
   async function handleUpdate() {
-    const storeBio = store.user?.profile?.bio ?? '';
+    const storeBio = store.user?.bio ?? '';
     if (storeBio === tempBio) return;
 
-    const { data } = await UpdateBio({
-      variables: {
-        id: user.id,
-        bio: tempBio,
-      },
-    });
+    await updateUserBio(user.id, tempBio);
 
-    const nextBio = data?.updateProfile?.bio ?? '';
-
-    tempBio = nextBio;
-    store.setUserBio(nextBio);
+    store.setUserBio(tempBio);
   }
 </script>
 

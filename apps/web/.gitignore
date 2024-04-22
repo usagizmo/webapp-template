@@ -10,4 +10,5 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # custom
-/src/lib/$generated
+/src/lib/$generated/*
+!/src/lib/$generated/.gitkeep

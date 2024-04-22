@@ -1,7 +1,7 @@
 <script lang="ts">
   import { tick } from 'svelte';
-  import { nhost } from '$lib/nhost';
-  import { InsertComment } from '$lib/$generated/graphql';
+  import { supabase } from '$lib/supabase';
+  // import { InsertComment } from '$lib/$generated/graphql';
   import SectionFrame from '$lib/components/SectionFrame.svelte';
   import Button from '$lib/components/Button.svelte';
   import PaperPlaneIcon from '$lib/components/icons/16x16/PaperPlaneIcon.svelte';
@@ -28,7 +28,7 @@
     let fileId: string | null = null;
 
     if (file) {
-      const { fileMetadata, error } = await nhost.storage.upload({ file });
+      const { fileMetadata, error } = await supabase.storage.upload({ file });
       if (error) {
         alert(error.message);
         return;
