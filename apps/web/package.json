@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "generate:svelte": "svelte-kit sync",
-    "generate:supabase-types": "./commands/supabase-types.sh",
+    "generate:supabase-types": "node ./commands/supabase-types.js",
     "generate": "concurrently pnpm:generate:*",
     "dev": "vite dev --open",
     "build": "pnpm generate && vite build",
@@ -32,6 +32,7 @@
     "@sveltejs/kit": "^2.5.5",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@tailwindcss/postcss": "4.0.0-alpha.14",
+    "dotenv": "^16.4.5",
     "supabase": "^1.162.4",
     "svelte": "5.0.0-next.90",
     "svelte-check": "^3.6.9",

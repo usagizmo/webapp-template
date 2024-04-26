@@ -57,6 +57,7 @@ jobs:
       - name: Run build 🐣
         run: pnpm build
         env:
+          SUPABASE_DIRECT_URL: ${{ secrets.SUPABASE_DIRECT_URL }}
           PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.PUBLIC_GOOGLE_ANALYTICS_ID }}
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
