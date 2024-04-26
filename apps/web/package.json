@@ -32,8 +32,6 @@
     "@sveltejs/kit": "^2.5.5",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@tailwindcss/postcss": "4.0.0-alpha.14",
-    "prettier-plugin-svelte": "^3.2.2",
-    "prettier-plugin-tailwindcss": "^0.5.14",
     "supabase": "^1.162.4",
     "svelte": "5.0.0-next.90",
     "svelte-check": "^3.6.9",

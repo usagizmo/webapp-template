@@ -65,9 +65,6 @@ importers:
       image-size:
         specifier: ^1.1.1
         version: 1.1.1
-      prettier-plugin-tailwindcss:
-        specifier: ^0.5.14
-        version: 0.5.14(prettier-plugin-svelte@3.2.2(prettier@3.2.5)(svelte@4.2.15))(prettier@3.2.5)
       tailwindcss:
         specifier: 4.0.0-alpha.14
         version: 4.0.0-alpha.14
@@ -99,12 +96,6 @@ importers:
       '@tailwindcss/postcss':
         specifier: 4.0.0-alpha.14
         version: 4.0.0-alpha.14(postcss@8.4.38)
-      prettier-plugin-svelte:
-        specifier: ^3.2.2
-        version: 3.2.2(prettier@3.2.5)(svelte@5.0.0-next.90)
-      prettier-plugin-tailwindcss:
-        specifier: ^0.5.14
-        version: 0.5.14(prettier-plugin-svelte@3.2.2(prettier@3.2.5)(svelte@5.0.0-next.90))(prettier@3.2.5)
       supabase:
         specifier: ^1.162.4
         version: 1.162.4
@@ -6203,22 +6194,11 @@ snapshots:
       prettier: 3.2.5
       svelte: 4.2.15
 
-  prettier-plugin-svelte@3.2.2(prettier@3.2.5)(svelte@5.0.0-next.90):
-    dependencies:
-      prettier: 3.2.5
-      svelte: 5.0.0-next.90
-
   prettier-plugin-tailwindcss@0.5.14(prettier-plugin-svelte@3.2.2(prettier@3.2.5)(svelte@4.2.15))(prettier@3.2.5):
     dependencies:
       prettier: 3.2.5
     optionalDependencies:
       prettier-plugin-svelte: 3.2.2(prettier@3.2.5)(svelte@4.2.15)
-
-  prettier-plugin-tailwindcss@0.5.14(prettier-plugin-svelte@3.2.2(prettier@3.2.5)(svelte@5.0.0-next.90))(prettier@3.2.5):
-    dependencies:
-      prettier: 3.2.5
-    optionalDependencies:
-      prettier-plugin-svelte: 3.2.2(prettier@3.2.5)(svelte@5.0.0-next.90)
 
   prettier@3.2.5: {}
 
