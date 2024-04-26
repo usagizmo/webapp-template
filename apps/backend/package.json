@@ -4,7 +4,9 @@
   "type": "module",
   "scripts": {
     "generate": "supabase gen types typescript --local > ../web/src/lib/\\$generated/supabase-types.ts",
-    "pull": "supabase db pull --local"
+    "pull": "supabase db pull --local",
+    "start": "supabase start",
+    "stop": "supabase stop"
   },
   "devDependencies": {
     "supabase": "^1.162.4"
