@@ -43,7 +43,7 @@ jobs:
       - name: Setup pnpm 📦
         uses: pnpm/action-setup@v3
         with:
-          version: 9
+          version: 9.0.4
 
       - name: Setup node 🏗
         uses: actions/setup-node@v3
@@ -58,6 +58,8 @@ jobs:
         run: pnpm build
         env:
           PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.PUBLIC_GOOGLE_ANALYTICS_ID }}
+          PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
+          PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: Run lint 👀
         run: pnpm lint
