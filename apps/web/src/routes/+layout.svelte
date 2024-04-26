@@ -3,7 +3,7 @@
 
   import { onMount } from 'svelte';
   import type { Snippet } from 'svelte';
-  import { supabase } from '$lib/supabase';
+  import { supabase } from '$lib/supabaseClient';
   import { userStore } from '$lib/features/user/userStore.svelte';
   import Footer from './Footer.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';

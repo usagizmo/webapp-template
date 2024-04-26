@@ -1,4 +1,4 @@
-import { supabase } from '$lib/supabase';
+import { supabase } from '$lib/supabaseClient';
 
 export async function uploadCommentFile(uid: string, file: File) {
   const path = `${uid}/${Date.now()}_${file.name}`;
