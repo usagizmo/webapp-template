@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { logIn } from '$lib/supabase';
-  import { store } from '$lib/store.svelte';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import Meta from '$lib/components/Meta.svelte';
   import Button from '$lib/components/Button.svelte';
   import SignInIcon from '$lib/components/icons/16x16/SignInIcon.svelte';
@@ -9,7 +8,7 @@
    * Log in
    */
   async function handleSubmit(): Promise<void> {
-    await logIn(store.userInputs);
+    await userStore.logIn();
   }
 
   const meta = {

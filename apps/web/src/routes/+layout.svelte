@@ -3,10 +3,13 @@
 
   import { onMount } from 'svelte';
   import type { Snippet } from 'svelte';
-  import { getUser, supabase } from '$lib/supabase';
-  import { store } from '$lib/store.svelte';
+  import { supabase } from '$lib/supabase';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import Footer from './Footer.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
+  import type { AuthSession } from '@supabase/supabase-js';
+  import { getUser } from '$lib/features/user/userUtils';
+
   // import GoogleAnalytics from './GoogleAnalytics.svelte';
   // import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
 
@@ -16,30 +19,27 @@
     children: Snippet;
   } = $props();
 
+  let session = $state<AuthSession | null>(null);
+
+  $effect(() => {
+    if (!session) {
+      userStore.user = null;
+      return;
+    }
+
+    getUser(session.user.id).then(({ user }) => {
+      userStore.user = user;
+    });
+  });
+
   onMount(() => {
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (_, session) => {
-      if (!session?.user) {
-        store.user = null;
-        return;
-      }
-
-      if (!session.user.email) {
-        throw new Error('No email found in session');
-      }
-
-      if (!session.user.user_metadata.display_name) {
-        throw new Error('No display name found in session');
-      }
-
-      const { user } = await getUser(session.user.id);
-      store.user = user;
+    supabase.auth.getSession().then(({ data }) => {
+      session = data.session;
     });
 
-    return () => {
-      subscription.unsubscribe();
-    };
+    supabase.auth.onAuthStateChange((_event, _session) => {
+      session = _session;
+    });
   });
 </script>
 
@@ -52,7 +52,7 @@
   <HeaderNavigation />
 
   <div class="flex flex-1 flex-col">
-    <main class="flex-1 px-4 pb-16 pt-[68px] md:pt-10">
+    <main class="flex-1 pt-[68px] px-4 pb-16 md:pt-10">
       {@render children()}
     </main>
 

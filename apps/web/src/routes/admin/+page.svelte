@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { store } from '$lib/store.svelte';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import Meta from '$lib/components/Meta.svelte';
   import LoginMessage from '../LoginMessage.svelte';
   import LoggedInMessage from './LoggedInMessage.svelte';
@@ -12,8 +12,8 @@
 
 <Meta {...meta} />
 
-{#if store.user}
-  <LoggedInMessage user={store.user} />
+{#if userStore.user}
+  <LoggedInMessage user={userStore.user} />
 {:else}
   <LoginMessage />
 {/if}

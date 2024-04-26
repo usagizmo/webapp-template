@@ -1,9 +1,8 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["GRAPHQL_ENDPOINT", "HASURA_ADMIN_SECRET", "HASURA_GRAPHQL_ADMIN_SECRET"],
   "pipeline": {
     "web#generate": {
-      "outputs": [".svelte-kit/**"]
+      "outputs": [".svelte-kit/**", "src/lib/$generated/**"]
     },
     "mockup#build": {
       "outputs": ["public/styles.css"]

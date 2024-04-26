@@ -32,7 +32,7 @@
         {/if}
         <a
           {href}
-          class="relative inline-flex items-center justify-center space-x-1 rounded-md px-5 py-2 text-sm text-zinc-500 duration-200"
+          class="relative inline-flex items-center justify-center space-x-1 rounded-md py-2 px-5 text-sm text-zinc-500 duration-200"
           class:font-bold={isActive}
           class:pointer-events-none={isActive}
           class:text-zinc-500={!isActive}

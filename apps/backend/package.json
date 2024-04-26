@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "generate": "supabase gen types typescript --local > ../web/src/lib/\\$generated/supabase-types.ts",
-    "pull": "supabase db pull --local",
+    "pull": "supabase db pull --local --schema auth,storage",
     "start": "supabase start",
     "stop": "supabase stop"
   },

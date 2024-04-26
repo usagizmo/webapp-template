@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { logOut, updateUserBio } from '$lib/supabase';
-  import { store } from '$lib/store.svelte';
-  import type { User } from '$lib/store.svelte';
+  import { userStore } from '$lib/features/user/userStore.svelte';
+  import type { User } from '$lib/features/user/userStore.svelte';
   import Button from '$lib/components/Button.svelte';
   import TextArea from '$lib/components/TextArea.svelte';
   import SectionFrame from '$lib/components/SectionFrame.svelte';
@@ -19,19 +18,21 @@
    * Log out the user
    */
   async function handleLogOut() {
-    await logOut();
+    await userStore.logOut();
   }
 
   /**
    * Update the user's bio
    */
   async function handleUpdate() {
-    const storeBio = store.user?.bio ?? '';
+    const storeBio = user.bio;
     if (storeBio === tempBio) return;
 
-    await updateUserBio(user.id, tempBio);
-
-    store.setUserBio(tempBio);
+    const { error } = await userStore.updateUser(user.id, { bio: tempBio });
+    if (error) {
+      alert(error.message);
+      return;
+    }
   }
 </script>
 
@@ -49,7 +50,7 @@
     </div>
   </div>
   <div class="mt-8 flex items-center justify-center">
-    <Button primary on:click={handleLogOut}>
+    <Button primary onclick={handleLogOut}>
       <SignOutIcon />
       <span>Log out</span>
     </Button>

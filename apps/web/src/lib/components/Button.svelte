@@ -1,5 +1,18 @@
+<script lang="ts" context="module">
+  export interface ButtonProps {
+    children: Snippet;
+    href?: string;
+    type?: HTMLButtonAttributes['type'];
+    primary?: boolean;
+    blank?: boolean;
+    disabled?: boolean;
+    onclick?: () => void;
+  }
+</script>
+
 <script lang="ts">
-  import type { ButtonProps } from './types';
+  import type { Snippet } from 'svelte';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
 
   let {
     children,
@@ -8,6 +21,7 @@
     primary = false,
     blank = false,
     disabled = false,
+    onclick = () => {},
   }: ButtonProps = $props();
 
   const element = $derived(href ? 'a' : 'button');
@@ -34,7 +48,7 @@
     {@render children()}
   </a>
 {:else}
-  <button {type} class={classAttrs} {disabled} on:click>
+  <button {type} class={classAttrs} {disabled} {onclick}>
     {@render children()}
   </button>
 {/if}

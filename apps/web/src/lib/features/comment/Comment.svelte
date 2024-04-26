@@ -1,17 +1,16 @@
 <script lang="ts">
   import { cdate } from 'cdate';
   import { fade } from 'svelte/transition';
-  import { supabase } from '$lib/supabase';
-  import { store } from '$lib/store.svelte';
-  // import { DeleteComment } from '$lib/$generated/graphql';
-  // import type { GetAllCommentsSubscription } from '$lib/$generated/graphql';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import CircleCloseIcon from '$lib/components/icons/20x20/CircleCloseIcon.svelte';
   import Button from '$lib/components/Button.svelte';
   import CircleCheckIcon from '$lib/components/icons/20x20/CircleCheckIcon.svelte';
-  import type { Comment } from './types';
+  import { commentStore } from './commentStore.svelte';
+  import type { Comment } from './commentStore.svelte';
+  import { deleteCommentFile, getCommentFileUrl } from './commentUtils';
 
   interface Card {
-    id: string;
+    id: number;
     me: boolean;
     name: string;
     createdAt: cdate.CDate;
@@ -30,31 +29,34 @@
 
   const card: Card = $derived({
     id: comment.id,
-    me: store.user?.id === comment.profiles.id,
-    name: comment.profiles.display_name,
+    me: userStore.user?.id === comment.profiles?.id,
+    name: comment.profiles?.display_name ?? '',
     createdAt: cdate(comment.created_at),
     message: comment.text,
     filePath: comment.file_path,
   });
 
-  $effect(() => {
-    console.log(comment, card);
-  });
-
   const handleDeleteImage = async () => {
-    const { filePath } = card;
+    const { id, filePath } = card;
 
     if (!filePath) {
-      throw Error('File ID not found');
+      throw new Error('No file path');
     }
 
     // before
     isDeleting = true;
 
     // ...
-    const res = await supabase.storage.delete({ filePath });
-    if (res.error) {
-      console.error(res.error.message);
+    const { error } = await deleteCommentFile(filePath);
+    if (error) {
+      alert(error.message);
+      window.location.reload();
+      return;
+    }
+
+    const { error: error2 } = await commentStore.updateComment(id, { file_path: null });
+    if (error2) {
+      alert(error2.message);
       window.location.reload();
       return;
     }
@@ -70,19 +72,17 @@
 
     // ...
     if (filePath) {
-      const res = await supabase.storage.delete({ filePath });
-
-      if (res.error) {
-        console.error(res.error.message);
-        // Continue update without the file
-        // return;
+      const { error } = await deleteCommentFile(filePath);
+      if (error) {
+        alert(error.message);
+        window.location.reload();
+        return;
       }
     }
 
-    const { errors } = await DeleteComment({ variables: { id } });
-
-    if (errors) {
-      alert(errors.map((e) => e.message).join(', '));
+    const { error } = await commentStore.deleteComment(id, filePath);
+    if (error) {
+      alert(error.message);
       window.location.reload();
       return;
     }
@@ -96,8 +96,8 @@
   class="py-2.5 duration-200"
   class:bg-slate-100={isDeleting}
   role="listitem"
-  on:mouseenter={() => (isActionVisible = card.me ? true : false)}
-  on:mouseleave={() => (isActionVisible = false)}
+  onmouseenter={() => (isActionVisible = card.me ? true : false)}
+  onmouseleave={() => (isActionVisible = false)}
 >
   <div class="relative">
     <div class="flex items-center">
@@ -117,25 +117,16 @@
     <div class="mt-0.5 flex">
       <p class="flex-1">{card.message}</p>
       {#if card.filePath}
-        {@const {
-          data: { publicUrl },
-        } = supabase.storage.from('comments').getPublicUrl(card.filePath)}
-        <div class="relative ml-2.5 flex-shrink-0">
+        {@const commentFileUrl = getCommentFileUrl(card.filePath)}
+        <div class="flex-shrink-0 relative ml-2.5">
           <figure class="h-[120px] w-[200px] overflow-hidden rounded-md bg-[#d9d9d9]">
-            <img
-              class="object-cover"
-              src={publicUrl}
-              width="200"
-              height="120"
-              decoding="async"
-              alt=""
-            />
+            <img class="size-full object-cover" src={commentFileUrl} decoding="async" alt="" />
           </figure>
           {#if isActionVisible}
             <button
-              class="absolute right-[-8px] top-[-8px]"
+              class="absolute top-[-8px] right-[-8px]"
               transition:fade={{ duration: 75 }}
-              on:click={handleDeleteImage}
+              onclick={handleDeleteImage}
             >
               <CircleCloseIcon size={24} />
             </button>
@@ -145,8 +136,8 @@
     </div>
 
     {#if isActionVisible}
-      <div class="absolute bottom-0 right-0" transition:fade={{ duration: 75 }}>
-        <Button on:click={handleDelete} disabled={isDeleting}>Delete</Button>
+      <div class="absolute right-0 bottom-0" transition:fade={{ duration: 75 }}>
+        <Button onclick={handleDelete} disabled={isDeleting}>Delete</Button>
       </div>
     {/if}
   </div>

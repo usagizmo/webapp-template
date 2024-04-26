@@ -20,6 +20,7 @@
     "/.vscode",
     "/apps/backend/#vscode",
     "/apps/backend/supabase/config.toml",
+    "/apps/backend/supabase/migrations",
     "/apps/mockup/public/styles.css",
     "/apps/web/build",
     "/apps/web/src/lib/$generated"

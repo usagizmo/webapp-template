@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { goto } from '$app/navigation';
-  import { store } from '$lib/store.svelte';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import { ROUTE } from '$lib/routes';
   import SectionFrame from '$lib/components/SectionFrame.svelte';
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
@@ -15,7 +15,7 @@
   } = $props();
 
   $effect(() => {
-    if (store.user) {
+    if (userStore.user) {
       goto(ROUTE.HOME, { replaceState: true });
     }
   });
