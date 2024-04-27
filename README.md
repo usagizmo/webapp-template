@@ -8,7 +8,7 @@ Monorepo template for creating a web application.
 
 - [Turborepo](https://turborepo.org/) x [pnpm](https://pnpm.io/)
 - [Prettier](https://prettier.io/) (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss))
-- [ESLint](https://eslint.org/) (w/ [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)) / [CSpell](https://cspell.org/)
+- [ESLint](https://eslint.org/) / [CSpell](https://cspell.org/)
 - [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
 - GitHub Actions (Linting + Testing (Validate `href` and `src` paths))
 - Execute `eslint --fix` and `prettier` when saving with VS Code
@@ -17,20 +17,21 @@ Monorepo template for creating a web application.
 
 #### `apps/`
 
-- [`nhost`](./apps/nhost/)  
-  Local environment test server and production [Nhost](https://nhost.io/) migration.
+- [`backend`](./apps/backend/)  
+  A [Supabase](https://supabase.io/) [Local Dev / CLI](https://supabase.com/docs/guides/cli).
 - [`mockup`](./apps/mockup/) [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
   A starting point for building a static site.  
   [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS + [Vitest](https://vitest.dev/) (Check links + file names)
 - [`web`](./apps/web/) [[Demo](https://webapp-template.usagizmo.com/)]  
   A starting point for building Svelte application.  
   [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/))  
-  [Nhost](https://nhost.io/) / [Vitest](https://vitest.dev/)
+  [Supabase](https://supabase.io/) / [Vitest](https://vitest.dev/)
 
 #### `packages/`
 
 - `eslint-config`  
-  `eslint` configurations. (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + eslint-config-[[prettier](https://github.com/prettier/eslint-config-prettier)|[turbo](https://www.npmjs.com/package/eslint-config-turbo)])
+  ESLint 9 (flat) configuration for JavaScript and TypeScript.
+  [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) + [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
 
 ### VS Code Extensions (Recommend)
 
@@ -42,25 +43,39 @@ Monorepo template for creating a web application.
 
 ## Breaking changes
 
+### v2.0.0
+
+- **Update Framework/Library Versions:**
+  - Switch to Svelte 5 (integrated with TypeScript and using the Rune compiler)
+  - Update to Tailwind CSS 4
+- **Backend Change:**
+  - Replace [Next.js](https://nextjs.org/) with [Supabase](https://supabase.com/) for backend services
+
 ### v1.9.0
 
-- Change from JavaScript to TypeScript
-- Svelte 4 → Svelte 5 (Rune)
-- Prepend `@repo/` to custom package names (`packages/*`)
-  - Merge `eslint-config-custom-typescript` into `eslint-config-custom`
+- **Language and Compiler Changes:**
+  - Migrated codebase from JavaScript to TypeScript
+  - Upgraded from Svelte 4 to Svelte 5 (Rune)
+- **Package Naming and Structure:**
+  - Custom package names now prefixed with `@repo/`
+  - Merged `eslint-config-custom-typescript` into `eslint-config-custom`
 
 ### v1.6.0
 
-- Change from TypeScript to JavaScript + JSDoc
+- **Language Reversion and Documentation:**
+  - Reverted codebase from TypeScript back to JavaScript, supplementing with JSDoc for documentation
 
 ### v1.0.0
 
-- Change frontend framework (`apps/web`): [Next.js](https://nextjs.org/) → [SvelteKit](https://kit.svelte.jp/)
-- Change repository name: `nextjs-template` → `webapp-template`
+- **Frontend Framework Change:**
+  - Switched from [Next.js](https://nextjs.org/) to [SvelteKit](https://kit.svelte.jp/) for the frontend framework in `apps/web`
+- **Repository Rebranding:**
+  - Renamed `nextjs-template` repository to `webapp-template`
 
 ### v0.23.0
 
-- Replace [Firebase](https://firebase.google.com/) (`apps/firebase`) and [Hasura](https://hasura.io/) (`apps/hasura`) apps with [Nhost](https://nhost.io/) (`apps/nhost`)
+- **Backend Services Integration:**
+  - Replaced individual [Firebase](https://firebase.google.com/) and [Hasura](https://hasura.io/) applications with a unified [Nhost](https://nhost.io/) application in `apps/nhost`
 
 ## Commands
 
@@ -70,22 +85,23 @@ pnpm i  # Resolve dependency packages and prepare .env files
 
 pnpm build   # Build all apps and packages
 pnpm dev     # Set up file monitoring builds and local servers for development
-pnpm lint    # eslint + markuplint | prettier --check
+pnpm lint    # markuplint + eslint + prettier --check
 pnpm test    # Testing
 pnpm format  # eslint --fix + prettier --write + format project-words.txt
 ```
 
 ## List of listening port numbers
 
-- `1337`: `apps/nhost/` - Hasura
-  - `3030`: Nhost Dashboard
-  - `5432`: Postgres
-  - `8080`: GraphQL Endpoint
-  - `8025`: MailHog
-  - `9695`: Hasura Console
-- `5173`: `apps/web/` - SvelteKit application
-- `8000`: `apps/mockup/` - Static site
-- `49160`: `apps/mockup/` - Express server
+- `apps/backend/` - Supabase Local Dev / CLI
+  - `54321`: API / GraphQL / S3 Storage
+  - `54322`: DB (Postgres)
+  - `54323`: Studio
+  - `54324`: Inbucket
+- `apps/web/` - SvelteKit application
+  - `5173`: Development server
+- `apps/mockup/` - Static site
+  - `8000`: BrowserSync server
+  - `49160`: Express server
 
 ## Registering environment variables for GitHub / Vercel
 

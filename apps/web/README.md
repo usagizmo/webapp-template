@@ -11,17 +11,13 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 ## Commands
 
 ```bash
-pnpm generate  # Output `.svelte-kit`
+pnpm generate  # Output `src/lib/$generated/supabase-types.ts`
 pnpm build     # Output `.svelte-kit/output/`
 pnpm preview   # Preview the production build (after `pnpm build`)
 
-pnpm dev       # start the server and open the app in a new browser tab on port 3000
-pnpm lint      # markuplint + cspell + eslint
-pnpm format    # Format with `prettier`
-
-# Others
-pnpm package
-pnpm check[:watch]
+pnpm dev       # start the server and open the app in a new browser tab on port 5173
+pnpm lint      # markuplint + cspell + eslint + prettier
+pnpm format    # Format with eslint + prettier
 ```
 
 You can preview the production build with `pnpm preview`.
@@ -32,4 +28,4 @@ You can preview the production build with `pnpm preview`.
 
 - Framework Preset: `SvelteKit`
 - Root Directory: `apps/web`
-- Environment Variables: Set 5 environment variables in `env`
+- Environment Variables: Set 2 environment variables in `.env`

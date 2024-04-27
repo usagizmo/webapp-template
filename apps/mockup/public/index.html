@@ -62,7 +62,7 @@
 
     <main class="pt-10 px-4 pb-20">
       <div class="mx-auto max-w-[1120px] space-y-9">
-        <!-- Development -->
+        <!-- What's inside? -->
         <div>
           <h2 class="mb-4 text-2xl font-bold md:text-3xl">What's inside?</h2>
           <section class="rounded-lg border border-slate-200 bg-slate-50 pt-5 px-6 pb-8">
@@ -131,19 +131,7 @@
                     class="font-semibold text-blue-500"
                     >ESLint</a
                   >
-                  (w/
-                  <ul class="inline">
-                    <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/import-js/eslint-plugin-import"
-                        class="font-semibold text-blue-500"
-                        >eslint-plugin-import</a
-                      >
-                    </li>
-                  </ul>
-                  ) /
+                  /
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -211,16 +199,22 @@
                   <li
                     class="relative pl-5 before:absolute before:top-2 before:left-0 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
-                    <strong class="font-semibold">nhost</strong><br />
-                    Local environment test server and production
+                    <strong class="font-semibold">backend</strong><br />
+                    A
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="https://nhost.io/"
+                      href="https://supabase.io/"
                       class="font-semibold text-blue-500"
-                      >Nhost</a
+                      >Supabase</a
                     >
-                    migration.
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://supabase.com/docs/guides/cli"
+                      class="font-semibold text-blue-500"
+                      >Local Dev / CLI</a
+                    >.
                   </li>
                   <li
                     class="relative pl-5 before:absolute before:top-2 before:left-0 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
@@ -289,9 +283,9 @@
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="https://nhost.io/"
+                      href="https://supabase.io/"
                       class="font-semibold text-blue-500"
-                      >Nhost</a
+                      >Supabase</a
                     >
                     /
                     <a
@@ -317,36 +311,27 @@
                     class="relative pl-5 before:absolute before:top-2 before:left-0 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-semibold">eslint-config</strong><br />
-                    <code class="font-mono font-bold text-black">`eslint`</code>
-                    configurations.<br />
-                    (w/
+                    ESLint 9 (flat) configuration for JavaScript and TypeScript.<br />
                     <ul class="inline">
                       <li class="inline [&:not(:first-child):before]:content-['_+_']">
                         <a
                           target="_blank"
                           rel="noopener noreferrer"
-                          href="https://github.com/sveltejs/prettier-plugin-svelte"
+                          href="https://github.com/sveltejs/eslint-plugin-svelte"
                           class="font-semibold text-blue-500"
-                          >prettier-plugin-svelte</a
+                          >eslint-plugin-svelte</a
                         >
                       </li>
                       <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                        eslint-config-[<a
+                        <a
                           target="_blank"
                           rel="noopener noreferrer"
                           href="https://github.com/prettier/eslint-config-prettier"
                           class="font-semibold text-blue-500"
-                          >prettier</a
-                        >|<a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://www.npmjs.com/package/eslint-config-turbo"
-                          class="font-semibold text-blue-500"
-                          >turbo</a
-                        >]
+                          >eslint-config-prettier</a
+                        >
                       </li>
                     </ul>
-                    )
                   </li>
                 </ul>
               </div>
@@ -365,7 +350,7 @@
 
 <span class="text-sky-300">pnpm</span> build   <span class="text-slate-500"># Build all apps and packages</span>
 <span class="text-sky-300">pnpm</span> dev     <span class="text-slate-500"># Set up file monitoring builds and local servers for development</span>
-<span class="text-sky-300">pnpm</span> lint    <span class="text-slate-500"># eslint + markuplint | prettier --check</span>
+<span class="text-sky-300">pnpm</span> lint    <span class="text-slate-500"># markuplint + eslint + prettier --check</span>
 <span class="text-sky-300">pnpm</span> test    <span class="text-slate-500"># Testing</span>
 <span class="text-sky-300">pnpm</span> format  <span class="text-slate-500"># eslint --fix + prettier --write + format project-words.txt</span></code></pre>
 
