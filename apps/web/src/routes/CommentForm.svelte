@@ -70,7 +70,7 @@
         bind:value={text}
         onkeydown={handleKeyDown}
         disabled={isSending}
-      />
+      ></textarea>
       <label>
         <input
           type="file"

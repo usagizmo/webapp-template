@@ -28,7 +28,7 @@
             in:receive={{ key: 'admin-header-tabs-background' }}
             out:send={{ key: 'admin-header-tabs-background' }}
             class="absolute inset-0 block rounded-md bg-gray-100"
-          />
+          ></span>
         {/if}
         <a
           {href}
