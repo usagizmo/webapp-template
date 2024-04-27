@@ -4,11 +4,11 @@
     "web#generate": {
       "outputs": [".svelte-kit/**", "src/lib/$generated/**"]
     },
+    "build": {},
     "mockup#build": {
       "outputs": ["public/styles.css"]
     },
     "web#build": {
-      "dependsOn": ["web#generate"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
     "dev": {
@@ -17,7 +17,6 @@
     },
     "lint": {},
     "web#lint": {
-      "dependsOn": ["web#generate"],
       "outputs": []
     },
     "test": {},

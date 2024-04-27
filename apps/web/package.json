@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "generate:svelte": "svelte-kit sync",
     "generate:supabase-types": "node ./commands/supabase-types.js",
     "generate": "concurrently pnpm:generate:*",
     "dev": "vite dev --open",
-    "build": "pnpm generate && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
