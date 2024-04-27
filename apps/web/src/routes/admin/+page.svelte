@@ -1,17 +1,10 @@
-<script>
-  import { Button, Meta, SectionFrame, SignOutIcon } from 'ui';
-  import { user, logOut } from '$lib/nhost';
+<script lang="ts">
+  import { userStore } from '$lib/features/user/userStore.svelte';
+  import Meta from '$lib/components/Meta.svelte';
   import LoginMessage from '../LoginMessage.svelte';
+  import LoggedInMessage from './LoggedInMessage.svelte';
 
-  /**
-   * Log out the user
-   * @returns {Promise<void>}
-   */
-  async function handleLogOut() {
-    await logOut();
-  }
-
-  $: meta = {
+  const meta = {
     title: `Admin | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/admin',
   };
@@ -19,19 +12,8 @@
 
 <Meta {...meta} />
 
-{#if $user}
-  <SectionFrame>
-    <div class="flex flex-col items-center justify-center">
-      <p class="text-4xl font-bold">{$user.displayName}</p>
-      <p>{$user.email}</p>
-    </div>
-    <div class="mt-8 flex items-center justify-center">
-      <Button primary on:click={handleLogOut}>
-        <SignOutIcon />
-        <span>Log out</span>
-      </Button>
-    </div>
-  </SectionFrame>
+{#if userStore.user}
+  <LoggedInMessage user={userStore.user} />
 {:else}
   <LoginMessage />
 {/if}

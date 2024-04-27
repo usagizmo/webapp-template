@@ -1,0 +1,29 @@
+{
+  "name": "@repo/eslint-config",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./eslint.config.js"
+  },
+  "scripts": {
+    "lint:cspell": "cspell \"**\"",
+    "lint:js": "eslint .",
+    "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
+    "lint": "concurrently pnpm:lint:*",
+    "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
+    "format": "concurrently pnpm:format:*"
+  },
+  "peerDependencies": {
+    "eslint": ">=9"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^9.1.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.38.0",
+    "globals": "^15.0.0",
+    "svelte-eslint-parser": "^0.35.0",
+    "typescript-eslint": "^7.7.1"
+  }
+}

@@ -1,7 +1,8 @@
-<script>
-  import { Meta, SectionFrame } from 'ui';
+<script lang="ts">
+  import Meta from '$lib/components/Meta.svelte';
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
 
-  $: meta = {
+  const meta = {
     title: `Secret | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/secret',
   };

@@ -1,35 +1,31 @@
-<script>
-  import { setContext } from 'svelte';
-  import { SectionFrame } from 'ui';
+<script lang="ts">
+  import type { Snippet } from 'svelte';
   import { goto } from '$app/navigation';
-  import { user } from '$lib/nhost';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import { ROUTE } from '$lib/routes';
-  import { userInputsKey } from '$lib/userInputs';
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
-  import AdminForm from './AdminForm.svelte';
+  import UserInputs from './UserInputs.svelte';
 
-  /** @type {import('$lib/userInputs').UserInputs} */
-  let userInputs = {
-    displayName: 'Guest',
-    email: 'email@add.com',
-    password: 'password',
-  };
+  let {
+    children,
+  }: {
+    children: Snippet;
+  } = $props();
 
-  setContext(userInputsKey, {
-    getInputs: () => userInputs,
+  $effect(() => {
+    if (userStore.user) {
+      goto(ROUTE.HOME, { replaceState: true });
+    }
   });
-
-  $: if ($user) {
-    goto(ROUTE.HOME, { replaceState: true });
-  }
 </script>
 
 <div class="mx-auto max-w-[488px]">
   <SectionFrame noPad="top">
     <AdminHeaderTabs />
     <AdminHeaderMessage />
-    <AdminForm />
-    <slot />
+    <UserInputs />
+    {@render children()}
   </SectionFrame>
 </div>

@@ -1,20 +1,21 @@
-<script>
-  import { Button } from 'ui';
-  import { user } from '$lib/nhost';
+<script lang="ts">
+  import Button from '$lib/components/Button.svelte';
   import { ROUTE } from '$lib/routes';
-  import { adminPath } from '$lib/store';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import HeaderNavigationItems from './HeaderNavigationItems.svelte';
 
-  $: navItems = [
-    {
-      label: 'Home',
-      href: ROUTE.HOME,
-    },
-    {
-      label: 'Admin',
-      href: $adminPath,
-    },
-  ].concat($user ? [{ label: 'Secret', href: ROUTE.SECRET }] : []);
+  const navItems = $derived(
+    [
+      {
+        label: 'Home',
+        href: ROUTE.HOME,
+      },
+      {
+        label: 'Admin',
+        href: userStore.user ? ROUTE.ADMIN : ROUTE.ADMIN_LOGIN,
+      },
+    ].concat(userStore.user ? [{ label: 'Secret', href: ROUTE.SECRET }] : []),
+  );
 </script>
 
 <header class="border-b border-slate-200 bg-slate-50 px-4 md:sticky md:top-0 md:z-20">
@@ -25,7 +26,7 @@
       WebApp Template (web)
     </h1>
     <div
-      class="absolute top-[134px] flex h-12 md:static md:top-0 md:ml-auto md:mr-8 md:h-full lg:absolute lg:inset-y-0 lg:left-1/2 lg:-translate-x-1/2"
+      class="absolute top-[134px] flex h-12 md:static md:top-0 md:mr-8 md:ml-auto md:h-full lg:absolute lg:inset-y-0 lg:left-1/2 lg:-translate-x-1/2"
     >
       <HeaderNavigationItems {navItems} />
     </div>
@@ -34,5 +35,3 @@
     </div>
   </div>
 </header>
-
-<slot />

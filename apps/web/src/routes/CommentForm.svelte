@@ -1,74 +1,63 @@
-<script>
+<script lang="ts">
   import { tick } from 'svelte';
-  import { Button, PaperPlaneIcon, SectionFrame } from 'ui';
-  import { nhost } from '$lib/nhost';
-  import { tryErrorAlertOnHoudiniApi, tryErrorAlertOnNhostApi } from '$lib/utils';
-  import { InsertCommentStore } from '$houdini';
+  import SectionFrame from '$lib/components/SectionFrame.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import PaperPlaneIcon from '$lib/components/icons/16x16/PaperPlaneIcon.svelte';
+  import { userStore } from '$lib/features/user/userStore.svelte';
+  import { commentStore } from '$lib/features/comment/commentStore.svelte';
 
-  /** @type {HTMLTextAreaElement} */
-  let textAreaEl;
-
-  let isSending = false;
-  let text = '';
-
-  /** @type {FileList | null} */
-  let files = null;
-
-  /** @type {File | null} */
-  $: file = files?.[0] ?? null;
-
-  const insertComment = new InsertCommentStore();
+  let textAreaEl: HTMLTextAreaElement | null = $state(null);
+  let isSending = $state(false);
+  let text = $state('');
+  let file: File | null = $state(null);
 
   /**
    * Send the comment
-   * @returns {Promise<void>}
    */
-  async function handleSend() {
+  async function handleSend(): Promise<void> {
+    if (!userStore.user) {
+      alert('Please log in');
+      window.location.reload();
+      return;
+    }
+
     if (!text) {
-      textAreaEl.focus();
+      textAreaEl?.focus();
       return;
     }
 
     // before
     isSending = true;
 
-    /** @type {string | null} */
-    let fileId = null;
-
-    if (file) {
-      const res = await nhost.storage.upload({ file });
-      if (tryErrorAlertOnNhostApi(res)) return;
-
-      fileId = res.fileMetadata?.id ?? null;
-      if (!fileId) {
-        alert('File ID not found');
-        return;
-      }
-    }
-
-    const { errors } = await insertComment.mutate({ text, fileId });
-
-    if (errors?.length) {
-      tryErrorAlertOnHoudiniApi(errors);
+    const { error } = await commentStore.insertComment({ text, file });
+    if (error) {
+      alert(error.message);
       window.location.reload();
       return;
     }
 
-    text = '';
-    files = null;
-
     // after
     isSending = false;
+
+    text = '';
+    file = null;
+
     await tick();
-    textAreaEl.focus();
+    textAreaEl?.focus();
   }
 
-  /** @type {(e: KeyboardEvent) => void} */
-  const handleKeyDown = (e) => {
-    if (e.metaKey && e.key === 'Enter') {
+  function handleKeyDown(event: KeyboardEvent) {
+    if (event.metaKey && event.key === 'Enter') {
       handleSend();
     }
-  };
+  }
+
+  function handleFileChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    file = target.files?.[0] ?? null;
+
+    target.value = '';
+  }
 </script>
 
 <SectionFrame noPad="y">
@@ -76,38 +65,37 @@
     <div class="gap flex gap-1.5">
       <textarea
         bind:this={textAreaEl}
-        class="h-24 flex-1 rounded-md border border-zinc-300 bg-slate-50 px-2.5 py-2 placeholder:text-zinc-300 disabled:bg-slate-100"
+        class="h-24 flex-1 rounded-md border border-zinc-300 bg-slate-50 py-2 px-2.5 placeholder:text-zinc-300 disabled:bg-slate-100"
         placeholder="Write a comment..."
         bind:value={text}
-        on:keydown={handleKeyDown}
+        onkeydown={handleKeyDown}
         disabled={isSending}
-      />
+      ></textarea>
       <label>
         <input
           type="file"
           accept="image/png, image/jpeg"
-          bind:files
           class="peer sr-only"
+          onchange={handleFileChange}
           disabled={isSending}
         />
         {#if file}
           {@const blobUrl = URL.createObjectURL(file)}
           <img
-            class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 hover:brightness-90 peer-disabled:pointer-events-none peer-disabled:opacity-40"
+            class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 peer-disabled:pointer-events-none peer-disabled:opacity-40 hover:brightness-90"
             src={blobUrl}
-            alt={file.name}
-            title={file.name}
+            alt=""
           />
         {:else}
           <span
-            class="grid h-24 w-32 cursor-pointer place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 hover:brightness-95 peer-disabled:pointer-events-none peer-disabled:opacity-40"
+            class="grid h-24 w-32 cursor-pointer place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 peer-disabled:pointer-events-none peer-disabled:opacity-40 hover:brightness-95"
             >+Add</span
           >
         {/if}
       </label>
     </div>
     <div class="mt-2.5 text-right">
-      <Button primary on:click={handleSend} disabled={!text || isSending}>
+      <Button primary onclick={handleSend} disabled={!text || isSending}>
         <PaperPlaneIcon />
         <span>Send</span>
       </Button>

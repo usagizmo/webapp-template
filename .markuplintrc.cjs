@@ -7,7 +7,8 @@ module.exports = {
     // TODO: Once the overrides option is fixed, remove these lines
     // ref. https://github.com/markuplint/markuplint/issues/1119
     './apps/web/src/app.html',
-    './apps/web/src/routes/CommentForm.svelte',
+    // TODO: for Svelte 5 (preview)
+    './apps/web/**/*.svelte',
   ],
   rules: {
     'character-reference': false,

@@ -4,35 +4,36 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare": "husky install && ./commands/init.sh",
+    "prepare": "husky && ./commands/init.sh",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint:cspell": "cspell --exclude \"apps/**/*\" --exclude \"packages/**/*\" \"**/*\"",
-    "lint:prettier": "prettier --check --ignore-path=.prettierignore.root .",
+    "lint:prettier": "prettier . --check --ignore-path=.prettierignore.root",
     "lint:packages": "turbo run lint",
     "lint": "concurrently pnpm:lint:*",
     "test": "turbo run test",
     "format:cspell": "./commands/format-project-words.sh",
-    "format:prettier": "prettier --write --ignore-path=.prettierignore.root .",
+    "format:prettier": "prettier . --write --ignore-path=.prettierignore.root",
     "format:packages": "turbo run format",
     "format": "concurrently pnpm:format:*"
   },
   "devDependencies": {
-    "@markuplint/svelte-parser": "^3.12.0",
+    "@markuplint/svelte-parser": "^4.5.1",
+    "@repo/eslint-config": "workspace:*",
     "concurrently": "^8.2.2",
-    "cspell": "^8.2.4",
-    "eslint": "^8.56.0",
-    "eslint-config-custom": "workspace:*",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "markuplint": "^3.15.0",
-    "prettier": "^3.1.1",
-    "prettier-plugin-svelte": "^3.1.2",
-    "prettier-plugin-tailwindcss": "^0.5.10",
-    "turbo": "^1.11.2"
+    "cspell": "^8.7.0",
+    "eslint": "^9.1.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "markuplint": "^4.6.1",
+    "prettier": "^3.2.5",
+    "prettier-plugin-svelte": "^3.2.3",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "turbo": "^1.13.3"
   },
-  "packageManager": "pnpm@8.3.1",
+  "packageManager": "pnpm@9.0.4+sha256.caa915eaae9d9aefccf50ee8aeda25a2f8684d8f9d5c6e367eaf176d97c1f89e",
   "engines": {
-    "node": ">=18"
+    "node": ">=18",
+    "pnpm": ">=8"
   }
 }

@@ -1,16 +1,25 @@
-<script>
+<script lang="ts">
   import { crossfade } from 'svelte/transition';
   import { page } from '$app/stores';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  /** @type {{label: string, href: string}[]} */
-  export let navItems = [];
+  let {
+    navItems = [],
+  }: {
+    navItems: { label: string; href: string }[];
+  } = $props();
 
   const [send, receive] = crossfade(defaultDE);
 
-  /** @type {(href: string) => string} */
-  $: getScope = (href) => href.split('/')[1];
+  /**
+   * Get the scope of the page
+   * @param href - The href of the page
+   * @returns The scope of the page
+   */
+  function getScope(href: string): string {
+    return href.split('/')[1];
+  }
 </script>
 
 <ul class="flex h-full items-center gap-5">
@@ -34,7 +43,7 @@
           in:receive={{ key: 'header-navigation-items-bar' }}
           out:send={{ key: 'header-navigation-items-bar' }}
           class="absolute inset-x-0 bottom-0 block h-0.5 bg-zinc-900"
-        />
+        ></span>
       {/if}
     </li>
   {/each}

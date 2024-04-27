@@ -8,7 +8,7 @@ A starting point for building a static site.
 
 ```bash
 pnpm build       # Output `public/styles.css`
-pnpm dev         # Watch input.css and launch browser-sync server on port 8000
+pnpm dev         # Watch app.css and launch browser-sync server on port 8000
 pnpm lint        # markuplint + cspell
 pnpm test        # Check links (href/src) + image file names
 pnpm format      # Format with `prettier`
