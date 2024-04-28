@@ -46,8 +46,9 @@ Monorepo template for creating a web application.
 ### v2.0.0
 
 - **Update Framework/Library Versions:**
-  - Switch to Svelte 5 (integrated with TypeScript and using the Rune compiler)
-  - Update to Tailwind CSS 4
+  - Switch to Svelte 5 (integrated with TypeScript and using the Rune)
+  - Update to Tailwind CSS 4 (removed `tailwind.config.js`)
+  - Upgrade to ESLint 9 and implement Flat Config
 - **Backend Change:**
   - Replace [Next.js](https://nextjs.org/) with [Supabase](https://supabase.com/) for backend services
 
