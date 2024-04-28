@@ -48,14 +48,16 @@
   <GoogleAnalytics id={PUBLIC_GOOGLE_ANALYTICS_ID} />
 {/if} -->
 
-<div class="flex h-full flex-col">
-  <HeaderNavigation />
+<div class="h-screen bg-gray-100 text-zinc-900">
+  <div class="flex h-full flex-col">
+    <HeaderNavigation />
 
-  <div class="flex flex-1 flex-col">
-    <main class="flex-1 pt-[68px] px-4 pb-16 md:pt-10">
-      {@render children()}
-    </main>
+    <div class="flex flex-1 flex-col">
+      <main class="flex-1 pt-[68px] px-4 pb-16 md:pt-10">
+        {@render children()}
+      </main>
 
-    <Footer />
+      <Footer />
+    </div>
   </div>
 </div>
