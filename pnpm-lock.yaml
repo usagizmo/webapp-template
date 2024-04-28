@@ -140,13 +140,13 @@ importers:
         version: 9.1.0(eslint@9.1.1)
       eslint-plugin-svelte:
         specifier: ^2.38.0
-        version: 2.38.0(eslint@9.1.1)(svelte@5.0.0-next.90)
+        version: 2.38.0(eslint@9.1.1)(svelte@5.0.0-next.115)
       globals:
         specifier: ^15.0.0
         version: 15.0.0
       svelte-eslint-parser:
         specifier: ^0.35.0
-        version: 0.35.0(svelte@5.0.0-next.90)
+        version: 0.35.0(svelte@5.0.0-next.115)
       typescript-eslint:
         specifier: ^7.7.1
         version: 7.7.1(eslint@9.1.1)(typescript@5.4.5)
@@ -3098,10 +3098,6 @@ packages:
     resolution: {integrity: sha512-FP79ZBvX7LTPrvEyYxaPBvPfnC76KCTWOC89qjIHt+Y+a/OuSSrRCWKiqvNP3SIRRKFpLqcXxkukyX1nAEMDtA==}
     engines: {node: '>=18'}
 
-  svelte@5.0.0-next.90:
-    resolution: {integrity: sha512-qx5shVIRQ9b3VPgj/rim16dWi3md8B8HjHSO5p6RCSg/GP00f9CVUoUtnuCpT4f7ZnBJa/IG3v2rgW9Zn9zEqg==}
-    engines: {node: '>=18'}
-
   tailwindcss@4.0.0-alpha.14:
     resolution: {integrity: sha512-7qAhQPrsWyaaDk0IjOEhTEdgDWsN0MjB3kk38DxK5vXqPJ7C57FYlARA6vrE36WL0K/mYdAA54vWJbWbDfoVcQ==}
 
@@ -5210,7 +5206,7 @@ snapshots:
     dependencies:
       eslint: 9.1.1
 
-  eslint-plugin-svelte@2.38.0(eslint@9.1.1)(svelte@5.0.0-next.90):
+  eslint-plugin-svelte@2.38.0(eslint@9.1.1)(svelte@5.0.0-next.115):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.1.1)
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -5224,9 +5220,9 @@ snapshots:
       postcss-safe-parser: 6.0.0(postcss@8.4.38)
       postcss-selector-parser: 6.0.16
       semver: 7.6.0
-      svelte-eslint-parser: 0.35.0(svelte@5.0.0-next.90)
+      svelte-eslint-parser: 0.35.0(svelte@5.0.0-next.115)
     optionalDependencies:
-      svelte: 5.0.0-next.90
+      svelte: 5.0.0-next.115
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -6569,7 +6565,7 @@ snapshots:
       - stylus
       - sugarss
 
-  svelte-eslint-parser@0.35.0(svelte@5.0.0-next.90):
+  svelte-eslint-parser@0.35.0(svelte@5.0.0-next.115):
     dependencies:
       eslint-scope: 7.2.2
       eslint-visitor-keys: 3.4.3
@@ -6577,7 +6573,7 @@ snapshots:
       postcss: 8.4.38
       postcss-scss: 4.0.9(postcss@8.4.38)
     optionalDependencies:
-      svelte: 5.0.0-next.90
+      svelte: 5.0.0-next.115
 
   svelte-hmr@0.16.0(svelte@5.0.0-next.115):
     dependencies:
@@ -6629,23 +6625,6 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.10
       zimmerframe: 1.1.2
-
-  svelte@5.0.0-next.90:
-    dependencies:
-      '@ampproject/remapping': 2.3.0
-      '@jridgewell/sourcemap-codec': 1.4.15
-      '@types/estree': 1.0.5
-      acorn: 8.11.3
-      acorn-typescript: 1.4.13(acorn@8.11.3)
-      aria-query: 5.3.0
-      axobject-query: 4.0.0
-      esm-env: 1.0.0
-      esrap: 1.2.1
-      is-reference: 3.0.2
-      locate-character: 3.0.0
-      magic-string: 0.30.10
-      zimmerframe: 1.1.2
-    optional: true
 
   tailwindcss@4.0.0-alpha.14: {}
 
