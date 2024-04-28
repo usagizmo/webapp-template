@@ -4,7 +4,7 @@
       href="https://usagizmo.com"
       target="_blank"
       rel="noopener noreferrer"
-      class="mt-2 text-sm text-zinc-500 hover:opacity-80"
+      class="font-ui mt-2 text-sm text-zinc-500 hover:opacity-80"
     >
       @usagizmo
     </a>

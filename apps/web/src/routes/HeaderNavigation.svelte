@@ -22,7 +22,9 @@
   <div
     class="relative mx-auto flex max-w-[1120px] flex-col items-center justify-center py-5 md:h-16 md:flex-row md:py-0"
   >
-    <h1 class="text-center text-[26px] font-bold leading-tight tracking-tighter lg:text-[32px]">
+    <h1
+      class="font-ui text-center text-[26px] font-bold leading-tight tracking-tighter lg:text-[32px]"
+    >
       WebApp Template (web)
     </h1>
     <div

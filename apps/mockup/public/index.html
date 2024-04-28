@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Source+Code+Pro:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+JP:wght@100..900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -41,7 +41,9 @@
       <div
         class="relative mx-auto flex max-w-[1120px] flex-col items-center justify-center py-5 md:h-16 md:flex-row md:py-0"
       >
-        <h1 class="text-center text-[26px] font-bold leading-tight tracking-tighter lg:text-[32px]">
+        <h1
+          class="font-ui text-center text-[26px] font-bold leading-tight tracking-tighter lg:text-[32px]"
+        >
           WebApp Template (mockup)
         </h1>
         <p class="mt-2 text-sm text-zinc-500 md:mt-0 md:ml-auto md:px-4 lg:px-5 lg:text-base">
@@ -52,7 +54,7 @@
             href="https://github.com/usagizmo/webapp-template"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:bg-opacity-80 flex rounded-md bg-zinc-900 py-2 px-5 text-sm text-white"
+            class="font-ui hover:bg-opacity-80 flex rounded-md bg-zinc-900 py-2 px-5 text-sm text-white"
           >
             GitHub
           </a>
@@ -64,9 +66,9 @@
       <div class="mx-auto max-w-[1120px] space-y-9">
         <!-- What's inside? -->
         <div>
-          <h2 class="mb-4 text-2xl font-bold md:text-3xl">What's inside?</h2>
+          <h2 class="font-ui mb-4 text-2xl font-bold md:text-3xl">What's inside?</h2>
           <section class="rounded-lg border border-slate-200 bg-slate-50 pt-5 px-6 pb-8">
-            <h3 class="mb-1.5 text-xl font-semibold md:text-2xl">Uses</h3>
+            <h3 class="font-ui mb-1.5 text-xl font-semibold md:text-2xl">Uses</h3>
             <div>
               <ul class="space-y-0.5">
                 <li
@@ -187,19 +189,19 @@
 
         <!-- Apps and Packages -->
         <div>
-          <h2 class="mb-4 text-2xl font-bold md:text-3xl">Apps and Packages</h2>
+          <h2 class="font-ui mb-4 text-2xl font-bold md:text-3xl">Apps and Packages</h2>
           <div class="space-y-6 md:flex md:gap-5 md:space-y-0">
             <!-- apps/-->
             <section
               class="rounded-lg border border-slate-200 bg-slate-50 pt-5 px-6 pb-8 md:flex-1"
             >
-              <h3 class="mb-1.5 text-xl font-semibold md:text-2xl">apps/</h3>
+              <h3 class="font-ui mb-1.5 text-xl font-semibold md:text-2xl">apps/</h3>
               <div>
                 <ul class="space-y-0.5">
                   <li
                     class="relative pl-5 before:absolute before:top-2 before:left-0 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
-                    <strong class="font-semibold">backend</strong><br />
+                    <strong class="font-ui font-semibold">backend</strong><br />
                     A
                     <a
                       target="_blank"
@@ -219,7 +221,7 @@
                   <li
                     class="relative pl-5 before:absolute before:top-2 before:left-0 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
-                    <strong class="font-semibold">mockup</strong><br />
+                    <strong class="font-ui font-semibold">mockup</strong><br />
                     A starting point for building a static site.<br />
                     <ul class="inline">
                       <li class="inline [&:not(:first-child):before]:content-['_+_']">
@@ -258,7 +260,7 @@
                   <li
                     class="relative pl-5 before:absolute before:top-2 before:left-0 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
-                    <strong class="font-semibold">web</strong><br />
+                    <strong class="font-ui font-semibold">web</strong><br />
                     A starting point for building Svelte application.<br />
                     <a
                       target="_blank"
@@ -304,13 +306,13 @@
             <section
               class="rounded-lg border border-slate-200 bg-slate-50 pt-5 px-6 pb-8 md:flex-1"
             >
-              <h3 class="mb-1.5 text-xl font-semibold md:text-2xl">packages/</h3>
+              <h3 class="font-ui mb-1.5 text-xl font-semibold md:text-2xl">packages/</h3>
               <div>
                 <ul class="space-y-0.5">
                   <li
                     class="relative pl-5 before:absolute before:top-2 before:left-0 before:h-2.5 before:w-2.5 before:rounded-full before:bg-zinc-900"
                   >
-                    <strong class="font-semibold">eslint-config</strong><br />
+                    <strong class="font-ui font-semibold">eslint-config</strong><br />
                     ESLint 9 (flat) configuration for JavaScript and TypeScript.<br />
                     <ul class="inline">
                       <li class="inline [&:not(:first-child):before]:content-['_+_']">
@@ -341,11 +343,11 @@
 
         <!-- Commands -->
         <div>
-          <h2 class="mb-4 text-2xl font-bold md:text-3xl">Commands</h2>
+          <h2 class="font-ui mb-4 text-2xl font-bold md:text-3xl">Commands</h2>
 
           <pre
             class="overflow-auto rounded-2xl bg-slate-800 p-6"
-          ><code class="text-white font-mono font-bold"><span class="text-sky-300">pnpm</span> i  <span class="text-slate-500"># Resolve dependency packages and prepare .env files</span>
+          ><code class="text-white font-mono font-semibold"><span class="text-sky-300">pnpm</span> i  <span class="text-slate-500"># Resolve dependency packages and prepare .env files</span>
 <span class="text-slate-500"># Then set up /.env</span>
 
 <span class="text-sky-300">pnpm</span> build   <span class="text-slate-500"># Build all apps and packages</span>
@@ -360,7 +362,7 @@
               href="https://github.com/usagizmo/webapp-template"
               target="_blank"
               rel="noopener noreferrer"
-              class="hover:bg-opacity-80 flex rounded-md bg-zinc-900 py-2 px-5 text-sm text-white"
+              class="font-ui hover:bg-opacity-80 flex rounded-md bg-zinc-900 py-2 px-5 text-sm text-white"
             >
               GitHub
             </a>
@@ -375,7 +377,7 @@
           href="https://usagizmo.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="mt-2 text-sm text-zinc-500 hover:opacity-80"
+          class="font-ui mt-2 text-sm text-zinc-500 hover:opacity-80"
         >
           @usagizmo
         </a>

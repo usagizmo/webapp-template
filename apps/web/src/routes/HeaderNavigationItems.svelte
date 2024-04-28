@@ -28,7 +28,7 @@
       href === ROUTE.HOME
         ? href === $page.url.pathname
         : getScope($page.url.pathname) === getScope(href)}
-    <li class="relative flex h-full items-center justify-center">
+    <li class="font-ui relative flex h-full items-center justify-center">
       {#if isActive}
         <span class="font-bold">{label}</span>
       {:else}

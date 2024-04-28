@@ -88,7 +88,7 @@
           />
         {:else}
           <span
-            class="grid h-24 w-32 cursor-pointer place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 peer-disabled:pointer-events-none peer-disabled:opacity-40 hover:brightness-95"
+            class="font-ui grid h-24 w-32 cursor-pointer place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 peer-disabled:pointer-events-none peer-disabled:opacity-40 hover:brightness-95"
             >+Add</span
           >
         {/if}
