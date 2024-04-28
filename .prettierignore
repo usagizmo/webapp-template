@@ -12,6 +12,3 @@ pnpm-workspace.yaml
 /apps/mockup/public/styles.css
 /apps/web/.svelte-kit
 /apps/web/src/lib/$generated
-
-# prettier-plugin-svelte (waiting for Svelte 5 support)
-*.svelte
