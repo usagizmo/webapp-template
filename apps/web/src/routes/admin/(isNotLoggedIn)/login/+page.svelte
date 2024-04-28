@@ -7,7 +7,8 @@
   /**
    * Log in
    */
-  async function handleSubmit(): Promise<void> {
+  async function handleSubmit(event: SubmitEvent): Promise<void> {
+    event.preventDefault();
     await userStore.logIn();
   }
 
@@ -19,7 +20,7 @@
 
 <Meta {...meta} />
 
-<form on:submit|preventDefault={handleSubmit}>
+<form onsubmit={handleSubmit}>
   <div class="mt-5 flex justify-center">
     <Button type="submit" primary>
       <SignInIcon />
