@@ -60,10 +60,10 @@ export class UserStore {
   }
 
   /**
-   * Set the user inputs
+   * Update the user inputs
    * @param userInputs - The user inputs
    */
-  setUserInputs(userInputs: Partial<UserInputs>): void {
+  updateUserInputs(userInputs: Partial<UserInputs>): void {
     this.#userInputs = { ...this.#userInputs, ...userInputs };
   }
 

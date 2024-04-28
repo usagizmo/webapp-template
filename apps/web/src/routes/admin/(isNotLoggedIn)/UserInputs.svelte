@@ -16,7 +16,7 @@
         label="Display Name"
         type="text"
         value={userStore.userInputs.displayName}
-        oninput={(event) => userStore.setUserInputs({ displayName: (event.target as HTMLInputElement).value })}
+        oninput={(event) => userStore.updateUserInputs({ displayName: (event.target as HTMLInputElement).value })}
         error={{ required: 'Display Name is required.' }}
       />
     </div>
@@ -25,14 +25,14 @@
     label="Email"
     type="email"
     value={userStore.userInputs.email}
-    oninput={(event) => userStore.setUserInputs({ email: (event.target as HTMLInputElement).value })}
+    oninput={(event) => userStore.updateUserInputs({ email: (event.target as HTMLInputElement).value })}
     error={{ required: 'E-mail is required.' }}
   />
   <Input
     label="Password"
     type="password"
     value={userStore.userInputs.password}
-    oninput={(event) => userStore.setUserInputs({ password: (event.target as HTMLInputElement).value })}
+    oninput={(event) => userStore.updateUserInputs({ password: (event.target as HTMLInputElement).value })}
     error={{ required: 'Password is required.' }}
   />
 </div>
