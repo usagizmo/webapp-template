@@ -3,7 +3,7 @@
   import Meta from '$lib/components/Meta.svelte';
   import { userStore } from '$lib/features/user/userStore.svelte';
   import CommentForm from './CommentForm.svelte';
-  import Comments from '../lib/features/comment/Comments.svelte';
+  import Comments from '$lib/features/comment/Comments.svelte';
   import LoginMessage from './LoginMessage.svelte';
   import { onMount } from 'svelte';
   import { commentStore } from '$lib/features/comment/commentStore.svelte';
