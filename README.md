@@ -55,7 +55,7 @@ Monorepo template for creating a web application.
   - Update to Tailwind CSS 4 (removed `tailwind.config.js`)
   - Upgrade to ESLint 9 and implement Flat Config
 - **Backend Change:**
-  - Replace [Next.js](https://nextjs.org/) with [Supabase](https://supabase.com/) for backend services
+  - Replace [Nhost](https://nhost.io/) with [Supabase](https://supabase.com/) for backend services
 
 ### v1.9.0
 
