@@ -14,7 +14,7 @@ export interface UserInputs {
   displayName?: string;
 }
 
-export class UserStore {
+class UserStore {
   #user: User | null = $state<User | null>(null);
   #userInputs: UserInputs = $state<UserInputs>({
     displayName: 'Guest',
