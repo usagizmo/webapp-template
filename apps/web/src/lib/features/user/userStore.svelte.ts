@@ -15,8 +15,8 @@ export interface UserInputs {
 }
 
 class UserStore {
-  #user: User | null = $state<User | null>(null);
-  #userInputs: UserInputs = $state<UserInputs>({
+  #user = $state<User | null>(null);
+  #userInputs = $state<UserInputs>({
     displayName: 'Guest',
     email: 'email@add.com',
     password: 'password0',
