@@ -13,6 +13,7 @@
     "node_modules",
     "/project-words.txt",
     // custom
+    "*.avif",
     "*.icns",
     "*.mp4",
     "*.svg",
