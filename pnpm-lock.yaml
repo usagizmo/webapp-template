@@ -93,9 +93,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.1.0
         version: 3.1.0(svelte@5.0.0-next.115)(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.24.1))
-      '@tailwindcss/postcss':
+      '@tailwindcss/vite':
         specifier: 4.0.0-alpha.14
-        version: 4.0.0-alpha.14(postcss@8.4.38)
+        version: 4.0.0-alpha.14(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.24.1))
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -985,8 +985,10 @@ packages:
     resolution: {integrity: sha512-KpYsgwFd1I9UeqoCtBF62KXYKkp1RuxJm26M0EGTHVvUV+Cln0KZaouKJ1/7mqH8hD/TrzIwX5cGVMb2ShM4Qg==}
     engines: {node: '>= 10'}
 
-  '@tailwindcss/postcss@4.0.0-alpha.14':
-    resolution: {integrity: sha512-yDg66USPsVPd9rKTmUx57KaY611U4ifk3799dMGfp7EsPLgyQPgNphGsuNuvyjD0ATQ9JXEX4oIoclm4rLxN7Q==}
+  '@tailwindcss/vite@4.0.0-alpha.14':
+    resolution: {integrity: sha512-tvKPP948JrgSR1Ig5ogLYEn1h4FW36W3p0eCGFGJV++NF7QsBh0j98HydrhvQDxsC9jZ037yGWUOc4VPMbt22g==}
+    peerDependencies:
+      vite: ^5.2.0
 
   '@types/cookie@0.4.1':
     resolution: {integrity: sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==}
@@ -4343,14 +4345,12 @@ snapshots:
       '@tailwindcss/oxide-linux-x64-musl': 4.0.0-alpha.14
       '@tailwindcss/oxide-win32-x64-msvc': 4.0.0-alpha.14
 
-  '@tailwindcss/postcss@4.0.0-alpha.14(postcss@8.4.38)':
+  '@tailwindcss/vite@4.0.0-alpha.14(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.24.1))':
     dependencies:
       '@tailwindcss/oxide': 4.0.0-alpha.14
       lightningcss: 1.24.1
-      postcss-import: 16.1.0(postcss@8.4.38)
       tailwindcss: 4.0.0-alpha.14
-    transitivePeerDependencies:
-      - postcss
+      vite: 5.2.11(@types/node@20.12.12)(lightningcss@1.24.1)
 
   '@types/cookie@0.4.1': {}
 
@@ -6063,13 +6063,6 @@ snapshots:
   postcss-import@16.1.0(postcss@8.4.24):
     dependencies:
       postcss: 8.4.24
-      postcss-value-parser: 4.2.0
-      read-cache: 1.0.0
-      resolve: 1.22.8
-
-  postcss-import@16.1.0(postcss@8.4.38):
-    dependencies:
-      postcss: 8.4.38
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
