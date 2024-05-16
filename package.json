@@ -18,14 +18,14 @@
     "format": "concurrently pnpm:format:*"
   },
   "devDependencies": {
-    "@markuplint/svelte-parser": "^4.5.1",
+    "@markuplint/svelte-parser": "^4.6.2",
     "@repo/eslint-config": "workspace:*",
     "concurrently": "^8.2.2",
-    "cspell": "^8.7.0",
-    "eslint": "^9.1.1",
+    "cspell": "^8.8.1",
+    "eslint": "^9.2.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
-    "markuplint": "^4.6.1",
+    "markuplint": "^4.8.1",
     "prettier": "^3.2.5",
     "prettier-plugin-svelte": "^3.2.3",
     "prettier-plugin-tailwindcss": "^0.5.14",

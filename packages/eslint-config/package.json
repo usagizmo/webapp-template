@@ -18,13 +18,13 @@
     "eslint": ">=9"
   },
   "devDependencies": {
-    "@eslint/js": "^9.1.1",
-    "@typescript-eslint/parser": "^7.7.1",
-    "eslint": "^9.1.1",
+    "@eslint/js": "^9.2.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "eslint": "^9.2.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.38.0",
-    "globals": "^15.0.0",
-    "svelte-eslint-parser": "^0.35.0",
-    "typescript-eslint": "^7.7.1"
+    "eslint-plugin-svelte": "^2.39.0",
+    "globals": "^15.2.0",
+    "svelte-eslint-parser": "^0.36.0",
+    "typescript-eslint": "^7.9.0"
   }
 }
