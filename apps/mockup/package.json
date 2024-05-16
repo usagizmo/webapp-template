@@ -1,6 +1,7 @@
 {
   "name": "mockup",
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "build": "tailwindcss -i ./app.css -o ./public/styles.css --minify",
