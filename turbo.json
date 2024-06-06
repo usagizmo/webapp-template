@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "tasks": {
     "web#generate": {
       "outputs": [".svelte-kit/**", "src/lib/$generated/**"]
     },
