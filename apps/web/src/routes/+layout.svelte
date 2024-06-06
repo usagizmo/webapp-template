@@ -10,9 +10,6 @@
   import type { AuthSession } from '@supabase/supabase-js';
   import { getUser } from '$lib/features/user/userUtils';
 
-  // import GoogleAnalytics from './GoogleAnalytics.svelte';
-  // import { PUBLIC_GOOGLE_ANALYTICS_ID } from '$env/static/public';
-
   let {
     children,
   }: {
@@ -42,11 +39,6 @@
     });
   });
 </script>
-
-<!-- TODO: Comment out until hydration is fixed -->
-<!-- {#if PUBLIC_GOOGLE_ANALYTICS_ID}
-  <GoogleAnalytics id={PUBLIC_GOOGLE_ANALYTICS_ID} />
-{/if} -->
 
 <div class="h-screen bg-gray-100 text-zinc-900">
   <div class="flex h-full flex-col">
