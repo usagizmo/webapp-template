@@ -9,5 +9,6 @@ pnpm-lock.yaml
 pnpm-workspace.yaml
 
 # custom
+.turbo
 /apps/
 /packages/
