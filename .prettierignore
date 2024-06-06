@@ -9,6 +9,7 @@ pnpm-lock.yaml
 pnpm-workspace.yaml
 
 # custom
+.turbo
 /apps/mockup/public/styles.css
 /apps/web/.svelte-kit
 /apps/web/src/lib/$generated
