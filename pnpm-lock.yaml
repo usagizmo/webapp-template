@@ -80,6 +80,9 @@ importers:
       cdate:
         specifier: ^0.0.7
         version: 0.0.7
+      tailwind-variants:
+        specifier: ^0.2.1
+        version: 0.2.1(tailwindcss@4.0.0-alpha.15)
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -3066,6 +3069,15 @@ packages:
   svelte@5.0.0-next.151:
     resolution: {integrity: sha512-1XmoL74CYNpWQZI8o6IqXJQbIL+eVA+MIyfis0ErlEmO7p8+DxdsGREIyg2Qpr1CgT+Eva9R1zfMA9KG/Nd8wg==}
     engines: {node: '>=18'}
+
+  tailwind-merge@2.3.0:
+    resolution: {integrity: sha512-vkYrLpIP+lgR0tQCG6AP7zZXCTLc1Lnv/CCRT3BqJ9CZ3ui2++GPaGb1x/ILsINIMSYqqvrpqjUFsMNLlW99EA==}
+
+  tailwind-variants@0.2.1:
+    resolution: {integrity: sha512-2xmhAf4UIc3PijOUcJPA1LP4AbxhpcHuHM2C26xM0k81r0maAO6uoUSHl3APmvHZcY5cZCY/bYuJdfFa4eGoaw==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwindcss: '*'
 
   tailwindcss@4.0.0-alpha.15:
     resolution: {integrity: sha512-hlL3dKkgKTNz6dXe4OWJMngI9DdcJncGXvhhjdPkMc/Pqc81NCYaV/8Z11DZ4Djy5RSFfLf41HI6+DGeKtvJ2g==}
@@ -6533,6 +6545,15 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.10
       zimmerframe: 1.1.2
+
+  tailwind-merge@2.3.0:
+    dependencies:
+      '@babel/runtime': 7.24.7
+
+  tailwind-variants@0.2.1(tailwindcss@4.0.0-alpha.15):
+    dependencies:
+      tailwind-merge: 2.3.0
+      tailwindcss: 4.0.0-alpha.15
 
   tailwindcss@4.0.0-alpha.15: {}
 
