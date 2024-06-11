@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Button from '$lib/components/Button.svelte';
   import Meta from '$lib/components/Meta.svelte';
   import SignInIcon from '$lib/components/icons/16x16/SignInIcon.svelte';
   import { userStore } from '$lib/features/user/userStore.svelte';
+  import { buttonVariants } from '$lib/variants/buttonVariants';
 
   const handleSubmit = async (event: SubmitEvent) => {
     event.preventDefault();
@@ -19,9 +19,9 @@
 
 <form onsubmit={handleSubmit}>
   <div class="mt-5 flex justify-center">
-    <Button type="submit" primary>
+    <button class={buttonVariants({ primary: true })} type="submit">
       <SignInIcon />
       <span>Sign up</span>
-    </Button>
+    </button>
   </div>
 </form>

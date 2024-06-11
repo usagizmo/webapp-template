@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Button from '$lib/components/Button.svelte';
   import { ROUTE } from '$lib/routes';
   import { userStore } from '$lib/features/user/userStore.svelte';
   import HeaderNavigationItems from './HeaderNavigationItems.svelte';
+  import { buttonVariants } from '$lib/variants/buttonVariants';
 
   const navItems = $derived(
     [
@@ -33,7 +33,12 @@
       <HeaderNavigationItems {navItems} />
     </div>
     <div class="mt-5 md:mt-0 lg:ml-auto">
-      <Button href="https://github.com/usagizmo/webapp-template" primary blank>GitHub</Button>
+      <a
+        class={buttonVariants({ primary: true })}
+        href="https://github.com/usagizmo/webapp-template"
+        target="_blank"
+        rel="noopener noreferrer">GitHub</a
+      >
     </div>
   </div>
 </header>

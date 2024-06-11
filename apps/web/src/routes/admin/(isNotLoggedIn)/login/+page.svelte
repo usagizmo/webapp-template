@@ -1,8 +1,8 @@
 <script lang="ts">
   import { userStore } from '$lib/features/user/userStore.svelte';
   import Meta from '$lib/components/Meta.svelte';
-  import Button from '$lib/components/Button.svelte';
   import SignInIcon from '$lib/components/icons/16x16/SignInIcon.svelte';
+  import { buttonVariants } from '$lib/variants/buttonVariants';
 
   /**
    * Log in
@@ -22,9 +22,9 @@
 
 <form onsubmit={handleSubmit}>
   <div class="mt-5 flex justify-center">
-    <Button type="submit" primary>
+    <button class={buttonVariants({ primary: true })} type="submit">
       <SignInIcon />
       <span>Log in</span>
-    </Button>
+    </button>
   </div>
 </form>

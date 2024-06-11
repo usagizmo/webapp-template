@@ -1,10 +1,10 @@
 <script lang="ts">
   import { userStore } from '$lib/features/user/userStore.svelte';
   import type { User } from '$lib/features/user/userStore.svelte';
-  import Button from '$lib/components/Button.svelte';
   import TextArea from '$lib/components/TextArea.svelte';
   import SignOutIcon from '$lib/components/icons/16x16/SignOutIcon.svelte';
   import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
+  import { buttonVariants } from '$lib/variants/buttonVariants';
 
   const {
     user,
@@ -50,9 +50,9 @@
     </div>
   </div>
   <div class="mt-8 flex items-center justify-center">
-    <Button primary onclick={handleLogOut}>
+    <button class={buttonVariants({ primary: true })} onclick={handleLogOut}>
       <SignOutIcon />
       <span>Log out</span>
-    </Button>
+    </button>
   </div>
 </section>
