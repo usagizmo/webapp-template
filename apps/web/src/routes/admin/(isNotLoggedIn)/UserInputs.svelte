@@ -9,7 +9,7 @@
   const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_SIGNUP);
 </script>
 
-<div class="[&>*]:mb-3">
+<div class="space-y-3">
   {#if isSignUpPage}
     <div transition:slide={defaultDE}>
       <Input
