@@ -1,4 +1,5 @@
 ahvu
+camelcase
 cdate
 dirents
 hasura
