@@ -7,7 +7,7 @@ export async function getUser(
 ): Promise<{ user: User | null; error: PostgrestError | null }> {
   const { data: profiles, error } = await supabase
     .from('profiles')
-    .select('email, display_name, bio')
+    .select('email, display_name, bio, created_at')
     .eq('id', id);
 
   const user = profiles?.length
@@ -16,6 +16,7 @@ export async function getUser(
         email: profiles[0].email,
         displayName: profiles[0].display_name,
         bio: profiles[0].bio,
+        createdAt: profiles[0].created_at,
       } satisfies User)
     : null;
 

@@ -1,12 +1,12 @@
-import { supabase } from '$lib/supabaseClient';
 import type { PostgrestError } from '@supabase/supabase-js';
+import type { CamelCasedProperties } from 'type-fest';
+import camelcaseKeys from 'camelcase-keys';
+import { supabase } from '$lib/supabaseClient';
+import type { Tables } from '$lib/$generated/supabase-types';
 
-export interface User {
-  id: string;
-  email: string;
-  displayName: string;
-  bio: string;
-}
+type DBProfiles = Tables<'profiles'>;
+
+export type User = CamelCasedProperties<DBProfiles>;
 
 export interface UserInputs {
   email: string;
@@ -14,13 +14,15 @@ export interface UserInputs {
   displayName?: string;
 }
 
+const baseUserInputs = {
+  displayName: 'Guest',
+  email: 'email@add.com',
+  password: 'password0',
+} satisfies UserInputs;
+
 class UserStore {
   #user = $state<User | null>(null);
-  #userInputs = $state<UserInputs>({
-    displayName: 'Guest',
-    email: 'email@add.com',
-    password: 'password0',
-  });
+  #userInputs = $state<UserInputs>(baseUserInputs);
 
   /**
    * Get the user
@@ -39,14 +41,14 @@ class UserStore {
 
   async updateUser(
     id: string,
-    props: { bio?: string },
+    props: Partial<Omit<DBProfiles, 'id'>>,
   ): Promise<{ error: PostgrestError | Error | null }> {
     if (!this.#user) return { error: new Error('You must be logged in to update your profile') };
 
     const { error } = await supabase.from('profiles').update(props).eq('id', id);
     if (error) return { error };
 
-    this.#user = { ...this.#user, ...props };
+    this.#user = { ...this.#user, ...camelcaseKeys(props) };
 
     return { error: null };
   }
@@ -85,7 +87,6 @@ class UserStore {
 
   /**
    * Log in a user
-   * @param userInputs - The user inputs
    */
   async logIn(): Promise<void> {
     const { error } = await supabase.auth.signInWithPassword(this.#userInputs);
