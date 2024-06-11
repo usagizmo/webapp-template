@@ -9,5 +9,8 @@
     "source.fixAll.eslint": "explicit"
   },
   "eslint.workingDirectories": [{ "mode": "auto" }],
-  "eslint.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+  "tailwindCSS.experimental.classRegex": [
+    ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ]
 }

@@ -4,7 +4,7 @@ const config = {
   printWidth: 100,
   plugins: ['prettier-plugin-svelte', 'prettier-plugin-tailwindcss'],
   overrides: [{ files: '*.svelte', options: { parser: 'svelte' } }],
-  tailwindFunctions: ['$derived'],
+  tailwindFunctions: ['$derived', 'tv'],
 };
 
 export default config;

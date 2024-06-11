@@ -3,11 +3,11 @@
   import { fade } from 'svelte/transition';
   import { userStore } from '$lib/features/user/userStore.svelte';
   import CircleCloseIcon from '$lib/components/icons/20x20/CircleCloseIcon.svelte';
-  import Button from '$lib/components/Button.svelte';
   import CircleCheckIcon from '$lib/components/icons/20x20/CircleCheckIcon.svelte';
   import { commentStore } from './commentStore.svelte';
   import type { Comment } from './commentStore.svelte';
   import { deleteCommentFile, getCommentFileUrl } from './commentUtils';
+  import { buttonVariants } from '$lib/variants/buttonVariants';
 
   interface Card {
     id: number;
@@ -137,7 +137,8 @@
 
     {#if isActionVisible}
       <div class="absolute right-0 bottom-0" transition:fade={{ duration: 75 }}>
-        <Button onclick={handleDelete} disabled={isDeleting}>Delete</Button>
+        <button class={buttonVariants()} onclick={handleDelete} disabled={isDeleting}>Delete</button
+        >
       </div>
     {/if}
   </div>
