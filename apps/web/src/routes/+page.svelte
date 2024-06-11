@@ -1,5 +1,4 @@
 <script lang="ts">
-  import SectionFrame from '$lib/components/SectionFrame.svelte';
   import Meta from '$lib/components/Meta.svelte';
   import { userStore } from '$lib/features/user/userStore.svelte';
   import CommentForm from './CommentForm.svelte';
@@ -7,6 +6,7 @@
   import LoginMessage from './LoginMessage.svelte';
   import { onMount } from 'svelte';
   import { commentStore } from '$lib/features/comment/commentStore.svelte';
+  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
 
   const meta = {
     type: 'website' as const,
@@ -28,7 +28,7 @@
     <LoginMessage />
   {/if}
 
-  <SectionFrame noPad="y">
+  <section class={sectionFrameVariants({ pad: 'x' })}>
     <div class="pb-[14px]">
       <!-- attention -->
       <div class="flex items-center justify-center border-b border-slate-200 pt-2.5 pb-2">
@@ -37,5 +37,5 @@
 
       <Comments />
     </div>
-  </SectionFrame>
+  </section>
 </div>

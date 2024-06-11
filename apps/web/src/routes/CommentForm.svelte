@@ -1,10 +1,10 @@
 <script lang="ts">
   import { tick } from 'svelte';
-  import SectionFrame from '$lib/components/SectionFrame.svelte';
   import Button from '$lib/components/Button.svelte';
   import PaperPlaneIcon from '$lib/components/icons/16x16/PaperPlaneIcon.svelte';
   import { userStore } from '$lib/features/user/userStore.svelte';
   import { commentStore } from '$lib/features/comment/commentStore.svelte';
+  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
 
   let textAreaEl: HTMLTextAreaElement | null = $state(null);
   let isSending = $state(false);
@@ -60,7 +60,7 @@
   }
 </script>
 
-<SectionFrame noPad="y">
+<section class={sectionFrameVariants({ pad: 'x' })}>
   <div class="py-3">
     <div class="gap flex gap-1.5">
       <textarea
@@ -101,4 +101,4 @@
       </Button>
     </div>
   </div>
-</SectionFrame>
+</section>

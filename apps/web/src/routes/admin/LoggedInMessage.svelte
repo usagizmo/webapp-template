@@ -3,8 +3,8 @@
   import type { User } from '$lib/features/user/userStore.svelte';
   import Button from '$lib/components/Button.svelte';
   import TextArea from '$lib/components/TextArea.svelte';
-  import SectionFrame from '$lib/components/SectionFrame.svelte';
   import SignOutIcon from '$lib/components/icons/16x16/SignOutIcon.svelte';
+  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
 
   const {
     user,
@@ -36,7 +36,7 @@
   }
 </script>
 
-<SectionFrame>
+<section class={sectionFrameVariants()}>
   <div class="flex flex-col items-center justify-center">
     <p class="text-4xl font-bold">{user.displayName}</p>
     <p>{user.email}</p>
@@ -55,4 +55,4 @@
       <span>Log out</span>
     </Button>
   </div>
-</SectionFrame>
+</section>

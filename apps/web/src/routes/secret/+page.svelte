@@ -1,6 +1,6 @@
 <script lang="ts">
   import Meta from '$lib/components/Meta.svelte';
-  import SectionFrame from '$lib/components/SectionFrame.svelte';
+  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
 
   const meta = {
     title: `Secret | WebApp Template (web)`,
@@ -11,9 +11,9 @@
 <Meta {...meta} />
 
 <div class="mx-auto max-w-[792px]">
-  <SectionFrame>
+  <section class={sectionFrameVariants()}>
     <div class="text-center">
       <p class="text-sm text-zinc-500">src/routes/secret/+page.svelte</p>
     </div>
-  </SectionFrame>
+  </section>
 </div>
