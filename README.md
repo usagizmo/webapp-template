@@ -35,8 +35,11 @@ Monorepo template for creating a web application.
 #### `packages/`
 
 - `eslint-config`  
-  ESLint 9 (flat) configuration for JavaScript and TypeScript.
-  [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) + [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
+  ESLint 9 (Flat Config) for JavaScript and TypeScript.
+  - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
+  - [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte)
+  - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
+  - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
 
 ### VS Code Extensions (Recommend)
 
@@ -45,6 +48,36 @@ Monorepo template for creating a web application.
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+
+## Commands
+
+```bash
+pnpm i  # Resolve dependency packages and prepare .env files
+# Then set up /.env
+
+# Run command for each package (apps/ + packages/)
+pnpm build   #
+pnpm lint    # root: cspell + prettier --check
+pnpm test    #
+pnpm format  # root: Format project-words.txt + prettier --write
+```
+
+## List of listening port numbers
+
+- `apps/backend/` - Supabase Local Dev / CLI
+  - `54321`: API / GraphQL / S3 Storage
+  - `54322`: DB (Postgres)
+  - `54323`: Studio
+  - `54324`: Inbucket
+- `apps/web/` - SvelteKit application
+  - `5173`: Development server
+- `apps/mockup/` - Static site
+  - `8000`: BrowserSync server
+  - `49160`: Express server
+
+## Registering environment variables for GitHub / Vercel
+
+If you need to prepare GitHub / Vercel environment, you need to set all environment variables (`.env` items) in each service.
 
 ## Breaking changes
 
@@ -82,32 +115,3 @@ Monorepo template for creating a web application.
 
 - **Backend Services Integration:**
   - Replaced individual [Firebase](https://firebase.google.com/) and [Hasura](https://hasura.io/) applications with a unified [Nhost](https://nhost.io/) application in `apps/nhost`
-
-## Commands
-
-```bash
-pnpm i  # Resolve dependency packages and prepare .env files
-# Then set up /.env
-
-pnpm build   # Build all apps and packages
-pnpm lint    # cspell + prettier --check + lint for each package
-pnpm test    # Testing
-pnpm format  # format project-words.txt + prettier --write + format for each package
-```
-
-## List of listening port numbers
-
-- `apps/backend/` - Supabase Local Dev / CLI
-  - `54321`: API / GraphQL / S3 Storage
-  - `54322`: DB (Postgres)
-  - `54323`: Studio
-  - `54324`: Inbucket
-- `apps/web/` - SvelteKit application
-  - `5173`: Development server
-- `apps/mockup/` - Static site
-  - `8000`: BrowserSync server
-  - `49160`: Express server
-
-## Registering environment variables for GitHub / Vercel
-
-If you need to prepare GitHub / Vercel environment, you need to set all environment variables (`.env` items) in each service.
