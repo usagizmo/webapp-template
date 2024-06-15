@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { userStore } from '$lib/features/user/userStore.svelte';
-  import type { User } from '$lib/features/user/userStore.svelte';
-  import TextArea from '$lib/components/TextArea.svelte';
   import SignOutIcon from '$lib/components/icons/16x16/SignOutIcon.svelte';
-  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
+  import TextArea from '$lib/components/TextArea.svelte';
+  import type { User } from '$lib/features/user/userStore.svelte';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import { buttonVariants } from '$lib/variants/buttonVariants';
+  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
 
   const {
     user,

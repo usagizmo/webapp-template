@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Meta from '$lib/components/Meta.svelte';
   import SignInIcon from '$lib/components/icons/16x16/SignInIcon.svelte';
+  import Meta from '$lib/components/Meta.svelte';
   import { userStore } from '$lib/features/user/userStore.svelte';
   import { buttonVariants } from '$lib/variants/buttonVariants';
 

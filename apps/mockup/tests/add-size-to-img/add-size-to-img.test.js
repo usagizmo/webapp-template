@@ -1,8 +1,10 @@
 import { readFile } from 'node:fs/promises';
+
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { describe, it, expect } from 'vitest';
-import { deepReaddir, convert } from '../../commands/utils';
+import { describe, expect, it } from 'vitest';
+
+import { convert, deepReaddir } from '../../commands/utils';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

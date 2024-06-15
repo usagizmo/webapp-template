@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { userStore } from '$lib/features/user/userStore.svelte';
   import Meta from '$lib/components/Meta.svelte';
+  import { userStore } from '$lib/features/user/userStore.svelte';
+
   import LoginMessage from '../LoginMessage.svelte';
   import LoggedInMessage from './LoggedInMessage.svelte';
 

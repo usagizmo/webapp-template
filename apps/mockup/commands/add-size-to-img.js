@@ -1,7 +1,9 @@
 import { writeFile } from 'node:fs/promises';
-import { join, dirname } from 'path';
+
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { deepReaddir, convert } from './utils.js';
+
+import { convert, deepReaddir } from './utils.js';
 
 const PUBLIC_DIR = 'public';
 

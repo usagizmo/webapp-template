@@ -1,7 +1,8 @@
-import { config } from 'dotenv';
 import { execSync } from 'node:child_process';
 import * as path from 'node:path';
 import url from 'node:url';
+
+import { config } from 'dotenv';
 
 config();
 

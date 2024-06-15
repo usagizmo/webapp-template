@@ -1,6 +1,8 @@
-import { supabase } from '$lib/supabaseClient';
-import { userStore } from '$lib/features/user/userStore.svelte';
 import type { PostgrestError } from '@supabase/supabase-js';
+
+import { userStore } from '$lib/features/user/userStore.svelte';
+import { supabase } from '$lib/supabaseClient';
+
 import { deleteCommentFile, uploadCommentFile } from './commentUtils';
 
 export interface Comment {

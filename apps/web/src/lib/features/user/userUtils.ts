@@ -1,6 +1,7 @@
 import type { PostgrestError } from '@supabase/supabase-js';
-import type { User } from './userStore.svelte';
+
 import { supabase } from '../../supabaseClient';
+import type { User } from './userStore.svelte';
 
 export async function getUser(
   id: string,

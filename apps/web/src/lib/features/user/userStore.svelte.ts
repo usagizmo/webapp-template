@@ -1,8 +1,9 @@
 import type { PostgrestError } from '@supabase/supabase-js';
-import type { CamelCasedProperties } from 'type-fest';
 import camelcaseKeys from 'camelcase-keys';
-import { supabase } from '$lib/supabaseClient';
+import type { CamelCasedProperties } from 'type-fest';
+
 import type { Tables } from '$lib/$generated/supabase-types';
+import { supabase } from '$lib/supabaseClient';
 
 type DBProfiles = Tables<'profiles'>;
 

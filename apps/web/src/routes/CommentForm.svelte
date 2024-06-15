@@ -1,10 +1,11 @@
 <script lang="ts">
   import { tick } from 'svelte';
+
   import PaperPlaneIcon from '$lib/components/icons/16x16/PaperPlaneIcon.svelte';
-  import { userStore } from '$lib/features/user/userStore.svelte';
   import { commentStore } from '$lib/features/comment/commentStore.svelte';
-  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import { buttonVariants } from '$lib/variants/buttonVariants';
+  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
 
   let textAreaEl: HTMLTextAreaElement | null = $state(null);
   let isSending = $state(false);
