@@ -11,10 +11,6 @@
     "web#build": {
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
     "lint": {},
     "web#lint": {
       "outputs": []

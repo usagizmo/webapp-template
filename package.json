@@ -6,7 +6,6 @@
   "scripts": {
     "prepare": "husky && ./commands/init.sh",
     "build": "turbo run build",
-    "dev": "turbo run dev",
     "lint:cspell": "cspell --exclude \"apps/**/*\" --exclude \"packages/**/*\" \"**/*\"",
     "lint:prettier": "prettier . --check --ignore-path=.prettierignore.root",
     "lint:packages": "turbo run lint",
