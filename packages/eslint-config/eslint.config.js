@@ -1,5 +1,6 @@
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import jsdoc from 'eslint-plugin-jsdoc';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import eslintPluginSvelte from 'eslint-plugin-svelte';
 import globals from 'globals';
@@ -20,6 +21,14 @@ export default [
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
     },
+  },
+  {
+    files: ['**/*.js'],
+    ...jsdoc.configs['flat/recommended-error'],
+  },
+  {
+    files: ['**/*.ts'],
+    ...jsdoc.configs['flat/recommended-typescript-error'],
   },
   {
     files: ['**/*.svelte'],
