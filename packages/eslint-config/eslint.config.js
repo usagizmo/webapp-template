@@ -1,10 +1,10 @@
-import globals from 'globals';
-
 import js from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import eslintPluginSvelte from 'eslint-plugin-svelte';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import eslintPluginSvelte from 'eslint-plugin-svelte';
+import globals from 'globals';
 import svelteEslintParser from 'svelte-eslint-parser';
+import tseslint from 'typescript-eslint';
 
 export default [
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
@@ -12,6 +12,15 @@ export default [
   ...tseslint.configs.recommended,
   ...eslintPluginSvelte.configs['flat/recommended'],
   ...eslintPluginSvelte.configs['flat/prettier'],
+  {
+    plugins: {
+      'simple-import-sort': simpleImportSort,
+    },
+    rules: {
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+    },
+  },
   {
     files: ['**/*.svelte'],
     languageOptions: {
