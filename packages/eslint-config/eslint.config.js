@@ -4,9 +4,7 @@ import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import eslintPluginSvelte from 'eslint-plugin-svelte';
 import eslintConfigPrettier from 'eslint-config-prettier';
-
 import svelteEslintParser from 'svelte-eslint-parser';
-import tseslintParser from '@typescript-eslint/parser';
 
 export default [
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
@@ -18,7 +16,7 @@ export default [
     languageOptions: {
       parser: svelteEslintParser,
       parserOptions: {
-        parser: tseslintParser,
+        parser: tseslint.parser,
       },
     },
   },
