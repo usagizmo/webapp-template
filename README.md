@@ -90,10 +90,9 @@ pnpm i  # Resolve dependency packages and prepare .env files
 # Then set up /.env
 
 pnpm build   # Build all apps and packages
-pnpm dev     # Set up file monitoring builds and local servers for development
-pnpm lint    # markuplint + eslint + prettier --check
+pnpm lint    # cspell + prettier --check + lint for each package
 pnpm test    # Testing
-pnpm format  # eslint --fix + prettier --write + format project-words.txt
+pnpm format  # format project-words.txt + prettier --write + format for each package
 ```
 
 ## List of listening port numbers
