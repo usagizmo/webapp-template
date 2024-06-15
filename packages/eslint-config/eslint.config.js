@@ -10,6 +10,7 @@ export default [
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   js.configs.recommended,
   ...tseslint.configs.recommended,
+  ...eslintPluginSvelte.configs['flat/recommended'],
   ...eslintPluginSvelte.configs['flat/prettier'],
   {
     files: ['**/*.svelte'],
@@ -18,6 +19,11 @@ export default [
       parserOptions: {
         parser: tseslint.parser,
       },
+    },
+    rules: {
+      // TODO: In progress for Svelte 5
+      // https://github.com/sveltejs/eslint-plugin-svelte/issues/652
+      'svelte/valid-compile': 'off',
     },
   },
   eslintConfigPrettier,
