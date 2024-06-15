@@ -72,7 +72,6 @@ class UserStore {
 
   /**
    * Sign up and log in
-   * @param userInputs - The user inputs
    */
   async signUp(): Promise<void> {
     const { email, password, displayName } = this.#userInputs;
