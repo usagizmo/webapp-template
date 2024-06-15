@@ -1,13 +1,15 @@
 <script lang="ts">
   import { cdate } from 'cdate';
   import { fade } from 'svelte/transition';
-  import { userStore } from '$lib/features/user/userStore.svelte';
-  import CircleCloseIcon from '$lib/components/icons/20x20/CircleCloseIcon.svelte';
+
   import CircleCheckIcon from '$lib/components/icons/20x20/CircleCheckIcon.svelte';
-  import { commentStore } from './commentStore.svelte';
-  import type { Comment } from './commentStore.svelte';
-  import { deleteCommentFile, getCommentFileUrl } from './commentUtils';
+  import CircleCloseIcon from '$lib/components/icons/20x20/CircleCloseIcon.svelte';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import { buttonVariants } from '$lib/variants/buttonVariants';
+
+  import type { Comment } from './commentStore.svelte';
+  import { commentStore } from './commentStore.svelte';
+  import { deleteCommentFile, getCommentFileUrl } from './commentUtils';
 
   interface Card {
     id: number;

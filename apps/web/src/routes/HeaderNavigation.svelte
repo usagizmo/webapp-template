@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { ROUTE } from '$lib/routes';
   import { userStore } from '$lib/features/user/userStore.svelte';
-  import HeaderNavigationItems from './HeaderNavigationItems.svelte';
+  import { ROUTE } from '$lib/routes';
   import { buttonVariants } from '$lib/variants/buttonVariants';
+
+  import HeaderNavigationItems from './HeaderNavigationItems.svelte';
 
   const navItems = $derived(
     [

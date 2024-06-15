@@ -1,12 +1,14 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+
   import { goto } from '$app/navigation';
   import { userStore } from '$lib/features/user/userStore.svelte';
   import { ROUTE } from '$lib/routes';
+  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
+
   import AdminHeaderMessage from '../AdminHeaderMessage.svelte';
   import AdminHeaderTabs from '../AdminHeaderTabs.svelte';
   import UserInputs from './UserInputs.svelte';
-  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
 
   let {
     children,

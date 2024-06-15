@@ -1,7 +1,9 @@
 <script lang="ts">
   import { flip } from 'svelte/animate';
   import { fade } from 'svelte/transition';
+
   import { defaultDE } from '$lib/easing';
+
   import Comment from './Comment.svelte';
   import { commentStore } from './commentStore.svelte';
 </script>

@@ -1,10 +1,11 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
+
   import { page } from '$app/stores';
-  import { defaultDE } from '$lib/easing';
-  import { ROUTE } from '$lib/routes';
-  import { userStore } from '$lib/features/user/userStore.svelte';
   import Input from '$lib/components/Input.svelte';
+  import { defaultDE } from '$lib/easing';
+  import { userStore } from '$lib/features/user/userStore.svelte';
+  import { ROUTE } from '$lib/routes';
 
   const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_SIGNUP);
 </script>

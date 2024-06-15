@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises';
-import { join, dirname } from 'path';
+
 import sizeOf from 'image-size';
+import { dirname, join } from 'path';
 
 /**
  * Recursively read a directory and return all the paths of the files that match the extension

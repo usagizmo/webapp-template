@@ -1,12 +1,14 @@
 <script lang="ts">
-  import Meta from '$lib/components/Meta.svelte';
-  import { userStore } from '$lib/features/user/userStore.svelte';
-  import CommentForm from './CommentForm.svelte';
-  import Comments from '$lib/features/comment/Comments.svelte';
-  import LoginMessage from './LoginMessage.svelte';
   import { onMount } from 'svelte';
+
+  import Meta from '$lib/components/Meta.svelte';
+  import Comments from '$lib/features/comment/Comments.svelte';
   import { commentStore } from '$lib/features/comment/commentStore.svelte';
+  import { userStore } from '$lib/features/user/userStore.svelte';
   import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
+
+  import CommentForm from './CommentForm.svelte';
+  import LoginMessage from './LoginMessage.svelte';
 
   const meta = {
     type: 'website' as const,

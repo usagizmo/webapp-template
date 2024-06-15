@@ -1,7 +1,13 @@
 import type { PostgrestError } from '@supabase/supabase-js';
-import type { User } from './userStore.svelte';
-import { supabase } from '../../supabaseClient';
 
+import { supabase } from '../../supabaseClient';
+import type { User } from './userStore.svelte';
+
+/**
+ * Get a user (profile) by id
+ * @param id user id
+ * @returns user (profile) and error
+ */
 export async function getUser(
   id: string,
 ): Promise<{ user: User | null; error: PostgrestError | null }> {

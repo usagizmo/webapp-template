@@ -1,14 +1,16 @@
 <script lang="ts">
   import '../app.css';
 
-  import { onMount } from 'svelte';
+  import type { AuthSession } from '@supabase/supabase-js';
   import type { Snippet } from 'svelte';
-  import { supabase } from '$lib/supabaseClient';
+  import { onMount } from 'svelte';
+
   import { userStore } from '$lib/features/user/userStore.svelte';
+  import { getUser } from '$lib/features/user/userUtils';
+  import { supabase } from '$lib/supabaseClient';
+
   import Footer from './Footer.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
-  import type { AuthSession } from '@supabase/supabase-js';
-  import { getUser } from '$lib/features/user/userUtils';
 
   let {
     children,
