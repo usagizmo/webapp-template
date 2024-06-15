@@ -13,6 +13,7 @@ export default [
   ...tseslint.configs.recommended,
   ...eslintPluginSvelte.configs['flat/recommended'],
   ...eslintPluginSvelte.configs['flat/prettier'],
+  // simple-import-sort
   {
     plugins: {
       'simple-import-sort': simpleImportSort,
@@ -22,6 +23,7 @@ export default [
       'simple-import-sort/exports': 'error',
     },
   },
+  // jsdoc
   {
     files: ['**/*.js'],
     ...jsdoc.configs['flat/recommended-error'],
@@ -30,6 +32,7 @@ export default [
     files: ['**/*.ts'],
     ...jsdoc.configs['flat/recommended-typescript-error'],
   },
+  // svelte
   {
     files: ['**/*.svelte'],
     languageOptions: {
