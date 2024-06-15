@@ -12,7 +12,7 @@ export default [
   ...tseslint.configs.recommended,
   ...eslintPluginSvelte.configs['flat/prettier'],
   {
-    files: ['*.svelte', '**/*.svelte'],
+    files: ['**/*.svelte'],
     languageOptions: {
       parser: svelteEslintParser,
       parserOptions: {
@@ -21,4 +21,7 @@ export default [
     },
   },
   eslintConfigPrettier,
+  {
+    ignores: ['**/.svelte-kit/', '**/$generated/'],
+  },
 ];
