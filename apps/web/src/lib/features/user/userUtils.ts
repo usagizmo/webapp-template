@@ -1,6 +1,7 @@
 import type { PostgrestError } from '@supabase/supabase-js';
 
-import { supabase } from '../../supabaseClient';
+import { supabase } from '$lib/supabase';
+
 import type { User } from './userStore.svelte';
 
 /**

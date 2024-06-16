@@ -7,7 +7,7 @@
 
   import { userStore } from '$lib/features/user/userStore.svelte';
   import { getUser } from '$lib/features/user/userUtils';
-  import { supabase } from '$lib/supabaseClient';
+  import { supabase } from '$lib/supabase';
 
   import Footer from './Footer.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';

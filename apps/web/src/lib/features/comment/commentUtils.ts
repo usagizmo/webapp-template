@@ -1,4 +1,4 @@
-import { supabase } from '$lib/supabaseClient';
+import { supabase } from '$lib/supabase';
 
 /**
  * Uploads a file to the comments storage bucket

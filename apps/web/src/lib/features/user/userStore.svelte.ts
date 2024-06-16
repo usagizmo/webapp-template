@@ -3,7 +3,7 @@ import camelcaseKeys from 'camelcase-keys';
 import type { CamelCasedProperties } from 'type-fest';
 
 import type { Tables } from '$lib/$generated/supabase-types';
-import { supabase } from '$lib/supabaseClient';
+import { supabase } from '$lib/supabase';
 
 type DBProfiles = Tables<'profiles'>;
 
