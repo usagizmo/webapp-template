@@ -10,6 +10,7 @@ markuplint
 markuplintrc
 nhost
 postgrest
+snakecase
 sssz
 supabase
 tailwindcss
