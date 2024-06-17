@@ -18,4 +18,5 @@ tailwindcss
 tseslint
 turborepo
 usagizmo
+vite
 yakuhan
