@@ -1,8 +1,8 @@
 <script lang="ts">
   import SignOutIcon from '$lib/components/icons/16x16/SignOutIcon.svelte';
   import TextArea from '$lib/components/TextArea.svelte';
-  import type { User } from '$lib/features/user/userStore.svelte';
-  import { userStore } from '$lib/features/user/userStore.svelte';
+  import { signOut } from '$lib/features/user/userQueries';
+  import { type User, userStore } from '$lib/features/user/userStore.svelte';
   import { buttonVariants } from '$lib/variants/buttonVariants';
   import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
 
@@ -12,27 +12,26 @@
     user: User;
   } = $props();
 
-  let tempBio = $state(user.bio);
+  let tempInputs = $state({
+    bio: user.bio,
+  });
 
   /**
    * Log out the user
    */
   async function handleLogOut() {
-    await userStore.logOut();
+    const { error } = await signOut();
+    error && alert(error.message);
   }
 
   /**
    * Update the user's bio
    */
   async function handleUpdate() {
-    const storeBio = user.bio;
-    if (storeBio === tempBio) return;
+    if (user.bio === tempInputs.bio) return;
 
-    const { error } = await userStore.updateUser(user.id, { bio: tempBio });
-    if (error) {
-      alert(error.message);
-      return;
-    }
+    const { error } = await userStore.updateUser(user.id, tempInputs);
+    error && alert(error.message);
   }
 </script>
 
@@ -43,8 +42,8 @@
     <div class="mt-4 w-full">
       <TextArea
         placeholder="bio"
-        value={tempBio}
-        oninput={(event) => tempBio = (event.target as HTMLInputElement).value}
+        value={tempInputs.bio}
+        oninput={(event) => tempInputs.bio = (event.target as HTMLInputElement).value}
         onblur={handleUpdate}
       />
     </div>

@@ -1,18 +1,21 @@
 <script lang="ts">
   import SignInIcon from '$lib/components/icons/16x16/SignInIcon.svelte';
   import Meta from '$lib/components/Meta.svelte';
-  import { userStore } from '$lib/features/user/userStore.svelte';
+  import { signUp } from '$lib/features/user/userQueries';
   import { buttonVariants } from '$lib/variants/buttonVariants';
 
-  const handleSubmit = async (event: SubmitEvent) => {
-    event.preventDefault();
-    await userStore.signUp();
-  };
+  import { userInputs } from '../UserInputs.svelte';
 
   const meta = {
     title: `Admin (Sign up) | WebApp Template (web)`,
     canonical: 'https://webapp-template.usagizmo.com/admin/signup',
   };
+
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const { error } = await signUp(userInputs);
+    error && alert(error.message);
+  }
 </script>
 
 <Meta {...meta} />
