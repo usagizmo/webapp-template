@@ -2,7 +2,7 @@
   import type { AuthSession } from '@supabase/supabase-js';
   import { onMount } from 'svelte';
 
-  import { getUser } from '$lib/features/user/userQueries';
+  import { getUser } from '$lib/features/user/userRequests';
   import { userStore } from '$lib/features/user/userStore.svelte';
   import { supabase } from '$lib/supabase';
 

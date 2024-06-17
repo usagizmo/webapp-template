@@ -1,7 +1,7 @@
 <script lang="ts">
   import SignOutIcon from '$lib/components/icons/16x16/SignOutIcon.svelte';
   import TextArea from '$lib/components/TextArea.svelte';
-  import { signOut } from '$lib/features/user/userQueries';
+  import { signOut } from '$lib/features/user/userRequests';
   import { type User, userStore } from '$lib/features/user/userStore.svelte';
   import { buttonVariants } from '$lib/variants/buttonVariants';
   import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
