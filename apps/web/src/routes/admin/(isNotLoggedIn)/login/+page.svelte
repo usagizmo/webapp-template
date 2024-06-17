@@ -1,15 +1,15 @@
 <script lang="ts">
   import SignInIcon from '$lib/components/icons/16x16/SignInIcon.svelte';
   import Meta from '$lib/components/Meta.svelte';
-  import { userStore } from '$lib/features/user/userStore.svelte';
+  import { signIn } from '$lib/features/user/userRequests';
   import { buttonVariants } from '$lib/variants/buttonVariants';
 
-  /**
-   * Log in
-   */
+  import { userInputs } from '../UserInputs.svelte';
+
   async function handleSubmit(event: SubmitEvent): Promise<void> {
     event.preventDefault();
-    await userStore.logIn();
+    const { error } = await signIn(userInputs);
+    error && alert(error.message);
   }
 
   const meta = {

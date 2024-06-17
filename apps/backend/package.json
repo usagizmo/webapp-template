@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "pull": "supabase db pull --local --schema auth --schema storage",
+    "pull": "supabase db pull --local --schema auth,storage",
     "start": "supabase start",
     "stop": "supabase stop"
   },

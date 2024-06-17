@@ -7,9 +7,9 @@
   import { userStore } from '$lib/features/user/userStore.svelte';
   import { buttonVariants } from '$lib/variants/buttonVariants';
 
+  import { deleteCommentFile, getCommentFileUrl } from './commentRequests';
   import type { Comment } from './commentStore.svelte';
   import { commentStore } from './commentStore.svelte';
-  import { deleteCommentFile, getCommentFileUrl } from './commentUtils';
 
   interface Card {
     id: number;

@@ -1,29 +1,18 @@
 import type { PostgrestError } from '@supabase/supabase-js';
-import camelcaseKeys from 'camelcase-keys';
-import type { CamelCasedProperties } from 'type-fest';
+import snakecaseKeys from 'snakecase-keys';
 
-import type { Tables } from '$lib/$generated/supabase-types';
-import { supabase } from '$lib/supabaseClient';
+import { supabase } from '$lib/supabase';
 
-type DBProfiles = Tables<'profiles'>;
-
-export type User = CamelCasedProperties<DBProfiles>;
-
-export interface UserInputs {
+export interface User {
+  id: string;
   email: string;
-  password: string;
-  displayName?: string;
+  displayName: string;
+  bio: string;
+  createdAt: string;
 }
-
-const baseUserInputs = {
-  displayName: 'Guest',
-  email: 'email@add.com',
-  password: 'password0',
-} satisfies UserInputs;
 
 class UserStore {
   #user = $state<User | null>(null);
-  #userInputs = $state<UserInputs>(baseUserInputs);
 
   /**
    * Get the user
@@ -42,63 +31,18 @@ class UserStore {
 
   async updateUser(
     id: string,
-    props: Partial<Omit<DBProfiles, 'id'>>,
+    props: Partial<Pick<User, 'bio'>>,
   ): Promise<{ error: PostgrestError | Error | null }> {
     if (!this.#user) return { error: new Error('You must be logged in to update your profile') };
 
-    const { error } = await supabase.from('profiles').update(props).eq('id', id);
+    // NOTE: $state.snapshot is used to get the current value of the reactive variable
+    const plainSnakeProps = snakecaseKeys($state.snapshot(props));
+    const { error } = await supabase.from('profiles').update(plainSnakeProps).eq('id', id);
     if (error) return { error };
 
-    this.#user = { ...this.#user, ...camelcaseKeys(props) };
+    this.#user = { ...this.#user, ...props };
 
     return { error: null };
-  }
-
-  /**
-   * Get the user inputs
-   * @returns The user inputs
-   */
-  get userInputs(): UserInputs {
-    return this.#userInputs;
-  }
-
-  /**
-   * Update the user inputs
-   * @param userInputs - The user inputs
-   */
-  updateUserInputs(userInputs: Partial<UserInputs>): void {
-    this.#userInputs = { ...this.#userInputs, ...userInputs };
-  }
-
-  /**
-   * Sign up and log in
-   */
-  async signUp(): Promise<void> {
-    const { email, password, displayName } = this.#userInputs;
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: { display_name: displayName },
-      },
-    });
-    error && alert(error.message);
-  }
-
-  /**
-   * Log in a user
-   */
-  async logIn(): Promise<void> {
-    const { error } = await supabase.auth.signInWithPassword(this.#userInputs);
-    error && alert(error.message);
-  }
-
-  /**
-   * Log out a user
-   */
-  async logOut(): Promise<void> {
-    const { error } = await supabase.auth.signOut();
-    error && alert(error.message);
   }
 }
 

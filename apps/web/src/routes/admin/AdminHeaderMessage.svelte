@@ -9,7 +9,7 @@
   let height = $state(0);
   let innerWidth = $state(0);
 
-  let isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_LOGIN);
+  const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_LOGIN);
 
   $effect(() => {
     if (el && innerWidth) {

@@ -1,10 +1,17 @@
+<script lang="ts" context="module">
+  export let userInputs = $state({
+    displayName: 'Guest',
+    email: 'email@add.com',
+    password: 'password0',
+  });
+</script>
+
 <script lang="ts">
   import { slide } from 'svelte/transition';
 
   import { page } from '$app/stores';
   import Input from '$lib/components/Input.svelte';
   import { defaultDE } from '$lib/easing';
-  import { userStore } from '$lib/features/user/userStore.svelte';
   import { ROUTE } from '$lib/routes';
 
   const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_SIGNUP);
@@ -16,8 +23,8 @@
       <Input
         label="Display Name"
         type="text"
-        value={userStore.userInputs.displayName}
-        oninput={(event) => userStore.updateUserInputs({ displayName: (event.target as HTMLInputElement).value })}
+        value={userInputs.displayName}
+        oninput={(event) => userInputs.displayName = (event.target as HTMLInputElement).value}
         error={{ required: 'Display Name is required.' }}
       />
     </div>
@@ -25,15 +32,15 @@
   <Input
     label="Email"
     type="email"
-    value={userStore.userInputs.email}
-    oninput={(event) => userStore.updateUserInputs({ email: (event.target as HTMLInputElement).value })}
+    value={userInputs.email}
+    oninput={(event) => userInputs.email = (event.target as HTMLInputElement).value}
     error={{ required: 'E-mail is required.' }}
   />
   <Input
     label="Password"
     type="password"
-    value={userStore.userInputs.password}
-    oninput={(event) => userStore.updateUserInputs({ password: (event.target as HTMLInputElement).value })}
+    value={userInputs.password}
+    oninput={(event) => userInputs.password = (event.target as HTMLInputElement).value}
     error={{ required: 'Password is required.' }}
   />
 </div>
