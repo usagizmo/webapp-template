@@ -89,9 +89,6 @@ importers:
       tailwind-variants:
         specifier: ^0.2.1
         version: 0.2.1(tailwindcss@4.0.0-alpha.15)
-      type-fest:
-        specifier: ^4.20.0
-        version: 4.20.0
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
