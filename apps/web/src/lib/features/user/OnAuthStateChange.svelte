@@ -2,8 +2,8 @@
   import type { AuthSession } from '@supabase/supabase-js';
   import { onMount } from 'svelte';
 
+  import { getUser } from '$lib/features/user/userQueries';
   import { userStore } from '$lib/features/user/userStore.svelte';
-  import { getUser } from '$lib/features/user/userUtils';
   import { supabase } from '$lib/supabase';
 
   let session = $state<AuthSession | null>(null);

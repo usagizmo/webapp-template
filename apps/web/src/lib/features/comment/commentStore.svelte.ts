@@ -3,7 +3,7 @@ import type { PostgrestError } from '@supabase/supabase-js';
 import { userStore } from '$lib/features/user/userStore.svelte';
 import { supabase } from '$lib/supabase';
 
-import { deleteCommentFile, uploadCommentFile } from './commentUtils';
+import { deleteCommentFile, uploadCommentFile } from './commentQueries';
 
 export interface Comment {
   id: number;
