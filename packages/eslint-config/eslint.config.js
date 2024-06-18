@@ -3,6 +3,7 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 import jsdoc from 'eslint-plugin-jsdoc';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import eslintPluginSvelte from 'eslint-plugin-svelte';
+import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
 import svelteEslintParser from 'svelte-eslint-parser';
 import tseslint from 'typescript-eslint';
@@ -31,6 +32,26 @@ export default [
   {
     files: ['**/*.ts'],
     ...jsdoc.configs['flat/recommended-typescript-error'],
+  },
+  // unused-imports
+  {
+    plugins: {
+      'unused-imports': unusedImports,
+    },
+    rules: {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': [
+        'error',
+        {
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+        },
+      ],
+    },
   },
   // svelte
   {

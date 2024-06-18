@@ -24,6 +24,7 @@
     "eslint-plugin-jsdoc": "^48.2.12",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "eslint-plugin-svelte": "^2.39.0",
+    "eslint-plugin-unused-imports": "^4.0.0",
     "globals": "^15.4.0",
     "svelte-eslint-parser": "^0.36.0",
     "typescript-eslint": "^7.12.0"
