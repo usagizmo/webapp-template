@@ -10,6 +10,7 @@
   },
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "eslint.useFlatConfig": true,
+  "eslint.validate": ["svelte"],
   "tailwindCSS.experimental.classRegex": [
     ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ]
