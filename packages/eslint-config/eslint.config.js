@@ -62,6 +62,11 @@ export default [
         parser: tseslint.parser,
       },
     },
+    rules: {
+      // TODO: In progress for Svelte 5
+      // https://github.com/sveltejs/eslint-plugin-svelte/issues/652
+      'svelte/valid-compile': 'off',
+    },
   },
   eslintConfigPrettier,
   {
