@@ -5,7 +5,7 @@
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  let el: HTMLElement | null = $state(null);
+  let el = $state<HTMLElement>();
   let height = $state(0);
   let innerWidth = $state(0);
 

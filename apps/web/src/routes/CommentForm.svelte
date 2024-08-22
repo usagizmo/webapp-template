@@ -7,7 +7,7 @@
   import { buttonVariants } from '$lib/variants/buttonVariants';
   import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
 
-  let textAreaEl: HTMLTextAreaElement | null = $state(null);
+  let textAreaEl = $state<HTMLTextAreaElement>();
   let isSending = $state(false);
   let text = $state('');
   let file: File | null = $state(null);
