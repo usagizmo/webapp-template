@@ -10,7 +10,7 @@
   let textAreaEl = $state<HTMLTextAreaElement>();
   let isSending = $state(false);
   let text = $state('');
-  let file: File | null = $state(null);
+  let file = $state<File>();
 
   /**
    * Send the comment
@@ -41,7 +41,7 @@
     isSending = false;
 
     text = '';
-    file = null;
+    file = undefined;
 
     await tick();
     textAreaEl?.focus();
@@ -55,7 +55,7 @@
 
   function handleFileChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    file = target.files?.[0] ?? null;
+    file = target.files?.[0] ?? undefined;
 
     target.value = '';
   }
