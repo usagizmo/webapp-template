@@ -53,7 +53,7 @@ export class CommentStore {
     this.#isLoading = false;
   }
 
-  async insertComment({ text, file }: { text: string; file: File | null }): Promise<{
+  async insertComment({ text, file }: { text: string; file?: File }): Promise<{
     error: PostgrestError | Error | null;
   }> {
     if (!userStore.user) {
