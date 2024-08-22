@@ -75,7 +75,7 @@
       <label>
         <input
           type="file"
-          accept="image/png, image/jpeg"
+          accept="image/png, image/jpeg, image/webp"
           class="peer sr-only"
           onchange={handleFileChange}
           disabled={isSending}
