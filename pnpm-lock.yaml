@@ -2967,7 +2967,7 @@ packages:
     resolution: {integrity: sha512-Gyc7cOS3VJzLlfj7wKS0ZnzDVdv3Pn2IuVeJPk9m2skfhcu5bq3wtIZyQGggr7/Iim5rH5cncyQft/kRLupcnA==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
-      svelte: ^3.19.0 || ^4.0.0
+      svelte: ^3.19.0 || ^4.0.0 || 5.0.0-next.244
 
   svelte@4.2.19:
     resolution: {integrity: sha512-IY1rnGr6izd10B0A8LqsBfmlT5OILVuZ7XsI0vdGPEvuonFV7NYEUK4dAkm9Zg2q0Um92kYjTpS1CAP3Nh/KWw==}
@@ -3828,7 +3828,7 @@ snapshots:
       '@markuplint/html-parser': 4.6.6
       '@markuplint/ml-ast': 4.4.3
       '@markuplint/parser-utils': 4.6.6
-      svelte: 4.2.19
+      svelte: 5.0.0-next.244
     transitivePeerDependencies:
       - supports-color
 
