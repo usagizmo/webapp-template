@@ -14,7 +14,7 @@
   async function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
     const { error } = await signUp(userInputs);
-    error && alert(error.message);
+    if (error) alert(error.message);
   }
 </script>
 

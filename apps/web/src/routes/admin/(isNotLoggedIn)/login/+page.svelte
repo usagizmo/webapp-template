@@ -9,7 +9,7 @@
   async function handleSubmit(event: SubmitEvent): Promise<void> {
     event.preventDefault();
     const { error } = await signIn(userInputs);
-    error && alert(error.message);
+    if (error) alert(error.message);
   }
 
   const meta = {

@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
   export let userInputs = $state({
     displayName: 'Guest',
     email: 'email@add.com',
@@ -24,7 +24,7 @@
         label="Display Name"
         type="text"
         value={userInputs.displayName}
-        oninput={(event) => userInputs.displayName = (event.target as HTMLInputElement).value}
+        oninput={(event) => (userInputs.displayName = (event.target as HTMLInputElement).value)}
         error={{ required: 'Display Name is required.' }}
       />
     </div>
@@ -33,14 +33,14 @@
     label="Email"
     type="email"
     value={userInputs.email}
-    oninput={(event) => userInputs.email = (event.target as HTMLInputElement).value}
+    oninput={(event) => (userInputs.email = (event.target as HTMLInputElement).value)}
     error={{ required: 'E-mail is required.' }}
   />
   <Input
     label="Password"
     type="password"
     value={userInputs.password}
-    oninput={(event) => userInputs.password = (event.target as HTMLInputElement).value}
+    oninput={(event) => (userInputs.password = (event.target as HTMLInputElement).value)}
     error={{ required: 'Password is required.' }}
   />
 </div>
