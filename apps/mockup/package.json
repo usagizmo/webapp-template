@@ -22,6 +22,21 @@
     "clean-image": "./commands/clean-image.sh",
     "deploy": "./commands/deploy.sh"
   },
+  "turbo": {
+    "build": {
+      "outputs": [
+        "public/styles.css"
+      ]
+    },
+    "test": {
+      "inputs": [
+        "build"
+      ],
+      "outputs": [
+        "tests/external-links.txt"
+      ]
+    }
+  },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@tailwindcss/cli": "4.0.0-alpha.15",

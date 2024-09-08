@@ -22,6 +22,21 @@
     "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
     "format": "concurrently pnpm:format:*"
   },
+  "turbo": {
+    "generate": {
+      "outputs": [
+        ".svelte-kit/**",
+        "src/lib/$generated/**"
+      ]
+    },
+    "build": {
+      "outputs": [
+        ".svelte-kit/**",
+        ".vercel/**"
+      ]
+    },
+    "lint": {}
+  },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.3",
     "camelcase-keys": "^9.1.3",

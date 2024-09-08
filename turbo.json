@@ -1,25 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "web#generate": {
-      "outputs": [".svelte-kit/**", "src/lib/$generated/**"]
-    },
+  "tasks": {
     "build": {},
-    "mockup#build": {
-      "outputs": ["public/styles.css"]
-    },
-    "web#build": {
-      "outputs": [".svelte-kit/**", ".vercel/**"]
-    },
     "lint": {},
-    "web#lint": {
-      "outputs": []
-    },
     "test": {},
-    "mockup#test": {
-      "dependsOn": ["mockup#build"],
-      "outputs": ["tests/external-links.txt"]
-    },
     "format": {}
   }
 }
