@@ -21,7 +21,7 @@
    */
   async function handleLogOut() {
     const { error } = await signOut();
-    error && alert(error.message);
+    if (error) alert(error.message);
   }
 
   /**
@@ -31,7 +31,7 @@
     if (user.bio === tempInputs.bio) return;
 
     const { error } = await userStore.updateUser(user.id, tempInputs);
-    error && alert(error.message);
+    if (error) alert(error.message);
   }
 </script>
 
@@ -43,7 +43,7 @@
       <TextArea
         placeholder="bio"
         value={tempInputs.bio}
-        oninput={(event) => tempInputs.bio = (event.target as HTMLInputElement).value}
+        oninput={(event) => (tempInputs.bio = (event.target as HTMLInputElement).value)}
         onblur={handleUpdate}
       />
     </div>

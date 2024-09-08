@@ -3,9 +3,9 @@
 Monorepo template for creating a web application.
 
 > [!Caution]
-> Currently, `svelte-hmr` and `@markuplint` do not support Svelte 5.
-> We have overridden `pnpm-lock.yaml` to forcibly upgrade to Svelte 5, which may cause issues during package updates.
-> When updating dependencies, please refer to [#6a5906](https://github.com/usagizmo/webapp-template/pull/787/commits/6a5906b5866623b223867c4dd5de98755821cd49) to correct `pnpm-lock.yaml`.
+> Currently, `svelte-hmr` and `markuplint` do not support Svelte 5.
+> We have manually modified `pnpm-lock.yaml` to forcibly use Svelte 5, which may cause issues during package updates.
+> When updating dependencies, please refer to [#ca2313](https://github.com/usagizmo/webapp-template/commit/ca2313d8f2ace872cd39cc864da91f589e0b3ff3) for guidance on how to correctly adjust `pnpm-lock.yaml`.
 
 ## What's inside?
 
