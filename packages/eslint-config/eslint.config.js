@@ -70,6 +70,6 @@ export default [
   },
   eslintConfigPrettier,
   {
-    ignores: ['**/.svelte-kit/', '**/$generated/'],
+    ignores: ['**/*.min.*', '**/.svelte-kit/', '**/$generated/'],
   },
 ];
