@@ -13,6 +13,7 @@
     "node_modules",
     "/project-words.txt",
     // custom
+    "*.min.*",
     "*.avif",
     "*.icns",
     "*.mp4",
