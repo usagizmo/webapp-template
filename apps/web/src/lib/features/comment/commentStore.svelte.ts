@@ -5,7 +5,7 @@ import { supabase } from '$lib/supabase';
 
 import { deleteCommentFile, uploadCommentFile } from './commentRequests';
 
-export interface Comment {
+export type Comment = {
   id: number;
   profiles: {
     id: string;
@@ -14,7 +14,7 @@ export interface Comment {
   text: string;
   file_path: string | null;
   created_at: string;
-}
+};
 
 export const commentQuery = `
   id,

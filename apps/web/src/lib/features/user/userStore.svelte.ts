@@ -3,13 +3,13 @@ import snakecaseKeys from 'snakecase-keys';
 
 import { supabase } from '$lib/supabase';
 
-export interface User {
+export type User = {
   id: string;
   email: string;
   displayName: string;
   bio: string;
   createdAt: string;
-}
+};
 
 class UserStore {
   #user = $state<User | null>(null);

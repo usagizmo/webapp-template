@@ -11,14 +11,14 @@
   import type { Comment } from './commentStore.svelte';
   import { commentStore } from './commentStore.svelte';
 
-  interface Card {
+  type Card = {
     id: number;
     me: boolean;
     name: string;
     createdAt: cdate.CDate;
     message: string;
     filePath: string | null;
-  }
+  };
 
   let {
     comment,
