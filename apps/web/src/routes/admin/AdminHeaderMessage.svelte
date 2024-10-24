@@ -21,7 +21,7 @@
 
 <svelte:window bind:innerWidth />
 
-<div class="pt-3 pb-2.5">
+<div class="pb-2.5 pt-3">
   <div class="relative" style:height={`${height}px`}>
     {#if isSignUpPage}
       <div bind:this={el} class="absolute w-full text-sm text-zinc-500" transition:fade={defaultDE}>

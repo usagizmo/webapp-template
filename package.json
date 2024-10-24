@@ -17,18 +17,18 @@
     "format": "concurrently pnpm:format:*"
   },
   "devDependencies": {
-    "@markuplint/svelte-parser": "^4.6.6",
+    "@markuplint/svelte-parser": "^4.6.9",
     "@repo/eslint-config": "workspace:*",
-    "concurrently": "^8.2.2",
-    "cspell": "^8.14.2",
-    "eslint": "^9.10.0",
-    "husky": "^9.1.5",
+    "concurrently": "^9.0.1",
+    "cspell": "^8.15.4",
+    "eslint": "^9.13.0",
+    "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
-    "markuplint": "^4.9.3",
+    "markuplint": "^4.10.1",
     "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.6",
-    "prettier-plugin-tailwindcss": "^0.6.6",
-    "turbo": "^2.1.1"
+    "prettier-plugin-svelte": "^3.2.7",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "turbo": "^2.2.3"
   },
   "packageManager": "pnpm@9.1.2",
   "engines": {

@@ -29,7 +29,7 @@
       WebApp Template (web)
     </h1>
     <div
-      class="absolute top-[134px] flex h-12 md:static md:top-0 md:mr-8 md:ml-auto md:h-full lg:absolute lg:inset-y-0 lg:left-1/2 lg:-translate-x-1/2"
+      class="absolute top-[134px] flex h-12 md:static md:top-0 md:ml-auto md:mr-8 md:h-full lg:absolute lg:inset-y-0 lg:left-1/2 lg:-translate-x-1/2"
     >
       <HeaderNavigationItems {navItems} />
     </div>
