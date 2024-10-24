@@ -29,7 +29,7 @@
   <label>
     <span class="mb-1 block font-semibold">{label}</span>
     <textarea
-      class="h-20 w-full rounded-md border border-zinc-300 bg-slate-50 py-2 px-2.5"
+      class="h-20 w-full rounded-md border border-zinc-300 bg-slate-50 px-2.5 py-2"
       {oninput}
       onblur={handleBlur}
       {placeholder}>{value}</textarea

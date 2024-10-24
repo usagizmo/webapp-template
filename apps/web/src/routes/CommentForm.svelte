@@ -66,7 +66,7 @@
     <div class="gap flex gap-1.5">
       <textarea
         bind:this={textAreaEl}
-        class="h-24 flex-1 rounded-md border border-zinc-300 bg-slate-50 py-2 px-2.5 placeholder:text-zinc-300 disabled:bg-slate-100"
+        class="h-24 flex-1 rounded-md border border-zinc-300 bg-slate-50 px-2.5 py-2 placeholder:text-zinc-300 disabled:bg-slate-100"
         placeholder="Write a comment..."
         bind:value={text}
         onkeydown={handleKeyDown}
@@ -83,13 +83,13 @@
         {#if file}
           {@const blobUrl = URL.createObjectURL(file)}
           <img
-            class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 peer-disabled:pointer-events-none peer-disabled:opacity-40 hover:brightness-90"
+            class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 hover:brightness-90 peer-disabled:pointer-events-none peer-disabled:opacity-40"
             src={blobUrl}
             alt=""
           />
         {:else}
           <span
-            class="font-ui grid h-24 w-32 cursor-pointer place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 peer-disabled:pointer-events-none peer-disabled:opacity-40 hover:brightness-95"
+            class="font-ui grid h-24 w-32 cursor-pointer place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 hover:brightness-95 peer-disabled:pointer-events-none peer-disabled:opacity-40"
             >+Add</span
           >
         {/if}

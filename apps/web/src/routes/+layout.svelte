@@ -22,7 +22,7 @@
     <HeaderNavigation />
 
     <div class="flex flex-1 flex-col">
-      <main class="flex-1 pt-[68px] px-4 pb-16 md:pt-10">
+      <main class="flex-1 px-4 pb-16 pt-[68px] md:pt-10">
         {@render children()}
       </main>
 

@@ -33,7 +33,7 @@
   <section class={sectionFrameVariants({ pad: 'x' })}>
     <div class="pb-[14px]">
       <!-- attention -->
-      <div class="flex items-center justify-center border-b border-slate-200 pt-2.5 pb-2">
+      <div class="flex items-center justify-center border-b border-slate-200 pb-2 pt-2.5">
         <p class="text-sm text-zinc-500">Comments will be deleted as appropriate.</p>
       </div>
 

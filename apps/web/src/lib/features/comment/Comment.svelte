@@ -120,13 +120,13 @@
       <p class="flex-1">{card.message}</p>
       {#if card.filePath}
         {@const commentFileUrl = getCommentFileUrl(card.filePath)}
-        <div class="flex-shrink-0 relative ml-2.5">
+        <div class="relative ml-2.5 flex-shrink-0">
           <figure class="h-[120px] w-[200px] overflow-hidden rounded-md bg-[#d9d9d9]">
             <img class="size-full object-cover" src={commentFileUrl} decoding="async" alt="" />
           </figure>
           {#if isActionVisible}
             <button
-              class="absolute top-[-8px] right-[-8px]"
+              class="absolute right-[-8px] top-[-8px]"
               transition:fade={{ duration: 75 }}
               onclick={handleDeleteImage}
             >
@@ -138,7 +138,7 @@
     </div>
 
     {#if isActionVisible}
-      <div class="absolute right-0 bottom-0" transition:fade={{ duration: 75 }}>
+      <div class="absolute bottom-0 right-0" transition:fade={{ duration: 75 }}>
         <button class={buttonVariants()} onclick={handleDelete} disabled={isDeleting}>Delete</button
         >
       </div>
