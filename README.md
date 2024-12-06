@@ -72,7 +72,7 @@ pnpm format  # root: Format project-words.txt + prettier --write
 - `apps/web/` - SvelteKit application
   - `5173`: Development server
 - `apps/mockup/` - Static site
-  - `8000`: BrowserSync server
+  - `3000`: BrowserSync server
   - `49160`: Express server
 
 ## Registering environment variables for GitHub / Vercel
