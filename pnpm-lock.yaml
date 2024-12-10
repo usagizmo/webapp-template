@@ -47,9 +47,6 @@ importers:
 
   apps/backend:
     devDependencies:
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
       supabase:
         specifier: ^2.0.6
         version: 2.0.6
@@ -108,9 +105,6 @@ importers:
       '@tailwindcss/vite':
         specifier: 4.0.0-beta.3
         version: 4.0.0-beta.3(postcss-load-config@3.1.4(postcss@8.4.49))(postcss@8.4.49)(svelte@5.1.0)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.1)(lightningcss@1.28.2))
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
       svelte:
         specifier: 5.1.0
         version: 5.1.0
@@ -1532,10 +1526,6 @@ packages:
 
   dot-case@3.0.4:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
-
-  dotenv@16.4.5:
-    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
-    engines: {node: '>=12'}
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
@@ -4852,8 +4842,6 @@ snapshots:
     dependencies:
       no-case: 3.0.4
       tslib: 2.8.1
-
-  dotenv@16.4.5: {}
 
   eastasianwidth@0.2.0: {}
 
