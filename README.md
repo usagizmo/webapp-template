@@ -56,11 +56,21 @@ pnpm i  # Resolve dependency packages and prepare .env files
 # Then set up /.env
 
 # Run command for each package (apps/ + packages/)
-pnpm build   #
-pnpm lint    # root: cspell + prettier --check
-pnpm test    #
-pnpm format  # root: Format project-words.txt + prettier --write
+pnpm generate  # Generate and sync Supabase type definitions between backend and web apps
+pnpm build     #
+pnpm lint      # root: cspell + prettier --check
+pnpm test      #
+pnpm format    # root: Format project-words.txt + prettier --write
 ```
+
+### Supabase Type Generation
+
+Run `pnpm generate` to generate Supabase types. This command will:
+
+1. Generate types in `apps/backend/$generated/supabase-types.ts`
+2. Copy the types to `apps/web/src/lib/$generated/supabase-types.ts`
+
+This ensures type consistency between the backend and frontend applications.
 
 ## List of listening port numbers
 
