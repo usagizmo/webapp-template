@@ -3,9 +3,11 @@
 
   import type { Snippet } from 'svelte';
 
+  import { env } from '$env/dynamic/public';
   import OnAuthStateChange from '$lib/features/user/OnAuthStateChange.svelte';
 
   import Footer from './Footer.svelte';
+  import GA4 from './GA4.svelte';
   import HeaderNavigation from './HeaderNavigation.svelte';
 
   let {
@@ -14,6 +16,10 @@
     children: Snippet;
   } = $props();
 </script>
+
+{#if env.PUBLIC_GA4_MEASUREMENT_ID}
+  <GA4 measurementId={env.PUBLIC_GA4_MEASUREMENT_ID} />
+{/if}
 
 <OnAuthStateChange />
 
