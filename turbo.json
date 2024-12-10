@@ -2,6 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [".env"],
   "tasks": {
+    "generate": {},
     "build": {},
     "lint": {},
     "format": {},
@@ -10,11 +11,14 @@
       "cache": false,
       "persistent": true
     },
+    "backend#generate": {
+      "outputs": ["$generated/**"]
+    },
     "web#build": {
-      "dependsOn": ["^build"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
     "web#generate": {
+      "dependsOn": ["backend#generate"],
       "outputs": [".svelte-kit/**", "src/lib/$generated/**"]
     },
     "mockup#build": {

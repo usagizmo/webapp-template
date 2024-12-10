@@ -4,14 +4,10 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 
 [[Demo](https://webapp-template.usagizmo.com/)]
 
-## A few words
-
-- When GraphQL errors occur, it is usually due to Hasura's Permissions.
-
 ## Commands
 
 ```bash
-pnpm generate  # Output `src/lib/$generated/supabase-types.ts`
+pnpm generate  # Copy Supabase types from backend/$generated to src/lib/$generated/
 pnpm build     # Output `.svelte-kit/output/`
 pnpm preview   # Preview the production build (after `pnpm build`)
 
