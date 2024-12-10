@@ -51,7 +51,7 @@
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@tailwindcss/vite": "4.0.0-beta.3",
     "dotenv": "^16.4.5",
-    "supabase": "^1.207.9",
+    "supabase": "^2.0.6",
     "svelte": "5.1.0",
     "svelte-check": "^4.0.5",
     "tailwindcss": "4.0.0-beta.3",
