@@ -32,7 +32,7 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@sveltejs/adapter-auto": "^3.3.0",
-    "@sveltejs/kit": "^2.7.2",
+    "@sveltejs/kit": "^2.12.1",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@tailwindcss/vite": "4.0.0-beta.3",
     "svelte": "5.1.0",

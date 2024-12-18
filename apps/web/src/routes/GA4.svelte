@@ -9,31 +9,34 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import { browser } from '$app/environment';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
   let { measurementId }: { measurementId: string } = $props();
 
-  onMount(() => {
-    if (!browser) return;
+  let pathName = page.url.pathname;
 
+  if (!measurementId) {
+    console.error('Google Analytics 4 Measurement ID is not provided.');
+  }
+
+  function gtag(...args: Parameters<typeof window.dataLayer.push>) {
+    window.dataLayer.push(args);
+  }
+
+  onMount(() => {
     window.dataLayer = window.dataLayer ?? [];
-    function gtag(...args: Parameters<typeof window.dataLayer.push>) {
-      window.dataLayer.push(args);
-    }
 
     gtag('js', new Date());
     gtag('config', measurementId);
+  });
 
-    const unsubscribe = page.subscribe((pageData) => {
-      gtag('config', measurementId, {
-        page_path: pageData.url.pathname,
-      });
+  $effect(() => {
+    if (pathName === page.url.pathname) return;
+
+    gtag('config', measurementId, {
+      page_path: page.url.pathname,
     });
-
-    return () => {
-      unsubscribe();
-    };
+    pathName = page.url.pathname;
   });
 </script>
 

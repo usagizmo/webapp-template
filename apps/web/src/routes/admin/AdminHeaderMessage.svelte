@@ -1,7 +1,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
 
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
@@ -9,7 +9,7 @@
   let height = $state(0);
   let innerWidth = $state(0);
 
-  const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_LOGIN);
+  const isSignUpPage = $derived(page.url.pathname === ROUTE.ADMIN_LOGIN);
 
   $effect(() => {
     if (el && innerWidth) {
