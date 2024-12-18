@@ -1,7 +1,7 @@
 <script lang="ts">
   import { crossfade } from 'svelte/transition';
 
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
@@ -27,8 +27,8 @@
   {#each navItems as { label, href }}
     {@const isActive =
       href === ROUTE.HOME
-        ? href === $page.url.pathname
-        : getScope($page.url.pathname) === getScope(href)}
+        ? href === page.url.pathname
+        : getScope(page.url.pathname) === getScope(href)}
     <li class="font-ui relative flex h-full items-center justify-center">
       {#if isActive}
         <span class="font-bold">{label}</span>

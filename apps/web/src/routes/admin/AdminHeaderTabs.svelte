@@ -1,7 +1,7 @@
 <script lang="ts">
   import { crossfade } from 'svelte/transition';
 
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
@@ -22,7 +22,7 @@
 <header class="flex items-center justify-center border-b border-slate-200 pt-0.5">
   <ul class="flex space-x-3 py-2.5">
     {#each tabs as { name, href }}
-      {@const isActive = href === $page.url.pathname}
+      {@const isActive = href === page.url.pathname}
       <li class="relative rounded-md">
         {#if isActive}
           <span

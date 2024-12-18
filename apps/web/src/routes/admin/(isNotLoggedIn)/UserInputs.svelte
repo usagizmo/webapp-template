@@ -9,12 +9,12 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
 
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import Input from '$lib/components/Input.svelte';
   import { defaultDE } from '$lib/easing';
   import { ROUTE } from '$lib/routes';
 
-  const isSignUpPage = $derived($page.url.pathname === ROUTE.ADMIN_SIGNUP);
+  const isSignUpPage = $derived(page.url.pathname === ROUTE.ADMIN_SIGNUP);
 </script>
 
 <div class="space-y-3">
