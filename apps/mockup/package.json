@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tailwindcss -i ./app.css -o ./public/styles.css --minify",
     "dev:tailwind": "tailwindcss -i ./app.css -o ./public/styles.css --watch",
-    "dev:server": "browser-sync start --server './public/' --files './public/' --startPath '/'",
+    "dev:server": "browser-sync start --server ./public/ --files ./public/ --startPath /",
     "dev": "concurrently pnpm:dev:*",
     "lint:markup": "markuplint --config ../../.markuplintrc.cjs \"**\"",
     "lint:js": "eslint .",
