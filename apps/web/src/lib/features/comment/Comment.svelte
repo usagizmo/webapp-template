@@ -95,8 +95,7 @@
 </script>
 
 <div
-  class="py-2.5 duration-200"
-  class:bg-slate-100={isDeleting}
+  class={['py-2.5 duration-200', { 'bg-slate-100': isDeleting }]}
   role="listitem"
   onmouseenter={() => (isActionVisible = card.me ? true : false)}
   onmouseleave={() => (isActionVisible = false)}
