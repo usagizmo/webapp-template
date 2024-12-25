@@ -3,7 +3,7 @@
 
   import type { Snippet } from 'svelte';
 
-  import { env } from '$env/dynamic/public';
+  import { PUBLIC_GA4_MEASUREMENT_ID } from '$env/static/public';
   import OnAuthStateChange from '$lib/features/user/OnAuthStateChange.svelte';
 
   import Footer from './Footer.svelte';
@@ -17,8 +17,8 @@
   } = $props();
 </script>
 
-{#if env.PUBLIC_GA4_MEASUREMENT_ID}
-  <GA4 measurementId={env.PUBLIC_GA4_MEASUREMENT_ID} />
+{#if PUBLIC_GA4_MEASUREMENT_ID}
+  <GA4 measurementId={PUBLIC_GA4_MEASUREMENT_ID} />
 {/if}
 
 <OnAuthStateChange />
