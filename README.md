@@ -24,7 +24,7 @@ Monorepo template for creating a web application.
   [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS + [Vitest](https://vitest.dev/) (Check links + file names)
 - [`web`](./apps/web/) [[Demo](https://webapp-template.usagizmo.com/)]  
   A starting point for building Svelte application.  
-  [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/))  
+  [SvelteKit](https://svelte.dev/docs/kit/) (w/ [Tailwind CSS](https://tailwindcss.com/))  
   [Supabase](https://supabase.io/) / [Vitest](https://vitest.dev/)
 
 #### `packages/`
@@ -112,7 +112,7 @@ If you need to prepare GitHub / Vercel environment, you need to set all environm
 ### v1.0.0
 
 - **Frontend Framework Change:**
-  - Switched from [Next.js](https://nextjs.org/) to [SvelteKit](https://kit.svelte.jp/) for the frontend framework in `apps/web`
+  - Switched from [Next.js](https://nextjs.org/) to [SvelteKit](https://svelte.dev/docs/kit/) for the frontend framework in `apps/web`
 - **Repository Rebranding:**
   - Renamed `nextjs-template` repository to `webapp-template`
 
