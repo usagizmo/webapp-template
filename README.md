@@ -56,6 +56,9 @@ pnpm build     #
 pnpm lint      # root: cspell + prettier --check
 pnpm test      #
 pnpm format    # root: Format project-words.txt + prettier --write
+
+# Optional
+pnpm use-mockup  # Remove unnecessary files and lines when creating a static site with apps/mockup
 ```
 
 ### Supabase Type Generation
