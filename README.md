@@ -56,6 +56,9 @@ pnpm build     #
 pnpm lint      # root: cspell + prettier --check
 pnpm test      #
 pnpm format    # root: Format project-words.txt + prettier --write
+
+# Optional
+pnpm use-mockup  # For mockup-only usage: Removes unnecessary files/lines.
 ```
 
 ### Supabase Type Generation
