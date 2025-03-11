@@ -15,7 +15,8 @@
     "format:cspell": "./commands/format-project-words.sh",
     "format:prettier": "prettier . --write --ignore-path=.prettierignore.root",
     "format:packages": "turbo run format",
-    "format": "concurrently pnpm:format:*"
+    "format": "concurrently pnpm:format:*",
+    "use-mockup": "node ./commands/use-mockup.js"
   },
   "devDependencies": {
     "@markuplint/svelte-parser": "^4.6.9",
