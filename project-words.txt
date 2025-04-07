@@ -15,6 +15,7 @@ postgrest
 snakecase
 sssz
 supabase
+sveltejs
 tailwindcss
 tseslint
 turborepo
