@@ -25,3 +25,6 @@ You can preview the production build with `pnpm preview`.
 - Framework Preset: `SvelteKit`
 - Root Directory: `apps/web`
 - Environment Variables: Set 2 environment variables in `.env`
+- Corepack Configuration: Add the following environment variable to enable pnpm@10:
+  - Key: `ENABLE_EXPERIMENTAL_COREPACK`
+  - Value: `1`

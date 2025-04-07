@@ -30,6 +30,9 @@ If present, test for any changes to the content.
 - Framework Preset: `Other`
 - Root Directory: `apps/mockup`
 - Build Command: `cd ../.. && npx turbo run build --filter=mockup`
+- Corepack Configuration: Add the following environment variable to enable pnpm@10:
+  - Key: `ENABLE_EXPERIMENTAL_COREPACK`
+  - Value: `1`
 
 ### With Basic Authentication
 
