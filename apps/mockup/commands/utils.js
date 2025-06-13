@@ -1,6 +1,6 @@
 import { readdir, readFile } from 'node:fs/promises';
 
-import sizeOf from 'image-size';
+import { imageSizeFromFile } from 'image-size/fromFile';
 import { dirname, join } from 'path';
 
 /**
@@ -35,19 +35,30 @@ export async function deepReaddir(dirPath, options) {
 export async function convert(filePath) {
   const html = await readFile(filePath, 'utf8');
 
-  const res = html.replace(
-    /(<img(?:(?!(?:width|height)=")[^>])+?src=")([^"]+?)("(?:(?!(?:width|height)=")[^>])+?>)/g,
-    (_, prefix, imgSrcPath, suffix) => {
-      const imagePath = join(dirname(filePath), imgSrcPath);
+  // Find all img tags that need size attributes
+  const imgRegex =
+    /(<img(?:(?!(?:width|height)=")[^>])+?src=")([^"]+?)("(?:(?!(?:width|height)=")[^>])+?>)/g;
+  const matches = [...html.matchAll(imgRegex)];
 
-      try {
-        const { width, height } = sizeOf(imagePath);
-        return `${prefix}${imgSrcPath}" width="${width}" height="${height}${suffix}`;
-      } catch {
-        return prefix + imgSrcPath + suffix;
-      }
-    },
-  );
+  let result = html;
 
-  return res;
+  // Process each match in reverse order to preserve indices
+  for (let i = matches.length - 1; i >= 0; i--) {
+    const match = matches[i];
+    const [fullMatch, prefix, imgSrcPath, suffix] = match;
+    const imagePath = join(dirname(filePath), imgSrcPath);
+
+    try {
+      const { width, height } = await imageSizeFromFile(imagePath);
+      const replacement = `${prefix}${imgSrcPath}" width="${width}" height="${height}${suffix}`;
+
+      result =
+        result.slice(0, match.index) + replacement + result.slice(match.index + fullMatch.length);
+    } catch {
+      // Keep original if image can't be processed
+      continue;
+    }
+  }
+
+  return result;
 }

@@ -1,5 +1,13 @@
+# pnpm workspace configuration
 packages:
+  # Applications
   - apps/*
+  # Shared packages
   - packages/*
+
+# Allow these packages to run build scripts for security
 onlyBuiltDependencies:
   - '@sveltejs/kit'
+  - '@tailwindcss/oxide'
+  - 'esbuild'
+  - 'supabase'

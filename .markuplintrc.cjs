@@ -15,6 +15,7 @@ module.exports = {
     'ineffective-attr': false,
     'label-has-control': false,
     'require-accessible-name': false,
+    'use-list': false,
   },
   nodeRules: [
     // For Svelte

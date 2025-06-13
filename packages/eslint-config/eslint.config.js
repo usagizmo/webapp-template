@@ -26,12 +26,14 @@ export default [
   },
   // jsdoc
   {
-    files: ['**/*.js'],
-    ...jsdoc.configs['flat/recommended-error'],
-  },
-  {
-    files: ['**/*.ts'],
-    ...jsdoc.configs['flat/recommended-typescript-error'],
+    files: ['**/*.js', '**/*.ts', '**/*.svelte.ts'],
+    plugins: {
+      jsdoc,
+    },
+    rules: {
+      'jsdoc/check-access': 'error',
+      'jsdoc/check-alignment': 'error',
+    },
   },
   // unused-imports
   {
@@ -56,16 +58,18 @@ export default [
   // svelte
   {
     files: ['**/*.svelte'],
+    ignores: ['**/*.svelte.js', '**/*.svelte.ts'],
     languageOptions: {
       parser: svelteEslintParser,
       parserOptions: {
         parser: tseslint.parser,
       },
     },
-    rules: {
-      // TODO: In progress for Svelte 5
-      // https://github.com/sveltejs/eslint-plugin-svelte/issues/652
-      'svelte/valid-compile': 'off',
+  },
+  {
+    files: ['**/*.svelte.ts'],
+    languageOptions: {
+      parser: tseslint.parser,
     },
   },
   eslintConfigPrettier,

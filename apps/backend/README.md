@@ -1,12 +1,27 @@
-# `backend` app
+# Backend ([Supabase](https://supabase.com/))
 
-This app is a [Supabase](https://supabase.io/) [Local Dev / CLI](https://supabase.com/docs/guides/cli).
+[Supabase](https://supabase.com/) local development environment with PostgreSQL, Auth, and API services.
 
 ## Commands
 
 ```bash
-pnpm pull      # Pull the latest changes from the supabase server
-pnpm generate  # Generate Supabase types to $generated/supabase-types.ts
-pnpm start     # Start the supabase server
-pnpm stop      # Stop the supabase server
+pnpm start     # Start Supabase locally
+pnpm stop      # Stop Supabase
+pnpm pull      # Pull schema changes from remote
+pnpm generate  # Generate TypeScript types
 ```
+
+## Development Setup
+
+1. Start Supabase: `pnpm start`
+2. Access Supabase Studio: http://localhost:54323
+3. Generate types after schema changes: `pnpm generate`
+
+## Port Numbers
+
+- API: 54321
+- Database: 54322
+- Studio: 54323
+- Inbucket (Email): 54324
+
+See the [root README](../../README.md) for complete setup instructions.
