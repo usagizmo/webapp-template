@@ -28,7 +28,6 @@ Monorepo template for creating a modern web application.
   - [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) - Svelte linting
   - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) - Import sorting
   - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc) - JSDoc validation
-- **`types`** - Shared TypeScript type definitions
 
 ## Quick Start
 
@@ -155,13 +154,23 @@ pnpm deploy           # Deploy to server (rsync)
 | Web App           | 5173  | SvelteKit development server |
 | Mockup            | 3000  | Static site with BrowserSync |
 
-## Environment Switching
+## Type Safety and Environment Switching
+
+### Supabase Type Generation
+
+TypeScript types are automatically generated from your Supabase database schema:
+
+1. **Local Development**: Types are generated to `apps/backend/$generated/supabase-types.ts`
+2. **Frontend Usage**: Types are directly imported in `apps/web/src/lib/supabase.ts`
+3. **After Schema Changes**: Run `pnpm generate` to update types
+
+### Environment Switching
 
 You can easily switch between development and production environments:
 
 1. **For Development**: Use local Supabase (started with `pnpm start`)
 2. **For Production Testing**: Update `.env` with production Supabase credentials
-3. **Type Safety**: Always run `pnpm generate` after schema changes
+3. **Type Safety**: Types are committed to repository for CI/CD compatibility
 
 ## Deployment
 

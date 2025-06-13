@@ -64,23 +64,8 @@
         "ENABLE_EXPERIMENTAL_COREPACK"
       ]
     },
-    "@repo/types#generate": {
-      "dependsOn": ["backend#generate:supabase-types"],
-      "inputs": ["scripts/**", "../backend/$generated/**"],
-      "outputs": ["src/**"]
-    },
-    "@repo/types#build": {
-      "inputs": ["$TURBO_DEFAULT$", "!README.md"],
-      "outputs": ["dist/**"],
-      "env": [
-        "PUBLIC_SUPABASE_URL",
-        "PUBLIC_SUPABASE_ANON_KEY",
-        "PUBLIC_GA4_MEASUREMENT_ID",
-        "ENABLE_EXPERIMENTAL_COREPACK"
-      ]
-    },
     "web#build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "backend#generate:supabase-types"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },

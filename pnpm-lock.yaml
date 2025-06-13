@@ -80,9 +80,6 @@ importers:
 
   apps/web:
     dependencies:
-      '@repo/types':
-        specifier: workspace:*
-        version: link:../../packages/types
       '@supabase/supabase-js':
         specifier: ^2.50.0
         version: 2.50.0
@@ -174,18 +171,6 @@ importers:
       typescript-eslint:
         specifier: ^8.34.0
         version: 8.34.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)
-
-  packages/types:
-    devDependencies:
-      '@types/node':
-        specifier: ^24.0.1
-        version: 24.0.1
-      npm-run-all2:
-        specifier: ^8.0.4
-        version: 8.0.4
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
 
 packages:
 
