@@ -3,6 +3,7 @@ autodetection
 camelcase
 cdate
 dirents
+esbuild
 hasura
 icns
 inbucket

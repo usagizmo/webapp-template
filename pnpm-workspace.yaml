@@ -3,3 +3,6 @@ packages:
   - packages/*
 onlyBuiltDependencies:
   - '@sveltejs/kit'
+  - '@tailwindcss/oxide'
+  - esbuild
+  - supabase
