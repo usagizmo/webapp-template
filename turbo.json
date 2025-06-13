@@ -67,10 +67,6 @@
       "inputs": ["$TURBO_DEFAULT$", "!README.md"],
       "outputs": ["dist/**"]
     },
-    "@repo/utils#build": {
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*"],
-      "outputs": ["dist/**"]
-    },
     "web#build": {
       "dependsOn": ["^build", "@repo/types#generate"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*"],
