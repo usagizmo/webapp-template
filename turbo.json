@@ -56,7 +56,13 @@
     },
     "backend#generate:supabase-types": {
       "inputs": ["supabase/**"],
-      "outputs": ["$generated/supabase-types.ts"]
+      "outputs": ["$generated/supabase-types.ts"],
+      "env": [
+        "PUBLIC_SUPABASE_URL",
+        "PUBLIC_SUPABASE_ANON_KEY",
+        "PUBLIC_GA4_MEASUREMENT_ID",
+        "ENABLE_EXPERIMENTAL_COREPACK"
+      ]
     },
     "@repo/types#generate": {
       "dependsOn": ["backend#generate:supabase-types"],
@@ -65,10 +71,16 @@
     },
     "@repo/types#build": {
       "inputs": ["$TURBO_DEFAULT$", "!README.md"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "env": [
+        "PUBLIC_SUPABASE_URL",
+        "PUBLIC_SUPABASE_ANON_KEY",
+        "PUBLIC_GA4_MEASUREMENT_ID",
+        "ENABLE_EXPERIMENTAL_COREPACK"
+      ]
     },
     "web#build": {
-      "dependsOn": ["^build", "@repo/types#generate"],
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
