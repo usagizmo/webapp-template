@@ -27,7 +27,7 @@
     },
     "test": {
       "inputs": ["$TURBO_DEFAULT$", "!README.md"],
-      "outputs": ["coverage/**", "tests/external-links.txt"]
+      "outputs": []
     },
     "dev": {
       "cache": false,

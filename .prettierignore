@@ -15,3 +15,4 @@ pnpm-workspace.yaml
 /apps/mockup/public/styles.css
 /apps/web/.svelte-kit
 /apps/web/src/lib/$generated
+/packages/types/src/supabase.ts

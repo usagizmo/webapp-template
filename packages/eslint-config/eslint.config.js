@@ -24,9 +24,9 @@ export default [
       'simple-import-sort/exports': 'error',
     },
   },
-  // jsdoc - temporarily disabled due to compatibility issues
+  // jsdoc
   {
-    files: ['**/*.js', '**/*.ts'],
+    files: ['**/*.js', '**/*.ts', '**/*.svelte.ts'],
     plugins: {
       jsdoc,
     },
@@ -58,16 +58,18 @@ export default [
   // svelte
   {
     files: ['**/*.svelte'],
+    ignores: ['**/*.svelte.js', '**/*.svelte.ts'],
     languageOptions: {
       parser: svelteEslintParser,
       parserOptions: {
         parser: tseslint.parser,
       },
     },
-    rules: {
-      // TODO: In progress for Svelte 5
-      // https://github.com/sveltejs/eslint-plugin-svelte/issues/652
-      'svelte/valid-compile': 'off',
+  },
+  {
+    files: ['**/*.svelte.ts'],
+    languageOptions: {
+      parser: tseslint.parser,
     },
   },
   eslintConfigPrettier,

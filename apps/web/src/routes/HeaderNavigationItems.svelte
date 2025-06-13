@@ -24,7 +24,7 @@
 </script>
 
 <ul class="flex h-full items-center gap-5">
-  {#each navItems as { label, href }}
+  {#each navItems as { label, href } (href)}
     {@const isActive =
       href === ROUTE.HOME
         ? href === page.url.pathname
