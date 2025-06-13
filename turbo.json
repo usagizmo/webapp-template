@@ -33,6 +33,23 @@
       "cache": false,
       "persistent": true
     },
+    "preview": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true,
+      "interactive": true
+    },
     "backend#generate": {
       "inputs": ["supabase/**", "$TURBO_DEFAULT$"],
       "outputs": ["$generated/**"]
