@@ -188,6 +188,10 @@ importers:
         version: 5.8.3
 
   packages/utils:
+    dependencies:
+      zod:
+        specifier: ^3.25.64
+        version: 3.25.64
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -3341,6 +3345,9 @@ packages:
   zimmerframe@1.1.2:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
 
+  zod@3.25.64:
+    resolution: {integrity: sha512-hbP9FpSZf7pkS7hRVUrOjhwKJNyampPgtXKc3AN6DsWtoHsg2Sb4SQaS4Tcay380zSwd2VPo9G9180emBACp5g==}
+
 snapshots:
 
   '@ampproject/remapping@2.3.0':
@@ -6472,3 +6479,5 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zimmerframe@1.1.2: {}
+
+  zod@3.25.64: {}

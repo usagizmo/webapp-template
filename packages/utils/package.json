@@ -4,17 +4,13 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./env": {
-      "types": "./dist/env.d.ts",
-      "default": "./dist/env.js"
+    "./schemas": {
+      "types": "./dist/schemas.d.ts",
+      "default": "./dist/schemas.js"
     },
-    "./env-validation": {
-      "types": "./dist/env-validation.d.ts",
-      "default": "./dist/env-validation.js"
-    },
-    "./validation": {
-      "types": "./dist/validation.d.ts",
-      "default": "./dist/validation.js"
+    "./env-schemas": {
+      "types": "./dist/env-schemas.d.ts",
+      "default": "./dist/env-schemas.js"
     }
   },
   "files": [
@@ -40,5 +36,8 @@
     "npm-run-all2": "^8.0.4",
     "typescript": "^5.8.3",
     "vitest": "^3.2.3"
+  },
+  "dependencies": {
+    "zod": "^3.25.64"
   }
 }
