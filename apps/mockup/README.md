@@ -1,91 +1,39 @@
-# `mockup` app
+# Mockup (Static Site)
 
-A starting point for building a static site.
+Static site generator for rapid prototyping with [Tailwind CSS](https://tailwindcss.com/) and Vanilla JS.
 
 [[Demo](https://webapp-template-mockup.usagizmo.com/)]
 
 ## Commands
 
 ```bash
-pnpm build       # Output `public/styles.css`
-pnpm dev         # Watch app.css and launch browser-sync server on port 3000
-pnpm lint        # markuplint + cspell
-pnpm test        # Check links (href/src) + image file names
-pnpm format      # Format with `prettier`
+pnpm dev              # Start development server (port 3000)
+pnpm build            # Build static site
+pnpm test             # Validate links and images
+pnpm lint             # Run linting
+pnpm format           # Format with Prettier
+pnpm deploy           # Deploy to server (rsync)
 
-# `commands/*`
-pnpm add-size-to-img  # Add width, height attributes to <img /> based on actual image size
-pnpm clean-image      # Remove unused image files in `public/images/*`
-pnpm deploy           # When deploying to a VPS such as DigitalOcean using `rsync`
+# Utilities
+pnpm add-size-to-img  # Add width/height to <img> tags
+pnpm clean-image      # Remove unused images
 ```
 
-## tests/external-links.txt
+## Development
 
-This is a list of external URLs or non-existent file paths specified by links (`href/src`) in HTML files.
-If this file does not exist, it is output by `pnpm test`.
-If present, test for any changes to the content.
+1. Start dev server: `pnpm dev`
+2. Open http://localhost:3000
+3. Edit files in `src/` and see live changes
 
-## Deploy to Vercel (apps/mockup)
+## Deploy to Vercel
 
-- Framework Preset: `Other`
-- Root Directory: `apps/mockup`
-- Build Command: `cd ../.. && npx turbo run build --filter=mockup`
-- Corepack Configuration: Add the following environment variable to enable pnpm@10:
-  - Key: `ENABLE_EXPERIMENTAL_COREPACK`
-  - Value: `1`
+- **Framework Preset**: Other
+- **Root Directory**: `apps/mockup`
+- **Build Command**: `cd ../.. && pnpm build --filter=mockup`
 
-### With Basic Authentication
+## External Links Testing
 
-```bash
-# Add packages
-pnpm add -D express express-basic-auth cors
-```
+The `tests/external-links.txt` file tracks external URLs found in HTML.
+Run `pnpm test` to validate all links and generate this file if needed.
 
-Run the following, then change the `username` and `password` in `index.cjs`.
-
-```bash
-# vercel.json
-printf "{
-  \"builds\": [
-    {
-      \"src\": \"index.cjs\",
-      \"use\": \"@vercel/node\"
-    }
-  ],
-  \"routes\": [{ \"src\": \"/.*\", \"dest\": \"index.cjs\" }]
-}
-" > vercel.json
-
-# index.cjs
-printf "const path = require('path');
-const cors = require('cors');
-const express = require('express');
-const basicAuth = require('express-basic-auth');
-const app = express();
-
-// Local runtime port number
-// Any number will be ignored by Vercel and will work
-const port = 49160;
-
-app.use(cors());
-
-app.use(
-  basicAuth({
-    users: {
-      <username>: '<password>',
-    },
-    challenge: true,
-  })
-);
-
-app.use(express.static(path.join(__dirname, '/public')));
-
-app.listen(port, () => {
-  console.log(\`Listening on http://localhost:\${port}\`);
-});
-
-module.exports = app;
-" > index.cjs
-```
-
-You can verify basic authentication by running `node index.cjs`.
+See the [root README](../../README.md) for complete setup instructions.

@@ -1,91 +1,183 @@
 # WebApp Template
 
-Monorepo template for creating a web application.
+Monorepo template for creating a modern web application.
 
-## What's inside?
+## Tech Stack
 
-### Uses
+- **Frontend**: [Svelte 5](https://svelte.dev/) + [SvelteKit](https://svelte.dev/docs/kit/) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind CSS 4](https://tailwindcss.com/)
+- **Backend**: [Supabase](https://supabase.com/) (PostgreSQL, Auth, Realtime, Storage)
+- **Build System**: [Turborepo](https://turborepo.org/) + [pnpm](https://pnpm.io/) + [Vite](https://vitejs.dev/)
+- **Quality Tools**: [ESLint 9](https://eslint.org/), [Prettier](https://prettier.io/), [CSpell](https://cspell.org/), [Vitest](https://vitest.dev/)
+- **Development**: VS Code extensions, [lint-staged](https://github.com/okonet/lint-staged), [husky](https://github.com/typicode/husky), GitHub Actions
 
-- [Turborepo](https://turborepo.org/) x [pnpm](https://pnpm.io/)
-- [Prettier](https://prettier.io/) (w/ [prettier-plugin-svelte](https://github.com/sveltejs/prettier-plugin-svelte) + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss))
-- [ESLint](https://eslint.org/) / [CSpell](https://cspell.org/)
-- [lint-staged](https://github.com/okonet/lint-staged) / [husky](https://github.com/typicode/husky)
-- GitHub Actions (Linting + Testing (Validate `href` and `src` paths))
-- Execute `eslint --fix` and `prettier` when saving with VS Code
+## Apps and Packages
 
-### Apps and Packages
+### `apps/`
 
-#### `apps/`
+- **`backend`** - [Supabase](https://supabase.com/) Local Development  
+  PostgreSQL database, authentication, and API services
+- **`web`** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend  
+  Main web application with Supabase integration
+- **`mockup`** [[Demo](https://webapp-template-mockup.usagizmo.com/)] - Static Prototyping  
+  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS for rapid prototyping
 
-- [`backend`](./apps/backend/)  
-  A [Supabase](https://supabase.io/) [Local Dev / CLI](https://supabase.com/docs/guides/cli).
-- [`mockup`](./apps/mockup/) [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
-  A starting point for building a static site.  
-  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS + [Vitest](https://vitest.dev/) (Check links + file names)
-- [`web`](./apps/web/) [[Demo](https://webapp-template.usagizmo.com/)]  
-  A starting point for building Svelte application.  
-  [SvelteKit](https://svelte.dev/docs/kit/) (w/ [Tailwind CSS](https://tailwindcss.com/))  
-  [Supabase](https://supabase.io/) / [Vitest](https://vitest.dev/)
+### `packages/`
 
-#### `packages/`
+- **`eslint-config`** - Shared [ESLint](https://eslint.org/) configuration
+  - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Prettier integration
+  - [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) - Svelte linting
+  - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) - Import sorting
+  - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc) - JSDoc validation
+- **`types`** - Shared TypeScript type definitions
 
-- `eslint-config`  
-  ESLint 9 (Flat Config) for JavaScript and TypeScript.
-  - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
-  - [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte)
-  - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
-  - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
+## Quick Start
 
-### VS Code Extensions (Recommend)
-
-- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-
-## Commands
+### 1. Installation & Setup
 
 ```bash
-pnpm i  # Resolve dependency packages and prepare .env files
-# Then set up /.env
+# Install dependencies
+pnpm install
 
-# Run command for each package (apps/ + packages/)
-pnpm generate  # Generate and sync Supabase type definitions between backend and web apps
-pnpm build     #
-pnpm lint      # root: cspell + prettier --check
-pnpm test      #
-pnpm format    # root: Format project-words.txt + prettier --write
+# Initialize environment files (.env from .env.example)
+pnpm init
 
-# Optional
-pnpm use-mockup  # For mockup-only usage: Removes unnecessary files/lines.
+# Start Supabase backend
+cd apps/backend && pnpm start
+
+# Generate TypeScript types from Supabase schema
+pnpm generate
+
+# Start all development servers
+pnpm dev
 ```
 
-### Supabase Type Generation
+### 2. Development Workflow
 
-Run `pnpm generate` to generate Supabase types. This command will:
+#### Starting Development
 
-1. Generate types in `apps/backend/$generated/supabase-types.ts`
-2. Copy the types to `apps/web/src/lib/$generated/supabase-types.ts`
+```bash
+# 1. Start Supabase (in apps/backend)
+pnpm start
 
-This ensures type consistency between the backend and frontend applications.
+# 2. Generate types (from root)
+pnpm generate
 
-## List of listening port numbers
+# 3. Start web app (from root)
+pnpm --filter web dev
+```
 
-- `apps/backend/` - Supabase Local Dev / CLI
-  - `54321`: API / GraphQL / S3 Storage
-  - `54322`: DB (Postgres)
-  - `54323`: Studio
-  - `54324`: Inbucket
-- `apps/web/` - SvelteKit application
-  - `5173`: Development server
-- `apps/mockup/` - Static site
-  - `3000`: BrowserSync server
-  - `49160`: Express server
+#### Environment Configuration
 
-## Registering environment variables for GitHub / Vercel
+**Development (Local Supabase)**:
 
-If you need to prepare GitHub / Vercel environment, you need to set all environment variables (`.env` items) in each service.
+```env
+PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
+PUBLIC_SUPABASE_ANON_KEY=[shown when Supabase starts]
+```
+
+**Production**:
+
+```env
+PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+PUBLIC_SUPABASE_ANON_KEY=[from Supabase project settings]
+```
+
+### VS Code Extensions (Recommended)
+
+- [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+
+## Available Commands
+
+### Root Level Commands
+
+```bash
+# Project Setup
+pnpm install          # Install all dependencies
+pnpm init             # Create .env files from examples
+
+# Development
+pnpm dev              # Start all apps in development mode
+pnpm generate         # Generate Supabase TypeScript types
+pnpm build            # Build all applications
+pnpm lint             # Run linting across all apps
+pnpm test             # Run tests across all apps
+pnpm format           # Format code with Prettier
+
+# Utilities
+pnpm use-mockup       # Setup for mockup-only usage
+```
+
+### App-Specific Commands
+
+#### Backend (Supabase)
+
+```bash
+cd apps/backend
+pnpm start            # Start Supabase locally
+pnpm stop             # Stop Supabase
+pnpm pull             # Pull schema changes from remote
+pnpm generate         # Generate TypeScript types
+```
+
+#### Web App
+
+```bash
+cd apps/web
+pnpm dev              # Start development server (port 5173)
+pnpm build            # Build for production
+pnpm preview          # Preview production build
+pnpm test             # Run Vitest tests
+pnpm lint             # Run linting
+```
+
+#### Mockup
+
+```bash
+cd apps/mockup
+pnpm dev              # Start development server (port 3000)
+pnpm build            # Build static site
+pnpm test             # Validate links and images
+pnpm deploy           # Deploy to server (rsync)
+```
+
+## Port Configuration
+
+| Service           | Port  | Description                  |
+| ----------------- | ----- | ---------------------------- |
+| Supabase API      | 54321 | REST API, GraphQL, Storage   |
+| Supabase DB       | 54322 | PostgreSQL database          |
+| Supabase Studio   | 54323 | Admin dashboard              |
+| Supabase Inbucket | 54324 | Email testing                |
+| Web App           | 5173  | SvelteKit development server |
+| Mockup            | 3000  | Static site with BrowserSync |
+
+## Environment Switching
+
+You can easily switch between development and production environments:
+
+1. **For Development**: Use local Supabase (started with `pnpm start`)
+2. **For Production Testing**: Update `.env` with production Supabase credentials
+3. **Type Safety**: Always run `pnpm generate` after schema changes
+
+## Deployment
+
+### Vercel Deployment (Web App)
+
+- **Framework Preset**: SvelteKit
+- **Root Directory**: `apps/web`
+- **Build Command**: `cd ../.. && pnpm build --filter=web`
+- **Environment Variables**: Set Supabase credentials from your project settings
+- **Corepack**: Add `ENABLE_EXPERIMENTAL_COREPACK=1`
+
+### Vercel Deployment (Mockup)
+
+- **Framework Preset**: Other
+- **Root Directory**: `apps/mockup`
+- **Build Command**: `cd ../.. && pnpm build --filter=mockup`
 
 ## Breaking changes
 
