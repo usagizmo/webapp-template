@@ -6,8 +6,7 @@
   "scripts": {
     "pull": "supabase db pull --local --schema public,auth,storage",
     "generate:supabase-types": "mkdir -p \\$generated && supabase gen types typescript --local > ./\\$generated/supabase-types.ts",
-    "generate:shared-types": "cd ../../packages/types && pnpm generate",
-    "generate": "run-p generate:*",
+    "generate": "pnpm generate:supabase-types",
     "start": "supabase start",
     "stop": "supabase stop"
   },

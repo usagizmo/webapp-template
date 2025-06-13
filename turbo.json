@@ -65,7 +65,7 @@
       ]
     },
     "web#build": {
-      "dependsOn": ["^build", "backend#generate:supabase-types"],
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
