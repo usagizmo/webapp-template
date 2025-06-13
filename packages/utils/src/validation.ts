@@ -8,8 +8,9 @@
  * @returns True if valid email format
  */
 export function isValidEmail(email: string): boolean {
+  // Basic email validation with consecutive dots check
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
+  return emailRegex.test(email) && !email.includes('..');
 }
 
 /**

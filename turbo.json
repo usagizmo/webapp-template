@@ -2,31 +2,62 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [".env"],
   "tasks": {
-    "generate": {},
-    "build": {},
-    "lint": {},
-    "format": {},
-    "test": {},
+    "generate": {
+      "dependsOn": ["^generate"],
+      "inputs": ["$TURBO_DEFAULT$", "supabase/**", "scripts/**"]
+    },
+    "build": {
+      "dependsOn": ["^build", "generate"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
+      "outputs": [
+        "dist/**",
+        "build/**",
+        ".next/**",
+        "!.next/cache/**",
+        ".svelte-kit/**",
+        ".vercel/**"
+      ]
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
+    },
+    "format": {
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
+    },
+    "test": {
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"],
+      "outputs": ["coverage/**", "tests/external-links.txt"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
     },
     "backend#generate": {
+      "inputs": ["supabase/**", "$TURBO_DEFAULT$"],
       "outputs": ["$generated/**"]
     },
-    "types#generate": {
+    "backend#generate:supabase-types": {
+      "inputs": ["supabase/**"],
+      "outputs": ["$generated/supabase-types.ts"]
+    },
+    "@repo/types#generate": {
       "dependsOn": ["backend#generate:supabase-types"],
+      "inputs": ["scripts/**", "../backend/$generated/**"],
       "outputs": ["src/**"]
     },
     "web#build": {
+      "dependsOn": ["^build", "@repo/types#generate"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
     "mockup#build": {
+      "inputs": ["app.css", "tailwind.config.*", "$TURBO_DEFAULT$"],
       "outputs": ["public/styles.css"]
     },
     "mockup#test": {
       "dependsOn": ["mockup#build"],
-      "inputs": ["build"],
+      "inputs": ["public/**", "tests/**", "commands/**"],
       "outputs": ["tests/external-links.txt"]
     }
   }
