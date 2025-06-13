@@ -1,0 +1,24 @@
+{
+  "name": "@repo/utils",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./env": "./src/env.ts",
+    "./env-validation": "./src/env-validation.ts",
+    "./validation": "./src/validation.ts"
+  },
+  "scripts": {
+    "lint:cspell": "cspell \"**\"",
+    "lint:js": "eslint .",
+    "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
+    "lint": "concurrently pnpm:lint:*",
+    "format:js": "eslint --fix .",
+    "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
+    "format": "concurrently pnpm:format:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "concurrently": "^9.1.2"
+  }
+}
