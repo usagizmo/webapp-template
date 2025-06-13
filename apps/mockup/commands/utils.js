@@ -1,6 +1,6 @@
 import { readdir, readFile } from 'node:fs/promises';
 
-import sizeOf from 'image-size';
+import { imageSizeFromFile } from 'image-size/fromFile';
 import { dirname, join } from 'path';
 
 /**
@@ -49,8 +49,7 @@ export async function convert(filePath) {
     const imagePath = join(dirname(filePath), imgSrcPath);
 
     try {
-      const imageBuffer = await readFile(imagePath);
-      const { width, height } = sizeOf(imageBuffer);
+      const { width, height } = await imageSizeFromFile(imagePath);
       const replacement = `${prefix}${imgSrcPath}" width="${width}" height="${height}${suffix}`;
 
       result =
