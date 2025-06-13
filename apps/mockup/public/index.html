@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WebApp Template (mockup)</title>
-    <meta name="description" content="WebApp Template (mockup) Description" />
-    <meta property="og:title" content="WebApp Template (mockup)" />
+    <title>WebApp Template</title>
+    <meta name="description" content="WebApp Template Description" />
+    <meta property="og:title" content="WebApp Template" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://webapp-template-mockup.usagizmo.com" />
     <meta
       property="og:image"
       content="https://webapp-template-mockup.usagizmo.com/images/ogp.png"
     />
-    <meta property="og:site_name" content="WebApp Template (mockup)" />
-    <meta property="og:description" content="WebApp Template (mockup) Description" />
+    <meta property="og:site_name" content="WebApp Template" />
+    <meta property="og:description" content="WebApp Template Description" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="WebApp Template (mockup)" />
-    <meta name="twitter:description" content="WebApp Template (mockup) Description" />
+    <meta name="twitter:title" content="WebApp Template" />
+    <meta name="twitter:description" content="WebApp Template Description" />
     <meta
       name="twitter:image"
       content="https://webapp-template-mockup.usagizmo.com/images/ogp.png"
@@ -44,10 +44,10 @@
         <h1
           class="font-ui text-center text-[26px] font-bold leading-tight tracking-tighter lg:text-[32px]"
         >
-          WebApp Template (mockup)
+          WebApp Template
         </h1>
         <p class="mt-2 text-sm text-zinc-500 md:ml-auto md:mt-0 md:px-4 lg:px-5 lg:text-base">
-          A starting point for building a static site.
+          Monorepo template for creating a modern web application.
         </p>
         <div class="mt-5 md:mt-0">
           <a
@@ -68,12 +68,62 @@
         <div>
           <h2 class="font-ui mb-4 text-2xl font-bold md:text-3xl">What's inside?</h2>
           <section class="rounded-lg border border-slate-200 bg-slate-50 px-6 pb-8 pt-5">
-            <h3 class="font-ui mb-1.5 text-xl font-semibold md:text-2xl">Uses</h3>
+            <h3 class="font-ui mb-1.5 text-xl font-semibold md:text-2xl">Tech Stack</h3>
             <div>
               <ul class="space-y-0.5">
                 <li
                   class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
                 >
+                  <strong>Frontend:</strong>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://svelte.dev"
+                    class="font-semibold text-blue-500"
+                    >Svelte 5</a
+                  >
+                  +
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://svelte.dev/docs/kit/"
+                    class="font-semibold text-blue-500"
+                    >SvelteKit</a
+                  >
+                  +
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.typescriptlang.org"
+                    class="font-semibold text-blue-500"
+                    >TypeScript</a
+                  >
+                  +
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://tailwindcss.com"
+                    class="font-semibold text-blue-500"
+                    >Tailwind CSS 4</a
+                  >
+                </li>
+                <li
+                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
+                >
+                  <strong>Backend:</strong>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://supabase.com"
+                    class="font-semibold text-blue-500"
+                    >Supabase</a
+                  >
+                  (PostgreSQL, Auth, Realtime, Storage)
+                </li>
+                <li
+                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
+                >
+                  <strong>Build System:</strong>
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -81,7 +131,7 @@
                     class="font-semibold text-blue-500"
                     >Turborepo</a
                   >
-                  x
+                  +
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -89,98 +139,67 @@
                     class="font-semibold text-blue-500"
                     >pnpm</a
                   >
+                  +
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://vitejs.dev"
+                    class="font-semibold text-blue-500"
+                    >Vite</a
+                  >
                 </li>
                 <li
                   class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
                 >
+                  <strong>Quality Tools:</strong>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://eslint.org"
+                    class="font-semibold text-blue-500"
+                    >ESLint 9</a
+                  >,
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://prettier.io"
                     class="font-semibold text-blue-500"
                     >Prettier</a
-                  >
-                  (w/
-                  <ul class="inline">
-                    <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/sveltejs/prettier-plugin-svelte"
-                        class="font-semibold text-blue-500"
-                        >prettier-plugin-svelte</a
-                      >
-                    </li>
-                    <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss"
-                        class="font-semibold text-blue-500"
-                        >prettier-plugin-tailwindcss</a
-                      >
-                    </li>
-                  </ul>
-                  )
-                </li>
-                <li
-                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
-                >
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://eslint.org"
-                    class="font-semibold text-blue-500"
-                    >ESLint</a
-                  >
-                  /
+                  >,
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://cspell.org"
                     class="font-semibold text-blue-500"
                     >CSpell</a
+                  >,
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://vitest.dev"
+                    class="font-semibold text-blue-500"
+                    >Vitest</a
                   >
                 </li>
                 <li
                   class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
                 >
+                  <strong>Development:</strong>
+                  VS Code extensions,
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/okonet/lint-staged"
                     class="font-semibold text-blue-500"
                     >lint-staged</a
-                  >
-                  /
+                  >,
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/typicode/husky"
                     class="font-semibold text-blue-500"
                     >husky</a
-                  >
-                </li>
-                <li
-                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
-                >
-                  GitHub Actions (
-                  <ul class="inline">
-                    <li class="inline [&:not(:first-child):before]:content-['_+_']">Linting</li>
-                    <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                      Testing (Validate
-                      <code class="font-mono font-bold text-black">`href`</code> and
-                      <code class="font-mono font-bold text-black">`src`</code> paths)
-                    </li>
-                  </ul>
-                  )
-                </li>
-                <li
-                  class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
-                >
-                  Execute <code class="font-mono font-bold text-black">`eslint --fix`</code> and
-                  <code class="font-mono font-bold text-black">`prettier`</code> when saving with VS
-                  Code
+                  >, GitHub Actions
                 </li>
               </ul>
             </div>
@@ -202,66 +221,20 @@
                     class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-ui font-semibold">backend</strong><br />
-                    A
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="https://supabase.io"
+                      href="https://supabase.com"
                       class="font-semibold text-blue-500"
                       >Supabase</a
                     >
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://supabase.com/docs/guides/cli"
-                      class="font-semibold text-blue-500"
-                      >Local Dev / CLI</a
-                    >.
-                  </li>
-                  <li
-                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
-                  >
-                    <strong class="font-ui font-semibold">mockup</strong><br />
-                    A starting point for building a static site.<br />
-                    <ul class="inline">
-                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://tailwindcss.com"
-                          class="font-semibold text-blue-500"
-                          >Tailwind CSS</a
-                        >
-                      </li>
-                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                        Vanilla JS
-                      </li>
-                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://vitest.dev"
-                          class="font-semibold text-blue-500"
-                          >Vitest</a
-                        >
-                        (
-                        <ul class="inline">
-                          <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                            Check links
-                          </li>
-                          <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                            file names
-                          </li>
-                        </ul>
-                        )
-                      </li>
-                    </ul>
+                    Local Development<br />
+                    PostgreSQL database, authentication, and API services
                   </li>
                   <li
                     class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-ui font-semibold">web</strong><br />
-                    A starting point for building Svelte application.<br />
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
@@ -269,34 +242,22 @@
                       class="font-semibold text-blue-500"
                       >SvelteKit</a
                     >
-                    (w/
-                    <ul class="inline">
-                      <li class="inline [&:not(:first-child):before]:content-['_+_']">
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://tailwindcss.com"
-                          class="font-semibold text-blue-500"
-                          >Tailwind CSS</a
-                        >
-                      </li>
-                    </ul>
-                    )<br />
+                    Frontend<br />
+                    Main web application with Supabase integration
+                  </li>
+                  <li
+                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
+                  >
+                    <strong class="font-ui font-semibold">mockup</strong><br />
+                    Static Prototyping<br />
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="https://supabase.io"
+                      href="https://tailwindcss.com"
                       class="font-semibold text-blue-500"
-                      >Supabase</a
+                      >Tailwind CSS</a
                     >
-                    /
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://vitest.dev"
-                      class="font-semibold text-blue-500"
-                      >Vitest</a
-                    >
+                    + Vanilla JS for rapid prototyping
                   </li>
                 </ul>
               </div>
@@ -313,7 +274,15 @@
                     class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
                   >
                     <strong class="font-ui font-semibold">eslint-config</strong><br />
-                    ESLint 9 (Flat Config) for JavaScript and TypeScript.<br />
+                    Shared
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://eslint.org"
+                      class="font-semibold text-blue-500"
+                      >ESLint</a
+                    >
+                    configuration<br />
                     <ul class="space-y-0.5">
                       <li
                         class="relative pl-4 before:absolute before:left-0 before:top-2.5 before:size-1.5 before:rounded-full before:bg-zinc-900"
@@ -325,6 +294,7 @@
                           class="font-semibold text-blue-500"
                           >eslint-config-prettier</a
                         >
+                        - Prettier integration
                       </li>
                       <li
                         class="relative pl-4 before:absolute before:left-0 before:top-2.5 before:size-1.5 before:rounded-full before:bg-zinc-900"
@@ -336,6 +306,7 @@
                           class="font-semibold text-blue-500"
                           >eslint-plugin-svelte</a
                         >
+                        - Svelte linting
                       </li>
                       <li
                         class="relative pl-4 before:absolute before:left-0 before:top-2.5 before:size-1.5 before:rounded-full before:bg-zinc-900"
@@ -347,6 +318,7 @@
                           class="font-semibold text-blue-500"
                           >eslint-plugin-simple-import-sort</a
                         >
+                        - Import sorting
                       </li>
                       <li
                         class="relative pl-4 before:absolute before:left-0 before:top-2.5 before:size-1.5 before:rounded-full before:bg-zinc-900"
@@ -358,8 +330,15 @@
                           class="font-semibold text-blue-500"
                           >eslint-plugin-jsdoc</a
                         >
+                        - JSDoc validation
                       </li>
                     </ul>
+                  </li>
+                  <li
+                    class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
+                  >
+                    <strong class="font-ui font-semibold">types</strong><br />
+                    Shared TypeScript type definitions
                   </li>
                 </ul>
               </div>
@@ -373,14 +352,20 @@
 
           <pre
             class="overflow-auto rounded-2xl bg-slate-800 p-6"
-          ><code class="text-white font-mono"><span class="text-sky-300">pnpm</span> i  <span class="text-slate-500"># Resolve dependency packages and prepare .env files</span>
-<span class="text-slate-500"># Then set up /.env</span>
+          ><code class="text-white font-mono"><span class="text-slate-500"># Install dependencies</span>
+<span class="text-sky-300">pnpm</span> install
 
-<span class="text-slate-500"># Run command for each package (apps/ + packages/)</span>
-<span class="text-sky-300">pnpm</span> build   <span class="text-slate-500"># </span>
-<span class="text-sky-300">pnpm</span> lint    <span class="text-slate-500"># root: cspell + prettier --check</span>
-<span class="text-sky-300">pnpm</span> test    <span class="text-slate-500"># </span>
-<span class="text-sky-300">pnpm</span> format  <span class="text-slate-500"># root: Format project-words.txt + prettier --write</span></code></pre>
+<span class="text-slate-500"># Initialize environment files (.env from .env.example)</span>
+<span class="text-sky-300">pnpm</span> init
+
+<span class="text-slate-500"># Start Supabase backend</span>
+<span class="text-blue-300">cd</span> apps/backend && <span class="text-sky-300">pnpm</span> start
+
+<span class="text-slate-500"># Generate TypeScript types from Supabase schema</span>
+<span class="text-sky-300">pnpm</span> generate
+
+<span class="text-slate-500"># Start all development servers</span>
+<span class="text-sky-300">pnpm</span> dev</code></pre>
 
           <!-- Buttons -->
           <div class="mt-9 flex items-center justify-center">
