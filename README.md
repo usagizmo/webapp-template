@@ -167,11 +167,32 @@ You can easily switch between development and production environments:
 
 ### Vercel Deployment (Web App)
 
+The project includes a `vercel.json` configuration file in the root directory that optimizes the build process for Vercel deployment.
+
+#### Configuration
+
 - **Framework Preset**: SvelteKit
 - **Root Directory**: `apps/web`
+- **Build Command**: Automatically configured via `vercel.json`
+- **Install Command**: Automatically configured via `vercel.json`
+
+#### Environment Variables
+
+Set the following environment variables in your Vercel project settings:
+
+```env
+PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX  # Optional
+ENABLE_EXPERIMENTAL_COREPACK=1
+```
+
+#### Manual Setup (Alternative)
+
+If you prefer manual configuration without `vercel.json`:
+
 - **Build Command**: `cd ../.. && pnpm build --filter=web`
-- **Environment Variables**: Set Supabase credentials from your project settings
-- **Corepack**: Add `ENABLE_EXPERIMENTAL_COREPACK=1`
+- **Install Command**: `cd ../.. && pnpm install`
 
 ### Vercel Deployment (Mockup)
 
