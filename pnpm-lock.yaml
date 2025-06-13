@@ -47,6 +47,9 @@ importers:
 
   apps/backend:
     devDependencies:
+      concurrently:
+        specifier: ^9.1.2
+        version: 9.1.2
       supabase:
         specifier: ^2.24.3
         version: 2.24.3
@@ -74,6 +77,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@repo/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@supabase/supabase-js':
         specifier: ^2.50.0
         version: 2.50.0
@@ -159,6 +165,12 @@ importers:
       typescript-eslint:
         specifier: ^8.34.0
         version: 8.34.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)
+
+  packages/types:
+    devDependencies:
+      concurrently:
+        specifier: ^9.1.2
+        version: 9.1.2
 
 packages:
 

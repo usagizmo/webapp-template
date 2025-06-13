@@ -14,12 +14,12 @@
     "backend#generate": {
       "outputs": ["$generated/**"]
     },
+    "types#generate": {
+      "dependsOn": ["backend#generate:supabase-types"],
+      "outputs": ["src/**"]
+    },
     "web#build": {
       "outputs": [".svelte-kit/**", ".vercel/**"]
-    },
-    "web#generate": {
-      "dependsOn": ["backend#generate"],
-      "outputs": [".svelte-kit/**", "src/lib/$generated/**"]
     },
     "mockup#build": {
       "outputs": ["public/styles.css"]

@@ -1,0 +1,20 @@
+{
+  "name": "@repo/types",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./supabase": "./src/supabase.ts"
+  },
+  "scripts": {
+    "generate": "node scripts/copy-supabase-types.js",
+    "lint:cspell": "cspell \"**\"",
+    "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
+    "lint": "concurrently pnpm:lint:*",
+    "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
+    "format": "concurrently pnpm:format:*"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

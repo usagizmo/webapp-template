@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "pull": "supabase db pull --local --schema public,auth,storage",
-    "generate": "mkdir -p \\$generated && supabase gen types typescript --local > ./\\$generated/supabase-types.ts",
+    "generate:supabase-types": "mkdir -p \\$generated && supabase gen types typescript --local > ./\\$generated/supabase-types.ts",
+    "generate:shared-types": "cd ../../packages/types && pnpm generate",
+    "generate": "concurrently pnpm:generate:*",
     "start": "supabase start",
     "stop": "supabase stop"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "supabase": "^2.24.3"
   }
 }
