@@ -1,3 +1,3 @@
-import config from '@repo/eslint-config';
+import { mockup } from '@repo/eslint-config';
 
-export default config;
+export default mockup;
