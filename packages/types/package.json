@@ -20,13 +20,13 @@
     "test": "echo 'No tests for types package'",
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
-    "lint": "concurrently pnpm:lint:*",
+    "lint": "run-p lint:*",
     "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
-    "format": "concurrently pnpm:format:*"
+    "format": "run-p format:*"
   },
   "devDependencies": {
     "@types/node": "^24.0.1",
-    "concurrently": "^9.1.2",
+    "npm-run-all2": "^8.0.4",
     "typescript": "^5.8.3"
   }
 }
