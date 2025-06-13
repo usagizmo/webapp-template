@@ -22,5 +22,5 @@
     "verbatimModuleSyntax": true
   },
   "include": ["src/**/*"],
-  "exclude": ["dist", "node_modules", "**/*.test.*", "**/*.spec.*", "scripts/**/*"]
+  "exclude": ["dist", "node_modules", "**/*.test.*", "**/*.spec.*"]
 }
