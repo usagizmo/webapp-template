@@ -1,6 +1,6 @@
-import { describe, expect, it, beforeEach, afterEach } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
-import { getRequiredEnv, getOptionalEnv, isDevelopment, isProduction } from './env.js';
+import { getOptionalEnv, getRequiredEnv, isDevelopment, isProduction } from './env.js';
 
 describe('env utilities', () => {
   const originalEnv = process.env;

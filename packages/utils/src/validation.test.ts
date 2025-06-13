@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { isValidEmail, hasMinLength, isNonEmptyString, sanitizeString } from './validation.js';
+import { hasMinLength, isNonEmptyString, isValidEmail, sanitizeString } from './validation.js';
 
 describe('validation utilities', () => {
   describe('isValidEmail', () => {
@@ -49,6 +49,7 @@ describe('validation utilities', () => {
   describe('sanitizeString', () => {
     it('should remove dangerous characters', () => {
       expect(sanitizeString('Hello <script>alert("xss")</script>')).toBe(
+        // cspell:disable-next-line
         'Hello scriptalert("xss")/script',
       );
       expect(sanitizeString('Normal text')).toBe('Normal text');

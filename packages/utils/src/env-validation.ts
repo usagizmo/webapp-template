@@ -2,7 +2,7 @@
  * Environment variable validation for the monorepo
  */
 
-import { getRequiredEnv, getOptionalEnv } from './env.js';
+import { getOptionalEnv, getRequiredEnv } from './env.js';
 
 /**
  * Validate and get all required environment variables for the web app
