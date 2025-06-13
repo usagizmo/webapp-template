@@ -1,6 +1,6 @@
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
-// import jsdoc from 'eslint-plugin-jsdoc';
+import jsdoc from 'eslint-plugin-jsdoc';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import eslintPluginSvelte from 'eslint-plugin-svelte';
 import unusedImports from 'eslint-plugin-unused-imports';
@@ -25,16 +25,16 @@ export default [
     },
   },
   // jsdoc - temporarily disabled due to compatibility issues
-  // {
-  //   files: ['**/*.js', '**/*.ts'],
-  //   plugins: {
-  //     jsdoc,
-  //   },
-  //   rules: {
-  //     'jsdoc/check-access': 'error',
-  //     'jsdoc/check-alignment': 'error',
-  //   },
-  // },
+  {
+    files: ['**/*.js', '**/*.ts'],
+    plugins: {
+      jsdoc,
+    },
+    rules: {
+      'jsdoc/check-access': 'error',
+      'jsdoc/check-alignment': 'error',
+    },
+  },
   // unused-imports
   {
     plugins: {
