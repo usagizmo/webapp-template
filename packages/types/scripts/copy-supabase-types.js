@@ -15,13 +15,13 @@ async function copySupabaseTypes() {
   try {
     // Ensure output directory exists
     await mkdir(dirname(OUTPUT_PATH), { recursive: true });
-    
+
     // Read the generated types file
     const typesContent = await readFile(BACKEND_TYPES_PATH, 'utf8');
-    
+
     // Write to types package
     await writeFile(OUTPUT_PATH, typesContent);
-    
+
     console.log('✅ Supabase types copied successfully');
   } catch (error) {
     console.error('❌ Failed to copy Supabase types:', error.message);
