@@ -23,14 +23,14 @@ describe('env utilities', () => {
     it('should throw error when environment variable is not set', () => {
       delete process.env.TEST_VAR;
       expect(() => getRequiredEnv('TEST_VAR')).toThrow(
-        'Required environment variable TEST_VAR is not set'
+        'Required environment variable TEST_VAR is not set',
       );
     });
 
     it('should throw error when environment variable is empty string', () => {
       process.env.TEST_VAR = '';
       expect(() => getRequiredEnv('TEST_VAR')).toThrow(
-        'Required environment variable TEST_VAR is not set'
+        'Required environment variable TEST_VAR is not set',
       );
     });
   });

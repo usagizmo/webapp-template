@@ -35,7 +35,7 @@ export function isDevelopment(): boolean {
 }
 
 /**
- * Check if running in production mode  
+ * Check if running in production mode
  * @returns True if NODE_ENV is production
  */
 export function isProduction(): boolean {

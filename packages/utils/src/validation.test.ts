@@ -49,7 +49,7 @@ describe('validation utilities', () => {
   describe('sanitizeString', () => {
     it('should remove dangerous characters', () => {
       expect(sanitizeString('Hello <script>alert("xss")</script>')).toBe(
-        'Hello scriptalert("xss")/script'
+        'Hello scriptalert("xss")/script',
       );
       expect(sanitizeString('Normal text')).toBe('Normal text');
     });
