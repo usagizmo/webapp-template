@@ -7,7 +7,7 @@ export interface User {
   id: string;
   email: string;
   displayName: string;
-  bio: string;
+  bio: string | null;
   createdAt: string;
 }
 
