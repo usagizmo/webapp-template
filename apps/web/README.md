@@ -1,6 +1,6 @@
 # Web App ([SvelteKit](https://svelte.dev/docs/kit/))
 
-Modern web application built with [Svelte 5](https://svelte.dev/), [TypeScript](https://www.typescriptlang.org/), and [Tailwind CSS 4](https://tailwindcss.com/).
+Modern web application built with [Svelte 5](https://svelte.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS 4](https://tailwindcss.com/), and [markuplint](https://markuplint.dev/) for HTML validation.
 
 [[Demo](https://webapp-template.usagizmo.com/)]
 
