@@ -1,3 +1,3 @@
-import config from '@repo/eslint-config';
+import { web } from '@repo/eslint-config';
 
-export default config;
+export default web;

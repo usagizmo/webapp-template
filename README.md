@@ -23,11 +23,13 @@ Monorepo template for creating a modern web application.
 
 ### `packages/`
 
-- **`eslint-config`** - Shared [ESLint](https://eslint.org/) configuration
+- **`eslint-config`** - Centralized [ESLint 9](https://eslint.org/) configuration with Flat Config
+  - Pre-configured setups: `root`, `web` (Svelte), `mockup` (Vanilla JS)
   - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Prettier integration
   - [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) - Svelte linting
   - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) - Import sorting
   - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc) - JSDoc validation
+  - [eslint-plugin-unused-imports](https://github.com/sweepline/eslint-plugin-unused-imports) - Unused import cleanup
 
 ## Quick Start
 

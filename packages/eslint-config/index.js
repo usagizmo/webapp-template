@@ -8,8 +8,8 @@ import globals from 'globals';
 import svelteEslintParser from 'svelte-eslint-parser';
 import tseslint from 'typescript-eslint';
 
-// === Core Rules ===
-const coreRules = [
+// === Base Configuration ===
+const base = [
   js.configs.recommended,
   // Import sorting
   {
@@ -67,11 +67,6 @@ const coreRules = [
       'jsdoc/require-jsdoc': 'off',
     },
   },
-];
-
-// === Base Configuration ===
-export const base = [
-  ...coreRules,
   eslintConfigPrettier,
   {
     ignores: [
@@ -80,6 +75,7 @@ export const base = [
       '**/dist/',
       '**/build/',
       '**/$generated/',
+      '**/supabase.ts',
       '**/node_modules/',
       '**/.DS_Store',
     ],
@@ -87,8 +83,7 @@ export const base = [
 ];
 
 // === Node.js Configuration ===
-export const node = [
-  ...base,
+const node = [
   {
     files: ['**/*.js', '**/*.cjs'],
     languageOptions: {
@@ -99,8 +94,7 @@ export const node = [
 ];
 
 // === Browser Configuration ===
-export const browser = [
-  ...base,
+const _browser = [
   {
     files: ['**/*.js'],
     languageOptions: {
@@ -110,24 +104,8 @@ export const browser = [
   },
 ];
 
-// === Mixed Environment Configuration ===
-export const mixed = [
-  ...base,
-  {
-    files: ['**/*.js', '**/*.cjs'],
-    languageOptions: {
-      globals: {
-        ...globals.node,
-        ...globals.browser,
-      },
-    },
-    ...jsdoc.configs['flat/recommended-error'],
-  },
-];
-
 // === TypeScript Configuration ===
-export const typescript = [
-  ...base,
+const typescript = [
   ...tseslint.configs.recommended,
   {
     files: ['**/*.ts'],
@@ -140,7 +118,7 @@ export const typescript = [
 ];
 
 // === Svelte Configuration ===
-export const svelte = [
+const svelte = [
   ...typescript,
   ...eslintPluginSvelte.configs['flat/recommended'],
   ...eslintPluginSvelte.configs['flat/prettier'],
@@ -164,5 +142,28 @@ export const svelte = [
   },
 ];
 
-// === Default Export ===
-export default base;
+// === Project-Specific Configurations ===
+export const root = [
+  ...base,
+  ...node,
+  // Root-specific overrides
+  {
+    ignores: ['apps/**', 'packages/**'],
+  },
+];
+
+export const mockup = [
+  ...base,
+  {
+    files: ['**/*.js', '**/*.cjs'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+      },
+    },
+    ...jsdoc.configs['flat/recommended-error'],
+  },
+];
+
+export const web = [...base, ...svelte];
