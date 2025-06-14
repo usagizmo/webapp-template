@@ -33,36 +33,28 @@ Monorepo template for creating a modern web application.
 
 ## Quick Start
 
-### 1. Installation & Setup
+### Prerequisites
+
+- [Node.js v22+](https://nodejs.org/)
+- [pnpm](https://pnpm.io/)
+- [Docker](https://www.docker.com/) (for local database)
+
+### Starting Development
 
 ```bash
 # Install dependencies (.env file is created automatically)
 pnpm install
 
-# Start Supabase API
-cd apps/api && pnpm start
+# For mockup development only
+pnpm --filter mockup dev
 
-# Generate TypeScript types from Supabase schema
-pnpm generate
-
-# Start all development servers
-pnpm dev
+# For web app development
+pnpm --filter api start     # Start Supabase API
+pnpm --filter api generate  # Generate TypeScript types (only when schema changes)
+pnpm --filter web dev       # Start web development server
 ```
 
-### 2. Development Workflow
-
-#### Starting Development
-
-```bash
-# 1. Start Supabase (in apps/api)
-pnpm start
-
-# 2. Generate types (from root)
-pnpm generate
-
-# 3. Start web app (from root)
-pnpm --filter web dev
-```
+> **Note**: TypeScript types are committed to the repository, so you only need to run `generate` when the database schema changes.
 
 #### Environment Configuration
 
@@ -70,7 +62,7 @@ pnpm --filter web dev
 
 ```env
 PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
-PUBLIC_SUPABASE_ANON_KEY=[shown when Supabase starts]
+PUBLIC_SUPABASE_ANON_KEY=
 ```
 
 **Production**:
