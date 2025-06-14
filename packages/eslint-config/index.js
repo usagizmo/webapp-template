@@ -166,3 +166,5 @@ export const mockup = [
 ];
 
 export const web = [...base, ...svelte];
+
+export const eslintConfig = [...base, ...node];
