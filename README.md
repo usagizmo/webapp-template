@@ -209,6 +209,22 @@ If you prefer manual configuration without `vercel.json`:
 
 ## Breaking changes
 
+### [v2.9.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.9.0)
+
+- **Database Schema Changes:**
+  - Reset and restructured Supabase database schema with improved type definitions
+  - Added `updated_at` columns to `profiles` and `comments` tables
+  - Enhanced RLS policies with more granular permissions
+  - Updated TypeScript types to reflect new schema structure
+- **Project Structure Optimization:**
+  - Removed deprecated `apps/backend` directory completely
+  - Streamlined development workflow with automatic `.env` file generation
+  - Updated all references and documentation to use `apps/api` consistently
+- **Configuration Updates:**
+  - Enhanced Supabase configuration with comprehensive settings
+  - Updated Turbo configuration to include all necessary environment variables
+  - Improved Prettier and linting configurations for new structure
+
 ### [v2.8.1](https://github.com/usagizmo/webapp-template/releases/tag/v2.8.1)
 
 - **Directory Structure:**
