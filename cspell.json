@@ -26,7 +26,6 @@
     "/apps/backend/supabase/migrations",
     "/apps/mockup/public/styles.css",
     "/apps/mockup/tests/external-links.txt",
-    "/apps/web/build",
-    "/apps/web/src/lib/$generated"
+    "/apps/web/build"
   ]
 }

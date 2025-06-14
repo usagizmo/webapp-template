@@ -75,7 +75,6 @@ const base = [
       '**/dist/',
       '**/build/',
       '**/$generated/',
-      '**/supabase.ts',
       '**/node_modules/',
       '**/.DS_Store',
     ],
@@ -167,3 +166,5 @@ export const mockup = [
 ];
 
 export const web = [...base, ...svelte];
+
+export const eslintConfig = [...base, ...node];

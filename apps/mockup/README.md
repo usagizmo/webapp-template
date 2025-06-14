@@ -1,6 +1,6 @@
 # Mockup (Static Site)
 
-Static site generator for rapid prototyping with [Tailwind CSS](https://tailwindcss.com/) and Vanilla JS.
+Static site generator for rapid prototyping with [Tailwind CSS](https://tailwindcss.com/), Vanilla JS, and [markuplint](https://markuplint.dev/) for HTML validation.
 
 [[Demo](https://webapp-template-mockup.usagizmo.com/)]
 

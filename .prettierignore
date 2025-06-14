@@ -14,4 +14,3 @@ pnpm-workspace.yaml
 /apps/backend/$generated
 /apps/mockup/public/styles.css
 /apps/web/.svelte-kit
-/apps/web/src/lib/$generated

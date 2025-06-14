@@ -27,7 +27,6 @@
     "use-mockup": "node ./commands/use-mockup.js"
   },
   "devDependencies": {
-    "@markuplint/svelte-parser": "^4.7.9",
     "@repo/eslint-config": "workspace:*",
     "cspell": "^9.0.2",
     "eslint": "^9.28.0",
@@ -44,5 +43,8 @@
   "engines": {
     "node": ">=22",
     "pnpm": ">=10"
+  },
+  "dependencies": {
+    "@markuplint/ml-config": "^4.8.11"
   }
 }

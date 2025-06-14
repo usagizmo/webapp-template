@@ -11,6 +11,7 @@ https://github.com/prettier/eslint-config-prettier
 https://github.com/sveltejs/eslint-plugin-svelte
 https://github.com/typicode/husky
 https://github.com/usagizmo/webapp-template
+https://markuplint.dev
 https://pnpm.io
 https://prettier.io
 https://supabase.com
