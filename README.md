@@ -62,11 +62,12 @@ After running `pnpm install`, a `.env` file is automatically created from `.env.
 
 **For local development**:
 
-- No additional configuration needed - local Supabase provides default keys automatically
+- `PUBLIC_SUPABASE_URL` - `http://127.0.0.1:54321`
+- `PUBLIC_SUPABASE_ANON_KEY` - Copy the anon key displayed when running `pnpm --filter api start`
 
 **For production deployment**:
 
-- `PUBLIC_SUPABASE_URL` - Your project URL from Supabase Dashboard
+- `PUBLIC_SUPABASE_URL` - `https://[project-id].supabase.co`
 - `PUBLIC_SUPABASE_ANON_KEY` - Get from Supabase Dashboard > Project Settings > API Keys
 
 **Optional (for advanced operations)**:
