@@ -14,16 +14,16 @@ Monorepo template for creating a modern web application.
 
 ### `apps/`
 
-- **`api`** - [Supabase](https://supabase.com/) Local Development  
+- **[`api`](./apps/api/)** - [Supabase](https://supabase.com/) Local Development  
   PostgreSQL database, authentication, and API services
-- **`web`** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend  
+- **[`web`](./apps/web/)** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend  
   Main web application with Supabase integration
-- **`mockup`** [[Demo](https://webapp-template-mockup.usagizmo.com/)] - Static Prototyping  
+- **[`mockup`](./apps/mockup/)** [[Demo](https://webapp-template-mockup.usagizmo.com/)] - Static Prototyping  
   [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS for rapid prototyping
 
 ### `packages/`
 
-- **`eslint-config`** - Centralized [ESLint 9](https://eslint.org/) configuration with Flat Config
+- **[`eslint-config`](./packages/eslint-config/)** - Centralized [ESLint 9](https://eslint.org/) configuration with Flat Config
   - Pre-configured setups: `root`, `web` (Svelte), `mockup` (Vanilla JS)
   - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Prettier integration
   - [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) - Svelte linting
