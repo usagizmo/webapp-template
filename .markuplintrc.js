@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   parser: {
     '\\.svelte$': '@markuplint/svelte-parser',
   },
