@@ -75,7 +75,6 @@ const base = [
       '**/dist/',
       '**/build/',
       '**/$generated/',
-      '**/supabase.ts',
       '**/node_modules/',
       '**/.DS_Store',
     ],
