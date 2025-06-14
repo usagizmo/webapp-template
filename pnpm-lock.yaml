@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@markuplint/ml-config':
+        specifier: ^4.8.11
+        version: 4.8.11
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
