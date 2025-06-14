@@ -36,11 +36,8 @@ Monorepo template for creating a modern web application.
 ### 1. Installation & Setup
 
 ```bash
-# Install dependencies
+# Install dependencies (.env file is created automatically)
 pnpm install
-
-# Initialize environment files (.env from .env.example)
-pnpm init
 
 # Start Supabase API
 cd apps/api && pnpm start
@@ -97,8 +94,7 @@ PUBLIC_SUPABASE_ANON_KEY=[from Supabase project settings]
 
 ```bash
 # Project Setup
-pnpm install          # Install all dependencies
-pnpm init             # Create .env files from examples
+pnpm install          # Install dependencies (.env file is created automatically)
 
 # Development
 pnpm dev              # Start all apps in development mode
