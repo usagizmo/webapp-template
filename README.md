@@ -14,16 +14,16 @@ Monorepo template for creating a modern web application.
 
 ### `apps/`
 
-- **`api`** - [Supabase](https://supabase.com/) Local Development  
+- **[`api`](./apps/api/)** - [Supabase](https://supabase.com/) Local Development  
   PostgreSQL database, authentication, and API services
-- **`web`** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend  
+- **[`web`](./apps/web/)** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend  
   Main web application with Supabase integration
-- **`mockup`** [[Demo](https://webapp-template-mockup.usagizmo.com/)] - Static Prototyping  
+- **[`mockup`](./apps/mockup/)** [[Demo](https://webapp-template-mockup.usagizmo.com/)] - Static Prototyping  
   [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS for rapid prototyping
 
 ### `packages/`
 
-- **`eslint-config`** - Centralized [ESLint 9](https://eslint.org/) configuration with Flat Config
+- **[`eslint-config`](./packages/eslint-config/)** - Centralized [ESLint 9](https://eslint.org/) configuration with Flat Config
   - Pre-configured setups: `root`, `web` (Svelte), `mockup` (Vanilla JS)
   - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Prettier integration
   - [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) - Svelte linting
@@ -33,55 +33,46 @@ Monorepo template for creating a modern web application.
 
 ## Quick Start
 
-### 1. Installation & Setup
+### Prerequisites
+
+- [Node.js v22+](https://nodejs.org/)
+- [pnpm](https://pnpm.io/)
+- [Docker](https://www.docker.com/) (for local database)
+
+### Starting Development
 
 ```bash
-# Install dependencies
+# Install dependencies (.env file is created automatically)
 pnpm install
 
-# Initialize environment files (.env from .env.example)
-pnpm init
+# For mockup development only
+pnpm --filter mockup dev
 
-# Start Supabase API
-cd apps/api && pnpm start
-
-# Generate TypeScript types from Supabase schema
-pnpm generate
-
-# Start all development servers
-pnpm dev
+# For web app development
+pnpm --filter api start     # Start Supabase API
+pnpm --filter api generate  # Generate TypeScript types (only when schema changes)
+pnpm --filter web dev       # Start web development server
 ```
 
-### 2. Development Workflow
-
-#### Starting Development
-
-```bash
-# 1. Start Supabase (in apps/api)
-pnpm start
-
-# 2. Generate types (from root)
-pnpm generate
-
-# 3. Start web app (from root)
-pnpm --filter web dev
-```
+> **Note**: TypeScript types are committed to the repository, so you only need to run `generate` when the database schema changes.
 
 #### Environment Configuration
 
-**Development (Local Supabase)**:
+After running `pnpm install`, a `.env` file is automatically created from `.env.example`. Fill in the required values:
 
-```env
-PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
-PUBLIC_SUPABASE_ANON_KEY=[shown when Supabase starts]
-```
+**For local development**:
 
-**Production**:
+- No additional configuration needed - local Supabase provides default keys automatically
 
-```env
-PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-PUBLIC_SUPABASE_ANON_KEY=[from Supabase project settings]
-```
+**For production deployment**:
+
+- `PUBLIC_SUPABASE_URL` - Your project URL from Supabase Dashboard
+- `PUBLIC_SUPABASE_ANON_KEY` - Get from Supabase Dashboard > Project Settings > API Keys
+
+**Optional (for advanced operations)**:
+
+- `DATABASE_URL` - Enables `pnpm --filter api push/pull` to target production database
+- `SUPABASE_SERVICE_ROLE_KEY` - Server-side admin access for Edge Functions, Webhooks (never use in browser!)
 
 ### VS Code Extensions (Recommended)
 
@@ -97,8 +88,7 @@ PUBLIC_SUPABASE_ANON_KEY=[from Supabase project settings]
 
 ```bash
 # Project Setup
-pnpm install          # Install all dependencies
-pnpm init             # Create .env files from examples
+pnpm install          # Install dependencies (.env file is created automatically)
 
 # Development
 pnpm dev              # Start all apps in development mode
