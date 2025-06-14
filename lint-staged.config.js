@@ -1,3 +1,4 @@
+/** @type {import('lint-staged').Configuration} */
 export default {
   '*': ['cspell --no-must-find-files', 'prettier --write --ignore-unknown'],
   '*.html': ['markuplint'],
