@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "supabase start",
+    "stop": "supabase stop",
+    "reset": "supabase db reset && pnpm generate",
+    "diff": "supabase db diff",
+    "push": "supabase db push",
+    "pull": "supabase db pull && pnpm generate",
+    "migration": "supabase migration new",
+    "link": "supabase link",
+    "seed": "supabase seed buckets",
+    "generate": "pnpm generate:supabase-types",
+    "generate:supabase-types": "mkdir -p \\$generated && supabase gen types typescript --local > ./\\$generated/supabase-types.ts"
+  },
+  "devDependencies": {
+    "supabase": "^2.24.3"
+  }
+}

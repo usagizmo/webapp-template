@@ -1,82 +1,102 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [".env"],
+  "globalEnv": [
+    "NODE_ENV",
+    "PUBLIC_SUPABASE_URL",
+    "PUBLIC_SUPABASE_ANON_KEY",
+    "PUBLIC_GA4_MEASUREMENT_ID"
+  ],
   "tasks": {
     "generate": {
       "dependsOn": ["^generate"],
-      "inputs": ["$TURBO_DEFAULT$", "supabase/**", "scripts/**"]
+      "inputs": ["$TURBO_DEFAULT$", "supabase/**", "scripts/**"],
+      "outputs": ["$generated/**"]
     },
     "build": {
       "dependsOn": ["^build", "generate"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
-      "outputs": [
-        "dist/**",
-        "build/**",
-        ".next/**",
-        "!.next/cache/**",
-        ".svelte-kit/**",
-        ".vercel/**"
-      ]
+      "outputs": ["dist/**", "build/**", ".svelte-kit/**", ".vercel/**", "public/styles.css"]
     },
     "lint": {
       "dependsOn": ["^lint"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**", "!**/dist/**", "!**/build/**"]
     },
     "format": {
-      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**", "!**/dist/**", "!**/build/**"]
     },
     "test": {
-      "inputs": ["$TURBO_DEFAULT$", "!README.md"],
-      "outputs": []
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**"],
+      "outputs": ["coverage/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck", "generate"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*", "!**/coverage/**"]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "dependsOn": ["generate"]
     },
     "preview": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["build"],
       "cache": false,
       "persistent": true
-    },
-    "clean": {
-      "cache": false
-    },
-    "typecheck": {
-      "dependsOn": ["^typecheck"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
     },
     "test:watch": {
       "cache": false,
       "persistent": true,
       "interactive": true
     },
-    "backend#generate": {
+    "api#generate": {
       "inputs": ["supabase/**", "$TURBO_DEFAULT$"],
       "outputs": ["$generated/**"]
     },
-    "backend#generate:supabase-types": {
+    "api#generate:supabase-types": {
       "inputs": ["supabase/**"],
-      "outputs": ["$generated/supabase-types.ts"],
-      "env": [
-        "PUBLIC_SUPABASE_URL",
-        "PUBLIC_SUPABASE_ANON_KEY",
-        "PUBLIC_GA4_MEASUREMENT_ID",
-        "ENABLE_EXPERIMENTAL_COREPACK"
-      ]
+      "outputs": ["$generated/supabase-types.ts"]
+    },
+    "api#start": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^generate"]
+    },
+    "api#stop": {
+      "cache": false
     },
     "web#build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
+    "web#dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["api#generate"]
+    },
     "mockup#build": {
-      "inputs": ["app.css", "tailwind.config.*", "$TURBO_DEFAULT$"],
+      "inputs": [
+        "app.css",
+        "tailwind.config.*",
+        "public/**",
+        "!public/styles.css",
+        "$TURBO_DEFAULT$"
+      ],
       "outputs": ["public/styles.css"]
+    },
+    "mockup#dev": {
+      "cache": false,
+      "persistent": true
     },
     "mockup#test": {
       "dependsOn": ["mockup#build"],
       "inputs": ["public/**", "tests/**", "commands/**"],
       "outputs": ["tests/external-links.txt"]
+    },
+    "mockup#deploy": {
+      "dependsOn": ["mockup#build"],
+      "cache": false
     }
   }
 }

@@ -8,8 +8,7 @@ import globals from 'globals';
 import svelteEslintParser from 'svelte-eslint-parser';
 import tseslint from 'typescript-eslint';
 
-// === Base Configuration ===
-const base = [
+export const base = [
   js.configs.recommended,
   // Import sorting
   {
@@ -81,8 +80,7 @@ const base = [
   },
 ];
 
-// === Node.js Configuration ===
-const node = [
+export const node = [
   {
     files: ['**/*.js', '**/*.cjs'],
     languageOptions: {
@@ -92,8 +90,7 @@ const node = [
   },
 ];
 
-// === Browser Configuration ===
-const _browser = [
+export const browser = [
   {
     files: ['**/*.js'],
     languageOptions: {
@@ -103,8 +100,7 @@ const _browser = [
   },
 ];
 
-// === TypeScript Configuration ===
-const typescript = [
+export const typescript = [
   ...tseslint.configs.recommended,
   {
     files: ['**/*.ts'],
@@ -116,8 +112,7 @@ const typescript = [
   },
 ];
 
-// === Svelte Configuration ===
-const svelte = [
+export const svelte = [
   ...typescript,
   ...eslintPluginSvelte.configs['flat/recommended'],
   ...eslintPluginSvelte.configs['flat/prettier'],
@@ -140,31 +135,3 @@ const svelte = [
     ...jsdoc.configs['flat/recommended-typescript-error'],
   },
 ];
-
-// === Project-Specific Configurations ===
-export const root = [
-  ...base,
-  ...node,
-  // Root-specific overrides
-  {
-    ignores: ['apps/**', 'packages/**'],
-  },
-];
-
-export const mockup = [
-  ...base,
-  {
-    files: ['**/*.js', '**/*.cjs'],
-    languageOptions: {
-      globals: {
-        ...globals.node,
-        ...globals.browser,
-      },
-    },
-    ...jsdoc.configs['flat/recommended-error'],
-  },
-];
-
-export const web = [...base, ...svelte];
-
-export const eslintConfig = [...base, ...node];

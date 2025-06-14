@@ -40,13 +40,15 @@ export type Database = {
           file_path: string | null
           id: number
           text: string
+          updated_at: string
           user_id: string
         }
         Insert: {
           created_at?: string
           file_path?: string | null
           id?: number
-          text?: string
+          text: string
+          updated_at?: string
           user_id: string
         }
         Update: {
@@ -54,11 +56,12 @@ export type Database = {
           file_path?: string | null
           id?: number
           text?: string
+          updated_at?: string
           user_id?: string
         }
         Relationships: [
           {
-            foreignKeyName: "public_comments_user_id_fkey"
+            foreignKeyName: "comments_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "profiles"
@@ -68,25 +71,28 @@ export type Database = {
       }
       profiles: {
         Row: {
-          bio: string
+          bio: string | null
           created_at: string
           display_name: string
           email: string
           id: string
+          updated_at: string
         }
         Insert: {
-          bio?: string
+          bio?: string | null
           created_at?: string
-          display_name?: string
+          display_name: string
           email: string
           id: string
+          updated_at?: string
         }
         Update: {
-          bio?: string
+          bio?: string | null
           created_at?: string
           display_name?: string
           email?: string
           id?: string
+          updated_at?: string
         }
         Relationships: []
       }

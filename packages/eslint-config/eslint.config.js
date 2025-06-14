@@ -1,3 +1,3 @@
-import { eslintConfig } from './index.js';
+import { base, node } from './index.js';
 
-export default eslintConfig;
+export default [...base, ...node];

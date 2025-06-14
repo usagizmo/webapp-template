@@ -1,3 +1,9 @@
-import { root } from '@repo/eslint-config';
+import { base, node } from '@repo/eslint-config';
 
-export default root;
+export default [
+  ...base,
+  ...node,
+  {
+    ignores: ['apps/**', 'packages/**'],
+  },
+];

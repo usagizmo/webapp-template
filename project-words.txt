@@ -3,6 +3,7 @@ autodetection
 camelcase
 cdate
 dirents
+dotenvx
 esbuild
 fkey
 hasura
@@ -13,6 +14,7 @@ lintstagedrc
 markuplint
 markuplintrc
 nhost
+pooler
 postgrest
 snakecase
 sssz

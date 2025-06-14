@@ -13,7 +13,7 @@
   } = $props();
 
   let tempInputs = $state({
-    bio: user.bio,
+    bio: user.bio ?? '',
   });
 
   /**
@@ -28,9 +28,10 @@
    * Update the user's bio
    */
   async function handleUpdate() {
-    if (user.bio === tempInputs.bio) return;
+    const currentBio = user.bio ?? '';
+    if (currentBio === tempInputs.bio) return;
 
-    const { error } = await userStore.updateUser(user.id, tempInputs);
+    const { error } = await userStore.updateUser(user.id, { bio: tempInputs.bio });
     if (error) alert(error.message);
   }
 </script>
