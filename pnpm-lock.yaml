@@ -66,6 +66,12 @@ importers:
       browser-sync:
         specifier: ^3.0.4
         version: 3.0.4
+      eslint-plugin-jsdoc:
+        specifier: ^51.0.1
+        version: 51.0.1(eslint@9.28.0(jiti@2.4.2))
+      globals:
+        specifier: ^16.2.0
+        version: 16.2.0
       image-size:
         specifier: ^2.0.2
         version: 2.0.2

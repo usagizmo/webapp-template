@@ -1,3 +1,3 @@
-import { web } from '@repo/eslint-config';
+import { base, svelte } from '@repo/eslint-config';
 
-export default web;
+export default [...base, ...svelte];
