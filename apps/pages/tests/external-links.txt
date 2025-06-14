@@ -22,5 +22,5 @@ https://turborepo.org
 https://usagizmo.com
 https://vitejs.dev
 https://vitest.dev
-https://webapp-template-mockup.usagizmo.com
+https://webapp-template-pages.usagizmo.com
 https://www.typescriptlang.org

@@ -6,7 +6,7 @@ Centralized ESLint configuration package using ESLint 9 Flat Config for the weba
 
 - **`root`** - For root-level files (Node.js + TypeScript environment)
 - **`web`** - For SvelteKit application with TypeScript and Svelte support
-- **`mockup`** - For static site with mixed Node.js/browser environment
+- **`pages`** - For static site with mixed Node.js/browser environment
 
 ## Usage
 
@@ -26,12 +26,12 @@ import { web } from '@repo/eslint-config';
 export default web;
 ```
 
-### Mockup (Static Site)
+### Pages (Static Site)
 
 ```js
-import { mockup } from '@repo/eslint-config';
+import { pages } from '@repo/eslint-config';
 
-export default mockup;
+export default pages;
 ```
 
 ## Features

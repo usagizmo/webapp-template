@@ -14,17 +14,17 @@ Monorepo template for creating a modern web application.
 
 ### `apps/`
 
-- **[`api`](./apps/api/)** - [Supabase](https://supabase.com/) Local Development  
+- **[`api`](./apps/api/)** - [Supabase](https://supabase.com/) Local Development
   PostgreSQL database, authentication, and API services
-- **[`web`](./apps/web/)** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend  
+- **[`web`](./apps/web/)** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend
   Main web application with Supabase integration
-- **[`mockup`](./apps/mockup/)** [[Demo](https://webapp-template-mockup.usagizmo.com/)] - Static Prototyping  
+- **[`pages`](./apps/pages/)** [[Demo](https://webapp-template-pages.usagizmo.com/)] - Static Prototyping
   [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS for rapid prototyping
 
 ### `packages/`
 
 - **[`eslint-config`](./packages/eslint-config/)** - Centralized [ESLint 9](https://eslint.org/) configuration with Flat Config
-  - Pre-configured setups: `root`, `web` (Svelte), `mockup` (Vanilla JS)
+  - Pre-configured setups: `root`, `web` (Svelte), `pages` (Vanilla JS)
   - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Prettier integration
   - [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) - Svelte linting
   - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) - Import sorting
@@ -45,8 +45,8 @@ Monorepo template for creating a modern web application.
 # Install dependencies (.env file is created automatically)
 pnpm install
 
-# For mockup development only
-pnpm --filter mockup dev
+# For pages development only
+pnpm --filter pages dev
 
 # For web app development
 pnpm --filter api start     # Start Supabase API
@@ -98,9 +98,6 @@ pnpm build            # Build all applications
 pnpm lint             # Run linting across all apps
 pnpm test             # Run tests across all apps
 pnpm format           # Format code with Prettier
-
-# Utilities
-pnpm use-mockup       # Setup for mockup-only usage
 ```
 
 ### App-Specific Commands
@@ -132,10 +129,10 @@ pnpm test             # Run Vitest tests
 pnpm lint             # Run linting
 ```
 
-#### Mockup
+#### Pages
 
 ```bash
-cd apps/mockup
+cd apps/pages
 pnpm dev              # Start development server (port 3000)
 pnpm build            # Build static site
 pnpm test             # Validate links and images
@@ -151,7 +148,7 @@ pnpm deploy           # Deploy to server (rsync)
 | Supabase Studio   | 54323 | Admin dashboard              |
 | Supabase Inbucket | 54324 | Email testing                |
 | Web App           | 5173  | SvelteKit development server |
-| Mockup            | 3000  | Static site with BrowserSync |
+| Pages             | 3000  | Static site with BrowserSync |
 
 ## Type Safety and Environment Switching
 
@@ -202,11 +199,11 @@ If you prefer manual configuration without `vercel.json`:
 - **Build Command**: `cd ../.. && pnpm build --filter=web`
 - **Install Command**: `cd ../.. && pnpm install`
 
-### Vercel Deployment (Mockup)
+### Vercel Deployment (Pages)
 
 - **Framework Preset**: Other
-- **Root Directory**: `apps/mockup`
-- **Build Command**: `cd ../.. && pnpm build --filter=mockup`
+- **Root Directory**: `apps/pages`
+- **Build Command**: `cd ../.. && pnpm build --filter=pages`
 
 ## Breaking changes
 

@@ -52,7 +52,7 @@ importers:
         specifier: ^2.24.3
         version: 2.24.3
 
-  apps/mockup:
+  apps/pages:
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*

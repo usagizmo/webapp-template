@@ -1,8 +1,8 @@
-# Mockup (Static Site)
+# Pages (Static Site)
 
 Static site generator for rapid prototyping with [Tailwind CSS](https://tailwindcss.com/), Vanilla JS, and [markuplint](https://markuplint.dev/) for HTML validation.
 
-[[Demo](https://webapp-template-mockup.usagizmo.com/)]
+[[Demo](https://webapp-template-pages.usagizmo.com/)]
 
 ## Commands
 
@@ -28,8 +28,8 @@ pnpm clean-image      # Remove unused images
 ## Deploy to Vercel
 
 - **Framework Preset**: Other
-- **Root Directory**: `apps/mockup`
-- **Build Command**: `cd ../.. && pnpm build --filter=mockup`
+- **Root Directory**: `apps/pages`
+- **Build Command**: `cd ../.. && pnpm build --filter=pages`
 
 ## External Links Testing
 
