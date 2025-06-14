@@ -219,7 +219,27 @@ If you prefer manual configuration without `vercel.json`:
 
 ## Breaking changes
 
-### v2.0.0
+### [v2.8.1](https://github.com/usagizmo/webapp-template/releases/tag/v2.8.1)
+
+- **Directory Structure:**
+  - Renamed `apps/backend` to `apps/api` for better semantic clarity
+  - Updated all references in documentation, scripts, and configuration files
+
+### [v2.8.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.8.0)
+
+- **Infrastructure Requirements:**
+  - Node.js v22 is now required (added `.node-version` file)
+- **Supabase Integration:**
+  - Restructured Supabase type flow: Direct import from `apps/api/$generated/` instead of `apps/web/src/lib/$generated/`
+  - Enhanced database schema with complete type generation
+- **Build System:**
+  - Updated Vercel deployment configuration with new build commands
+  - Replaced `concurrently` with `npm-run-all2` for better performance
+- **Development Tools:**
+  - Enhanced ESLint configuration with modular structure
+  - Restructured shared packages with proper TypeScript builds
+
+### [v2.0.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.0.0)
 
 - **Update Framework/Library Versions:**
   - Switch to Svelte 5 (integrated with TypeScript and using the Rune)
@@ -228,28 +248,19 @@ If you prefer manual configuration without `vercel.json`:
 - **API Change:**
   - Replace [Nhost](https://nhost.io/) with [Supabase](https://supabase.com/) for API services
 
-### v1.9.0
-
-- **Language and Compiler Changes:**
-  - Migrated codebase from JavaScript to TypeScript
-  - Upgraded from Svelte 4 to Svelte 5 (Rune)
-- **Package Naming and Structure:**
-  - Custom package names now prefixed with `@repo/`
-  - Merged `eslint-config-custom-typescript` into `eslint-config-custom`
-
-### v1.6.0
+### [v1.6.0](https://github.com/usagizmo/webapp-template/releases/tag/v1.6.0)
 
 - **Language Reversion and Documentation:**
   - Reverted codebase from TypeScript back to JavaScript, supplementing with JSDoc for documentation
 
-### v1.0.0
+### [v1.0.0](https://github.com/usagizmo/webapp-template/releases/tag/v1.0.0)
 
 - **Frontend Framework Change:**
   - Switched from [Next.js](https://nextjs.org/) to [SvelteKit](https://svelte.dev/docs/kit/) for the frontend framework in `apps/web`
 - **Repository Rebranding:**
   - Renamed `nextjs-template` repository to `webapp-template`
 
-### v0.23.0
+### [v0.23.0](https://github.com/usagizmo/webapp-template/releases/tag/v0.23.0)
 
 - **API Services Integration:**
   - Replaced individual [Firebase](https://firebase.google.com/) and [Hasura](https://hasura.io/) applications with a unified [Nhost](https://nhost.io/) application in `apps/nhost`
