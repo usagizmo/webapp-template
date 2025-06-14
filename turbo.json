@@ -68,7 +68,7 @@
       "cache": false
     },
     "web#build": {
-      "dependsOn": ["^build", "api#generate"],
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
