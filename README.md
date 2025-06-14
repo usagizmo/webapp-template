@@ -58,19 +58,21 @@ pnpm --filter web dev       # Start web development server
 
 #### Environment Configuration
 
-**Development (Local Supabase)**:
+After running `pnpm install`, a `.env` file is automatically created from `.env.example`. Fill in the required values:
 
-```env
-PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
-PUBLIC_SUPABASE_ANON_KEY=
-```
+**For local development**:
 
-**Production**:
+- No additional configuration needed - local Supabase provides default keys automatically
 
-```env
-PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-PUBLIC_SUPABASE_ANON_KEY=[from Supabase project settings]
-```
+**For production deployment**:
+
+- `PUBLIC_SUPABASE_URL` - Your project URL from Supabase Dashboard
+- `PUBLIC_SUPABASE_ANON_KEY` - Get from Supabase Dashboard > Project Settings > API Keys
+
+**Optional (for advanced operations)**:
+
+- `DATABASE_URL` - Enables `pnpm --filter api push/pull` to target production database
+- `SUPABASE_SERVICE_ROLE_KEY` - Server-side admin access for Edge Functions, Webhooks (never use in browser!)
 
 ### VS Code Extensions (Recommended)
 
