@@ -5,7 +5,7 @@ Monorepo template for creating a modern web application.
 ## Tech Stack
 
 - **Frontend**: [Svelte 5](https://svelte.dev/) + [SvelteKit](https://svelte.dev/docs/kit/) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind CSS 4](https://tailwindcss.com/)
-- **Backend**: [Supabase](https://supabase.com/) (PostgreSQL, Auth, Realtime, Storage)
+- **API**: [Supabase](https://supabase.com/) (PostgreSQL, Auth, Realtime, Storage)
 - **Build System**: [Turborepo](https://turborepo.org/) + [pnpm](https://pnpm.io/) + [Vite](https://vitejs.dev/)
 - **Quality Tools**: [ESLint 9](https://eslint.org/), [Prettier](https://prettier.io/), [CSpell](https://cspell.org/), [Vitest](https://vitest.dev/), [markuplint](https://markuplint.dev/)
 - **Development**: VS Code extensions, [lint-staged](https://github.com/okonet/lint-staged), [husky](https://github.com/typicode/husky), GitHub Actions
@@ -14,7 +14,7 @@ Monorepo template for creating a modern web application.
 
 ### `apps/`
 
-- **`backend`** - [Supabase](https://supabase.com/) Local Development  
+- **`api`** - [Supabase](https://supabase.com/) Local Development  
   PostgreSQL database, authentication, and API services
 - **`web`** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend  
   Main web application with Supabase integration
@@ -42,8 +42,8 @@ pnpm install
 # Initialize environment files (.env from .env.example)
 pnpm init
 
-# Start Supabase backend
-cd apps/backend && pnpm start
+# Start Supabase API
+cd apps/api && pnpm start
 
 # Generate TypeScript types from Supabase schema
 pnpm generate
@@ -57,7 +57,7 @@ pnpm dev
 #### Starting Development
 
 ```bash
-# 1. Start Supabase (in apps/backend)
+# 1. Start Supabase (in apps/api)
 pnpm start
 
 # 2. Generate types (from root)
@@ -114,13 +114,19 @@ pnpm use-mockup       # Setup for mockup-only usage
 
 ### App-Specific Commands
 
-#### Backend (Supabase)
+#### API (Supabase)
 
 ```bash
-cd apps/backend
+cd apps/api
 pnpm start            # Start Supabase locally
 pnpm stop             # Stop Supabase
-pnpm pull             # Pull schema changes from remote
+pnpm reset            # Reset database and regenerate types
+pnpm diff             # Show schema changes
+pnpm push             # Push migrations to remote
+pnpm pull             # Pull schema changes from remote and regenerate types
+pnpm migration        # Create new migration file
+pnpm link             # Link to remote project
+pnpm seed             # Seed storage buckets
 pnpm generate         # Generate TypeScript types
 ```
 
@@ -162,7 +168,7 @@ pnpm deploy           # Deploy to server (rsync)
 
 TypeScript types are automatically generated from your Supabase database schema:
 
-1. **Local Development**: Types are generated to `apps/backend/$generated/supabase-types.ts`
+1. **Local Development**: Types are generated to `apps/api/$generated/supabase-types.ts`
 2. **Frontend Usage**: Types are directly imported in `apps/web/src/lib/supabase.ts`
 3. **After Schema Changes**: Run `pnpm generate` to update types
 
@@ -219,8 +225,8 @@ If you prefer manual configuration without `vercel.json`:
   - Switch to Svelte 5 (integrated with TypeScript and using the Rune)
   - Update to Tailwind CSS 4 (removed `tailwind.config.js`)
   - Upgrade to ESLint 9 and implement Flat Config
-- **Backend Change:**
-  - Replace [Nhost](https://nhost.io/) with [Supabase](https://supabase.com/) for backend services
+- **API Change:**
+  - Replace [Nhost](https://nhost.io/) with [Supabase](https://supabase.com/) for API services
 
 ### v1.9.0
 
@@ -245,5 +251,5 @@ If you prefer manual configuration without `vercel.json`:
 
 ### v0.23.0
 
-- **Backend Services Integration:**
+- **API Services Integration:**
   - Replaced individual [Firebase](https://firebase.google.com/) and [Hasura](https://hasura.io/) applications with a unified [Nhost](https://nhost.io/) application in `apps/nhost`

@@ -64,18 +64,18 @@ async function run() {
   // Remove files and directories
   await removeFile('.env.example');
   await removeFile('commands/init.sh');
-  await removeFile('apps/backend');
+  await removeFile('apps/api');
   await removeFile('apps/web');
 
   // Modify package.json
   await replaceInFile('package.json', / && .\/commands\/init.sh/g, '');
 
   // Modify .prettierignore
-  await deleteLinesInFile('.prettierignore', /\/apps\/backend/);
+  await deleteLinesInFile('.prettierignore', /\/apps\/api/);
   await deleteLinesInFile('.prettierignore', /\/apps\/web/);
 
   // Modify cspell.json
-  await deleteLinesInFile('cspell.json', /\/apps\/backend/);
+  await deleteLinesInFile('cspell.json', /\/apps\/api/);
   await deleteLinesInFile('cspell.json', /\/apps\/web/);
 
   // Modify .lintstagedrc.js

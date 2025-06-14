@@ -46,11 +46,8 @@ importers:
         specifier: ^2.5.4
         version: 2.5.4
 
-  apps/backend:
+  apps/api:
     devDependencies:
-      npm-run-all2:
-        specifier: ^8.0.4
-        version: 8.0.4
       supabase:
         specifier: ^2.24.3
         version: 2.24.3
