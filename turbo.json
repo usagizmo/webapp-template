@@ -5,7 +5,9 @@
     "NODE_ENV",
     "PUBLIC_SUPABASE_URL",
     "PUBLIC_SUPABASE_ANON_KEY",
-    "PUBLIC_GA4_MEASUREMENT_ID"
+    "PUBLIC_GA4_MEASUREMENT_ID",
+    "DATABASE_URL",
+    "SUPABASE_SERVICE_ROLE_KEY"
   ],
   "tasks": {
     "generate": {
