@@ -49,11 +49,38 @@ pnpm clean-image      # Remove unused images from project
 4. Run quality checks: `pnpm test && pnpm lint`
 5. Deploy: `pnpm run deploy`
 
-## Deploy to Vercel
+## Deployment
+
+### Option 1: Vercel Deployment
+
+**Configuration:**
 
 - **Framework Preset**: Other
 - **Root Directory**: `apps/pages`
-- **Build Command**: `cd ../.. && pnpm build --filter=pages`
+- **Build Command**: Automatically configured via `vercel.json`
+- **Install Command**: Automatically configured via `vercel.json`
+- **Output Directory**: `public`
+
+**Setup Instructions:**
+
+1. Create a new Vercel project from your GitHub repository
+2. Set **Root Directory** to `apps/pages`
+3. The `vercel.json` configuration will handle the build process automatically
+
+### Option 2: Server Deployment (rsync)
+
+**Command:**
+
+```bash
+pnpm run deploy
+```
+
+**Setup:**
+
+1. Configure your server details in the deployment script
+2. Ensure SSH access to your target server
+3. Run `pnpm build` before deployment
+4. The deploy command will sync files to your server using rsync
 
 ## Quality Assurance Details
 

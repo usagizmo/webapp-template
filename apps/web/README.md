@@ -24,10 +24,22 @@ pnpm generate  # Copy Supabase types from api
 
 ## Deploy to Vercel
 
+### Configuration
+
 - **Framework Preset**: SvelteKit
 - **Root Directory**: `apps/web`
-- **Build Command**: `cd ../.. && pnpm build --filter=web`
-- **Environment Variables**: Set Supabase credentials
-- **Corepack**: Add `ENABLE_EXPERIMENTAL_COREPACK=1`
+- **Build Command**: Automatically configured via `vercel.json`
+- **Install Command**: Automatically configured via `vercel.json`
+
+### Environment Variables
+
+Set these in your Vercel project settings:
+
+```env
+PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX  # Optional
+ENABLE_EXPERIMENTAL_COREPACK=1
+```
 
 See the [root README](../../README.md) for complete setup instructions.

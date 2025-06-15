@@ -175,19 +175,20 @@ You can easily switch between development and production environments:
 
 ## Deployment
 
-### Vercel Deployment (Web App)
+### Vercel Deployment
 
-The project includes a `vercel.json` configuration file in the root directory that optimizes the build process for Vercel deployment.
+The project supports deploying both apps as separate Vercel projects. Each app includes its own `vercel.json` configuration file.
 
-#### Configuration
+#### Web App (SvelteKit)
+
+**Configuration:**
 
 - **Framework Preset**: SvelteKit
 - **Root Directory**: `apps/web`
-- **Build Command**: Automatically configured via `vercel.json`
-- **Install Command**: Automatically configured via `vercel.json`
+- **Build Command**: Automatically configured via `apps/web/vercel.json`
+- **Install Command**: Automatically configured via `apps/web/vercel.json`
 
-#### Environment Variables
-
+**Environment Variables:**
 Set the following environment variables in your Vercel project settings:
 
 ```env
@@ -197,18 +198,30 @@ PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX  # Optional
 ENABLE_EXPERIMENTAL_COREPACK=1
 ```
 
-#### Manual Setup (Alternative)
+#### Static Pages
 
-If you prefer manual configuration without `vercel.json`:
-
-- **Build Command**: `cd ../.. && pnpm build --filter=web`
-- **Install Command**: `cd ../.. && pnpm install`
-
-### Vercel Deployment (Pages)
+**Option 1: Vercel Deployment**
 
 - **Framework Preset**: Other
 - **Root Directory**: `apps/pages`
-- **Build Command**: `cd ../.. && pnpm build --filter=pages`
+- **Build Command**: Automatically configured via `apps/pages/vercel.json`
+- **Install Command**: Automatically configured via `apps/pages/vercel.json`
+- **Output Directory**: `public`
+
+**Option 2: Server Deployment (rsync)**
+
+- Use `pnpm run deploy` command in `apps/pages`
+- Configure server details in deployment script
+- Direct file transfer to your server
+
+#### Setup Instructions
+
+1. Create two separate Vercel projects from the same GitHub repository
+2. Set different **Root Directory** for each project:
+   - Web App: `apps/web`
+   - Static Pages: `apps/pages`
+3. Each project will use its respective `vercel.json` configuration
+4. Configure environment variables for the web app project
 
 ## Breaking changes
 
