@@ -18,8 +18,8 @@ Monorepo template for creating a modern web application.
   PostgreSQL database, authentication, and API services
 - **[`web`](./apps/web/)** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend
   Main web application with Supabase integration
-- **[`pages`](./apps/pages/)** [[Demo](https://webapp-template-pages.usagizmo.com/)] - Static Prototyping
-  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS for rapid prototyping
+- **[`pages`](./apps/pages/)** [[Demo](https://webapp-template-pages.usagizmo.com/)] - Static Site Publishing
+  High-quality static websites with URL validation, accessibility checks, and SEO optimization
 
 ### `packages/`
 
@@ -45,7 +45,7 @@ Monorepo template for creating a modern web application.
 # Install dependencies (.env file is created automatically)
 pnpm install
 
-# For pages development only
+# For static site development
 pnpm --filter pages dev
 
 # For web app development
@@ -129,14 +129,19 @@ pnpm test             # Run Vitest tests
 pnpm lint             # Run linting
 ```
 
-#### Pages
+#### Pages (Static Site Publishing)
 
 ```bash
 cd apps/pages
 pnpm dev              # Start development server (port 3000)
-pnpm build            # Build static site
-pnpm test             # Validate links and images
+pnpm build            # Build static site with Tailwind CSS
+pnpm test             # Validate links, images, and accessibility (Note: Delete tests/external-links.txt before pnpm test to update URL tracking)
+pnpm lint             # Run HTML validation with markuplint
 pnpm deploy           # Deploy to server (rsync)
+
+# Optimization Utilities
+pnpm add-size-to-img  # Add width/height to <img> tags for better performance
+pnpm clean-image      # Remove unused images from project
 ```
 
 ## Port Configuration
