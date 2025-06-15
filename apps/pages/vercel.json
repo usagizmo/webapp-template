@@ -1,7 +1,8 @@
 {
-  "buildCommand": "cd ../.. && pnpm build --filter=pages",
+  "buildCommand": "cd ../.. && pnpm --filter=pages build",
   "devCommand": "pnpm dev",
-  "installCommand": "cd ../.. && pnpm install",
+  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
   "outputDirectory": "public",
-  "ignoreCommand": "git diff HEAD^ HEAD --quiet -- ./apps/pages/"
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet -- ./apps/pages/",
+  "framework": null
 }

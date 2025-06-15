@@ -1,14 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [".env"],
-  "globalEnv": [
-    "NODE_ENV",
-    "PUBLIC_SUPABASE_URL",
-    "PUBLIC_SUPABASE_ANON_KEY",
-    "PUBLIC_GA4_MEASUREMENT_ID",
-    "DATABASE_URL",
-    "SUPABASE_SERVICE_ROLE_KEY"
-  ],
+  "globalEnv": ["NODE_ENV"],
   "tasks": {
     "generate": {
       "dependsOn": ["^generate"],
@@ -57,7 +50,8 @@
     },
     "api#generate:supabase-types": {
       "inputs": ["supabase/**"],
-      "outputs": ["$generated/supabase-types.ts"]
+      "outputs": ["$generated/supabase-types.ts"],
+      "env": ["DATABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]
     },
     "api#start": {
       "cache": false,
@@ -66,16 +60,6 @@
     },
     "api#stop": {
       "cache": false
-    },
-    "web#build": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
-      "outputs": [".svelte-kit/**", ".vercel/**"]
-    },
-    "web#dev": {
-      "cache": false,
-      "persistent": true,
-      "dependsOn": ["api#generate"]
     },
     "pages#build": {
       "inputs": [
@@ -99,6 +83,16 @@
     "pages#deploy": {
       "dependsOn": ["pages#build"],
       "cache": false
+    },
+    "web#build": {
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
+      "outputs": [".svelte-kit/**", ".vercel/**"],
+      "env": ["PUBLIC_SUPABASE_URL", "PUBLIC_SUPABASE_ANON_KEY", "PUBLIC_GA4_MEASUREMENT_ID"]
+    },
+    "web#dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["api#generate"]
     }
   }
 }
