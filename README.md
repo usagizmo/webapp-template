@@ -236,10 +236,23 @@ ENABLE_EXPERIMENTAL_COREPACK=1
   - Removed deprecated `apps/backend` directory completely
   - Streamlined development workflow with automatic `.env` file generation
   - Updated all references and documentation to use `apps/api` consistently
+- **Application Structure:**
+  - Renamed `apps/mockup` to `apps/pages` for better clarity and purpose alignment
+  - Removed deprecated `commands/use-mockup.js` script and related references
+  - Updated all import paths and package references to use the new naming convention
+- **Deployment Configuration:**
+  - Separated Vercel deployment configurations for independent app deployment
+  - Moved root-level `vercel.json` to `apps/web/vercel.json`
+  - Added separate `apps/pages/vercel.json` for static site deployment
+  - Each application now deploys independently with its own configuration
 - **Configuration Updates:**
   - Enhanced Supabase configuration with comprehensive settings
   - Updated Turbo configuration to include all necessary environment variables
   - Improved Prettier and linting configurations for new structure
+- **Environment Setup:**
+  - Updated `.env.example` with comprehensive Supabase environment variables
+  - Enhanced environment configuration documentation with clearer setup instructions
+  - Improved local and production environment switching guidance
 
 ### [v2.8.1](https://github.com/usagizmo/webapp-template/releases/tag/v2.8.1)
 
