@@ -3,5 +3,5 @@
   "devCommand": "pnpm dev",
   "installCommand": "cd ../.. && pnpm install",
   "outputDirectory": "public",
-  "ignoreCommand": "cd ../.. && pnpm turbo build --filter=pages --dry=json | jq '.packages[]' | wc -l | awk '{print ($1>0)}'"
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet -- ./apps/pages/"
 }

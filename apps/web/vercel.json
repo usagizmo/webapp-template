@@ -2,5 +2,5 @@
   "buildCommand": "cd ../.. && pnpm build --filter=web",
   "devCommand": "pnpm dev",
   "installCommand": "cd ../.. && pnpm install",
-  "ignoreCommand": "cd ../.. && pnpm turbo build --filter=web --dry=json | jq '.packages[]' | wc -l | awk '{print ($1>0)}'"
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet -- ./apps/web/"
 }
