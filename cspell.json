@@ -24,8 +24,8 @@
     "/apps/api/$generated",
     "/apps/api/supabase/config.toml",
     "/apps/api/supabase/migrations",
-    "/apps/mockup/public/styles.css",
-    "/apps/mockup/tests/external-links.txt",
+    "/apps/pages/public/styles.css",
+    "/apps/pages/tests/external-links.txt",
     "/apps/web/build"
   ]
 }

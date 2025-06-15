@@ -77,7 +77,7 @@
       "persistent": true,
       "dependsOn": ["api#generate"]
     },
-    "mockup#build": {
+    "pages#build": {
       "inputs": [
         "app.css",
         "tailwind.config.*",
@@ -87,17 +87,17 @@
       ],
       "outputs": ["public/styles.css"]
     },
-    "mockup#dev": {
+    "pages#dev": {
       "cache": false,
       "persistent": true
     },
-    "mockup#test": {
-      "dependsOn": ["mockup#build"],
+    "pages#test": {
+      "dependsOn": ["pages#build"],
       "inputs": ["public/**", "tests/**", "commands/**"],
       "outputs": ["tests/external-links.txt"]
     },
-    "mockup#deploy": {
-      "dependsOn": ["mockup#build"],
+    "pages#deploy": {
+      "dependsOn": ["pages#build"],
       "cache": false
     }
   }

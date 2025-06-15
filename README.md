@@ -14,17 +14,17 @@ Monorepo template for creating a modern web application.
 
 ### `apps/`
 
-- **[`api`](./apps/api/)** - [Supabase](https://supabase.com/) Local Development  
+- **[`api`](./apps/api/)** - [Supabase](https://supabase.com/) Local Development
   PostgreSQL database, authentication, and API services
-- **[`web`](./apps/web/)** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend  
+- **[`web`](./apps/web/)** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend
   Main web application with Supabase integration
-- **[`mockup`](./apps/mockup/)** [[Demo](https://webapp-template-mockup.usagizmo.com/)] - Static Prototyping  
-  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS for rapid prototyping
+- **[`pages`](./apps/pages/)** [[Demo](https://webapp-template-pages.usagizmo.com/)] - Static Site Publishing
+  High-quality static websites with URL validation, accessibility checks, and SEO optimization
 
 ### `packages/`
 
 - **[`eslint-config`](./packages/eslint-config/)** - Centralized [ESLint 9](https://eslint.org/) configuration with Flat Config
-  - Pre-configured setups: `root`, `web` (Svelte), `mockup` (Vanilla JS)
+  - Pre-configured setups: `root`, `web` (Svelte), `pages` (Vanilla JS)
   - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Prettier integration
   - [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) - Svelte linting
   - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) - Import sorting
@@ -45,8 +45,8 @@ Monorepo template for creating a modern web application.
 # Install dependencies (.env file is created automatically)
 pnpm install
 
-# For mockup development only
-pnpm --filter mockup dev
+# For static site development
+pnpm --filter pages dev
 
 # For web app development
 pnpm --filter api start     # Start Supabase API
@@ -62,11 +62,12 @@ After running `pnpm install`, a `.env` file is automatically created from `.env.
 
 **For local development**:
 
-- No additional configuration needed - local Supabase provides default keys automatically
+- `PUBLIC_SUPABASE_URL` - `http://127.0.0.1:54321`
+- `PUBLIC_SUPABASE_ANON_KEY` - Copy the anon key displayed when running `pnpm --filter api start`
 
 **For production deployment**:
 
-- `PUBLIC_SUPABASE_URL` - Your project URL from Supabase Dashboard
+- `PUBLIC_SUPABASE_URL` - `https://[project-id].supabase.co`
 - `PUBLIC_SUPABASE_ANON_KEY` - Get from Supabase Dashboard > Project Settings > API Keys
 
 **Optional (for advanced operations)**:
@@ -97,9 +98,6 @@ pnpm build            # Build all applications
 pnpm lint             # Run linting across all apps
 pnpm test             # Run tests across all apps
 pnpm format           # Format code with Prettier
-
-# Utilities
-pnpm use-mockup       # Setup for mockup-only usage
 ```
 
 ### App-Specific Commands
@@ -131,14 +129,19 @@ pnpm test             # Run Vitest tests
 pnpm lint             # Run linting
 ```
 
-#### Mockup
+#### Pages (Static Site Publishing)
 
 ```bash
-cd apps/mockup
+cd apps/pages
 pnpm dev              # Start development server (port 3000)
-pnpm build            # Build static site
-pnpm test             # Validate links and images
+pnpm build            # Build static site with Tailwind CSS
+pnpm test             # Validate links, images, and accessibility (Note: Delete tests/external-links.txt before pnpm test to update URL tracking)
+pnpm lint             # Run HTML validation with markuplint
 pnpm deploy           # Deploy to server (rsync)
+
+# Optimization Utilities
+pnpm add-size-to-img  # Add width/height to <img> tags for better performance
+pnpm clean-image      # Remove unused images from project
 ```
 
 ## Port Configuration
@@ -150,7 +153,7 @@ pnpm deploy           # Deploy to server (rsync)
 | Supabase Studio   | 54323 | Admin dashboard              |
 | Supabase Inbucket | 54324 | Email testing                |
 | Web App           | 5173  | SvelteKit development server |
-| Mockup            | 3000  | Static site with BrowserSync |
+| Pages             | 3000  | Static site with BrowserSync |
 
 ## Type Safety and Environment Switching
 
@@ -172,19 +175,20 @@ You can easily switch between development and production environments:
 
 ## Deployment
 
-### Vercel Deployment (Web App)
+### Vercel Deployment
 
-The project includes a `vercel.json` configuration file in the root directory that optimizes the build process for Vercel deployment.
+The project supports deploying both apps as separate Vercel projects. Each app includes its own `vercel.json` configuration file.
 
-#### Configuration
+#### Web App (SvelteKit)
+
+**Configuration:**
 
 - **Framework Preset**: SvelteKit
 - **Root Directory**: `apps/web`
-- **Build Command**: Automatically configured via `vercel.json`
-- **Install Command**: Automatically configured via `vercel.json`
+- **Build Command**: Automatically configured via `apps/web/vercel.json`
+- **Install Command**: Automatically configured via `apps/web/vercel.json`
 
-#### Environment Variables
-
+**Environment Variables:**
 Set the following environment variables in your Vercel project settings:
 
 ```env
@@ -194,20 +198,61 @@ PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX  # Optional
 ENABLE_EXPERIMENTAL_COREPACK=1
 ```
 
-#### Manual Setup (Alternative)
+#### Static Pages
 
-If you prefer manual configuration without `vercel.json`:
-
-- **Build Command**: `cd ../.. && pnpm build --filter=web`
-- **Install Command**: `cd ../.. && pnpm install`
-
-### Vercel Deployment (Mockup)
+**Option 1: Vercel Deployment**
 
 - **Framework Preset**: Other
-- **Root Directory**: `apps/mockup`
-- **Build Command**: `cd ../.. && pnpm build --filter=mockup`
+- **Root Directory**: `apps/pages`
+- **Build Command**: Automatically configured via `apps/pages/vercel.json`
+- **Install Command**: Automatically configured via `apps/pages/vercel.json`
+- **Output Directory**: `public`
+
+**Option 2: Server Deployment (rsync)**
+
+- Use `pnpm run deploy` command in `apps/pages`
+- Configure server details in deployment script
+- Direct file transfer to your server
+
+#### Setup Instructions
+
+1. Create two separate Vercel projects from the same GitHub repository
+2. Set different **Root Directory** for each project:
+   - Web App: `apps/web`
+   - Static Pages: `apps/pages`
+3. Each project will use its respective `vercel.json` configuration
+4. Configure environment variables for the web app project
 
 ## Breaking changes
+
+### [v2.9.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.9.0)
+
+- **Database Schema Changes:**
+  - Reset and restructured Supabase database schema with improved type definitions
+  - Added `updated_at` columns to `profiles` and `comments` tables
+  - Enhanced RLS policies with more granular permissions
+  - Updated TypeScript types to reflect new schema structure
+- **Project Structure Optimization:**
+  - Removed deprecated `apps/backend` directory completely
+  - Streamlined development workflow with automatic `.env` file generation
+  - Updated all references and documentation to use `apps/api` consistently
+- **Application Structure:**
+  - Renamed `apps/mockup` to `apps/pages` for better clarity and purpose alignment
+  - Removed deprecated `commands/use-mockup.js` script and related references
+  - Updated all import paths and package references to use the new naming convention
+- **Deployment Configuration:**
+  - Separated Vercel deployment configurations for independent app deployment
+  - Moved root-level `vercel.json` to `apps/web/vercel.json`
+  - Added separate `apps/pages/vercel.json` for static site deployment
+  - Each application now deploys independently with its own configuration
+- **Configuration Updates:**
+  - Enhanced Supabase configuration with comprehensive settings
+  - Updated Turbo configuration to include all necessary environment variables
+  - Improved Prettier and linting configurations for new structure
+- **Environment Setup:**
+  - Updated `.env.example` with comprehensive Supabase environment variables
+  - Enhanced environment configuration documentation with clearer setup instructions
+  - Improved local and production environment switching guidance
 
 ### [v2.8.1](https://github.com/usagizmo/webapp-template/releases/tag/v2.8.1)
 

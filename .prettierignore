@@ -12,5 +12,5 @@ pnpm-workspace.yaml
 .turbo
 *.min.*
 /apps/api/$generated
-/apps/mockup/public/styles.css
+/apps/pages/public/styles.css
 /apps/web/.svelte-kit

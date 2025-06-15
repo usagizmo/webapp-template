@@ -3,27 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WebApp Template</title>
-    <meta name="description" content="WebApp Template Description" />
-    <meta property="og:title" content="WebApp Template" />
+    <title>WebApp Template (pages)</title>
+    <meta name="description" content="WebApp Template (pages) Description" />
+    <meta property="og:title" content="WebApp Template (pages)" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://webapp-template-mockup.usagizmo.com" />
-    <meta
-      property="og:image"
-      content="https://webapp-template-mockup.usagizmo.com/images/ogp.png"
-    />
-    <meta property="og:site_name" content="WebApp Template" />
-    <meta property="og:description" content="WebApp Template Description" />
+    <meta property="og:url" content="https://webapp-template-pages.usagizmo.com" />
+    <meta property="og:image" content="https://webapp-template-pages.usagizmo.com/images/ogp.png" />
+    <meta property="og:site_name" content="WebApp Template (pages)" />
+    <meta property="og:description" content="WebApp Template (pages) Description" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="WebApp Template" />
-    <meta name="twitter:description" content="WebApp Template Description" />
+    <meta name="twitter:title" content="WebApp Template (pages)" />
+    <meta name="twitter:description" content="WebApp Template (pages) Description" />
     <meta
       name="twitter:image"
-      content="https://webapp-template-mockup.usagizmo.com/images/ogp.png"
+      content="https://webapp-template-pages.usagizmo.com/images/ogp.png"
     />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="canonical" href="https://webapp-template-mockup.usagizmo.com" />
+    <link rel="canonical" href="https://webapp-template-pages.usagizmo.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -44,7 +41,7 @@
         <h1
           class="font-ui text-center text-[26px] font-bold leading-tight tracking-tighter lg:text-[32px]"
         >
-          WebApp Template
+          WebApp Template (pages)
         </h1>
         <p class="mt-2 text-sm text-zinc-500 md:ml-auto md:mt-0 md:px-4 lg:px-5 lg:text-base">
           Monorepo template for creating a modern web application.
@@ -255,16 +252,10 @@
                   <li
                     class="relative pl-5 before:absolute before:left-0 before:top-2 before:size-2.5 before:rounded-full before:bg-zinc-900"
                   >
-                    <strong class="font-ui font-semibold">mockup</strong><br />
-                    Static Prototyping<br />
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://tailwindcss.com"
-                      class="font-semibold text-blue-500"
-                      >Tailwind CSS</a
-                    >
-                    + Vanilla JS for rapid prototyping
+                    <strong class="font-ui font-semibold">pages</strong><br />
+                    Static Site Publishing<br />
+                    High-quality static websites with URL validation, accessibility checks, and SEO
+                    optimization
                   </li>
                 </ul>
               </div>
@@ -356,14 +347,22 @@
           ><code class="text-white font-mono"><span class="text-slate-500"># Install dependencies (.env file is created automatically)</span>
 <span class="text-sky-300">pnpm</span> install
 
-<span class="text-slate-500"># Start Supabase API</span>
-<span class="text-blue-300">cd</span> apps/api &amp;&amp; <span class="text-sky-300">pnpm</span> start
+<span class="text-slate-500"># For static site development</span>
+<span class="text-sky-300">pnpm</span> dev              <span class="text-slate-500"># Start development server (port 3000)</span>
+<span class="text-sky-300">pnpm</span> build            <span class="text-slate-500"># Build static site with Tailwind CSS</span>
 
-<span class="text-slate-500"># Generate TypeScript types from Supabase schema</span>
-<span class="text-sky-300">pnpm</span> generate
+<span class="text-slate-500"># Quality assurance for pages</span>
+<span class="text-sky-300">pnpm</span> test             <span class="text-slate-500"># Validate links, images, and accessibility</span>
+<span class="text-sky-300">pnpm</span> lint             <span class="text-slate-500"># Run HTML validation with markuplint</span>
+<span class="text-sky-300">pnpm</span> format           <span class="text-slate-500"># Format with Prettier</span>
 
-<span class="text-slate-500"># Start all development servers</span>
-<span class="text-sky-300">pnpm</span> dev</code></pre>
+<span class="text-slate-500"># Publishing</span>
+<span class="text-sky-300">pnpm</span> run deploy       <span class="text-slate-500"># Deploy to server (rsync)</span>
+
+<span class="text-slate-500"># Optimization Utilities</span>
+<span class="text-sky-300">pnpm</span> add-size-to-img  <span class="text-slate-500"># Add width/height to &lt;img&gt; tags for better performance</span>
+<span class="text-sky-300">pnpm</span> clean-image      <span class="text-slate-500"># Remove unused images from project</span>
+</code></pre>
 
           <!-- Buttons -->
           <div class="mt-9 flex items-center justify-center">

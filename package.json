@@ -1,6 +1,6 @@
 {
   "name": "webapp-template",
-  "version": "2.8.1",
+  "version": "2.9.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -21,8 +21,7 @@
     "format": "run-p format:root format:packages",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
-    "typecheck": "turbo run typecheck",
-    "use-mockup": "node ./commands/use-mockup.js"
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
