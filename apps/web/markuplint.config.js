@@ -15,7 +15,7 @@ export default {
   },
   overrideMode: 'merge',
   overrides: {
-    '**/app.html': {
+    'src/app.html': {
       rules: {
         'required-h1': false,
       },
