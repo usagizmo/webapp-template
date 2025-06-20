@@ -109,6 +109,10 @@ export const typescript = [
       globals: { ...globals.browser, ...globals.node },
     },
     ...jsdoc.configs['flat/recommended-typescript-error'],
+    rules: {
+      'jsdoc/require-returns-type': 'off',
+      'jsdoc/require-param-type': 'off',
+    },
   },
 ];
 
@@ -133,5 +137,9 @@ export const svelte = [
       parser: tseslint.parser,
     },
     ...jsdoc.configs['flat/recommended-typescript-error'],
+    rules: {
+      'jsdoc/require-returns-type': 'off',
+      'jsdoc/require-param-type': 'off',
+    },
   },
 ];
