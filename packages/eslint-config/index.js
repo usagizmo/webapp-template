@@ -100,6 +100,20 @@ export const browser = [
   },
 ];
 
+const typescriptCommonRules = {
+  'jsdoc/require-returns-type': 'off',
+  'jsdoc/require-param-type': 'off',
+  '@typescript-eslint/no-unused-vars': [
+    'error',
+    {
+      vars: 'all',
+      varsIgnorePattern: '^_',
+      args: 'after-used',
+      argsIgnorePattern: '^_',
+    },
+  ],
+};
+
 export const typescript = [
   ...tseslint.configs.recommended,
   {
@@ -109,10 +123,7 @@ export const typescript = [
       globals: { ...globals.browser, ...globals.node },
     },
     ...jsdoc.configs['flat/recommended-typescript-error'],
-    rules: {
-      'jsdoc/require-returns-type': 'off',
-      'jsdoc/require-param-type': 'off',
-    },
+    rules: typescriptCommonRules,
   },
 ];
 
@@ -137,9 +148,6 @@ export const svelte = [
       parser: tseslint.parser,
     },
     ...jsdoc.configs['flat/recommended-typescript-error'],
-    rules: {
-      'jsdoc/require-returns-type': 'off',
-      'jsdoc/require-param-type': 'off',
-    },
+    rules: typescriptCommonRules,
   },
 ];
