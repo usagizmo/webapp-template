@@ -25,10 +25,6 @@
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**"],
       "outputs": ["coverage/**"]
     },
-    "typecheck": {
-      "dependsOn": ["^typecheck", "generate"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*", "!**/coverage/**"]
-    },
     "dev": {
       "cache": false,
       "persistent": true,
