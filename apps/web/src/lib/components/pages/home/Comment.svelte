@@ -1,5 +1,6 @@
 <script lang="ts">
   import CircleCheckIcon from '@lucide/svelte/icons/circle-check';
+  import Trash2Icon from '@lucide/svelte/icons/trash-2';
   import XIcon from '@lucide/svelte/icons/x';
   import { cdate } from 'cdate';
   import { toast } from 'svelte-sonner';
@@ -23,7 +24,6 @@
     comment: CommentWithProfile;
   } = $props();
 
-  let isActionVisible = $state(false);
   let isDeleting = $state(false);
 
   const card: Card = $derived({
@@ -93,12 +93,7 @@
   };
 </script>
 
-<div
-  class={['py-2.5 duration-200', { 'bg-slate-100': isDeleting }]}
-  role="listitem"
-  onmouseenter={() => (isActionVisible = card.me ? true : false)}
-  onmouseleave={() => (isActionVisible = false)}
->
+<div class="group py-2.5 duration-200" role="listitem">
   <div class="relative">
     <div class="flex items-center">
       <p class="font-bold">{card.name}</p>
@@ -122,11 +117,11 @@
           <figure class="h-[120px] w-[200px] overflow-hidden rounded-md bg-[#d9d9d9]">
             <img class="size-full object-cover" src={commentFileUrl} decoding="async" alt="" />
           </figure>
-          {#if isActionVisible}
+          {#if card.me}
             <Button
               variant="secondary"
               size="icon"
-              class="absolute right-[-8px] top-[-8px] size-6 rounded-full"
+              class="not-group-hover:opacity-0 absolute right-[-8px] top-[-8px] size-6 rounded-full transition-none"
               onclick={handleDeleteImage}
             >
               <XIcon class="size-4" />
@@ -136,9 +131,11 @@
       {/if}
     </div>
 
-    {#if isActionVisible}
-      <div class="absolute bottom-0 right-0">
-        <Button onclick={handleDelete} disabled={isDeleting}>Delete</Button>
+    {#if card.me}
+      <div class="not-group-hover:opacity-0 absolute bottom-0 right-0">
+        <Button size="icon" onclick={handleDelete} disabled={isDeleting}>
+          <Trash2Icon />
+        </Button>
       </div>
     {/if}
   </div>

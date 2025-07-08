@@ -1,8 +1,9 @@
 <script lang="ts">
   import SendIcon from '@lucide/svelte/icons/send';
+  import XIcon from '@lucide/svelte/icons/x';
   import { tick } from 'svelte';
 
-  import { Button } from '$lib/components/ui/button';
+  import { Button, buttonVariants } from '$lib/components/ui/button';
   import * as Card from '$lib/components/ui/card';
   import { Textarea } from '$lib/components/ui/textarea';
   import { commentStore } from '$lib/stores';
@@ -47,25 +48,32 @@
     }
   }
 
-  function handleFileChange(event: Event): void {
+  function handleFileChange(event: Event) {
     const target = event.target as HTMLInputElement;
     file = target.files?.[0] ?? undefined;
 
     target.value = '';
+  }
+
+  function handleRemoveFile(event: MouseEvent) {
+    event.preventDefault();
+    file = undefined;
   }
 </script>
 
 <Card.Root class="py-4">
   <Card.Content>
     <div class="gap flex gap-1.5">
-      <Textarea
-        bind:ref={textAreaEl}
-        class="h-24"
-        placeholder="Write a comment..."
-        bind:value={text}
-        onkeydown={handleKeyDown}
-        disabled={isSending}
-      ></Textarea>
+      <div class="flex-1">
+        <Textarea
+          bind:ref={textAreaEl}
+          class="h-24"
+          placeholder="Write a comment..."
+          bind:value={text}
+          onkeydown={handleKeyDown}
+          disabled={isSending}
+        ></Textarea>
+      </div>
       <label>
         <input
           type="file"
@@ -76,16 +84,23 @@
         />
         {#if file}
           {@const blobUrl = URL.createObjectURL(file)}
-          <img
-            class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 hover:brightness-90 peer-disabled:pointer-events-none peer-disabled:opacity-40"
-            src={blobUrl}
-            alt=""
-          />
+          <div class="group relative">
+            <img
+              class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 hover:brightness-90 peer-disabled:pointer-events-none peer-disabled:opacity-40"
+              src={blobUrl}
+              alt=""
+            />
+            <Button
+              variant="secondary"
+              size="icon"
+              class="not-group-hover:opacity-0 absolute right-[-8px] top-[-8px] size-6 rounded-full transition-none"
+              onclick={handleRemoveFile}
+            >
+              <XIcon class="size-4" />
+            </Button>
+          </div>
         {:else}
-          <span
-            class=" grid h-24 w-32 cursor-pointer place-content-center rounded-md border border-slate-200 bg-gray-100 text-zinc-500 duration-200 hover:brightness-95 peer-disabled:pointer-events-none peer-disabled:opacity-40"
-            >+Add</span
-          >
+          <span class={buttonVariants({ variant: 'secondary', class: 'h-24 w-32' })}> ＋Add </span>
         {/if}
       </label>
     </div>
