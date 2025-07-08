@@ -26,11 +26,11 @@ src/lib/
 │   │   └── layout/      # Layout components
 │   └── ui/              # Reusable UI components (shadcn-svelte)
 ├── constants/           # Application constants
-├── helpers/             # Utility functions
+├── helpers/             # Business logic and API operations (comment handling, authentication, etc.)
 ├── schemas/             # Zod validation schemas
 ├── stores/              # State management (class-based)
 ├── types/               # TypeScript type definitions
-└── utils/               # Utility functions
+└── utils/               # Generic utility functions (reusable, not feature-specific)
 ```
 
 [[Demo](https://webapp-template.usagizmo.com/)]
