@@ -4,7 +4,7 @@ Monorepo template for creating a modern web application.
 
 ## Tech Stack
 
-- **Frontend**: [Svelte 5](https://svelte.dev/) + [SvelteKit](https://svelte.dev/docs/kit/) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind CSS 4](https://tailwindcss.com/) + [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte) + [Superforms](https://superforms.rocks/) + [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) + [Zod](https://zod.dev/)
+- **Frontend**: [Svelte 5](https://svelte.dev/) + [SvelteKit](https://svelte.dev/docs/kit/) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind CSS 4](https://tailwindcss.com/) + [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte) + [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) + [Superforms](https://superforms.rocks/) + [Zod](https://zod.dev/)
 - **API**: [Supabase](https://supabase.com/) (PostgreSQL, Auth, Realtime, Storage)
 - **Build System**: [Turborepo](https://turborepo.org/) + [pnpm](https://pnpm.io/) + [Vite](https://vitejs.dev/)
 - **Quality Tools**: [ESLint 9](https://eslint.org/), [Prettier](https://prettier.io/), [CSpell](https://cspell.org/), [Vitest](https://vitest.dev/), [markuplint](https://markuplint.dev/)

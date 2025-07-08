@@ -5,16 +5,20 @@ https://fonts.googleapis.com
 https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+JP:wght@100..900&display=swap
 https://fonts.gstatic.com
 https://github.com/gajus/eslint-plugin-jsdoc
+https://github.com/huntabyte/shadcn-svelte
 https://github.com/lydell/eslint-plugin-simple-import-sort
 https://github.com/okonet/lint-staged
 https://github.com/prettier/eslint-config-prettier
 https://github.com/sveltejs/eslint-plugin-svelte
+https://github.com/sweepline/eslint-plugin-unused-imports
 https://github.com/typicode/husky
 https://github.com/usagizmo/webapp-template
+https://lucide.dev/guide/packages/lucide-svelte
 https://markuplint.dev
 https://pnpm.io
 https://prettier.io
 https://supabase.com
+https://superforms.rocks/
 https://svelte.dev
 https://svelte.dev/docs/kit/
 https://tailwindcss.com
@@ -24,3 +28,4 @@ https://vitejs.dev
 https://vitest.dev
 https://webapp-template-pages.usagizmo.com
 https://www.typescriptlang.org
+https://zod.dev/
