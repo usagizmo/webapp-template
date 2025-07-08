@@ -11,7 +11,11 @@ export default {
   rules: {
     'no-orphaned-end-tag': false,
     'label-has-control': false,
-    'ineffective-attr': false,
+    'invalid-attr': {
+      options: {
+        allowAttrs: ['clientHeight', 'files'],
+      },
+    },
   },
   overrideMode: 'merge',
   overrides: {

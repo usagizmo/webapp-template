@@ -4,7 +4,7 @@ Monorepo template for creating a modern web application.
 
 ## Tech Stack
 
-- **Frontend**: [Svelte 5](https://svelte.dev/) + [SvelteKit](https://svelte.dev/docs/kit/) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind CSS 4](https://tailwindcss.com/)
+- **Frontend**: [Svelte 5](https://svelte.dev/) + [SvelteKit](https://svelte.dev/docs/kit/) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind CSS 4](https://tailwindcss.com/) + [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte) + [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) + [Superforms](https://superforms.rocks/) + [Zod](https://zod.dev/)
 - **API**: [Supabase](https://supabase.com/) (PostgreSQL, Auth, Realtime, Storage)
 - **Build System**: [Turborepo](https://turborepo.org/) + [pnpm](https://pnpm.io/) + [Vite](https://vitejs.dev/)
 - **Quality Tools**: [ESLint 9](https://eslint.org/), [Prettier](https://prettier.io/), [CSpell](https://cspell.org/), [Vitest](https://vitest.dev/), [markuplint](https://markuplint.dev/)
@@ -17,7 +17,7 @@ Monorepo template for creating a modern web application.
 - **[`api`](./apps/api/)** - [Supabase](https://supabase.com/) Local Development
   PostgreSQL database, authentication, and API services
 - **[`web`](./apps/web/)** [[Demo](https://webapp-template.usagizmo.com/)] - [SvelteKit](https://svelte.dev/docs/kit/) Frontend
-  Main web application with Supabase integration
+  Modern web application with page-based component organization, class-based design patterns, and comprehensive Supabase integration
 - **[`pages`](./apps/pages/)** [[Demo](https://webapp-template-pages.usagizmo.com/)] - Static Site Publishing
   High-quality static websites with URL validation, accessibility checks, and SEO optimization
 

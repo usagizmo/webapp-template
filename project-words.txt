@@ -6,6 +6,7 @@ dirents
 dotenvx
 esbuild
 fkey
+formsnap
 hasura
 icns
 inbucket
@@ -16,9 +17,12 @@ markuplintrc
 nhost
 pooler
 postgrest
+shadcn
 snakecase
+sonner
 sssz
 supabase
+superforms
 sveltejs
 tailwindcss
 tseslint

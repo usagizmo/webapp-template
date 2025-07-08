@@ -1,6 +1,37 @@
 # Web App ([SvelteKit](https://svelte.dev/docs/kit/))
 
-Modern web application built with [Svelte 5](https://svelte.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS 4](https://tailwindcss.com/), and [markuplint](https://markuplint.dev/) for HTML validation.
+Modern web application built with [Svelte 5](https://svelte.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS 4](https://tailwindcss.com/), and comprehensive tooling for production-ready development.
+
+## Tech Stack
+
+- **Frontend**: Svelte 5 (Runes API), SvelteKit, TypeScript
+- **Styling**: Tailwind CSS 4, shadcn-svelte UI components
+- **Authentication**: @supabase/ssr for server-side auth
+- **Forms**: Superforms with Formsnap for type-safe form handling
+- **Icons**: Lucide Svelte for consistent iconography
+- **Validation**: markuplint for HTML validation, Zod for schema validation
+- **Testing**: Vitest
+- **Linting**: ESLint, Prettier
+
+## Architecture
+
+This application follows a **page-based component organization** with **class-based design patterns** for improved maintainability:
+
+```text
+src/lib/
+├── components/
+│   ├── pages/           # Page-specific components
+│   │   ├── auth/        # Authentication pages
+│   │   ├── home/        # Home page components
+│   │   └── layout/      # Layout components
+│   └── ui/              # Reusable UI components (shadcn-svelte)
+├── constants/           # Application constants
+├── helpers/             # Utility functions
+├── schemas/             # Zod validation schemas
+├── stores/              # State management (class-based)
+├── types/               # TypeScript type definitions
+└── utils/               # Utility functions
+```
 
 [[Demo](https://webapp-template.usagizmo.com/)]
 

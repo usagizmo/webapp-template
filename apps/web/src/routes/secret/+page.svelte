@@ -1,6 +1,6 @@
 <script lang="ts">
   import Meta from '$lib/components/Meta.svelte';
-  import { sectionFrameVariants } from '$lib/variants/sectionFrameVariants';
+  import * as Card from '$lib/components/ui/card';
 
   const meta = {
     title: `Secret | WebApp Template (web)`,
@@ -10,10 +10,8 @@
 
 <Meta {...meta} />
 
-<div class="mx-auto max-w-[792px]">
-  <section class={sectionFrameVariants()}>
-    <div class="text-center">
-      <p class="text-sm text-zinc-500">src/routes/secret/+page.svelte</p>
-    </div>
-  </section>
-</div>
+<Card.Root class="mx-auto max-w-3xl">
+  <Card.Content class="text-center">
+    <p class="text-muted-foreground text-sm">src/routes/secret/+page.svelte</p>
+  </Card.Content>
+</Card.Root>

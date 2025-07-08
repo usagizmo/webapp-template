@@ -7,7 +7,6 @@
   --font-sans: -apple-system, blinkMacSystemFont, Helvetica, 'Hiragino Sans',
     'Hiragino Kaku Gothic ProN', 'BIZ UDPGothic', Meiryo, sans-serif;
   --font-serif: 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', serif; */
-  --font-sans: YakuHanJP, 'Noto Sans JP', sans-serif;
-  --font-ui: Inter, YakuHanJP, 'Noto Sans JP', sans-serif;
+  --font-sans: Inter, YakuHanJP, 'Noto Sans JP', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }

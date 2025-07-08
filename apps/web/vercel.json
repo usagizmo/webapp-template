@@ -1,8 +1,4 @@
 {
   "buildCommand": "cd ../.. && pnpm --filter=web build",
-  "devCommand": "pnpm dev",
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
-  "ignoreCommand": "git diff HEAD^ HEAD --quiet -- ./apps/web/",
-  "framework": "sveltekit",
-  "outputDirectory": ".svelte-kit/output/client"
+  "installCommand": "cd ../.. && pnpm install --frozen-lockfile"
 }
