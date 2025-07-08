@@ -56,16 +56,14 @@
 <ModeWatcher />
 <Toaster />
 
-<div class="h-screen">
-  <div class="flex h-full flex-col">
-    <HeaderNavigation />
+<div class="flex min-h-screen flex-col">
+  <HeaderNavigation />
 
-    <div class="bg-muted flex flex-1 flex-col">
-      <main class="flex-1 px-4 pb-16 pt-[68px] md:pt-10">
-        {@render children()}
-      </main>
+  <div class="bg-muted flex flex-1 flex-col">
+    <main class="flex-1 px-4 pb-16 pt-[68px] md:pt-10">
+      {@render children()}
+    </main>
 
-      <Footer />
-    </div>
+    <Footer />
   </div>
 </div>
