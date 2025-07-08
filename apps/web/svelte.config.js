@@ -17,6 +17,11 @@ const config = {
     env: {
       dir: '../../',
     },
+
+    alias: {
+      // [api] generated files
+      '$api-generated': '../api/$generated',
+    },
   },
 };
 
