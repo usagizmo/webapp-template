@@ -1,8 +1,4 @@
 {
   "buildCommand": "cd ../.. && pnpm --filter=pages build",
-  "devCommand": "pnpm dev",
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
-  "outputDirectory": "public",
-  "ignoreCommand": "git diff HEAD^ HEAD --quiet -- ./apps/pages/",
-  "framework": null
+  "installCommand": "cd ../.. && pnpm install --frozen-lockfile"
 }
