@@ -1,18 +1,26 @@
 <script lang="ts">
-  import SignOutIcon from '$lib/components/icons/16x16/SignOutIcon.svelte';
+  import Loader2Icon from '@lucide/svelte/icons/loader-2';
+  import LogOutIcon from '@lucide/svelte/icons/log-out';
+  import { toast } from 'svelte-sonner';
+
   import ProfileForm from '$lib/components/pages/auth/ProfileForm.svelte';
   import { Button } from '$lib/components/ui/button';
   import * as Card from '$lib/components/ui/card';
   import { userStore } from '$lib/stores';
 
+  let isLoading = $state(false);
+
   /**
    * Log out the user
    */
   async function handleLogOut() {
+    isLoading = true;
     const { error } = await userStore.signOut();
     if (error) {
-      console.error('Sign out error:', error.message);
+      toast.error(error.message);
+      isLoading = false;
     }
+    // To reload the screen in +layout.svelte, isLoading is not set to false here
   }
 </script>
 
@@ -28,9 +36,14 @@
         </div>
       </div>
       <div class="mt-6 flex items-center justify-center">
-        <Button onclick={handleLogOut}>
-          <SignOutIcon />
-          <span>Log out</span>
+        <Button onclick={handleLogOut} disabled={isLoading}>
+          {#if isLoading}
+            <Loader2Icon class="animate-spin" />
+            Logging out...
+          {:else}
+            <LogOutIcon />
+            <span>Log out</span>
+          {/if}
         </Button>
       </div>
     </Card.Content>

@@ -1,9 +1,9 @@
 <script lang="ts">
+  import CircleCheckIcon from '@lucide/svelte/icons/circle-check';
+  import XIcon from '@lucide/svelte/icons/x';
   import { cdate } from 'cdate';
   import { toast } from 'svelte-sonner';
 
-  import CircleCheckIcon from '$lib/components/icons/20x20/CircleCheckIcon.svelte';
-  import CircleCloseIcon from '$lib/components/icons/20x20/CircleCloseIcon.svelte';
   import { Button } from '$lib/components/ui/button';
   import { commentStore, userStore } from '$lib/stores';
   import type { CommentWithProfile } from '$lib/types/comment';
@@ -103,8 +103,8 @@
     <div class="flex items-center">
       <p class="font-bold">{card.name}</p>
       {#if card.me}
-        <figure class="ml-0.5">
-          <CircleCheckIcon />
+        <figure class="ml-1">
+          <CircleCheckIcon class="size-5" />
         </figure>
       {/if}
       <time
@@ -123,12 +123,14 @@
             <img class="size-full object-cover" src={commentFileUrl} decoding="async" alt="" />
           </figure>
           {#if isActionVisible}
-            <button
-              class="absolute right-[-8px] top-[-8px] cursor-pointer"
+            <Button
+              variant="secondary"
+              size="icon"
+              class="absolute right-[-8px] top-[-8px] size-6 rounded-full"
               onclick={handleDeleteImage}
             >
-              <CircleCloseIcon size={24} />
-            </button>
+              <XIcon class="size-4" />
+            </Button>
           {/if}
         </div>
       {/if}

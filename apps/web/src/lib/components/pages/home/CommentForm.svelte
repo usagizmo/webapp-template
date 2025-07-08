@@ -1,7 +1,7 @@
 <script lang="ts">
+  import SendIcon from '@lucide/svelte/icons/send';
   import { tick } from 'svelte';
 
-  import PaperPlaneIcon from '$lib/components/icons/16x16/PaperPlaneIcon.svelte';
   import { Button } from '$lib/components/ui/button';
   import * as Card from '$lib/components/ui/card';
   import { Textarea } from '$lib/components/ui/textarea';
@@ -91,7 +91,7 @@
     </div>
     <div class="mt-2.5 text-right">
       <Button onclick={handleSend} disabled={!text || isSending}>
-        <PaperPlaneIcon />
+        <SendIcon />
         <span>Send</span>
       </Button>
     </div>
