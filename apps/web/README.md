@@ -25,6 +25,7 @@ src/lib/
 │   │   ├── home/        # Home page components
 │   │   └── layout/      # Layout components
 │   └── ui/              # Reusable UI components (shadcn-svelte)
+├── composables/         # Reusable reactive logic and state management
 ├── constants/           # Application constants
 ├── helpers/             # Business logic and API operations (comment handling, authentication, etc.)
 ├── schemas/             # Zod validation schemas
@@ -32,6 +33,11 @@ src/lib/
 ├── types/               # TypeScript type definitions
 └── utils/               # Generic utility functions (reusable, not feature-specific)
 ```
+
+**Layer Communication Rules**:
+
+- **Components**: Access Helpers via Stores (direct Helper dependency is prohibited)
+- **Stores/Composables**: Can directly access Helpers, pass state to Helpers for execution
 
 [[Demo](https://webapp-template.usagizmo.com/)]
 
