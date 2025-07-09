@@ -2,6 +2,7 @@ import { createServerClient } from '@supabase/ssr';
 import { type Handle, redirect } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
 
+import type { Database } from '$api-generated/supabase-types';
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 
 const supabase: Handle = async ({ event, resolve }) => {
@@ -10,21 +11,25 @@ const supabase: Handle = async ({ event, resolve }) => {
    *
    * The Supabase client gets the Auth token from the request cookies.
    */
-  event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
-    cookies: {
-      getAll: () => event.cookies.getAll(),
-      /**
-       * SvelteKit's cookies API requires `path` to be explicitly set in
-       * the cookie options. Setting `path` to `/` replicates previous/
-       * standard behavior.
-       */
-      setAll: (cookiesToSet) => {
-        cookiesToSet.forEach(({ name, value, options }) => {
-          event.cookies.set(name, value, { ...options, path: '/' });
-        });
+  event.locals.supabase = createServerClient<Database>(
+    PUBLIC_SUPABASE_URL,
+    PUBLIC_SUPABASE_ANON_KEY,
+    {
+      cookies: {
+        getAll: () => event.cookies.getAll(),
+        /**
+         * SvelteKit's cookies API requires `path` to be explicitly set in
+         * the cookie options. Setting `path` to `/` replicates previous/
+         * standard behavior.
+         */
+        setAll: (cookiesToSet) => {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            event.cookies.set(name, value, { ...options, path: '/' });
+          });
+        },
       },
     },
-  });
+  );
 
   /**
    * Unlike `supabase.auth.getSession()`, which returns the session _without_
