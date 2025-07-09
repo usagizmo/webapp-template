@@ -23,6 +23,7 @@
     "test:watch": "turbo run test:watch"
   },
   "devDependencies": {
+    "@markuplint/ml-config": "^4.8.11",
     "@repo/eslint-config": "workspace:*",
     "cspell": "^9.1.3",
     "eslint": "^9.30.1",
@@ -35,12 +36,9 @@
     "prettier-plugin-tailwindcss": "^0.6.13",
     "turbo": "^2.5.4"
   },
-  "packageManager": "pnpm@10.11.1",
   "engines": {
     "node": ">=22",
     "pnpm": ">=10"
   },
-  "dependencies": {
-    "@markuplint/ml-config": "^4.8.11"
-  }
+  "packageManager": "pnpm@10.12.1"
 }
