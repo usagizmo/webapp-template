@@ -95,6 +95,13 @@ export class UserStore {
   }
 
   /**
+   * Fetch user profile information
+   */
+  async fetchUserProfile(userId: string) {
+    return await supabaseHelpers.fetchUserProfile(this.#supabaseStore.client, userId);
+  }
+
+  /**
    * Update user profile information (with store update)
    */
   async updateUserProfile(updates: TablesUpdate<'profiles'>): Promise<{ error: Error | null }> {

@@ -9,7 +9,6 @@
   import GA4 from '$lib/components/pages/layout/GA4.svelte';
   import HeaderNavigation from '$lib/components/pages/layout/HeaderNavigation.svelte';
   import { Toaster } from '$lib/components/ui/sonner';
-  import { fetchUserProfile } from '$lib/helpers/supabaseHelpers';
   import { supabaseStore, userStore } from '$lib/stores';
 
   import type { LayoutProps } from './$types';
@@ -39,7 +38,7 @@
 
       let newProfile = null;
       if (newUser) {
-        const { profile: fetchedProfile } = await fetchUserProfile(supabase, newUser.id);
+        const { profile: fetchedProfile } = await userStore.fetchUserProfile(newUser.id);
         newProfile = fetchedProfile;
       }
 
