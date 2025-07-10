@@ -5,7 +5,7 @@
 
   import * as Form from '$lib/components/ui/form';
   import { Textarea } from '$lib/components/ui/textarea';
-  import { profileSchema } from '$lib/schemas/profile';
+  import { ProfileSchema } from '$lib/schemas/profile';
   import { userStore } from '$lib/stores';
 
   const profileFormData = superForm(
@@ -13,11 +13,11 @@
       {
         bio: userStore.profile?.bio ?? '',
       },
-      zod(profileSchema),
+      zod(ProfileSchema),
     ),
     {
       SPA: true,
-      validators: zod(profileSchema),
+      validators: zod(ProfileSchema),
     },
   );
   const { form, enhance, validate } = profileFormData;

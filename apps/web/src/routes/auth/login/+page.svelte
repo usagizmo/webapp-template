@@ -7,14 +7,14 @@
 
   import * as Form from '$lib/components/ui/form';
   import { Input } from '$lib/components/ui/input';
-  import { loginSchema } from '$lib/schemas/auth';
+  import { LoginSchema } from '$lib/schemas/auth';
   import { userStore } from '$lib/stores';
 
   const loginFormData = superForm(
-    defaults({ email: 'email@add.com', password: 'password0' }, zod(loginSchema)),
+    defaults({ email: 'email@add.com', password: 'password0' }, zod(LoginSchema)),
     {
       SPA: true,
-      validators: zod(loginSchema),
+      validators: zod(LoginSchema),
       onUpdate: async ({ form }) => {
         if (!form.valid) return;
         const data = form.data;
