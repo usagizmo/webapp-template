@@ -28,5 +28,6 @@ tailwindcss
 tseslint
 turborepo
 usagizmo
+vercel
 vite
 yakuhan

@@ -25,9 +25,10 @@ yarn-error.log*
 
 # env
 .env
+.env*.local
 .env.*
 !.env.example
 !.env.test
 
-# build outputs
-dist
+# custom
+.vercel
