@@ -22,21 +22,10 @@ export class UserStore {
     this.#supabaseStore = supabaseStore;
   }
 
-  get user(): User | null {
-    return this.#user;
-  }
-
-  get profile(): UserProfile | null {
-    return this.#profile;
-  }
-
-  get loading() {
-    return this.#loading;
-  }
-
-  get isAuthenticated(): boolean {
-    return this.#user !== null;
-  }
+  readonly user = $derived<User | null>(this.#user);
+  readonly profile = $derived<UserProfile | null>(this.#profile);
+  readonly loading = $derived<{ profile: boolean }>(this.#loading);
+  readonly isAuthenticated = $derived<boolean>(this.#user !== null);
 
   /**
    * Update user information

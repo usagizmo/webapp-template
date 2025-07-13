@@ -3,9 +3,7 @@ export const useCounter = () => new Counter();
 class Counter {
   #count = $state(0);
 
-  get count() {
-    return this.#count;
-  }
+  readonly count = $derived<number>(this.#count);
 
   increment() {
     this.#count += 1;
