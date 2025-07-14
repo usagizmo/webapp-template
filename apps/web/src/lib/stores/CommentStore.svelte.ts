@@ -18,9 +18,7 @@ export class CommentStore {
     this.#userStore = userStore;
   }
 
-  get comments(): CommentWithProfile[] {
-    return this.#comments;
-  }
+  readonly comments = $derived<CommentWithProfile[]>(this.#comments);
 
   /**
    * Set comments
