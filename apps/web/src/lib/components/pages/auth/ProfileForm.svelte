@@ -32,7 +32,7 @@
       },
     },
   );
-  const { form, enhance, submit } = profileFormData;
+  const { form, enhance, submit, tainted } = profileFormData;
 </script>
 
 <form use:enhance class="grid gap-6">
@@ -45,7 +45,11 @@
           placeholder="Tell us about yourself (within 20 characters)"
           rows={3}
           bind:value={$form.bio}
-          onblur={() => submit()}
+          onblur={() => {
+            if ($tainted?.bio) {
+              submit();
+            }
+          }}
         />
       {/snippet}
     </Form.Control>
