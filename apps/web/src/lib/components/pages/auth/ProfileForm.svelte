@@ -18,23 +18,21 @@
     {
       SPA: true,
       validators: zod(ProfileSchema),
+      resetForm: false,
+      onUpdate: async ({ form }) => {
+        if (!form.valid) return;
+        const { error } = await userStore.updateUserProfile({
+          bio: form.data.bio,
+        });
+        if (error) {
+          toast.error(error.message);
+        } else {
+          toast.success('Profile updated successfully');
+        }
+      },
     },
   );
-  const { form, enhance, validate } = profileFormData;
-
-  async function handleUpdateProfileBio(event: Event) {
-    const target = event.target as HTMLTextAreaElement;
-    const bioErrors = await validate('bio');
-    if (bioErrors) return;
-
-    if (target.value === userStore.profile?.bio) return;
-    const { error } = await userStore.updateUserProfile({ bio: target.value });
-    if (error) {
-      toast.error(error.message);
-    } else {
-      toast.success('Profile updated successfully');
-    }
-  }
+  const { form, enhance, submit, tainted } = profileFormData;
 </script>
 
 <form use:enhance class="grid gap-6">
@@ -47,7 +45,11 @@
           placeholder="Tell us about yourself (within 20 characters)"
           rows={3}
           bind:value={$form.bio}
-          onblur={handleUpdateProfileBio}
+          onblur={() => {
+            if ($tainted?.bio) {
+              submit();
+            }
+          }}
         />
       {/snippet}
     </Form.Control>
