@@ -4,6 +4,7 @@
   import { ModeWatcher } from 'mode-watcher';
   import { onMount } from 'svelte';
 
+  import { invalidate } from '$app/navigation';
   import { PUBLIC_GA4_MEASUREMENT_ID } from '$env/static/public';
   import Footer from '$lib/components/pages/layout/Footer.svelte';
   import GA4 from '$lib/components/pages/layout/GA4.svelte';
@@ -25,8 +26,7 @@
         event === 'SIGNED_OUT' ||
         newSession?.expires_at !== session?.expires_at
       ) {
-        // invalidate('supabase:auth');
-        window.location.reload();
+        invalidate('supabase:auth');
         return;
       }
 
