@@ -3,6 +3,7 @@
   import LogOutIcon from '@lucide/svelte/icons/log-out';
   import { toast } from 'svelte-sonner';
 
+  import { goto } from '$app/navigation';
   import ProfileForm from '$lib/components/pages/auth/ProfileForm.svelte';
   import { Button } from '$lib/components/ui/button';
   import * as Card from '$lib/components/ui/card';
@@ -19,8 +20,9 @@
     if (error) {
       toast.error(error.message);
       isLoading = false;
+    } else {
+      goto('/auth/login');
     }
-    // To reload the screen in +layout.svelte, isLoading is not set to false here
   }
 </script>
 
