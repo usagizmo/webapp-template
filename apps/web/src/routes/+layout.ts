@@ -2,7 +2,6 @@ import { createBrowserClient, createServerClient, isBrowser } from '@supabase/ss
 
 import type { Database } from '$api-generated/supabase-types';
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
-import { fetchUserProfile } from '$lib/helpers/supabaseHelpers';
 import { supabaseStore, userStore } from '$lib/stores';
 
 import type { LayoutLoad } from './$types';
@@ -31,28 +30,26 @@ export const load: LayoutLoad = async ({ data, depends, fetch }) => {
         },
       });
 
+  supabaseStore.setClient(supabase);
+
   /**
    * It's fine to use `getSession` here, because on the client, `getSession` is
    * safe, and on the server, it reads `session` from the `LayoutData`, which
    * safely checked the session using `safeGetSession`.
    */
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // If the user exists, get the profile information
-  let profile = null;
   if (user) {
-    const { profile: fetchedProfile } = await fetchUserProfile(supabase, user.id);
-    profile = fetchedProfile;
+    userStore.setUser(user);
+
+    const profileResult = await userStore.fetchUserProfile();
+
+    if ('data' in profileResult && profileResult.data) {
+      userStore.setProfile(profileResult.data);
+    }
+  } else {
+    userStore.clear();
   }
-
-  supabaseStore.setClient(supabase);
-  userStore.setUser(user, profile);
-
-  return { session };
 };

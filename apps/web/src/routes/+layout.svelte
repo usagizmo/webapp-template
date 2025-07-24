@@ -14,37 +14,22 @@
 
   import type { LayoutProps } from './$types';
 
-  let { children, data }: LayoutProps = $props();
+  let { children }: LayoutProps = $props();
 
-  let { session } = $derived(data);
+  let unsubscribeRealtimeUpdates: () => void = () => {};
 
   onMount(() => {
     const supabase = supabaseStore.client;
-    const { data } = supabase.auth.onAuthStateChange(async (event, newSession) => {
-      if (
-        event === 'SIGNED_IN' ||
-        event === 'SIGNED_OUT' ||
-        newSession?.expires_at !== session?.expires_at
-      ) {
-        invalidate('supabase:auth');
-        return;
-      }
-
-      // The user information is already fetched in +layout.ts
+    const { data } = supabase.auth.onAuthStateChange(async (event) => {
       if (event === 'INITIAL_SESSION') return;
-
-      const { data: userData } = await supabase.auth.getUser();
-      const newUser = userData.user;
-
-      let newProfile = null;
-      if (newUser) {
-        const { profile: fetchedProfile } = await userStore.fetchUserProfile(newUser.id);
-        newProfile = fetchedProfile;
-      }
-
-      userStore.setUser(newUser, newProfile);
+      invalidate('supabase:auth');
     });
     return () => data.subscription.unsubscribe();
+  });
+
+  $effect(() => {
+    unsubscribeRealtimeUpdates = userStore.subscribeToUpdates();
+    return () => unsubscribeRealtimeUpdates();
   });
 </script>
 

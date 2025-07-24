@@ -32,9 +32,12 @@ export class CommentStore {
    * Load comments
    */
   async loadComments() {
-    const result = await commentHelpers.fetchComments(this.#supabaseStore.client);
-    if (result.comments) {
-      this.setComments(result.comments);
+    const result = await this.#supabaseStore.client
+      .from('comments')
+      .select(`*, profiles:user_id (display_name, email)`)
+      .order('created_at', { ascending: false });
+    if (result.data) {
+      this.setComments(result.data);
     }
     return result;
   }
@@ -73,11 +76,10 @@ export class CommentStore {
     commentId: number,
     updates: Partial<Pick<CommentWithProfile, 'text' | 'file_path'>>,
   ) {
-    const result = await commentHelpers.updateComment(
-      this.#supabaseStore.client,
-      commentId,
-      updates,
-    );
+    const result = await this.#supabaseStore.client
+      .from('comments')
+      .update(updates)
+      .eq('id', commentId);
 
     // Refresh comments after successful update
     if (!result.error) {
@@ -92,7 +94,7 @@ export class CommentStore {
    * @param commentId - Comment ID
    */
   async deleteComment(commentId: number) {
-    const result = await commentHelpers.deleteComment(this.#supabaseStore.client, commentId);
+    const result = await this.#supabaseStore.client.from('comments').delete().eq('id', commentId);
 
     // Refresh comments after successful delete
     if (!result.error) {
@@ -107,7 +109,7 @@ export class CommentStore {
    * @param filePath - File path in storage
    */
   async deleteCommentFile(filePath: string) {
-    return await commentHelpers.deleteCommentFile(this.#supabaseStore.client, filePath);
+    return await this.#supabaseStore.client.storage.from('comments').remove([filePath]);
   }
 
   /**
@@ -116,6 +118,7 @@ export class CommentStore {
    * @returns Comment file URL
    */
   getCommentFileUrl(filePath: string): string {
-    return commentHelpers.getCommentFileUrl(this.#supabaseStore.client, filePath);
+    return this.#supabaseStore.client.storage.from('comments').getPublicUrl(filePath).data
+      .publicUrl;
   }
 }
