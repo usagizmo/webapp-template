@@ -6,6 +6,7 @@
   "scripts": {
     "start": "pnpm exec supabase start",
     "stop": "pnpm exec supabase stop",
+    "status": "pnpm exec supabase status",
     "reset": "pnpm exec supabase db reset && pnpm generate",
     "diff": "pnpm exec supabase db diff",
     "push": "pnpm exec supabase db push",
