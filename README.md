@@ -108,6 +108,7 @@ pnpm format           # Format code with Prettier
 cd apps/api
 pnpm start            # Start Supabase locally
 pnpm stop             # Stop Supabase
+pnpm status           # Show Supabase service status
 pnpm reset            # Reset database and regenerate types
 pnpm diff             # Show schema changes
 pnpm push             # Push migrations to remote

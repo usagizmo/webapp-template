@@ -98,3 +98,6 @@ CREATE TRIGGER update_comments_updated_at
 
 -- Create indexes for better performance
 CREATE INDEX idx_comments_created_at ON comments(created_at DESC);
+
+-- Enable realtime replication
+ALTER PUBLICATION supabase_realtime ADD TABLE profiles;

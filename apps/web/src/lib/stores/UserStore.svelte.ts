@@ -1,7 +1,6 @@
-import type { User } from '@supabase/supabase-js';
+import type { RealtimeChannel, User } from '@supabase/supabase-js';
 
 import type { TablesUpdate } from '$api-generated/supabase-types';
-import * as supabaseHelpers from '$lib/helpers/supabaseHelpers';
 import type { UserProfile } from '$lib/types/user';
 
 import type { SupabaseStore } from './SupabaseStore.svelte';
@@ -31,9 +30,8 @@ export class UserStore {
    * Update user information
    * @param user - User information to update
    */
-  setUser(user: User | null, profile: UserProfile | null) {
+  setUser(user: User | null) {
     this.#user = user;
-    this.#profile = profile;
   }
 
   /**
@@ -66,51 +64,100 @@ export class UserStore {
    * User registration
    */
   async signUp(email: string, password: string, displayName: string) {
-    return await supabaseHelpers.signUp(this.#supabaseStore.client, email, password, displayName);
+    return await this.#supabaseStore.client.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { display_name: displayName },
+      },
+    });
   }
 
   /**
    * Sign in
    */
   async signIn(email: string, password: string) {
-    return await supabaseHelpers.signIn(this.#supabaseStore.client, email, password);
+    return await this.#supabaseStore.client.auth.signInWithPassword({
+      email,
+      password,
+    });
   }
 
   /**
    * Sign out
    */
   async signOut() {
-    return await supabaseHelpers.signOut(this.#supabaseStore.client);
+    return await this.#supabaseStore.client.auth.signOut();
   }
 
   /**
    * Fetch user profile information
    */
-  async fetchUserProfile(userId: string) {
-    return await supabaseHelpers.fetchUserProfile(this.#supabaseStore.client, userId);
+  async fetchUserProfile() {
+    if (!this.#user?.id) {
+      return { data: null, error: new Error('User not found') };
+    }
+    return await this.#supabaseStore.client
+      .from('profiles')
+      .select('*')
+      .eq('id', this.#user.id)
+      .single();
   }
 
   /**
    * Update user profile information (with store update)
    */
-  async updateUserProfile(updates: TablesUpdate<'profiles'>): Promise<{ error: Error | null }> {
+  async updateUserProfile(updates: TablesUpdate<'profiles'>) {
     if (!this.#user?.id) {
       return { error: new Error('User not found') };
     }
 
     this.setLoading('profile', true);
     try {
-      const result = await supabaseHelpers.updateUserProfile(
-        this.#supabaseStore.client,
-        this.#user.id,
-        updates,
-      );
-      if (result.profile) {
-        this.setProfile(result.profile);
+      const result = await this.#supabaseStore.client
+        .from('profiles')
+        .update(updates)
+        .eq('id', this.#user.id);
+      if (result.data) {
+        this.setProfile(result.data);
       }
-      return { error: null };
+      return result;
     } finally {
       this.setLoading('profile', false);
     }
+  }
+
+  /**
+   * Subscribe to updates (realtime)
+   * @returns Cleanup function
+   */
+  subscribeToUpdates(): () => void {
+    if (!this.#user?.id) return () => {};
+
+    const channels: RealtimeChannel[] = [];
+
+    // Profile updates
+    channels.push(
+      this.#supabaseStore.client
+        .channel(`user-profile:${this.#user.id}`)
+        .on(
+          'postgres_changes',
+          {
+            event: '*',
+            schema: 'public',
+            table: 'profiles',
+            filter: `id=eq.${this.#user.id}`,
+          },
+          (payload) => {
+            console.debug('Profile updated:', payload);
+            if (payload.eventType !== 'DELETE' && payload.new) {
+              this.setProfile(payload.new as UserProfile);
+            }
+          },
+        )
+        .subscribe(),
+    );
+
+    return () => channels.forEach((channel) => channel.unsubscribe());
   }
 }
