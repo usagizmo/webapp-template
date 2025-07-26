@@ -11,7 +11,7 @@ export default [
         {
           patterns: [
             {
-              group: ['$lib/stores/*', '!$lib/stores/index.ts', '@repo/shared/stores/**'],
+              group: ['$lib/stores/*', '!$lib/stores/index.ts'],
               message: 'Import from `$lib/stores`',
             },
           ],
