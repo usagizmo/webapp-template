@@ -24,6 +24,7 @@
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.50.3",
+    "api": "workspace:*",
     "camelcase-keys": "^9.1.3",
     "cdate": "^0.0.7",
     "snakecase-keys": "^9.0.1",

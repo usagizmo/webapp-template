@@ -45,7 +45,7 @@
     },
     "api#generate:supabase-types": {
       "inputs": ["supabase/**"],
-      "outputs": ["$generated/supabase-types.ts"],
+      "outputs": ["$generated/types.ts"],
       "env": ["DATABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]
     },
     "api#start": {
