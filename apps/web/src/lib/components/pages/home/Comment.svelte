@@ -2,10 +2,10 @@
   import CircleCheckIcon from '@lucide/svelte/icons/circle-check';
   import Trash2Icon from '@lucide/svelte/icons/trash-2';
   import XIcon from '@lucide/svelte/icons/x';
+  import { Button } from '@repo/shared/components/ui/button';
   import { cdate } from 'cdate';
   import { toast } from 'svelte-sonner';
 
-  import { Button } from '$lib/components/ui/button';
   import { commentStore, userStore } from '$lib/stores';
   import type { CommentWithProfile } from '$lib/types/comment';
 

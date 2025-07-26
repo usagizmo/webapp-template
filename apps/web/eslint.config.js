@@ -11,7 +11,7 @@ export default [
         {
           patterns: [
             {
-              group: ['$lib/stores/*', '!$lib/stores/index.ts'],
+              group: ['$lib/stores/*', '!$lib/stores/index.ts', '@repo/shared/stores/**'],
               message: 'Import from `$lib/stores`',
             },
           ],
@@ -28,7 +28,7 @@ export default [
         {
           patterns: [
             {
-              group: ['$lib/helpers/**'],
+              group: ['$lib/helpers/**', '@repo/shared/helpers/**'],
               message: 'Access Helpers layer via Stores/Composables',
             },
           ],

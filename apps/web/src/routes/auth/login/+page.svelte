@@ -1,12 +1,12 @@
 <script lang="ts">
   import Loader2Icon from '@lucide/svelte/icons/loader-2';
   import LogInIcon from '@lucide/svelte/icons/log-in';
+  import * as Form from '@repo/shared/components/ui/form';
+  import { Input } from '@repo/shared/components/ui/input';
   import { toast } from 'svelte-sonner';
   import { defaults, superForm } from 'sveltekit-superforms';
   import { zod } from 'sveltekit-superforms/adapters';
 
-  import * as Form from '$lib/components/ui/form';
-  import { Input } from '$lib/components/ui/input';
   import { LoginSchema } from '$lib/schemas/auth';
   import { userStore } from '$lib/stores';
 

@@ -1,10 +1,10 @@
 <script lang="ts">
+  import * as Form from '@repo/shared/components/ui/form';
+  import { Textarea } from '@repo/shared/components/ui/textarea';
   import { toast } from 'svelte-sonner';
   import { defaults, superForm } from 'sveltekit-superforms';
   import { zod } from 'sveltekit-superforms/adapters';
 
-  import * as Form from '$lib/components/ui/form';
-  import { Textarea } from '$lib/components/ui/textarea';
   import { ProfileSchema } from '$lib/schemas/profile';
   import { userStore } from '$lib/stores';
 

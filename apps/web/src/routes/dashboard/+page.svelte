@@ -1,12 +1,12 @@
 <script lang="ts">
   import Loader2Icon from '@lucide/svelte/icons/loader-2';
   import LogOutIcon from '@lucide/svelte/icons/log-out';
+  import { Button } from '@repo/shared/components/ui/button';
+  import * as Card from '@repo/shared/components/ui/card';
   import { toast } from 'svelte-sonner';
 
   import { goto } from '$app/navigation';
   import ProfileForm from '$lib/components/pages/auth/ProfileForm.svelte';
-  import { Button } from '$lib/components/ui/button';
-  import * as Card from '$lib/components/ui/card';
   import { userStore } from '$lib/stores';
 
   let isLoading = $state(false);

@@ -1,12 +1,11 @@
 {
-  "name": "web",
+  "name": "@repo/shared",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite dev --open",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "svelte-kit sync && svelte-package --watch",
+    "build": "svelte-kit sync && svelte-package",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "lint:markup": "markuplint \"**\"",
@@ -14,30 +13,71 @@
     "lint:cspell": "cspell \"**\"",
     "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
     "lint": "run-p lint:*",
-    "test:watch": "vitest",
-    "test": "vitest run",
     "format:js": "eslint --fix .",
     "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
     "format": "run-p format:*"
   },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*",
+    "src",
+    "!src/**/*.test.*",
+    "!src/**/*.spec.*"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    "./app.css": "./src/app.css",
+    "./components/*.svelte": {
+      "types": "./dist/components/*.svelte.d.ts",
+      "svelte": "./dist/components/*.svelte"
+    },
+    "./components/ui/*": {
+      "types": "./dist/components/ui/*/index.d.ts",
+      "default": "./dist/components/ui/*/index.js"
+    },
+    "./composables/*": {
+      "types": "./dist/composables/*.d.ts",
+      "default": "./dist/composables/*.js"
+    },
+    "./constants/*": {
+      "types": "./dist/constants/*.d.ts",
+      "default": "./dist/constants/*.js"
+    },
+    "./helpers/*": {
+      "types": "./dist/helpers/*.d.ts",
+      "default": "./dist/helpers/*.js"
+    },
+    "./schemas/*": {
+      "types": "./dist/schemas/*.d.ts",
+      "default": "./dist/schemas/*.js"
+    },
+    "./types/*": {
+      "types": "./dist/types/*.d.ts",
+      "default": "./dist/types/*.js"
+    },
+    "./utils/*": {
+      "types": "./dist/utils/*.d.ts",
+      "default": "./dist/utils/*.js"
+    }
+  },
+  "peerDependencies": {
+    "svelte": "^5.35.4"
+  },
   "dependencies": {
-    "@repo/shared": "workspace:*",
-    "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.50.3",
     "api": "workspace:*",
-    "camelcase-keys": "^9.1.3",
     "cdate": "^0.0.7",
-    "snakecase-keys": "^9.0.1",
     "zod": "^3.25.76"
   },
   "devDependencies": {
     "@internationalized/date": "^3.8.2",
     "@lucide/svelte": "^0.525.0",
-    "@markuplint/svelte-parser": "^4.7.9",
-    "@markuplint/svelte-spec": "^4.5.19",
     "@repo/eslint-config": "workspace:*",
-    "@sveltejs/adapter-auto": "^6.0.1",
     "@sveltejs/kit": "^2.22.2",
+    "@sveltejs/package": "^2.4.0",
     "@sveltejs/vite-plugin-svelte": "6.1.0",
     "@tailwindcss/vite": "^4.1.11",
     "bits-ui": "^2.8.10",
@@ -52,8 +92,6 @@
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.1.11",
-    "tslib": "^2.8.1",
-    "tw-animate-css": "^1.3.5",
     "typescript": "^5.8.3",
     "vite": "^7.0.3",
     "vitest": "^3.2.4"

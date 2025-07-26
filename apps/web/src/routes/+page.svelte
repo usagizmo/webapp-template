@@ -1,9 +1,10 @@
 <script lang="ts">
-  import Meta from '$lib/components/Meta.svelte';
+  import Meta from '@repo/shared/components/Meta.svelte';
+  import * as Card from '@repo/shared/components/ui/card';
+
   import CommentForm from '$lib/components/pages/home/CommentForm.svelte';
   import Comments from '$lib/components/pages/home/Comments.svelte';
   import LoginMessage from '$lib/components/pages/home/LoginMessage.svelte';
-  import * as Card from '$lib/components/ui/card';
   import { userStore } from '$lib/stores';
 
   const meta = {

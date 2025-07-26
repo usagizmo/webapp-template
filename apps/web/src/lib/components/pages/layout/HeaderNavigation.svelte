@@ -1,6 +1,7 @@
 <script lang="ts">
-  import ModeSwitcherButton from '$lib/components/ModeSwitcherButton.svelte';
-  import { Button } from '$lib/components/ui/button';
+  import ModeSwitcherButton from '@repo/shared/components/ModeSwitcherButton.svelte';
+  import { Button } from '@repo/shared/components/ui/button';
+
   import { userStore } from '$lib/stores';
 
   import HeaderNavigationItems from './HeaderNavigationItems.svelte';

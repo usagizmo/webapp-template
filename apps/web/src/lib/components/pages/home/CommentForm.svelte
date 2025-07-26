@@ -1,11 +1,11 @@
 <script lang="ts">
   import SendIcon from '@lucide/svelte/icons/send';
   import XIcon from '@lucide/svelte/icons/x';
+  import { Button, buttonVariants } from '@repo/shared/components/ui/button';
+  import * as Card from '@repo/shared/components/ui/card';
+  import { Textarea } from '@repo/shared/components/ui/textarea';
   import { tick } from 'svelte';
 
-  import { Button, buttonVariants } from '$lib/components/ui/button';
-  import * as Card from '$lib/components/ui/card';
-  import { Textarea } from '$lib/components/ui/textarea';
   import { commentStore } from '$lib/stores';
 
   let textAreaEl = $state<HTMLTextAreaElement | null>(null);
