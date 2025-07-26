@@ -47,13 +47,6 @@
       "outputs": ["$generated/types.ts"],
       "env": ["DATABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]
     },
-    "api#start": {
-      "cache": false,
-      "persistent": true
-    },
-    "api#stop": {
-      "cache": false
-    },
     "pages#build": {
       "inputs": ["$TURBO_DEFAULT$", "app.css", "public/**", "!public/styles.css"],
       "outputs": ["public/styles.css"]
