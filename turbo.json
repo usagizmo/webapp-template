@@ -68,7 +68,7 @@
     },
     "@repo/shared#build": {
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
-      "outputs": ["dist/**"]
+      "outputs": [".svelte-kit/**", "dist/**"]
     }
   }
 }
