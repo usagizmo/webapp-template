@@ -8,7 +8,7 @@
       "outputs": ["$generated/**"]
     },
     "build": {
-      "dependsOn": ["^build", "generate"],
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": ["dist/**", "build/**", ".svelte-kit/**", ".vercel/**", "public/styles.css"]
     },
@@ -61,7 +61,6 @@
       "cache": false
     },
     "web#build": {
-      "dependsOn": ["api#generate"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": [".svelte-kit/**", ".vercel/**"],
       "env": ["PUBLIC_SUPABASE_URL", "PUBLIC_SUPABASE_ANON_KEY", "PUBLIC_GA4_MEASUREMENT_ID"]
