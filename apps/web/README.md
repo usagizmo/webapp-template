@@ -49,13 +49,12 @@ pnpm build     # Build for production
 pnpm preview   # Preview production build
 pnpm test      # Run Vitest tests
 pnpm lint      # Run linting
-pnpm generate  # Copy Supabase types from api
 ```
 
 ## Development
 
 1. Start Supabase API: `cd ../api && pnpm start`
-2. Generate types: `pnpm generate`
+2. Generate types: `cd ../.. && pnpm generate`
 3. Start dev server: `pnpm dev`
 4. Open http://localhost:5173
 

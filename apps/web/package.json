@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "echo 'Types are directly imported from api'",
     "dev": "vite dev --open",
     "build": "vite build",
     "preview": "vite preview",
