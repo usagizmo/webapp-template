@@ -162,8 +162,8 @@ pnpm clean-image      # Remove unused images from project
 
 TypeScript types are automatically generated from your Supabase database schema:
 
-1. **Local Development**: Types are generated to `apps/api/$generated/supabase-types.ts`
-2. **Frontend Usage**: Types are directly imported in `apps/web/src/lib/supabase.ts`
+1. **Local Development**: Types are generated to `apps/api/$generated/types.ts`
+2. **Frontend Usage**: Types are imported from the `api` package (e.g., `import type { Database } from 'api/types'`)
 3. **After Schema Changes**: Run `pnpm generate` to update types
 
 ### Environment Switching

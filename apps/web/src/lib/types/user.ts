@@ -1,4 +1,4 @@
-import type { Tables } from '$api-generated/supabase-types';
+import type { Tables } from 'api/types';
 
 /**
  * User profile

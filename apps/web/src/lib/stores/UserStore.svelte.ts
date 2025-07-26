@@ -1,6 +1,6 @@
 import type { RealtimeChannel, User } from '@supabase/supabase-js';
+import type { TablesUpdate } from 'api/types';
 
-import type { TablesUpdate } from '$api-generated/supabase-types';
 import type { UserProfile } from '$lib/types/user';
 
 import type { SupabaseStore } from './SupabaseStore.svelte';

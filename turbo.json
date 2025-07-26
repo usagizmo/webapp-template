@@ -8,26 +8,25 @@
       "outputs": ["$generated/**"]
     },
     "build": {
-      "dependsOn": ["^build", "generate"],
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": ["dist/**", "build/**", ".svelte-kit/**", ".vercel/**", "public/styles.css"]
     },
-    "lint": {
-      "dependsOn": ["^lint"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**", "!**/dist/**", "!**/build/**"]
-    },
-    "format": {
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**", "!**/dist/**", "!**/build/**"]
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["generate"]
     },
     "test": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**"],
       "outputs": ["coverage/**"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true,
-      "dependsOn": ["generate"]
+    "lint": {
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**", "!**/dist/**", "!**/build/**"]
+    },
+    "format": {
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**", "!**/dist/**", "!**/build/**"]
     },
     "preview": {
       "dependsOn": ["build"],
@@ -45,30 +44,12 @@
     },
     "api#generate:supabase-types": {
       "inputs": ["supabase/**"],
-      "outputs": ["$generated/supabase-types.ts"],
+      "outputs": ["$generated/types.ts"],
       "env": ["DATABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]
     },
-    "api#start": {
-      "cache": false,
-      "persistent": true,
-      "dependsOn": ["^generate"]
-    },
-    "api#stop": {
-      "cache": false
-    },
     "pages#build": {
-      "inputs": [
-        "app.css",
-        "tailwind.config.*",
-        "public/**",
-        "!public/styles.css",
-        "$TURBO_DEFAULT$"
-      ],
+      "inputs": ["$TURBO_DEFAULT$", "app.css", "public/**", "!public/styles.css"],
       "outputs": ["public/styles.css"]
-    },
-    "pages#dev": {
-      "cache": false,
-      "persistent": true
     },
     "pages#test": {
       "dependsOn": ["pages#build"],
@@ -83,11 +64,6 @@
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": [".svelte-kit/**", ".vercel/**"],
       "env": ["PUBLIC_SUPABASE_URL", "PUBLIC_SUPABASE_ANON_KEY", "PUBLIC_GA4_MEASUREMENT_ID"]
-    },
-    "web#dev": {
-      "cache": false,
-      "persistent": true,
-      "dependsOn": ["api#generate"]
     }
   }
 }

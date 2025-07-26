@@ -2,8 +2,7 @@
  * Comment helper functions
  */
 import type { SupabaseClient } from '@supabase/supabase-js';
-
-import type { Database } from '$api-generated/supabase-types';
+import type { Database } from 'api/types';
 
 /**
  * Insert a new comment

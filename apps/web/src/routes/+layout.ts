@@ -1,6 +1,6 @@
 import { createBrowserClient, createServerClient, isBrowser } from '@supabase/ssr';
+import type { Database } from 'api/types';
 
-import type { Database } from '$api-generated/supabase-types';
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { supabaseStore, userStore } from '$lib/stores';
 

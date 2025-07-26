@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "exports": {
+    "./types": "./$generated/types.ts"
+  },
   "scripts": {
     "start": "pnpm exec supabase start",
     "stop": "pnpm exec supabase stop",
@@ -15,7 +18,7 @@
     "link": "pnpm exec supabase link",
     "seed": "pnpm exec supabase seed buckets",
     "generate": "pnpm generate:supabase-types",
-    "generate:supabase-types": "mkdir -p \\$generated && pnpm exec supabase gen types typescript --local > ./\\$generated/supabase-types.ts"
+    "generate:supabase-types": "mkdir -p \\$generated && pnpm exec supabase gen types typescript --local > ./\\$generated/types.ts"
   },
   "devDependencies": {
     "supabase": "^2.30.4"
