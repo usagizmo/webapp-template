@@ -28,7 +28,7 @@ export default [
         {
           patterns: [
             {
-              group: ['$lib/helpers/**'],
+              group: ['$lib/helpers/**', '@repo/shared/helpers/**'],
               message: 'Access Helpers layer via Stores/Composables',
             },
           ],

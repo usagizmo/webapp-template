@@ -1,6 +1,7 @@
 <script lang="ts">
   import '../app.css';
 
+  import { Toaster } from '@repo/shared/components/ui/sonner';
   import { ModeWatcher } from 'mode-watcher';
   import { onMount } from 'svelte';
 
@@ -9,7 +10,6 @@
   import Footer from '$lib/components/pages/layout/Footer.svelte';
   import GA4 from '$lib/components/pages/layout/GA4.svelte';
   import HeaderNavigation from '$lib/components/pages/layout/HeaderNavigation.svelte';
-  import { Toaster } from '$lib/components/ui/sonner';
   import { supabaseStore, userStore } from '$lib/stores';
 
   import type { LayoutProps } from './$types';

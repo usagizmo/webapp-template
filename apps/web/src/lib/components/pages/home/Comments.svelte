@@ -1,8 +1,8 @@
 <script lang="ts">
+  import { DEFAULT_EASE } from '@repo/shared/constants/easing';
   import { flip } from 'svelte/animate';
   import { fade } from 'svelte/transition';
 
-  import { DEFAULT_EASE } from '$lib/constants/easing';
   import { commentStore } from '$lib/stores';
 
   import Comment from './Comment.svelte';

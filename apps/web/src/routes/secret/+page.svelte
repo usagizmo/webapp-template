@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Meta from '$lib/components/Meta.svelte';
-  import * as Card from '$lib/components/ui/card';
+  import Meta from '@repo/shared/components/Meta.svelte';
+  import * as Card from '@repo/shared/components/ui/card';
 
   const meta = {
     title: `Secret | WebApp Template (web)`,

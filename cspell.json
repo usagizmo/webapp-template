@@ -26,6 +26,7 @@
     "/apps/api/supabase/migrations",
     "/apps/pages/public/styles.css",
     "/apps/pages/tests/external-links.txt",
-    "/apps/web/build"
+    "/apps/web/build",
+    "/packages/shared/dist"
   ]
 }

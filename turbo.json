@@ -61,9 +61,14 @@
       "cache": false
     },
     "web#build": {
+      "dependsOn": ["@repo/shared#build"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": [".svelte-kit/**", ".vercel/**"],
       "env": ["PUBLIC_SUPABASE_URL", "PUBLIC_SUPABASE_ANON_KEY", "PUBLIC_GA4_MEASUREMENT_ID"]
+    },
+    "@repo/shared#build": {
+      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
+      "outputs": [".svelte-kit/**", "dist/**"]
     }
   }
 }

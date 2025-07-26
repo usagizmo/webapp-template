@@ -14,3 +14,5 @@ pnpm-workspace.yaml
 /apps/api/$generated
 /apps/pages/public/styles.css
 /apps/web/.svelte-kit
+/packages/shared/.svelte-kit
+/packages/shared/dist

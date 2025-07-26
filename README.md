@@ -23,6 +23,10 @@ Monorepo template for creating a modern web application.
 
 ### `packages/`
 
+- **[`shared`](./packages/shared/)** - Shared components, styles, types, constants, and utilities
+  - UI Components: [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte) components and custom components
+  - Styles: `app.css` - Base Tailwind CSS styles
+  - Shared logic: Types, constants, and utility functions
 - **[`eslint-config`](./packages/eslint-config/)** - Centralized [ESLint 9](https://eslint.org/) configuration with Flat Config
   - Pre-configured setups: `root`, `web` (Svelte), `pages` (Vanilla JS)
   - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Prettier integration
@@ -30,6 +34,36 @@ Monorepo template for creating a modern web application.
   - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) - Import sorting
   - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc) - JSDoc validation
   - [eslint-plugin-unused-imports](https://github.com/sweepline/eslint-plugin-unused-imports) - Unused import cleanup
+
+## Architecture Overview
+
+```mermaid
+graph TB
+    subgraph "Monorepo Structure"
+        subgraph "apps/"
+            web["web<br/>SvelteKit App"]
+            pages["pages<br/>Static Site"]
+            api["api<br/>Supabase"]
+        end
+
+        subgraph "packages/"
+            shared["shared<br/>Components & Utils"]
+            eslint["eslint-config<br/>Linting Rules"]
+        end
+
+        web --> shared
+        web --> api
+        web --> eslint
+        pages --> eslint
+        shared --> eslint
+    end
+
+    subgraph "External Services"
+        supabase["Supabase Cloud<br/>Production DB"]
+    end
+
+    api -.-> supabase
+```
 
 ## Quick Start
 
@@ -166,6 +200,22 @@ TypeScript types are automatically generated from your Supabase database schema:
 2. **Frontend Usage**: Types are imported from the `api` package (e.g., `import type { Database } from 'api/types'`)
 3. **After Schema Changes**: Run `pnpm generate` to update types
 
+### Shared Components and Types
+
+Common components and types are available through the `@repo/shared` package:
+
+```typescript
+// Import UI components
+import { Button } from '@repo/shared/components/ui/button';
+import * as Card from '@repo/shared/components/ui/card';
+
+// Import shared types
+import type { UserProfile } from '@repo/shared/types/user';
+
+// Import constants
+import { DEFAULT_EASE } from '@repo/shared/constants/easing';
+```
+
 ### Environment Switching
 
 You can easily switch between development and production environments:
@@ -201,7 +251,7 @@ ENABLE_EXPERIMENTAL_COREPACK=1
 
 #### Static Pages
 
-**Option 1: Vercel Deployment**
+##### Option 1: Vercel Deployment
 
 - **Framework Preset**: Other
 - **Root Directory**: `apps/pages`
@@ -209,7 +259,7 @@ ENABLE_EXPERIMENTAL_COREPACK=1
 - **Install Command**: Automatically configured via `apps/pages/vercel.json`
 - **Output Directory**: `public`
 
-**Option 2: Server Deployment (rsync)**
+##### Option 2: Server Deployment (rsync)
 
 - Use `pnpm run deploy` command in `apps/pages`
 - Configure server details in deployment script
@@ -225,6 +275,16 @@ ENABLE_EXPERIMENTAL_COREPACK=1
 4. Configure environment variables for the web app project
 
 ## Breaking changes
+
+### [v2.12.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.12.0)
+
+- **Shared Package Introduction:**
+  - Created `@repo/shared` package for common components, types, and utilities
+  - Moved all UI components from `apps/web/src/lib/components/ui/` to `packages/shared/`
+  - Migrated shared types (UserProfile) and constants (easing) to shared package
+  - Updated all imports to use `@repo/shared` package instead of local paths
+  - Centralized Tailwind CSS configuration and base styles in shared package
+  - Applications now import shared CSS using `@source` directive
 
 ### [v2.9.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.9.0)
 

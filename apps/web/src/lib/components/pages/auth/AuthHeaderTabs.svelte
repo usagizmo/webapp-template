@@ -1,8 +1,8 @@
 <script lang="ts">
+  import { DEFAULT_EASE } from '@repo/shared/constants/easing';
   import { crossfade } from 'svelte/transition';
 
   import { page } from '$app/state';
-  import { DEFAULT_EASE } from '$lib/constants/easing';
 
   const tabs = [
     {

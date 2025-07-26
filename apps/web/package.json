@@ -21,6 +21,7 @@
     "format": "run-p format:*"
   },
   "dependencies": {
+    "@repo/shared": "workspace:*",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.50.3",
     "api": "workspace:*",
@@ -37,7 +38,7 @@
     "@repo/eslint-config": "workspace:*",
     "@sveltejs/adapter-auto": "^6.0.1",
     "@sveltejs/kit": "^2.22.2",
-    "@sveltejs/vite-plugin-svelte": "6.0.0-next.3",
+    "@sveltejs/vite-plugin-svelte": "6.1.0",
     "@tailwindcss/vite": "^4.1.11",
     "bits-ui": "^2.8.10",
     "clsx": "^2.1.1",

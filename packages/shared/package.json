@@ -1,0 +1,107 @@
+{
+  "name": "@repo/shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "svelte-kit sync && svelte-package --watch",
+    "build": "svelte-kit sync && svelte-package",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "lint:markup": "markuplint \"**\"",
+    "lint:js": "eslint .",
+    "lint:cspell": "cspell \"**\"",
+    "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
+    "lint": "run-p lint:*",
+    "format:js": "eslint --fix .",
+    "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
+    "format": "run-p format:*"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*",
+    "src",
+    "!src/**/*.test.*",
+    "!src/**/*.spec.*"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    "./app.css": "./src/app.css",
+    "./components/*.svelte": {
+      "types": "./dist/components/*.svelte.d.ts",
+      "svelte": "./src/lib/components/*.svelte",
+      "default": "./dist/components/*.svelte"
+    },
+    "./components/ui/*": {
+      "types": "./dist/components/ui/*/index.d.ts",
+      "svelte": "./src/lib/components/ui/*/index.ts",
+      "default": "./dist/components/ui/*/index.js"
+    },
+    "./composables/*": {
+      "types": "./dist/composables/*.d.ts",
+      "svelte": "./src/lib/composables/*.ts",
+      "default": "./dist/composables/*.js"
+    },
+    "./constants/*": {
+      "types": "./dist/constants/*.d.ts",
+      "svelte": "./src/lib/constants/*.ts",
+      "default": "./dist/constants/*.js"
+    },
+    "./helpers/*": {
+      "types": "./dist/helpers/*.d.ts",
+      "svelte": "./src/lib/helpers/*.ts",
+      "default": "./dist/helpers/*.js"
+    },
+    "./schemas/*": {
+      "types": "./dist/schemas/*.d.ts",
+      "svelte": "./src/lib/schemas/*.ts",
+      "default": "./dist/schemas/*.js"
+    },
+    "./types/*": {
+      "types": "./dist/types/*.d.ts",
+      "svelte": "./src/lib/types/*.ts",
+      "default": "./dist/types/*.js"
+    },
+    "./utils/*": {
+      "types": "./dist/utils/*.d.ts",
+      "svelte": "./src/lib/utils/*.ts",
+      "default": "./dist/utils/*.js"
+    }
+  },
+  "peerDependencies": {
+    "svelte": "^5.35.4"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.3",
+    "api": "workspace:*",
+    "cdate": "^0.0.7",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@internationalized/date": "^3.8.2",
+    "@lucide/svelte": "^0.525.0",
+    "@repo/eslint-config": "workspace:*",
+    "@sveltejs/kit": "^2.22.2",
+    "@sveltejs/package": "^2.4.0",
+    "@sveltejs/vite-plugin-svelte": "6.1.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "bits-ui": "^2.8.10",
+    "clsx": "^2.1.1",
+    "formsnap": "^2.0.1",
+    "mode-watcher": "^1.1.0",
+    "npm-run-all2": "^8.0.4",
+    "svelte": "^5.35.4",
+    "svelte-check": "^4.2.2",
+    "svelte-sonner": "^1.0.5",
+    "sveltekit-superforms": "^2.27.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwind-variants": "^1.0.0",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.3",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,9 +1,9 @@
 <script lang="ts">
+  import * as Card from '@repo/shared/components/ui/card';
   import type { Snippet } from 'svelte';
 
   import AuthHeaderMessage from '$lib/components/pages/auth/AuthHeaderMessage.svelte';
   import AuthHeaderTabs from '$lib/components/pages/auth/AuthHeaderTabs.svelte';
-  import * as Card from '$lib/components/ui/card';
 
   let {
     children,
