@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import type { FormPathLeaves } from 'sveltekit-superforms';
 
-  import { cn, type WithElementRef, type WithoutChildren } from '$lib/utils/shadcnUtils.js';
+  import { cn, type WithElementRef, type WithoutChildren } from '../../../utils/shadcnUtils.js';
 
   let {
     ref = $bindable(null),

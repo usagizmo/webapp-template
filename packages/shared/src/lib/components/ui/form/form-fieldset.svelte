@@ -2,7 +2,7 @@
   import * as FormPrimitive from 'formsnap';
   import type { FormPath } from 'sveltekit-superforms';
 
-  import { cn, type WithoutChild } from '$lib/utils/shadcnUtils.js';
+  import { cn, type WithoutChild } from '../../../utils/shadcnUtils.js';
 
   let {
     ref = $bindable(null),

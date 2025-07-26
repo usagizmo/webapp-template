@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Label as LabelPrimitive } from 'bits-ui';
 
-  import { cn } from '$lib/utils/shadcnUtils.js';
+  import { cn } from '../../../utils/shadcnUtils.js';
 
   let {
     ref = $bindable(null),
