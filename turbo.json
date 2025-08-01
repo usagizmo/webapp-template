@@ -2,63 +2,13 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [".env"],
   "tasks": {
-    "generate": {
-      "dependsOn": ["^generate"],
-      "inputs": ["$TURBO_DEFAULT$", "supabase/**", "scripts/**"],
-      "outputs": ["$generated/**"]
-    },
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
-      "outputs": ["dist/**", "build/**", ".svelte-kit/**", ".vercel/**", "public/styles.css"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true,
-      "dependsOn": ["generate"]
-    },
-    "test": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**"],
-      "outputs": ["coverage/**"]
-    },
-    "lint": {
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**", "!**/dist/**", "!**/build/**"]
-    },
-    "format": {
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/coverage/**", "!**/dist/**", "!**/build/**"]
-    },
-    "preview": {
-      "dependsOn": ["build"],
-      "cache": false,
-      "persistent": true
-    },
-    "test:watch": {
-      "cache": false,
-      "persistent": true,
-      "interactive": true
-    },
     "api#generate": {
-      "inputs": ["supabase/**", "$TURBO_DEFAULT$"],
-      "outputs": ["$generated/**"]
-    },
-    "api#generate:supabase-types": {
-      "inputs": ["supabase/**"],
-      "outputs": ["$generated/types.ts"],
-      "env": ["DATABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]
+      "inputs": ["$TURBO_DEFAULT$", "supabase/**"],
+      "outputs": ["$generated/types.ts"]
     },
     "pages#build": {
       "inputs": ["$TURBO_DEFAULT$", "app.css", "public/**", "!public/styles.css"],
       "outputs": ["public/styles.css"]
-    },
-    "pages#test": {
-      "dependsOn": ["pages#build"],
-      "inputs": ["public/**", "tests/**", "commands/**"],
-      "outputs": ["tests/external-links.txt"]
-    },
-    "pages#deploy": {
-      "dependsOn": ["pages#build"],
-      "cache": false
     },
     "web#build": {
       "dependsOn": ["@repo/shared#build"],
@@ -69,6 +19,50 @@
     "@repo/shared#build": {
       "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": [".svelte-kit/**", "dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "api#test": {
+      "cache": false
+    },
+    "pages#test": {
+      "dependsOn": ["build"],
+      "inputs": ["public/**", "tests/**", "commands/**"],
+      "outputs": ["tests/external-links.txt"]
+    },
+    "lint": {
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "*.{json,js,ts,config.*}",
+        "public/**",
+        "tests/**",
+        "commands/**",
+        "!**/*.test.*",
+        "!**/*.spec.*",
+        "!**/dist/**",
+        "!**/build/**",
+        "!**/.svelte-kit/**",
+        "!**/.vercel/**",
+        "!**/$generated/**"
+      ]
+    },
+    "format": {
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "*.{json,js,ts,config.*}",
+        "public/**",
+        "tests/**",
+        "commands/**",
+        "!**/*.test.*",
+        "!**/*.spec.*",
+        "!**/dist/**",
+        "!**/build/**",
+        "!**/.svelte-kit/**",
+        "!**/.vercel/**",
+        "!**/$generated/**"
+      ]
     }
   }
 }

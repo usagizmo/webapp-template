@@ -123,15 +123,29 @@ After running `pnpm install`, a `.env` file is automatically created from `.env.
 
 ```bash
 # Project Setup
-pnpm install          # Install dependencies (.env file is created automatically)
+pnpm install                     # Install dependencies (.env file is created automatically)
 
-# Development
-pnpm dev              # Start all apps in development mode
-pnpm generate         # Generate Supabase TypeScript types
-pnpm build            # Build all applications
-pnpm lint             # Run linting across all apps
-pnpm test             # Run tests across all apps
-pnpm format           # Format code with Prettier
+# Development Workflow
+
+# Start development servers
+pnpm --filter api start          # Start Supabase API (port 54321)
+pnpm dev                         # Start all development servers
+# Or specific apps:
+pnpm --filter web dev            # Start web app only (port 5173)
+pnpm --filter pages dev          # Start static site only (port 3000)
+
+# Build and generate
+pnpm --filter api generate       # Generate TypeScript types from Supabase
+pnpm --filter web build          # Build web application
+pnpm --filter pages build        # Build static site
+
+# Quality assurance
+pnpm lint                        # Run linting across all apps
+pnpm --filter web test           # Test web app
+pnpm --filter pages test         # Test static site
+
+# Code formatting
+pnpm format                      # Format code across all apps
 ```
 
 ### App-Specific Commands
