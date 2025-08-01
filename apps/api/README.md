@@ -9,41 +9,25 @@ pnpm start      # Start Supabase locally
 pnpm stop       # Stop Supabase
 pnpm status     # Show Supabase service status
 pnpm reset      # Reset database and regenerate types
-pnpm diff       # Show schema changes
-pnpm push       # Push migrations to remote
-pnpm pull       # Pull schema changes from remote and regenerate types
-pnpm migration  # Create new migration file
-pnpm link       # Link to remote project
-pnpm seed       # Seed storage buckets
 pnpm generate   # Generate TypeScript types
+pnpm test       # Run database tests
 ```
 
-## Development Setup
+For additional Supabase CLI commands and usage, see the [official CLI reference](https://supabase.com/docs/reference/cli/introduction).
 
-1. Start Supabase: `pnpm start`
-2. Access Supabase Studio: http://localhost:54323
-3. Generate types after schema changes: `pnpm generate`
-
-## Development Workflow
-
-### Basic Workflow
+## Development
 
 1. `pnpm start` - Start Supabase
-2. Make schema changes in Studio (http://localhost:54323)
-3. `pnpm diff` - Generate migration from changes
-4. `pnpm generate` - Update TypeScript types
+2. Access Studio: http://localhost:54323
+3. `pnpm generate` - Update types after schema changes
 
-### Migration Workflow
+## Testing
 
-1. `pnpm migration <name>` - Create new migration file
-2. Edit the migration file with SQL
-3. `pnpm reset` - Apply migrations and regenerate types
+```bash
+pnpm test  # Run all database tests (requires Supabase running)
+```
 
-### Remote Sync
-
-1. `pnpm link` - Link to remote project (first time only)
-2. `pnpm pull` - Pull remote schema changes
-3. `pnpm push` - Push local migrations to remote
+Test files in `supabase/tests/` cover database schema, CRUD operations, RLS policies, and triggers.
 
 ## Port Numbers
 

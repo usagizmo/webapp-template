@@ -11,14 +11,9 @@
     "stop": "pnpm exec supabase stop",
     "status": "pnpm exec supabase status",
     "reset": "pnpm exec supabase db reset && pnpm generate",
-    "diff": "pnpm exec supabase db diff",
-    "push": "pnpm exec supabase db push",
-    "pull": "pnpm exec supabase db pull && pnpm generate",
-    "migration": "pnpm exec supabase migration new",
-    "link": "pnpm exec supabase link",
-    "seed": "pnpm exec supabase seed buckets",
+    "generate:supabase-types": "mkdir -p \\$generated && pnpm exec supabase gen types typescript --local > ./\\$generated/types.ts",
     "generate": "pnpm generate:supabase-types",
-    "generate:supabase-types": "mkdir -p \\$generated && pnpm exec supabase gen types typescript --local > ./\\$generated/types.ts"
+    "test": "pnpm exec supabase test db"
   },
   "devDependencies": {
     "supabase": "^2.30.4"

@@ -5,6 +5,7 @@ cdate
 dirents
 dotenvx
 esbuild
+extname
 fkey
 formsnap
 hasura
@@ -17,9 +18,16 @@ markuplintrc
 nhost
 noto
 oklch
+ossp
 pooler
 postgrest
+proname
+pubname
+relname
+relrowsecurity
+schemaname
 shadcn
+signup
 snakecase
 sonner
 sssz
@@ -27,6 +35,7 @@ supabase
 superforms
 sveltejs
 tailwindcss
+tgname
 tseslint
 turborepo
 usagizmo
