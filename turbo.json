@@ -6,6 +6,9 @@
       "inputs": ["$TURBO_DEFAULT$", "supabase/**"],
       "outputs": ["$generated/types.ts"]
     },
+    "build": {
+      "dependsOn": ["^build"]
+    },
     "pages#build": {
       "inputs": ["$TURBO_DEFAULT$", "app.css", "public/**", "!public/styles.css"],
       "outputs": ["public/styles.css"]
