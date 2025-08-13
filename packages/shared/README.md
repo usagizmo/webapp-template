@@ -123,7 +123,8 @@ The theme uses CSS custom properties for easy customization:
 ## Commands
 
 ```bash
-bun dev    # Watch mode for development
-bun build  # Build package with svelte-package
-bun lint   # Run linting
+bun dev     # Watch mode for development
+bun build   # Build package with svelte-package
+bun lint    # Run linting
+bun format  # Format code
 ```
