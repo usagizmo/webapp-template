@@ -1,4 +1,4 @@
 {
-  "buildCommand": "cd ../.. && pnpm build --filter=web",
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile"
+  "buildCommand": "cd ../.. && bun run build --filter web",
+  "installCommand": "cd ../.. && bun install --frozen-lockfile"
 }

@@ -1,10 +1,13 @@
 {
-  "$schema": "https://turbo.build/schema.json",
+  "$schema": "https://turborepo.com/schema.json",
   "globalDependencies": [".env"],
   "tasks": {
     "api#generate": {
       "inputs": ["$TURBO_DEFAULT$", "supabase/**"],
       "outputs": ["$generated/types.ts"]
+    },
+    "build": {
+      "dependsOn": ["^build"]
     },
     "pages#build": {
       "inputs": ["$TURBO_DEFAULT$", "app.css", "public/**", "!public/styles.css"],
@@ -12,19 +15,16 @@
     },
     "web#build": {
       "dependsOn": ["@repo/shared#build"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
-      "outputs": [".svelte-kit/**", ".vercel/**"],
-      "env": ["PUBLIC_SUPABASE_URL", "PUBLIC_SUPABASE_ANON_KEY", "PUBLIC_GA4_MEASUREMENT_ID"]
+      "outputs": [".svelte-kit/**", ".vercel/**"]
     },
     "@repo/shared#build": {
-      "inputs": ["$TURBO_DEFAULT$", "!README.md", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": [".svelte-kit/**", "dist/**"]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "api#test": {
+    "test": {
       "cache": false
     },
     "pages#test": {
@@ -32,35 +32,7 @@
       "inputs": ["public/**", "tests/**", "commands/**"],
       "outputs": ["tests/external-links.txt"]
     },
-    "lint": {
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        "*.{json,js,ts,config.*}",
-        "src/**",
-        "public/**",
-        "tests/**",
-        "commands/**",
-        "!**/dist/**",
-        "!**/build/**",
-        "!**/.svelte-kit/**",
-        "!**/.vercel/**",
-        "!**/$generated/**"
-      ]
-    },
-    "format": {
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        "*.{json,js,ts,config.*}",
-        "src/**",
-        "public/**",
-        "tests/**",
-        "commands/**",
-        "!**/dist/**",
-        "!**/build/**",
-        "!**/.svelte-kit/**",
-        "!**/.vercel/**",
-        "!**/$generated/**"
-      ]
-    }
+    "lint": {},
+    "format": {}
   }
 }

@@ -18,23 +18,29 @@ describe('@deepReaddir', async () => {
       join(dirsPath, 'dir0/dir00/00.js'),
       join(dirsPath, 'dir1/1.html'),
       join(dirsPath, 'dir1/dir10/10.js'),
-    ];
+    ].sort();
 
-    expect(await deepReaddir(dirsPath)).toStrictEqual(expected);
+    const result = await deepReaddir(dirsPath);
+    expect(result.sort()).toStrictEqual(expected);
   });
 
   it('Filtered by .html', async () => {
     const options = { ext: '.html' };
-    const expected = [join(dirsPath, 'dir0/dir00/00.html'), join(dirsPath, 'dir1/1.html')];
+    const expected = [join(dirsPath, 'dir0/dir00/00.html'), join(dirsPath, 'dir1/1.html')].sort();
 
-    expect(await deepReaddir(dirsPath, options)).toStrictEqual(expected);
+    const result = await deepReaddir(dirsPath, options);
+    expect(result.sort()).toStrictEqual(expected);
   });
 
   it('Filtered by .js', async () => {
     const options = { ext: '.js' };
-    const expected = [join(dirsPath, 'dir0/dir00/00.js'), join(dirsPath, 'dir1/dir10/10.js')];
+    const expected = [
+      join(dirsPath, 'dir0/dir00/00.js'),
+      join(dirsPath, 'dir1/dir10/10.js'),
+    ].sort();
 
-    expect(await deepReaddir(dirsPath, options)).toStrictEqual(expected);
+    const result = await deepReaddir(dirsPath, options);
+    expect(result.sort()).toStrictEqual(expected);
   });
 });
 

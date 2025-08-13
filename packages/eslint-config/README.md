@@ -57,6 +57,13 @@ export default pages;
 - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc) - JSDoc validation
 - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - Prettier integration
 
+## Commands
+
+```bash
+bun lint    # Run linting
+bun format  # Format code
+```
+
 ## Design Philosophy
 
 - **Centralized Management** - All ESLint configurations managed from a single source

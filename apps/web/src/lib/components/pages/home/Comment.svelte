@@ -121,7 +121,7 @@
             <Button
               variant="secondary"
               size="icon"
-              class="not-group-hover:opacity-0 absolute right-[-8px] top-[-8px] size-6 rounded-full transition-none"
+              class="absolute top-[-8px] right-[-8px] size-6 rounded-full transition-none not-group-hover:opacity-0"
               onclick={handleDeleteImage}
             >
               <XIcon class="size-4" />
@@ -132,7 +132,7 @@
     </div>
 
     {#if card.me}
-      <div class="not-group-hover:opacity-0 absolute bottom-0 right-0">
+      <div class="absolute right-0 bottom-0 not-group-hover:opacity-0">
         <Button size="icon" onclick={handleDelete} disabled={isDeleting}>
           <Trash2Icon />
         </Button>

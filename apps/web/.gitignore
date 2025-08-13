@@ -11,5 +11,5 @@ vite.config.ts.timestamp-*
 
 # custom
 /src/lib/$generated/*
-!/src/lib/$generated/supabase-types.ts
+!/src/lib/$generated/types.ts
 /supabase/.temp

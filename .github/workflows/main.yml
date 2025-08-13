@@ -40,27 +40,28 @@ jobs:
       - name: 🛎 Checkout
         uses: actions/checkout@v4
 
-      - name: 📦 Setup pnpm
-        uses: pnpm/action-setup@v4
-
       - name: 🏗 Setup node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-          cache: 'pnpm'
+
+      - name: 📦 Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
       - name: 👨🏻‍💻 Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: 🐣 Run build
-        run: pnpm turbo build --filter=!api
+        run: bun turbo build --filter !api
         env:
           PUBLIC_GA4_MEASUREMENT_ID: ${{ secrets.PUBLIC_GA4_MEASUREMENT_ID }}
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: 👀 Run lint
-        run: pnpm lint
+        run: bun lint
 
       - name: 🧪 Run test
-        run: pnpm turbo test --filter=!api
+        run: bun turbo test --filter !api

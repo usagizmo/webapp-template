@@ -17,7 +17,7 @@ const imageExtensions = ['jpg', 'png', 'webp'];
 const linkAttrs = ['href', 'src'];
 const linkRegex = new RegExp(`(?:${linkAttrs.join('|')})="([^"]+?)"`, 'g');
 
-describe.concurrent('The tests (will be run in parallel)', () => {
+describe('The tests', () => {
   it(`Output external-links.txt`, async () => {
     let errorMessage = '';
 
