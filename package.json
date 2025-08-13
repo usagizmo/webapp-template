@@ -19,8 +19,7 @@
     "format:prettier": "prettier . --write --ignore-path=.prettierignore.root",
     "format:packages": "turbo run format",
     "format": "run-p format:root format:packages",
-    "test": "turbo run test",
-    "test:watch": "turbo run test:watch"
+    "test": "turbo run test"
   },
   "devDependencies": {
     "@markuplint/ml-config": "^4.8.11",
