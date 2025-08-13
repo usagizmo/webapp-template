@@ -54,7 +54,7 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: 🐣 Run build
-        run: bun turbo build --filter=!api
+        run: bun turbo build --filter !api
         env:
           PUBLIC_GA4_MEASUREMENT_ID: ${{ secrets.PUBLIC_GA4_MEASUREMENT_ID }}
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
@@ -64,4 +64,4 @@ jobs:
         run: bun lint
 
       - name: 🧪 Run test
-        run: bun turbo test --filter=!api
+        run: bun turbo test --filter !api

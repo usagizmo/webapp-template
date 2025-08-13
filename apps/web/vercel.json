@@ -1,4 +1,4 @@
 {
-  "buildCommand": "cd ../.. && bun build --filter=web",
+  "buildCommand": "cd ../.. && bun run build --filter web",
   "installCommand": "cd ../.. && bun install --frozen-lockfile"
 }
