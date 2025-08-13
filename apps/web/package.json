@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev --open",
-    "build": "vite build",
+    "build": "svelte-kit sync && vite build",
     "preview": "vite preview",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -57,5 +57,8 @@
     "typescript": "^5.8.3",
     "vite": "^7.0.3",
     "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

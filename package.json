@@ -37,8 +37,11 @@
     "turbo": "^2.5.4"
   },
   "engines": {
-    "node": ">=22",
-    "pnpm": ">=10"
+    "node": ">=22"
   },
-  "packageManager": "pnpm@10.12.1"
+  "packageManager": "bun@1.2.20",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }
