@@ -1,6 +1,5 @@
 ahvu
 autodetection
-bunx
 camelcase
 cdate
 dirents
