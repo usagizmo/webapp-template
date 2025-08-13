@@ -1,3 +1,4 @@
+https://bun.sh
 https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css
 https://cspell.org
 https://eslint.org
@@ -15,7 +16,6 @@ https://github.com/typicode/husky
 https://github.com/usagizmo/webapp-template
 https://lucide.dev/guide/packages/lucide-svelte
 https://markuplint.dev
-https://pnpm.io
 https://prettier.io
 https://supabase.com
 https://superforms.rocks/
