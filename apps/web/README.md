@@ -75,7 +75,6 @@ Set these in your Vercel project settings:
 PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX  # Optional
-ENABLE_EXPERIMENTAL_COREPACK=1
 ```
 
 See the [root README](../../README.md) for complete setup instructions.
