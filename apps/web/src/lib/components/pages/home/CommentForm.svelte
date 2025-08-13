@@ -86,14 +86,14 @@
           {@const blobUrl = URL.createObjectURL(file)}
           <div class="group relative">
             <img
-              class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 hover:brightness-90 peer-disabled:pointer-events-none peer-disabled:opacity-40"
+              class="h-24 w-32 cursor-pointer rounded-md border border-slate-200 duration-200 peer-disabled:pointer-events-none peer-disabled:opacity-40 hover:brightness-90"
               src={blobUrl}
               alt=""
             />
             <Button
               variant="secondary"
               size="icon"
-              class="not-group-hover:opacity-0 absolute right-[-8px] top-[-8px] size-6 rounded-full transition-none"
+              class="absolute top-[-8px] right-[-8px] size-6 rounded-full transition-none not-group-hover:opacity-0"
               onclick={handleRemoveFile}
             >
               <XIcon class="size-4" />

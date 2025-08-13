@@ -44,7 +44,7 @@
   <HeaderNavigation />
 
   <div class="bg-muted flex flex-1 flex-col">
-    <main class="flex-1 px-4 pb-16 pt-[68px] md:pt-10">
+    <main class="flex-1 px-4 pt-[68px] pb-16 md:pt-10">
       {@render children()}
     </main>
 

@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="duration-450 ease-out-quint relative transition-[height]"
+  class="ease-out-quint relative transition-[height] duration-450"
   style:height={`${clientHeight}px`}
 >
   {#if isLoginPage}

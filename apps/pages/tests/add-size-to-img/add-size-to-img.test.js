@@ -34,7 +34,10 @@ describe('@deepReaddir', async () => {
 
   it('Filtered by .js', async () => {
     const options = { ext: '.js' };
-    const expected = [join(dirsPath, 'dir0/dir00/00.js'), join(dirsPath, 'dir1/dir10/10.js')].sort();
+    const expected = [
+      join(dirsPath, 'dir0/dir00/00.js'),
+      join(dirsPath, 'dir1/dir10/10.js'),
+    ].sort();
 
     const result = await deepReaddir(dirsPath, options);
     expect(result.sort()).toStrictEqual(expected);
