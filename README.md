@@ -284,6 +284,17 @@ PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX  # Optional
 
 ## Breaking changes
 
+### [v2.13.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.13.0)
+
+- **Package Manager Migration:**
+  - Migrated from pnpm to [Bun](https://bun.sh/) as the primary package manager
+  - All `pnpm` commands must be replaced with `bun` equivalents
+  - Replaced `pnpm-lock.yaml` with `bun.lock`
+- **Build System Updates:**
+  - Updated Turborepo filter syntax for GitHub Actions
+  - Fixed Vercel deployment configurations for bun compatibility
+  - Added generic `build` task to `turbo.json`
+
 ### [v2.12.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.12.0)
 
 - **Shared Package Introduction:**
