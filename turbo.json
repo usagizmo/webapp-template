@@ -24,7 +24,7 @@
       "cache": false,
       "persistent": true
     },
-    "api#test": {
+    "test": {
       "cache": false
     },
     "pages#test": {

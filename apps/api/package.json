@@ -7,13 +7,13 @@
     "./types": "./$generated/types.ts"
   },
   "scripts": {
-    "start": "pnpm exec supabase start",
-    "stop": "pnpm exec supabase stop",
-    "status": "pnpm exec supabase status",
-    "reset": "pnpm exec supabase db reset && pnpm generate",
-    "generate:supabase-types": "mkdir -p \\$generated && pnpm exec supabase gen types typescript --local > ./\\$generated/types.ts",
-    "generate": "pnpm generate:supabase-types",
-    "test": "pnpm exec supabase test db"
+    "start": "bunx supabase start",
+    "stop": "bunx supabase stop",
+    "status": "bunx supabase status",
+    "reset": "bunx supabase db reset && bun generate",
+    "generate:supabase-types": "mkdir -p \\$generated && bunx supabase gen types typescript --local > ./\\$generated/types.ts",
+    "generate": "bun generate:supabase-types",
+    "test": "bunx supabase test db"
   },
   "devDependencies": {
     "supabase": "^2.30.4"
