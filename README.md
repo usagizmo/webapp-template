@@ -6,7 +6,7 @@ Monorepo template for creating a modern web application.
 
 - **Frontend**: [Svelte 5](https://svelte.dev/) + [SvelteKit](https://svelte.dev/docs/kit/) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind CSS 4](https://tailwindcss.com/) + [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte) + [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) + [Superforms](https://superforms.rocks/) + [Zod](https://zod.dev/)
 - **API**: [Supabase](https://supabase.com/) (PostgreSQL, Auth, Realtime, Storage)
-- **Build System**: [Turborepo](https://turborepo.org/) + [pnpm](https://pnpm.io/) + [Vite](https://vitejs.dev/)
+- **Build System**: [Turborepo](https://turborepo.org/) + [Bun](https://bun.sh/) + [Vite](https://vitejs.dev/)
 - **Quality Tools**: [ESLint 9](https://eslint.org/), [Prettier](https://prettier.io/), [CSpell](https://cspell.org/), [Vitest](https://vitest.dev/), [markuplint](https://markuplint.dev/)
 - **Development**: VS Code extensions, [lint-staged](https://github.com/okonet/lint-staged), [husky](https://github.com/typicode/husky), GitHub Actions
 
@@ -70,34 +70,34 @@ graph TB
 ### Prerequisites
 
 - [Node.js v22+](https://nodejs.org/)
-- [pnpm](https://pnpm.io/)
+- [Bun](https://bun.sh/)
 - [Docker](https://www.docker.com/) (for local database)
 
 ### Starting Development
 
 ```bash
 # Install dependencies (.env file is created automatically)
-pnpm install
+bun install
 
 # For static site development
-pnpm --filter pages dev
+bun --filter pages dev
 
 # For web app development
-pnpm --filter api start     # Start Supabase API
-pnpm --filter api generate  # Generate TypeScript types (only when schema changes)
-pnpm --filter web dev       # Start web development server
+bun --filter api start     # Start Supabase API
+bun --filter api generate  # Generate TypeScript types (only when schema changes)
+bun --filter web dev       # Start web development server
 ```
 
 > **Note**: TypeScript types are committed to the repository, so you only need to run `generate` when the database schema changes.
 
 #### Environment Configuration
 
-After running `pnpm install`, a `.env` file is automatically created from `.env.example`. Fill in the required values:
+After running `bun install`, a `.env` file is automatically created from `.env.example`. Fill in the required values:
 
 **For local development**:
 
 - `PUBLIC_SUPABASE_URL` - `http://127.0.0.1:54321`
-- `PUBLIC_SUPABASE_ANON_KEY` - Copy the anon key displayed when running `pnpm --filter api start`
+- `PUBLIC_SUPABASE_ANON_KEY` - Copy the anon key displayed when running `bun --filter api start`
 
 **For production deployment**:
 
@@ -106,7 +106,7 @@ After running `pnpm install`, a `.env` file is automatically created from `.env.
 
 **Optional (for advanced operations)**:
 
-- `DATABASE_URL` - Enables `pnpm --filter api push/pull` to target production database
+- `DATABASE_URL` - Enables `bun --filter api push/pull` to target production database
 - `SUPABASE_SERVICE_ROLE_KEY` - Server-side admin access for Edge Functions, Webhooks (never use in browser!)
 
 ### VS Code Extensions (Recommended)
@@ -123,29 +123,29 @@ After running `pnpm install`, a `.env` file is automatically created from `.env.
 
 ```bash
 # Project Setup
-pnpm install                     # Install dependencies (.env file is created automatically)
+bun install                     # Install dependencies (.env file is created automatically)
 
 # Development Workflow
 
 # Start development servers
-pnpm --filter api start          # Start Supabase API (port 54321)
-pnpm dev                         # Start all development servers
+bun --filter api start          # Start Supabase API (port 54321)
+bun dev                         # Start all development servers
 # Or specific apps:
-pnpm --filter web dev            # Start web app only (port 5173)
-pnpm --filter pages dev          # Start static site only (port 3000)
+bun --filter web dev            # Start web app only (port 5173)
+bun --filter pages dev          # Start static site only (port 3000)
 
 # Build and generate
-pnpm --filter api generate       # Generate TypeScript types from Supabase
-pnpm --filter web build          # Build web application
-pnpm --filter pages build        # Build static site
+bun --filter api generate       # Generate TypeScript types from Supabase
+bun --filter web build          # Build web application
+bun --filter pages build        # Build static site
 
 # Quality assurance
-pnpm lint                        # Run linting across all apps
-pnpm --filter web test           # Test web app
-pnpm --filter pages test         # Test static site
+bun lint                        # Run linting across all apps
+bun --filter web test           # Test web app
+bun --filter pages test         # Test static site
 
 # Code formatting
-pnpm format                      # Format code across all apps
+bun format                      # Format code across all apps
 ```
 
 ### App-Specific Commands
@@ -154,43 +154,38 @@ pnpm format                      # Format code across all apps
 
 ```bash
 cd apps/api
-pnpm start            # Start Supabase locally
-pnpm stop             # Stop Supabase
-pnpm status           # Show Supabase service status
-pnpm reset            # Reset database and regenerate types
-pnpm diff             # Show schema changes
-pnpm push             # Push migrations to remote
-pnpm pull             # Pull schema changes from remote and regenerate types
-pnpm migration        # Create new migration file
-pnpm link             # Link to remote project
-pnpm seed             # Seed storage buckets
-pnpm generate         # Generate TypeScript types
+bun start            # Start Supabase locally
+bun stop             # Stop Supabase
+bun status           # Show Supabase service status
+bun reset            # Reset database and regenerate types
+bun generate         # Generate TypeScript types
+bun test             # Run Supabase tests
 ```
 
 #### Web App
 
 ```bash
 cd apps/web
-pnpm dev              # Start development server (port 5173)
-pnpm build            # Build for production
-pnpm preview          # Preview production build
-pnpm test             # Run Vitest tests
-pnpm lint             # Run linting
+bun dev              # Start development server (port 5173)
+bun build            # Build for production
+bun preview          # Preview production build
+bun test             # Run Vitest tests
+bun lint             # Run linting
 ```
 
 #### Pages (Static Site Publishing)
 
 ```bash
 cd apps/pages
-pnpm dev              # Start development server (port 3000)
-pnpm build            # Build static site with Tailwind CSS
-pnpm test             # Validate links, images, and accessibility (Note: Delete tests/external-links.txt before pnpm test to update URL tracking)
-pnpm lint             # Run HTML validation with markuplint
-pnpm deploy           # Deploy to server (rsync)
+bun dev              # Start development server (port 3000)
+bun build            # Build static site with Tailwind CSS
+bun test             # Validate links, images, and accessibility (Note: Delete tests/external-links.txt before bun test to update URL tracking)
+bun lint             # Run HTML validation with markuplint
+bun deploy           # Deploy to server (rsync)
 
 # Optimization Utilities
-pnpm add-size-to-img  # Add width/height to <img> tags for better performance
-pnpm clean-image      # Remove unused images from project
+bun add-size-to-img  # Add width/height to <img> tags for better performance
+bun clean-image      # Remove unused images from project
 ```
 
 ## Port Configuration
@@ -212,7 +207,7 @@ TypeScript types are automatically generated from your Supabase database schema:
 
 1. **Local Development**: Types are generated to `apps/api/$generated/types.ts`
 2. **Frontend Usage**: Types are imported from the `api` package (e.g., `import type { Database } from 'api/types'`)
-3. **After Schema Changes**: Run `pnpm generate` to update types
+3. **After Schema Changes**: Run `bun generate` to update types
 
 ### Shared Components and Types
 
@@ -234,7 +229,7 @@ import { DEFAULT_EASE } from '@repo/shared/constants/easing';
 
 You can easily switch between development and production environments:
 
-1. **For Development**: Use local Supabase (started with `pnpm start`)
+1. **For Development**: Use local Supabase (started with `bun start`)
 2. **For Production Testing**: Update `.env` with production Supabase credentials
 3. **Type Safety**: Types are committed to repository for CI/CD compatibility
 
@@ -275,7 +270,7 @@ ENABLE_EXPERIMENTAL_COREPACK=1
 
 ##### Option 2: Server Deployment (rsync)
 
-- Use `pnpm run deploy` command in `apps/pages`
+- Use `bun run deploy` command in `apps/pages`
 - Configure server details in deployment script
 - Direct file transfer to your server
 

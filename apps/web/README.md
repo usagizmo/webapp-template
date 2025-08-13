@@ -44,18 +44,18 @@ src/lib/
 ## Commands
 
 ```bash
-pnpm dev       # Start development server (port 5173)
-pnpm build     # Build for production
-pnpm preview   # Preview production build
-pnpm test      # Run Vitest tests
-pnpm lint      # Run linting
+bun dev       # Start development server (port 5173)
+bun build     # Build for production
+bun preview   # Preview production build
+bun test      # Run Vitest tests
+bun lint      # Run linting
 ```
 
 ## Development
 
-1. Start Supabase API: `cd ../api && pnpm start`
-2. Generate types: `cd ../.. && pnpm generate`
-3. Start dev server: `pnpm dev`
+1. Start Supabase API: `cd ../api && bun start`
+2. Generate types: `cd ../.. && bun generate`
+3. Start dev server: `bun dev`
 4. Open http://localhost:5173
 
 ## Deploy to Vercel

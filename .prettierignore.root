@@ -4,9 +4,8 @@ node_modules
 .env.*
 !.env.example
 
-# Ignore files for PNPM
-pnpm-lock.yaml
-pnpm-workspace.yaml
+# Ignore files for Bun
+bun.lock
 
 # custom
 .turbo

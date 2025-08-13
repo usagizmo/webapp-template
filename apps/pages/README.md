@@ -8,20 +8,20 @@ Professional static site publishing tool with quality assurance features. Build 
 
 ```bash
 # Development
-pnpm dev              # Start development server (port 3000)
-pnpm build            # Build static site with Tailwind CSS
+bun dev              # Start development server (port 3000)
+bun build            # Build static site with Tailwind CSS
 
 # Quality Assurance
-pnpm test             # Validate links, images, and accessibility
-pnpm lint             # Run HTML validation with markuplint
-pnpm format           # Format with Prettier
+bun test             # Validate links, images, and accessibility
+bun lint             # Run HTML validation with markuplint
+bun format           # Format with Prettier
 
 # Publishing
-pnpm run deploy       # Deploy to server (rsync)
+bun run deploy       # Deploy to server (rsync)
 
 # Optimization Utilities
-pnpm add-size-to-img  # Add width/height to <img> tags for better performance
-pnpm clean-image      # Remove unused images from project
+bun add-size-to-img  # Add width/height to <img> tags for better performance
+bun clean-image      # Remove unused images from project
 ```
 
 ## Features
@@ -43,11 +43,11 @@ pnpm clean-image      # Remove unused images from project
 
 ## Development Workflow
 
-1. Start development server: `pnpm dev`
+1. Start development server: `bun dev`
 2. Open http://localhost:3000
 3. Edit HTML files in `public/` directory
-4. Run quality checks: `pnpm test && pnpm lint`
-5. Deploy: `pnpm run deploy`
+4. Run quality checks: `bun test && bun lint`
+5. Deploy: `bun run deploy`
 
 ## Deployment
 
@@ -72,14 +72,14 @@ pnpm clean-image      # Remove unused images from project
 **Command:**
 
 ```bash
-pnpm run deploy
+bun run deploy
 ```
 
 **Setup:**
 
 1. Configure your server details in the deployment script
 2. Ensure SSH access to your target server
-3. Run `pnpm build` before deployment
+3. Run `bun build` before deployment
 4. The deploy command will sync files to your server using rsync
 
 ## Quality Assurance Details
@@ -91,7 +91,7 @@ The `tests/external-links.txt` file tracks all external URLs found in HTML files
 **Updating External Links:**
 
 1. When URLs in your HTML files change, delete `tests/external-links.txt`
-2. Run `pnpm test` to regenerate the file with current URLs
+2. Run `bun test` to regenerate the file with current URLs
 3. This ensures the link validation stays up-to-date with your content
 
 ### Image Optimization

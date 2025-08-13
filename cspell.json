@@ -18,7 +18,7 @@
     "*.icns",
     "*.mp4",
     "*.svg",
-    "pnpm-lock.yaml",
+    "bun.lock",
     "/.vscode",
     "/apps/api/#vscode",
     "/apps/api/$generated",

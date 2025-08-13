@@ -1,4 +1,4 @@
 {
-  "buildCommand": "cd ../.. && pnpm build --filter=pages",
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile"
+  "buildCommand": "cd ../.. && bun build --filter=pages",
+  "installCommand": "cd ../.. && bun install --frozen-lockfile"
 }
