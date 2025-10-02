@@ -12,7 +12,8 @@
   "eslint.useFlatConfig": true,
   "eslint.validate": ["svelte"],
   "svelte.enable-ts-plugin": true,
+  "tailwindCSS.classFunctions": ["tv"],
   "tailwindCSS.experimental.classRegex": [
-    ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ]
 }
