@@ -35,10 +35,10 @@
     "prettier-plugin-tailwindcss": "^0.6.13",
     "turbo": "^2.5.4"
   },
-  "engines": {
-    "node": ">=22"
-  },
   "packageManager": "bun@1.2.20",
+  "engines": {
+    "bun": "^1.2.20"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
