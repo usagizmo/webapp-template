@@ -69,7 +69,6 @@ graph TB
 
 ### Prerequisites
 
-- [Node.js v22+](https://nodejs.org/)
 - [Bun](https://bun.sh/)
 - [Docker](https://www.docker.com/) (for local database)
 
