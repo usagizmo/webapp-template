@@ -18,7 +18,7 @@
     "format:js": "eslint --fix .",
     "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
     "format": "run-p format:*",
-    "add-size-to-img": "node ./commands/add-size-to-img.js",
+    "add-size-to-img": "bun ./commands/add-size-to-img.js",
     "clean-image": "./commands/clean-image.sh",
     "deploy": "./commands/deploy.sh"
   },
