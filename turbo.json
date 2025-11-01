@@ -32,7 +32,11 @@
       "inputs": ["public/**", "tests/**", "commands/**"],
       "outputs": ["tests/external-links.txt"]
     },
-    "lint": {},
-    "format": {}
+    "lint": {
+      "cache": false
+    },
+    "format": {
+      "cache": false
+    }
   }
 }
