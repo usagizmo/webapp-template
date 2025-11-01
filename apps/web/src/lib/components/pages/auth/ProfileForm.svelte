@@ -3,7 +3,7 @@
   import { Textarea } from '@repo/shared/components/ui/textarea';
   import { toast } from 'svelte-sonner';
   import { defaults, superForm } from 'sveltekit-superforms';
-  import { zod } from 'sveltekit-superforms/adapters';
+  import { zod4 } from 'sveltekit-superforms/adapters';
 
   import { ProfileSchema } from '$lib/schemas/profile';
   import { userStore } from '$lib/stores';
@@ -13,11 +13,11 @@
       {
         bio: userStore.profile?.bio ?? '',
       },
-      zod(ProfileSchema),
+      zod4(ProfileSchema),
     ),
     {
       SPA: true,
-      validators: zod(ProfileSchema),
+      validators: zod4(ProfileSchema),
       resetForm: false,
       onUpdate: async ({ form }) => {
         if (!form.valid) return;

@@ -2,6 +2,7 @@
   import { DEFAULT_EASE } from '@repo/shared/constants/easing';
   import { crossfade } from 'svelte/transition';
 
+  import { resolve } from '$app/paths';
   import { page } from '$app/state';
 
   const tabs = [
@@ -13,7 +14,7 @@
       name: 'Sign up',
       href: '/auth/signup',
     },
-  ];
+  ] as const;
 
   const [send, receive] = crossfade(DEFAULT_EASE);
 </script>
@@ -31,7 +32,7 @@
           ></span>
         {/if}
         <a
-          {href}
+          href={resolve(href)}
           class={[
             'relative inline-flex items-center justify-center space-x-1 rounded-md px-5 py-2 text-sm duration-200 hover:font-semibold',
             {

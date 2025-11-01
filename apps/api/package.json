@@ -16,6 +16,6 @@
     "test": "bun supabase test db"
   },
   "devDependencies": {
-    "supabase": "^2.30.4"
+    "supabase": "^2.54.11"
   }
 }

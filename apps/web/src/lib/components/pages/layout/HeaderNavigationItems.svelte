@@ -2,12 +2,14 @@
   import { DEFAULT_EASE } from '@repo/shared/constants/easing';
   import { crossfade } from 'svelte/transition';
 
+  import { resolve } from '$app/paths';
   import { page } from '$app/state';
+  import type { NavItem } from '$lib/types/routes';
 
   let {
     navItems = [],
   }: {
-    navItems: { label: string; href: string }[];
+    navItems: NavItem[];
   } = $props();
 
   const [send, receive] = crossfade(DEFAULT_EASE);
@@ -31,7 +33,7 @@
         <span class="font-bold">{label}</span>
       {:else}
         <a
-          {href}
+          href={resolve(href)}
           class="text-muted-foreground hover:text-foreground flex h-full items-center justify-center font-bold duration-200"
           >{label}</a
         >

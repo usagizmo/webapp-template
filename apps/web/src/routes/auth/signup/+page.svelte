@@ -5,16 +5,16 @@
   import { Input } from '@repo/shared/components/ui/input';
   import { toast } from 'svelte-sonner';
   import { defaults, superForm } from 'sveltekit-superforms';
-  import { zod } from 'sveltekit-superforms/adapters';
+  import { zod4 } from 'sveltekit-superforms/adapters';
 
   import { SignupSchema } from '$lib/schemas/auth';
   import { userStore } from '$lib/stores';
 
   const signupFormData = superForm(
-    defaults({ email: '', password: '', displayName: '' }, zod(SignupSchema)),
+    defaults({ email: '', password: '', displayName: '' }, zod4(SignupSchema)),
     {
       SPA: true,
-      validators: zod(SignupSchema),
+      validators: zod4(SignupSchema),
       onUpdate: async ({ form }) => {
         if (!form.valid) return;
         const data = form.data;
