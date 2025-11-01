@@ -8,7 +8,7 @@ node_modules
 .turbo
 *.min.*
 /apps/api/$generated
-/apps/pages/public/styles.css
+/apps/pages/public/
 /apps/web/.svelte-kit
 /packages/shared/.svelte-kit
 /packages/shared/dist
