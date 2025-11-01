@@ -37,7 +37,6 @@
         "image-size": "^2.0.2",
         "npm-run-all2": "^8.0.4",
         "tailwindcss": "^4.1.11",
-        "vitest": "^3.2.4",
       },
     },
     "apps/web": {
@@ -79,7 +78,6 @@
         "tw-animate-css": "^1.3.5",
         "typescript": "^5.8.3",
         "vite": "^7.0.3",
-        "vitest": "^3.2.4",
       },
     },
     "packages/eslint-config": {
