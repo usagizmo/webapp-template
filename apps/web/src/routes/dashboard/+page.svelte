@@ -6,6 +6,7 @@
   import { toast } from 'svelte-sonner';
 
   import { goto } from '$app/navigation';
+  import { resolve } from '$app/paths';
   import ProfileForm from '$lib/components/pages/auth/ProfileForm.svelte';
   import { userStore } from '$lib/stores';
 
@@ -21,7 +22,7 @@
       toast.error(error.message);
       isLoading = false;
     } else {
-      goto('/auth/login');
+      goto(resolve('/auth/login'));
     }
   }
 </script>

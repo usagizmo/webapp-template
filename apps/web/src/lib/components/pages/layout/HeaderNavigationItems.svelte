@@ -2,6 +2,7 @@
   import { DEFAULT_EASE } from '@repo/shared/constants/easing';
   import { crossfade } from 'svelte/transition';
 
+  import { resolve } from '$app/paths';
   import { page } from '$app/state';
 
   let {
@@ -31,7 +32,7 @@
         <span class="font-bold">{label}</span>
       {:else}
         <a
-          {href}
+          href={resolve(href)}
           class="text-muted-foreground hover:text-foreground flex h-full items-center justify-center font-bold duration-200"
           >{label}</a
         >
