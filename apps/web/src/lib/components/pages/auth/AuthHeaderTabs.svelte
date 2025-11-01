@@ -14,7 +14,7 @@
       name: 'Sign up',
       href: '/auth/signup',
     },
-  ];
+  ] as const;
 
   const [send, receive] = crossfade(DEFAULT_EASE);
 </script>

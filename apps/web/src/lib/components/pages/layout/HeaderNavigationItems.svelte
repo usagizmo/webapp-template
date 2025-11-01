@@ -4,11 +4,12 @@
 
   import { resolve } from '$app/paths';
   import { page } from '$app/state';
+  import type { NavItem } from '$lib/types/routes';
 
   let {
     navItems = [],
   }: {
-    navItems: { label: string; href: string }[];
+    navItems: NavItem[];
   } = $props();
 
   const [send, receive] = crossfade(DEFAULT_EASE);

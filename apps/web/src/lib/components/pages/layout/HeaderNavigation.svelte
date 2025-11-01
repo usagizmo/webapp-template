@@ -3,6 +3,7 @@
   import { Button } from '@repo/shared/components/ui/button';
 
   import { userStore } from '$lib/stores';
+  import type { NavItem, RoutePath } from '$lib/types/routes';
 
   import HeaderNavigationItems from './HeaderNavigationItems.svelte';
 
@@ -10,13 +11,13 @@
     [
       {
         label: 'Home',
-        href: '/',
+        href: '/' as const,
       },
       {
         label: userStore.user ? 'Dashboard' : 'Login',
-        href: userStore.user ? '/dashboard' : '/auth/login',
+        href: (userStore.user ? '/dashboard' : '/auth/login') as RoutePath,
       },
-    ].concat(userStore.user ? [{ label: 'Secret', href: '/secret' }] : []),
+    ].concat(userStore.user ? [{ label: 'Secret', href: '/secret' as const }] : []) as NavItem[],
   );
 </script>
 
