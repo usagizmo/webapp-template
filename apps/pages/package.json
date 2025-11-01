@@ -24,12 +24,12 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/cli": "^4.1.16",
     "browser-sync": "^3.0.4",
-    "eslint-plugin-jsdoc": "^51.3.4",
-    "globals": "^16.3.0",
+    "eslint-plugin-jsdoc": "^61.1.11",
+    "globals": "^16.5.0",
     "image-size": "^2.0.2",
     "npm-run-all2": "^8.0.4",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.16"
   }
 }
