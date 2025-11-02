@@ -3,22 +3,21 @@
   import { Button } from '@repo/shared/components/ui/button';
 
   import { userStore } from '$lib/stores';
-  import type { NavItem, RoutePath } from '$lib/types/routes';
+  import type { NavItem } from '$lib/types/routes';
 
   import HeaderNavigationItems from './HeaderNavigationItems.svelte';
 
-  const navItems = $derived(
-    [
-      {
-        label: 'Home',
-        href: '/' as const,
-      },
-      {
-        label: userStore.user ? 'Dashboard' : 'Login',
-        href: (userStore.user ? '/dashboard' : '/auth/login') as RoutePath,
-      },
-    ].concat(userStore.user ? [{ label: 'Secret', href: '/secret' as const }] : []) as NavItem[],
-  );
+  const navItems = $derived([
+    {
+      label: 'Home',
+      href: '/' as const,
+    },
+    {
+      label: userStore.user ? 'Dashboard' : 'Login',
+      href: userStore.user ? ('/dashboard' as const) : ('/auth/login' as const),
+    },
+    ...(userStore.user ? [{ label: 'Secret', href: '/secret' as const }] : []),
+  ] satisfies NavItem[]);
 </script>
 
 <header class="bg-sidebar border-b px-4 md:sticky md:top-0 md:z-20">
