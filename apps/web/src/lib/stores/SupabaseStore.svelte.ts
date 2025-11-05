@@ -2,7 +2,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import type { Database } from 'api/types';
 
 /**
- * Global Supabase client store
+ * Supabase client store
  * Sets the client received from the server in +layout.svelte,
  * and components access the client through this store
  */
