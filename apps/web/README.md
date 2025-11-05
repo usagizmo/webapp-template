@@ -25,11 +25,11 @@ src/lib/
 │   │   ├── home/        # Home page components
 │   │   └── layout/      # Layout components
 │   └── ui/              # Reusable UI components (shadcn-svelte)
-├── composables/         # Reusable reactive logic and state management
 ├── constants/           # Application constants
 ├── helpers/             # Business logic and API operations (comment handling, authentication, etc.)
 ├── schemas/             # Zod validation schemas
 ├── stores/              # State management (class-based)
+│   └── local/           # Component-scoped stores
 ├── types/               # TypeScript type definitions
 └── utils/               # Generic utility functions (reusable, not feature-specific)
 ```
@@ -37,7 +37,18 @@ src/lib/
 **Layer Communication Rules**:
 
 - **Components**: Access Helpers via Stores (direct Helper dependency is prohibited)
-- **Stores/Composables**: Can directly access Helpers, pass state to Helpers for execution
+- **Stores/LocalStores**: Can directly access Helpers, pass state to Helpers for execution
+
+## State Management
+
+Class-based stores using Svelte 5 Runes API (`$state`, `$derived`):
+
+| Type              | Location                  | Instantiation         | Purpose                       |
+| ----------------- | ------------------------- | --------------------- | ----------------------------- |
+| **Global Stores** | `src/lib/stores/index.ts` | Singleton (automatic) | Application-wide shared state |
+| **Local Stores**  | `src/lib/stores/local/`   | `new` in component    | Component-scoped state        |
+
+**Global Stores**: `supabaseStore`, `userStore`, `commentStore`
 
 [[Demo](https://webapp-template.usagizmo.com/)]
 

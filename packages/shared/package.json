@@ -4,8 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "svelte-kit sync && svelte-package --watch",
-    "build": "svelte-kit sync && svelte-package",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "lint:markup": "markuplint \"**\"",
@@ -18,9 +16,6 @@
     "format": "run-p format:*"
   },
   "files": [
-    "dist",
-    "!dist/**/*.test.*",
-    "!dist/**/*.spec.*",
     "src",
     "!src/**/*.test.*",
     "!src/**/*.spec.*"
@@ -30,46 +25,13 @@
   ],
   "exports": {
     "./app.css": "./src/app.css",
-    "./components/*.svelte": {
-      "types": "./dist/components/*.svelte.d.ts",
-      "svelte": "./src/lib/components/*.svelte",
-      "default": "./dist/components/*.svelte"
-    },
-    "./components/ui/*": {
-      "types": "./dist/components/ui/*/index.d.ts",
-      "svelte": "./src/lib/components/ui/*/index.ts",
-      "default": "./dist/components/ui/*/index.js"
-    },
-    "./composables/*": {
-      "types": "./dist/composables/*.d.ts",
-      "svelte": "./src/lib/composables/*.ts",
-      "default": "./dist/composables/*.js"
-    },
-    "./constants/*": {
-      "types": "./dist/constants/*.d.ts",
-      "svelte": "./src/lib/constants/*.ts",
-      "default": "./dist/constants/*.js"
-    },
-    "./helpers/*": {
-      "types": "./dist/helpers/*.d.ts",
-      "svelte": "./src/lib/helpers/*.ts",
-      "default": "./dist/helpers/*.js"
-    },
-    "./schemas/*": {
-      "types": "./dist/schemas/*.d.ts",
-      "svelte": "./src/lib/schemas/*.ts",
-      "default": "./dist/schemas/*.js"
-    },
-    "./types/*": {
-      "types": "./dist/types/*.d.ts",
-      "svelte": "./src/lib/types/*.ts",
-      "default": "./dist/types/*.js"
-    },
-    "./utils/*": {
-      "types": "./dist/utils/*.d.ts",
-      "svelte": "./src/lib/utils/*.ts",
-      "default": "./dist/utils/*.js"
-    }
+    "./components/*": "./src/lib/components/*",
+    "./components/ui/*": "./src/lib/components/ui/*/index.ts",
+    "./constants/*": "./src/lib/constants/*.ts",
+    "./helpers/*": "./src/lib/helpers/*.ts",
+    "./schemas/*": "./src/lib/schemas/*.ts",
+    "./types/*": "./src/lib/types/*.ts",
+    "./utils/*": "./src/lib/utils/*.ts"
   },
   "peerDependencies": {
     "svelte": "^5.43.2"
@@ -85,7 +47,6 @@
     "@lucide/svelte": "^0.552.0",
     "@repo/eslint-config": "workspace:*",
     "@sveltejs/kit": "^2.48.4",
-    "@sveltejs/package": "^2.5.4",
     "@sveltejs/vite-plugin-svelte": "6.2.1",
     "@tailwindcss/vite": "^4.1.16",
     "bits-ui": "^2.14.2",

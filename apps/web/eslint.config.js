@@ -29,7 +29,7 @@ export default [
           patterns: [
             {
               group: ['$lib/helpers/**', '@repo/shared/helpers/**'],
-              message: 'Access Helpers layer via Stores/Composables',
+              message: 'Access Helpers layer via Stores',
             },
           ],
         },
