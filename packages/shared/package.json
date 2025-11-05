@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "svelte-kit sync",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "lint:markup": "markuplint \"**\"",
