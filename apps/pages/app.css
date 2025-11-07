@@ -1,12 +1,17 @@
 /* ref. https://tailwindcss.com/docs/theme  */
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Local Noto Sans JP';
+  src: local('Noto Sans JP');
+}
+
 @theme {
   /* --font-sans: -apple-system, blinkMacSystemFont, Helvetica, 'Yu Gothic', YuGothic,
     'BIZ UDPGothic', Meiryo, sans-serif;
   --font-sans: -apple-system, blinkMacSystemFont, Helvetica, 'Hiragino Sans',
     'Hiragino Kaku Gothic ProN', 'BIZ UDPGothic', Meiryo, sans-serif;
   --font-serif: 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', serif; */
-  --font-sans: Inter, YakuHanJP, 'Noto Sans JP', sans-serif;
+  --font-sans: Inter, YakuHanJP, 'Local Noto Sans JP', 'Noto Sans JP', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
