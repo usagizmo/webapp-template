@@ -10,7 +10,7 @@ Modern web application built with [Svelte 5](https://svelte.dev/), [TypeScript](
 - **Forms**: Superforms with Formsnap for type-safe form handling
 - **Icons**: Lucide Svelte for consistent iconography
 - **Validation**: markuplint for HTML validation, Zod for schema validation
-- **Testing**: Vitest
+- **Testing**: Bun test
 - **Linting**: ESLint, Prettier
 
 ## Architecture
@@ -58,7 +58,7 @@ Class-based stores using Svelte 5 Runes API (`$state`, `$derived`):
 bun dev       # Start development server (port 5173)
 bun build     # Build for production
 bun preview   # Preview production build
-bun test      # Run Vitest tests
+bun test      # Run tests
 bun lint      # Run linting
 ```
 
