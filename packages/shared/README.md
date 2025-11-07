@@ -56,7 +56,7 @@ In your application's main CSS file:
 
 ```css
 @import 'tailwindcss';
-@source "../node_modules/@repo/shared/src";
+@source '../../../node_modules/@repo/shared/src';
 @import 'tw-animate-css'; // for shadcn animations
 @import '@repo/shared/app.css';
 ```
