@@ -7,7 +7,7 @@ Monorepo template for creating a modern web application.
 - **Frontend**: [Svelte 5](https://svelte.dev/) + [SvelteKit](https://svelte.dev/docs/kit/) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind CSS 4](https://tailwindcss.com/) + [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte) + [Lucide Svelte](https://lucide.dev/guide/packages/lucide-svelte) + [Superforms](https://superforms.rocks/) + [Zod](https://zod.dev/)
 - **API**: [Supabase](https://supabase.com/) (PostgreSQL, Auth, Realtime, Storage)
 - **Build System**: [Turborepo](https://turborepo.org/) + [Bun](https://bun.sh/) + [Vite](https://vitejs.dev/)
-- **Quality Tools**: [ESLint 9](https://eslint.org/), [Prettier](https://prettier.io/), [CSpell](https://cspell.org/), [Vitest](https://vitest.dev/), [markuplint](https://markuplint.dev/)
+- **Quality Tools**: [ESLint 9](https://eslint.org/), [Prettier](https://prettier.io/), [CSpell](https://cspell.org/), [markuplint](https://markuplint.dev/)
 - **Development**: VS Code extensions, [lint-staged](https://github.com/okonet/lint-staged), [husky](https://github.com/typicode/husky), GitHub Actions
 
 ## Apps and Packages
@@ -168,7 +168,7 @@ cd apps/web
 bun dev              # Start development server (port 5173)
 bun build            # Build for production
 bun preview          # Preview production build
-bun test             # Run Vitest tests
+bun test             # Run tests
 bun lint             # Run linting
 ```
 
