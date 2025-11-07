@@ -36,37 +36,37 @@
       "default": "./dist/components/*.svelte"
     },
     "./components/ui/*": {
-      "types": "./dist/components/ui/*/index.d.ts",
+      "types": "./src/lib/components/ui/*/index.ts",
       "svelte": "./src/lib/components/ui/*/index.ts",
       "default": "./dist/components/ui/*/index.js"
     },
     "./composables/*": {
-      "types": "./dist/composables/*.d.ts",
+      "types": "./src/lib/composables/*.ts",
       "svelte": "./src/lib/composables/*.ts",
       "default": "./dist/composables/*.js"
     },
     "./constants/*": {
-      "types": "./dist/constants/*.d.ts",
+      "types": "./src/lib/constants/*.ts",
       "svelte": "./src/lib/constants/*.ts",
       "default": "./dist/constants/*.js"
     },
     "./helpers/*": {
-      "types": "./dist/helpers/*.d.ts",
+      "types": "./src/lib/helpers/*.ts",
       "svelte": "./src/lib/helpers/*.ts",
       "default": "./dist/helpers/*.js"
     },
     "./schemas/*": {
-      "types": "./dist/schemas/*.d.ts",
+      "types": "./src/lib/schemas/*.ts",
       "svelte": "./src/lib/schemas/*.ts",
       "default": "./dist/schemas/*.js"
     },
     "./types/*": {
-      "types": "./dist/types/*.d.ts",
+      "types": "./src/lib/types/*.ts",
       "svelte": "./src/lib/types/*.ts",
       "default": "./dist/types/*.js"
     },
     "./utils/*": {
-      "types": "./dist/utils/*.d.ts",
+      "types": "./src/lib/utils/*.ts",
       "svelte": "./src/lib/utils/*.ts",
       "default": "./dist/utils/*.js"
     }
