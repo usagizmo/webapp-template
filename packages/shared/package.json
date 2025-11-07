@@ -40,11 +40,6 @@
       "svelte": "./src/lib/components/ui/*/index.ts",
       "default": "./dist/components/ui/*/index.js"
     },
-    "./composables/*": {
-      "types": "./src/lib/composables/*.ts",
-      "svelte": "./src/lib/composables/*.ts",
-      "default": "./dist/composables/*.js"
-    },
     "./constants/*": {
       "types": "./src/lib/constants/*.ts",
       "svelte": "./src/lib/constants/*.ts",
