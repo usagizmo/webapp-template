@@ -43,10 +43,10 @@ src/lib/
 
 Class-based stores using Svelte 5 Runes API (`$state`, `$derived`):
 
-| Type            | Location                  | Instantiation         | Purpose                       |
-| --------------- | ------------------------- | --------------------- | ----------------------------- |
-| **Stores**      | `src/lib/stores/index.ts` | Singleton (automatic) | Application-wide shared state |
-| **LocalStores** | `src/lib/stores/local/`   | `new` in component    | Component-scoped state        |
+| Type            | Location                  | Instantiation         | Purpose                                        |
+| --------------- | ------------------------- | --------------------- | ---------------------------------------------- |
+| **Stores**      | `src/lib/stores/index.ts` | Singleton (automatic) | Application-wide shared state                  |
+| **LocalStores** | `src/lib/stores/local/`   | `new` in component    | Component-scoped state and logic encapsulation |
 
 **Stores**: `supabaseStore`, `userStore`, `commentStore`
 
