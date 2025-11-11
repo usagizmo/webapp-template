@@ -140,6 +140,7 @@ export const svelte = [
         parser: tseslint.parser,
       },
     },
+    rules: typescriptCommonRules,
   },
   {
     files: ['**/*.svelte.ts'],
