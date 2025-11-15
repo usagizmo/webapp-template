@@ -36,4 +36,21 @@ export default [
       ],
     },
   },
+  // Helpers and Utility layers cannot depend on Stores layer
+  {
+    files: ['src/lib/helpers/**/*.ts', 'src/lib/utility/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['$lib/stores', '$lib/stores/**'],
+              message: 'Pass values as arguments to keep Helpers/Utility pure functions',
+            },
+          ],
+        },
+      ],
+    },
+  },
 ];
