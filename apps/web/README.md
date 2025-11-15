@@ -38,6 +38,7 @@ src/lib/
 
 - **Components**: Access Helpers via Stores/LocalStores (direct Helper dependency is prohibited)
 - **Stores/LocalStores**: Can directly access Helpers, pass state to Helpers for execution
+- **Helpers/Utility**: Cannot depend on Stores (must be pure functions, receive values as arguments)
 
 ## State Management
 

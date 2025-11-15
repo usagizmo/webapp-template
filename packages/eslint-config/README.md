@@ -46,6 +46,7 @@ export default pages;
 - **Prettier Integration** - Seamless integration with Prettier formatting
 - **Test File Detection** - Automatic relaxed rules for `*.test.{js,ts}` and `*.spec.{js,ts}`
 - **Config File Detection** - Relaxed JSDoc requirements for `*.config.{js,ts}`
+- **Architecture Rules** - Layered architecture enforcement (available in `web` config)
 
 ## Included Plugins
 
@@ -63,6 +64,22 @@ export default pages;
 bun lint    # Run linting
 bun format  # Format code
 ```
+
+## Architecture Rules (Web Config)
+
+The `web` configuration includes architectural layer rules to enforce clean separation of concerns:
+
+### Layer Restrictions
+
+- **Stores Layer Access**: Direct imports from `$lib/stores/*` are prohibited; use `$lib/stores` index
+- **Components Layer**: Cannot directly import Helpers; must access via Stores/LocalStores
+- **Helpers/Utility Layers**: Cannot import from Stores layer; must be pure functions receiving values as arguments
+
+These rules ensure:
+
+- **Testability**: Pure functions in Helpers/Utility layers are easy to test without mocking
+- **Maintainability**: Clear separation of concerns and unidirectional data flow
+- **Type Safety**: Dependency injection through function arguments provides better type inference
 
 ## Design Philosophy
 
