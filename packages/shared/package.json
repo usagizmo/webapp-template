@@ -73,7 +73,7 @@
     "@supabase/supabase-js": "^2.78.0",
     "api": "workspace:*",
     "cdate": "^0.0.7",
-    "zod": "^4.1.12"
+    "valibot": "^1.2.0"
   },
   "devDependencies": {
     "@internationalized/date": "^3.10.0",

@@ -24,7 +24,7 @@ https://svelte.dev/docs/kit/
 https://tailwindcss.com
 https://turborepo.org
 https://usagizmo.com
+https://valibot.dev/
 https://vitejs.dev
 https://webapp-template-pages.usagizmo.com
 https://www.typescriptlang.org
-https://zod.dev/
