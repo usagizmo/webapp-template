@@ -28,7 +28,7 @@
     "camelcase-keys": "^10.0.0",
     "cdate": "^0.0.7",
     "snakecase-keys": "^9.0.1",
-    "zod": "^4.1.12"
+    "valibot": "^1.2.0"
   },
   "devDependencies": {
     "@internationalized/date": "^3.10.0",
