@@ -9,7 +9,7 @@ Modern web application built with [Svelte 5](https://svelte.dev/), [TypeScript](
 - **Authentication**: @supabase/ssr for server-side auth
 - **Forms**: Superforms with Formsnap for type-safe form handling
 - **Icons**: Lucide Svelte for consistent iconography
-- **Validation**: markuplint for HTML validation, Zod for schema validation
+- **Validation**: markuplint for HTML validation, Valibot for schema validation
 - **Testing**: Bun test
 - **Linting**: ESLint, Prettier
 
@@ -27,7 +27,7 @@ src/lib/
 │   └── ui/              # Reusable UI components (shadcn-svelte)
 ├── constants/           # Application constants
 ├── helpers/             # Business logic and API operations (comment handling, authentication, etc.)
-├── schemas/             # Zod validation schemas
+├── schemas/             # Valibot validation schemas
 ├── stores/              # State management (class-based)
 │   └── local/           # Component-scoped stores
 ├── types/               # TypeScript type definitions
