@@ -73,11 +73,11 @@ The `web` configuration includes architectural layer rules to enforce clean sepa
 
 - **Stores Layer Access**: Direct imports from `$lib/stores/*` are prohibited; use `$lib/stores` index
 - **Components Layer**: Cannot directly import Helpers; must access via Stores/LocalStores
-- **Helpers/Utility Layers**: Cannot import from Stores layer; must be pure functions receiving values as arguments
+- **Helpers/Utils Layers**: Cannot import from Stores layer; must be pure functions receiving values as arguments
 
 These rules ensure:
 
-- **Testability**: Pure functions in Helpers/Utility layers are easy to test without mocking
+- **Testability**: Pure functions in Helpers/Utils layers are easy to test without mocking
 - **Maintainability**: Clear separation of concerns and unidirectional data flow
 - **Type Safety**: Dependency injection through function arguments provides better type inference
 
