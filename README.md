@@ -184,7 +184,7 @@ bun run deploy       # Deploy to server (rsync)
 
 # Optimization Utilities
 bun add-size-to-img  # Add width/height to <img> tags for better performance
-bun clean-image      # Remove unused images from project
+bun clean-images     # Remove unused images from project
 ```
 
 ## Port Configuration

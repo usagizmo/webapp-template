@@ -19,7 +19,7 @@
     "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
     "format": "run-p format:*",
     "add-size-to-img": "bun ./commands/add-size-to-img.js",
-    "clean-image": "./commands/clean-image.sh",
+    "clean-images": "./commands/clean-images.sh",
     "deploy": "./commands/deploy.sh"
   },
   "devDependencies": {
