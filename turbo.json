@@ -17,6 +17,9 @@
       "dependsOn": ["@repo/shared#build"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
+    "web#lint": {
+      "dependsOn": ["@repo/shared#build"]
+    },
     "@repo/shared#build": {
       "outputs": [".svelte-kit/**", "dist/**"]
     },
