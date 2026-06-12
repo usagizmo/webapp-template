@@ -17,11 +17,12 @@ bun lint             # Run HTML validation with markuplint
 bun format           # Format with Prettier
 
 # Publishing
-bun run deploy       # Deploy to server (rsync)
+bun run deploy       # Deploy public/ to DEPLOY_TARGET with rsync
 
 # Optimization Utilities
 bun add-size-to-img  # Add width/height to <img> tags for better performance
 bun clean-images     # Remove unused images from project
+bun clean-images -n  # Preview unused image removals
 ```
 
 ## Features
@@ -78,7 +79,7 @@ bun run deploy
 **Setup:**
 
 1. Configure your server details in the deployment script
-2. Ensure SSH access to your target server
+2. Ensure SSH access and rsync are available for your target server
 3. Run `bun build` before deployment
 4. The deploy command will sync files to your server using rsync
 
@@ -99,6 +100,7 @@ The `tests/external-links.txt` file tracks all external URLs found in HTML files
 - Automatically detects `<img>` tags without width/height attributes
 - Adds performance-optimizing attributes for better Core Web Vitals
 - Validates all image paths and references
+- `bun clean-images -n` previews unused tracked images before removal
 
 ### HTML Standards
 

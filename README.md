@@ -180,11 +180,12 @@ bun dev              # Start development server (port 3000)
 bun build            # Build static site with Tailwind CSS
 bun test             # Validate links, images, and accessibility (Note: Delete tests/external-links.txt before bun test to update URL tracking)
 bun lint             # Run HTML validation with markuplint
-bun run deploy       # Deploy to server (rsync)
+bun run deploy       # Deploy public/ to DEPLOY_TARGET with rsync
 
 # Optimization Utilities
 bun add-size-to-img  # Add width/height to <img> tags for better performance
 bun clean-images     # Remove unused images from project
+bun clean-images -n  # Preview unused image removals
 ```
 
 ## Port Configuration
@@ -268,7 +269,8 @@ PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ##### Option 2: Server Deployment (rsync)
 
 - Use `bun run deploy` command in `apps/pages`
-- Configure server details in deployment script
+- Configure `DEPLOY_TARGET` in `apps/pages/commands/deploy.js`
+- Ensure SSH access and rsync are available for your target server
 - Direct file transfer to your server
 
 #### Setup Instructions
