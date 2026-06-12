@@ -253,7 +253,6 @@ Set the following environment variables in your Vercel project settings:
 ```env
 PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX  # Optional
 ```
 
 #### Static Pages

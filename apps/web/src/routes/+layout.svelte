@@ -6,9 +6,7 @@
   import { onMount } from 'svelte';
 
   import { invalidate } from '$app/navigation';
-  import { PUBLIC_GA4_MEASUREMENT_ID } from '$env/static/public';
   import Footer from '$lib/components/pages/layout/Footer.svelte';
-  import GA4 from '$lib/components/pages/layout/GA4.svelte';
   import HeaderNavigation from '$lib/components/pages/layout/HeaderNavigation.svelte';
   import { supabaseStore, userStore } from '$lib/stores';
 
@@ -32,10 +30,6 @@
     return () => unsubscribeRealtimeUpdates();
   });
 </script>
-
-{#if PUBLIC_GA4_MEASUREMENT_ID}
-  <GA4 measurementId={PUBLIC_GA4_MEASUREMENT_ID} />
-{/if}
 
 <ModeWatcher />
 <Toaster />
