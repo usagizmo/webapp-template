@@ -100,7 +100,7 @@ describe('The tests', () => {
 
     const data = [...externalLinks].sort().join('\n');
 
-    let externalLinksText = '';
+    let externalLinksText;
     try {
       externalLinksText = await readFile(join(distDir, 'external-links.txt'), 'utf8');
     } catch {
