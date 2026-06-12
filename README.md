@@ -178,7 +178,8 @@ bun lint             # Run linting
 cd apps/pages
 bun dev              # Start development server (port 3000)
 bun build            # Build static site with Tailwind CSS
-bun test             # Validate links, images, and accessibility (Note: Delete tests/external-links.txt before bun test to update URL tracking)
+bun test             # Validate links, images, and accessibility
+bun test:update      # Update test snapshots such as tests/external-links.txt
 bun lint             # Run HTML validation with markuplint
 bun run deploy       # Deploy public/ to DEPLOY_TARGET with rsync
 

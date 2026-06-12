@@ -1,7 +1,6 @@
-import { access, readFile, writeFile } from 'node:fs/promises';
+import { access, readdir, readFile, writeFile } from 'node:fs/promises';
 
 import { describe, expect, it } from 'bun:test';
-import { execSync } from 'child_process';
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -16,13 +15,33 @@ const distDir = join(rootDir, 'tests'); // The directory to output the test resu
 const imageExtensions = ['jpg', 'png', 'webp'];
 const linkAttrs = ['href', 'src'];
 const linkRegex = new RegExp(`(?:${linkAttrs.join('|')})="([^"]+?)"`, 'g');
+const updateSnapshots = process.argv.includes('-u') || process.argv.includes('--update-snapshots');
+
+/**
+ * Recursively read a directory and return paths for files that match the predicate.
+ * @param {string} dirPath - The directory path
+ * @param {(filePath: string) => boolean} predicate - The file filter
+ * @returns {Promise<string[]>} The matching file paths
+ */
+async function findFiles(dirPath, predicate) {
+  const dirents = await readdir(dirPath, { withFileTypes: true });
+  const paths = await Promise.all(
+    dirents.map(async (dirent) => {
+      const path = join(dirPath, dirent.name);
+      return dirent.isDirectory()
+        ? await findFiles(path, predicate)
+        : predicate(path)
+          ? path
+          : null;
+    }),
+  );
+
+  return paths.flat().filter((path) => path !== null);
+}
 
 describe('The tests', () => {
   it(`Output external-links.txt`, async () => {
-    let errorMessage = '';
-
-    const res = execSync(`find ${targetDir} -type f -name "*.html"`);
-    const filePaths = res.toString().trim().split('\n');
+    const filePaths = await findFiles(targetDir, (filePath) => filePath.endsWith('.html'));
 
     /** @type {Set<string>} */
     const externalLinks = new Set();
@@ -101,28 +120,26 @@ describe('The tests', () => {
     const data = [...externalLinks].sort().join('\n');
 
     let externalLinksText;
+    if (updateSnapshots) {
+      await writeFile(join(distDir, 'external-links.txt'), data, 'utf8');
+      return;
+    }
+
     try {
       externalLinksText = await readFile(join(distDir, 'external-links.txt'), 'utf8');
     } catch {
-      // If external-links.txt does not exist
-      try {
-        await writeFile(join(distDir, 'external-links.txt'), data, 'utf8');
-      } catch (err) {
-        errorMessage = err.toString();
-      }
-      expect(errorMessage).toBe('');
-      return;
+      throw new Error('Missing tests/external-links.txt. Run `bun test:update` to create it.');
     }
 
     expect(data).toBe(externalLinksText);
   });
 
   describe('All image file names are valid', async () => {
-    const findImagesOption = imageExtensions.map((ext) => `-name "*.${ext}"`).join(' -o ');
-    const res = execSync(`find ${targetDir} -type f ${findImagesOption}`);
-    const filePaths = res.toString().trim().split('\n');
+    const filePaths = await findFiles(targetDir, (filePath) =>
+      imageExtensions.some((ext) => filePath.endsWith(`.${ext}`)),
+    );
 
-    if (filePaths.length === 1 && filePaths[0] === '') {
+    if (filePaths.length === 0) {
       return;
     }
 

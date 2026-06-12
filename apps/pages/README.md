@@ -13,6 +13,7 @@ bun build            # Build static site with Tailwind CSS
 
 # Quality Assurance
 bun test             # Validate links, images, and accessibility
+bun test:update      # Update test snapshots such as tests/external-links.txt
 bun lint             # Run HTML validation with markuplint
 bun format           # Format with Prettier
 
@@ -91,8 +92,8 @@ The `tests/external-links.txt` file tracks all external URLs found in HTML files
 
 **Updating External Links:**
 
-1. When URLs in your HTML files change, delete `tests/external-links.txt`
-2. Run `bun test` to regenerate the file with current URLs
+1. When URLs in your HTML files change, run `bun test:update`
+2. Review the `tests/external-links.txt` diff
 3. This ensures the link validation stays up-to-date with your content
 
 ### Image Optimization
