@@ -197,9 +197,9 @@ bun run format           # Format with Prettier
 bun run deploy           # Deploy public/ to DEPLOY_TARGET with rsync
 
 # Optimization Utilities
-bun run add-size-to-img  # Add width/height to <img> tags for better performance
-bun run clean-images     # Remove unused images from project
-bun run clean-images -n  # Preview unused image removals
+bun run add-size-to-img       # Add width/height to <img> tags for better performance
+bun run clean-images          # Remove unused images from project
+bun run clean-images --dry-run # Preview unused image removals
 ```
 
 ## Port Configuration

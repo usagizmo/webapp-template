@@ -11,7 +11,7 @@ See the [root README](../../README.md) for commands and deployment.
 1. **Develop** — `bun run dev` serves `public/` at http://localhost:3000 with live reload. Edit the HTML/CSS directly.
 2. **Size images while coding** _(optional)_ — `bun run add-size-to-img` bulk-adds `width`/`height` to every `<img>` for better Core Web Vitals.
 3. **Validate** — `bun run test` confirms internal `href`/`src` paths resolve and tracks external links (see [Quality Assurance](#quality-assurance)); `bun run lint` runs markuplint and `bun run format` applies Prettier. These also run on commit via husky. If `bun run test` fails because links changed on purpose, run `bun run test:update` and review the `tests/external-links.txt` diff.
-4. **Clean up images** — `bun run clean-images` removes images under `public/images/` that nothing references. It uses `git rm`, so removals are staged and recoverable; `bun run clean-images -n` previews without deleting.
+4. **Clean up images** — `bun run clean-images` removes images under `public/images/` that nothing references. It uses `git rm`, so removals are staged and recoverable; `bun run clean-images --dry-run` previews without deleting.
 5. **Deploy** — `bun run build` compiles Tailwind, then `bun run deploy` uploads `public/` to your server with rsync (`DEPLOY_TARGET` — point it at staging or production).
 
 ## Quality Assurance
@@ -27,7 +27,7 @@ See the [root README](../../README.md) for commands and deployment.
 ### Image Optimization
 
 - `bun run add-size-to-img` adds `width`/`height` to `<img>` tags for better Core Web Vitals
-- `bun run clean-images` removes images under `public/images/` that nothing references; `bun run clean-images -n` previews the removals first
+- `bun run clean-images` removes images under `public/images/` that nothing references; `bun run clean-images --dry-run` previews the removals first
 
 ### HTML Standards
 

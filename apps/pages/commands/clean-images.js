@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 const rootDir = join(__dirname, '..');
 const publicDir = join(rootDir, 'public');
 const imagesDir = join(publicDir, 'images');
-const dryRun = process.argv.includes('--dry-run') || process.argv.includes('-n');
+const dryRun = process.argv.includes('--dry-run');
 
 /**
  * Run a command and return stdout.
