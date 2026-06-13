@@ -82,9 +82,9 @@ bun install
 bun --filter pages dev
 
 # For web app development
-bun --filter api start     # Start Supabase API
-bun --filter api generate  # Generate TypeScript types (only when schema changes)
-bun --filter web dev       # Start web development server
+bun --filter api start    # Start Supabase API
+bun --filter api generate # Generate TypeScript types (only when schema changes)
+bun --filter web dev      # Start web development server
 ```
 
 > **Note**: TypeScript types are committed to the repository, so you only need to run `generate` when the database schema changes.
@@ -123,22 +123,33 @@ After running `bun install`, a `.env` file is automatically created from `.env.e
 Run across every app and package from the repo root:
 
 ```bash
-bun install     # Install dependencies (.env file is created automatically)
-bun dev         # Start all development servers
-bun build       # Build all apps and packages
-bun check       # Type-check all apps
-bun lint        # Lint all apps and packages
-bun format      # Format all apps and packages
-bun test        # Run all tests
+bun install      # Install dependencies (.env file is created automatically)
+bun run dev      # Start all development servers
+bun run build    # Build all apps and packages
+bun run check    # Type-check all apps
+bun run lint     # Lint all apps and packages
+bun run format   # Format all apps and packages
+bun run test     # Run all tests
 ```
 
-Scope any command to a single app or package with `--filter`:
+> Use `bun run <script>`, not bare `bun <script>` — names like `build` and `test` would otherwise launch Bun's built-in bundler and test runner instead of the package script.
+
+Run a package's **own script** directly with Bun's filter — use this for most day-to-day package commands:
 
 ```bash
-bun --filter api start      # Start Supabase API (port 54321)
-bun --filter web dev        # Start the web app only (port 5173)
-bun --filter pages dev      # Start the static site only (port 3000)
-bun --filter api generate   # Generate TypeScript types from Supabase
+bun --filter api start       # Start Supabase API (port 54321)
+bun --filter api generate    # Regenerate API types after schema changes
+bun --filter web dev         # Start the web app only (port 5173)
+bun --filter pages dev       # Start the static site only (port 3000)
+bun --filter pages deploy    # Deploy the static site
+```
+
+Scope a **graph task** to one package with Turbo when you specifically want dependency-aware execution and caching. Always use `turbo run <task>` (the bare `turbo <task>` shorthand clashes with built-in commands like `generate`):
+
+```bash
+bun turbo run build --filter web      # Build only web (and its dependencies)
+bun turbo run check --filter web      # Type-check only web
+bun turbo run generate --filter api   # Regenerate API types with Turbo caching
 ```
 
 ### App-Specific Commands
@@ -147,48 +158,48 @@ bun --filter api generate   # Generate TypeScript types from Supabase
 
 ```bash
 cd apps/api
-bun start            # Start Supabase locally
-bun stop             # Stop Supabase
-bun status           # Show Supabase service status
-bun reset            # Reset database and regenerate types
-bun generate         # Generate TypeScript types
-bun test             # Run Supabase tests
-bun lint             # Run linting
-bun format           # Format code
+bun run start        # Start Supabase locally
+bun run stop         # Stop Supabase
+bun run status       # Show Supabase service status
+bun run reset        # Reset database and regenerate types
+bun run generate     # Generate TypeScript types
+bun run test         # Run Supabase tests
+bun run lint         # Run linting
+bun run format       # Format code
 ```
 
 #### Web App
 
 ```bash
 cd apps/web
-bun dev              # Start development server (port 5173)
-bun build            # Build for production
-bun preview          # Preview production build
-bun check            # Run type checking with svelte-check
-bun check:watch      # Type checking in watch mode
-bun test             # Run tests
-bun test:watch       # Run tests in watch mode
-bun lint             # Run linting
-bun format           # Format code
+bun run dev          # Start development server (port 5173)
+bun run build        # Build for production
+bun run preview      # Preview production build
+bun run check        # Run type checking with svelte-check
+bun run check:watch  # Type checking in watch mode
+bun run test         # Run tests
+bun run test:watch   # Run tests in watch mode
+bun run lint         # Run linting
+bun run format       # Format code
 ```
 
 #### Pages (Static Site Publishing)
 
 ```bash
 cd apps/pages
-bun dev              # Start development server (port 3000)
-bun build            # Build static site with Tailwind CSS
-bun test             # Validate links, images, and accessibility
-bun test:watch       # Run tests in watch mode
-bun test:update      # Update test snapshots such as tests/external-links.txt
-bun lint             # Run HTML validation with markuplint
-bun format           # Format with Prettier
-bun run deploy       # Deploy public/ to DEPLOY_TARGET with rsync
+bun run dev              # Start development server (port 3000)
+bun run build            # Build static site with Tailwind CSS
+bun run test             # Validate links, images, and accessibility
+bun run test:watch       # Run tests in watch mode
+bun run test:update      # Update test snapshots such as tests/external-links.txt
+bun run lint             # Run HTML validation with markuplint
+bun run format           # Format with Prettier
+bun run deploy           # Deploy public/ to DEPLOY_TARGET with rsync
 
 # Optimization Utilities
-bun add-size-to-img  # Add width/height to <img> tags for better performance
-bun clean-images     # Remove unused images from project
-bun clean-images -n  # Preview unused image removals
+bun run add-size-to-img  # Add width/height to <img> tags for better performance
+bun run clean-images     # Remove unused images from project
+bun run clean-images -n  # Preview unused image removals
 ```
 
 ## Port Configuration
@@ -210,7 +221,7 @@ TypeScript types are automatically generated from your Supabase database schema:
 
 1. **Local Development**: Types are generated to `apps/api/$generated/types.ts`
 2. **Frontend Usage**: Types are imported from the `api` package (e.g., `import type { Database } from 'api/types'`)
-3. **After Schema Changes**: Run `bun generate` to update types
+3. **After Schema Changes**: Run `bun --filter api generate` to update types
 
 ### Shared Components and Types
 
@@ -220,7 +231,7 @@ Common components, types, and constants are imported from the `@repo/shared` pac
 
 You can easily switch between development and production environments:
 
-1. **For Development**: Use local Supabase (started with `bun start`)
+1. **For Development**: Use local Supabase (started with `bun --filter api start`)
 2. **For Production Testing**: Update `.env` with production Supabase credentials
 3. **Type Safety**: Types are committed to repository for CI/CD compatibility
 

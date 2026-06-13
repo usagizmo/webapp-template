@@ -6,10 +6,10 @@ See the [root README](../../README.md) for commands and ports. For the full CLI,
 
 ## Workflow
 
-1. `bun start` — start Supabase
+1. `bun run start` — start Supabase
 2. Open Studio at http://localhost:54323
-3. `bun generate` — regenerate TypeScript types after schema changes
+3. `bun run generate` — regenerate TypeScript types after schema changes
 
 ## Testing
 
-`bun test` runs the database tests in `supabase/tests/`, covering schema, CRUD operations, RLS policies, and triggers (requires Supabase running).
+`bun run test` runs the database tests in `supabase/tests/`, covering schema, CRUD operations, RLS policies, and triggers (requires Supabase running).
