@@ -1,91 +1,42 @@
 # Web App ([SvelteKit](https://svelte.dev/docs/kit/))
 
-Modern web application built with [Svelte 5](https://svelte.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS 4](https://tailwindcss.com/), and comprehensive tooling for production-ready development.
+Production-ready SvelteKit app with a page-based component organization and class-based design patterns.
 
-## Tech Stack
+See the [root README](../../README.md) for the tech stack, setup, commands, and deployment.
 
-- **Frontend**: Svelte 5 (Runes API), SvelteKit, TypeScript
-- **Styling**: Tailwind CSS 4, shadcn-svelte UI components
-- **Authentication**: @supabase/ssr for server-side auth
-- **Forms**: Superforms with Formsnap for type-safe form handling
-- **Icons**: Lucide Svelte for consistent iconography
-- **Validation**: markuplint for HTML validation, Valibot for schema validation
-- **Testing**: Bun test
-- **Linting**: ESLint, Prettier
+[[Demo](https://webapp-template.usagizmo.com/)]
 
 ## Architecture
-
-This application follows a **page-based component organization** with **class-based design patterns** for improved maintainability:
 
 ```text
 src/lib/
 ├── components/
-│   ├── pages/           # Page-specific components
-│   │   ├── auth/        # Authentication pages
-│   │   ├── home/        # Home page components
-│   │   └── layout/      # Layout components
+│   ├── pages/           # Page-specific components (auth, home, layout)
 │   └── ui/              # Reusable UI components (shadcn-svelte)
 ├── constants/           # Application constants
-├── helpers/             # Business logic and API operations (comment handling, authentication, etc.)
+├── helpers/             # Business logic and API operations (pure functions)
 ├── schemas/             # Valibot validation schemas
-├── stores/              # State management (class-based)
+├── stores/              # Class-based state management
 │   └── local/           # Component-scoped stores
 ├── types/               # TypeScript type definitions
-└── utils/               # Generic utility functions (reusable, not feature-specific)
+└── utils/               # Generic utility functions
 ```
 
-**Layer Communication Rules**:
+**Layer communication rules** (enforced by [`@repo/eslint-config`](../../packages/eslint-config/)):
 
-- **Components**: Access Helpers via Stores/LocalStores (direct Helper dependency is prohibited)
-- **Stores/LocalStores**: Can directly access Helpers, pass state to Helpers for execution
-- **Helpers/Utils**: Cannot depend on Stores (must be pure functions, receive values as arguments)
+- **Components** access Helpers via Stores/LocalStores (direct Helper dependency is prohibited)
+- **Stores/LocalStores** can access Helpers directly and pass state to them for execution
+- **Helpers/Utils** cannot depend on Stores — they must be pure functions that receive values as arguments
+
+This keeps Helpers/Utils testable, enforces unidirectional data flow, and improves type inference through dependency injection.
 
 ## State Management
 
-Class-based stores using Svelte 5 Runes API (`$state`, `$derived`):
+Class-based stores using the Svelte 5 Runes API (`$state`, `$derived`):
 
-| Type            | Location                  | Instantiation         | Purpose                                        |
-| --------------- | ------------------------- | --------------------- | ---------------------------------------------- |
-| **Stores**      | `src/lib/stores/index.ts` | Singleton (automatic) | Application-wide shared state                  |
-| **LocalStores** | `src/lib/stores/local/`   | `new` in component    | Component-scoped state and logic encapsulation |
+| Type            | Location                  | Instantiation         | Purpose                          |
+| --------------- | ------------------------- | --------------------- | -------------------------------- |
+| **Stores**      | `src/lib/stores/index.ts` | Singleton (automatic) | Application-wide shared state    |
+| **LocalStores** | `src/lib/stores/local/`   | `new` in component    | Component-scoped state and logic |
 
-**Stores**: `supabaseStore`, `userStore`, `commentStore`
-
-[[Demo](https://webapp-template.usagizmo.com/)]
-
-## Commands
-
-```bash
-bun dev       # Start development server (port 5173)
-bun build     # Build for production
-bun preview   # Preview production build
-bun test      # Run tests
-bun lint      # Run linting
-```
-
-## Development
-
-1. Start Supabase API: `cd ../api && bun start`
-2. Generate types: `cd ../.. && bun generate`
-3. Start dev server: `bun dev`
-4. Open http://localhost:5173
-
-## Deploy to Vercel
-
-### Configuration
-
-- **Framework Preset**: SvelteKit
-- **Root Directory**: `apps/web`
-- **Build Command**: Automatically configured via `vercel.json`
-- **Install Command**: Automatically configured via `vercel.json`
-
-### Environment Variables
-
-Set these in your Vercel project settings:
-
-```env
-PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-```
-
-See the [root README](../../README.md) for complete setup instructions.
+Singleton stores: `supabaseStore`, `userStore`, `commentStore`.
