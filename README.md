@@ -140,6 +140,7 @@ bun --filter pages build        # Build static site
 
 # Quality assurance
 bun lint                        # Run linting across all apps
+bun check                       # Run type checking across all apps
 bun --filter web test           # Test web app
 bun --filter pages test         # Test static site
 
@@ -159,6 +160,7 @@ bun status           # Show Supabase service status
 bun reset            # Reset database and regenerate types
 bun generate         # Generate TypeScript types
 bun test             # Run Supabase tests
+bun lint             # Run linting
 ```
 
 #### Web App
@@ -168,6 +170,7 @@ cd apps/web
 bun dev              # Start development server (port 5173)
 bun build            # Build for production
 bun preview          # Preview production build
+bun check            # Run type checking with svelte-check
 bun test             # Run tests
 bun lint             # Run linting
 ```

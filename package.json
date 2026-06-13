@@ -9,6 +9,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "preview": "turbo run preview",
+    "check": "turbo run check",
     "lint:root": "run-p lint:cspell lint:prettier",
     "lint:cspell": "cspell --exclude \"apps/**/*\" --exclude \"packages/**/*\" \".github/**/*\" \"**/*\"",
     "lint:prettier": "prettier . --check --ignore-path=.prettierignore.root",
@@ -26,11 +27,11 @@
     "@repo/eslint-config": "workspace:*",
     "@types/bun": "^1.3.14",
     "cspell": "^10.0.1",
-    "eslint": "^10.5.0",
+    "eslint": "catalog:",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.7",
     "markuplint": "^4.18.3",
-    "npm-run-all2": "^9.0.2",
+    "npm-run-all2": "catalog:",
     "prettier": "^3.8.4",
     "prettier-plugin-svelte": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.8.0",
@@ -40,8 +41,37 @@
   "engines": {
     "bun": "^1.2.20"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "catalog": {
+      "@internationalized/date": "^3.12.2",
+      "@lucide/svelte": "^1.18.0",
+      "@supabase/supabase-js": "^2.108.1",
+      "@sveltejs/kit": "^2.65.0",
+      "@sveltejs/vite-plugin-svelte": "7.1.2",
+      "@tailwindcss/vite": "^4.3.1",
+      "bits-ui": "^2.18.1",
+      "cdate": "^0.0.7",
+      "clsx": "^2.1.1",
+      "eslint": "^10.5.0",
+      "eslint-plugin-jsdoc": "^63.0.2",
+      "formsnap": "^2.0.1",
+      "globals": "^17.6.0",
+      "mode-watcher": "^1.1.0",
+      "npm-run-all2": "^9.0.2",
+      "svelte": "^5.56.3",
+      "svelte-check": "^4.6.0",
+      "svelte-sonner": "^1.1.1",
+      "sveltekit-superforms": "^2.30.1",
+      "tailwind-merge": "^3.6.0",
+      "tailwind-variants": "^3.2.2",
+      "tailwindcss": "^4.3.1",
+      "typescript": "^6.0.3",
+      "valibot": "^1.4.1",
+      "vite": "^8.0.16"
+    }
+  }
 }

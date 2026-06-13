@@ -11,6 +11,7 @@
     "lint:js": "eslint .",
     "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
     "lint": "run-p lint:*",
+    "format:js": "eslint --fix .",
     "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
     "format": "run-p format:*"
   },
@@ -19,14 +20,14 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.5.0",
+    "eslint": "catalog:",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-jsdoc": "^63.0.2",
+    "eslint-plugin-jsdoc": "catalog:",
     "eslint-plugin-simple-import-sort": "^13.0.0",
     "eslint-plugin-svelte": "^3.19.0",
     "eslint-plugin-unused-imports": "^4.4.1",
-    "globals": "^17.6.0",
-    "npm-run-all2": "^9.0.2",
+    "globals": "catalog:",
+    "npm-run-all2": "catalog:",
     "svelte-eslint-parser": "^1.8.0",
     "typescript-eslint": "^8.61.0"
   }

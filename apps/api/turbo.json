@@ -1,0 +1,13 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "generate": {
+      "inputs": ["$TURBO_DEFAULT$", "supabase/**"],
+      "outputs": ["$generated/types.ts"]
+    },
+    "test": {
+      "cache": false
+    }
+  }
+}
