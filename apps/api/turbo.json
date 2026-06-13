@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "generate": {
-      "inputs": ["$TURBO_DEFAULT$", "supabase/**"],
+      "inputs": ["$TURBO_DEFAULT$", "supabase/**", "!$generated/types.ts"],
       "outputs": ["$generated/types.ts"]
     },
     "test": {

@@ -35,12 +35,17 @@ jobs:
       - name: 🐣 Run build
         run: bun turbo build --filter='!api'
         env:
-          PUBLIC_GA4_MEASUREMENT_ID: ${{ secrets.PUBLIC_GA4_MEASUREMENT_ID }}
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: 👀 Run lint
         run: bun run lint
+
+      - name: 🔍 Run check
+        run: bun turbo check --filter='!api'
+        env:
+          PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
+          PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: 🧪 Run test
         run: bun turbo test --filter='!api'

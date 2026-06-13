@@ -9,7 +9,6 @@ const DEPLOY_URL = 'https://webapp-template-pages.usagizmo.com/';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const rootDir = join(__dirname, '..');
-const publicDir = join(rootDir, 'public');
 
 /**
  * Deploy the public directory with rsync.
@@ -24,8 +23,9 @@ function deploy() {
 
   const result = spawnSync(
     'rsync',
-    ['-ahvu', '--delete', '--exclude=.*', `${publicDir}/`, DEPLOY_TARGET],
+    ['-ahv', '--delete', '--exclude=.*', 'public/', DEPLOY_TARGET],
     {
+      cwd: rootDir,
       stdio: 'inherit',
     },
   );

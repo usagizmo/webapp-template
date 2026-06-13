@@ -27,6 +27,10 @@ function run(command, args) {
     stdio: ['ignore', 'pipe', 'pipe'],
   });
 
+  if (result.error) {
+    throw result.error;
+  }
+
   if (result.status !== 0) {
     throw new Error(result.stderr.trim() || `${command} ${args.join(' ')} failed`);
   }
@@ -85,7 +89,7 @@ function textReferencesImage(text, imagePath) {
   const escapedPath = escapeRegExp(normalizedImagePath);
   const encodedPath = escapeRegExp(encodeURI(normalizedImagePath));
   const referenceRegex = new RegExp(
-    `(?:^|["'(=\\s/])(?:\\./|/)?(?:${escapedPath}|${encodedPath})(?:$|[)"'?#\\s])`,
+    `(?:^|["'(=,\\s/])(?:\\./|/)?(?:${escapedPath}|${encodedPath})(?:$|[)"'?#,\\s])`,
   );
 
   return referenceRegex.test(text);

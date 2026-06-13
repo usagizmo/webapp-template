@@ -79,7 +79,7 @@ bun run deploy
 
 **Setup:**
 
-1. Configure your server details in the deployment script
+1. Configure `DEPLOY_TARGET` in `commands/deploy.js`
 2. Ensure SSH access and rsync are available for your target server
 3. Run `bun build` before deployment
 4. The deploy command will sync files to your server using rsync

@@ -8,8 +8,7 @@
     },
     "test": {
       "dependsOn": ["build"],
-      "inputs": ["public/**", "tests/**", "commands/**"],
-      "outputs": ["tests/external-links.txt"]
+      "inputs": ["public/**", "tests/**", "commands/**"]
     }
   }
 }

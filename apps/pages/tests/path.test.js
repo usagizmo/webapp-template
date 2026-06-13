@@ -15,7 +15,7 @@ const distDir = join(rootDir, 'tests'); // The directory to output the test resu
 const imageExtensions = ['jpg', 'png', 'webp'];
 const linkAttrs = ['href', 'src'];
 const linkRegex = new RegExp(`(?:${linkAttrs.join('|')})="([^"]+?)"`, 'g');
-const updateSnapshots = process.argv.includes('-u') || process.argv.includes('--update-snapshots');
+const updateSnapshots = process.env.UPDATE_SNAPSHOTS === '1';
 
 /**
  * Recursively read a directory and return paths for files that match the predicate.
