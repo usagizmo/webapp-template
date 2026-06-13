@@ -33,4 +33,7 @@ async function processHtmlFiles() {
   );
 }
 
-processHtmlFiles();
+processHtmlFiles().catch((err) => {
+  console.error(err);
+  process.exitCode = 1;
+});

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "inputs": ["$TURBO_DEFAULT$", "app.css", "public/**", "!public/styles.css"],
+      "outputs": ["public/styles.css"]
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "inputs": ["public/**", "tests/**", "commands/**"]
+    }
+  }
+}

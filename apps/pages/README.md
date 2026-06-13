@@ -1,109 +1,34 @@
 # Pages (Static Site Publishing)
 
-Professional static site publishing tool with quality assurance features. Build high-quality static websites with URL validation, accessibility checks, and SEO optimization using [Tailwind CSS](https://tailwindcss.com/), Vanilla JS, and [markuplint](https://markuplint.dev/).
+Static site builder with built-in quality assurance — link validation, image optimization, and HTML/accessibility checks — using [Tailwind CSS](https://tailwindcss.com/), vanilla JS, and [markuplint](https://markuplint.dev/).
+
+See the [root README](../../README.md) for commands and deployment.
 
 [[Demo](https://webapp-template-pages.usagizmo.com/)]
 
-## Commands
+## Workflow
 
-```bash
-# Development
-bun dev              # Start development server (port 3000)
-bun build            # Build static site with Tailwind CSS
+1. **Develop** — `bun run dev` serves `public/` at http://localhost:3000 with live reload. Edit the HTML/CSS directly.
+2. **Size images while coding** _(optional)_ — `bun run add-size-to-img` bulk-adds `width`/`height` to every `<img>` for better Core Web Vitals.
+3. **Validate** — `bun run test` confirms internal `href`/`src` paths resolve and tracks external links (see [Quality Assurance](#quality-assurance)); `bun run lint` runs markuplint and `bun run format` applies Prettier. These also run on commit via husky. If `bun run test` fails because links changed on purpose, run `bun run test:update` and review the `tests/external-links.txt` diff.
+4. **Clean up images** — `bun run clean-images` removes images under `public/images/` that nothing references. It uses `git rm`, so removals are staged and recoverable; `bun run clean-images --dry-run` previews without deleting.
+5. **Deploy** — `bun run build` compiles Tailwind, then `bun run deploy` uploads `public/` to your server with rsync (`DEPLOY_TARGET` — point it at staging or production).
 
-# Quality Assurance
-bun test             # Validate links, images, and accessibility
-bun lint             # Run HTML validation with markuplint
-bun format           # Format with Prettier
-
-# Publishing
-bun run deploy       # Deploy to server (rsync)
-
-# Optimization Utilities
-bun add-size-to-img  # Add width/height to <img> tags for better performance
-bun clean-images     # Remove unused images from project
-```
-
-## Features
-
-### Quality Assurance
-
-- **Link Validation**: Automatically checks all internal and external links
-- **Image Optimization**: Validates image paths and adds performance attributes
-- **HTML Validation**: Uses markuplint for semantic HTML validation
-- **Accessibility Checks**: Built-in accessibility validation
-- **SEO Optimization**: Meta tags, structured data validation
-
-### Development Experience
-
-- **Live Reload**: Instant updates during development
-- **Tailwind CSS 4**: Latest utility-first CSS framework
-- **Performance Monitoring**: Automatic image size attributes
-- **Clean Assets**: Remove unused images automatically
-
-## Development Workflow
-
-1. Start development server: `bun dev`
-2. Open http://localhost:3000
-3. Edit HTML files in `public/` directory
-4. Run quality checks: `bun test && bun lint`
-5. Deploy: `bun run deploy`
-
-## Deployment
-
-### Option 1: Vercel Deployment
-
-**Configuration:**
-
-- **Framework Preset**: Other
-- **Root Directory**: `apps/pages`
-- **Build Command**: Automatically configured via `vercel.json`
-- **Install Command**: Automatically configured via `vercel.json`
-- **Output Directory**: `public`
-
-**Setup Instructions:**
-
-1. Create a new Vercel project from your GitHub repository
-2. Set **Root Directory** to `apps/pages`
-3. The `vercel.json` configuration will handle the build process automatically
-
-### Option 2: Server Deployment (rsync)
-
-**Command:**
-
-```bash
-bun run deploy
-```
-
-**Setup:**
-
-1. Configure your server details in the deployment script
-2. Ensure SSH access to your target server
-3. Run `bun build` before deployment
-4. The deploy command will sync files to your server using rsync
-
-## Quality Assurance Details
+## Quality Assurance
 
 ### Link Validation
 
-The `tests/external-links.txt` file tracks all external URLs found in HTML files. The test runner validates both internal and external links to ensure site integrity.
+`tests/external-links.txt` tracks every external URL found in the HTML files. `bun run test` fails when the current set diverges from this snapshot, so link changes are reviewed deliberately rather than slipping in unnoticed:
 
-**Updating External Links:**
-
-1. When URLs in your HTML files change, delete `tests/external-links.txt`
-2. Run `bun test` to regenerate the file with current URLs
-3. This ensures the link validation stays up-to-date with your content
+1. When URLs change, run `bun run test:update` to regenerate the snapshot
+2. Review the `tests/external-links.txt` diff
+3. Commit it alongside the content change
 
 ### Image Optimization
 
-- Automatically detects `<img>` tags without width/height attributes
-- Adds performance-optimizing attributes for better Core Web Vitals
-- Validates all image paths and references
+- `bun run add-size-to-img` adds `width`/`height` to `<img>` tags for better Core Web Vitals
+- `bun run clean-images` removes images under `public/images/` that nothing references; `bun run clean-images --dry-run` previews the removals first
 
 ### HTML Standards
 
-- markuplint configuration ensures semantic HTML
-- Accessibility compliance checking
-- SEO best practices validation
-
-See the [root README](../../README.md) for complete setup instructions.
+`bun run lint` runs markuplint to enforce semantic HTML, accessibility compliance, and SEO best practices.

@@ -2,39 +2,22 @@
   "$schema": "https://turborepo.com/schema.json",
   "globalDependencies": [".env"],
   "tasks": {
-    "api#generate": {
-      "inputs": ["$TURBO_DEFAULT$", "supabase/**"],
-      "outputs": ["$generated/types.ts"]
-    },
     "build": {
       "dependsOn": ["^build"]
     },
-    "pages#build": {
-      "inputs": ["$TURBO_DEFAULT$", "app.css", "public/**", "!public/styles.css"],
-      "outputs": ["public/styles.css"]
-    },
-    "web#build": {
-      "dependsOn": ["@repo/shared#build"],
-      "outputs": [".svelte-kit/**", ".vercel/**"]
-    },
-    "web#lint": {
-      "dependsOn": ["@repo/shared#build"]
-    },
-    "@repo/shared#build": {
-      "outputs": [".svelte-kit/**", "dist/**"]
+    "preview": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "test": {
-      "cache": false
+    "check": {
+      "dependsOn": ["^build"]
     },
-    "pages#test": {
-      "dependsOn": ["build"],
-      "inputs": ["public/**", "tests/**", "commands/**"],
-      "outputs": ["tests/external-links.txt"]
-    },
+    "test": {},
     "lint": {},
     "format": {}
   }

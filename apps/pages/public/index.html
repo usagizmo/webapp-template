@@ -420,15 +420,17 @@
 
 <span class="text-slate-500"># Quality assurance for pages</span>
 <span class="text-sky-300">bun</span> test             <span class="text-slate-500"># Validate links, images, and accessibility</span>
+<span class="text-sky-300">bun</span> test:update      <span class="text-slate-500"># Update test snapshots such as tests/external-links.txt</span>
 <span class="text-sky-300">bun</span> lint             <span class="text-slate-500"># Run HTML validation with markuplint</span>
 <span class="text-sky-300">bun</span> format           <span class="text-slate-500"># Format with Prettier</span>
 
 <span class="text-slate-500"># Publishing</span>
-<span class="text-sky-300">bun</span> run deploy       <span class="text-slate-500"># Deploy to server (rsync)</span>
+<span class="text-sky-300">bun</span> run deploy       <span class="text-slate-500"># Deploy public/ to DEPLOY_TARGET with rsync</span>
 
 <span class="text-slate-500"># Optimization Utilities</span>
-<span class="text-sky-300">bun</span> add-size-to-img  <span class="text-slate-500"># Add width/height to &lt;img&gt; tags for better performance</span>
-<span class="text-sky-300">bun</span> clean-images     <span class="text-slate-500"># Remove unused images from project</span>
+<span class="text-sky-300">bun run</span> add-size-to-img  <span class="text-slate-500"># Add width/height to &lt;img&gt; tags for better performance</span>
+<span class="text-sky-300">bun run</span> clean-images     <span class="text-slate-500"># Remove unused images from project</span>
+<span class="text-sky-300">bun run</span> clean-images --dry-run  <span class="text-slate-500"># Preview unused image removals</span>
 </code></pre>
 
           <!-- Buttons -->

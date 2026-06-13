@@ -1,0 +1,13 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "outputs": [".svelte-kit/**", ".vercel/**"],
+      "env": ["PUBLIC_SUPABASE_URL", "PUBLIC_SUPABASE_ANON_KEY"]
+    },
+    "check": {
+      "env": ["PUBLIC_SUPABASE_URL", "PUBLIC_SUPABASE_ANON_KEY"]
+    }
+  }
+}

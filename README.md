@@ -82,9 +82,9 @@ bun install
 bun --filter pages dev
 
 # For web app development
-bun --filter api start     # Start Supabase API
-bun --filter api generate  # Generate TypeScript types (only when schema changes)
-bun --filter web dev       # Start web development server
+bun --filter api start    # Start Supabase API
+bun --filter api generate # Generate TypeScript types (only when schema changes)
+bun --filter web dev      # Start web development server
 ```
 
 > **Note**: TypeScript types are committed to the repository, so you only need to run `generate` when the database schema changes.
@@ -120,31 +120,36 @@ After running `bun install`, a `.env` file is automatically created from `.env.e
 
 ### Root Level Commands
 
+Run across every app and package from the repo root:
+
 ```bash
-# Project Setup
-bun install                     # Install dependencies (.env file is created automatically)
+bun install      # Install dependencies (.env file is created automatically)
+bun run dev      # Start all development servers
+bun run build    # Build all apps and packages
+bun run check    # Type-check all apps
+bun run lint     # Lint all apps and packages
+bun run format   # Format all apps and packages
+bun run test     # Run all tests
+```
 
-# Development Workflow
+> Use `bun run <script>`, not bare `bun <script>` — names like `build` and `test` would otherwise launch Bun's built-in bundler and test runner instead of the package script.
 
-# Start development servers
-bun --filter api start          # Start Supabase API (port 54321)
-bun dev                         # Start all development servers
-# Or specific apps:
-bun --filter web dev            # Start web app only (port 5173)
-bun --filter pages dev          # Start static site only (port 3000)
+Run a package's **own script** directly with Bun's filter — use this for most day-to-day package commands:
 
-# Build and generate
-bun --filter api generate       # Generate TypeScript types from Supabase
-bun --filter web build          # Build web application
-bun --filter pages build        # Build static site
+```bash
+bun --filter api start       # Start Supabase API (port 54321)
+bun --filter api generate    # Regenerate API types after schema changes
+bun --filter web dev         # Start the web app only (port 5173)
+bun --filter pages dev       # Start the static site only (port 3000)
+bun --filter pages deploy    # Deploy the static site
+```
 
-# Quality assurance
-bun lint                        # Run linting across all apps
-bun --filter web test           # Test web app
-bun --filter pages test         # Test static site
+Scope a **graph task** to one package with Turbo when you specifically want dependency-aware execution and caching. Always use `turbo run <task>` (the bare `turbo <task>` shorthand clashes with built-in commands like `generate`):
 
-# Code formatting
-bun format                      # Format code across all apps
+```bash
+bun turbo run build --filter web      # Build only web (and its dependencies)
+bun turbo run check --filter web      # Type-check only web
+bun turbo run generate --filter api   # Regenerate API types with Turbo caching
 ```
 
 ### App-Specific Commands
@@ -153,38 +158,48 @@ bun format                      # Format code across all apps
 
 ```bash
 cd apps/api
-bun start            # Start Supabase locally
-bun stop             # Stop Supabase
-bun status           # Show Supabase service status
-bun reset            # Reset database and regenerate types
-bun generate         # Generate TypeScript types
-bun test             # Run Supabase tests
+bun run start        # Start Supabase locally
+bun run stop         # Stop Supabase
+bun run status       # Show Supabase service status
+bun run reset        # Reset database and regenerate types
+bun run generate     # Generate TypeScript types
+bun run test         # Run Supabase tests
+bun run lint         # Run linting
+bun run format       # Format code
 ```
 
 #### Web App
 
 ```bash
 cd apps/web
-bun dev              # Start development server (port 5173)
-bun build            # Build for production
-bun preview          # Preview production build
-bun test             # Run tests
-bun lint             # Run linting
+bun run dev          # Start development server (port 5173)
+bun run build        # Build for production
+bun run preview      # Preview production build
+bun run check        # Run type checking with svelte-check
+bun run check:watch  # Type checking in watch mode
+bun run test         # Run tests
+bun run test:watch   # Run tests in watch mode
+bun run lint         # Run linting
+bun run format       # Format code
 ```
 
 #### Pages (Static Site Publishing)
 
 ```bash
 cd apps/pages
-bun dev              # Start development server (port 3000)
-bun build            # Build static site with Tailwind CSS
-bun test             # Validate links, images, and accessibility (Note: Delete tests/external-links.txt before bun test to update URL tracking)
-bun lint             # Run HTML validation with markuplint
-bun run deploy       # Deploy to server (rsync)
+bun run dev              # Start development server (port 3000)
+bun run build            # Build static site with Tailwind CSS
+bun run test             # Validate links, images, and accessibility
+bun run test:watch       # Run tests in watch mode
+bun run test:update      # Update test snapshots such as tests/external-links.txt
+bun run lint             # Run HTML validation with markuplint
+bun run format           # Format with Prettier
+bun run deploy           # Deploy public/ to DEPLOY_TARGET with rsync
 
 # Optimization Utilities
-bun add-size-to-img  # Add width/height to <img> tags for better performance
-bun clean-images     # Remove unused images from project
+bun run add-size-to-img       # Add width/height to <img> tags for better performance
+bun run clean-images          # Remove unused images from project
+bun run clean-images --dry-run # Preview unused image removals
 ```
 
 ## Port Configuration
@@ -206,29 +221,17 @@ TypeScript types are automatically generated from your Supabase database schema:
 
 1. **Local Development**: Types are generated to `apps/api/$generated/types.ts`
 2. **Frontend Usage**: Types are imported from the `api` package (e.g., `import type { Database } from 'api/types'`)
-3. **After Schema Changes**: Run `bun generate` to update types
+3. **After Schema Changes**: Run `bun --filter api generate` to update types
 
 ### Shared Components and Types
 
-Common components and types are available through the `@repo/shared` package:
-
-```typescript
-// Import UI components
-import { Button } from '@repo/shared/components/ui/button';
-import * as Card from '@repo/shared/components/ui/card';
-
-// Import shared types
-import type { UserProfile } from '@repo/shared/types/user';
-
-// Import constants
-import { DEFAULT_EASE } from '@repo/shared/constants/easing';
-```
+Common components, types, and constants are imported from the `@repo/shared` package. See [packages/shared](./packages/shared/) for the available exports and usage examples.
 
 ### Environment Switching
 
 You can easily switch between development and production environments:
 
-1. **For Development**: Use local Supabase (started with `bun start`)
+1. **For Development**: Use local Supabase (started with `bun --filter api start`)
 2. **For Production Testing**: Update `.env` with production Supabase credentials
 3. **Type Safety**: Types are committed to repository for CI/CD compatibility
 
@@ -268,7 +271,8 @@ PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ##### Option 2: Server Deployment (rsync)
 
 - Use `bun run deploy` command in `apps/pages`
-- Configure server details in deployment script
+- Configure `DEPLOY_TARGET` in `apps/pages/commands/deploy.js`
+- Ensure SSH access and rsync are available for your target server
 - Direct file transfer to your server
 
 #### Setup Instructions
@@ -280,100 +284,6 @@ PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 3. Each project will use its respective `vercel.json` configuration
 4. Configure environment variables for the web app project
 
-## Breaking changes
+## Changelog
 
-### [v2.13.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.13.0)
-
-- **Package Manager Migration:**
-  - Migrated from pnpm to [Bun](https://bun.sh/) as the primary package manager
-  - All `pnpm` commands must be replaced with `bun` equivalents
-  - Replaced `pnpm-lock.yaml` with `bun.lock`
-- **Build System Updates:**
-  - Updated Turborepo filter syntax for GitHub Actions
-  - Fixed Vercel deployment configurations for bun compatibility
-  - Added generic `build` task to `turbo.json`
-
-### [v2.12.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.12.0)
-
-- **Shared Package Introduction:**
-  - Created `@repo/shared` package for common components, types, and utilities
-  - Moved all UI components from `apps/web/src/lib/components/ui/` to `packages/shared/`
-  - Migrated shared types (UserProfile) and constants (easing) to shared package
-  - Updated all imports to use `@repo/shared` package instead of local paths
-  - Centralized Tailwind CSS configuration and base styles in shared package
-  - Applications now import shared CSS using `@source` directive
-
-### [v2.9.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.9.0)
-
-- **Database Schema Changes:**
-  - Reset and restructured Supabase database schema with improved type definitions
-  - Added `updated_at` columns to `profiles` and `comments` tables
-  - Enhanced RLS policies with more granular permissions
-  - Updated TypeScript types to reflect new schema structure
-- **Project Structure Optimization:**
-  - Removed deprecated `apps/backend` directory completely
-  - Streamlined development workflow with automatic `.env` file generation
-  - Updated all references and documentation to use `apps/api` consistently
-- **Application Structure:**
-  - Renamed `apps/mockup` to `apps/pages` for better clarity and purpose alignment
-  - Removed deprecated `commands/use-mockup.js` script and related references
-  - Updated all import paths and package references to use the new naming convention
-- **Deployment Configuration:**
-  - Separated Vercel deployment configurations for independent app deployment
-  - Moved root-level `vercel.json` to `apps/web/vercel.json`
-  - Added separate `apps/pages/vercel.json` for static site deployment
-  - Each application now deploys independently with its own configuration
-- **Configuration Updates:**
-  - Enhanced Supabase configuration with comprehensive settings
-  - Updated Turbo configuration to include all necessary environment variables
-  - Improved Prettier and linting configurations for new structure
-- **Environment Setup:**
-  - Updated `.env.example` with comprehensive Supabase environment variables
-  - Enhanced environment configuration documentation with clearer setup instructions
-  - Improved local and production environment switching guidance
-
-### [v2.8.1](https://github.com/usagizmo/webapp-template/releases/tag/v2.8.1)
-
-- **Directory Structure:**
-  - Renamed `apps/backend` to `apps/api` for better semantic clarity
-  - Updated all references in documentation, scripts, and configuration files
-
-### [v2.8.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.8.0)
-
-- **Infrastructure Requirements:**
-  - Node.js v22 is now required (added `.node-version` file)
-- **Supabase Integration:**
-  - Restructured Supabase type flow: Direct import from `apps/api/$generated/` instead of `apps/web/src/lib/$generated/`
-  - Enhanced database schema with complete type generation
-- **Build System:**
-  - Updated Vercel deployment configuration with new build commands
-  - Replaced `concurrently` with `npm-run-all2` for better performance
-- **Development Tools:**
-  - Enhanced ESLint configuration with modular structure
-  - Restructured shared packages with proper TypeScript builds
-
-### [v2.0.0](https://github.com/usagizmo/webapp-template/releases/tag/v2.0.0)
-
-- **Update Framework/Library Versions:**
-  - Switch to Svelte 5 (integrated with TypeScript and using the Rune)
-  - Update to Tailwind CSS 4 (removed `tailwind.config.js`)
-  - Upgrade to ESLint 9 and implement Flat Config
-- **API Change:**
-  - Replace [Nhost](https://nhost.io/) with [Supabase](https://supabase.com/) for API services
-
-### [v1.6.0](https://github.com/usagizmo/webapp-template/releases/tag/v1.6.0)
-
-- **Language Reversion and Documentation:**
-  - Reverted codebase from TypeScript back to JavaScript, supplementing with JSDoc for documentation
-
-### [v1.0.0](https://github.com/usagizmo/webapp-template/releases/tag/v1.0.0)
-
-- **Frontend Framework Change:**
-  - Switched from [Next.js](https://nextjs.org/) to [SvelteKit](https://svelte.dev/docs/kit/) for the frontend framework in `apps/web`
-- **Repository Rebranding:**
-  - Renamed `nextjs-template` repository to `webapp-template`
-
-### [v0.23.0](https://github.com/usagizmo/webapp-template/releases/tag/v0.23.0)
-
-- **API Services Integration:**
-  - Replaced individual [Firebase](https://firebase.google.com/) and [Hasura](https://hasura.io/) applications with a unified [Nhost](https://nhost.io/) application in `apps/nhost`
+See [CHANGELOG.md](./CHANGELOG.md) for highlights of notable and breaking changes. For the complete history, see the [GitHub Releases](https://github.com/usagizmo/webapp-template/releases).

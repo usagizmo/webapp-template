@@ -14,22 +14,23 @@
     "lint:prettier": "prettier . --check --ignore-path=../../.prettierignore",
     "lint": "run-p lint:*",
     "test:watch": "bun test --watch",
+    "test:update": "bun ./commands/update-snapshots.js",
     "test": "bun test",
     "format:js": "eslint --fix .",
     "format:prettier": "prettier . --write --ignore-path=../../.prettierignore",
     "format": "run-p format:*",
     "add-size-to-img": "bun ./commands/add-size-to-img.js",
-    "clean-images": "./commands/clean-images.sh",
-    "deploy": "./commands/deploy.sh"
+    "clean-images": "bun ./commands/clean-images.js",
+    "deploy": "bun ./commands/deploy.js"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@tailwindcss/cli": "^4.3.1",
     "browser-sync": "^3.0.4",
-    "eslint-plugin-jsdoc": "^63.0.2",
-    "globals": "^17.6.0",
+    "eslint-plugin-jsdoc": "catalog:",
+    "globals": "catalog:",
     "image-size": "^2.0.2",
-    "npm-run-all2": "^9.0.2",
-    "tailwindcss": "^4.3.1"
+    "npm-run-all2": "catalog:",
+    "tailwindcss": "catalog:"
   }
 }
