@@ -128,7 +128,7 @@ describe('The tests', () => {
     try {
       externalLinksText = await readFile(join(distDir, 'external-links.txt'), 'utf8');
     } catch {
-      throw new Error('Missing tests/external-links.txt. Run `bun test:update` to create it.');
+      throw new Error('Missing tests/external-links.txt. Run `bun run test:update` to create it.');
     }
 
     expect(data).toBe(externalLinksText);
