@@ -194,11 +194,11 @@ bun run test:watch       # Run tests in watch mode
 bun run test:update      # Update test snapshots such as tests/external-links.txt
 bun run lint             # Run HTML validation with markuplint
 bun run format           # Format with Prettier
-bun run deploy           # Deploy public/ to DEPLOY_TARGET with rsync
+bun run deploy           # Deploy public/ to your server with rsync
 
 # Optimization Utilities
-bun run add-size-to-img       # Add width/height to <img> tags for better performance
-bun run clean-images          # Remove unused images from project
+bun run add-size-to-img        # Add width/height to <img> tags for better performance
+bun run clean-images           # Remove unused images from project
 bun run clean-images --dry-run # Preview unused image removals
 ```
 
@@ -271,9 +271,9 @@ PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ##### Option 2: Server Deployment (rsync)
 
 - Use `bun run deploy` command in `apps/pages`
-- Configure `DEPLOY_TARGET` in `apps/pages/commands/deploy.js`
-- Ensure SSH access and rsync are available for your target server
-- Direct file transfer to your server
+- Configure the deploy target at the top of `apps/pages/commands/deploy.sh`
+- Requires `rsync` and `ssh` on your local machine (macOS / Linux / WSL), and a server that accepts SSH
+- Mirrors `public/` with `rsync --delete`, so files missing from `public/` are removed on the server
 
 #### Setup Instructions
 
