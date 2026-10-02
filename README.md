@@ -1,5 +1,8 @@
 # WebApp Template
 
+> [!IMPORTANT]
+> This repository is archived. Static site work continues in [usagizmo/dev-template](https://github.com/usagizmo/dev-template).
+
 Monorepo template for creating a modern web application.
 
 ## Tech Stack
